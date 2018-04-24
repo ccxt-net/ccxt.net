@@ -4,7 +4,7 @@
 
 This project is an extension of [ccxt](https://github.com/ccxt/ccxt).
 
-If you are a .Net C# programmer, ccxt.net might be useful We created ccxt.net using open-source ccxt.
+If you are a .Net C# programmer, ccxt.net might be useful. We created ccxt.net using open-source [ccxt](https://github.com/ccxt/ccxt).
 
 This project started in 2018/04. I plan to update it continuously.
 
