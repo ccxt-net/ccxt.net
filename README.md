@@ -2,6 +2,13 @@
 
 [![Build status](https://ci.appveyor.com/api/projects/status/dnp9i3t6sexv9tpa?svg=true)](https://ci.appveyor.com/project/lisa3907/ccxt.net)
 
+This project is an extension of ccxt (https://github.com/ccxt/ccxt).
+
+If you are a .Net C# programmer, ccxt.net might be useful We created ccxt.net using open-source ccxt.
+
+This project started in 2018/04. I plan to update it continuously.
+
+
 ## Supported Cryptocurrency Exchange Markets
 
 The ccxt.net library currently supports the following 14 cryptocurrency exchange markets and trading APIs:
@@ -90,15 +97,6 @@ Support this project by becoming a sponsor. Your logo will show up here with a l
 [[Become a sponsor](https://opencollective.com/ccxt.net#sponsor)]
 
 <a href="https://opencollective.com/ccxt.net/sponsor/0/website" target="_blank"><img src="https://opencollective.com/ccxt.net/sponsor/0/avatar.svg"></a>
-<a href="https://opencollective.com/ccxt.net/sponsor/1/website" target="_blank"><img src="https://opencollective.com/ccxt.net/sponsor/1/avatar.svg"></a>
-<a href="https://opencollective.com/ccxt.net/sponsor/2/website" target="_blank"><img src="https://opencollective.com/ccxt.net/sponsor/2/avatar.svg"></a>
-<a href="https://opencollective.com/ccxt.net/sponsor/3/website" target="_blank"><img src="https://opencollective.com/ccxt.net/sponsor/3/avatar.svg"></a>
-<a href="https://opencollective.com/ccxt.net/sponsor/4/website" target="_blank"><img src="https://opencollective.com/ccxt.net/sponsor/4/avatar.svg"></a>
-<a href="https://opencollective.com/ccxt.net/sponsor/5/website" target="_blank"><img src="https://opencollective.com/ccxt.net/sponsor/5/avatar.svg"></a>
-<a href="https://opencollective.com/ccxt.net/sponsor/6/website" target="_blank"><img src="https://opencollective.com/ccxt.net/sponsor/6/avatar.svg"></a>
-<a href="https://opencollective.com/ccxt.net/sponsor/7/website" target="_blank"><img src="https://opencollective.com/ccxt.net/sponsor/7/avatar.svg"></a>
-<a href="https://opencollective.com/ccxt.net/sponsor/8/website" target="_blank"><img src="https://opencollective.com/ccxt.net/sponsor/8/avatar.svg"></a>
-<a href="https://opencollective.com/ccxt.net/sponsor/9/website" target="_blank"><img src="https://opencollective.com/ccxt.net/sponsor/9/avatar.svg"></a>
 
 ### Backers
 
