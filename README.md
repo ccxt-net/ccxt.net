@@ -4,7 +4,7 @@
 
 ## Supported Cryptocurrency Exchange Markets
 
-The ccxt library currently supports the following 14 cryptocurrency exchange markets and trading APIs:
+The ccxt.net library currently supports the following 14 cryptocurrency exchange markets and trading APIs:
 
 |                                                                                                                           | id                 | name                                                      | ver | doc                                                                                          | countries                               |
 |---------------------------------------------------------------------------------------------------------------------------|--------------------|-----------------------------------------------------------|:---:|:--------------------------------------------------------------------------------------------:|-----------------------------------------|
@@ -30,7 +30,7 @@ The library is under [MIT license](https://github.com/ccxt.net/blob/master/LICEN
 
 ## Install
 
-You can also clone it into your project directory from [ccxt GitHub repository](https://github.com/lisa3907/ccxt.net):
+You can also clone it into your project directory from [ccxt.net GitHub repository](https://github.com/lisa3907/ccxt.net):
 
 ```shell
 git clone https://github.com/lisa3907/ccxt.net.git
