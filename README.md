@@ -45,7 +45,7 @@ Read the [Manual](https://github.com/lisa3907/ccxt.net/wiki) for more details.
 
 ### Intro
 
-The ccxt library consists of a public part and a private part. Anyone can use the public part out-of-the-box immediately after installation. Public APIs open access to public information from all exchange markets without registering user accounts and without having API keys.
+The ccxt.net library consists of a public part and a private part. Anyone can use the public part out-of-the-box immediately after installation. Public APIs open access to public information from all exchange markets without registering user accounts and without having API keys.
 
 Public APIs include the following:
 
@@ -73,7 +73,7 @@ Private APIs allow the following:
 
 This library implements full public and private REST APIs for all exchanges. WebSocket and FIX implementations in JavaScript, PHP, Python and other languages coming soon.
 
-The ccxt library supports both camelcase notation (preferred in JavaScript) and underscore notation (preferred in Python and PHP), therefore all methods can be called in either notation or coding style in any language.
+The ccxt.net library supports both camelcase notation (preferred in JavaScript) and underscore notation (preferred in Python and PHP), therefore all methods can be called in either notation or coding style in any language.
 
 ```
 // both of these notations work in JavaScript/Python/PHP
@@ -90,7 +90,7 @@ Please read the [CONTRIBUTING](https://github.com/lisa3907/ccxt.net/blob/master/
 
 ## Support Developer Team
 
-We are investing a significant amount of time into the development of this library. If CCXT made your life easier and you like it and want to help us improve it further or if you want to speed up new features and exchanges, please, support us with a tip. We appreciate all contributions!
+We are investing a significant amount of time into the development of this library. If CCXT.NET made your life easier and you like it and want to help us improve it further or if you want to speed up new features and exchanges, please, support us with a tip. We appreciate all contributions!
 
 ### Sponsors
 
