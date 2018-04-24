@@ -71,15 +71,6 @@ Private APIs allow the following:
 - transfer funds between accounts
 - use merchant services
 
-This library implements full public and private REST APIs for all exchanges. WebSocket and FIX implementations in JavaScript, PHP, Python and other languages coming soon.
-
-The ccxt.net library supports both camelcase notation (preferred in JavaScript) and underscore notation (preferred in Python and PHP), therefore all methods can be called in either notation or coding style in any language.
-
-```
-// both of these notations work in JavaScript/Python/PHP
-exchange.methodName ()  // camelcase pseudocode
-exchange.method_name () // underscore pseudocode
-```
 
 Read the [Manual](https://github.com/lisa3907/ccxt.net/wiki) for more details.
 
