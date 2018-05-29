@@ -90,19 +90,9 @@ Please read the [CONTRIBUTING](https://github.com/lisa3907/ccxt.net/blob/master/
 
 We are investing a significant amount of time into the development of this library. If CCXT.NET made your life easier and you like it and want to help us improve it further or if you want to speed up new features and exchanges, please, support us with a tip. We appreciate all contributions!
 
-### Sponsors
+### Nuget
 
-Support this project by becoming a sponsor. Your logo will show up here with a link to your website.
-
-[[Become a sponsor](https://opencollective.com/ccxt.net#sponsor)]
-
-<a href="https://opencollective.com/ccxt.net/sponsor/0/website" target="_blank"><img src="https://opencollective.com/ccxt.net/sponsor/0/avatar.svg"></a>
-
-### Backers
-
-Thank you to all our backers! [[Become a backer](https://opencollective.com/ccxt.net#backer)]
-
-<a href="https://opencollective.com/ccxt.net#backers" target="_blank"><img src="https://opencollective.com/ccxt.net/backers.svg?width=890"></a>
+ > Install-Package OdinSdk.CoinLib -Version 1.0.4
 
 ### Crypto
 
