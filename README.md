@@ -92,7 +92,7 @@ We are investing a significant amount of time into the development of this libra
 
 ### Nuget
 
- > Install-Package OdinSdk.CoinLib -Version 1.0.4
+ > Install-Package OdinSdk.CoinLib
 
 ### Crypto
 
