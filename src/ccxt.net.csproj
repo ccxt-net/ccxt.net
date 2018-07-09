@@ -3,14 +3,14 @@
   <PropertyGroup>
     <TargetFrameworks>net462;netcoreapp2.1</TargetFrameworks>
     <Title>CryptoCurrency eXchange Trading Library for .NET</Title>
-    <Description>CryptoCurrency eXchange Trading Library for .NET</Description>
+    <Description>CCXT.NET – CryptoCurrency eXchange Trading Library for .NET</Description>
     <Copyright>Copyright OdinSoftware Co., Ltd. 2018</Copyright>
     <AssemblyTitle>CCXT.NET</AssemblyTitle>
     <VersionPrefix>1.0.0</VersionPrefix>
     <Authors>SEONGAHN LEE</Authors>
     <AssemblyName>CCXT.NET</AssemblyName>
     <PackageId>CCXT.NET</PackageId>
-    <PackageTags>bitcoin;sdk;ethereum;exchange;ccxt</PackageTags>
+    <PackageTags>altcoin;api;arbitrage;bitcoin;bot;cryptocurrency;ethereum;exchange;trading;btc;eth;market-data;csharp;exchange-api;trading-api;exchange-markets;ccxt;trade;crypto;register</PackageTags>
     <PackageIconUrl>https://github.com/lisa3907/ccxt.net/blob/master/logo-files/ccxt.net.ico?raw=true</PackageIconUrl>
     <PackageProjectUrl>https://github.com/lisa3907/ccxt.net</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/lisa3907/ccxt.net/blob/master/LICENSE</PackageLicenseUrl>
