@@ -92,9 +92,9 @@ We are investing a significant amount of time into the development of this libra
 
 ### Nuget
 
- > Install-Package ccxt.net
+ > Install-Package CCXT.NET -Version 1.0.0
 
-### Crypto
+### Crypto Donation
 
 ```
 ETH 0x556E7EdbcCd669a42f00c1Df53D550C00814B0e3
@@ -102,6 +102,6 @@ BTC 15DAoUfaCanpBpTs7VQBK8dRmbQqEnF9WG
 ```
 ### Contact
 
-Home-Page: http://www.odinsoftware.co.kr
+home-page: http://www.odinsoftware.co.kr
 
-E-MAIL: help@odinsoftware.co.kr
+e-mail: help@odinsoftware.co.kr
