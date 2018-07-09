@@ -1,0 +1,48 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net462;netcoreapp2.1</TargetFrameworks>
+    <Title>CryptoCurrency eXchange Trading Library for .NET</Title>
+    <Description>CryptoCurrency eXchange Trading Library for .NET</Description>
+    <Copyright>Copyright OdinSoftware Co., Ltd. 2018</Copyright>
+    <AssemblyTitle>CCXT.NET</AssemblyTitle>
+    <VersionPrefix>1.0.0</VersionPrefix>
+    <Authors>SEONGAHN LEE</Authors>
+    <AssemblyName>CCXT.NET</AssemblyName>
+    <PackageId>CCXT.NET</PackageId>
+    <PackageTags>bitcoin;sdk;ethereum;exchange;ccxt</PackageTags>
+    <PackageIconUrl>https://github.com/lisa3907/ccxt.net/blob/master/logo-files/ccxt.net.ico?raw=true</PackageIconUrl>
+    <PackageProjectUrl>https://github.com/lisa3907/ccxt.net</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/lisa3907/ccxt.net/blob/master/LICENSE</PackageLicenseUrl>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <RootNamespace>CCXT.NET</RootNamespace>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>1.0.0</Version>
+    <PackageReleaseNotes></PackageReleaseNotes>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <LangVersion>latest</LangVersion>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net462|AnyCPU'">
+    <DocumentationFile>bin\Debug\net462\CCXT.NET.xml</DocumentationFile>
+    <DefineConstants>TRACE;DEBUG;NETFRAMEWORK;NET462</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net462|AnyCPU'">
+    <DefineConstants>TRACE;RELEASE;NETFRAMEWORK;NET462</DefineConstants>
+    <DocumentationFile>bin\Release\net462\CCXT.NET.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="2.1.1" />
+    <PackageReference Include="OdinSdk.BaseLib" Version="2.1.2" />
+    <PackageReference Include="RestSharp" Version="106.3.1" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.2.4" />
+    <PackageReference Include="Telegram.Bot" Version="14.6.0" />
+  </ItemGroup>
+
+</Project>

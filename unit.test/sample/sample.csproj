@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>net462;netcoreapp2.1</TargetFrameworks>
+    <AssemblyName>Poloniex.Sample</AssemblyName>
+    <RootNamespace>Poloniex.Sample</RootNamespace>
+    <ApplicationIcon>ccxt.net.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="4.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\ccxt.net.csproj" />
+  </ItemGroup>
+
+</Project>
