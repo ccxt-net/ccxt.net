@@ -87,7 +87,7 @@ namespace CCXT.NET.Sample
                 var _start_time = CUnixTime.UnixEpoch;
 
                 var _deposit_withdrawal = await _private_api.GetDepositsAndWithdrawals(_start_time, _end_time);
-                if (_deposit_withdrawal.Deposits.Count > 0 || _deposit_withdrawal.Withdrawals.Count > 0)
+                if (_deposit_withdrawal.Deposits.Count > 0 || _deposit_withdrawal.Withdraws.Count > 0)
                     Console.WriteLine(_deposit_withdrawal.Deposits.Count);
             }
 

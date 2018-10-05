@@ -5,7 +5,7 @@ namespace CCXT.NET.Bithumb.Private
     /// <summary>
     /// bithumb 거래소 회원 지갑 정보
     /// </summary>
-    public class AccountItem
+    public class BAccountItem
     {
         /// <summary>
         /// 회원가입 일시 Timestamp
@@ -47,14 +47,14 @@ namespace CCXT.NET.Bithumb.Private
     /// <summary>
     /// bithumb 거래소 회원 지갑 정보
     /// </summary>
-    public class Account : ApiResult<AccountItem>
+    public class BAccount : ApiResult<BAccountItem>
     {
         /// <summary>
         /// 
         /// </summary>
-        public Account()
+        public BAccount()
         {
-            this.result = new AccountItem();
+            this.result = new BAccountItem();
         }
     }
 }

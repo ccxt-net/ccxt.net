@@ -16,7 +16,7 @@ namespace CCXT.NET.Poloniex
         /// <param name="balances"></param>
         /// <param name="coin_name"></param>
         /// <returns></returns>
-        public static decimal available_qty(this Dictionary<string, UserBalance> balances, string coin_name)
+        public static decimal available_qty(this Dictionary<string, PBalanceItem> balances, string coin_name)
         {
             var _result = 0.0m;
 

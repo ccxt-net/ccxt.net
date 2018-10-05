@@ -29,7 +29,7 @@ namespace CCXT.NET.Poloniex.Trade
 
         private PoloniexClient __trade_client = null;
 
-        private PoloniexClient tradeClient
+        private PoloniexClient TradeClient
         {
             get
             {
@@ -44,7 +44,7 @@ namespace CCXT.NET.Poloniex.Trade
         /// </summary>
         /// <param name="currency_pair"></param>
         /// <returns></returns>
-        public async Task<List<TradeOrder>> OpenOrders(CurrencyPair currency_pair)
+        public async Task<List<PTradeOrderItem>> OpenOrders(CurrencyPair currency_pair)
         {
             var _params = new Dictionary<string, object>();
             {
@@ -52,14 +52,14 @@ namespace CCXT.NET.Poloniex.Trade
                 _params.Add("currencyPair", currency_pair);
             }
 
-            return await tradeClient.CallApiPostAsync<List<TradeOrder>>(__end_point, _params);
+            return await TradeClient.CallApiPostAsync<List<PTradeOrderItem>>(__end_point, _params);
         }
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns></returns>
-        public async Task<List<TradeOrder>> AllOpenOrders()
+        public async Task<List<PTradeOrderItem>> AllOpenOrders()
         {
             var _params = new Dictionary<string, object>();
             {
@@ -67,7 +67,7 @@ namespace CCXT.NET.Poloniex.Trade
                 _params.Add("currencyPair", "all");
             }
 
-            return await tradeClient.CallApiPostAsync<List<TradeOrder>>(__end_point, _params);
+            return await TradeClient.CallApiPostAsync<List<PTradeOrderItem>>(__end_point, _params);
         }
 
         /// <summary>
@@ -77,9 +77,9 @@ namespace CCXT.NET.Poloniex.Trade
         /// <param name="start_time"></param>
         /// <param name="end_time"></param>
         /// <returns></returns>
-        public async Task<List<TradeOrder>> GetTrades(CurrencyPair currency_pair, DateTime start_time, DateTime end_time)
+        public async Task<List<PTradeOrderItem>> GetTrades(CurrencyPair currency_pair, DateTime start_time, DateTime end_time)
         {
-            var _result = new List<TradeOrder>();
+            var _result = new List<PTradeOrderItem>();
 
             var _params = new Dictionary<string, object>();
             {
@@ -89,11 +89,11 @@ namespace CCXT.NET.Poloniex.Trade
                 _params.Add("end", end_time.DateTimeToUnixTimeStamp());
             }
 
-            var _json_value = await tradeClient.CallApiPost1Async(__end_point, _params);
+            var _json_value = await TradeClient.CallApiPost1Async(__end_point, _params);
 
-            var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
+            var _json_result = TradeClient.GetResponseMessage(_json_value.Response);
             if (_json_result.success == true)
-                _result = await tradeClient.CallApiPostAsync<List<TradeOrder>>(__end_point, _params);
+                _result = await TradeClient.CallApiPostAsync<List<PTradeOrderItem>>(__end_point, _params);
 
             return _result;
         }
@@ -116,7 +116,7 @@ namespace CCXT.NET.Poloniex.Trade
                 _params.Add("amount", amountQuote.ToStringNormalized());
             }
 
-            var _data = await tradeClient.CallApiPostAsync<JObject>(__end_point, _params);
+            var _data = await TradeClient.CallApiPostAsync<JObject>(__end_point, _params);
             return _data.Value<ulong>("orderNumber");
         }
 
@@ -133,7 +133,7 @@ namespace CCXT.NET.Poloniex.Trade
                 _params.Add("orderNumber", order_id);
             }
 
-            var _data = await tradeClient.CallApiPostAsync<JObject>(__end_point, _params);
+            var _data = await TradeClient.CallApiPostAsync<JObject>(__end_point, _params);
             return _data.Value<byte>("success") == 1;
         }
     }

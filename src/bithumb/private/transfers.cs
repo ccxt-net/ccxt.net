@@ -1,109 +1,296 @@
-﻿using OdinSdk.BaseLib.Coin;
+﻿using System.Collections.Generic;
+using OdinSdk.BaseLib.Coin;
 
-namespace CCXT.NET.Bithumb.Public
+namespace CCXT.NET.Bithumb.Private
 {
     /// <summary>
-    /// https://api.bithumb.com/public/ticker/{currency}
-    /// bithumb 거래소 마지막 거래 정보
-    /// * {currency} = BTC, ETH, DASH, LTC, ETC, XRP (기본값: BTC), ALL(전체)
+    /// 회원 거래 내역
     /// </summary>
-    public class BTickerItem
+    public class BTransferItem
     {
         /// <summary>
-        /// 최근 24시간 내 시작 거래금액
+        /// 검색 구분 (0 : 전체, 1 : 구매완료, 2 : 판매완료, 3 : 출금중, 4 : 입금, 5 : 출금, 9 : KRW입금중)
         /// </summary>
-        public decimal opening_price
+        public int search
         {
             get;
             set;
         }
 
         /// <summary>
-        /// 최근 24시간 내 마지막 거래금액
+        /// 거래 일시 Timestamp
         /// </summary>
-        public decimal closing_price
+        public long transfer_date
         {
             get;
             set;
         }
 
         /// <summary>
-        /// 최근 24시간 내 최저 거래금액
+        /// 거래 Currency 수량 (BTC, ETH, DASH, LTC, ETC, XRP)
         /// </summary>
-        public decimal min_price
+        public string units
         {
             get;
             set;
         }
 
         /// <summary>
-        /// 최근 24시간 내 최고 거래금액
+        /// 거래금액
         /// </summary>
-        public decimal max_price
+        public decimal price
         {
             get;
             set;
         }
 
         /// <summary>
-        /// 최근 24시간 내 평균 거래금액
+        /// 1Currency당 거래금액 (btc, eth, dash, ltc, etc, xrp, bch, xmr, zec, qtum, btg, eos, icx)
         /// </summary>
-        public decimal average_price
+        public decimal btc1krw
         {
             get;
             set;
         }
 
         /// <summary>
-        /// 최근 24시간 내 BTC 거래량
+        /// 
         /// </summary>
-        public decimal units_traded
+        public decimal eth1krw
         {
             get;
             set;
         }
 
         /// <summary>
-        /// 최근 1일간 BTC 거래량
+        /// 
         /// </summary>
-        public decimal volume_1day
+        public decimal dash1krw
         {
             get;
             set;
         }
 
         /// <summary>
-        /// 최근 7일간 BTC 거래량
+        /// 
         /// </summary>
-        public decimal volume_7day
-        {
-            get;
-            set;
-        }
-
-
-        /// <summary>
-        /// 거래 대기건 최고 구매가
-        /// </summary>
-        public decimal buy_price
+        public decimal ltc1krw
         {
             get;
             set;
         }
 
         /// <summary>
-        /// 거래 대기건 최소 판매가
+        /// 
         /// </summary>
-        public decimal sell_price
+        public decimal etc1krw
         {
             get;
             set;
         }
 
         /// <summary>
-        /// 현재 시간 Timestamp
+        /// 
         /// </summary>
-        public long date
+        public decimal xrp1krw
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public decimal bch1krw
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public decimal xmr1krw
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public decimal zec1krw
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public decimal qtum1krw
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public decimal btg1krw
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public decimal eos1krw
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public decimal icx1krw
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 거래수수료
+        /// </summary>
+        public string fee
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 거래 후 Currency 잔액 (btc, eth, dash, ltc, etc, xrp, bch, xmr, zec, qtum, btg, eos, icx)
+        /// </summary>
+        public decimal btc_remain
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public decimal eth_remain
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public decimal dash_remain
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public decimal ltc_remain
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public decimal etc_remain
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public decimal xrp_remain
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public decimal bch_remain
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public decimal xmr_remain
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public decimal zec_remain
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public decimal qtum_remain
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public decimal btg_remain
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public decimal eos_remain
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public decimal icx_remain
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 거래 후 KRW 잔액
+        /// </summary>
+        public decimal krw_remain
         {
             get;
             set;
@@ -111,212 +298,16 @@ namespace CCXT.NET.Bithumb.Public
     }
 
     /// <summary>
-    /// 
+    /// 회원 거래 내역
     /// </summary>
-    public class Ticker : ApiResult<BTickerItem>
+    public class BTransfers : ApiResult<List<BTransferItem>>
     {
         /// <summary>
         /// 
         /// </summary>
-        public Ticker()
+        public BTransfers()
         {
-            this.result = new BTickerItem();
-        }
-    }
-
-    /// <summary>
-    /// 
-    /// </summary>
-    public class BTickerAll
-    {
-        /// <summary>
-        /// 
-        /// </summary>
-        public BTickerAll()
-        {
-            BTC = new BTickerItem();
-            ETH = new BTickerItem();
-            XRP = new BTickerItem();
-            BCH = new BTickerItem();
-            EOS = new BTickerItem();
-            LTC = new BTickerItem();
-            TRX = new BTickerItem();
-            DASH = new BTickerItem();
-            XMR = new BTickerItem();
-            VNE = new BTickerItem();
-            ETC = new BTickerItem();
-            ICX = new BTickerItem();
-            QTUM = new BTickerItem();
-            OMG = new BTickerItem();
-            ZEC = new BTickerItem();
-            BTG = new BTickerItem();
-        }
-
-        /// <summary>
-        /// 오미세고
-        /// </summary>
-        public BTickerItem OMG
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// 비체인
-        /// </summary>
-        public BTickerItem VNE
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// Tronix
-        /// </summary>
-        public BTickerItem TRX
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// BitCoin
-        /// </summary>
-        public BTickerItem BTC
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// Ethereum
-        /// </summary>
-        public BTickerItem ETH
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// DashCoin
-        /// </summary>
-        public BTickerItem DASH
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// LiteCoin
-        /// </summary>
-        public BTickerItem LTC
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// Ethereum Classic
-        /// </summary>
-        public BTickerItem ETC
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// Ripple
-        /// </summary>
-        public BTickerItem XRP
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// Bitcoin Cash
-        /// </summary>
-        public BTickerItem BCH
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// Monero
-        /// </summary>
-        public BTickerItem XMR
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// Z-CASH
-        /// </summary>
-        public BTickerItem ZEC
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// Quntum
-        /// </summary>
-        public BTickerItem QTUM
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// Bitcoin Gold
-        /// </summary>
-        public BTickerItem BTG
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// EOS
-        /// </summary>
-        public BTickerItem EOS
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// ICX
-        /// </summary>
-        public BTickerItem ICX
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// 현재 시간 Timestamp
-        /// </summary>
-        public long date
-        {
-            get;
-            set;
-        }
-    }
-
-    /// <summary>
-    /// 
-    /// </summary>
-    public class BTickers : ApiResult<BTickerAll>
-    {
-        /// <summary>
-        /// 
-        /// </summary>
-        public BTickers()
-        {
-            this.result = new BTickerAll();
+            this.result = new List<BTransferItem>();
         }
     }
 }

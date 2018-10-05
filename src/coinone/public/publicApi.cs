@@ -23,14 +23,14 @@ namespace CCXT.NET.Coinone.Public
         /// <summary>
         /// 
         /// </summary>
-        public async Task<PublicCurrency> Currency(string currencyType = "KRW")
+        public async Task<CCurrency> Currency(string currencyType = "KRW")
         {
             var _params = new Dictionary<string, object>();
             {
                 _params.Add("currencyType", currencyType);
             }
 
-            return await PublicClient.CallApiGetAsync<PublicCurrency>("/currency", _params);
+            return await PublicClient.CallApiGetAsync<CCurrency>("/currency", _params);
         }
 
         /// <summary>
@@ -38,14 +38,14 @@ namespace CCXT.NET.Coinone.Public
         /// </summary>
         /// <param name="currency">Default value: btc, Allowed values: btc, eth, etc, xrp</param>
         /// <returns></returns>
-        public async Task<PublicOrderBook> OrderBook(string currency)
+        public async Task<COrderBooks> OrderBook(string currency)
         {
             var _params = new Dictionary<string, object>();
             {
                 _params.Add("currency", currency);
             }
 
-            return await PublicClient.CallApiGetAsync<PublicOrderBook>("/orderbook", _params);
+            return await PublicClient.CallApiGetAsync<COrderBooks>("/orderbook", _params);
         }
 
         /// <summary>
@@ -53,28 +53,28 @@ namespace CCXT.NET.Coinone.Public
         /// </summary>
         /// <param name="currency">Default value: btc, Allowed values: btc, eth, etc, xrp</param>
         /// <returns></returns>
-        public async Task<PublicTicker> Ticker(string currency)
+        public async Task<CTicker> Ticker(string currency)
         {
             var _params = new Dictionary<string, object>();
             {
                 _params.Add("currency", currency);
             }
 
-            return await PublicClient.CallApiGetAsync<PublicTicker>("/ticker", _params);
+            return await PublicClient.CallApiGetAsync<CTicker>("/ticker", _params);
         }
 
         /// <summary>
         /// Public - TickerAll
         /// </summary>
         /// <returns></returns>
-        public async Task<PublicTickerAll> TickerAll()
+        public async Task<CTickerAll> TickerAll()
         {
             var _params = new Dictionary<string, object>();
             {
                 _params.Add("currency", "all");
             }
 
-            return await PublicClient.CallApiGetAsync<PublicTickerAll>("/ticker", _params);
+            return await PublicClient.CallApiGetAsync<CTickerAll>("/ticker", _params);
         }
 
         /// <summary>
@@ -83,7 +83,7 @@ namespace CCXT.NET.Coinone.Public
         /// <param name="currency">Default value: btc, Allowed values: btc, eth, etc, xrp</param>
         /// <param name="period">Default value: hour, Allowed values: hour, day</param>
         /// <returns></returns>
-        public async Task<PublicTrades> Trades(string currency, string period)
+        public async Task<CTrades> Trades(string currency, string period)
         {
             var _params = new Dictionary<string, object>();
             {
@@ -91,7 +91,7 @@ namespace CCXT.NET.Coinone.Public
                 _params.Add("period", period);
             }
 
-            return await PublicClient.CallApiGetAsync<PublicTrades>("/trades", _params);
+            return await PublicClient.CallApiGetAsync<CTrades>("/trades", _params);
         }
     }
 }

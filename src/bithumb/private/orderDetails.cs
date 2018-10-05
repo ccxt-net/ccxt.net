@@ -6,7 +6,7 @@ namespace CCXT.NET.Bithumb.Private
     /// <summary>
     /// 
     /// </summary>
-    public class OrderDetail
+    public class BOrderDetail
     {   
         /// <summary>
         /// 체결 시간 Timestamp
@@ -84,14 +84,14 @@ namespace CCXT.NET.Bithumb.Private
     /// <summary>
     /// 판/구매 거래 주문 등록 또는 진행 중인 거래
     /// </summary>
-    public class OrderDetails : ApiResult<List<OrderDetail>>
+    public class BOrderDetails : ApiResult<List<BOrderDetail>>
     {
         /// <summary>
         /// 
         /// </summary>
-        public OrderDetails()
+        public BOrderDetails()
         {
-            this.result = new List<OrderDetail>();
+            this.result = new List<BOrderDetail>();
         }
     }
 }

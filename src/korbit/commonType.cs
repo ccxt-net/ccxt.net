@@ -8,11 +8,17 @@
         /// <summary>
         /// 
         /// </summary>
-        public string currency;
+        public string currency
+        {
+            get; set;
+        }
 
         /// <summary>
         /// 
         /// </summary>
-        public decimal value;
+        public decimal value
+        {
+            get; set;
+        }
     }
 }

@@ -12,7 +12,7 @@ namespace CCXT.NET.Bithumb.Public
     /// bithumb 거래소 거래 체결 완료 내역
     /// * {currency} = BTC, ETH, DASH, LTC, ETC, XRP (기본값: BTC)
     /// </summary>
-    public class CompleteOrder
+    public class BCompleteOrderItem
     {
         /// <summary>
         /// 
@@ -24,7 +24,7 @@ namespace CCXT.NET.Bithumb.Public
         /// <param name="price"></param>
         /// <param name="total"></param>
         [JsonConstructor]
-        public CompleteOrder(string cont_no, string transaction_date, string type, string units_traded, string price, string total)
+        public BCompleteOrderItem(string cont_no, string transaction_date, string type, string units_traded, string price, string total)
         {
             this.cont_no = Convert.ToInt64(cont_no);
 
@@ -96,14 +96,14 @@ namespace CCXT.NET.Bithumb.Public
     /// <summary>
     /// 
     /// </summary>
-    public class CompleteOrders : ApiResult<List<CompleteOrder>>
+    public class BcompleteOrders : ApiResult<List<BCompleteOrderItem>>
     {
         /// <summary>
         /// 
         /// </summary>
-        public CompleteOrders()
+        public BcompleteOrders()
         {
-            this.result = new List<CompleteOrder>();
+            this.result = new List<BCompleteOrderItem>();
         }
     }
 }

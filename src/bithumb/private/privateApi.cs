@@ -37,14 +37,14 @@ namespace CCXT.NET.Bithumb.Private
         /// </summary>
         /// <param name="currency">BTC, ETH, DASH, LTC, ETC, XRP (기본값: BTC)</param>
         /// <returns></returns>
-        public async Task<Account> FetchAccount(string currency)
+        public async Task<BAccount> FetchAccount(string currency)
         {
             var _params = new Dictionary<string, object>();
             {
                 _params.Add("currency", currency.ToUpper());
             }
 
-            return await privateClient.CallApiPostAsync<Account>("/info/account", _params);
+            return await privateClient.CallApiPostAsync<BAccount>("/info/account", _params);
         }
 
         /// <summary>
@@ -52,14 +52,14 @@ namespace CCXT.NET.Bithumb.Private
         /// </summary>
         /// <param name="currency">BTC, ETH, DASH, LTC, ETC, XRP (기본값: BTC)</param>
         /// <returns></returns>
-        public async Task<Balances> FetchBalances(string currency = "ALL")
+        public async Task<BBalances> FetchBalances(string currency = "ALL")
         {
             var _params = new Dictionary<string, object>();
             {
                 _params.Add("currency", currency.ToUpper());
             }
 
-            return await privateClient.CallApiPostAsync<Balances>("/info/balance", _params);
+            return await privateClient.CallApiPostAsync<BBalances>("/info/balance", _params);
         }
 
         /// <summary>
@@ -67,14 +67,14 @@ namespace CCXT.NET.Bithumb.Private
         /// </summary>
         /// <param name="currency">BTC, ETH, DASH, LTC, ETC, XRP (기본값: BTC)</param>
         /// <returns></returns>
-        public async Task<Wallet> FetchAddress(string currency)
+        public async Task<BWallet> FetchAddress(string currency)
         {
             var _params = new Dictionary<string, object>();
             {
                 _params.Add("currency", currency.ToUpper());
             }
 
-            return await privateClient.CallApiPostAsync<Wallet>("/info/wallet_address", _params);
+            return await privateClient.CallApiPostAsync<BWallet>("/info/wallet_address", _params);
         }
 
         /// <summary>
@@ -83,7 +83,7 @@ namespace CCXT.NET.Bithumb.Private
         /// <param name="order_currency">BTC, ETH, DASH, LTC, ETC, XRP (기본값: BTC)</param>
         /// <param name="payment_currency">KRW (현재 bithumb에서 제공하는 통화 KRW)</param>
         /// <returns></returns>
-        public async Task<Ticker> FetchTicker(string order_currency, string payment_currency = "KRW")
+        public async Task<BTicker> FetchTicker(string order_currency, string payment_currency = "KRW")
         {
             var _params = new Dictionary<string, object>();
             {
@@ -91,7 +91,7 @@ namespace CCXT.NET.Bithumb.Private
                 _params.Add("payment_currency", payment_currency);
             }
 
-            return await privateClient.CallApiPostAsync<Ticker>("/info/ticker", _params);
+            return await privateClient.CallApiPostAsync<BTicker>("/info/ticker", _params);
         }
 
         /// <summary>
@@ -101,7 +101,7 @@ namespace CCXT.NET.Bithumb.Private
         /// <param name="order_id">판/구매 주문 등록된 주문번호</param>
         /// <param name="type">거래유형 (bid : 구매, ask : 판매)</param>
         /// <returns></returns>
-        public async Task<OrderDetails> FetchOrderDetails(string currency, string order_id, string type)
+        public async Task<BOrderDetails> FetchOrderDetails(string currency, string order_id, string type)
         {
             var _params = new Dictionary<string, object>();
             {
@@ -110,7 +110,7 @@ namespace CCXT.NET.Bithumb.Private
                 _params.Add("type", type);
             }
 
-            return await privateClient.CallApiPostAsync<OrderDetails>("/info/order_detail", _params);
+            return await privateClient.CallApiPostAsync<BOrderDetails>("/info/order_detail", _params);
         }
 
         /// <summary>
@@ -122,7 +122,7 @@ namespace CCXT.NET.Bithumb.Private
         /// <param name="count">Value : 1 ~1000 (default : 100)</param>
         /// <param name="after">YYYY-MM-DD hh:mm:ss 의 UNIX Timestamp (2014-11-28 16:40:01 = 1417160401000)</param>
         /// <returns></returns>
-        public async Task<OpenOrders> FetchOpenOrders(string currency, string order_id = "", string type = "", int count = 100, long after = 0)
+        public async Task<BOpenOrders> FetchOpenOrders(string currency, string order_id = "", string type = "", int count = 100, long after = 0)
         {
             var _params = new Dictionary<string, object>();
             {
@@ -133,7 +133,7 @@ namespace CCXT.NET.Bithumb.Private
                 _params.Add("after", after);
             }
 
-            return await privateClient.CallApiPostAsync<OpenOrders>("/info/orders", _params);
+            return await privateClient.CallApiPostAsync<BOpenOrders>("/info/orders", _params);
         }
 
         /// <summary>
@@ -144,7 +144,7 @@ namespace CCXT.NET.Bithumb.Private
         /// <param name="count">Value : 1 ~ 50 (default : 20)</param>
         /// <param name="searchGb">	0 : 전체, 1 : 구매완료, 2 : 판매완료, 3 : 출금중, 4 : 입금, 5 : 출금, 9 : KRW입금중</param>
         /// <returns></returns>
-        public async Task<CompleteOrders> FetchTrades(string currency, int offset = 0, int count = 20, int searchGb = 0)
+        public async Task<BTransfers> FetchTrades(string currency, int offset = 0, int count = 20, int searchGb = 0)
         {
             var _params = new Dictionary<string, object>();
             {
@@ -154,7 +154,7 @@ namespace CCXT.NET.Bithumb.Private
                 _params.Add("searchGb", searchGb);
             }
 
-            return await privateClient.CallApiPostAsync<CompleteOrders>("/info/user_transactions", _params);
+            return await privateClient.CallApiPostAsync<BTransfers>("/info/user_transactions", _params);
         }
     }
 }

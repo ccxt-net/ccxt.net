@@ -5,7 +5,7 @@ namespace CCXT.NET.Bithumb.Private
     /// <summary>
     /// bithumb 거래소 회원 지갑 정보
     /// </summary>
-    public class WalletItem
+    public class BWalletItem
     {
         /// <summary>
         /// BTC, ETH, DASH, LTC, ETC, XRP
@@ -29,14 +29,14 @@ namespace CCXT.NET.Bithumb.Private
     /// <summary>
     /// bithumb 거래소 회원 지갑 정보
     /// </summary>
-    public class Wallet : ApiResult<WalletItem>
+    public class BWallet : ApiResult<BWalletItem>
     {
         /// <summary>
         /// 
         /// </summary>
-        public Wallet()
+        public BWallet()
         {
-            this.result = new WalletItem();
+            this.result = new BWalletItem();
         }
     }
 }

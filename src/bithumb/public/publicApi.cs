@@ -58,9 +58,9 @@ namespace CCXT.NET.Bithumb.Public
         /// bithumb 거래소 마지막 거래 정보
         /// </summary>
         /// <returns></returns>
-        public async Task<Tickers> FetchTickers()
+        public async Task<BTickers> FetchTickers()
         {
-            return await publicClient.CallApiGetAsync<Tickers>($"/public/ticker/ALL");
+            return await publicClient.CallApiGetAsync<BTickers>($"/public/ticker/ALL");
         }
 
         /// <summary>
@@ -88,7 +88,7 @@ namespace CCXT.NET.Bithumb.Public
         /// <param name="cont_no">체결번호</param>
         /// <param name="count">Value : 1 ~ 100 (Default : 20)</param>
         /// <returns></returns>
-        public async Task<CompleteOrders> FetchTrades(string currency, int cont_no = 0, int count = 20)
+        public async Task<BcompleteOrders> FetchTrades(string currency, int cont_no = 0, int count = 20)
         {
             var _params = new Dictionary<string, object>();
             {
@@ -98,7 +98,7 @@ namespace CCXT.NET.Bithumb.Public
                 _params.Add("count", count);
             }
 
-            return await publicClient.CallApiGetAsync<CompleteOrders>($"/public/transaction_history/{currency.ToUpper()}", _params);
+            return await publicClient.CallApiGetAsync<BcompleteOrders>($"/public/transaction_history/{currency.ToUpper()}", _params);
         }
     }
 }

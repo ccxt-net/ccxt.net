@@ -8,7 +8,7 @@ namespace CCXT.NET.Bithumb.Public
     /// bithumb 거래소 판/구매 등록 대기 또는 거래 중 내역 정보
     /// * {currency} = BTC, ETH, DASH, LTC, ETC, XRP (기본값: BTC), ALL(전체)
     /// </summary>
-    public class OrderBookItem
+    public class BOrderBookItem
     {
         /// <summary>
         /// Currency 수량
@@ -32,7 +32,7 @@ namespace CCXT.NET.Bithumb.Public
     /// <summary>
     /// 
     /// </summary>
-    public class OrderBook
+    public class BOrderBook
     {
         /// <summary>
         /// 현재 시간 Timestamp
@@ -64,7 +64,7 @@ namespace CCXT.NET.Bithumb.Public
         /// <summary>
         /// 구매요청
         /// </summary>
-        public List<OrderBookItem> bids
+        public List<BOrderBookItem> bids
         {
             get;
             set;
@@ -73,7 +73,7 @@ namespace CCXT.NET.Bithumb.Public
         /// <summary>
         /// 판매요청
         /// </summary>
-        public List<OrderBookItem> asks
+        public List<BOrderBookItem> asks
         {
             get;
             set;
@@ -83,14 +83,14 @@ namespace CCXT.NET.Bithumb.Public
     /// <summary>
     /// 
     /// </summary>
-    public class OrderBooks : ApiResult<OrderBook>
+    public class OrderBooks : ApiResult<BOrderBook>
     {
         /// <summary>
         /// 
         /// </summary>
         public OrderBooks()
         {
-            this.result = new OrderBook();
+            this.result = new BOrderBook();
         }
     }
 }

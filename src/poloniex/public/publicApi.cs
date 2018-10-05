@@ -36,14 +36,14 @@ namespace CCXT.NET.Poloniex.Public
         /// poloniex 거래소 마지막 거래 정보
         /// </summary>
         /// <returns></returns>
-        public async Task<Dictionary<string, PublicTicker>> GetTicker()
+        public async Task<Dictionary<string, PTickerItem>> GetTicker()
         {
             var _params = new Dictionary<string, object>();
             {
                 _params.Add("command", "returnTicker");
             }
 
-            return await PublicClient.CallApiGetAsync<Dictionary<string, PublicTicker>>(__end_point, _params);
+            return await PublicClient.CallApiGetAsync<Dictionary<string, PTickerItem>>(__end_point, _params);
         }
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace CCXT.NET.Poloniex.Public
         /// <param name="currency_pair"></param>
         /// <param name="depth"></param>
         /// <returns></returns>
-        public async Task<PublicOrderBook> GetOrderBook(CurrencyPair currency_pair, uint depth)
+        public async Task<POrderBooks> GetOrderBook(CurrencyPair currency_pair, uint depth)
         {
             var _params = new Dictionary<string, object>();
             {
@@ -61,7 +61,7 @@ namespace CCXT.NET.Poloniex.Public
                 _params.Add("depth", depth);
             }
 
-            return await PublicClient.CallApiGetAsync<PublicOrderBook>(__end_point, _params);
+            return await PublicClient.CallApiGetAsync<POrderBooks>(__end_point, _params);
         }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace CCXT.NET.Poloniex.Public
         /// </summary>
         /// <param name="currency_pair"></param>
         /// <returns></returns>
-        public async Task<List<PublicTrade>> GetTradeHistory(CurrencyPair currency_pair)
+        public async Task<List<PTradeItem>> GetTradeHistory(CurrencyPair currency_pair)
         {
             var _params = new Dictionary<string, object>();
             {
@@ -77,7 +77,7 @@ namespace CCXT.NET.Poloniex.Public
                 _params.Add("currencyPair", currency_pair);
             }
 
-            return await PublicClient.CallApiGetAsync<List<PublicTrade>>(__end_point, _params);
+            return await PublicClient.CallApiGetAsync<List<PTradeItem>>(__end_point, _params);
         }
 
         /// <summary>
@@ -87,7 +87,7 @@ namespace CCXT.NET.Poloniex.Public
         /// <param name="start_time"></param>
         /// <param name="end_time"></param>
         /// <returns></returns>
-        public async Task<List<PublicTrade>> GetTradeHistory(CurrencyPair currency_pair, DateTime start_time, DateTime end_time)
+        public async Task<List<PTradeItem>> GetTradeHistory(CurrencyPair currency_pair, DateTime start_time, DateTime end_time)
         {
             var _params = new Dictionary<string, object>();
             {
@@ -97,7 +97,7 @@ namespace CCXT.NET.Poloniex.Public
                 _params.Add("end", end_time.DateTimeToUnixTimeStamp());
             }
 
-            return await PublicClient.CallApiGetAsync<List<PublicTrade>>(__end_point, _params);
+            return await PublicClient.CallApiGetAsync<List<PTradeItem>>(__end_point, _params);
         }
 
         /// <summary>
@@ -108,7 +108,7 @@ namespace CCXT.NET.Poloniex.Public
         /// <param name="start_time"></param>
         /// <param name="end_time"></param>
         /// <returns></returns>
-        public async Task<List<PublicChart>> GetChartData(CurrencyPair currency_pair, ChartPeriod period, DateTime start_time, DateTime end_time)
+        public async Task<List<POhlcvItem>> GetChartData(CurrencyPair currency_pair, ChartPeriod period, DateTime start_time, DateTime end_time)
         {
             var _params = new Dictionary<string, object>();
             {
@@ -119,7 +119,7 @@ namespace CCXT.NET.Poloniex.Public
                 _params.Add("period", (int)period);
             }
 
-            return await PublicClient.CallApiGetAsync<List<PublicChart>>(__end_point, _params);
+            return await PublicClient.CallApiGetAsync<List<POhlcvItem>>(__end_point, _params);
         }
     }
 }

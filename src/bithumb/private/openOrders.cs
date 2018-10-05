@@ -1,13 +1,13 @@
-﻿using System.Collections.Generic;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using OdinSdk.BaseLib.Coin;
+using System.Collections.Generic;
 
 namespace CCXT.NET.Bithumb.Private
 {
     /// <summary>
     /// 
     /// </summary>
-    public class OpenOrder
+    public class BOpenOrderItem
     {
         /// <summary>
         /// 
@@ -134,14 +134,14 @@ namespace CCXT.NET.Bithumb.Private
     /// <summary>
     /// 판/구매 거래 주문 등록 또는 진행 중인 거래
     /// </summary>
-    public class OpenOrders : ApiResult<List<OpenOrder>>
+    public class BOpenOrders : ApiResult<List<BOpenOrderItem>>
     {
         /// <summary>
         /// 
         /// </summary>
-        public OpenOrders()
+        public BOpenOrders()
         {
-            this.result = new List<OpenOrder>();
+            this.result = new List<BOpenOrderItem>();
         }
     }
 }

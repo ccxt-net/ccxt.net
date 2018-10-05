@@ -41,7 +41,7 @@ namespace CCXT.NET.Bithumb.Trade
         /// <param name="payment_currency">KRW (기본값)</param>
         /// <param name="misu">신용거래(Y : 사용, N : 일반) – 추후 제공</param>
         /// <returns></returns>
-        public async Task<Place> PlaceLimitBuy(string order_currency, decimal units, decimal price, string payment_currency = "KRW", string misu = "N")
+        public async Task<BPlaces> PlaceLimitBuy(string order_currency, decimal units, decimal price, string payment_currency = "KRW", string misu = "N")
         {
             var _params = new Dictionary<string, object>();
             {
@@ -53,7 +53,7 @@ namespace CCXT.NET.Bithumb.Trade
                 _params.Add("misu", misu);
             }
 
-            return await tradeClient.CallApiPostAsync<Place>("/trade/place", _params);
+            return await tradeClient.CallApiPostAsync<BPlaces>("/trade/place", _params);
         }
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace CCXT.NET.Bithumb.Trade
         /// <param name="payment_currency">KRW (기본값)</param>
         /// <param name="misu">신용거래(Y : 사용, N : 일반) – 추후 제공</param>
         /// <returns></returns>
-        public async Task<Place> PlaceLimitSell(string order_currency, decimal units, decimal price, string payment_currency = "KRW", string misu = "N")
+        public async Task<BPlaces> PlaceLimitSell(string order_currency, decimal units, decimal price, string payment_currency = "KRW", string misu = "N")
         {
             var _params = new Dictionary<string, object>();
             {
@@ -77,7 +77,7 @@ namespace CCXT.NET.Bithumb.Trade
                 _params.Add("misu", misu);
             }
 
-            return await tradeClient.CallApiPostAsync<Place>("/trade/place", _params);
+            return await tradeClient.CallApiPostAsync<BPlaces>("/trade/place", _params);
         }
 
         /// <summary>
@@ -86,7 +86,7 @@ namespace CCXT.NET.Bithumb.Trade
         /// <param name="currency">BTC, ETH, DASH, LTC, ETC, XRP (기본값: BTC)</param>
         /// <param name="units">주문 수량, 1회 최소 수량 (BTC: 0.0001 | ETH: 0.001 | DASH: 0.001 | LTC: 0.01 | ETC: 0.01 | XRP: 1) - 1회 거래 한도 : 1억원</param>
         /// <returns></returns>
-        public async Task<PlaceMarket> PlaceMarketBuy(string currency, decimal units)
+        public async Task<BPlaceMarkets> PlaceMarketBuy(string currency, decimal units)
         {
             var _params = new Dictionary<string, object>();
             {
@@ -94,7 +94,7 @@ namespace CCXT.NET.Bithumb.Trade
                 _params.Add("units", units);
             }
 
-            return await tradeClient.CallApiPostAsync<PlaceMarket>("/trade/market_buy", _params);
+            return await tradeClient.CallApiPostAsync<BPlaceMarkets>("/trade/market_buy", _params);
         }
 
         /// <summary>
@@ -103,7 +103,7 @@ namespace CCXT.NET.Bithumb.Trade
         /// <param name="currency">BTC, ETH, DASH, LTC, ETC, XRP (기본값: BTC)</param>
         /// <param name="units">주문 수량, 1회 최소 수량 (BTC: 0.0001 | ETH: 0.001 | DASH: 0.001 | LTC: 0.01 | ETC: 0.01 | XRP: 1) - 1회 거래 한도 : 1억원</param>
         /// <returns></returns>
-        public async Task<PlaceMarket> PlaceMarketSell(string currency, decimal units)
+        public async Task<BPlaceMarkets> PlaceMarketSell(string currency, decimal units)
         {
             var _params = new Dictionary<string, object>();
             {
@@ -111,7 +111,7 @@ namespace CCXT.NET.Bithumb.Trade
                 _params.Add("units", units);
             }
 
-            return await tradeClient.CallApiPostAsync<PlaceMarket>("/trade/market_sell", _params);
+            return await tradeClient.CallApiPostAsync<BPlaceMarkets>("/trade/market_sell", _params);
         }
 
         /// <summary>
@@ -121,7 +121,7 @@ namespace CCXT.NET.Bithumb.Trade
         /// <param name="order_id">판/구매 주문 등록된 주문번호</param>
         /// <param name="type">거래유형 (bid : 구매, ask : 판매)</param>
         /// <returns></returns>
-        public async Task<Cancel> CancelOrder(string currency, string order_id, string type)
+        public async Task<BCancel> CancelOrder(string currency, string order_id, string type)
         {
             var _params = new Dictionary<string, object>();
             {
@@ -130,7 +130,7 @@ namespace CCXT.NET.Bithumb.Trade
                 _params.Add("type", type);
             }
 
-            return await tradeClient.CallApiPostAsync<Cancel>("/trade/cancel", _params);
+            return await tradeClient.CallApiPostAsync<BCancel>("/trade/cancel", _params);
         }
 
         /// <summary>
@@ -141,7 +141,7 @@ namespace CCXT.NET.Bithumb.Trade
         /// <param name="address">Currency 출금 주소 (BTC, ETH, DASH, LTC, ETC, XRP)</param>
         /// <param name="destination">Currency 출금 Destination Tag (XRP 출금시)</param>
         /// <returns></returns>
-        public async Task<Withdraw> BtcWithdrawal(string currency, decimal units, string address, string destination = null)
+        public async Task<BWithdraw> BtcWithdrawal(string currency, decimal units, string address, string destination = null)
         {
             var _params = new Dictionary<string, object>();
             {
@@ -152,7 +152,7 @@ namespace CCXT.NET.Bithumb.Trade
                     _params.Add("destination", destination);
             }
 
-            return await tradeClient.CallApiPostAsync<Withdraw>("/trade/btc_withdrawal", _params);
+            return await tradeClient.CallApiPostAsync<BWithdraw>("/trade/btc_withdrawal", _params);
         }
 
         /// <summary>
@@ -162,7 +162,7 @@ namespace CCXT.NET.Bithumb.Trade
         /// <param name="account">출금계좌번호</param>
         /// <param name="price">출금 금액</param>
         /// <returns></returns>
-        public async Task<Withdraw> KrwWithdrawal(string bank, string account, decimal price)
+        public async Task<BWithdraw> KrwWithdrawal(string bank, string account, decimal price)
         {
             var _params = new Dictionary<string, object>();
             {
@@ -171,16 +171,16 @@ namespace CCXT.NET.Bithumb.Trade
                 _params.Add("price", price);
             }
 
-            return await tradeClient.CallApiPostAsync<Withdraw>("/trade/krw_withdrawal", _params);
+            return await tradeClient.CallApiPostAsync<BWithdraw>("/trade/krw_withdrawal", _params);
         }
 
         /// <summary>
         /// bithumb 회원 krw 입금 가상계좌 정보 요청
         /// </summary>
         /// <returns></returns>
-        public async Task<KrwDeposit> KrwDeposit()
+        public async Task<BKrwDeposit> KrwDeposit()
         {
-            return await tradeClient.CallApiPostAsync<KrwDeposit>("/trade/krw_deposit");
+            return await tradeClient.CallApiPostAsync<BKrwDeposit>("/trade/krw_deposit");
         }
     }
 }

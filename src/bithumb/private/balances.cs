@@ -5,7 +5,7 @@ namespace CCXT.NET.Bithumb.Private
     /// <summary>
     /// bithumb 거래소 회원 지갑 정보
     /// </summary>
-    public class Balance
+    public class BBalanceItem
     {
         /// <summary>
         /// 전체 KRW
@@ -633,14 +633,14 @@ namespace CCXT.NET.Bithumb.Private
     /// <summary>
     /// bithumb 거래소 회원 지갑 정보
     /// </summary>
-    public class Balances : ApiResult<Balance>
+    public class BBalances : ApiResult<BBalanceItem>
     {
         /// <summary>
         /// 
         /// </summary>
-        public Balances()
+        public BBalances()
         {
-            this.result = new Balance();
+            this.result = new BBalanceItem();
         }
 
         /// <summary>
