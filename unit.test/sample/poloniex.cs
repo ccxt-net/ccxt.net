@@ -2,7 +2,7 @@
 using CCXT.NET.Poloniex.Private;
 using CCXT.NET.Poloniex.Public;
 using CCXT.NET.Poloniex.Trade;
-using CCXT.NET.Types;
+using OdinSdk.BaseLib.Coin.Types;
 using OdinSdk.BaseLib.Configuration;
 using System;
 using System.Linq;
