@@ -93,7 +93,7 @@ namespace CCXT.NET.Poloniex.Trade
 
             var _json_result = TradeClient.GetResponseMessage(_json_value.Response);
             if (_json_result.success == true)
-                _result = await TradeClient.CallApiPostAsync<List<PTradeOrderItem>>(__end_point, _params);
+                _result = TradeClient.DeserializeObject<List<PTradeOrderItem>>(_json_value.Content);
 
             return _result;
         }

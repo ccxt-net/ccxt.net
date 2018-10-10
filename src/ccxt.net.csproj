@@ -38,11 +38,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="2.1.2" />
     <PackageReference Include="OdinSdk.BaseLib" Version="2.1.4" />
-    <PackageReference Include="RestSharp" Version="106.4.2" />
-    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.2.4" />
-    <PackageReference Include="Telegram.Bot" Version="14.10.0" />
   </ItemGroup>
 
 </Project>
