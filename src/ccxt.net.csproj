@@ -41,4 +41,8 @@
     <PackageReference Include="OdinSdk.BaseLib" Version="2.1.4" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="bitmex\" />
+  </ItemGroup>
+
 </Project>
