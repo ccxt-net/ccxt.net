@@ -83,7 +83,7 @@ We are investing a significant amount of time into the development of this libra
 
 ### Nuget
 
- > Install-Package CCXT.NET -Version 1.0.1
+ > Install-Package CCXT.NET -Version 1.1.0
 
 ### Crypto Donation
 
