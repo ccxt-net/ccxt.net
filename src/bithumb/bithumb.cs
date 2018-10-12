@@ -1,9 +1,8 @@
-﻿using OdinSdk.BaseLib.Coin;
-using OdinSdk.BaseLib.Configuration;
+﻿using Newtonsoft.Json.Linq;
+using OdinSdk.BaseLib.Coin;
 using RestSharp;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,184 +12,253 @@ namespace CCXT.NET.Bithumb
     /// <summary>
     /// 
     /// </summary>
-    public class BithumbClient : XApiClient
+    public sealed class BithumbClient : OdinSdk.BaseLib.Coin.XApiClient, IXApiClient
     {
-        private const string __api_url = "https://api.bithumb.com";
+        /// <summary>
+        /// 
+        /// </summary>
+        public override string DealerName { get; set; } = "Bithumb";
 
         /// <summary>
         /// 
         /// </summary>
-        public BithumbClient(string connect_key, string secret_key)
-            : this(__api_url, connect_key, secret_key)
+        /// <param name="division">exchange's division for communication</param>
+        public BithumbClient(string division)
+            : base(division)
         {
         }
+
         /// <summary>
         /// 
         /// </summary>
-        public BithumbClient(string api_url, string connect_key, string secret_key)
-            : base(api_url, connect_key, secret_key)
+        /// <param name="division">exchange's division for communication</param>
+        /// <param name="connect_key">exchange's api key for connect</param>
+        /// <param name="secret_key">exchange's secret key for signature</param>
+        public BithumbClient(string division, string connect_key, string secret_key)
+            : base(division, connect_key, secret_key, authentication: true)
         {
         }
 
         /// <summary>
-        /// 결과 메시지
+        /// information of exchange for trading
         /// </summary>
-        public string getErrorMessage(int status)
+        public override ExchangeInfo ExchangeInfo
         {
-            var _result = "";
-
-            switch (status)
+            get
             {
-                case 0:
-                    _result = "success";
-                    break;
-                case 5100:
-                    _result = "bad request";
-                    break;
-                case 5200:
-                    _result = "not member";
-                    break;
-                case 5300:
-                    _result = "invalid apikey";
-                    break;
-                case 5302:
-                    _result = "method not allowed";
-                    break;
-                case 5400:
-                    _result = "database fail";
-                    break;
-                case 5500:
-                    _result = "invalid parameter";
-                    break;
-                case 5600:
-                    _result = "custom notice(output error messages in context)";
-                    break;
-                case 5900:
-                    _result = "unknown error";
-                    break;
-                default:
-                    _result = "unknown error";
-                    break;
-            }
+                if (base.ExchangeInfo == null)
+                {
+                    base.ExchangeInfo = new ExchangeInfo(this.DealerName)
+                    {
+                        Countries = new List<string>
+                        {
+                            "KR"
+                        },
+                        Urls = new ExchangeUrls
+                        {
+                            logo = "https://user-images.githubusercontent.com/1294454/30597177-ea800172-9d5e-11e7-804c-b9d4fa9b56b0.jpg",
+                            api = new Dictionary<string, string>
+                            {
+                                { "public", "https://api.bithumb.com/public" },
+                                { "private", "https://api.bithumb.com" },
+                                { "trade", "https://api.bithumb.com" },
+                                { "web", "https://www.bithumb.com" }
+                            },
+                            www = "https://www.bithumb.com",
+                            doc = new List<string>
+                            {
+                                "https://www.bithumb.com/u1/US127"
+                            }
+                        },
+                        RequiredCredentials = new RequiredCredentials
+                        {
+                            apikey = true,
+                            secret = true,
+                            uid = false,
+                            login = false,
+                            password = false,
+                            twofa = false
+                        },
+                        LimitRate = new ExchangeLimitRate
+                        {
+                            useTotal = false,
+                            token = new ExchangeLimitCalled { rate = 60000 },            // 120 request per minute
+                            @public = new ExchangeLimitCalled { rate = 500 },
+                            @private = new ExchangeLimitCalled { rate = 500 },
+                            trade = new ExchangeLimitCalled { rate = 500 },
+                            total = new ExchangeLimitCalled { rate = 500 }
+                        },
+                        Fees = new MarketFees
+                        {
+                            trading = new MarketFee
+                            {
+                                tierBased = false,      // true for tier-based/progressive
+                                percentage = false,     // fixed commission
 
-            return _result;
+                                maker = 0.15m / 100m,
+                                taker = 0.15m / 100m
+                            }
+                        },
+                        Timeframes = new Dictionary<string, string>
+                        {
+                            { "1m", "01M"},
+                            { "3m", "03M"},
+                            { "5m", "05M"},
+                            { "10m", "10M"},
+                            { "30m", "30M"},
+                            { "1h", "01H"},
+                            { "6h", "06H"},
+                            { "12h", "12H"},
+                            { "1d", "24H"}
+                        }
+                    };
+                }
+
+                return base.ExchangeInfo;
+            }
         }
 
-        private static char[] __to_digits = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };
+        private HMACSHA512 __encryptor = null;
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="data"></param>
-        /// <returns></returns>
-        public byte[] EncodeHex(byte[] data)
+        public HMACSHA512 Encryptor
         {
-            int l = data.Length;
-            byte[] _result = new byte[l << 1];
-
-            // two characters form the hex value.
-            for (int i = 0, j = 0; i < l; i++)
+            get
             {
-                _result[j++] = (byte)__to_digits[(0xF0 & data[i]) >> 4];
-                _result[j++] = (byte)__to_digits[0x0F & data[i]];
+                if (__encryptor == null)
+                    __encryptor = new HMACSHA512(Encoding.UTF8.GetBytes(SecretKey));
+
+                return __encryptor;
             }
-
-            return _result;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="rgData"></param>
+        /// <param name="endpoint">api link address of a function</param>
+        /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public string EncodeURIComponent(Dictionary<string, object> rgData)
+        public override async Task<IRestRequest> CreatePostRequest(string endpoint, Dictionary<string, object> args = null)
         {
-            string _result = String.Join("&", rgData.Select((x) => String.Format("{0}={1}", x.Key, x.Value)));
+            var _request = await base.CreatePostRequest(endpoint, args);
 
-            _result = System.Net.WebUtility.UrlEncode(_result)
-                        .Replace("+", "%20").Replace("%21", "!")
-                        .Replace("%27", "'").Replace("%28", "(")
-                        .Replace("%29", ")").Replace("%26", "&")
-                        .Replace("%3D", "=").Replace("%7E", "~");
-
-            return _result;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="endpoint"></param>
-        /// <param name="rgData"></param>
-        /// <param name="apiKey"></param>
-        /// <param name="apiSecret"></param>
-        /// <returns></returns>
-        private Dictionary<string, object> GetHttpHeaders(string endpoint, Dictionary<string, object> rgData, string apiKey, string apiSecret)
-        {
-            var _nonce = CUnixTime.NowMilli.ToString();
-            var _data = EncodeURIComponent(rgData);
-            var _message = String.Format("{0};{1};{2}", endpoint, _data, _nonce);
-
-            var _secretKey = Encoding.UTF8.GetBytes(apiSecret);
-            var _hmac = new HMACSHA512(_secretKey);
-            _hmac.Initialize();
-
-            var _bytes = Encoding.UTF8.GetBytes(_message);
-            var _rawHmac = _hmac.ComputeHash(_bytes);
-
-            var _encoded = EncodeHex(_rawHmac);
-            var _signature = Convert.ToBase64String(_encoded);
-
-            var _headers = new Dictionary<string, object>();
-            {
-                _headers.Add("Api-Key", apiKey);
-                _headers.Add("Api-Sign", _signature);
-                _headers.Add("Api-Nonce", _nonce);
-            }
-
-            return _headers;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="endpoint"></param>
-        /// <param name="args"></param>
-        /// <returns></returns>
-        public override async Task<string> CallApiPostAsync(string endpoint, Dictionary<string, object> args = null)
-        {
-            var _request = CreateJsonRequest(endpoint, Method.POST);
+            if (IsAuthentication == true)
             {
                 var _params = new Dictionary<string, object>();
                 {
-                    _params.Add("endpoint", endpoint);
-                    if (args != null)
+                    foreach (var _param in _request.Parameters)
+                        _params.Add(_param.Name, _param.Value);
+
+                    _request.Parameters.Clear();
+                }
+
+                _params.Add("endpoint", endpoint);
+
+                var _post_data = ToQueryString2(_params);
+                {
+                    var _nonce = GenerateOnlyNonce(13).ToString();
+
+                    var _sign_data = $"{endpoint}\0{_post_data}\0{_nonce}";
+                    var _sign_hash = Encryptor.ComputeHash(Encoding.UTF8.GetBytes(_sign_data));
+
+                    var _signature = Convert.ToBase64String(Encoding.UTF8.GetBytes(ConvertHexString(_sign_hash).ToLower()));
                     {
-                        foreach (var a in args)
-                            _params.Add(a.Key, a.Value);
+                        _request.AddHeader("Api-Key", ConnectKey);
+                        _request.AddHeader("Api-Sign", _signature);
+                        _request.AddHeader("Api-Nonce", _nonce);
+                    }
+
+                    _request.AddParameter(new Parameter
+                    {
+                        ContentType = "",
+                        Name = "application/x-www-form-urlencoded",
+                        Type = ParameterType.RequestBody,
+                        Value = _post_data
+                    });
+                }
+            }
+
+            return await Task.FromResult(_request);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public new Dictionary<int, string> ErrorMessages = new Dictionary<int, string>
+        {
+            { 0,    "success" },
+            { 5100, "bad request" },
+            { 5200, "not member" },
+            { 5300, "invalid apikey" },
+            { 5302, "method not allowed" },
+            { 5400, "database fail" },
+            { 5500, "invalid parameter" },
+            { 5600, "custom notice(output error messages in context)" },
+            { 5900, "unknown error" }
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="error_code"></param>
+        /// <returns></returns>
+        public override string GetErrorMessage(int error_code)
+        {
+            return ErrorMessages.ContainsKey(error_code) == true
+                                  ? ErrorMessages[error_code]
+                                  : "failure";
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="response">response value arrive from exchange's server</param>
+        /// <returns></returns>
+        public override BoolResult GetResponseMessage(IRestResponse response = null)
+        {
+            var _result = new BoolResult();
+
+            if (response != null)
+            {
+                if (String.IsNullOrEmpty(response.Content) == false && (response.Content[0] == '{' || response.Content[0] == '['))
+                {
+                    var _json_result = this.DeserializeObject<JToken>(response.Content);
+
+                    var _json_status = _json_result.SelectToken("status");
+                    if (_json_status != null)
+                    {
+                        var _status_code = _json_status.Value<int>();
+                        if (_status_code != 0)
+                        {
+                            var _message = GetErrorMessage(_status_code);
+
+                            var _json_message = _json_result.SelectToken("message");
+                            if (_json_message != null)
+                                _message = _json_message.Value<string>();
+
+                            _result.SetFailure(
+                                    _message,
+                                    ErrorCode.ResponseDataError,
+                                    _status_code
+                                );
+                        }
                     }
                 }
 
-                _request.AddHeader("api-client-type", "2");
-
-                var _headers = GetHttpHeaders(endpoint, _params, ConnectKey, SecretKey);
-                foreach (var h in _headers)
-                    _request.AddHeader(h.Key, h.Value.ToString());
-
-                foreach (var a in _params)
-                    _request.AddParameter(a.Key, a.Value);
-            }
-
-            var _client = CreateJsonClient(__api_url);
-            {
-                var _tcs = new TaskCompletionSource<IRestResponse>();
-                var _handle = _client.ExecuteAsync(_request, response =>
+                if (_result.success == true && response.IsSuccessful == false)
                 {
-                    _tcs.SetResult(response);
-                });
-
-                var _response = await _tcs.Task;
-                return _response.Content;
+                    _result.SetFailure(
+                            response.ErrorMessage ?? response.StatusDescription,
+                            ErrorCode.ResponseRestError,
+                            (int)response.StatusCode,
+                            false
+                        );
+                }
             }
+
+            return _result;
         }
     }
 }

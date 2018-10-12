@@ -1,0 +1,14 @@
+﻿{
+  "status": "0000",
+  "data": {
+    "opening_price": "507000",
+    "closing_price": "516000",
+    "min_price": "507000",
+    "max_price": "516000",
+    "average_price": "513875.0000",
+    "units_traded": "3.91960286",
+    "volume_1day": "3.91960286",
+    "volume_7day": "5.01960286",
+    "date": 1417148471595
+  }
+}

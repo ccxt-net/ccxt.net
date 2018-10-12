@@ -1,0 +1,15 @@
+[{
+    "timestamp": "2018-07-03T01:52:46.714Z",
+    "symbol": "string",
+    "open": 0,
+    "high": 0,
+    "low": 0,
+    "close": 0,
+    "trades": 0,
+    "volume": 0,
+    "vwap": 0,
+    "lastSize": 0,
+    "turnover": 0,
+    "homeNotional": 0,
+    "foreignNotional": 0
+}]

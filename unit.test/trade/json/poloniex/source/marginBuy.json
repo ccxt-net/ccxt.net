@@ -1,0 +1,17 @@
+﻿{
+  "success": 1,
+  "message": "Margin order placed.",
+  "orderNumber": "154407998",
+  "resultingTrades": {
+    "BTC_DASH": [
+      {
+        "amount": "1.00000000",
+        "date": "2015-05-10 22:47:05",
+        "rate": "0.01383692",
+        "total": "0.01383692",
+        "tradeID": "1213556",
+        "type": "buy"
+      }
+    ]
+  }
+}

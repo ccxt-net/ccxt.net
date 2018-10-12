@@ -38,7 +38,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="OdinSdk.BaseLib" Version="2.1.4" />
+    <PackageReference Include="OdinSdk.BaseLib" Version="2.1.5" />
   </ItemGroup>
 
   <ItemGroup>

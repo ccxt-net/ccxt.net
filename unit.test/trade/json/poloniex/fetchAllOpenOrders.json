@@ -1,0 +1,37 @@
+﻿{
+  "BTC_1CR": [],
+  "BTC_AC": [
+    {
+      "orderNumber": "120466",
+      "type": "sell",
+      "rate": "0.025",
+      "startingAmount": "100",
+      "amount": "100",
+      "total": "2.5",
+      "date": "2018-06-15 05:23:46",
+      "margin": 0
+    },
+    {
+      "orderNumber": "120467",
+      "type": "sell",
+      "rate": "0.04",
+      "startingAmount": "100",
+      "amount": "100",
+      "total": "4",
+      "date": "2018-06-15 05:23:46",
+      "margin": 0
+    }
+  ],
+  "USDT_BTC": [
+    {
+      "orderNumber": "188103433396",
+      "type": "sell",
+      "rate": "20000.00000000",
+      "startingAmount": "0.00010000",
+      "amount": "0.00010000",
+      "total": "2.00000000",
+      "date": "2018-06-15 05:23:46",
+      "margin": 0
+    }
+  ]
+}

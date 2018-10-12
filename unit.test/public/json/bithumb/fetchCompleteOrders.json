@@ -1,0 +1,704 @@
+﻿{
+    "status": "0000",
+    "data": [{
+        "cont_no": "48057973",
+        "transaction_date": "2018-07-19 16:24:52",
+        "type": "bid",
+        "units_traded": "118.8833",
+        "price": "533",
+        "total": "63365"
+    }, {
+        "cont_no": "48057972",
+        "transaction_date": "2018-07-19 16:24:52",
+        "type": "bid",
+        "units_traded": "2.4202",
+        "price": "533",
+        "total": "1290"
+    }, {
+        "cont_no": "48057971",
+        "transaction_date": "2018-07-19 16:24:45",
+        "type": "bid",
+        "units_traded": "337.8273",
+        "price": "533",
+        "total": "180062"
+    }, {
+        "cont_no": "48057970",
+        "transaction_date": "2018-07-19 16:24:35",
+        "type": "bid",
+        "units_traded": "4.1435",
+        "price": "533",
+        "total": "2208"
+    }, {
+        "cont_no": "48057969",
+        "transaction_date": "2018-07-19 16:24:28",
+        "type": "bid",
+        "units_traded": "23.5855",
+        "price": "533",
+        "total": "12571"
+    }, {
+        "cont_no": "48057968",
+        "transaction_date": "2018-07-19 16:23:51",
+        "type": "bid",
+        "units_traded": "1175.943118",
+        "price": "533",
+        "total": "626778"
+    }, {
+        "cont_no": "48057967",
+        "transaction_date": "2018-07-19 16:23:51",
+        "type": "bid",
+        "units_traded": "1824.056882",
+        "price": "533",
+        "total": "972222"
+    }, {
+        "cont_no": "48057966",
+        "transaction_date": "2018-07-19 16:23:09",
+        "type": "bid",
+        "units_traded": "88.0",
+        "price": "533",
+        "total": "46904"
+    }, {
+        "cont_no": "48057965",
+        "transaction_date": "2018-07-19 16:22:42",
+        "type": "bid",
+        "units_traded": "26.0",
+        "price": "533",
+        "total": "13858"
+    }, {
+        "cont_no": "48057964",
+        "transaction_date": "2018-07-19 16:22:36",
+        "type": "ask",
+        "units_traded": "3.994",
+        "price": "532",
+        "total": "2125"
+    }, {
+        "cont_no": "48057963",
+        "transaction_date": "2018-07-19 16:22:36",
+        "type": "ask",
+        "units_traded": "548.0894",
+        "price": "532",
+        "total": "291584"
+    }, {
+        "cont_no": "48057962",
+        "transaction_date": "2018-07-19 16:22:30",
+        "type": "bid",
+        "units_traded": "5.628518",
+        "price": "533",
+        "total": "3000"
+    }, {
+        "cont_no": "48057961",
+        "transaction_date": "2018-07-19 16:22:28",
+        "type": "bid",
+        "units_traded": "627.3968",
+        "price": "533",
+        "total": "334402"
+    }, {
+        "cont_no": "48057960",
+        "transaction_date": "2018-07-19 16:22:14",
+        "type": "bid",
+        "units_traded": "2.9318",
+        "price": "533",
+        "total": "1563"
+    }, {
+        "cont_no": "48057959",
+        "transaction_date": "2018-07-19 16:22:14",
+        "type": "bid",
+        "units_traded": "163.0",
+        "price": "533",
+        "total": "86879"
+    }, {
+        "cont_no": "48057958",
+        "transaction_date": "2018-07-19 16:22:07",
+        "type": "ask",
+        "units_traded": "95.3879",
+        "price": "532",
+        "total": "50746"
+    }, {
+        "cont_no": "48057957",
+        "transaction_date": "2018-07-19 16:22:07",
+        "type": "ask",
+        "units_traded": "2460.6121",
+        "price": "532",
+        "total": "1309046"
+    }, {
+        "cont_no": "48057956",
+        "transaction_date": "2018-07-19 16:22:05",
+        "type": "bid",
+        "units_traded": "381.7632",
+        "price": "533",
+        "total": "203480"
+    }, {
+        "cont_no": "48057955",
+        "transaction_date": "2018-07-19 16:22:02",
+        "type": "bid",
+        "units_traded": "913.0",
+        "price": "533",
+        "total": "486629"
+    }, {
+        "cont_no": "48057954",
+        "transaction_date": "2018-07-19 16:21:45",
+        "type": "bid",
+        "units_traded": "287.0",
+        "price": "533",
+        "total": "152971"
+    }, {
+        "cont_no": "48057953",
+        "transaction_date": "2018-07-19 16:21:43",
+        "type": "bid",
+        "units_traded": "5.058",
+        "price": "533",
+        "total": "2696"
+    }, {
+        "cont_no": "48057952",
+        "transaction_date": "2018-07-19 16:21:42",
+        "type": "bid",
+        "units_traded": "72.0",
+        "price": "533",
+        "total": "38376"
+    }, {
+        "cont_no": "48057951",
+        "transaction_date": "2018-07-19 16:21:37",
+        "type": "bid",
+        "units_traded": "407.0",
+        "price": "533",
+        "total": "216931"
+    }, {
+        "cont_no": "48057950",
+        "transaction_date": "2018-07-19 16:21:32",
+        "type": "bid",
+        "units_traded": "21.0133",
+        "price": "533",
+        "total": "11200"
+    }, {
+        "cont_no": "48057949",
+        "transaction_date": "2018-07-19 16:21:22",
+        "type": "bid",
+        "units_traded": "2097.9812",
+        "price": "533",
+        "total": "1118224"
+    }, {
+        "cont_no": "48057948",
+        "transaction_date": "2018-07-19 16:21:15",
+        "type": "bid",
+        "units_traded": "91.0",
+        "price": "533",
+        "total": "48503"
+    }, {
+        "cont_no": "48057947",
+        "transaction_date": "2018-07-19 16:21:03",
+        "type": "ask",
+        "units_traded": "738.9119",
+        "price": "532",
+        "total": "393101"
+    }, {
+        "cont_no": "48057946",
+        "transaction_date": "2018-07-19 16:20:59",
+        "type": "ask",
+        "units_traded": "1879.3773",
+        "price": "532",
+        "total": "999829"
+    }, {
+        "cont_no": "48057945",
+        "transaction_date": "2018-07-19 16:20:59",
+        "type": "ask",
+        "units_traded": "1888.5473",
+        "price": "532",
+        "total": "1004707"
+    }, {
+        "cont_no": "48057944",
+        "transaction_date": "2018-07-19 16:20:51",
+        "type": "bid",
+        "units_traded": "39.0",
+        "price": "533",
+        "total": "20787"
+    }, {
+        "cont_no": "48057943",
+        "transaction_date": "2018-07-19 16:20:45",
+        "type": "bid",
+        "units_traded": "72.0",
+        "price": "533",
+        "total": "38376"
+    }, {
+        "cont_no": "48057942",
+        "transaction_date": "2018-07-19 16:20:41",
+        "type": "bid",
+        "units_traded": "408.0",
+        "price": "533",
+        "total": "217464"
+    }, {
+        "cont_no": "48057941",
+        "transaction_date": "2018-07-19 16:20:38",
+        "type": "bid",
+        "units_traded": "453.0",
+        "price": "533",
+        "total": "241449"
+    }, {
+        "cont_no": "48057940",
+        "transaction_date": "2018-07-19 16:20:32",
+        "type": "ask",
+        "units_traded": "8111.4527",
+        "price": "532",
+        "total": "4315293"
+    }, {
+        "cont_no": "48057939",
+        "transaction_date": "2018-07-19 16:20:32",
+        "type": "ask",
+        "units_traded": "50.0",
+        "price": "532",
+        "total": "26600"
+    }, {
+        "cont_no": "48057938",
+        "transaction_date": "2018-07-19 16:20:32",
+        "type": "ask",
+        "units_traded": "1000.0",
+        "price": "532",
+        "total": "532000"
+    }, {
+        "cont_no": "48057937",
+        "transaction_date": "2018-07-19 16:20:32",
+        "type": "ask",
+        "units_traded": "28.1203",
+        "price": "532",
+        "total": "14960"
+    }, {
+        "cont_no": "48057936",
+        "transaction_date": "2018-07-19 16:20:32",
+        "type": "ask",
+        "units_traded": "1.0",
+        "price": "532",
+        "total": "532"
+    }, {
+        "cont_no": "48057935",
+        "transaction_date": "2018-07-19 16:20:32",
+        "type": "ask",
+        "units_traded": "3693.2969",
+        "price": "532",
+        "total": "1964834"
+    }, {
+        "cont_no": "48057934",
+        "transaction_date": "2018-07-19 16:20:32",
+        "type": "ask",
+        "units_traded": "50.0",
+        "price": "532",
+        "total": "26600"
+    }, {
+        "cont_no": "48057933",
+        "transaction_date": "2018-07-19 16:20:32",
+        "type": "ask",
+        "units_traded": "31.0",
+        "price": "532",
+        "total": "16492"
+    }, {
+        "cont_no": "48057932",
+        "transaction_date": "2018-07-19 16:20:22",
+        "type": "bid",
+        "units_traded": "651.332",
+        "price": "533",
+        "total": "347160"
+    }, {
+        "cont_no": "48057931",
+        "transaction_date": "2018-07-19 16:20:02",
+        "type": "bid",
+        "units_traded": "2574.0",
+        "price": "533",
+        "total": "1371942"
+    }, {
+        "cont_no": "48057930",
+        "transaction_date": "2018-07-19 16:19:52",
+        "type": "bid",
+        "units_traded": "200.0",
+        "price": "533",
+        "total": "106600"
+    }, {
+        "cont_no": "48057929",
+        "transaction_date": "2018-07-19 16:19:51",
+        "type": "bid",
+        "units_traded": "290.8105",
+        "price": "533",
+        "total": "155002"
+    }, {
+        "cont_no": "48057928",
+        "transaction_date": "2018-07-19 16:19:40",
+        "type": "bid",
+        "units_traded": "23.4505",
+        "price": "534",
+        "total": "12523"
+    }, {
+        "cont_no": "48057927",
+        "transaction_date": "2018-07-19 16:19:39",
+        "type": "bid",
+        "units_traded": "5.6179",
+        "price": "534",
+        "total": "3000"
+    }, {
+        "cont_no": "48057926",
+        "transaction_date": "2018-07-19 16:19:34",
+        "type": "bid",
+        "units_traded": "5.9663",
+        "price": "534",
+        "total": "3186"
+    }, {
+        "cont_no": "48057925",
+        "transaction_date": "2018-07-19 16:19:34",
+        "type": "bid",
+        "units_traded": "1362.0337",
+        "price": "533",
+        "total": "725964"
+    }, {
+        "cont_no": "48057924",
+        "transaction_date": "2018-07-19 16:19:32",
+        "type": "bid",
+        "units_traded": "6.0767",
+        "price": "533",
+        "total": "3239"
+    }, {
+        "cont_no": "48057923",
+        "transaction_date": "2018-07-19 16:19:29",
+        "type": "bid",
+        "units_traded": "50.0",
+        "price": "533",
+        "total": "26650"
+    }, {
+        "cont_no": "48057922",
+        "transaction_date": "2018-07-19 16:19:27",
+        "type": "bid",
+        "units_traded": "1178.4137",
+        "price": "533",
+        "total": "628095"
+    }, {
+        "cont_no": "48057921",
+        "transaction_date": "2018-07-19 16:19:25",
+        "type": "ask",
+        "units_traded": "5.6285",
+        "price": "533",
+        "total": "3000"
+    }, {
+        "cont_no": "48057920",
+        "transaction_date": "2018-07-19 16:19:25",
+        "type": "ask",
+        "units_traded": "31.0",
+        "price": "533",
+        "total": "16523"
+    }, {
+        "cont_no": "48057919",
+        "transaction_date": "2018-07-19 16:19:25",
+        "type": "ask",
+        "units_traded": "1994.6455",
+        "price": "533",
+        "total": "1063146"
+    }, {
+        "cont_no": "48057918",
+        "transaction_date": "2018-07-19 16:19:25",
+        "type": "ask",
+        "units_traded": "2824.242",
+        "price": "533",
+        "total": "1505321"
+    }, {
+        "cont_no": "48057917",
+        "transaction_date": "2018-07-19 16:19:12",
+        "type": "bid",
+        "units_traded": "1764.6217",
+        "price": "534",
+        "total": "942308"
+    }, {
+        "cont_no": "48057916",
+        "transaction_date": "2018-07-19 16:19:01",
+        "type": "bid",
+        "units_traded": "5.6074",
+        "price": "534",
+        "total": "2994"
+    }, {
+        "cont_no": "48057915",
+        "transaction_date": "2018-07-19 16:18:57",
+        "type": "ask",
+        "units_traded": "4899.7808",
+        "price": "533",
+        "total": "2611583"
+    }, {
+        "cont_no": "48057914",
+        "transaction_date": "2018-07-19 16:18:41",
+        "type": "bid",
+        "units_traded": "63.0",
+        "price": "534",
+        "total": "33642"
+    }, {
+        "cont_no": "48057913",
+        "transaction_date": "2018-07-19 16:18:39",
+        "type": "bid",
+        "units_traded": "347.0",
+        "price": "534",
+        "total": "185298"
+    }, {
+        "cont_no": "48057912",
+        "transaction_date": "2018-07-19 16:18:24",
+        "type": "ask",
+        "units_traded": "309.4458",
+        "price": "533",
+        "total": "164935"
+    }, {
+        "cont_no": "48057911",
+        "transaction_date": "2018-07-19 16:18:16",
+        "type": "ask",
+        "units_traded": "2242.8135",
+        "price": "533",
+        "total": "1195420"
+    }, {
+        "cont_no": "48057910",
+        "transaction_date": "2018-07-19 16:18:16",
+        "type": "ask",
+        "units_traded": "493.9756",
+        "price": "533",
+        "total": "263289"
+    }, {
+        "cont_no": "48057909",
+        "transaction_date": "2018-07-19 16:18:16",
+        "type": "ask",
+        "units_traded": "96.2587",
+        "price": "533",
+        "total": "51306"
+    }, {
+        "cont_no": "48057908",
+        "transaction_date": "2018-07-19 16:18:16",
+        "type": "ask",
+        "units_traded": "3162.978",
+        "price": "533",
+        "total": "1685867"
+    }, {
+        "cont_no": "48057907",
+        "transaction_date": "2018-07-19 16:18:16",
+        "type": "ask",
+        "units_traded": "2658.1425",
+        "price": "533",
+        "total": "1416790"
+    }, {
+        "cont_no": "48057906",
+        "transaction_date": "2018-07-19 16:18:15",
+        "type": "ask",
+        "units_traded": "1338.863",
+        "price": "533",
+        "total": "713614"
+    }, {
+        "cont_no": "48057905",
+        "transaction_date": "2018-07-19 16:18:15",
+        "type": "ask",
+        "units_traded": "200.0",
+        "price": "533",
+        "total": "106600"
+    }, {
+        "cont_no": "48057904",
+        "transaction_date": "2018-07-19 16:18:15",
+        "type": "ask",
+        "units_traded": "31.0",
+        "price": "533",
+        "total": "16523"
+    }, {
+        "cont_no": "48057903",
+        "transaction_date": "2018-07-19 16:18:15",
+        "type": "ask",
+        "units_traded": "600.0",
+        "price": "533",
+        "total": "319800"
+    }, {
+        "cont_no": "48057902",
+        "transaction_date": "2018-07-19 16:18:15",
+        "type": "ask",
+        "units_traded": "2045.7738",
+        "price": "533",
+        "total": "1090397"
+    }, {
+        "cont_no": "48057901",
+        "transaction_date": "2018-07-19 16:18:15",
+        "type": "ask",
+        "units_traded": "491.4675",
+        "price": "533",
+        "total": "261952"
+    }, {
+        "cont_no": "48057900",
+        "transaction_date": "2018-07-19 16:18:08",
+        "type": "ask",
+        "units_traded": "2.0",
+        "price": "533",
+        "total": "1066"
+    }, {
+        "cont_no": "48057899",
+        "transaction_date": "2018-07-19 16:17:28",
+        "type": "ask",
+        "units_traded": "5522.9593",
+        "price": "533",
+        "total": "2943737"
+    }, {
+        "cont_no": "48057898",
+        "transaction_date": "2018-07-19 16:17:26",
+        "type": "bid",
+        "units_traded": "1.0",
+        "price": "534",
+        "total": "534"
+    }, {
+        "cont_no": "48057897",
+        "transaction_date": "2018-07-19 16:17:08",
+        "type": "ask",
+        "units_traded": "1836.151",
+        "price": "533",
+        "total": "978668"
+    }, {
+        "cont_no": "48057896",
+        "transaction_date": "2018-07-19 16:17:08",
+        "type": "ask",
+        "units_traded": "351.7823",
+        "price": "533",
+        "total": "187500"
+    }, {
+        "cont_no": "48057895",
+        "transaction_date": "2018-07-19 16:17:08",
+        "type": "ask",
+        "units_traded": "20.0",
+        "price": "533",
+        "total": "10660"
+    }, {
+        "cont_no": "48057894",
+        "transaction_date": "2018-07-19 16:17:07",
+        "type": "ask",
+        "units_traded": "10.0",
+        "price": "533",
+        "total": "5330"
+    }, {
+        "cont_no": "48057893",
+        "transaction_date": "2018-07-19 16:17:07",
+        "type": "ask",
+        "units_traded": "139.696",
+        "price": "533",
+        "total": "74458"
+    }, {
+        "cont_no": "48057892",
+        "transaction_date": "2018-07-19 16:17:07",
+        "type": "ask",
+        "units_traded": "3359.7523",
+        "price": "533",
+        "total": "1790748"
+    }, {
+        "cont_no": "48057891",
+        "transaction_date": "2018-07-19 16:17:07",
+        "type": "ask",
+        "units_traded": "200.0",
+        "price": "533",
+        "total": "106600"
+    }, {
+        "cont_no": "48057890",
+        "transaction_date": "2018-07-19 16:17:07",
+        "type": "ask",
+        "units_traded": "1088.1026",
+        "price": "533",
+        "total": "579959"
+    }, {
+        "cont_no": "48057889",
+        "transaction_date": "2018-07-19 16:17:07",
+        "type": "ask",
+        "units_traded": "2459.0956",
+        "price": "533",
+        "total": "1310698"
+    }, {
+        "cont_no": "48057888",
+        "transaction_date": "2018-07-19 16:17:07",
+        "type": "ask",
+        "units_traded": "15000.0",
+        "price": "533",
+        "total": "7995000"
+    }, {
+        "cont_no": "48057887",
+        "transaction_date": "2018-07-19 16:17:07",
+        "type": "ask",
+        "units_traded": "395.9157",
+        "price": "533",
+        "total": "211023"
+    }, {
+        "cont_no": "48057886",
+        "transaction_date": "2018-07-19 16:17:07",
+        "type": "ask",
+        "units_traded": "39282.2778",
+        "price": "533",
+        "total": "20937454"
+    }, {
+        "cont_no": "48057885",
+        "transaction_date": "2018-07-19 16:17:07",
+        "type": "ask",
+        "units_traded": "10845.3095",
+        "price": "533",
+        "total": "5780550"
+    }, {
+        "cont_no": "48057884",
+        "transaction_date": "2018-07-19 16:17:07",
+        "type": "ask",
+        "units_traded": "500.0",
+        "price": "533",
+        "total": "266500"
+    }, {
+        "cont_no": "48057883",
+        "transaction_date": "2018-07-19 16:17:07",
+        "type": "ask",
+        "units_traded": "41.8588",
+        "price": "533",
+        "total": "22311"
+    }, {
+        "cont_no": "48057882",
+        "transaction_date": "2018-07-19 16:17:07",
+        "type": "ask",
+        "units_traded": "697.0856",
+        "price": "533",
+        "total": "371547"
+    }, {
+        "cont_no": "48057881",
+        "transaction_date": "2018-07-19 16:17:06",
+        "type": "bid",
+        "units_traded": "100.0",
+        "price": "534",
+        "total": "53400"
+    }, {
+        "cont_no": "48057880",
+        "transaction_date": "2018-07-19 16:17:05",
+        "type": "bid",
+        "units_traded": "10.1876",
+        "price": "534",
+        "total": "5440"
+    }, {
+        "cont_no": "48057879",
+        "transaction_date": "2018-07-19 16:16:52",
+        "type": "bid",
+        "units_traded": "100.0",
+        "price": "534",
+        "total": "53400"
+    }, {
+        "cont_no": "48057878",
+        "transaction_date": "2018-07-19 16:16:26",
+        "type": "bid",
+        "units_traded": "140.4494",
+        "price": "534",
+        "total": "75000"
+    }, {
+        "cont_no": "48057877",
+        "transaction_date": "2018-07-19 16:16:03",
+        "type": "ask",
+        "units_traded": "3761.3483",
+        "price": "534",
+        "total": "2008560"
+    }, {
+        "cont_no": "48057876",
+        "transaction_date": "2018-07-19 16:16:03",
+        "type": "ask",
+        "units_traded": "1017.4026",
+        "price": "534",
+        "total": "543293"
+    }, {
+        "cont_no": "48057875",
+        "transaction_date": "2018-07-19 16:16:03",
+        "type": "ask",
+        "units_traded": "632.5706",
+        "price": "534",
+        "total": "337793"
+    }, {
+        "cont_no": "48057874",
+        "transaction_date": "2018-07-19 16:16:03",
+        "type": "ask",
+        "units_traded": "1.8726",
+        "price": "534",
+        "total": "1000"
+    }]
+}

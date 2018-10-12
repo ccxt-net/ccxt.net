@@ -1,0 +1,60 @@
+﻿[
+  {
+    "id": "89999",
+    "currency_pair": "btc_krw",
+    "side": "bid",
+    "avg_price": "2900000",
+    "price": "3000000",
+    "order_amount": "0.81140000",
+    "filled_amount": "0.33122200",
+    "order_total": "2434200",
+    "filled_total": "960543",
+    "created_at": "1500033942638",
+    "last_filled_at": "1500533946947",
+    "status": "partially_filled",
+    "fee": "0.00000500"
+  },
+  {
+    "id": "90002",
+    "currency_pair": "btc_krw",
+    "side": "ask",
+    "avg_price": "0",
+    "price": "5000000",
+    "order_amount": "0.71140000",
+    "filled_amount": "0",
+    "order_total": "3557000",
+    "filled_total": "0",
+    "created_at": "1500533946947",
+    "status": "unfilled"
+  },
+  {
+    "id": "90003",
+    "currency_pair": "btc_krw",
+    "side": "bid",
+    "avg_price": "3000000",
+    "price": "3000000",
+    "order_amount": "0.81140000",
+    "filled_amount": "0.81140000",
+    "order_total": "2434200",
+    "filled_total": "2434200",
+    "created_at": 1400533933748,
+    "last_filled_at": "1500510381038",
+    "status": "filled",
+    "fee": "0.00001000"
+  },
+  {
+    "id": "90004",
+    "currency_pair": "btc_krw",
+    "side": "ask",
+    "avg_price": "2837390",
+    "price": "2837390",
+    "order_amount": "0.71140000",
+    "filled_amount": "0.71140000",
+    "order_total": "2018519",
+    "filled_total": "2018519",
+    "created_at": "1400533946947",
+    "last_filled_at": "1500533946947",
+    "status": "filled",
+    "fee": "330"
+  }
+]

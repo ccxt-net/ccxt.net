@@ -1,12 +1,8 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json.Linq;
 using OdinSdk.BaseLib.Coin;
-using OdinSdk.BaseLib.Configuration;
 using RestSharp;
 using System;
 using System.Collections.Generic;
-using System.Globalization;
-using System.Numerics;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,28 +12,118 @@ namespace CCXT.NET.Poloniex
     /// <summary>
     /// 
     /// </summary>
-    public class PoloniexClient : XApiClient
+    public sealed class PoloniexClient : OdinSdk.BaseLib.Coin.XApiClient, IXApiClient
     {
-        private const string __api_url = "https://poloniex.com";
+        /// <summary>
+        /// 
+        /// </summary>
+        public override string DealerName { get; set; } = "Poloniex";
 
         /// <summary>
         /// 
         /// </summary>
-        public PoloniexClient()
-            : base(__api_url, "", "")
+        /// <param name="division">exchange's division for communication</param>
+        public PoloniexClient(string division)
+            : base(division)
         {
         }
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="connect_key"></param>
-        /// <param name="secret_key"></param>
-        public PoloniexClient(string connect_key, string secret_key)
-            : base(__api_url, connect_key, secret_key)
+        /// <param name="division">exchange's division for communication</param>
+        /// <param name="connect_key">exchange's api key for connect</param>
+        /// <param name="secret_key">exchange's secret key for signature</param>
+        public PoloniexClient(string division, string connect_key, string secret_key)
+            : base(division, connect_key, secret_key, authentication: true)
         {
         }
 
+        /// <summary>
+        /// information of exchange for trading
+        /// </summary>
+        public override ExchangeInfo ExchangeInfo
+        {
+            get
+            {
+                if (base.ExchangeInfo == null)
+                {
+                    base.ExchangeInfo = new ExchangeInfo(this.DealerName)
+                    {
+                        Countries = new List<string>
+                        {
+                            "US"
+                        },
+                        Urls = new ExchangeUrls
+                        {
+                            logo = "https://user-images.githubusercontent.com/1294454/27766817-e9456312-5ee6-11e7-9b3c-b628ca5626a5.jpg",
+                            api = new Dictionary<string, string>
+                            {
+                                { "public", "https://poloniex.com/public" },
+                                { "private", "https://poloniex.com/tradingApi" },
+                                { "trade", "https://poloniex.com/tradingApi" }
+                            },
+                            www = "https://poloniex.com",
+                            doc = new List<string>
+                            {
+                                "https://poloniex.com/support/api/",
+                                "http://pastebin.com/dMX7mZE0"
+                            },
+                            fees = new List<string>
+                            {
+                                "https://poloniex.com/fees"
+                            }
+                        },
+                        RequiredCredentials = new RequiredCredentials
+                        {
+                            apikey = true,
+                            secret = true,
+                            uid = false,
+                            login = false,
+                            password = false,
+                            twofa = false
+                        },
+                        LimitRate = new ExchangeLimitRate
+                        {
+                            useTotal = true,
+                            token = new ExchangeLimitCalled { rate = 60000 },
+                            @public = new ExchangeLimitCalled { rate = 1000 },
+                            @private = new ExchangeLimitCalled { rate = 1000 },
+                            trade = new ExchangeLimitCalled { rate = 1000 },
+                            total = new ExchangeLimitCalled { rate = 500 }              // up to 6 calls per second
+                        },
+                        Fees = new MarketFees
+                        {
+                            trading = new MarketFee
+                            {
+                                tierBased = false,      // true for tier-based/progressive
+                                percentage = false,     // fixed commission
+
+                                maker = 0.15m / 100m,
+                                taker = 0.25m / 100m
+                            }
+                        },
+                        CurrencyIds = new Dictionary<string, string>
+                        {
+                            { "BTM", "Bitmark" },
+                            { "STR", "XLM" },
+                            { "BCC", "BTCtalkcoin" }
+                        },
+                        Timeframes = new Dictionary<string, string>
+                        {
+                            { "5m", "300"},
+                            { "15m", "900"},
+                            { "30m", "1800"},
+                            { "2h", "7200"},
+                            { "4h", "14400"},
+                            { "1d", "86400"},
+                        }
+                    };
+                }
+
+                return base.ExchangeInfo;
+            }
+        }
 
         private HMACSHA512 __encryptor = null;
 
@@ -55,99 +141,32 @@ namespace CCXT.NET.Poloniex
             }
         }
 
-        private BigInteger CurrentHttpPostNonce
-        {
-            get;
-            set;
-        }
-
-        private string GetCurrentHttpPostNonce()
-        {
-            var _ne_nonce = new BigInteger(
-                                    Math.Round(
-                                        DateTime.UtcNow.Subtract(
-                                            CUnixTime.UnixEpoch
-                                        )
-                                        .TotalMilliseconds * 1000,
-                                        MidpointRounding.AwayFromZero
-                                    )
-                                );
-
-            if (_ne_nonce > CurrentHttpPostNonce)
-            {
-                CurrentHttpPostNonce = _ne_nonce;
-            }
-            else
-            {
-                CurrentHttpPostNonce += 1;
-            }
-
-            return CurrentHttpPostNonce.ToString(CultureInfo.InvariantCulture);
-        }
-
-        private string HttpPostString(List<Parameter> dictionary)
-        {
-            var _result = "";
-
-            foreach (var _entry in dictionary)
-            {
-                var _value = _entry.Value as string;
-                if (_value == null)
-                    _result += "&" + _entry.Name + "=" + _entry.Value;
-                else
-                    _result += "&" + _entry.Name + "=" + _value.Replace(' ', '+');
-            }
-
-            return _result.Substring(1);
-        }
-
         /// <summary>
         /// 
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="endpoint"></param>
-        /// <param name="args"></param>
+        /// <param name="endpoint">api link address of a function</param>
+        /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public new async Task<T> CallApiPostAsync<T>(string endpoint, Dictionary<string, object> args = null) where T : new()
+        public override async Task<IRestRequest> CreatePostRequest(string endpoint, Dictionary<string, object> args = null)
         {
-            var _request = CreateJsonRequest(endpoint, Method.POST);
+            var _request = await base.CreatePostRequest(endpoint, args);
+
+            if (IsAuthentication == true)
             {
-                var _params = new Dictionary<string, object>();
+                var _nonce = GenerateOnlyNonce(16).ToString();
+
+                _request.AddParameter("nonce", _nonce);
+
+                var _post_data = ToQueryString(_request.Parameters);
                 {
-                    _params.Add("nonce", GetCurrentHttpPostNonce());
+                    var _signature = this.ConvertHexString(Encryptor.ComputeHash(Encoding.UTF8.GetBytes(_post_data)));
 
-                    if (args != null)
-                    {
-                        foreach (var a in args)
-                            _params.Add(a.Key, a.Value);
-                    }
-                }
-
-                foreach (var _p in _params)
-                    _request.AddParameter(_p.Key, _p.Value);
-
-                var _post_data = HttpPostString(_request.Parameters);
-                var _post_bytes = Encoding.UTF8.GetBytes(_post_data);
-                var _post_hash = Encryptor.ComputeHash(_post_bytes);
-
-                var _signature = ConvertHexString(_post_hash);
-                {
-                    _request.AddHeader("Key", ConnectKey);
                     _request.AddHeader("Sign", _signature);
+                    _request.AddHeader("Key", ConnectKey);
                 }
             }
 
-            var _client = CreateJsonClient(__api_url);
-            {
-                var _tcs = new TaskCompletionSource<IRestResponse>();
-                var _handle = _client.ExecuteAsync(_request, response =>
-                {
-                    _tcs.SetResult(response);
-                });
-
-                var _response = await _tcs.Task;
-                return JsonConvert.DeserializeObject<T>(_response.Content);
-            }
+            return await Task.FromResult(_request);
         }
 
         /// <summary>
@@ -182,7 +201,7 @@ namespace CCXT.NET.Poloniex
                     }
                     else
                     {
-                        _result.SetFailure(_json_error.Value<string>(), ErrorCode.ResponseDataError);
+                        _result.SetFailure(_json_error.Value<string>(),ErrorCode.ResponseDataError);
                     }
                 }
                 else

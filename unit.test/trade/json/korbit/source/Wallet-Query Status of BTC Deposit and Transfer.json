@@ -1,0 +1,33 @@
+[{ // Response : A completed BTC Deposit
+        "timestamp": 1392620446000,
+        "id": "5180",
+        "type": "coin-in",
+        "amount": {
+            "currency": "btc",
+            "value": "0.01"
+        },
+        "in": "1anjg6B2XbpjHx8LFw8mXHATH54vrxs2F",
+        "completedAt": 1392620446100
+    },
+    { // Response : A pending BTC withdrawal request
+        "timestamp": 1392620446000,
+        "id": "5180",
+        "type": "coin-out",
+        "amount": {
+            "currency": "btc",
+            "value": "0.01"
+        },
+        "out": "1anjg6B2XbpjHh8LFw8xXHATH54vrxs2F"
+    },
+    { // Response : A completed BTC withdrawal request
+        "timestamp": 1392620446000,
+        "id": "5180",
+        "type": "coin-out",
+        "amount": {
+            "currency": "btc",
+            "value": "0.01"
+        },
+        "out": "1anjg6B2XbpjHh8LFw8xXHATH54vrxs2F",
+        "completedAt": 1392620946300
+    }
+]

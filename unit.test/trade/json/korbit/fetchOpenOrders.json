@@ -1,0 +1,138 @@
+﻿[
+  {
+    "timestamp": 1389173297000,
+    "id": "58726",
+    "type": "ask",
+    "price": {
+      "currency": "krw",
+      "value": "800000"
+    },
+    "total": {
+      "currency": "btc",
+      "value": "1.00000000"
+    },
+    "open": {
+      "currency": "btc",
+      "value": "0.75000000"
+    }
+  },
+  {
+    "timestamp": 1386419377000,
+    "id": "37499",
+    "type": "bid",
+    "price": {
+      "currency": "krw",
+      "value": "700000"
+    },
+    "total": {
+      "currency": "btc",
+      "value": "1.50000000"
+    },
+    "open": {
+      "currency": "btc",
+      "value": "0.41200000"
+    }
+  },
+  {
+    "timestamp": 1386419089000,
+    "id": "37476",
+    "type": "bid",
+    "price": {
+      "currency": "krw",
+      "value": "10090"
+    },
+    "total": {
+      "currency": "btc",
+      "value": "24.00000000"
+    },
+    "open": {
+      "currency": "btc",
+      "value": "24.00000000"
+    }
+  },
+  {
+    "timestamp": 1386419024000,
+    "id": "37468",
+    "type": "bid",
+    "price": {
+      "currency": "krw",
+      "value": "400001"
+    },
+    "total": {
+      "currency": "btc",
+      "value": "1.50000000"
+    },
+    "open": {
+      "currency": "btc",
+      "value": "1.50000000"
+    }
+  },
+  {
+    "timestamp": 1386418990000,
+    "id": "37464",
+    "type": "bid",
+    "price": {
+      "currency": "krw",
+      "value": "130001"
+    },
+    "total": {
+      "currency": "btc",
+      "value": "7.00000000"
+    },
+    "open": {
+      "currency": "btc",
+      "value": "7.00000000"
+    }
+  },
+  {
+    "timestamp": 1386418700000,
+    "id": "37432",
+    "type": "bid",
+    "price": {
+      "currency": "krw",
+      "value": "1001"
+    },
+    "total": {
+      "currency": "btc",
+      "value": "240.00000000"
+    },
+    "open": {
+      "currency": "btc",
+      "value": "240.00000000"
+    }
+  },
+  {
+    "timestamp": 1386418647000,
+    "id": "37423",
+    "type": "bid",
+    "price": {
+      "currency": "krw",
+      "value": "300001"
+    },
+    "total": {
+      "currency": "btc",
+      "value": "5.00000000"
+    },
+    "open": {
+      "currency": "btc",
+      "value": "5.00000000"
+    }
+  },
+  {
+    "timestamp": 1386405575000,
+    "id": "36605",
+    "type": "ask",
+    "price": {
+      "currency": "krw",
+      "value": "1450000"
+    },
+    "total": {
+      "currency": "btc",
+      "value": "0.50000000"
+    },
+    "open": {
+      "currency": "btc",
+      "value": "0.50000000"
+    }
+  }
+]

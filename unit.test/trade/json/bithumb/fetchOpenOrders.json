@@ -1,0 +1,32 @@
+﻿{
+  "status": "0000",
+  "data": [{
+    "order_id": "1532003247936692",
+    "order_currency": "XRP",
+    "order_date": "1532003247936692",
+    "payment_currency": "KRW",
+    "type": "bid",
+    "status": "placed",
+    "units": "32.0833",
+    "units_remaining": "32.0833",
+    "price": "300",
+    "misu_yn": "N",
+    "fee": null,
+    "total": null,
+    "date_completed": null
+  }, {
+    "order_id": "1532003240524763",
+    "order_currency": "XRP",
+    "order_date": "1532003240524763",
+    "payment_currency": "KRW",
+    "type": "bid",
+    "status": "placed",
+    "units": "28.75",
+    "units_remaining": "28.75",
+    "price": "400",
+    "misu_yn": "N",
+    "fee": null,
+    "total": null,
+    "date_completed": null
+  }]
+}

@@ -1,0 +1,62 @@
+﻿{
+  "errorCode": "0",
+  "normalWallets": [
+    {
+      "balance": "6.1151",
+      "label": "First Wallet"
+    },
+    {
+      "balance": "6.9448",
+      "label": "Second Wallet"
+    }
+  ],
+  "result": "success",
+  "btc": {
+    "avail": "344.33703699",
+    "balance": "344.33703699"
+  },
+  "bch": {
+    "avail": "1.00001234",
+    "balance": "1.00001234"
+  },
+  "eth": {
+    "avail": "1.00001234",
+    "balance": "1.00001234"
+  },
+  "etc": {
+    "avail": "300.32123699",
+    "balance": "300.32123699"
+  },
+  "xrp": {
+    "avail": "434.50890000",
+    "balance": "434.85450000"
+  },
+  "qtum": {
+    "avail": "434.50890000",
+    "balance": "434.85450000"
+  },
+  "iota": {
+    "avail": "213.50800000",
+    "balance": "213.50800000"
+  },
+  "ltc": {
+    "avail": "43.50890000",
+    "balance": "43.85450000"
+  },
+  "btg": {
+    "avail": "43.50890000",
+    "balance": "43.85450000"
+  },
+  "omg": {
+    "avail": "43.50890000",
+    "balance": "43.85450000"
+  },
+  "eos": {
+    "avail": "43.50890000",
+    "balance": "43.85450000"
+  },
+  "krw": {
+    "avail": "6901425",
+    "balance": "6901430"
+  }
+}

@@ -1,0 +1,12 @@
+[{
+    "timestamp": "2018-07-03T01:52:46.697Z",
+    "symbol": "string",
+    "side": "string",
+    "size": 0,
+    "price": 0,
+    "tickDirection": "string",
+    "trdMatchID": "string",
+    "grossValue": 0,
+    "homeNotional": 0,
+    "foreignNotional": 0
+}]

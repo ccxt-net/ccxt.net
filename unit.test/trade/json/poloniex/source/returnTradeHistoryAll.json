@@ -1,0 +1,29 @@
+﻿{
+  "BTC_MAID": [
+    {
+      "globalTradeID": 29251512,
+      "tradeID": "1385888",
+      "date": "2016-05-03 01:29:55",
+      "rate": "0.00014243",
+      "amount": "353.74692925",
+      "total": "0.05038417",
+      "fee": "0.00200000",
+      "orderNumber": "12603322113",
+      "type": "buy",
+      "category": "settlement"
+    },
+    {
+      "globalTradeID": 29251511,
+      "tradeID": "1385887",
+      "date": "2016-05-03 01:29:55",
+      "rate": "0.00014111",
+      "amount": "311.24262497",
+      "total": "0.04391944",
+      "fee": "0.00200000",
+      "orderNumber": "12603319116",
+      "type": "sell",
+      "category": "marginTrade"
+    }
+  ],
+  "BTC_LTC": []
+}

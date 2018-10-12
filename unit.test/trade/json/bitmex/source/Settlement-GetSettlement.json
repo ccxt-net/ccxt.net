@@ -1,0 +1,11 @@
+[{
+    "timestamp": "2018-07-03T01:52:46.661Z",
+    "symbol": "string",
+    "settlementType": "string",
+    "settledPrice": 0,
+    "optionStrikePrice": 0,
+    "optionUnderlyingPrice": 0,
+    "bankrupt": 0,
+    "taxBase": 0,
+    "taxRate": 0
+}]

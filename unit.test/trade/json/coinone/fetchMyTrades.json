@@ -1,0 +1,42 @@
+﻿{
+  "errorCode": "0",
+  "result": "success",
+  "completeOrders": [
+    {
+      "timestamp": "1416561032",
+      "price": "419000",
+      "type": "bid",
+      "qty": "0.001",
+      "feeRate": "-0.0015",
+      "fee": "-0.0000015",
+      "orderId": "E84A1AC2-8088-4FA0-B093-A3BCDB9B3C85"
+    },
+    {
+      "timestamp": "1416560777",
+      "price": "450000",
+      "type": "bid",
+      "qty": "0.0001",
+      "feeRate": "0.002",
+      "fee": "0.0000002",
+      "orderId": "6C7A4A2D-C46E-4B99-ABC4-C517917B1FD9"
+    },
+    {
+      "timestamp": "1416560765",
+      "price": "420000",
+      "type": "bid",
+      "qty": "0.01",
+      "feeRate": "-0.0015",
+      "fee": "-0.000015",
+      "orderId": "E66ECAD0-4F89-46C6-98F2-9E5C18D3DC48"
+    },
+    {
+      "timestamp": "1416558690",
+      "price": "420000",
+      "type": "ask",
+      "qty": "0.0001",
+      "feeRate": "0.002",
+      "fee": "1",
+      "orderId": "E84A1AC2-8088-4FA0-B093-A3BCDB9B3C85"
+    }
+  ]
+}

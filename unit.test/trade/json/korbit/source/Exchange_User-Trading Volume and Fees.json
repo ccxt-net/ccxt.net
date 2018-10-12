@@ -1,0 +1,19 @@
+{
+    "btc_krw": {
+        "volume": "17570000",
+        "maker_fee": "0.00100000",
+        "taker_fee": "0.00200000"
+    },
+    "eth_krw": {
+        "volume": "0",
+        "maker_fee": "0.00100000",
+        "taker_fee": "0.00200000"
+    },
+    "etc_krw": {
+        "volume": "6570000",
+        "maker_fee": "0.00100000",
+        "taker_fee": "0.00200000"
+    },
+    "total_volume": "24140000",
+    "timestamp": 1386418990000
+}

@@ -1,86 +1,81 @@
-﻿namespace CCXT.NET.Korbit.Public
+﻿using Newtonsoft.Json;
+using OdinSdk.BaseLib.Coin.Public;
+
+namespace CCXT.NET.Korbit.Public
 {
     /// <summary>
     /// 시장 현황 상세정보 ( Detailed Ticker )
     /// </summary>
-    public class KDetailedTicker
+    public class KTickerItem : OdinSdk.BaseLib.Coin.Public.TickerItem, ITickerItem
     {
         /// <summary>
-        /// Unix timestamp in milliseconds of the last filled order.
+        /// 64-bit Unix Timestamp in milliseconds since Epoch 1 Jan 1970
         /// </summary>
-        public long timestamp
+        [JsonProperty(PropertyName = "timestamp")]
+        public override long timestamp
         {
-            get; set;
+            get;
+            set;
         }
 
         /// <summary>
-        /// Price of the last filled order.
+        /// highest price for last 24H
         /// </summary>
-        public decimal last
+        [JsonProperty(PropertyName = "high")]
+        public override decimal highPrice
         {
-            get; set;
+            get;
+            set;
         }
 
         /// <summary>
-        /// Best bid price.
+        /// lowest price for last 24H
         /// </summary>
-        public decimal bid
+        [JsonProperty(PropertyName = "low")]
+        public override decimal lowPrice
         {
-            get; set;
+            get;
+            set;
         }
 
         /// <summary>
-        /// Best ask price.
+        /// current best bid (buy) price
         /// </summary>
-        public decimal ask
+        [JsonProperty(PropertyName = "bid")]
+        public override decimal bidPrice
         {
-            get; set;
+            get;
+            set;
         }
 
         /// <summary>
-        /// Lowest price within the last 24 hours.
+        /// current best ask (sell) price
         /// </summary>
-        public decimal low
+        [JsonProperty(PropertyName = "ask")]
+        public override decimal askPrice
         {
-            get; set;
+            get;
+            set;
         }
 
         /// <summary>
-        /// Highest price within the last 24 hours.
+        /// price of last trade (closing price for current period)
         /// </summary>
-        public decimal high
+        [JsonProperty(PropertyName = "last")]
+        public override decimal closePrice
         {
-            get; set;
+            get;
+            set;
         }
 
         /// <summary>
-        /// Transaction volume within the last 24 hours.
+        /// volume of base currency traded for last 24 hours
         /// </summary>
-        public decimal volume
+        [JsonProperty(PropertyName = "volume")]
+        public override decimal baseVolume
         {
-            get; set;
-        }
-    }
-
-    /// <summary>
-    /// 시장 현황 (Ticker)
-    /// </summary>
-    public class KTicker
-    {
-        /// <summary>
-        /// Unix timestamp in milliseconds of the last filled order.
-        /// </summary>
-        public long timestamp
-        {
-            get; set;
-        }
-
-        /// <summary>
-        /// Price of the last filled order.
-        /// </summary>
-        public decimal last
-        {
-            get; set;
+            get;
+            set;
         }
     }
 }

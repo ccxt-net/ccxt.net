@@ -1,0 +1,61 @@
+﻿[
+  {
+    "id": "270",
+    "type": "deposit",
+    "currency": "btc",
+    "amount": "0.81140000",
+    "completed_at": 11750020020,
+    "updated_at": 1155005008000,
+    "created_at": 1155002002000,
+    "status": "filled",
+    "details": {
+      "transaction_id": "2d84855aa9c...",
+      "address": "1F1zAaz5x1HUXrCNLbtMDqcw6o5GNx4xqX"
+    }
+  },
+  {
+    "id": "280",
+    "type": "withdrawal",
+    "currency": "btc",
+    "amount": "0.81140000",
+    "updated_at": 1155005008000,
+    "created_at": 1155002002000,
+    "status": "requested",
+    "details": {
+      "transaction_id": "2d84855aa9c...",
+      "address": "1F1zAaz5x1HUXrCNLbtMDqcw6o5GNx4xqX"
+    }
+  },
+  {
+    "id": "380",
+    "type": "deposit",
+    "currency": "krw",
+    "amount": "1100000",
+    "completed_at": 1255002002000,
+    "updated_at": 1155002002000,
+    "created_at": 1123322323300,
+    "status": "filled",
+    "details": {
+      "bank": "우리은행",
+      "account_number": "1233244234",
+      "owner": "(주)코빗"
+    }
+  },
+  {
+    "id": "480",
+    "timestamp": 1298398398300,
+    "type": "withdrawal",
+    "currency": "krw",
+    "amount": "1200000",
+    "completed_at": 1255002002000,
+    "updated_at": 1155002002000,
+    "created_at": 1123322323300,
+    "status": "filled",
+    "fee": "1800",
+    "details": {
+      "bank": "신한은행",
+      "account_number": "32329832899",
+      "owner": "홍길동"
+    }
+  }
+]

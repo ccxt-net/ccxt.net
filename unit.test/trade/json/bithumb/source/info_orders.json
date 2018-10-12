@@ -1,0 +1,19 @@
+﻿{
+  "status": "0000",
+  "data": [
+    {
+      "order_id": "1412562509982",
+      "order_currency": "BTC",
+      "order_date": 1412562509982,
+      "payment_currency": "KRW",
+      "type": "bid",
+      "status": "placed",
+      "units": "5.0",
+      "units_remaining": null,
+      "price": "501000",
+      "fee": null,
+      "total": null,
+      "date_completed": null
+    }
+  ]
+}

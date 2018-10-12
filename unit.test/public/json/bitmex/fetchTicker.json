@@ -1,0 +1,17 @@
+﻿[
+  {
+    "timestamp": "2018-06-25T00:00:00.000Z",
+    "symbol": "XBTUSD",
+    "open": 6165,
+    "high": 6347,
+    "low": 5743,
+    "close": 6150,
+    "trades": 600540,
+    "volume": 3401207273,
+    "vwap": 5992.6889,
+    "lastSize": 387,
+    "turnover": 56759153563981,
+    "homeNotional": 567591.535639811,
+    "foreignNotional": 3401207273
+  }
+]

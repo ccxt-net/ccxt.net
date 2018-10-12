@@ -1,0 +1,20 @@
+{
+    "errorCode": "0",
+    "walletAddress": {
+        "btc": "mnobqu4i6qMCJWDpf5UimRmr8JCvZ8FLcN",
+        "bch": "mt9Dxe1ZwEMjw9M6mv3xcEB572oqwLuuHC",
+        "eth": "0x61bB630D3B2e8eda0FC1d50F9f958eC02e3969F6",
+        "etc": "0x37a9679c41e99dB270Bda88DE8FF50c0Cd23f326",
+        "xrp": "rGf3sLFW6q65YeQDCGDEFeFTKLKNxy6rDg",
+        "xrp_tag": "1289063454",
+        "qtum": "0x65113c823388127da32b2003444c076d70f8d2d3",
+        "iota": "CVLITGUGQXPHFKTUNAVXQFZQP9LTGWPBZBHPIRJOPTQQROVSXPVQPURDETCPBHQYPGTERQJIMZAZV9HQAGZNASOHHC",
+        "ltc": "LS3B9qyihXq6tztmJRbLBYAxtEGMaVLBTP",
+        "btg": "mt9Dxe1ZwEMjw9M6mv3xcEB572oqwLuuHC",
+        "omg": "0x61bB630D3B2e8eda0FC1d50F9f958eC02e3969F6",
+        "eos": "0x61bB630D3B2e8eda0FC1d50F9f958eC02e3969F6",
+        "data": "0x61bB630D3B2e8eda0FC1d50F9f958eC02e3969F6",
+        "zil": "0x61bB630D3B2e8eda0FC1d50F9f958eC02e3969F6"
+    },
+    "result": "success"
+}

@@ -1,0 +1,82 @@
+{
+    "errorCode": "0",
+    "result": "success",
+    "userInfo": {
+        "virtualAccountInfo": {
+            "depositor": "John",
+            "accountNumber": "0123456789",
+            "bankName": "bankName"
+        },
+        "mobileInfo": {
+            "userName": "John",
+            "phoneNumber": "0123456789",
+            "phoneCorp": "1",
+            "isAuthenticated": "true"
+        },
+        "bankInfo": {
+            "depositor": "John",
+            "bankCode": "20",
+            "isAuthenticated": "true",
+            "accountNumber": "0123456789"
+        },
+        "emailInfo": {
+            "isAuthenticated": "true",
+            "email": "john@coinone.com"
+        },
+        "securityLevel": "4",
+        "feeRate": {
+            "btc": {
+                "maker": "0.001",
+                "taker": "0.001"
+            },
+            "bch": {
+                "maker": "0.001",
+                "taker": "0.001"
+            },
+            "eth": {
+                "maker": "0.001",
+                "taker": "0.001"
+            },
+            "etc": {
+                "maker": "0.001",
+                "taker": "0.001"
+            },
+            "xrp": {
+                "maker": "0.001",
+                "taker": "0.001"
+            },
+            "qtum": {
+                "maker": "0.001",
+                "taker": "0.001"
+            },
+            "iota": {
+                "maker": "0.001",
+                "taker": "0.001"
+            },
+            "ltc": {
+                "maker": "0.001",
+                "taker": "0.001"
+            },
+            "btg": {
+                "maker": "0.001",
+                "taker": "0.001"
+            },
+            "omg": {
+                "maker": "0.001",
+                "taker": "0.001"
+            },
+            "eos": {
+                "maker": "0.001",
+                "taker": "0.001"
+            },
+            "data": {
+                "maker": "0.001",
+                "taker": "0.001"
+            },
+            "zil": {
+                "maker": "0.001",
+                "taker": "0.001"
+            }
+        }
+    }
+}

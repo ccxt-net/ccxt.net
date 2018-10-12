@@ -1,12 +1,18 @@
-﻿using System.Collections.Generic;
+﻿using OdinSdk.BaseLib.Coin;
+using OdinSdk.BaseLib.Coin.Trade;
+using OdinSdk.BaseLib.Coin.Types;
+using OdinSdk.BaseLib.Configuration;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace CCXT.NET.Bithumb.Trade
 {
     /// <summary>
-    /// https://api.bithumb.com/
+    /// 
     /// </summary>
-    public class TradeApi
+    public class TradeApi : OdinSdk.BaseLib.Coin.Trade.TradeApi, ITradeApi
     {
         private readonly string __connect_key;
         private readonly string __secret_key;
@@ -20,167 +26,675 @@ namespace CCXT.NET.Bithumb.Trade
             __secret_key = secret_key;
         }
 
-        private BithumbClient __trade_client = null;
-
-        private BithumbClient tradeClient
+        /// <summary>
+        /// 
+        /// </summary>
+        public override XApiClient tradeClient
         {
             get
             {
-                if (__trade_client == null)
-                    __trade_client = new BithumbClient(__connect_key, __secret_key);
-                return __trade_client;
+                if (base.tradeClient == null)
+                    base.tradeClient = new BithumbClient("trade", __connect_key, __secret_key);
+
+                return base.tradeClient;
             }
         }
 
         /// <summary>
-        /// bithumb 회원 판/구매 거래 주문 등록 및 체결 (미수 주문등록 및 체결은 현 API에서 지원 안 함)
+        /// 
         /// </summary>
-        /// <param name="order_currency">BTC, ETH, DASH, LTC, ETC, XRP (기본값: BTC)</param>
-        /// <param name="units">주문 수량, 1회 최소 수량 (BTC: 0.0001 | ETH: 0.001 | DASH: 0.001 | LTC: 0.01 | ETC: 0.01 | XRP: 1) - 1회 최대 수량 (BTC: 300 | ETH: 2,500 | DASH: 4,000 | LTC: 15,000 | ETC: 30,000 | XRP: 2,500,000)</param>
-        /// <param name="price">1Currency당 거래금액 (BTC, ETH, DASH, LTC, ETC, XRP)</param>
-        /// <param name="payment_currency">KRW (기본값)</param>
-        /// <param name="misu">신용거래(Y : 사용, N : 일반) – 추후 제공</param>
-        /// <returns></returns>
-        public async Task<BPlaces> PlaceLimitBuy(string order_currency, decimal units, decimal price, string payment_currency = "KRW", string misu = "N")
+        public override OdinSdk.BaseLib.Coin.Public.PublicApi publicApi
         {
-            var _params = new Dictionary<string, object>();
+            get
             {
-                _params.Add("units", units);
-                _params.Add("price", price);
-                _params.Add("type", "bid");
-                _params.Add("order_currency", order_currency.ToUpper());
-                _params.Add("payment_currency", payment_currency.ToUpper());
-                _params.Add("misu", misu);
-            }
+                if (base.publicApi == null)
+                    base.publicApi = new CCXT.NET.Bithumb.Public.PublicApi();
 
-            return await tradeClient.CallApiPostAsync<BPlaces>("/trade/place", _params);
+                return base.publicApi;
+            }
         }
 
         /// <summary>
-        /// bithumb 회원 판매 거래 주문 등록 및 체결 (미수 주문등록 및 체결은 현 API에서 지원 안 함)
+        /// Check an order's status.
         /// </summary>
-        /// <param name="order_currency">BTC, ETH, DASH, LTC, ETC, XRP (기본값: BTC)</param>
-        /// <param name="units">주문 수량, 1회 최소 수량 (BTC: 0.0001 | ETH: 0.001 | DASH: 0.001 | LTC: 0.01 | ETC: 0.01 | XRP: 1) - 1회 최대 수량 (BTC: 300 | ETH: 2,500 | DASH: 4,000 | LTC: 15,000 | ETC: 30,000 | XRP: 2,500,000)</param>
-        /// <param name="price">1Currency당 거래금액 (BTC, ETH, DASH, LTC, ETC, XRP)</param>
-        /// <param name="payment_currency">KRW (기본값)</param>
-        /// <param name="misu">신용거래(Y : 사용, N : 일반) – 추후 제공</param>
+        /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
+        /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
+        /// <param name="order_id">Order number registered for sale or purchase</param>
+        /// <param name="args">Add additional attributes for each exchange: (require) type</param>
         /// <returns></returns>
-        public async Task<BPlaces> PlaceLimitSell(string order_currency, decimal units, decimal price, string payment_currency = "KRW", string misu = "N")
+        public override async Task<MyOrder> FetchMyOrder(string base_name, string quote_name, string order_id, Dictionary<string, object> args = null)
         {
-            var _params = new Dictionary<string, object>();
+            var _result = new MyOrder(base_name, quote_name);
+
+            var _market = await publicApi.LoadMarket(_result.marketId);
+            if (_market.success == true)
             {
-                _params.Add("units", units);
-                _params.Add("price", price);
-                _params.Add("type", "ask");
-                _params.Add("order_currency", order_currency.ToUpper());
-                _params.Add("payment_currency", payment_currency.ToUpper());
-                _params.Add("misu", misu);
+                tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
+
+                var _params = new Dictionary<string, object>();
+                {
+                    _params.Add("currency", _market.result.symbol);
+                    _params.Add("order_id", order_id);
+                    _params.Add("type", "");
+
+                    if (args != null)
+                    {
+                        foreach (var _a in args)
+                        {
+                            if (_params.ContainsKey(_a.Key) == true)
+                                _params.Remove(_a.Key);
+
+                            _params.Add(_a.Key, _a.Value);
+                        }
+                    }
+                }
+
+                var _json_value = await tradeClient.CallApiPost1Async("/info/order_detail", _params);
+#if DEBUG
+                _result.rawJson = _json_value.Content;
+#endif
+                var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
+                if (_json_result.success == true)
+                {
+                    var _json_data = tradeClient.DeserializeObject<BMyOrders>(_json_value.Content);
+                    if (_json_data.success == true)
+                    {
+                        var _type = (_params.ContainsKey("type") == true) ? _params["type"].ToString() : "";
+
+                        var _order = new BMyOrderItem
+                        {
+                            orderId = order_id,
+
+                            symbol = _market.result.symbol,
+                            payment_currency = quote_name,
+
+                            sideType = SideTypeConverter.FromString(_type),
+                            makerType = MakerType.Unknown,
+                            orderStatus = OrderStatus.Closed,
+                            orderType = OrderType.Limit,
+
+                            timestamp = CUnixTime.NowMilli
+                        };
+
+                        foreach (var _o in _json_data.result)
+                        {
+                            //if (String.IsNullOrEmpty(_order.contract_id) == true)
+                            //    _order.contract_id = _o.contract_id;
+
+                            if (_order.sideType != _o.sideType)
+                                continue;
+
+                            if (_order.timestamp > _o.timestamp)
+                                _order.timestamp = _o.timestamp;
+
+                            _order.quantity += _o.quantity;
+                            _order.fee += _o.fee;
+                            _order.amount += _o.amount;
+
+                            _order.count++;
+                        }
+
+                        _order.price = _order.amount / _order.quantity;
+
+                        _result.result = _order;
+                    }
+                    else
+                    {
+                        _json_result.SetResult(_json_data);
+                    }
+                }
+
+                _result.SetResult(_json_result);
+            }
+            else
+            {
+                _result.SetResult(_market);
             }
 
-            return await tradeClient.CallApiPostAsync<BPlaces>("/trade/place", _params);
+            return _result;
         }
 
         /// <summary>
-        /// 시장가 구매
+        /// Get all account orders; active, canceled, or filled.
         /// </summary>
-        /// <param name="currency">BTC, ETH, DASH, LTC, ETC, XRP (기본값: BTC)</param>
-        /// <param name="units">주문 수량, 1회 최소 수량 (BTC: 0.0001 | ETH: 0.001 | DASH: 0.001 | LTC: 0.01 | ETC: 0.01 | XRP: 1) - 1회 거래 한도 : 1억원</param>
+        /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
+        /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
+        /// <param name="timeframe">time frame interval (optional): default "1d"</param>
+        /// <param name="since">return committed data since given time (milli-seconds) (optional): default 0</param>
+        /// <param name="limits">maximum number of items (optional): default 20</param>
+        /// <param name="args">Add additional attributes for each exchange: (require) order_id, type</param>
         /// <returns></returns>
-        public async Task<BPlaceMarkets> PlaceMarketBuy(string currency, decimal units)
+        public override async Task<MyOrders> FetchMyOrders(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
         {
-            var _params = new Dictionary<string, object>();
+            var _result = new MyOrders(base_name, quote_name);
+
+            var _market = await publicApi.LoadMarket(_result.marketId);
+            if (_market.success == true)
             {
-                _params.Add("currency", currency.ToUpper());
-                _params.Add("units", units);
+                tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
+
+                var _timeframe = tradeClient.ExchangeInfo.GetTimeframe(timeframe);
+                var _timestamp = tradeClient.ExchangeInfo.GetTimestamp(timeframe);
+
+                var _params = new Dictionary<string, object>();
+                {
+                    _params.Add("currency", _market.result.symbol);
+                    _params.Add("order_id", "");
+                    _params.Add("type", "");
+                    _params.Add("after", since);
+                    _params.Add("count", limits);
+
+                    if (args != null)
+                    {
+                        foreach (var _a in args)
+                        {
+                            if (_params.ContainsKey(_a.Key) == true)
+                                _params.Remove(_a.Key);
+
+                            _params.Add(_a.Key, _a.Value);
+                        }
+                    }
+                }
+
+                var _json_value_detail = await tradeClient.CallApiPost1Async("/info/order_detail", _params);
+#if DEBUG
+                _result.rawJson += _json_value_detail.Content;
+#endif
+                var _json_result_detail = tradeClient.GetResponseMessage(_json_value_detail.Response);
+                if (_json_result_detail.success == true)
+                {
+                    var _json_data_detail = tradeClient.DeserializeObject<BMyOrders>(_json_value_detail.Content);
+                    if (_json_data_detail.success == true)
+                    {
+                        //var _order_id = (_params.ContainsKey("order_id") == true) ? _params["order_id"].ToString() : "";
+
+                        foreach (var _o in _json_data_detail.result)
+                        {
+                            _o.orderId = _o.timestamp.ToString();
+
+                            _o.makerType = MakerType.Unknown;
+                            _o.orderStatus = OrderStatus.Closed;
+                            _o.orderType = OrderType.Limit;
+
+                            _o.count++;
+
+                            _result.result.Add(_o);
+                        }
+
+                        _result.SetResult(_json_result_detail);
+                    }
+                    else
+                    {
+                        _json_result_detail.SetResult(_json_data_detail);
+                    }
+                }
+
+                var _json_value_orders = await tradeClient.CallApiPost1Async("/info/orders", _params);
+#if DEBUG
+                _result.rawJson += _json_value_orders.Content;
+#endif
+                var _json_result_orders = tradeClient.GetResponseMessage(_json_value_orders.Response);
+                if (_json_result_orders.success == true)
+                {
+                    var _json_data_orders = tradeClient.DeserializeObject<BMyOpenOrders>(_json_value_orders.Content);
+                    if (_json_data_orders.success == true)
+                    {
+                        foreach (var _o in _json_data_orders.result)
+                        {
+                            _o.symbol = _market.result.symbol;
+
+                            _o.orderType = OrderType.Limit;
+                            _o.makerType = MakerType.Maker;
+
+                            _o.filled = _o.quantity - _o.remaining;
+                            _o.amount = _o.quantity * _o.price;
+
+                            _o.count++;
+
+                            _result.result.Add(_o);
+                        }
+
+                        _result.SetResult(_json_result_orders);
+                    }
+                    else
+                    {
+                        _json_result_orders.SetResult(_json_data_orders);
+                    }
+                }
+
+                if (_json_result_detail.success == false && _json_result_orders.success == false)
+                    _result.SetResult(_json_result_detail);
+            }
+            else
+            {
+                _result.SetResult(_market);
             }
 
-            return await tradeClient.CallApiPostAsync<BPlaceMarkets>("/trade/market_buy", _params);
+            return _result;
         }
 
         /// <summary>
-        /// 시장가 판매
+        /// 
         /// </summary>
-        /// <param name="currency">BTC, ETH, DASH, LTC, ETC, XRP (기본값: BTC)</param>
-        /// <param name="units">주문 수량, 1회 최소 수량 (BTC: 0.0001 | ETH: 0.001 | DASH: 0.001 | LTC: 0.01 | ETC: 0.01 | XRP: 1) - 1회 거래 한도 : 1억원</param>
+        /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
+        /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
+        /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public async Task<BPlaceMarkets> PlaceMarketSell(string currency, decimal units)
+        public override async Task<MyOrders> FetchOpenOrders(string base_name, string quote_name, Dictionary<string, object> args = null)
         {
-            var _params = new Dictionary<string, object>();
+            var _result = new MyOrders(base_name, quote_name);
+
+            var _market = await publicApi.LoadMarket(_result.marketId);
+            if (_market.success == true)
             {
-                _params.Add("currency", currency.ToUpper());
-                _params.Add("units", units);
+                tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
+
+                var _params = new Dictionary<string, object>();
+                {
+                    var _since = 0; // CUnixTime.ConvertToUnixTimeMilli(CUnixTime.UtcNow.AddYears(-1));
+                    var _limits = 100;
+
+                    _params.Add("currency", _market.result.symbol);
+                    _params.Add("after", _since);
+                    _params.Add("count", _limits);
+
+                    if (args != null)
+                    {
+                        foreach (var _a in args)
+                        {
+                            if (_params.ContainsKey(_a.Key) == true)
+                                _params.Remove(_a.Key);
+
+                            _params.Add(_a.Key, _a.Value);
+                        }
+                    }
+                }
+
+                var _json_value = await tradeClient.CallApiPost1Async("/info/orders", _params);
+#if DEBUG
+                _result.rawJson = _json_value.Content;
+#endif
+                var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
+                if (_json_result.success == true)
+                {
+                    var _json_data = tradeClient.DeserializeObject<BMyOpenOrders>(_json_value.Content);
+                    if (_json_data.success == true)
+                    {
+                        foreach (var _o in _json_data.result)
+                        {
+                            if (_o.orderStatus != OrderStatus.Open && _o.orderStatus != OrderStatus.Partially)
+                                continue;
+
+                            _o.symbol = _market.result.symbol;
+
+                            _o.orderType = OrderType.Limit;
+                            _o.makerType = MakerType.Maker;
+
+                            _o.filled = _o.quantity - _o.remaining;
+                            _o.amount = _o.quantity * _o.price;
+
+                            _result.result.Add(_o);
+                        }
+                    }
+                    else
+                    {
+                        _json_result.SetResult(_json_data);
+                    }
+                }
+
+                _result.SetResult(_json_result);
+            }
+            else
+            {
+                _result.SetResult(_market);
             }
 
-            return await tradeClient.CallApiPostAsync<BPlaceMarkets>("/trade/market_sell", _params);
+            return _result;
+        }
+
+        /// <summary>
+        /// Get trades for a specific account and symbol.
+        /// </summary>
+        /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
+        /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
+        /// <param name="timeframe">time frame interval (optional): default "1d"</param>
+        /// <param name="since">return committed data since given time (milli-seconds) (optional): default 0</param>
+        /// <param name="limits">maximum number of items (optional): default 20</param>
+        /// <param name="args">Add additional attributes for each exchange</param>
+        /// <returns></returns>
+        public override async Task<MyTrades> FetchMyTrades(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
+        {
+            var _result = new MyTrades(base_name, quote_name);
+
+            var _market = await publicApi.LoadMarket(_result.marketId);
+            if (_market.success == true)
+            {
+                tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
+
+                var _timeframe = tradeClient.ExchangeInfo.GetTimeframe(timeframe);
+                var _timestamp = tradeClient.ExchangeInfo.GetTimestamp(timeframe);
+
+                var _params = new Dictionary<string, object>();
+                {
+                    _params.Add("currency", _market.result.symbol);
+                    _params.Add("offset", 0);
+                    _params.Add("count", limits);
+                    _params.Add("searchGb", 0);     // 0 : 전체, 1 : 구매완료, 2 : 판매완료, 3 : 출금중, 4 : 입금, 5 : 출금, 9 : KRW입금중
+
+                    if (args != null)
+                    {
+                        foreach (var _a in args)
+                        {
+                            if (_params.ContainsKey(_a.Key) == true)
+                                _params.Remove(_a.Key);
+
+                            _params.Add(_a.Key, _a.Value);
+                        }
+                    }
+                }
+
+                var _json_value = await tradeClient.CallApiPost1Async("/info/user_transactions", _params);
+#if DEBUG
+                _result.rawJson = _json_value.Content;
+#endif
+                var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
+                if (_json_result.success == true)
+                {
+                    var _json_data = tradeClient.DeserializeObject<BMyTrades>(_json_value.Content);
+                    if (_json_data.success == true)
+                    {
+                        var _orders = _json_data.result
+                                                .Where(o => o.timestamp >= since && (o.sideType == SideType.Ask || o.sideType == SideType.Bid))
+                                                .OrderByDescending(t => t.timestamp)
+                                                .Take(limits);
+
+                        foreach (var _o in _orders)
+                        {
+                            _o.symbol = _market.result.symbol;
+
+                            _o.amount = Math.Abs(_o.amount);
+                            if (_o.quantity != 0.0m)
+                                _o.price = _o.amount / _o.quantity;
+
+                            _result.result.Add(_o);
+                        }
+                    }
+                    else
+                    {
+                        _json_result.SetResult(_json_data);
+                    }
+                }
+
+                _result.SetResult(_json_result);
+            }
+            else
+            {
+                _result.SetResult(_market);
+            }
+
+            return _result;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
+        /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
+        /// <param name="quantity">amount of coin</param>
+        /// <param name="price">fiat rate of coin</param>
+        /// <param name="sideType">type of buy(bid) or sell(ask)</param>
+        /// <param name="args">Add additional attributes for each exchange</param>
+        /// <returns></returns>
+        public override async Task<MyOrder> CreateLimitOrder(string base_name, string quote_name, decimal quantity, decimal price, SideType sideType, Dictionary<string, object> args = null)
+        {
+            var _result = new MyOrder(base_name, quote_name);
+
+            var _market = await publicApi.LoadMarket(_result.marketId);
+            if (_market.success == true)
+            {
+                tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
+
+                var _buy_sell = sideType == SideType.Bid ? "bid" : "ask";
+
+                var _params = new Dictionary<string, object>();
+                {
+                    _params.Add("order_currency", _market.result.baseId);
+                    _params.Add("payment_currency", _market.result.quoteId);
+                    _params.Add("units", quantity);
+                    _params.Add("price", price);
+                    _params.Add("type", _buy_sell);
+
+                    if (args != null)
+                    {
+                        foreach (var _a in args)
+                        {
+                            if (_params.ContainsKey(_a.Key) == true)
+                                _params.Remove(_a.Key);
+
+                            _params.Add(_a.Key, _a.Value);
+                        }
+                    }
+                }
+
+                var _json_value = await tradeClient.CallApiPost1Async("/trade/place", _params);
+#if DEBUG
+                _result.rawJson = _json_value.Content;
+#endif
+                var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
+                if (_json_result.success == true)
+                {
+                    var _json_data = tradeClient.DeserializeObject<BPlaceOrders>(_json_value.Content);
+                    if (_json_data.success == true)
+                    {
+                        var _limit_order = new BPlaceOrderItem
+                        {
+                            orderId = _json_data.orderId,
+                            sideType = sideType,
+                            orderType = OrderType.Limit,
+                            orderStatus = OrderStatus.Open,
+                            timestamp = Convert.ToInt64(_json_data.orderId),
+
+                            price = price,
+                            quantity = quantity,
+                            amount = quantity * price,
+                            //fee = quantity * price * publicApi.ExchangeInfo.Fees.trading.maker,
+
+                            filled = 0m,
+                            cost = 0m
+                        };
+
+                        foreach (var _trade in _json_data.data)
+                        {
+                            _limit_order.filled += _trade.quantity;
+                            _limit_order.cost += _trade.amount + _trade.fee;
+                        }
+
+                        _result.result = _limit_order;
+                    }
+                    else
+                    {
+                        _json_result.SetResult(_json_data);
+                    }
+                }
+
+                _result.SetResult(_json_result);
+            }
+            else
+            {
+                _result.SetResult(_market);
+            }
+
+            return _result;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
+        /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
+        /// <param name="quantity">amount of coin</param>
+        /// <param name="price">fiat rate of coin</param>
+        /// <param name="sideType">type of buy(bid) or sell(ask)</param>
+        /// <param name="args">Add additional attributes for each exchange</param>
+        /// <returns></returns>
+        public override async Task<MyOrder> CreateMarketOrder(string base_name, string quote_name, decimal quantity, decimal price, SideType sideType, Dictionary<string, object> args = null)
+        {
+            var _result = new MyOrder(base_name, quote_name);
+
+            var _market = await publicApi.LoadMarket(_result.marketId);
+            if (_market.success == true)
+            {
+                tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
+
+                var _buy_sell = sideType == SideType.Bid ? "buy" : "sell";
+
+                var _params = new Dictionary<string, object>();
+                {
+                    _params.Add("currency", _market.result.baseId);
+                    _params.Add("units", quantity);
+
+                    if (args != null)
+                    {
+                        foreach (var _a in args)
+                        {
+                            if (_params.ContainsKey(_a.Key) == true)
+                                _params.Remove(_a.Key);
+
+                            _params.Add(_a.Key, _a.Value);
+                        }
+                    }
+                }
+
+                var _json_value = await tradeClient.CallApiPost1Async($"/trade/market_{_buy_sell}", _params);
+#if DEBUG
+                _result.rawJson = _json_value.Content;
+#endif
+                var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
+                if (_json_result.success == true)
+                {
+                    var _json_data = tradeClient.DeserializeObject<BPlaceOrders>(_json_value.Content);
+                    if (_json_data.success == true)
+                    {
+                        var _market_order = new BPlaceOrderItem
+                        {
+                            orderId = _json_data.orderId,
+                            sideType = sideType,
+                            orderType = OrderType.Market,
+                            orderStatus = OrderStatus.Open,
+                            timestamp = Convert.ToInt64(_json_data.orderId),
+
+                            price = price,
+                            quantity = quantity,
+                            amount = quantity * price,
+                            //fee = quantity * price * publicApi.ExchangeInfo.Fees.trading.maker,
+
+                            filled = 0m,
+                            cost = 0m
+                        };
+
+                        foreach (var _trade in _json_data.data)
+                        {
+                            _market_order.filled += _trade.quantity;
+                            _market_order.cost += _trade.amount + _trade.fee;
+                        }
+
+                        _result.result = _market_order;
+                    }
+                    else
+                    {
+                        _json_result.SetResult(_json_data);
+                    }
+                }
+
+                _result.SetResult(_json_result);
+            }
+            else
+            {
+                _result.SetResult(_market);
+            }
+
+            return _result;
         }
 
         /// <summary>
         /// bithumb 회원 판/구매 거래 취소
         /// </summary>
-        /// <param name="currency">BTC, ETH, DASH, LTC, ETC, XRP (기본값: BTC)</param>
-        /// <param name="order_id">판/구매 주문 등록된 주문번호</param>
-        /// <param name="type">거래유형 (bid : 구매, ask : 판매)</param>
+        /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
+        /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
+        /// <param name="order_id">Order number registered for sale or purchase</param>
+        /// <param name="quantity">amount of coin</param>
+        /// <param name="price">fiat rate of coin</param>
+        /// <param name="sideType">type of buy(bid) or sell(ask)</param>
+        /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public async Task<BCancel> CancelOrder(string currency, string order_id, string type)
+        public override async Task<MyOrder> CancelOrder(string base_name, string quote_name, string order_id, decimal quantity, decimal price, SideType sideType, Dictionary<string, object> args = null)
         {
-            var _params = new Dictionary<string, object>();
+            var _result = new MyOrder(base_name, quote_name);
+
+            var _market = await publicApi.LoadMarket(_result.marketId);
+            if (_market.success == true)
             {
-                _params.Add("currency", currency.ToUpper());
-                _params.Add("order_id", order_id);
-                _params.Add("type", type);
+                tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
+
+                var _buy_sell = sideType == SideType.Bid ? "bid" : "ask";
+
+                var _params = new Dictionary<string, object>();
+                {
+                    _params.Add("currency", _market.result.symbol);
+                    _params.Add("order_id", order_id);
+                    _params.Add("type", _buy_sell);
+
+                    if (args != null)
+                    {
+                        foreach (var _a in args)
+                        {
+                            if (_params.ContainsKey(_a.Key) == true)
+                                _params.Remove(_a.Key);
+
+                            _params.Add(_a.Key, _a.Value);
+                        }
+                    }
+                }
+
+                var _json_value = await tradeClient.CallApiPost1Async("/trade/cancel", _params);
+#if DEBUG
+                _result.rawJson = _json_value.Content;
+#endif
+                var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
+                if (_json_result.success == true)
+                {
+                    var _json_data = tradeClient.DeserializeObject<BPlaceOrder>(_json_value.Content);
+                    if (_json_data.success == true)
+                    {
+                        var _cancel_order = new BPlaceOrderItem
+                        {
+                            orderId = order_id,
+                            symbol = _market.result.symbol,
+
+                            orderStatus = OrderStatus.Canceled,
+                            sideType = sideType,
+
+                            quantity = quantity,
+                            price = price,
+                            amount = quantity * price
+                        };
+
+                        _result.result = _cancel_order;
+                    }
+                    else
+                    {
+                        _json_result.SetResult(_json_data);
+                    }
+                }
+
+                _result.SetResult(_json_result);
+            }
+            else
+            {
+                _result.SetResult(_market);
             }
 
-            return await tradeClient.CallApiPostAsync<BCancel>("/trade/cancel", _params);
-        }
-
-        /// <summary>
-        /// bithumb 회원 btc 출금(회원등급에 따른 BTC, ETH, DASH, LTC, ETC, XRP 출금)
-        /// </summary>
-        /// <param name="currency">BTC, ETH, DASH, LTC, ETC, XRP (기본값: BTC)</param>
-        /// <param name="units">Currency 출금 하고자 하는 수량, 1회 최소 수량 (BTC: 0.001 | ETH: 0.01 | DASH: 0.01 | LTC: 0.01 | ETC: 0.01 | XRP: 21) - 1회 최대 수량 : 회원등급수량</param>
-        /// <param name="address">Currency 출금 주소 (BTC, ETH, DASH, LTC, ETC, XRP)</param>
-        /// <param name="destination">Currency 출금 Destination Tag (XRP 출금시)</param>
-        /// <returns></returns>
-        public async Task<BWithdraw> BtcWithdrawal(string currency, decimal units, string address, string destination = null)
-        {
-            var _params = new Dictionary<string, object>();
-            {
-                _params.Add("currency", currency.ToUpper());
-                _params.Add("units", units);
-                _params.Add("address", address);
-                if (destination != null)
-                    _params.Add("destination", destination);
-            }
-
-            return await tradeClient.CallApiPostAsync<BWithdraw>("/trade/btc_withdrawal", _params);
-        }
-
-        /// <summary>
-        /// bithumb 회원 krw 출금 신청
-        /// </summary>
-        /// <param name="bank">은행코드_은행명</param>
-        /// <param name="account">출금계좌번호</param>
-        /// <param name="price">출금 금액</param>
-        /// <returns></returns>
-        public async Task<BWithdraw> KrwWithdrawal(string bank, string account, decimal price)
-        {
-            var _params = new Dictionary<string, object>();
-            {
-                _params.Add("bank", bank);
-                _params.Add("account", account);
-                _params.Add("price", price);
-            }
-
-            return await tradeClient.CallApiPostAsync<BWithdraw>("/trade/krw_withdrawal", _params);
-        }
-
-        /// <summary>
-        /// bithumb 회원 krw 입금 가상계좌 정보 요청
-        /// </summary>
-        /// <returns></returns>
-        public async Task<BKrwDeposit> KrwDeposit()
-        {
-            return await tradeClient.CallApiPostAsync<BKrwDeposit>("/trade/krw_deposit");
+            return _result;
         }
     }
 }

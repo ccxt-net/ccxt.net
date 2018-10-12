@@ -1,0 +1,14 @@
+﻿{
+  "status": "0000",
+  "data": {
+    "total_krw": 3000,
+    "in_use_krw": 0,
+    "available_krw": 3000,
+    "misu_krw": 0,
+    "total_btc": "0.00000000",
+    "in_use_btc": "0.00000000",
+    "available_btc": "0.00000000",
+    "misu_btc": "0.00000000",
+    "xcoin_last": "7045000"
+  }
+}

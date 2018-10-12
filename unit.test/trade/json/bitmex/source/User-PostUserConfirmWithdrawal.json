@@ -1,0 +1,14 @@
+{
+    "transactID": "string",
+    "account": 0,
+    "currency": "string",
+    "transactType": "string",
+    "amount": 0,
+    "fee": 0,
+    "transactStatus": "string",
+    "address": "string",
+    "tx": "string",
+    "text": "string",
+    "transactTime": "2018-07-03T01:52:46.786Z",
+    "timestamp": "2018-07-03T01:52:46.786Z"
+}

@@ -1,0 +1,16 @@
+﻿{
+  "errorCode": "0",
+  "status": "live",
+  "info": {
+    "orderId": "179E06BC-FE50-46E1-A140-8287CD1CA46D",
+    "feeRate": "0.0006",
+    "fee": "0",
+    "remainQty": "0.0100",
+    "timestamp": "1531109141",
+    "price": "7491000",
+    "currency": "BTC",
+    "type": "bid",
+    "qty": "0.0100"
+  },
+  "result": "success"
+}

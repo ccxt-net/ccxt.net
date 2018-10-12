@@ -1,0 +1,64 @@
+﻿{
+  "status": "0000",
+  "data": [{
+    "search": "1",
+    "transfer_date": "1532003308495361",
+    "units": "+ 12.167421",
+    "price": "-6641",
+    "xrp1krw": "545",
+    "fee": "0.01827900",
+    "xrp_remain": "12.16743700",
+    "krw_remain": "43359"
+  }, {
+    "search": "4",
+    "transfer_date": "1532000758264338",
+    "units": "0",
+    "price": "50000",
+    "krw1krw": "0",
+    "fee": "0.00000000",
+    "krw_remain": "50000"
+  }, {
+    "search": "5",
+    "transfer_date": "1530709151257130",
+    "units": "0",
+    "price": "-622428",
+    "krw1krw": "0",
+    "fee": "1000.00000000",
+    "krw_remain": "0"
+  }, {
+    "search": "2",
+    "transfer_date": "1530708821020130",
+    "units": "- 91.8751",
+    "price": "48896",
+    "xrp1krw": "533",
+    "fee": "73.00000000",
+    "xrp_remain": "0.00001600",
+    "krw_remain": "322016"
+  }, {
+    "search": "1",
+    "transfer_date": "1530684524877662",
+    "units": "+ 91.87508",
+    "price": "-48859",
+    "xrp1krw": "531",
+    "fee": "0.13802000",
+    "xrp_remain": "91.87511600",
+    "krw_remain": "0"
+  }, {
+    "search": "4",
+    "transfer_date": "1530550573266382",
+    "units": "+ 0.000036",
+    "price": "0",
+    "xrp1krw": "0",
+    "fee": "0.00000000",
+    "xrp_remain": "0.00003600",
+    "krw_remain": "3066"
+  }, {
+    "search": "4",
+    "transfer_date": "1530550440196586",
+    "units": "0",
+    "price": "66",
+    "krw1krw": "0",
+    "fee": "0.00000000",
+    "krw_remain": "3066"
+  }]
+}

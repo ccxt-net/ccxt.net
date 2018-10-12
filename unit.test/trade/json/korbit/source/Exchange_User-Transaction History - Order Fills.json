@@ -1,0 +1,51 @@
+[{
+        "timestamp": 1383707746000,
+        "completedAt": 1383797746000,
+        "id": "599",
+        "type": "sell",
+        "fee": {
+            "currency": "krw",
+            "value": "1500"
+        },
+        "fillsDetail": {
+            "price": {
+                "currency": "krw",
+                "value": "1000000"
+            },
+            "amount": {
+                "currency": "btc",
+                "value": "1"
+            },
+            "native_amount": {
+                "currency": "krw",
+                "value": "1000000"
+            },
+            "orderId": "1002"
+        }
+    },
+    {
+        "timestamp": 1383705741000,
+        "completedAt": 1383797746200,
+        "id": "597",
+        "type": "buy",
+        "fee": {
+            "currency": "btc",
+            "value": "0.0015"
+        },
+        "fillsDetail": {
+            "price": {
+                "currency": "krw",
+                "value": "1000000"
+            },
+            "amount": {
+                "currency": "btc",
+                "value": "1"
+            },
+            "native_amount": {
+                "currency": "krw",
+                "value": "1000000"
+            },
+            "orderId": "1002"
+        }
+    }
+]
