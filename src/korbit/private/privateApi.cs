@@ -80,16 +80,7 @@ namespace CCXT.NET.Korbit.Private
                 {
                     _params.Add("currency", _currency_id.result);
 
-                    if (args != null)
-                    {
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
+                    privateClient.MergeParamsAndArgs(_params, args);
                 }
 
                 var _json_value = await privateClient.CallApiPost1Async("/user/coins/address/assign", _params);
@@ -130,19 +121,7 @@ namespace CCXT.NET.Korbit.Private
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
-                var _params = new Dictionary<string, object>();
-                {
-                    if (args != null)
-                    {
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
-                }
+                var _params = privateClient.MergeParamsAndArgs(args);
 
                 var _json_value = await privateClient.CallApiGet1Async("/user/accounts", _params);
 #if DEBUG
@@ -209,16 +188,7 @@ namespace CCXT.NET.Korbit.Private
                     _params.Add("amount", quantity);
                     _params.Add("address", address);
 
-                    if (args != null)
-                    {
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
+                    privateClient.MergeParamsAndArgs(_params, args);
                 }
 
                 var _json_value = await privateClient.CallApiPost1Async("/user/coins/out", _params);
@@ -290,16 +260,7 @@ namespace CCXT.NET.Korbit.Private
                     _params.Add("currency", _currency_id.result);
                     _params.Add("id", transferId);
 
-                    if (args != null)
-                    {
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
+                    privateClient.MergeParamsAndArgs(_params, args);
                 }
 
                 var _json_value = await privateClient.CallApiPost1Async("/user/coins/out/cancel", _params);
@@ -371,16 +332,7 @@ namespace CCXT.NET.Korbit.Private
                     _params.Add("offset", 0);
                     _params.Add("limit", limits);
 
-                    if (args != null)
-                    {
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
+                    privateClient.MergeParamsAndArgs(_params, args);
                 }
 
                 var _json_value = await privateClient.CallApiGet1Async("/user/transfers", _params);
@@ -434,19 +386,7 @@ namespace CCXT.NET.Korbit.Private
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
-                var _params = new Dictionary<string, object>();
-                {
-                    if (args != null)
-                    {
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
-                }
+                var _params = privateClient.MergeParamsAndArgs(args);
 
                 var _json_value = await privateClient.CallApiGet1Async("/user/balances", _params);
 #if DEBUG

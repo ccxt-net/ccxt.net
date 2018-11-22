@@ -45,19 +45,7 @@ namespace CCXT.NET.Korbit.Public
 
             publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
             {
-                var _params = new Dictionary<string, object>();
-                {
-                    if (args != null)
-                    {
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
-                }
+                var _params = publicClient.MergeParamsAndArgs(args);
 
                 var _json_value = await publicClient.CallApiGet1Async("/constants", _params);
 #if DEBUG
@@ -157,16 +145,7 @@ namespace CCXT.NET.Korbit.Public
                 {
                     _params.Add("currency_pair", _market.result.symbol);
 
-                    if (args != null)
-                    {
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
+                    publicClient.MergeParamsAndArgs(_params, args);
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async("/ticker/detailed", _params);
@@ -215,16 +194,7 @@ namespace CCXT.NET.Korbit.Public
                     _params.Add("currency_pair", _market.result.symbol);
                     _params.Add("category", "all");
 
-                    if (args != null)
-                    {
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
+                    publicClient.MergeParamsAndArgs(_params, args);
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async("/orderbook", _params);
@@ -283,16 +253,7 @@ namespace CCXT.NET.Korbit.Public
                     //_params.Add("time", "hour");              // default hour, The time period you want to query. If this parameter is specified as minute, 
                     // it queries data within the last minute, hour means the last hour, day means the last 24 hours.
 
-                    if (args != null)
-                    {
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
+                    publicClient.MergeParamsAndArgs(_params, args);
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async("/transactions", _params);

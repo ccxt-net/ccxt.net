@@ -51,16 +51,7 @@ namespace CCXT.NET.Poloniex.Public
                 {
                     _params.Add("command", "returnTicker");
 
-                    if (args != null)
-                    {
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
+                    publicClient.MergeParamsAndArgs(_params, args);
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async("", _params);
@@ -154,16 +145,7 @@ namespace CCXT.NET.Poloniex.Public
                 {
                     _params.Add("command", "returnTicker");
 
-                    if (args != null)
-                    {
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
+                    publicClient.MergeParamsAndArgs(_params, args);
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async("", _params);
@@ -212,16 +194,7 @@ namespace CCXT.NET.Poloniex.Public
                 {
                     _params.Add("command", "returnTicker");
 
-                    if (args != null)
-                    {
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
+                    publicClient.MergeParamsAndArgs(_params, args);
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async("", _params);
@@ -279,16 +252,7 @@ namespace CCXT.NET.Poloniex.Public
                     if (limits > 0)
                         _params.Add("depth", limits);
 
-                    if (args != null)
-                    {
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
+                    publicClient.MergeParamsAndArgs(_params, args);
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async("", _params);
@@ -353,16 +317,7 @@ namespace CCXT.NET.Poloniex.Public
                     _params.Add("start", _from_time);
                     _params.Add("end", _till_time);
 
-                    if (args != null)
-                    {
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
+                    publicClient.MergeParamsAndArgs(_params, args);
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async("", _params);
@@ -441,16 +396,7 @@ namespace CCXT.NET.Poloniex.Public
                         _params.Add("end", _till_time);
                     }
 
-                    if (args != null)
-                    {
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
+                    publicClient.MergeParamsAndArgs(_params, args);
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async("", _params);

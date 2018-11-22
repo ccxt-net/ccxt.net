@@ -65,19 +65,7 @@ namespace CCXT.NET.Bithumb.Public
 
             publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
             {
-                var _params = new Dictionary<string, object>();
-                {
-                    if (args != null)
-                    {
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
-                }
+                var _params = publicClient.MergeParamsAndArgs(args);
 
                 var _json_value = await publicClient.CallApiGet1Async("/ticker/ALL", _params);
 #if DEBUG
@@ -172,19 +160,7 @@ namespace CCXT.NET.Bithumb.Public
             {
                 publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
 
-                var _params = new Dictionary<string, object>();
-                {
-                    if (args != null)
-                    {
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
-                }
+                var _params = publicClient.MergeParamsAndArgs(args);
 
                 var _json_value = await publicClient.CallApiGet1Async($"/ticker/{_market.result.symbol}", _params);
 #if DEBUG
@@ -237,19 +213,7 @@ namespace CCXT.NET.Bithumb.Public
             {
                 publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
 
-                var _params = new Dictionary<string, object>();
-                {
-                    if (args != null)
-                    {
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
-                }
+                var _params = publicClient.MergeParamsAndArgs(args);
 
                 var _json_value = await publicClient.CallApiGet1Async("/ticker/ALL", _params);
 #if DEBUG
@@ -323,16 +287,7 @@ namespace CCXT.NET.Bithumb.Public
                     _params.Add("count", _limit);
                     _params.Add("group_orders", 1); // group_orders Int Value : 0 또는 1 
 
-                    if (args != null)
-                    {
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
+                    publicClient.MergeParamsAndArgs(_params, args);
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async($"/orderbook/{_market.result.symbol}", _params);
@@ -407,16 +362,7 @@ namespace CCXT.NET.Bithumb.Public
 
                     _params.Add("strTime", CUnixTime.NowMilli);
 
-                    if (args != null)
-                    {
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
+                    publicClient.MergeParamsAndArgs(_params, args);
                 }
 
                 var _json_value = await publicWeb.CallApiGet1Async($"/resources/chart/{_market.result.symbol}_xcoinTrade_{_timeframe}.json", _params);
@@ -487,16 +433,7 @@ namespace CCXT.NET.Bithumb.Public
                     //_params.Add("cont_no", 0);    // 체결 번호
                     _params.Add("count", _limit);
 
-                    if (args != null)
-                    {
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
+                    publicClient.MergeParamsAndArgs(_params, args);
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async($"/transaction_history/{_market.result.symbol}", _params);

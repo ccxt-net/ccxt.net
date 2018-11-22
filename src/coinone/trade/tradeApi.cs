@@ -75,16 +75,7 @@ namespace CCXT.NET.Coinone.Trade
                     _params.Add("currency", _market.result.symbol);
                     _params.Add("order_id", order_id);
 
-                    if (args != null)
-                    {
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
+                    tradeClient.MergeParamsAndArgs(_params, args);
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async("/v2/order/order_info", _params);
@@ -135,16 +126,7 @@ namespace CCXT.NET.Coinone.Trade
                 {
                     _params.Add("currency", _market.result.symbol);
 
-                    if (args != null)
-                    {
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
+                    tradeClient.MergeParamsAndArgs(_params, args);
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async("/v2/order/limit_orders", _params);
@@ -207,16 +189,7 @@ namespace CCXT.NET.Coinone.Trade
                 {
                     _params.Add("currency", _market.result.symbol);
 
-                    if (args != null)
-                    {
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
+                    tradeClient.MergeParamsAndArgs(_params, args);
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async("/v2/order/complete_orders", _params);
@@ -258,7 +231,7 @@ namespace CCXT.NET.Coinone.Trade
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
         /// <param name="quantity">amount of coin</param>
-        /// <param name="price">fiat rate of coin</param>
+        /// <param name="price">price of coin</param>
         /// <param name="sideType">type of buy(bid) or sell(ask)</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
@@ -279,16 +252,7 @@ namespace CCXT.NET.Coinone.Trade
                     _params.Add("price", price);
                     _params.Add("qty", quantity);
 
-                    if (args != null)
-                    {
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
+                    tradeClient.MergeParamsAndArgs(_params, args);
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async($"/v2/order/limit_{_buy_sell}", _params);
@@ -344,7 +308,7 @@ namespace CCXT.NET.Coinone.Trade
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
         /// <param name="order_id">Order number registered for sale or purchase</param>
         /// <param name="quantity">amount of coin</param>
-        /// <param name="price">fiat rate of coin</param>
+        /// <param name="price">price of coin</param>
         /// <param name="sideType">type of buy(bid) or sell(ask)</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
@@ -365,16 +329,7 @@ namespace CCXT.NET.Coinone.Trade
                     _params.Add("qty", quantity);
                     _params.Add("is_ask", sideType == SideType.Ask ? 1 : 0);
 
-                    if (args != null)
-                    {
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
+                    tradeClient.MergeParamsAndArgs(_params, args);
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async("/v2/order/cancel", _params);

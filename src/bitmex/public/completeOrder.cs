@@ -24,16 +24,6 @@ namespace CCXT.NET.BitMEX.Public
         /// <summary>
         /// 
         /// </summary>
-        [JsonProperty(PropertyName = "originTimestamp")]
-        public override long timestamp
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [JsonProperty(PropertyName = "size")]
         public override decimal quantity
         {
@@ -86,6 +76,16 @@ namespace CCXT.NET.BitMEX.Public
         /// </summary>
         [JsonProperty(PropertyName = "foreignNotional")]
         public decimal foreignNotional
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty(PropertyName = "origin_timestamp")]
+        public override long timestamp
         {
             get;
             set;

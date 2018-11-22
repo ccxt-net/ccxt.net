@@ -84,16 +84,7 @@ namespace CCXT.NET.BitMEX.Private
                 {
                     _params.Add("currency", _currency_id.result);
 
-                    if (args != null)
-                    {
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
+                    privateClient.MergeParamsAndArgs(_params, args);
                 }
 
                 var _json_value = await privateClient.CallApiGet1Async("/api/v1/user/depositAddress", _params);
@@ -144,16 +135,7 @@ namespace CCXT.NET.BitMEX.Private
                     _params.Add("amount", quantity);
                     _params.Add("address", address);
 
-                    if (args != null)
-                    {
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
+                    privateClient.MergeParamsAndArgs(_params, args);
                 }
 
                 var _json_value = await privateClient.CallApiPost1Async("/api/v1/user/requestWithdrawal", _params);
@@ -233,16 +215,7 @@ namespace CCXT.NET.BitMEX.Private
                 {
                     _params.Add("currency", _currency_id.result);
 
-                    if (args != null)
-                    {
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
+                    privateClient.MergeParamsAndArgs(_params, args);
                 }
 
                 var _json_value = await privateClient.CallApiGet1Async("/api/v1/user/walletHistory", _params);
@@ -321,16 +294,7 @@ namespace CCXT.NET.BitMEX.Private
                 {
                     _params.Add("currency", _currency_id.result);
 
-                    if (args != null)
-                    {
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
+                    privateClient.MergeParamsAndArgs(_params, args);
                 }
 
                 var _json_value = await privateClient.CallApiGet1Async("/api/v1/user/margin", _params);
@@ -385,16 +349,7 @@ namespace CCXT.NET.BitMEX.Private
                 {
                     _params.Add("currency", "all");
 
-                    if (args != null)
-                    {
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
+                    privateClient.MergeParamsAndArgs(_params, args);
                 }
 
                 var _json_value = await privateClient.CallApiGet1Async("/api/v1/user/margin", _params);
@@ -443,7 +398,7 @@ namespace CCXT.NET.BitMEX.Private
         /// </summary>
         /// <param name="message"></param>
         /// <param name="channelId"></param>
-        /// <param name="args"></param>
+        /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
         public async Task<Trollboxe> SendChatMessage(string message, int channelId, Dictionary<string, object> args = null)
         {
@@ -456,16 +411,7 @@ namespace CCXT.NET.BitMEX.Private
                     _params.Add("message", message);
                     _params.Add("channelID", channelId);
 
-                    if (args != null)
-                    {
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
+                    privateClient.MergeParamsAndArgs(_params, args);
                 }
 
                 var _json_value = await privateClient.CallApiPost1Async("/api/v1/chat", _params);

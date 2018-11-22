@@ -33,7 +33,7 @@ namespace CCXT.NET.BitMEX.Trade
         /// <summary>
         /// 
         /// </summary>
-        [JsonProperty(PropertyName = "originTimestamp")]
+        [JsonProperty(PropertyName = "origin_timestamp")]
         public override long timestamp
         {
             get;

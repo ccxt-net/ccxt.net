@@ -46,7 +46,7 @@ namespace CCXT.NET.BitMEX.Public
         }
 
         /// <summary>
-        /// 
+        /// 포지션 계약 단위 (무기한 일때 값 없음)
         /// </summary>
         public string positionCurrency
         {
@@ -70,7 +70,25 @@ namespace CCXT.NET.BitMEX.Public
         {
             get;
             set;
-        }        
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string orderBase
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string orderQuote
+        {
+            get;
+            set;
+        }
 
         /// <summary>
         /// 

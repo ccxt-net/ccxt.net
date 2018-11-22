@@ -3,6 +3,7 @@ using OdinSdk.BaseLib.Coin;
 using OdinSdk.BaseLib.Coin.Trade;
 using OdinSdk.BaseLib.Coin.Types;
 using OdinSdk.BaseLib.Configuration;
+using OdinSdk.BaseLib.Extension;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -75,16 +76,7 @@ namespace CCXT.NET.Poloniex.Trade
                     _params.Add("command", "returnOpenOrders");
                     _params.Add("currencyPair", _market.result.symbol);
 
-                    if (args != null)
-                    {
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
+                    tradeClient.MergeParamsAndArgs(_params, args);
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async("", _params);
@@ -136,16 +128,7 @@ namespace CCXT.NET.Poloniex.Trade
                     _params.Add("command", "returnOpenOrders");
                     _params.Add("currencyPair", "all");
 
-                    if (args != null)
-                    {
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
+                    tradeClient.MergeParamsAndArgs(_params, args);
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async("", _params);
@@ -216,16 +199,7 @@ namespace CCXT.NET.Poloniex.Trade
                     _params.Add("end", CUnixTime.Now);
                     _params.Add("limit", limits);
 
-                    if (args != null)
-                    {
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
+                    tradeClient.MergeParamsAndArgs(_params, args);
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async("", _params);
@@ -264,7 +238,7 @@ namespace CCXT.NET.Poloniex.Trade
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
         /// <param name="quantity">amount of coin</param>
-        /// <param name="price">fiat rate of coin</param>
+        /// <param name="price">price of coin</param>
         /// <param name="sideType">type of buy(bid) or sell(ask)</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
@@ -284,16 +258,7 @@ namespace CCXT.NET.Poloniex.Trade
                     _params.Add("rate", price.ToStringNormalized());
                     _params.Add("amount", quantity.ToStringNormalized());
 
-                    if (args != null)
-                    {
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
+                    tradeClient.MergeParamsAndArgs(_params, args);
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async("", _params);
@@ -348,7 +313,7 @@ namespace CCXT.NET.Poloniex.Trade
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
         /// <param name="order_id">Order number registered for sale or purchase</param>
         /// <param name="quantity">amount of coin</param>
-        /// <param name="price">fiat rate of coin</param>
+        /// <param name="price">price of coin</param>
         /// <param name="sideType">type of buy(bid) or sell(ask)</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
@@ -367,16 +332,7 @@ namespace CCXT.NET.Poloniex.Trade
                     _params.Add("currencyPair", _market.result.symbol);
                     _params.Add("orderNumber", order_id);
 
-                    if (args != null)
-                    {
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
+                    tradeClient.MergeParamsAndArgs(_params, args);
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async("", _params);

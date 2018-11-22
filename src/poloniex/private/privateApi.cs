@@ -74,16 +74,7 @@ namespace CCXT.NET.Poloniex.Private
                     _params.Add("command", "generateNewAddress");
                     _params.Add("currency", _currency_id.result);
 
-                    if (args != null)
-                    {
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
+                    privateClient.MergeParamsAndArgs(_params, args);
                 }
 
                 var _json_value = await privateClient.CallApiPost1Async("", _params);
@@ -128,16 +119,7 @@ namespace CCXT.NET.Poloniex.Private
                 {
                     _params.Add("command", "returnDepositAddresses");
 
-                    if (args != null)
-                    {
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
+                    privateClient.MergeParamsAndArgs(_params, args);
                 }
 
                 var _json_value = await privateClient.CallApiPost1Async("", _params);
@@ -203,16 +185,7 @@ namespace CCXT.NET.Poloniex.Private
                     _params.Add("amount", quantity);
                     _params.Add("address", address);
 
-                    if (args != null)
-                    {
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
+                    privateClient.MergeParamsAndArgs(_params, args);
                 }
 
                 var _json_value = await privateClient.CallApiPost1Async("", _params);
@@ -291,16 +264,7 @@ namespace CCXT.NET.Poloniex.Private
                     _params.Add("start", _from_time);
                     _params.Add("end", _till_time);
 
-                    if (args != null)
-                    {
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
+                    privateClient.MergeParamsAndArgs(_params, args);
                 }
 
                 var _json_value = await privateClient.CallApiPost1Async("", _params);
@@ -376,16 +340,7 @@ namespace CCXT.NET.Poloniex.Private
                     _params.Add("command", "returnCompleteBalances");
                     _params.Add("account", "all");
 
-                    if (args != null)
-                    {
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
+                    privateClient.MergeParamsAndArgs(_params, args);
                 }
 
                 var _json_value = await privateClient.CallApiPost1Async("", _params);

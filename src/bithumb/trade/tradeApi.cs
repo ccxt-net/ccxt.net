@@ -77,16 +77,7 @@ namespace CCXT.NET.Bithumb.Trade
                     _params.Add("order_id", order_id);
                     _params.Add("type", "");
 
-                    if (args != null)
-                    {
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
+                    tradeClient.MergeParamsAndArgs(_params, args);
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async("/info/order_detail", _params);
@@ -184,16 +175,7 @@ namespace CCXT.NET.Bithumb.Trade
                     _params.Add("after", since);
                     _params.Add("count", limits);
 
-                    if (args != null)
-                    {
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
+                    tradeClient.MergeParamsAndArgs(_params, args);
                 }
 
                 var _json_value_detail = await tradeClient.CallApiPost1Async("/info/order_detail", _params);
@@ -241,6 +223,11 @@ namespace CCXT.NET.Bithumb.Trade
                     {
                         foreach (var _o in _json_data_orders.result)
                         {
+#if DEBUG
+                            if (String.IsNullOrEmpty(_o.orderId) == true)
+                                continue;
+#endif
+
                             _o.symbol = _market.result.symbol;
 
                             _o.orderType = OrderType.Limit;
@@ -298,16 +285,7 @@ namespace CCXT.NET.Bithumb.Trade
                     _params.Add("after", _since);
                     _params.Add("count", _limits);
 
-                    if (args != null)
-                    {
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
+                    tradeClient.MergeParamsAndArgs(_params, args);
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async("/info/orders", _params);
@@ -322,7 +300,7 @@ namespace CCXT.NET.Bithumb.Trade
                     {
                         foreach (var _o in _json_data.result)
                         {
-                            if (_o.orderStatus != OrderStatus.Open && _o.orderStatus != OrderStatus.Partially)
+                            if (OrderStatusConverter.IsAlive(_o.orderStatus) == false)
                                 continue;
 
                             _o.symbol = _market.result.symbol;
@@ -381,16 +359,7 @@ namespace CCXT.NET.Bithumb.Trade
                     _params.Add("count", limits);
                     _params.Add("searchGb", 0);     // 0 : 전체, 1 : 구매완료, 2 : 판매완료, 3 : 출금중, 4 : 입금, 5 : 출금, 9 : KRW입금중
 
-                    if (args != null)
-                    {
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
+                    tradeClient.MergeParamsAndArgs(_params, args);
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async("/info/user_transactions", _params);
@@ -441,7 +410,7 @@ namespace CCXT.NET.Bithumb.Trade
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
         /// <param name="quantity">amount of coin</param>
-        /// <param name="price">fiat rate of coin</param>
+        /// <param name="price">price of coin</param>
         /// <param name="sideType">type of buy(bid) or sell(ask)</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
@@ -464,16 +433,7 @@ namespace CCXT.NET.Bithumb.Trade
                     _params.Add("price", price);
                     _params.Add("type", _buy_sell);
 
-                    if (args != null)
-                    {
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
+                    tradeClient.MergeParamsAndArgs(_params, args);
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async("/trade/place", _params);
@@ -533,7 +493,7 @@ namespace CCXT.NET.Bithumb.Trade
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
         /// <param name="quantity">amount of coin</param>
-        /// <param name="price">fiat rate of coin</param>
+        /// <param name="price">price of coin</param>
         /// <param name="sideType">type of buy(bid) or sell(ask)</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
@@ -553,16 +513,7 @@ namespace CCXT.NET.Bithumb.Trade
                     _params.Add("currency", _market.result.baseId);
                     _params.Add("units", quantity);
 
-                    if (args != null)
-                    {
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
+                    tradeClient.MergeParamsAndArgs(_params, args);
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async($"/trade/market_{_buy_sell}", _params);
@@ -623,7 +574,7 @@ namespace CCXT.NET.Bithumb.Trade
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
         /// <param name="order_id">Order number registered for sale or purchase</param>
         /// <param name="quantity">amount of coin</param>
-        /// <param name="price">fiat rate of coin</param>
+        /// <param name="price">price of coin</param>
         /// <param name="sideType">type of buy(bid) or sell(ask)</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
@@ -644,16 +595,7 @@ namespace CCXT.NET.Bithumb.Trade
                     _params.Add("order_id", order_id);
                     _params.Add("type", _buy_sell);
 
-                    if (args != null)
-                    {
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
+                    tradeClient.MergeParamsAndArgs(_params, args);
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async("/trade/cancel", _params);

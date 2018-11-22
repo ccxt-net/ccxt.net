@@ -85,7 +85,7 @@ namespace CCXT.NET.Coinone.Public
         /// <summary>
         /// 
         /// </summary>
-        [JsonProperty(PropertyName = "originTimestamp")]
+        [JsonProperty(PropertyName = "origin_timestamp")]
         public override long timestamp
         {
             get;

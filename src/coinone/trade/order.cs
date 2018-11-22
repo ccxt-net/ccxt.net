@@ -117,16 +117,6 @@ namespace CCXT.NET.Coinone.Trade
         /// <summary>
         /// 
         /// </summary>
-        [JsonProperty(PropertyName = "originTimestamp")]
-        public override long timestamp
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [JsonProperty(PropertyName = "remainQty")]
         public decimal remainQty
         {
@@ -139,6 +129,16 @@ namespace CCXT.NET.Coinone.Trade
         /// </summary>
         [JsonProperty(PropertyName = "feeRate")]
         public decimal feeRate
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty(PropertyName = "origin_timestamp")]
+        public override long timestamp
         {
             get;
             set;

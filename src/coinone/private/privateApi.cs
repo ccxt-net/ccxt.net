@@ -80,16 +80,7 @@ namespace CCXT.NET.Coinone.Private
                 {
                     _params.Add("currency", _currency_id.result);
 
-                    if (args != null)
-                    {
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
+                    privateClient.MergeParamsAndArgs(_params, args);
                 }
 
                 var _json_value = await privateClient.CallApiPost1Async("/v2/transaction/history/", _params);
@@ -147,19 +138,7 @@ namespace CCXT.NET.Coinone.Private
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
-                var _params = new Dictionary<string, object>();
-                {
-                    if (args != null)
-                    {
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
-                }
+                var _params = privateClient.MergeParamsAndArgs(args);
 
                 var _json_value = await privateClient.CallApiPost1Async("/v2/account/deposit_address", _params);
 #if DEBUG
@@ -229,19 +208,10 @@ namespace CCXT.NET.Coinone.Private
                     _params.Add("qty", quantity);
                     _params.Add("type", "trade");
 
-                    if (args != null)
-                    {
-                        //    _params.Add("auth_number", args["auth_number"]);     // 2-Factor Authentication number.
-                        //    _params.Add("from_address", args["from_address"]);
+                    //_params.Add("auth_number", args["auth_number"]);     // 2-Factor Authentication number.
+                    //_params.Add("from_address", args["from_address"]);
 
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
+                    privateClient.MergeParamsAndArgs(_params, args);
                 }
 
                 var _json_value = await privateClient.CallApiPost1Async($"/v2/transaction/{_currency_id.result}/", _params);
@@ -307,19 +277,7 @@ namespace CCXT.NET.Coinone.Private
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
-                var _params = new Dictionary<string, object>();
-                {
-                    if (args != null)
-                    {
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
-                }
+                var _params = privateClient.MergeParamsAndArgs(args);
 
                 var _json_value = await privateClient.CallApiPost1Async("/v2/account/balance", _params);
 #if DEBUG
@@ -374,19 +332,7 @@ namespace CCXT.NET.Coinone.Private
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
-                var _params = new Dictionary<string, object>();
-                {
-                    if (args != null)
-                    {
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
-                }
+                var _params = privateClient.MergeParamsAndArgs(args);
 
                 var _json_value = await privateClient.CallApiPost1Async("/v2/account/balance", _params);
 #if DEBUG
@@ -428,7 +374,7 @@ namespace CCXT.NET.Coinone.Private
         /// Transaction_V2 - 2-Factor Authentication
         /// </summary>
         /// <param name="currency_name">base coin or quote coin name</param>
-        /// <param name="args"></param>
+        /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
         public async Task<CAuthNumber> GetAuthNumber(string currency_name, Dictionary<string, object> args = null)
         {
@@ -443,16 +389,7 @@ namespace CCXT.NET.Coinone.Private
                 {
                     _params.Add("type", _currency_id.result);
 
-                    if (args != null)
-                    {
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
+                    privateClient.MergeParamsAndArgs(_params, args);
                 }
 
                 var _json_value = await privateClient.CallApiPost1Async("/v2/transaction/auth_number/", _params);

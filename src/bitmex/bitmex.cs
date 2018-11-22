@@ -64,6 +64,7 @@ namespace CCXT.NET.BitMEX
                                 { "public", "https://www.bitmex.com" },
                                 { "private", "https://www.bitmex.com" },
                                 { "trade", "https://www.bitmex.com" },
+                                { "udf", "https://www.bitmex.com" },
                                 { "test.public", "https://testnet.bitmex.com" },
                                 { "test.private", "https://testnet.bitmex.com" },
                                 { "test.trade", "https://testnet.bitmex.com" }
@@ -176,6 +177,45 @@ namespace CCXT.NET.BitMEX
                     });
 
                     //_request.Resource += $"?{_post_data}";
+                }
+
+                var _signature = await CreateSignature(_request.Method, endpoint, _nonce, _json_body);
+                {
+                    _request.AddHeader("api-expires", _nonce);
+                    _request.AddHeader("api-key", ConnectKey);
+                    _request.AddHeader("api-signature", _signature);
+                }
+            }
+
+            return await Task.FromResult(_request);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="endpoint"></param>
+        /// <param name="args">Add additional attributes for each exchange</param>
+        /// <returns></returns>
+        public override async Task<IRestRequest> CreatePutRequest(string endpoint, Dictionary<string, object> args = null)
+        {
+            var _request = await base.CreatePutRequest(endpoint);
+
+            if (IsAuthentication == true)
+            {
+                var _nonce = (GenerateOnlyNonce(10) + 3600).ToString();
+
+                var _json_body = "";
+                if (args != null && args.Count > 0)
+                {
+                    _json_body = Regex.Unescape(this.SerializeObject(args, Formatting.None));
+
+                    _request.AddParameter(new Parameter
+                    {
+                        ContentType = "",
+                        Name = "application/json",
+                        Type = ParameterType.RequestBody,
+                        Value = _json_body
+                    });
                 }
 
                 var _signature = await CreateSignature(_request.Method, endpoint, _nonce, _json_body);

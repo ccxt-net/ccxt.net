@@ -56,19 +56,7 @@ namespace CCXT.NET.BitMEX.Public
 
             publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
             {
-                var _params = new Dictionary<string, object>();
-                {
-                    if (args != null)
-                    {
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
-                }
+                var _params = publicClient.MergeParamsAndArgs(args);
 
                 var _json_value = await publicClient.CallApiGet1Async("/api/v1/instrument/active", _params);
 #if DEBUG
@@ -92,6 +80,9 @@ namespace CCXT.NET.BitMEX.Public
 
                         var _market_id = _base_name + "/" + _quote_name;
 
+                        var _order_base = _base_name;
+                        var _order_quote = _quote_name;
+
                         var _base_quote = _base_id + _quote_id;
                         if (_m.symbol == _base_quote)
                         {
@@ -102,9 +93,19 @@ namespace CCXT.NET.BitMEX.Public
                         {
                             var _symbols = _m.symbol.Split('_');
                             if (_symbols.Length > 1)
+                            {
                                 _market_id = _symbols[0] + "/" + _symbols[1];
+
+                                _order_base = _symbols[0];
+                                _order_quote = _symbols[1];
+                            }
                             else
+                            {
                                 _market_id = _m.symbol.Substring(0, 3) + "/" + _m.symbol.Substring(3);
+
+                                _order_base = _m.symbol.Substring(0, 3);
+                                _order_quote = _m.symbol.Substring(3);
+                            }
 
                             if (_m.symbol.IndexOf("B_") >= 0)
                             {
@@ -122,6 +123,10 @@ namespace CCXT.NET.BitMEX.Public
 
                         _m.baseId = (_base_name != "BTC") ? _base_id : _m.settlCurrency;
                         _m.quoteId = (_quote_name != "BTC") ? _quote_id : _m.settlCurrency;
+
+                        _m.orderBase = _order_base;
+                        _m.orderQuote = _order_quote;
+
                         _m.baseName = _base_name;
                         _m.quoteName = _quote_name;
 
@@ -172,11 +177,50 @@ namespace CCXT.NET.BitMEX.Public
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="args">Add additional attributes for each exchange</param>
+        /// <returns></returns>
+        public async Task<LeaderBoards> FetchLeaderBoard(Dictionary<string, object> args = null)
+        {
+            var _result = new LeaderBoards();
+
+            // fetch leaderboard
+            publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
+            {
+                var _params = publicClient.MergeParamsAndArgs(args);
+
+                var _json_result = publicClient.GetResponseMessage();
+                {
+                    var _json_leader = await publicClient.CallApiGet1Async("/api/v1/leaderboard", _params);
+
+                    var _leaderboard_result = publicClient.GetResponseMessage(_json_leader.Response);
+                    if (_leaderboard_result.success == true)
+                    {
+#if DEBUG
+                        _result.rawJson = _json_leader.Content;
+#endif
+                        var _leaders = publicClient.DeserializeObject<List<LeaderBoardItem>>(_json_leader.Content);
+                        _result.result = _leaders.ToList<ILeaderBoardItem>();
+                    }
+                    else
+                    {
+                        _json_result.SetResult(_leaderboard_result);
+                    }
+                }
+
+                _result.SetResult(_json_result);
+            }
+
+            return _result;
+        }
+
+        /// <summary>
         /// Fetch current best bid and ask, as well as the last trade price.  
         /// </summary>
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
-        /// <param name="args">Add additional attributes for each exchange</param>
+        /// <param name="args">Add additional attributes for each exchange: timeframe</param>
         /// <returns></returns>
         public override async Task<Ticker> FetchTicker(string base_name, string quote_name, Dictionary<string, object> args = null)
         {
@@ -199,16 +243,7 @@ namespace CCXT.NET.BitMEX.Public
                     _params.Add("partial", false);          // If true, will send in-progress (incomplete) bins for the current time period.
                     _params.Add("reverse", true);           // If true, will sort results newest first.
 
-                    if (args != null)
-                    {
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
+                    publicClient.MergeParamsAndArgs(_params, args);
                 }
 
                 var _json_result = publicClient.GetResponseMessage();
@@ -281,16 +316,7 @@ namespace CCXT.NET.BitMEX.Public
                     _params.Add("symbol", _market.result.symbol);
                     _params.Add("depth", limits);
 
-                    if (args != null)
-                    {
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
+                    publicClient.MergeParamsAndArgs(_params, args);
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async("/api/v1/orderBook/L2", _params);
@@ -369,16 +395,7 @@ namespace CCXT.NET.BitMEX.Public
                     _params.Add("partial", false);
                     _params.Add("reverse", true);
 
-                    if (args != null)
-                    {
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
+                    publicClient.MergeParamsAndArgs(_params, args);
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async("/api/v1/trade/bucketed", _params);
@@ -399,12 +416,82 @@ namespace CCXT.NET.BitMEX.Public
                                  highPrice = x.highPrice,
                                  lowPrice = x.lowPrice,
                                  closePrice = x.closePrice,
+                                 amount = x.quoteVolume,
                                  volume = x.baseVolume
                              })
                              .Where(o => o.timestamp >= since)
                              .OrderByDescending(o => o.timestamp)
                              .Take(limits)
                          );
+                }
+
+                _result.SetResult(_json_result);
+            }
+            else
+            {
+                _result.SetResult(_market);
+            }
+
+            return _result;
+        }
+
+        /// <summary>
+        /// Fetch array of symbol name and OHLCVs data
+        /// </summary>
+        /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
+        /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
+        /// <param name="resolution">time frame interval (ex): 1m,3m,5m,15m,30m,1h,2h,3h,4h,6h,12h,1d,3d,1w,2w,1M</param>
+        /// <param name="from_time"></param>
+        /// <param name="till_time"></param>
+        /// <param name="args">Add additional attributes for each exchange</param>
+        /// <returns></returns>
+        public async Task<OHLCVs> FetchUdfHistory(string base_name, string quote_name, string resolution = "1d", long from_time = 0, long till_time = 0, Dictionary<string, object> args = null)
+        {
+            var _result = new OHLCVs(base_name, quote_name);
+
+            var _market = await this.LoadMarket(_result.marketId);
+            if (_market.success == true)
+            {
+                publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
+
+                var _params = new Dictionary<string, object>();
+                {
+                    _params.Add("symbol", _market.result.symbol);
+                    _params.Add("resolution", resolution);
+                    _params.Add("from", from_time);
+                    _params.Add("to", till_time);
+
+                    publicClient.MergeParamsAndArgs(_params, args);
+                }
+
+                var _json_value = await publicClient.CallApiGet1Async("/api/udf/history", _params);
+#if DEBUG
+                _result.rawJson = _json_value.Content;
+#endif
+                var _json_result = publicClient.GetResponseMessage(_json_value.Response);
+                if (_json_result.success == true)
+                {
+                    var _json_data = publicClient.DeserializeObject<BUdfHistory>(_json_value.Content);
+                    if (_json_data.s == "ok")
+                    {
+                        for (var _offset = 0; _offset < _json_data.t.Count; _offset++)
+                        {
+                            _result.result.Add(new OHLCVItem
+                            {
+                                timestamp = _json_data.t[_offset] * 1000,
+                                openPrice = _json_data.o[_offset],
+                                highPrice = _json_data.h[_offset],
+                                lowPrice = _json_data.l[_offset],
+                                closePrice = _json_data.c[_offset],
+                                amount = 0,
+                                volume = _json_data.v[_offset]
+                            });
+                        }
+                    }
+                    else
+                    {
+                        _json_result.SetFailure();
+                    }
                 }
 
                 _result.SetResult(_json_result);
@@ -449,16 +536,7 @@ namespace CCXT.NET.BitMEX.Public
                     _params.Add("count", limits);
                     _params.Add("reverse", true);
 
-                    if (args != null)
-                    {
-                        foreach (var _a in args)
-                        {
-                            if (_params.ContainsKey(_a.Key) == true)
-                                _params.Remove(_a.Key);
-
-                            _params.Add(_a.Key, _a.Value);
-                        }
-                    }
+                    publicClient.MergeParamsAndArgs(_params, args);
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async("/api/v1/trade", _params);
