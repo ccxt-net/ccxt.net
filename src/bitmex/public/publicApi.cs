@@ -385,13 +385,13 @@ namespace CCXT.NET.BitMEX.Public
 
                 var _params = new Dictionary<string, object>();
                 {
-                    var _limit = limits <= 1 ? 1
-                               : limits <= 500 ? limits
-                               : 500;
+                    var _limits = limits <= 1 ? 1
+                                : limits <= 500 ? limits
+                                : 500;
 
                     _params.Add("symbol", _market.result.symbol);
                     _params.Add("binSize", _timeframe);
-                    _params.Add("count", _limit);
+                    _params.Add("count", _limits);
                     _params.Add("partial", false);
                     _params.Add("reverse", true);
 
@@ -528,12 +528,12 @@ namespace CCXT.NET.BitMEX.Public
 
                 var _params = new Dictionary<string, object>();
                 {
-                    var _limit = limits <= 1 ? 1
-                               : limits <= 500 ? limits
-                               : 500;
+                    var _limits = limits <= 1 ? 1
+                                : limits <= 500 ? limits
+                                : 500;
 
                     _params.Add("symbol", _market.result.symbol);
-                    _params.Add("count", limits);
+                    _params.Add("count", _limits);
                     _params.Add("reverse", true);
 
                     publicClient.MergeParamsAndArgs(_params, args);

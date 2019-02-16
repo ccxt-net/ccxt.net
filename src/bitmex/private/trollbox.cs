@@ -50,7 +50,7 @@ namespace CCXT.NET.BitMEX.Private
     /// <summary>
     /// 
     /// </summary>
-    public interface ITrollboxe : IApiResult<ITrollboxItem>
+    public interface ITrollbox : IApiResult<ITrollboxItem>
     {
 #if DEBUG
         /// <summary>
@@ -67,12 +67,12 @@ namespace CCXT.NET.BitMEX.Private
     /// <summary>
     /// 
     /// </summary>
-    public class Trollboxe : ApiResult<ITrollboxItem>, ITrollboxe
+    public class Trollbox : ApiResult<ITrollboxItem>, ITrollbox
     {
         /// <summary>
         /// 
         /// </summary>
-        public Trollboxe()
+        public Trollbox()
         {
             this.result = new TrollboxItem();
         }
