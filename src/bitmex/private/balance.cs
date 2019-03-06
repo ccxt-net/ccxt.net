@@ -11,7 +11,7 @@ namespace CCXT.NET.BitMEX.Private
         /// <summary>
         /// 
         /// </summary>
-        [JsonProperty(PropertyName ="currency")]
+        [JsonProperty(PropertyName = "currency")]
         public override string currency
         {
             get;

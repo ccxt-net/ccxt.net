@@ -22,8 +22,6 @@ namespace CCXT.NET.Bithumb.Public
         {
         }
 
-        
-
         /// <summary>
         /// 
         /// </summary>

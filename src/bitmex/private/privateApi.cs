@@ -394,15 +394,45 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
+        /// Get your account's information.
+        /// </summary>
+        /// <param name="args">Add additional attributes for each exchange</param>
+        /// <returns></returns>
+        public async Task<BUserInfo> FetchUserInfo(Dictionary<string, object> args = null)
+        {
+            var _result = new BUserInfo();
+
+            privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
+            {
+                var _params = privateClient.MergeParamsAndArgs(args);
+
+                var _json_value = await privateClient.CallApiGet1Async("/api/v1/user", _params);
+#if DEBUG
+                _result.rawJson = _json_value.Content;
+#endif
+                var _json_result = privateClient.GetResponseMessage(_json_value.Response);
+                if (_json_result.success == true)
+                {
+                    var _user_info = privateClient.DeserializeObject<BUserInfoItem>(_json_value.Content);
+                    _result.result = _user_info;
+                }
+
+                _result.SetResult(_json_result);
+            }
+
+            return _result;
+        }
+
+        /// <summary>
         /// 
         /// </summary>
         /// <param name="message"></param>
         /// <param name="channelId"></param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public async Task<Trollboxe> SendChatMessage(string message, int channelId, Dictionary<string, object> args = null)
+        public async Task<Trollbox> SendChatMessage(string message, int channelId, Dictionary<string, object> args = null)
         {
-            var _result = new Trollboxe();
+            var _result = new Trollbox();
 
             privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
             {
