@@ -4,7 +4,7 @@
     <TargetFrameworks>net462;netstandard2.0</TargetFrameworks>
     <Title>CryptoCurrency eXchange Trading Library for .NET</Title>
     <Description>CCXT.NET – CryptoCurrency eXchange Trading Library for .NET</Description>
-    <Copyright>Copyright OdinSoftware Co., Ltd. 2018</Copyright>
+    <Copyright>Copyright OdinSoftware Co., Ltd. 2019</Copyright>
     <AssemblyTitle>CCXT.NET</AssemblyTitle>
     <VersionPrefix>1.0.0</VersionPrefix>
     <Authors>SEONGAHN LEE</Authors>
