@@ -64,7 +64,7 @@ namespace CCXT.NET.Kraken.Public
                         _market.symbol = _m.Key;
 
                         _market.baseId = _market.baseLongName;
-                        if (_market.baseId.Substring(0, 1) == "X" || _market.baseId.Substring(0, 1) == "Z")
+                        if ((_market.baseId.Substring(0, 1) == "X" || _market.baseId.Substring(0, 1) == "Z") && _market.baseId.Length > 3)
                             _market.baseId = _market.baseId.Substring(1, 3);
 
                         _market.quoteId = _market.quoteLongName;
