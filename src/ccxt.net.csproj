@@ -42,7 +42,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="hk\bitmex\" />
+    <Folder Include="hkg\" />
+    <Folder Include="sey\bitmex\" />
+    <Folder Include="sgp\" />
   </ItemGroup>
 
 </Project>
