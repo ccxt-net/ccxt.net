@@ -8,6 +8,7 @@ If you are a .Net C# programmer, ccxt.net might be useful. We created ccxt.net u
 
 This project started in 2018/04. I plan to update it continuously.
 
+If you have exchanges that you would like to write first, I would like to consider it as a priority if you can post it on ISSUE.
 
 ## Supported Cryptocurrency Exchange Markets
 
