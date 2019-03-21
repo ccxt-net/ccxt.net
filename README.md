@@ -14,7 +14,7 @@ If you have exchanges that you would like to write first, I would like to consid
 
 ## Supported Cryptocurrency Exchange Markets
 
-The ccxt.net library currently supports the following 17 cryptocurrency exchange markets and trading APIs:
+The ccxt.net library currently supports the following 25 cryptocurrency exchange markets and trading APIs:
 
 |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;logo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                                                                                                     | id                 | name                                                                                 | ver   | doc                                                                                              | certified                        | Country                                                                                 |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------|--------------------------------------------------------------------------------------|:-----:|:------------------------------------------------------------------------------------------------:|----------------------------------|-----------------------------------------------------------------------------------------|
