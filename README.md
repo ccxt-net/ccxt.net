@@ -61,7 +61,9 @@ git clone https://github.com/lisa3907/ccxt.net.git
 
 Read the [Manual](https://github.com/lisa3907/ccxt.net/wiki) for more details.
 
-## Usage
+## Relase
+
+ - [v1.3.2](https://github.com/lisa3907/ccxt.net/releases)
 
 ## Contributing
 
