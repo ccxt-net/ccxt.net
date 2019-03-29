@@ -73,9 +73,11 @@ Please read the [CONTRIBUTING](https://github.com/lisa3907/ccxt.net/blob/master/
 
 We are investing a significant amount of time into the development of this library. If CCXT.NET made your life easier and you like it and want to help us improve it further or if you want to speed up new features and exchanges, please, support us with a tip. We appreciate all contributions!
 
-### Nuget
+### Add Reference
 
- > Install-Package CCXT.NET -Version 1.3.2
+ PM> Install-Package CCXT.NET -Version 1.3.3
+
+   > dotnet add package CCXT.NET --version 1.3.3
 
 ### Crypto Donation
 
