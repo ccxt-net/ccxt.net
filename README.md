@@ -63,7 +63,7 @@ Read the [Manual](https://github.com/lisa3907/ccxt.net/wiki) for more details.
 
 ## Relase
 
- - [v1.3.2](https://github.com/lisa3907/ccxt.net/releases)
+ - [CCXT.NET](https://github.com/lisa3907/ccxt.net/releases)
 
 ## Contributing
 
