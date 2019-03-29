@@ -83,12 +83,10 @@ We appreciate all contributions!
  > dotnet add package CCXT.NET --version 1.3.3
 
 
-### Crypto Donation
+### Donations gratefully accepted.
 
-```
-ETH 0x556E7EdbcCd669a42f00c1Df53D550C00814B0e3
-BTC 15DAoUfaCanpBpTs7VQBK8dRmbQqEnF9WG
-```
+* [![Donate with Bitcoin](https://en.cryptobadges.io/badge/small/15DAoUfaCanpBpTs7VQBK8dRmbQqEnF9WG)](https://en.cryptobadges.io/donate/15DAoUfaCanpBpTs7VQBK8dRmbQqEnF9WG)
+* [![Donate with Ethereum](https://en.cryptobadges.io/badge/small/0x556E7EdbcCd669a42f00c1Df53D550C00814B0e3)](https://en.cryptobadges.io/donate/0x556E7EdbcCd669a42f00c1Df53D550C00814B0e3)
 
 ### Contact
 
