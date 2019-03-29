@@ -10,7 +10,7 @@
     <Authors>SEONGAHN LEE</Authors>
     <AssemblyName>CCXT.NET</AssemblyName>
     <PackageId>CCXT.NET</PackageId>
-    <PackageTags>altcoin;api;arbitrage;bitcoin;bot;cryptocurrency;ethereum;exchange;trading;btc;eth;market-data;csharp;exchange-api;trading-api;exchange-markets;ccxt;trade;crypto;register</PackageTags>
+    <PackageTags>bitcoin;cryptocurrency;exchange;trading;market-data;ccxt;exchange-markets;altcoin;api;arbitrage;bot;crypto;e-commerce;invest;library;strategy;trade;merchant;cryptocoin</PackageTags>
     <PackageIconUrl>https://github.com/lisa3907/ccxt.net/blob/master/logo-files/ccxt.net.ico?raw=true</PackageIconUrl>
     <PackageProjectUrl>https://github.com/lisa3907/ccxt.net</PackageProjectUrl>
     <PackageLicenseUrl></PackageLicenseUrl>
@@ -19,10 +19,11 @@
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
     <RootNamespace>CCXT.NET</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.3.2</Version>
-    <PackageReleaseNotes>Issue #4 Bug FIX: reason Tezos (XTZ) coin</PackageReleaseNotes>
-    <AssemblyVersion>1.3.2.0</AssemblyVersion>
-    <FileVersion>1.3.2.0</FileVersion>
+    <Version>1.3.3</Version>
+    <PackageReleaseNotes>- Merge with OdinSdk.BaseLib
+ - I will change the namespace OdinSdk to CCXT.NET later.</PackageReleaseNotes>
+    <AssemblyVersion>1.3.3.0</AssemblyVersion>
+    <FileVersion>1.3.3.0</FileVersion>
     <LangVersion>latest</LangVersion>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
