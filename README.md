@@ -4,17 +4,13 @@
 [![NuGet Downloads](https://img.shields.io/nuget/dt/ccxt.net.svg)](https://www.nuget.org/packages/CCXT.NET)
 [![License](https://img.shields.io/github/license/lisa3907/ccxt.net.svg)](https://github.com/lisa3907/ccxt.net/blob/master/LICENSE.txt)
 
-This project is an extension of [ccxt](https://github.com/ccxt/ccxt).
+This project is an extension of [ccxt](https://github.com/ccxt/ccxt). If you are a .Net C# programmer, ccxt.net might be useful.
 
-If you are a .Net C# programmer, ccxt.net might be useful. We created ccxt.net using open-source [ccxt](https://github.com/ccxt/ccxt).
-
-This project started in 2018/04. I plan to update it continuously.
-
-If you have exchanges that you would like to write first, I would like to consider it as a priority if you can post it on ISSUE.
+This project started in 2018/04. I plan to update it continuously. 
 
 ## Supported Cryptocurrency Exchange Markets
 
-The ccxt.net library currently supports the following 25 cryptocurrency exchange markets and trading APIs:
+The ccxt.net library currently supports the following cryptocurrency exchange markets and trading APIs:
 
 |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;logo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                                                                                                     | id                 | name                                                                                 | ver   | doc                                                                                              | certified                        | Country                                                                                 |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------|--------------------------------------------------------------------------------------|:-----:|:------------------------------------------------------------------------------------------------:|----------------------------------|-----------------------------------------------------------------------------------------|
@@ -48,6 +44,7 @@ If you don't find a cryptocurrency exchange market in the list above and/or want
 
 The library is under [MIT license](https://github.com/lisa3907/ccxt.net/blob/master/LICENSE.txt), that means it's absolutely free for any developer to build commercial and opensource software on top of it, but use it at your own risk with no warranties, as is.
 
+
 ## Install
 
 You can also clone it into your project directory from [ccxt.net GitHub repository](https://github.com/lisa3907/ccxt.net):
@@ -61,23 +58,30 @@ git clone https://github.com/lisa3907/ccxt.net.git
 
 Read the [Manual](https://github.com/lisa3907/ccxt.net/wiki) for more details.
 
+
 ## Relase
 
  - [CCXT.NET](https://github.com/lisa3907/ccxt.net/releases)
+
 
 ## Contributing
 
 Please read the [CONTRIBUTING](https://github.com/lisa3907/ccxt.net/blob/master/CONTRIBUTING.md) document before making changes that you would like adopted in the code. Also, read the [Manual](https://github.com/lisa3907/ccxt.net/wiki) for more details.
 
+
 ## Support Developer Team
 
-We are investing a significant amount of time into the development of this library. If CCXT.NET made your life easier and you like it and want to help us improve it further or if you want to speed up new features and exchanges, please, support us with a tip. We appreciate all contributions!
+We are investing a significant amount of time into the development of this library. 
+If CCXT.NET made your life easier and you like it and want to help us improve it further or if you want to speed up new features and exchanges, please, support us with a tip. 
+We appreciate all contributions!
+
 
 ### Add Reference
 
- PM> Install-Package CCXT.NET -Version 1.3.3
+ > Install-Package CCXT.NET -Version 1.3.3
 
-   > dotnet add package CCXT.NET --version 1.3.3
+ > dotnet add package CCXT.NET --version 1.3.3
+
 
 ### Crypto Donation
 
