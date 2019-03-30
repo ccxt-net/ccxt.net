@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.539
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28721.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EE36102D-AC13-4DED-802B-F265CB1DEE53}"
 	ProjectSection(SolutionItems) = preProject
@@ -23,7 +23,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9E137A9C-8E9
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ccxt.net", "src\ccxt.net.csproj", "{1AF35DB8-580D-4D5B-A50F-B2C63CF5856D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ccxt.net", "unit.test\ccxt.net.csproj", "{9AC45F07-CD67-4AB0-910E-2D3BC787F851}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ccxt.test", "unit.test\ccxt.test.csproj", "{9AC45F07-CD67-4AB0-910E-2D3BC787F851}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
