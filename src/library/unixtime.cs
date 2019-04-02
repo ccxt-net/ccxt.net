@@ -568,7 +568,7 @@ namespace OdinSdk.BaseLib.Configuration
 
             var _calc_time = GetUnixTimeSecond(_days, _hours, _minutes, _seconds);
             if (_unix_time != _calc_time)
-                Console.WriteLine(String.Format("different: {0}, {1}", _unix_time, _calc_time));
+                Debug.WriteLine(String.Format("different: {0}, {1}", _unix_time, _calc_time));
 
         -----------------------------------------------------------------------------------------------------------------------------*/
     }
