@@ -175,7 +175,7 @@ namespace CCXT.NET.Kraken
                 _request.AddParameter("nonce", _nonce);
 
 #if DEBUG
-                Debug.WriteLine($"{this.DealerName}: nonce => '{_nonce}'");
+                Debug.Write($"{this.DealerName}: nonce => '{_nonce}'");
 #endif
 
                 var _post_data = ToQueryString(_request.Parameters);
