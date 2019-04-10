@@ -48,7 +48,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.0.0-preview3.19153.1" />
-    <PackageReference Include="Microsoft.Win32.Registry" Version="4.5.0" />
+    <PackageReference Include="Microsoft.Win32.Registry" Version="4.6.0-preview3.19128.7" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.2-beta1" />
     <PackageReference Include="RestSharp" Version="106.6.9" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.4.0" />
