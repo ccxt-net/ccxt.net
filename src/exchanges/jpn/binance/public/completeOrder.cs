@@ -9,7 +9,7 @@ namespace CCXT.NET.Binance.Public
     public class BCompleteOrderItem : OdinSdk.BaseLib.Coin.Public.CompleteOrderItem, ICompleteOrderItem
     {
         /// <summary>
-        /// 
+        /// Aggregate tradeId
         /// </summary>
         [JsonProperty(PropertyName = "a")]
         public override string transactionId
@@ -19,7 +19,7 @@ namespace CCXT.NET.Binance.Public
         }
 
         /// <summary>
-        /// 
+        /// Timestamp
         /// </summary>
         [JsonProperty(PropertyName = "T")]
         public override long timestamp
@@ -29,7 +29,7 @@ namespace CCXT.NET.Binance.Public
         }
 
         /// <summary>
-        /// 
+        /// Quantity
         /// </summary>
         [JsonProperty(PropertyName = "q")]
         public override decimal quantity
@@ -39,7 +39,7 @@ namespace CCXT.NET.Binance.Public
         }
 
         /// <summary>
-        /// 
+        /// Price
         /// </summary>
         [JsonProperty(PropertyName = "p")]
         public override decimal price
@@ -49,7 +49,7 @@ namespace CCXT.NET.Binance.Public
         }
 
         /// <summary>
-        /// 
+        /// First tradeId
         /// </summary>
         [JsonProperty(PropertyName = "f")]
         public long firstTradeId
@@ -59,7 +59,7 @@ namespace CCXT.NET.Binance.Public
         }
 
         /// <summary>
-        /// 
+        /// Last tradeId
         /// </summary>
         [JsonProperty(PropertyName = "l")]
         public long lastTradeId
@@ -69,7 +69,7 @@ namespace CCXT.NET.Binance.Public
         }
 
         /// <summary>
-        /// 
+        /// Was the buyer the maker?
         /// </summary>
         [JsonProperty(PropertyName = "m")]
         public bool isBuyerMaker
@@ -79,7 +79,7 @@ namespace CCXT.NET.Binance.Public
         }
 
         /// <summary>
-        /// 
+        /// Was the trade the best price match?
         /// </summary>
         [JsonProperty(PropertyName = "M")]
         public bool isBestMatch
