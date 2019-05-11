@@ -1,4 +1,5 @@
-[{
+[
+  {
     "orderID": "string",
     "clOrdID": "string",
     "clOrdLinkID": "string",
@@ -32,4 +33,5 @@
     "text": "string",
     "transactTime": "2018-07-03T01:52:46.124Z",
     "timestamp": "2018-07-03T01:52:46.124Z"
-}]
+  }
+]

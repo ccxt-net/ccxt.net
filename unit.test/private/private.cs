@@ -7,7 +7,7 @@ namespace XUnit
     public partial class PrivateApi : XUnit.RootApi
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PrivateApi(ITestOutputHelper outputHelper)
                 : base(outputHelper)

@@ -9,7 +9,7 @@ namespace XUnit
     public class RootApi
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="outputHelper"></param>
         public RootApi(ITestOutputHelper outputHelper)
@@ -19,7 +19,7 @@ namespace XUnit
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ITestOutputHelper tConsole
         {
@@ -28,7 +28,7 @@ namespace XUnit
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string tRootFolder
         {
@@ -37,7 +37,7 @@ namespace XUnit
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="message"></param>
         public void WriteLine(string message)
@@ -47,7 +47,7 @@ namespace XUnit
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="api_client"></param>
         /// <param name="json_object"></param>
@@ -58,7 +58,7 @@ namespace XUnit
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="api_client"></param>
         /// <param name="args"></param>
@@ -70,7 +70,7 @@ namespace XUnit
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="api_client"></param>
         /// <param name="args"></param>

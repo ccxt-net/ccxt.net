@@ -10,7 +10,7 @@ namespace XUnit
         private static IConfigurationRoot __app_settings = null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static IConfigurationRoot AppSettings
         {
@@ -55,7 +55,7 @@ namespace XUnit
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool SupportedCheck
         {
@@ -66,7 +66,7 @@ namespace XUnit
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="exchange_name"></param>
         /// <returns></returns>

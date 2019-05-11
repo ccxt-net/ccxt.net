@@ -1,11 +1,13 @@
-﻿[{
-  "globalTradeID": 20825863,
-  "tradeID": 147142,
-  "currencyPair": "BTC_USD",
-  "type": "buy",
-  "rate": "0.00018500",
-  "amount": "455.34206390",
-  "total": "0.08423828",
-  "fee": "0.00200000",
-  "date": "2016-03-14 01:04:36"
-}]
+﻿[
+  {
+    "globalTradeID": 20825863,
+    "tradeID": 147142,
+    "currencyPair": "BTC_USD",
+    "type": "buy",
+    "rate": "0.00018500",
+    "amount": "455.34206390",
+    "total": "0.08423828",
+    "fee": "0.00200000",
+    "date": "2016-03-14 01:04:36"
+  }
+]

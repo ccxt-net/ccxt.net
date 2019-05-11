@@ -1,4 +1,5 @@
-[{
+[
+  {
     "timestamp": "2018-07-03T01:52:46.714Z",
     "symbol": "string",
     "open": 0,
@@ -12,4 +13,5 @@
     "turnover": 0,
     "homeNotional": 0,
     "foreignNotional": 0
-}]
+  }
+]

@@ -1,16 +1,16 @@
 {
-    "result": "success",
-    "errorCode": "0",
-    "status": "live",
-    "info": {
-        "orderId": "32FF744B-D501-423A-8BA1-05BB6BE7814A",
-        "currency": "BTC",
-        "timestamp": "1499340941",
-        "price": "2922000",
-        "qty": "115.4950",
-        "remainQty": "45.4950",
-        "feeRate": "0.0003",
-        "fee": "0",
-        "type": "bid"
-    }
+  "result": "success",
+  "errorCode": "0",
+  "status": "live",
+  "info": {
+    "orderId": "32FF744B-D501-423A-8BA1-05BB6BE7814A",
+    "currency": "BTC",
+    "timestamp": "1499340941",
+    "price": "2922000",
+    "qty": "115.4950",
+    "remainQty": "45.4950",
+    "feeRate": "0.0003",
+    "fee": "0",
+    "type": "bid"
+  }
 }

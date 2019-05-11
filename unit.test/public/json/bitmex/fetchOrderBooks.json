@@ -1,1201 +1,1402 @@
-﻿[{
-  "symbol": "XRPU18",
-  "id": 28399992607,
-  "side": "Sell",
-  "size": 148697,
-  "price": 0.00007393
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992610,
-  "side": "Sell",
-  "size": 3200,
-  "price": 0.0000739
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992611,
-  "side": "Sell",
-  "size": 100,
-  "price": 0.00007389
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992612,
-  "side": "Sell",
-  "size": 100,
-  "price": 0.00007388
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992614,
-  "side": "Sell",
-  "size": 100,
-  "price": 0.00007386
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992615,
-  "side": "Sell",
-  "size": 5300,
-  "price": 0.00007385
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992616,
-  "side": "Sell",
-  "size": 100,
-  "price": 0.00007384
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992617,
-  "side": "Sell",
-  "size": 3500,
-  "price": 0.00007383
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992618,
-  "side": "Sell",
-  "size": 20350,
-  "price": 0.00007382
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992622,
-  "side": "Sell",
-  "size": 36777,
-  "price": 0.00007378
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992623,
-  "side": "Sell",
-  "size": 45000,
-  "price": 0.00007377
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992625,
-  "side": "Sell",
-  "size": 2500,
-  "price": 0.00007375
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992628,
-  "side": "Sell",
-  "size": 60,
-  "price": 0.00007372
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992629,
-  "side": "Sell",
-  "size": 2000,
-  "price": 0.00007371
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992630,
-  "side": "Sell",
-  "size": 35106,
-  "price": 0.0000737
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992634,
-  "side": "Sell",
-  "size": 50,
-  "price": 0.00007366
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992635,
-  "side": "Sell",
-  "size": 4069,
-  "price": 0.00007365
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992636,
-  "side": "Sell",
-  "size": 100,
-  "price": 0.00007364
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992638,
-  "side": "Sell",
-  "size": 80,
-  "price": 0.00007362
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992639,
-  "side": "Sell",
-  "size": 1250,
-  "price": 0.00007361
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992640,
-  "side": "Sell",
-  "size": 100,
-  "price": 0.0000736
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992641,
-  "side": "Sell",
-  "size": 4018,
-  "price": 0.00007359
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992642,
-  "side": "Sell",
-  "size": 490,
-  "price": 0.00007358
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992645,
-  "side": "Sell",
-  "size": 50,
-  "price": 0.00007355
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992646,
-  "side": "Sell",
-  "size": 4017,
-  "price": 0.00007354
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992649,
-  "side": "Sell",
-  "size": 3050,
-  "price": 0.00007351
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992650,
-  "side": "Sell",
-  "size": 33900,
-  "price": 0.0000735
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992651,
-  "side": "Sell",
-  "size": 21066,
-  "price": 0.00007349
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992652,
-  "side": "Sell",
-  "size": 700,
-  "price": 0.00007348
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992653,
-  "side": "Sell",
-  "size": 100,
-  "price": 0.00007347
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992655,
-  "side": "Sell",
-  "size": 1600,
-  "price": 0.00007345
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992656,
-  "side": "Sell",
-  "size": 4415,
-  "price": 0.00007344
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992657,
-  "side": "Sell",
-  "size": 4500,
-  "price": 0.00007343
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992658,
-  "side": "Sell",
-  "size": 35906,
-  "price": 0.00007342
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992660,
-  "side": "Sell",
-  "size": 300,
-  "price": 0.0000734
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992661,
-  "side": "Sell",
-  "size": 4114,
-  "price": 0.00007339
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992662,
-  "side": "Sell",
-  "size": 3750,
-  "price": 0.00007338
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992663,
-  "side": "Sell",
-  "size": 50,
-  "price": 0.00007337
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992664,
-  "side": "Sell",
-  "size": 50,
-  "price": 0.00007336
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992665,
-  "side": "Sell",
-  "size": 6800,
-  "price": 0.00007335
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992666,
-  "side": "Sell",
-  "size": 4013,
-  "price": 0.00007334
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992667,
-  "side": "Sell",
-  "size": 150,
-  "price": 0.00007333
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992669,
-  "side": "Sell",
-  "size": 9050,
-  "price": 0.00007331
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992670,
-  "side": "Sell",
-  "size": 40108,
-  "price": 0.0000733
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992671,
-  "side": "Sell",
-  "size": 4112,
-  "price": 0.00007329
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992672,
-  "side": "Sell",
-  "size": 20050,
-  "price": 0.00007328
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992673,
-  "side": "Sell",
-  "size": 15050,
-  "price": 0.00007327
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992674,
-  "side": "Sell",
-  "size": 2200,
-  "price": 0.00007326
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992675,
-  "side": "Sell",
-  "size": 2950,
-  "price": 0.00007325
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992676,
-  "side": "Sell",
-  "size": 50,
-  "price": 0.00007324
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992677,
-  "side": "Sell",
-  "size": 4061,
-  "price": 0.00007323
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992678,
-  "side": "Sell",
-  "size": 6524,
-  "price": 0.00007322
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992679,
-  "side": "Sell",
-  "size": 300000,
-  "price": 0.00007321
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992680,
-  "side": "Sell",
-  "size": 30455,
-  "price": 0.0000732
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992682,
-  "side": "Sell",
-  "size": 45605,
-  "price": 0.00007318
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992683,
-  "side": "Sell",
-  "size": 30050,
-  "price": 0.00007317
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992685,
-  "side": "Sell",
-  "size": 5000,
-  "price": 0.00007315
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992686,
-  "side": "Sell",
-  "size": 200,
-  "price": 0.00007314
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992687,
-  "side": "Sell",
-  "size": 4259,
-  "price": 0.00007313
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992688,
-  "side": "Sell",
-  "size": 50,
-  "price": 0.00007312
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992689,
-  "side": "Sell",
-  "size": 450,
-  "price": 0.00007311
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992691,
-  "side": "Sell",
-  "size": 100,
-  "price": 0.00007309
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992692,
-  "side": "Sell",
-  "size": 4008,
-  "price": 0.00007308
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992693,
-  "side": "Sell",
-  "size": 16200,
-  "price": 0.00007307
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992694,
-  "side": "Sell",
-  "size": 100,
-  "price": 0.00007306
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992695,
-  "side": "Sell",
-  "size": 9150,
-  "price": 0.00007305
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992696,
-  "side": "Sell",
-  "size": 50,
-  "price": 0.00007304
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992697,
-  "side": "Sell",
-  "size": 4007,
-  "price": 0.00007303
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992698,
-  "side": "Sell",
-  "size": 28317,
-  "price": 0.00007302
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992699,
-  "side": "Sell",
-  "size": 1550,
-  "price": 0.00007301
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992700,
-  "side": "Sell",
-  "size": 14300,
-  "price": 0.000073
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992702,
-  "side": "Sell",
-  "size": 4306,
-  "price": 0.00007298
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992703,
-  "side": "Sell",
-  "size": 100,
-  "price": 0.00007297
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992705,
-  "side": "Sell",
-  "size": 10100,
-  "price": 0.00007295
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992707,
-  "side": "Sell",
-  "size": 4055,
-  "price": 0.00007293
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992708,
-  "side": "Sell",
-  "size": 40085,
-  "price": 0.00007292
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992711,
-  "side": "Sell",
-  "size": 1050,
-  "price": 0.00007289
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992712,
-  "side": "Sell",
-  "size": 4054,
-  "price": 0.00007288
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992714,
-  "side": "Sell",
-  "size": 50,
-  "price": 0.00007286
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992715,
-  "side": "Sell",
-  "size": 16000,
-  "price": 0.00007285
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992716,
-  "side": "Sell",
-  "size": 12946,
-  "price": 0.00007284
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992717,
-  "side": "Sell",
-  "size": 4003,
-  "price": 0.00007283
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992720,
-  "side": "Sell",
-  "size": 5937,
-  "price": 0.0000728
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992721,
-  "side": "Sell",
-  "size": 104349,
-  "price": 0.00007279
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992722,
-  "side": "Sell",
-  "size": 37002,
-  "price": 0.00007278
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992723,
-  "side": "Sell",
-  "size": 2000,
-  "price": 0.00007277
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992724,
-  "side": "Sell",
-  "size": 2000,
-  "price": 0.00007276
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992728,
-  "side": "Sell",
-  "size": 4023,
-  "price": 0.00007272
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992729,
-  "side": "Sell",
-  "size": 6000,
-  "price": 0.00007271
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992731,
-  "side": "Sell",
-  "size": 2200,
-  "price": 0.00007269
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992732,
-  "side": "Sell",
-  "size": 50,
-  "price": 0.00007268
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992733,
-  "side": "Sell",
-  "size": 4000,
-  "price": 0.00007267
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992735,
-  "side": "Sell",
-  "size": 5000,
-  "price": 0.00007265
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992736,
-  "side": "Sell",
-  "size": 50,
-  "price": 0.00007264
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992737,
-  "side": "Sell",
-  "size": 4000,
-  "price": 0.00007263
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992738,
-  "side": "Sell",
-  "size": 2895,
-  "price": 0.00007262
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992740,
-  "side": "Sell",
-  "size": 56,
-  "price": 0.0000726
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992742,
-  "side": "Sell",
-  "size": 6890,
-  "price": 0.00007258
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992743,
-  "side": "Sell",
-  "size": 28027,
-  "price": 0.00007257
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992744,
-  "side": "Sell",
-  "size": 64814,
-  "price": 0.00007256
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992745,
-  "side": "Buy",
-  "size": 2024,
-  "price": 0.00007255
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992749,
-  "side": "Buy",
-  "size": 1325,
-  "price": 0.00007251
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992750,
-  "side": "Buy",
-  "size": 500,
-  "price": 0.0000725
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992752,
-  "side": "Buy",
-  "size": 24050,
-  "price": 0.00007248
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992753,
-  "side": "Buy",
-  "size": 4000,
-  "price": 0.00007247
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992754,
-  "side": "Buy",
-  "size": 100,
-  "price": 0.00007246
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992756,
-  "side": "Buy",
-  "size": 50,
-  "price": 0.00007244
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992757,
-  "side": "Buy",
-  "size": 500,
-  "price": 0.00007243
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992758,
-  "side": "Buy",
-  "size": 4001,
-  "price": 0.00007242
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992759,
-  "side": "Buy",
-  "size": 6024,
-  "price": 0.00007241
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992760,
-  "side": "Buy",
-  "size": 50,
-  "price": 0.0000724
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992761,
-  "side": "Buy",
-  "size": 1100,
-  "price": 0.00007239
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992762,
-  "side": "Buy",
-  "size": 50,
-  "price": 0.00007238
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992763,
-  "side": "Buy",
-  "size": 5152,
-  "price": 0.00007237
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992764,
-  "side": "Buy",
-  "size": 12200,
-  "price": 0.00007236
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992765,
-  "side": "Buy",
-  "size": 27050,
-  "price": 0.00007235
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992766,
-  "side": "Buy",
-  "size": 2700,
-  "price": 0.00007234
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992767,
-  "side": "Buy",
-  "size": 8050,
-  "price": 0.00007233
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992768,
-  "side": "Buy",
-  "size": 4003,
-  "price": 0.00007232
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992769,
-  "side": "Buy",
-  "size": 2050,
-  "price": 0.00007231
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992770,
-  "side": "Buy",
-  "size": 3250,
-  "price": 0.0000723
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992771,
-  "side": "Buy",
-  "size": 10050,
-  "price": 0.00007229
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992772,
-  "side": "Buy",
-  "size": 50,
-  "price": 0.00007228
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992773,
-  "side": "Buy",
-  "size": 4704,
-  "price": 0.00007227
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992774,
-  "side": "Buy",
-  "size": 10500,
-  "price": 0.00007226
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992775,
-  "side": "Buy",
-  "size": 2700,
-  "price": 0.00007225
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992776,
-  "side": "Buy",
-  "size": 561,
-  "price": 0.00007224
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992777,
-  "side": "Buy",
-  "size": 50,
-  "price": 0.00007223
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992778,
-  "side": "Buy",
-  "size": 14205,
-  "price": 0.00007222
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992779,
-  "side": "Buy",
-  "size": 250,
-  "price": 0.00007221
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992780,
-  "side": "Buy",
-  "size": 3068,
-  "price": 0.0000722
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992781,
-  "side": "Buy",
-  "size": 12454,
-  "price": 0.00007219
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992782,
-  "side": "Buy",
-  "size": 185,
-  "price": 0.00007218
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992783,
-  "side": "Buy",
-  "size": 4206,
-  "price": 0.00007217
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992784,
-  "side": "Buy",
-  "size": 200,
-  "price": 0.00007216
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992785,
-  "side": "Buy",
-  "size": 6675,
-  "price": 0.00007215
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992787,
-  "side": "Buy",
-  "size": 3300,
-  "price": 0.00007213
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992788,
-  "side": "Buy",
-  "size": 15590,
-  "price": 0.00007212
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992789,
-  "side": "Buy",
-  "size": 8807,
-  "price": 0.00007211
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992790,
-  "side": "Buy",
-  "size": 18525,
-  "price": 0.0000721
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992791,
-  "side": "Buy",
-  "size": 28085,
-  "price": 0.00007209
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992792,
-  "side": "Buy",
-  "size": 47200,
-  "price": 0.00007208
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992793,
-  "side": "Buy",
-  "size": 2100,
-  "price": 0.00007207
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992794,
-  "side": "Buy",
-  "size": 6208,
-  "price": 0.00007206
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992795,
-  "side": "Buy",
-  "size": 9000,
-  "price": 0.00007205
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992796,
-  "side": "Buy",
-  "size": 18950,
-  "price": 0.00007204
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992797,
-  "side": "Buy",
-  "size": 50,
-  "price": 0.00007203
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992798,
-  "side": "Buy",
-  "size": 550,
-  "price": 0.00007202
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992799,
-  "side": "Buy",
-  "size": 103408,
-  "price": 0.00007201
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992800,
-  "side": "Buy",
-  "size": 245980,
-  "price": 0.000072
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992801,
-  "side": "Buy",
-  "size": 50,
-  "price": 0.00007199
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992802,
-  "side": "Buy",
-  "size": 100,
-  "price": 0.00007198
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992803,
-  "side": "Buy",
-  "size": 50,
-  "price": 0.00007197
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992804,
-  "side": "Buy",
-  "size": 4160,
-  "price": 0.00007196
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992805,
-  "side": "Buy",
-  "size": 3200,
-  "price": 0.00007195
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992807,
-  "side": "Buy",
-  "size": 250,
-  "price": 0.00007193
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992808,
-  "side": "Buy",
-  "size": 800,
-  "price": 0.00007192
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992809,
-  "side": "Buy",
-  "size": 4111,
-  "price": 0.00007191
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992810,
-  "side": "Buy",
-  "size": 30335,
-  "price": 0.0000719
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992811,
-  "side": "Buy",
-  "size": 10050,
-  "price": 0.00007189
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992812,
-  "side": "Buy",
-  "size": 50,
-  "price": 0.00007188
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992813,
-  "side": "Buy",
-  "size": 50,
-  "price": 0.00007187
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992814,
-  "side": "Buy",
-  "size": 4012,
-  "price": 0.00007186
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992815,
-  "side": "Buy",
-  "size": 1050,
-  "price": 0.00007185
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992817,
-  "side": "Buy",
-  "size": 1600,
-  "price": 0.00007183
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992818,
-  "side": "Buy",
-  "size": 475,
-  "price": 0.00007182
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992819,
-  "side": "Buy",
-  "size": 4063,
-  "price": 0.00007181
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992820,
-  "side": "Buy",
-  "size": 1000,
-  "price": 0.0000718
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992821,
-  "side": "Buy",
-  "size": 7050,
-  "price": 0.00007179
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992822,
-  "side": "Buy",
-  "size": 500,
-  "price": 0.00007178
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992823,
-  "side": "Buy",
-  "size": 31595,
-  "price": 0.00007177
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992824,
-  "side": "Buy",
-  "size": 5014,
-  "price": 0.00007176
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992825,
-  "side": "Buy",
-  "size": 5000,
-  "price": 0.00007175
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992826,
-  "side": "Buy",
-  "size": 5250,
-  "price": 0.00007174
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992827,
-  "side": "Buy",
-  "size": 50,
-  "price": 0.00007173
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992828,
-  "side": "Buy",
-  "size": 2500,
-  "price": 0.00007172
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992829,
-  "side": "Buy",
-  "size": 4115,
-  "price": 0.00007171
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992830,
-  "side": "Buy",
-  "size": 319700,
-  "price": 0.0000717
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992831,
-  "side": "Buy",
-  "size": 2,
-  "price": 0.00007169
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992834,
-  "side": "Buy",
-  "size": 4016,
-  "price": 0.00007166
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992835,
-  "side": "Buy",
-  "size": 210,
-  "price": 0.00007165
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992836,
-  "side": "Buy",
-  "size": 20000,
-  "price": 0.00007164
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992837,
-  "side": "Buy",
-  "size": 550,
-  "price": 0.00007163
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992838,
-  "side": "Buy",
-  "size": 4113,
-  "price": 0.00007162
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992839,
-  "side": "Buy",
-  "size": 4017,
-  "price": 0.00007161
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992840,
-  "side": "Buy",
-  "size": 2000,
-  "price": 0.0000716
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992844,
-  "side": "Buy",
-  "size": 4018,
-  "price": 0.00007156
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992845,
-  "side": "Buy",
-  "size": 11600,
-  "price": 0.00007155
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992848,
-  "side": "Buy",
-  "size": 1250,
-  "price": 0.00007152
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992849,
-  "side": "Buy",
-  "size": 39125,
-  "price": 0.00007151
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992850,
-  "side": "Buy",
-  "size": 18670,
-  "price": 0.0000715
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992853,
-  "side": "Buy",
-  "size": 1000,
-  "price": 0.00007147
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992855,
-  "side": "Buy",
-  "size": 750,
-  "price": 0.00007145
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992860,
-  "side": "Buy",
-  "size": 2,
-  "price": 0.0000714
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992862,
-  "side": "Buy",
-  "size": 3500,
-  "price": 0.00007138
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992863,
-  "side": "Buy",
-  "size": 39650,
-  "price": 0.00007137
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992864,
-  "side": "Buy",
-  "size": 1001,
-  "price": 0.00007136
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992865,
-  "side": "Buy",
-  "size": 6600,
-  "price": 0.00007135
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992866,
-  "side": "Buy",
-  "size": 460,
-  "price": 0.00007134
-}, {
-  "symbol": "XRPU18",
-  "id": 28399992867,
-  "side": "Buy",
-  "size": 7050,
-  "price": 0.00007133
-}]
+﻿[
+  {
+    "symbol": "XRPU18",
+    "id": 28399992607,
+    "side": "Sell",
+    "size": 148697,
+    "price": 0.00007393
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992610,
+    "side": "Sell",
+    "size": 3200,
+    "price": 0.0000739
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992611,
+    "side": "Sell",
+    "size": 100,
+    "price": 0.00007389
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992612,
+    "side": "Sell",
+    "size": 100,
+    "price": 0.00007388
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992614,
+    "side": "Sell",
+    "size": 100,
+    "price": 0.00007386
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992615,
+    "side": "Sell",
+    "size": 5300,
+    "price": 0.00007385
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992616,
+    "side": "Sell",
+    "size": 100,
+    "price": 0.00007384
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992617,
+    "side": "Sell",
+    "size": 3500,
+    "price": 0.00007383
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992618,
+    "side": "Sell",
+    "size": 20350,
+    "price": 0.00007382
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992622,
+    "side": "Sell",
+    "size": 36777,
+    "price": 0.00007378
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992623,
+    "side": "Sell",
+    "size": 45000,
+    "price": 0.00007377
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992625,
+    "side": "Sell",
+    "size": 2500,
+    "price": 0.00007375
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992628,
+    "side": "Sell",
+    "size": 60,
+    "price": 0.00007372
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992629,
+    "side": "Sell",
+    "size": 2000,
+    "price": 0.00007371
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992630,
+    "side": "Sell",
+    "size": 35106,
+    "price": 0.0000737
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992634,
+    "side": "Sell",
+    "size": 50,
+    "price": 0.00007366
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992635,
+    "side": "Sell",
+    "size": 4069,
+    "price": 0.00007365
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992636,
+    "side": "Sell",
+    "size": 100,
+    "price": 0.00007364
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992638,
+    "side": "Sell",
+    "size": 80,
+    "price": 0.00007362
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992639,
+    "side": "Sell",
+    "size": 1250,
+    "price": 0.00007361
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992640,
+    "side": "Sell",
+    "size": 100,
+    "price": 0.0000736
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992641,
+    "side": "Sell",
+    "size": 4018,
+    "price": 0.00007359
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992642,
+    "side": "Sell",
+    "size": 490,
+    "price": 0.00007358
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992645,
+    "side": "Sell",
+    "size": 50,
+    "price": 0.00007355
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992646,
+    "side": "Sell",
+    "size": 4017,
+    "price": 0.00007354
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992649,
+    "side": "Sell",
+    "size": 3050,
+    "price": 0.00007351
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992650,
+    "side": "Sell",
+    "size": 33900,
+    "price": 0.0000735
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992651,
+    "side": "Sell",
+    "size": 21066,
+    "price": 0.00007349
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992652,
+    "side": "Sell",
+    "size": 700,
+    "price": 0.00007348
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992653,
+    "side": "Sell",
+    "size": 100,
+    "price": 0.00007347
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992655,
+    "side": "Sell",
+    "size": 1600,
+    "price": 0.00007345
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992656,
+    "side": "Sell",
+    "size": 4415,
+    "price": 0.00007344
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992657,
+    "side": "Sell",
+    "size": 4500,
+    "price": 0.00007343
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992658,
+    "side": "Sell",
+    "size": 35906,
+    "price": 0.00007342
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992660,
+    "side": "Sell",
+    "size": 300,
+    "price": 0.0000734
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992661,
+    "side": "Sell",
+    "size": 4114,
+    "price": 0.00007339
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992662,
+    "side": "Sell",
+    "size": 3750,
+    "price": 0.00007338
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992663,
+    "side": "Sell",
+    "size": 50,
+    "price": 0.00007337
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992664,
+    "side": "Sell",
+    "size": 50,
+    "price": 0.00007336
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992665,
+    "side": "Sell",
+    "size": 6800,
+    "price": 0.00007335
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992666,
+    "side": "Sell",
+    "size": 4013,
+    "price": 0.00007334
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992667,
+    "side": "Sell",
+    "size": 150,
+    "price": 0.00007333
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992669,
+    "side": "Sell",
+    "size": 9050,
+    "price": 0.00007331
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992670,
+    "side": "Sell",
+    "size": 40108,
+    "price": 0.0000733
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992671,
+    "side": "Sell",
+    "size": 4112,
+    "price": 0.00007329
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992672,
+    "side": "Sell",
+    "size": 20050,
+    "price": 0.00007328
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992673,
+    "side": "Sell",
+    "size": 15050,
+    "price": 0.00007327
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992674,
+    "side": "Sell",
+    "size": 2200,
+    "price": 0.00007326
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992675,
+    "side": "Sell",
+    "size": 2950,
+    "price": 0.00007325
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992676,
+    "side": "Sell",
+    "size": 50,
+    "price": 0.00007324
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992677,
+    "side": "Sell",
+    "size": 4061,
+    "price": 0.00007323
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992678,
+    "side": "Sell",
+    "size": 6524,
+    "price": 0.00007322
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992679,
+    "side": "Sell",
+    "size": 300000,
+    "price": 0.00007321
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992680,
+    "side": "Sell",
+    "size": 30455,
+    "price": 0.0000732
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992682,
+    "side": "Sell",
+    "size": 45605,
+    "price": 0.00007318
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992683,
+    "side": "Sell",
+    "size": 30050,
+    "price": 0.00007317
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992685,
+    "side": "Sell",
+    "size": 5000,
+    "price": 0.00007315
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992686,
+    "side": "Sell",
+    "size": 200,
+    "price": 0.00007314
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992687,
+    "side": "Sell",
+    "size": 4259,
+    "price": 0.00007313
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992688,
+    "side": "Sell",
+    "size": 50,
+    "price": 0.00007312
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992689,
+    "side": "Sell",
+    "size": 450,
+    "price": 0.00007311
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992691,
+    "side": "Sell",
+    "size": 100,
+    "price": 0.00007309
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992692,
+    "side": "Sell",
+    "size": 4008,
+    "price": 0.00007308
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992693,
+    "side": "Sell",
+    "size": 16200,
+    "price": 0.00007307
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992694,
+    "side": "Sell",
+    "size": 100,
+    "price": 0.00007306
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992695,
+    "side": "Sell",
+    "size": 9150,
+    "price": 0.00007305
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992696,
+    "side": "Sell",
+    "size": 50,
+    "price": 0.00007304
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992697,
+    "side": "Sell",
+    "size": 4007,
+    "price": 0.00007303
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992698,
+    "side": "Sell",
+    "size": 28317,
+    "price": 0.00007302
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992699,
+    "side": "Sell",
+    "size": 1550,
+    "price": 0.00007301
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992700,
+    "side": "Sell",
+    "size": 14300,
+    "price": 0.000073
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992702,
+    "side": "Sell",
+    "size": 4306,
+    "price": 0.00007298
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992703,
+    "side": "Sell",
+    "size": 100,
+    "price": 0.00007297
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992705,
+    "side": "Sell",
+    "size": 10100,
+    "price": 0.00007295
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992707,
+    "side": "Sell",
+    "size": 4055,
+    "price": 0.00007293
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992708,
+    "side": "Sell",
+    "size": 40085,
+    "price": 0.00007292
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992711,
+    "side": "Sell",
+    "size": 1050,
+    "price": 0.00007289
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992712,
+    "side": "Sell",
+    "size": 4054,
+    "price": 0.00007288
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992714,
+    "side": "Sell",
+    "size": 50,
+    "price": 0.00007286
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992715,
+    "side": "Sell",
+    "size": 16000,
+    "price": 0.00007285
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992716,
+    "side": "Sell",
+    "size": 12946,
+    "price": 0.00007284
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992717,
+    "side": "Sell",
+    "size": 4003,
+    "price": 0.00007283
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992720,
+    "side": "Sell",
+    "size": 5937,
+    "price": 0.0000728
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992721,
+    "side": "Sell",
+    "size": 104349,
+    "price": 0.00007279
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992722,
+    "side": "Sell",
+    "size": 37002,
+    "price": 0.00007278
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992723,
+    "side": "Sell",
+    "size": 2000,
+    "price": 0.00007277
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992724,
+    "side": "Sell",
+    "size": 2000,
+    "price": 0.00007276
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992728,
+    "side": "Sell",
+    "size": 4023,
+    "price": 0.00007272
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992729,
+    "side": "Sell",
+    "size": 6000,
+    "price": 0.00007271
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992731,
+    "side": "Sell",
+    "size": 2200,
+    "price": 0.00007269
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992732,
+    "side": "Sell",
+    "size": 50,
+    "price": 0.00007268
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992733,
+    "side": "Sell",
+    "size": 4000,
+    "price": 0.00007267
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992735,
+    "side": "Sell",
+    "size": 5000,
+    "price": 0.00007265
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992736,
+    "side": "Sell",
+    "size": 50,
+    "price": 0.00007264
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992737,
+    "side": "Sell",
+    "size": 4000,
+    "price": 0.00007263
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992738,
+    "side": "Sell",
+    "size": 2895,
+    "price": 0.00007262
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992740,
+    "side": "Sell",
+    "size": 56,
+    "price": 0.0000726
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992742,
+    "side": "Sell",
+    "size": 6890,
+    "price": 0.00007258
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992743,
+    "side": "Sell",
+    "size": 28027,
+    "price": 0.00007257
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992744,
+    "side": "Sell",
+    "size": 64814,
+    "price": 0.00007256
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992745,
+    "side": "Buy",
+    "size": 2024,
+    "price": 0.00007255
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992749,
+    "side": "Buy",
+    "size": 1325,
+    "price": 0.00007251
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992750,
+    "side": "Buy",
+    "size": 500,
+    "price": 0.0000725
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992752,
+    "side": "Buy",
+    "size": 24050,
+    "price": 0.00007248
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992753,
+    "side": "Buy",
+    "size": 4000,
+    "price": 0.00007247
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992754,
+    "side": "Buy",
+    "size": 100,
+    "price": 0.00007246
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992756,
+    "side": "Buy",
+    "size": 50,
+    "price": 0.00007244
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992757,
+    "side": "Buy",
+    "size": 500,
+    "price": 0.00007243
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992758,
+    "side": "Buy",
+    "size": 4001,
+    "price": 0.00007242
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992759,
+    "side": "Buy",
+    "size": 6024,
+    "price": 0.00007241
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992760,
+    "side": "Buy",
+    "size": 50,
+    "price": 0.0000724
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992761,
+    "side": "Buy",
+    "size": 1100,
+    "price": 0.00007239
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992762,
+    "side": "Buy",
+    "size": 50,
+    "price": 0.00007238
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992763,
+    "side": "Buy",
+    "size": 5152,
+    "price": 0.00007237
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992764,
+    "side": "Buy",
+    "size": 12200,
+    "price": 0.00007236
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992765,
+    "side": "Buy",
+    "size": 27050,
+    "price": 0.00007235
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992766,
+    "side": "Buy",
+    "size": 2700,
+    "price": 0.00007234
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992767,
+    "side": "Buy",
+    "size": 8050,
+    "price": 0.00007233
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992768,
+    "side": "Buy",
+    "size": 4003,
+    "price": 0.00007232
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992769,
+    "side": "Buy",
+    "size": 2050,
+    "price": 0.00007231
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992770,
+    "side": "Buy",
+    "size": 3250,
+    "price": 0.0000723
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992771,
+    "side": "Buy",
+    "size": 10050,
+    "price": 0.00007229
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992772,
+    "side": "Buy",
+    "size": 50,
+    "price": 0.00007228
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992773,
+    "side": "Buy",
+    "size": 4704,
+    "price": 0.00007227
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992774,
+    "side": "Buy",
+    "size": 10500,
+    "price": 0.00007226
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992775,
+    "side": "Buy",
+    "size": 2700,
+    "price": 0.00007225
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992776,
+    "side": "Buy",
+    "size": 561,
+    "price": 0.00007224
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992777,
+    "side": "Buy",
+    "size": 50,
+    "price": 0.00007223
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992778,
+    "side": "Buy",
+    "size": 14205,
+    "price": 0.00007222
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992779,
+    "side": "Buy",
+    "size": 250,
+    "price": 0.00007221
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992780,
+    "side": "Buy",
+    "size": 3068,
+    "price": 0.0000722
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992781,
+    "side": "Buy",
+    "size": 12454,
+    "price": 0.00007219
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992782,
+    "side": "Buy",
+    "size": 185,
+    "price": 0.00007218
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992783,
+    "side": "Buy",
+    "size": 4206,
+    "price": 0.00007217
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992784,
+    "side": "Buy",
+    "size": 200,
+    "price": 0.00007216
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992785,
+    "side": "Buy",
+    "size": 6675,
+    "price": 0.00007215
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992787,
+    "side": "Buy",
+    "size": 3300,
+    "price": 0.00007213
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992788,
+    "side": "Buy",
+    "size": 15590,
+    "price": 0.00007212
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992789,
+    "side": "Buy",
+    "size": 8807,
+    "price": 0.00007211
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992790,
+    "side": "Buy",
+    "size": 18525,
+    "price": 0.0000721
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992791,
+    "side": "Buy",
+    "size": 28085,
+    "price": 0.00007209
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992792,
+    "side": "Buy",
+    "size": 47200,
+    "price": 0.00007208
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992793,
+    "side": "Buy",
+    "size": 2100,
+    "price": 0.00007207
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992794,
+    "side": "Buy",
+    "size": 6208,
+    "price": 0.00007206
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992795,
+    "side": "Buy",
+    "size": 9000,
+    "price": 0.00007205
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992796,
+    "side": "Buy",
+    "size": 18950,
+    "price": 0.00007204
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992797,
+    "side": "Buy",
+    "size": 50,
+    "price": 0.00007203
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992798,
+    "side": "Buy",
+    "size": 550,
+    "price": 0.00007202
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992799,
+    "side": "Buy",
+    "size": 103408,
+    "price": 0.00007201
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992800,
+    "side": "Buy",
+    "size": 245980,
+    "price": 0.000072
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992801,
+    "side": "Buy",
+    "size": 50,
+    "price": 0.00007199
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992802,
+    "side": "Buy",
+    "size": 100,
+    "price": 0.00007198
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992803,
+    "side": "Buy",
+    "size": 50,
+    "price": 0.00007197
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992804,
+    "side": "Buy",
+    "size": 4160,
+    "price": 0.00007196
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992805,
+    "side": "Buy",
+    "size": 3200,
+    "price": 0.00007195
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992807,
+    "side": "Buy",
+    "size": 250,
+    "price": 0.00007193
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992808,
+    "side": "Buy",
+    "size": 800,
+    "price": 0.00007192
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992809,
+    "side": "Buy",
+    "size": 4111,
+    "price": 0.00007191
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992810,
+    "side": "Buy",
+    "size": 30335,
+    "price": 0.0000719
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992811,
+    "side": "Buy",
+    "size": 10050,
+    "price": 0.00007189
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992812,
+    "side": "Buy",
+    "size": 50,
+    "price": 0.00007188
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992813,
+    "side": "Buy",
+    "size": 50,
+    "price": 0.00007187
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992814,
+    "side": "Buy",
+    "size": 4012,
+    "price": 0.00007186
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992815,
+    "side": "Buy",
+    "size": 1050,
+    "price": 0.00007185
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992817,
+    "side": "Buy",
+    "size": 1600,
+    "price": 0.00007183
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992818,
+    "side": "Buy",
+    "size": 475,
+    "price": 0.00007182
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992819,
+    "side": "Buy",
+    "size": 4063,
+    "price": 0.00007181
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992820,
+    "side": "Buy",
+    "size": 1000,
+    "price": 0.0000718
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992821,
+    "side": "Buy",
+    "size": 7050,
+    "price": 0.00007179
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992822,
+    "side": "Buy",
+    "size": 500,
+    "price": 0.00007178
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992823,
+    "side": "Buy",
+    "size": 31595,
+    "price": 0.00007177
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992824,
+    "side": "Buy",
+    "size": 5014,
+    "price": 0.00007176
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992825,
+    "side": "Buy",
+    "size": 5000,
+    "price": 0.00007175
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992826,
+    "side": "Buy",
+    "size": 5250,
+    "price": 0.00007174
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992827,
+    "side": "Buy",
+    "size": 50,
+    "price": 0.00007173
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992828,
+    "side": "Buy",
+    "size": 2500,
+    "price": 0.00007172
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992829,
+    "side": "Buy",
+    "size": 4115,
+    "price": 0.00007171
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992830,
+    "side": "Buy",
+    "size": 319700,
+    "price": 0.0000717
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992831,
+    "side": "Buy",
+    "size": 2,
+    "price": 0.00007169
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992834,
+    "side": "Buy",
+    "size": 4016,
+    "price": 0.00007166
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992835,
+    "side": "Buy",
+    "size": 210,
+    "price": 0.00007165
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992836,
+    "side": "Buy",
+    "size": 20000,
+    "price": 0.00007164
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992837,
+    "side": "Buy",
+    "size": 550,
+    "price": 0.00007163
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992838,
+    "side": "Buy",
+    "size": 4113,
+    "price": 0.00007162
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992839,
+    "side": "Buy",
+    "size": 4017,
+    "price": 0.00007161
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992840,
+    "side": "Buy",
+    "size": 2000,
+    "price": 0.0000716
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992844,
+    "side": "Buy",
+    "size": 4018,
+    "price": 0.00007156
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992845,
+    "side": "Buy",
+    "size": 11600,
+    "price": 0.00007155
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992848,
+    "side": "Buy",
+    "size": 1250,
+    "price": 0.00007152
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992849,
+    "side": "Buy",
+    "size": 39125,
+    "price": 0.00007151
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992850,
+    "side": "Buy",
+    "size": 18670,
+    "price": 0.0000715
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992853,
+    "side": "Buy",
+    "size": 1000,
+    "price": 0.00007147
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992855,
+    "side": "Buy",
+    "size": 750,
+    "price": 0.00007145
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992860,
+    "side": "Buy",
+    "size": 2,
+    "price": 0.0000714
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992862,
+    "side": "Buy",
+    "size": 3500,
+    "price": 0.00007138
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992863,
+    "side": "Buy",
+    "size": 39650,
+    "price": 0.00007137
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992864,
+    "side": "Buy",
+    "size": 1001,
+    "price": 0.00007136
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992865,
+    "side": "Buy",
+    "size": 6600,
+    "price": 0.00007135
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992866,
+    "side": "Buy",
+    "size": 460,
+    "price": 0.00007134
+  },
+  {
+    "symbol": "XRPU18",
+    "id": 28399992867,
+    "side": "Buy",
+    "size": 7050,
+    "price": 0.00007133
+  }
+]

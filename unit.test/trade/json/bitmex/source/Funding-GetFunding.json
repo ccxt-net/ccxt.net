@@ -1,7 +1,9 @@
-[{
+[
+  {
     "timestamp": "2018-07-03T01:52:45.721Z",
     "symbol": "string",
     "fundingInterval": "2018-07-03T01:52:45.721Z",
     "fundingRate": 0,
     "fundingRateDaily": 0
-}]
+  }
+]

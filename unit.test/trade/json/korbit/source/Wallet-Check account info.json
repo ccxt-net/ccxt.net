@@ -1,32 +1,32 @@
 {
-    "deposit": {
-        "btc": {
-            "address": "3J98t1WpEZ73CNmQviecrnyiWrnqRhWNLy"
-        },
-        "etc": {
-            "address": "0x123f681646d4a755815f9cb19e1acc8565a0c2aa"
-        },
-        "eth": {
-            "address": "0x123f681646d4a755815f9cb19e1acc8565a0c2ac"
-        },
-        "xrp": {
-            "address": "rMmTCjGFRWPz8S2zAUUoNVSQHxtRQD4eCx",
-            "destination_tag": "100022001"
-        },
-        "ltc": {
-            "address": "MBRQmAR24h4RXZwMXmVjDBDdQZhQ2LAnjH"
-        },
-        "krw": {
-            "bank_name": "신한은행",
-            "account_number": "1221000022201",
-            "account_name": "(주)코빗"
-        }
+  "deposit": {
+    "btc": {
+      "address": "3J98t1WpEZ73CNmQviecrnyiWrnqRhWNLy"
     },
-    "withdrawal": {
-        "krw": {
-            "bank_name": "신한은행",
-            "account_name": "홍길동",
-            "account_number": "1002653684770"
-        }
+    "etc": {
+      "address": "0x123f681646d4a755815f9cb19e1acc8565a0c2aa"
+    },
+    "eth": {
+      "address": "0x123f681646d4a755815f9cb19e1acc8565a0c2ac"
+    },
+    "xrp": {
+      "address": "rMmTCjGFRWPz8S2zAUUoNVSQHxtRQD4eCx",
+      "destination_tag": "100022001"
+    },
+    "ltc": {
+      "address": "MBRQmAR24h4RXZwMXmVjDBDdQZhQ2LAnjH"
+    },
+    "krw": {
+      "bank_name": "신한은행",
+      "account_number": "1221000022201",
+      "account_name": "(주)코빗"
     }
+  },
+  "withdrawal": {
+    "krw": {
+      "bank_name": "신한은행",
+      "account_name": "홍길동",
+      "account_number": "1002653684770"
+    }
+  }
 }

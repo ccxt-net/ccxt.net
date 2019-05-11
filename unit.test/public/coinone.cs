@@ -1,4 +1,3 @@
-using OdinSdk.BaseLib.Coin;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +11,6 @@ namespace XUnit
         public async void Coinone()
         {
             var _public_api = new CCXT.NET.Coinone.Public.PublicApi();
-            
 
             var _args = new Dictionary<string, object>();
             var _timeframe = "1d";

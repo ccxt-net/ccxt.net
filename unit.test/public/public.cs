@@ -7,7 +7,7 @@ namespace XUnit
     public partial class PublicApi : XUnit.RootApi
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PublicApi(ITestOutputHelper outputHelper)
                 : base(outputHelper)

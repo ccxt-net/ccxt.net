@@ -1,7 +1,7 @@
 {
-    "errorCode": "0",
-    "depositor": "John",
-    "accountNumber": "2309482304",
-    "result": "success",
-    "bankName": "bankName"
+  "errorCode": "0",
+  "depositor": "John",
+  "accountNumber": "2309482304",
+  "result": "success",
+  "bankName": "bankName"
 }

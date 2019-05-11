@@ -1,35 +1,35 @@
 {
-    "krw": {
-        "available": "123000",
-        "trade_in_use": "13000",
-        "withdrawal_in_use": "0"
-    },
-    "btc": {
-        "available": "1.50200000",
-        "trade_in_use": "0.42000000",
-        "withdrawal_in_use": "0.50280000",
-        "avg_price": "7115500",
-        "avg_price_updated_at": 1528944850000
-    },
-    "eth": {
-        "available": "4.80200000",
-        "trade_in_use": "1.23238000",
-        "withdrawal_in_use": "0.00000000",
-        "avg_price": "529000",
-        "avg_price_updated_at": 1528944250000
-    },
-    "etc": {
-        "available": "10.00000000",
-        "trade_in_use": "2.00000000",
-        "withdrawal_in_use": "0.00000000",
-        "avg_price": "14770",
-        "avg_price_updated_at": 1528945850000
-    },
-    "xrp": {
-        "available": "134524.657899",
-        "trade_in_use": "2332.000000",
-        "withdrawal_in_use": "0.000000",
-        "avg_price": "594",
-        "avg_price_updated_at": 1528944340000
-    }
+  "krw": {
+    "available": "123000",
+    "trade_in_use": "13000",
+    "withdrawal_in_use": "0"
+  },
+  "btc": {
+    "available": "1.50200000",
+    "trade_in_use": "0.42000000",
+    "withdrawal_in_use": "0.50280000",
+    "avg_price": "7115500",
+    "avg_price_updated_at": 1528944850000
+  },
+  "eth": {
+    "available": "4.80200000",
+    "trade_in_use": "1.23238000",
+    "withdrawal_in_use": "0.00000000",
+    "avg_price": "529000",
+    "avg_price_updated_at": 1528944250000
+  },
+  "etc": {
+    "available": "10.00000000",
+    "trade_in_use": "2.00000000",
+    "withdrawal_in_use": "0.00000000",
+    "avg_price": "14770",
+    "avg_price_updated_at": 1528945850000
+  },
+  "xrp": {
+    "available": "134524.657899",
+    "trade_in_use": "2332.000000",
+    "withdrawal_in_use": "0.000000",
+    "avg_price": "594",
+    "avg_price_updated_at": 1528944340000
+  }
 }
