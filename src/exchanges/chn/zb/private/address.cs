@@ -2,17 +2,16 @@
 using Newtonsoft.Json.Linq;
 using OdinSdk.BaseLib.Coin;
 using OdinSdk.BaseLib.Coin.Private;
-using System.ComponentModel;
 
 namespace CCXT.NET.Zb.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class ZAddress : OdinSdk.BaseLib.Coin.Private.Address, IAddress
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ZAddress()
         {
@@ -20,7 +19,7 @@ namespace CCXT.NET.Zb.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public new ZAddressItem result
         {
@@ -29,7 +28,7 @@ namespace CCXT.NET.Zb.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "code")]
         public override ErrorCode errorCode
@@ -39,7 +38,7 @@ namespace CCXT.NET.Zb.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "originMsg")]
         public override string message
@@ -49,7 +48,7 @@ namespace CCXT.NET.Zb.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "message")]
         private JObject msg
@@ -64,12 +63,12 @@ namespace CCXT.NET.Zb.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class ZAddressItem : OdinSdk.BaseLib.Coin.Private.AddressItem, IAddressItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string currency
         {
@@ -78,7 +77,7 @@ namespace CCXT.NET.Zb.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string address
         {
@@ -87,7 +86,7 @@ namespace CCXT.NET.Zb.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string tag
         {
@@ -96,7 +95,7 @@ namespace CCXT.NET.Zb.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool success
         {

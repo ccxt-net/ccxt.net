@@ -18,7 +18,7 @@ namespace CCXT.NET.Zb.Private
         private readonly string __secret_key;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PrivateApi(string connect_key, string secret_key)
         {
@@ -27,7 +27,7 @@ namespace CCXT.NET.Zb.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override XApiClient privateClient
         {
@@ -41,7 +41,7 @@ namespace CCXT.NET.Zb.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override OdinSdk.BaseLib.Coin.Public.PublicApi publicApi
         {
@@ -195,7 +195,6 @@ namespace CCXT.NET.Zb.Private
             var _currency_id = await publicApi.LoadCurrencyId(currency_name);
             if (_currency_id.success == true)
             {
-
                 var _params = new Dictionary<string, object>();
                 {
                     _params.Add("currency", _currency_id.result);
@@ -323,7 +322,7 @@ namespace CCXT.NET.Zb.Private
                                 if (_balance != null)
                                 {
                                     _balance.total = _balance.free + _balance.used;
-                                    _balanceItem = _balance;   
+                                    _balanceItem = _balance;
                                 }
 
                                 _balanceItem.currency = _currency_id.Value;

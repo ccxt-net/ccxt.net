@@ -6,12 +6,12 @@ using System;
 namespace CCXT.NET.Bitstamp.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BMyTradeItem : OdinSdk.BaseLib.Coin.Trade.MyTradeItem, IMyTradeItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "id")]
         public override string tradeId
@@ -21,7 +21,7 @@ namespace CCXT.NET.Bitstamp.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "order_id")]
         public override string orderId
@@ -40,7 +40,7 @@ namespace CCXT.NET.Bitstamp.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "datetime")]
         private DateTime timeValue

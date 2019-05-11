@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace CCXT.NET.Gemini.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class PrivateApi : OdinSdk.BaseLib.Coin.Private.PrivateApi, IPrivateApi
     {
@@ -18,7 +18,7 @@ namespace CCXT.NET.Gemini.Private
         private readonly string __secret_key;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PrivateApi(string connect_key, string secret_key)
         {
@@ -26,10 +26,8 @@ namespace CCXT.NET.Gemini.Private
             __secret_key = secret_key;
         }
 
-        
-
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override XApiClient privateClient
         {
@@ -42,10 +40,8 @@ namespace CCXT.NET.Gemini.Private
             }
         }
 
-        
-
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override OdinSdk.BaseLib.Coin.Public.PublicApi publicApi
         {
@@ -177,7 +173,7 @@ namespace CCXT.NET.Gemini.Private
         }
 
         /// <summary>
-        /// This endpoint shows deposits and withdrawals in the supported currencies. 
+        /// This endpoint shows deposits and withdrawals in the supported currencies.
         /// When deposits show as Advanced or Complete they are available for trading.
         /// This endpoint does not currently show cancelled advances, returned outgoing wires or ACH transactions, admin credits and debits, or other exceptional transaction circumstances.
         /// </summary>
@@ -197,9 +193,9 @@ namespace CCXT.NET.Gemini.Private
 
                 var _params = privateClient.MergeParamsAndArgs(args);
 
-                // This endpoint shows deposits and withdrawals in the supported currencies. 
+                // This endpoint shows deposits and withdrawals in the supported currencies.
                 // When deposits show as Advanced or Complete they are available for trading.
-                // This endpoint does not currently show cancelled advances, returned outgoing wires or ACH transactions, 
+                // This endpoint does not currently show cancelled advances, returned outgoing wires or ACH transactions,
                 // admin credits and debits, or other exceptional transaction circumstances.
                 var _json_value = await privateClient.CallApiPost1Async($"/v1/transfers", _params);
 #if DEBUG

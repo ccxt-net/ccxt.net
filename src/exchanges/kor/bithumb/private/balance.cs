@@ -6,12 +6,12 @@ using OdinSdk.BaseLib.Coin.Private;
 namespace CCXT.NET.Bithumb.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BBalance : OdinSdk.BaseLib.Coin.Private.Balance, IBalance
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BBalance()
         {
@@ -39,7 +39,7 @@ namespace CCXT.NET.Bithumb.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public new BBalanceItem result
         {
@@ -48,7 +48,7 @@ namespace CCXT.NET.Bithumb.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "data")]
         public JToken data
@@ -64,7 +64,7 @@ namespace CCXT.NET.Bithumb.Private
     public class BBalanceItem : OdinSdk.BaseLib.Coin.Private.BalanceItem, IBalanceItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal misu
         {
@@ -73,7 +73,7 @@ namespace CCXT.NET.Bithumb.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal xcoin_last
         {

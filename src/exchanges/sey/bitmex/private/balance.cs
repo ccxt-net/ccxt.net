@@ -9,7 +9,7 @@ namespace CCXT.NET.BitMEX.Private
     public class BBalanceItem : OdinSdk.BaseLib.Coin.Private.BalanceItem, IBalanceItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "currency")]
         public override string currency
@@ -19,7 +19,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "availableMargin")]
         public override decimal free
@@ -29,7 +29,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "marginBalance")]
         public override decimal total

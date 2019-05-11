@@ -6,12 +6,12 @@ using System.Collections.Generic;
 namespace CCXT.NET.Binance.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BDeposits : OdinSdk.BaseLib.Coin.Private.Transfers, ITransfers
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BDeposits()
         {
@@ -19,7 +19,7 @@ namespace CCXT.NET.Binance.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "depositList")]
         public new List<BDepositItem> result
@@ -30,12 +30,12 @@ namespace CCXT.NET.Binance.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BDepositItem : OdinSdk.BaseLib.Coin.Private.TransferItem, ITransferItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "txId")]
         public override string transactionId
@@ -55,7 +55,7 @@ namespace CCXT.NET.Binance.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "asset")]
         public override string currency
@@ -65,7 +65,7 @@ namespace CCXT.NET.Binance.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "address")]
         public override string fromAddress
@@ -102,12 +102,12 @@ namespace CCXT.NET.Binance.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BTransfer : OdinSdk.BaseLib.Coin.Private.Transfer, ITransfer
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "msg")]
         public override string message
@@ -117,7 +117,7 @@ namespace CCXT.NET.Binance.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool success
         {
@@ -126,7 +126,7 @@ namespace CCXT.NET.Binance.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "id")]
         public string transferId
@@ -137,12 +137,12 @@ namespace CCXT.NET.Binance.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BWithdraws : OdinSdk.BaseLib.Coin.Private.Transfers, ITransfers
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BWithdraws()
         {
@@ -150,7 +150,7 @@ namespace CCXT.NET.Binance.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "withdrawList")]
         public new List<BWithdrawItem> result
@@ -161,12 +161,12 @@ namespace CCXT.NET.Binance.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BWithdrawItem : OdinSdk.BaseLib.Coin.Private.TransferItem, ITransferItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "id")]
         public override string transferId
@@ -176,7 +176,7 @@ namespace CCXT.NET.Binance.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "txId")]
         public override string transactionId
@@ -196,7 +196,7 @@ namespace CCXT.NET.Binance.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "asset")]
         public override string currency
@@ -206,7 +206,7 @@ namespace CCXT.NET.Binance.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "address")]
         public override string toAddress

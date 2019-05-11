@@ -1,18 +1,18 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Configuration;
 using OdinSdk.BaseLib.Coin.Public;
+using OdinSdk.BaseLib.Configuration;
 using System;
 using System.Collections.Generic;
 
 namespace CCXT.NET.ItBit.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BCompleteOrders : OdinSdk.BaseLib.Coin.Public.CompleteOrders, ICompleteOrders
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BCompleteOrders()
         {
@@ -20,7 +20,7 @@ namespace CCXT.NET.ItBit.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "count")]
         public int count
@@ -30,7 +30,7 @@ namespace CCXT.NET.ItBit.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "recentTrades")]
         public new List<BCompleteOrderItem> result
@@ -41,12 +41,12 @@ namespace CCXT.NET.ItBit.Public
     }
 
     /// <summary>
-    /// recent trade data 
+    /// recent trade data
     /// </summary>
     public class BCompleteOrderItem : OdinSdk.BaseLib.Coin.Public.CompleteOrderItem, ICompleteOrderItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "matchNumber")]
         public override string transactionId
@@ -56,7 +56,7 @@ namespace CCXT.NET.ItBit.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "amount")]
         public override decimal quantity
@@ -66,7 +66,7 @@ namespace CCXT.NET.ItBit.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "originAmount")]
         public override decimal amount
@@ -76,7 +76,7 @@ namespace CCXT.NET.ItBit.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "origin_timestamp")]
         public override long timestamp
@@ -86,7 +86,7 @@ namespace CCXT.NET.ItBit.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "timestamp")]
         private DateTime timeValue

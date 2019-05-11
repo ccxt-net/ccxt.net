@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace CCXT.NET.Bitstamp.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class TradeApi : OdinSdk.BaseLib.Coin.Trade.TradeApi, ITradeApi
     {
@@ -20,7 +20,7 @@ namespace CCXT.NET.Bitstamp.Trade
         private readonly string __user_passsword;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TradeApi(string connect_key, string secret_key, string user_name, string user_password)
         {
@@ -31,7 +31,7 @@ namespace CCXT.NET.Bitstamp.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override XApiClient tradeClient
         {
@@ -45,7 +45,7 @@ namespace CCXT.NET.Bitstamp.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override OdinSdk.BaseLib.Coin.Public.PublicApi publicApi
         {
@@ -345,7 +345,7 @@ namespace CCXT.NET.Bitstamp.Trade
                     {
                         { "amount", quantity },
                         { "price", price }
-                    }, 
+                    },
                     args
                 );
 

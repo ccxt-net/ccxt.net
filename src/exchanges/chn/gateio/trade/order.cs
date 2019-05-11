@@ -1,19 +1,17 @@
 ﻿using Newtonsoft.Json;
 using OdinSdk.BaseLib.Coin.Trade;
 using OdinSdk.BaseLib.Coin.Types;
-
-using System;
 using System.Collections.Generic;
 
 namespace CCXT.NET.GateIO.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class GMyOrder : OdinSdk.BaseLib.Coin.Trade.MyOrder, IMyOrder
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "result")]
         public override bool success
@@ -23,7 +21,7 @@ namespace CCXT.NET.GateIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "order")]
         public new GMyOrderItem result
@@ -33,7 +31,7 @@ namespace CCXT.NET.GateIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "msg")]
         public override string message
@@ -44,7 +42,7 @@ namespace CCXT.NET.GateIO.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class GMyOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
     {
@@ -113,7 +111,7 @@ namespace CCXT.NET.GateIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "initial_rate")]
         public decimal initial_rate
@@ -123,7 +121,7 @@ namespace CCXT.NET.GateIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "initial_amount")]
         public decimal initial_amount
@@ -134,12 +132,12 @@ namespace CCXT.NET.GateIO.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class GOpenOrders : OdinSdk.BaseLib.Coin.Trade.MyOrder, IMyOrder
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "result")]
         public override bool success
@@ -149,7 +147,7 @@ namespace CCXT.NET.GateIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "orders")]
         public new List<GOpenOrderItem> result
@@ -159,7 +157,7 @@ namespace CCXT.NET.GateIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "message")]
         public override string message
@@ -170,7 +168,7 @@ namespace CCXT.NET.GateIO.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class GOpenOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
     {
@@ -185,7 +183,7 @@ namespace CCXT.NET.GateIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "orderNumber")]
         public string orderNumber
@@ -227,7 +225,7 @@ namespace CCXT.NET.GateIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "total")]
         public decimal total
@@ -247,7 +245,7 @@ namespace CCXT.NET.GateIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "origin_timestamp")]
         public override long timestamp
@@ -257,7 +255,7 @@ namespace CCXT.NET.GateIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "timestamp")]
         private long timeValue

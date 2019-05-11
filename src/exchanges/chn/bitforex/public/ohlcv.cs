@@ -1,18 +1,17 @@
 ﻿using Newtonsoft.Json;
 
 using OdinSdk.BaseLib.Coin.Public;
-using System;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Bitforex.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BOHLCVs : OdinSdk.BaseLib.Coin.Public.OHLCVs, IOHLCVs
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BOHLCVs()
         {
@@ -20,7 +19,7 @@ namespace CCXT.NET.Bitforex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "data")]
         public new List<BOHLCVItem> result
@@ -30,7 +29,7 @@ namespace CCXT.NET.Bitforex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "success")]
         public override bool success
@@ -41,7 +40,7 @@ namespace CCXT.NET.Bitforex.Public
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BOHLCVItem : OdinSdk.BaseLib.Coin.Public.OHLCVItem, IOHLCVItem
     {

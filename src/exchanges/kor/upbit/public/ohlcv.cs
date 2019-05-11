@@ -5,7 +5,7 @@ using System;
 namespace CCXT.NET.Upbit.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class UOHLCVItem : OdinSdk.BaseLib.Coin.Public.OHLCVItem, IOHLCVItem
     {

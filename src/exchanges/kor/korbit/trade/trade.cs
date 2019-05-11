@@ -5,7 +5,7 @@ using OdinSdk.BaseLib.Coin.Types;
 namespace CCXT.NET.Korbit.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class KMyTradeItem : OdinSdk.BaseLib.Coin.Trade.MyTradeItem, IMyTradeItem
     {
@@ -60,7 +60,7 @@ namespace CCXT.NET.Korbit.Trade
         }
 
         /// <summary>
-        /// 거래 수수료. 매수 주문일 시에는 해당 매수 코인으로 수수료가 적용되며, 매도 주문일 시에는 원화(KRW)로 수수료가 적용된다. 
+        /// 거래 수수료. 매수 주문일 시에는 해당 매수 코인으로 수수료가 적용되며, 매도 주문일 시에는 원화(KRW)로 수수료가 적용된다.
         /// 부분적으로도 전혀 체결되지 않은 주문(unfilled)에서는 이 필드는 표시되지 않는다.
         /// </summary>
         [JsonProperty(PropertyName = "fee")]
@@ -89,7 +89,7 @@ namespace CCXT.NET.Korbit.Trade
         }
 
         /// <summary>
-        /// 거래가 부분 체결된 최종 시각. Unix timestamp(milliseconds)로 제공된다. 
+        /// 거래가 부분 체결된 최종 시각. Unix timestamp(milliseconds)로 제공된다.
         /// 부분적으로도 전혀 체결되지 않은 주문(unfilled)에서는 이 필드는 표시되지 않는다.
         /// </summary>
         public long last_filled_at

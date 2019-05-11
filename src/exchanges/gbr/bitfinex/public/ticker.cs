@@ -4,7 +4,7 @@ using OdinSdk.BaseLib.Coin.Public;
 namespace CCXT.NET.Bitfinex.Public
 {
     /// <summary>
-    /// current best bid and ask, as well as the last trade price.  
+    /// current best bid and ask, as well as the last trade price.
     /// </summary>
     public class BTickerItem : OdinSdk.BaseLib.Coin.Public.TickerItem, ITickerItem
     {
@@ -29,7 +29,7 @@ namespace CCXT.NET.Bitfinex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "timestamp")]
         private decimal timeValue

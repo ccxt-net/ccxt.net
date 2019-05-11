@@ -1,16 +1,15 @@
 ﻿using Newtonsoft.Json;
 using OdinSdk.BaseLib.Coin.Private;
-using System.ComponentModel;
 
 namespace CCXT.NET.Quoinex.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class QAddressItem : OdinSdk.BaseLib.Coin.Private.AddressItem, IAddressItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "id")]
         public int id
@@ -20,7 +19,7 @@ namespace CCXT.NET.Quoinex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "balance")]
         public decimal balance
@@ -30,7 +29,7 @@ namespace CCXT.NET.Quoinex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "address")]
         public override string address
@@ -40,7 +39,7 @@ namespace CCXT.NET.Quoinex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "currency")]
         public override string currency
@@ -50,7 +49,7 @@ namespace CCXT.NET.Quoinex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "currency_symbol")]
         public string currency_symbol
@@ -60,7 +59,7 @@ namespace CCXT.NET.Quoinex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "pusher_channel")]
         public string pusher_channel
@@ -70,7 +69,7 @@ namespace CCXT.NET.Quoinex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "minimum_withdraw")]
         public decimal minimum_withdraw
@@ -80,7 +79,7 @@ namespace CCXT.NET.Quoinex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "lowest_offer_interest_rate")]
         public decimal lowest_offer_interest_rate
@@ -90,7 +89,7 @@ namespace CCXT.NET.Quoinex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "highest_offer_interest_rate")]
         public decimal highest_offer_interest_rate
@@ -100,7 +99,7 @@ namespace CCXT.NET.Quoinex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "currency_type")]
         public string currency_type

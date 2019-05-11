@@ -1,7 +1,7 @@
 ﻿namespace OdinSdk.BaseLib.Coin
 {
     /// <summary>
-    /// api call result class 
+    /// api call result class
     /// </summary>
     public interface IApiResult
     {
@@ -33,7 +33,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ErrorCode errorCode
         {
@@ -52,12 +52,12 @@
     }
 
     /// <summary>
-    /// api call result class 
+    /// api call result class
     /// </summary>
     public class ApiResult : IApiResult
     {
         /// <summary>
-        /// api call result class 
+        /// api call result class
         /// </summary>
         public ApiResult(bool success = false)
         {
@@ -97,7 +97,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual ErrorCode errorCode
         {
@@ -115,7 +115,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="result"></param>
         /// <returns></returns>
@@ -128,7 +128,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void SetSuccess(
                 string message = "success", ErrorCode errorCode = ErrorCode.Success,
@@ -142,7 +142,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void SetFailure(
                 string message = "failure", ErrorCode errorCode = ErrorCode.Failure,
@@ -156,7 +156,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
@@ -168,13 +168,13 @@
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     /// <typeparam name="T"></typeparam>
     public interface IApiResult<T> : IApiResult
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         T result
         {
@@ -190,7 +190,7 @@
     public class ApiResult<T> : ApiResult
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="success"></param>
         public ApiResult(bool success = false)
@@ -199,7 +199,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual T result
         {

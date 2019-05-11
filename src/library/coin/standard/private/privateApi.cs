@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 namespace OdinSdk.BaseLib.Coin.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public interface IPrivateApi
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         XApiClient privateClient
         {
@@ -20,7 +20,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PublicApi publicApi
         {
@@ -29,7 +29,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
         /// <summary>
-        /// Create a new deposit address 
+        /// Create a new deposit address
         /// </summary>
         /// <param name="currency_name">base coin or quote coin name</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -37,7 +37,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         Task<Address> CreateAddress(string currency_name, Dictionary<string, object> args);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="currency_name">base coin or quote coin name</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -45,7 +45,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         Task<Address> FetchAddress(string currency_name, Dictionary<string, object> args);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
@@ -83,7 +83,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         Task<Transfer> FiatWithdraw(string currency_name, string bank_name, string account, decimal amount, Dictionary<string, object> args);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="currency_name">base coin or quote coin name</param>
         /// <param name="transferId">The unique id of the withdrawal request specified</param>
@@ -92,7 +92,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         Task<Transfer> FetchTransfer(string currency_name, string transferId, Dictionary<string, object> args);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="currency_name">base coin or quote coin name</param>
         /// <param name="timeframe">time frame interval (optional): default "1d"</param>
@@ -103,7 +103,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         Task<Transfers> FetchTransfers(string currency_name, string timeframe, long since, int limits, Dictionary<string, object> args);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="timeframe">time frame interval (optional): default "1d"</param>
         /// <param name="since">return committed data since given time (milli-seconds) (optional): default 0</param>
@@ -130,7 +130,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         Task<Wallets> FetchWallets(string user_id, Dictionary<string, object> args = null);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
@@ -139,7 +139,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         Task<Balance> FetchBalance(string base_name, string quote_name, Dictionary<string, object> args);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
@@ -147,12 +147,12 @@ namespace OdinSdk.BaseLib.Coin.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class PrivateApi : IPrivateApi
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual XApiClient privateClient
         {
@@ -161,7 +161,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual PublicApi publicApi
         {
@@ -170,7 +170,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="currency_name">base coin or quote coin name</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -198,7 +198,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="currency_name">base coin or quote coin name</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -226,7 +226,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
@@ -253,7 +253,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="currency_name">base coin or quote coin name</param>
         /// <param name="address">coin address for send</param>
@@ -284,7 +284,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="currency_name">base coin or quote coin name</param>
         /// <param name="transferId">The unique id of the withdrawal request specified</param>
@@ -344,7 +344,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="currency_name">base coin or quote coin name</param>
         /// <param name="transferId">The unique id of the withdrawal request specified</param>
@@ -373,7 +373,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
         /// <summary>
-        /// query status of deposits and transfers 
+        /// query status of deposits and transfers
         /// </summary>
         /// <param name="currency_name">base coin or quote coin name</param>
         /// <param name="timeframe">time frame interval (optional): default "1d"</param>
@@ -407,7 +407,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="timeframe">time frame interval (optional): default "1d"</param>
         /// <param name="since">return committed data since given time (milli-seconds) (optional): default 0</param>
@@ -469,7 +469,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="user_id"></param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -497,7 +497,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
@@ -527,7 +527,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>

@@ -1,12 +1,12 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Configuration;
 using OdinSdk.BaseLib.Coin.Public;
+using OdinSdk.BaseLib.Configuration;
 using System;
 
 namespace CCXT.NET.BitMEX.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BTickerItem : OdinSdk.BaseLib.Coin.Public.TickerItem, ITickerItem
     {
@@ -31,7 +31,7 @@ namespace CCXT.NET.BitMEX.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "timestamp")]
         private DateTime timeValue
@@ -163,7 +163,7 @@ namespace CCXT.NET.BitMEX.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal lastSize
         {
@@ -172,7 +172,7 @@ namespace CCXT.NET.BitMEX.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal turnOver
         {

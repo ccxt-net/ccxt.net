@@ -3,7 +3,6 @@ using Newtonsoft.Json.Linq;
 using OdinSdk.BaseLib.Coin;
 using RestSharp;
 using System;
-using System.Linq;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
@@ -12,17 +11,17 @@ using System.Threading.Tasks;
 namespace CCXT.NET.Gemini
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed class GeminiClient : OdinSdk.BaseLib.Coin.XApiClient, IXApiClient
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string DealerName { get; set; } = "Gemini";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="division">exchange's division for communication</param>
         public GeminiClient(string division)
@@ -31,7 +30,7 @@ namespace CCXT.NET.Gemini
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="division">exchange's division for communication</param>
         /// <param name="connect_key">exchange's api key for connect</param>
@@ -117,7 +116,7 @@ namespace CCXT.NET.Gemini
         private HMACSHA384 __encryptor = null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public HMACSHA384 Encryptor
         {
@@ -131,7 +130,7 @@ namespace CCXT.NET.Gemini
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -170,7 +169,7 @@ namespace CCXT.NET.Gemini
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public new Dictionary<string, string> ErrorMessages = new Dictionary<string, string>
         {
@@ -207,7 +206,7 @@ namespace CCXT.NET.Gemini
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="response">response value arrive from exchange's server</param>
         /// <returns></returns>

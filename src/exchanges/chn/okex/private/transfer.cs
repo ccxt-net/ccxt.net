@@ -6,12 +6,12 @@ using System.Collections.Generic;
 namespace CCXT.NET.OKEx.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class OTransfer : OdinSdk.BaseLib.Coin.Private.Transfer, ITransfer
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OTransfer()
         {
@@ -40,19 +40,19 @@ namespace CCXT.NET.OKEx.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class OTransferItem : OdinSdk.BaseLib.Coin.Private.TransferItem, ITransferItem
     {
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class ODeposits : OdinSdk.BaseLib.Coin.Private.Transfers, ITransfers
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ODeposits()
         {
@@ -60,7 +60,7 @@ namespace CCXT.NET.OKEx.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "records")]
         public new List<BDepositItem> result
@@ -81,7 +81,7 @@ namespace CCXT.NET.OKEx.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BDepositItem : OdinSdk.BaseLib.Coin.Private.TransferItem, ITransferItem
     {
@@ -187,12 +187,12 @@ namespace CCXT.NET.OKEx.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class OWithdraws : OdinSdk.BaseLib.Coin.Private.Transfers, ITransfers
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OWithdraws()
         {
@@ -200,7 +200,7 @@ namespace CCXT.NET.OKEx.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "records")]
         public new List<OWithdrawItem> result
@@ -221,7 +221,7 @@ namespace CCXT.NET.OKEx.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class OWithdrawItem : OdinSdk.BaseLib.Coin.Private.TransferItem, ITransferItem
     {
@@ -312,13 +312,13 @@ namespace CCXT.NET.OKEx.Private
         {
             set
             {
-                transactionType = value == (-3|-2|-1|2) ? TransactionType.Deposit
-                                : value == (0|1|3|4|5) ? TransactionType.Depositing
+                transactionType = value == (-3 | -2 | -1 | 2) ? TransactionType.Deposit
+                                : value == (0 | 1 | 3 | 4 | 5) ? TransactionType.Depositing
                                 : TransactionType.Unknown;
 
-                transferType = value == (-3|-2) ? TransferType.Canceled
+                transferType = value == (-3 | -2) ? TransferType.Canceled
                              : value == -1 ? TransferType.Rejected
-                             : value == (0|1|3|4|5) ? TransferType.Processing
+                             : value == (0 | 1 | 3 | 4 | 5) ? TransferType.Processing
                              : value == 2 ? TransferType.Done
                              : TransferType.Unknown;
 

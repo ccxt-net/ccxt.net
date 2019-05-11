@@ -1,19 +1,17 @@
 ﻿using Newtonsoft.Json;
 using OdinSdk.BaseLib.Coin.Trade;
 using OdinSdk.BaseLib.Coin.Types;
-
-using System;
 using System.Collections.Generic;
 
 namespace CCXT.NET.GateIO.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class GMyTrades : OdinSdk.BaseLib.Coin.Trade.MyTrades, IMyTrades
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "result")]
         public override bool success
@@ -23,7 +21,7 @@ namespace CCXT.NET.GateIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "trades")]
         public new List<GMyTradeItem> result
@@ -33,7 +31,7 @@ namespace CCXT.NET.GateIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "message")]
         public override string message
@@ -44,12 +42,12 @@ namespace CCXT.NET.GateIO.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class GMyTradeItem : OdinSdk.BaseLib.Coin.Trade.MyTradeItem, IMyTradeItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "id")]
         public override string tradeId
@@ -69,7 +67,7 @@ namespace CCXT.NET.GateIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "pair")]
         public override string symbol
@@ -79,7 +77,7 @@ namespace CCXT.NET.GateIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "type")]
         private string sideValue
@@ -91,7 +89,7 @@ namespace CCXT.NET.GateIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "rate")]
         public override decimal price
@@ -101,7 +99,7 @@ namespace CCXT.NET.GateIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "amount")]
         public override decimal quantity
@@ -111,7 +109,7 @@ namespace CCXT.NET.GateIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "time_unix")]
         private long timeValue

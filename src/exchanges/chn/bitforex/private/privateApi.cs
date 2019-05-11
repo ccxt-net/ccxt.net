@@ -16,7 +16,7 @@ namespace CCXT.NET.Bitforex.Private
         private readonly string __secret_key;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PrivateApi(string connect_key, string secret_key)
         {
@@ -25,7 +25,7 @@ namespace CCXT.NET.Bitforex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override XApiClient privateClient
         {
@@ -39,7 +39,7 @@ namespace CCXT.NET.Bitforex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override OdinSdk.BaseLib.Coin.Public.PublicApi publicApi
         {

@@ -8,12 +8,12 @@ using System;
 namespace CCXT.NET.Bitstamp.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BCancelAllOrders
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string result
         {
@@ -23,12 +23,12 @@ namespace CCXT.NET.Bitstamp.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BMyOrder : OdinSdk.BaseLib.Coin.Trade.MyOrder, IMyOrder
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BMyOrder()
         {
@@ -36,7 +36,7 @@ namespace CCXT.NET.Bitstamp.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OrderStatus orderStatus
         {
@@ -45,7 +45,7 @@ namespace CCXT.NET.Bitstamp.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "status")]
         private string status
@@ -57,7 +57,7 @@ namespace CCXT.NET.Bitstamp.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public JArray transactions
         {
@@ -67,12 +67,12 @@ namespace CCXT.NET.Bitstamp.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BMyOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "tid")]
         public override string orderId
@@ -82,7 +82,7 @@ namespace CCXT.NET.Bitstamp.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "datetime")]
         private DateTime timeValue
@@ -104,12 +104,12 @@ namespace CCXT.NET.Bitstamp.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BOpenOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "id")]
         public override string orderId
@@ -119,7 +119,7 @@ namespace CCXT.NET.Bitstamp.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "datetime")]
         private DateTime timeValue
@@ -131,7 +131,7 @@ namespace CCXT.NET.Bitstamp.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "type")]
         private string sideValue
@@ -143,7 +143,7 @@ namespace CCXT.NET.Bitstamp.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "price")]
         public override decimal price
@@ -153,7 +153,7 @@ namespace CCXT.NET.Bitstamp.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "amount")]
         public override decimal quantity
@@ -163,7 +163,7 @@ namespace CCXT.NET.Bitstamp.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "currency_pair")]
         public string marketId

@@ -1,19 +1,18 @@
 ﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Configuration;
 using OdinSdk.BaseLib.Coin.Public;
 using OdinSdk.BaseLib.Coin.Types;
+using OdinSdk.BaseLib.Configuration;
 using System;
 
 namespace CCXT.NET.Poloniex.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class PCompleteOrderItem : OdinSdk.BaseLib.Coin.Public.CompleteOrderItem, ICompleteOrderItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "tradeID")]
         public override string transactionId
@@ -23,7 +22,7 @@ namespace CCXT.NET.Poloniex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "amount")]
         public override decimal quantity
@@ -33,7 +32,7 @@ namespace CCXT.NET.Poloniex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "rate")]
         public override decimal price
@@ -43,7 +42,7 @@ namespace CCXT.NET.Poloniex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "total")]
         public override decimal amount
@@ -53,7 +52,7 @@ namespace CCXT.NET.Poloniex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "fee")]
         public override decimal fee
@@ -61,9 +60,9 @@ namespace CCXT.NET.Poloniex.Public
             get;
             set;
         }
-        
+
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "globalTradeID")]
         public string globalTradeID
@@ -73,7 +72,7 @@ namespace CCXT.NET.Poloniex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "orderNumber")]
         public long orderNumber
@@ -83,7 +82,7 @@ namespace CCXT.NET.Poloniex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "category")]
         public string category
@@ -93,7 +92,7 @@ namespace CCXT.NET.Poloniex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "date")]
         private DateTime timeValue
@@ -105,7 +104,7 @@ namespace CCXT.NET.Poloniex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "type")]
         private string sideValue

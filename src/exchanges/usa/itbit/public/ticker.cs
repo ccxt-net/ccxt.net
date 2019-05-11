@@ -6,7 +6,7 @@ using System;
 namespace CCXT.NET.ItBit.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class TTickerItem : OdinSdk.BaseLib.Coin.Public.TickerItem, ITickerItem
     {
@@ -153,7 +153,7 @@ namespace CCXT.NET.ItBit.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "serverTimeUTC")]
         private DateTime timeValue
@@ -165,7 +165,7 @@ namespace CCXT.NET.ItBit.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "lastAmt")]
         public decimal lastAmt
@@ -175,7 +175,7 @@ namespace CCXT.NET.ItBit.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "volumeToday")]
         public decimal volumeToday
@@ -185,7 +185,7 @@ namespace CCXT.NET.ItBit.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "highToday")]
         public decimal highToday
@@ -195,7 +195,7 @@ namespace CCXT.NET.ItBit.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "lowToday")]
         public decimal lowToday
@@ -205,7 +205,7 @@ namespace CCXT.NET.ItBit.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "vwapToday")]
         public decimal vwapToday

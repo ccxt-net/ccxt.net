@@ -9,7 +9,7 @@ namespace CCXT.NET.Bitforex.Public
     public class BTicker : OdinSdk.BaseLib.Coin.Public.Ticker, ITicker
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BTicker()
         {
@@ -17,7 +17,7 @@ namespace CCXT.NET.Bitforex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "data")]
         public new BTickerItem result
@@ -27,7 +27,7 @@ namespace CCXT.NET.Bitforex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "success")]
         public override bool success
@@ -38,7 +38,7 @@ namespace CCXT.NET.Bitforex.Public
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BTickerItem : OdinSdk.BaseLib.Coin.Public.TickerItem, ITickerItem
     {

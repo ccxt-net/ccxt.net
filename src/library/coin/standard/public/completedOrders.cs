@@ -5,12 +5,12 @@ using System.Collections.Generic;
 namespace OdinSdk.BaseLib.Coin.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public interface ICompleteOrderItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string transactionId
         {
@@ -19,7 +19,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         long timestamp
         {
@@ -28,7 +28,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string datetime
         {
@@ -36,7 +36,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string orderId
         {
@@ -72,7 +72,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FillType fillType
         {
@@ -81,7 +81,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         decimal quantity
         {
@@ -90,7 +90,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         decimal price
         {
@@ -99,7 +99,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         decimal amount
         {
@@ -108,7 +108,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         decimal fee
         {
@@ -117,24 +117,26 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
 #if DEBUG
+
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string rawJson
         {
             get;
             set;
         }
+
 #endif
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class CompleteOrderItem : ICompleteOrderItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual string transactionId
         {
@@ -143,7 +145,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual long timestamp
         {
@@ -163,7 +165,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual string orderId
         {
@@ -208,7 +210,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual decimal quantity
         {
@@ -217,7 +219,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual decimal price
         {
@@ -226,7 +228,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual decimal amount
         {
@@ -235,7 +237,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual decimal fee
         {
@@ -244,24 +246,26 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
 #if DEBUG
+
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual string rawJson
         {
             get;
             set;
         }
+
 #endif
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public interface ICompleteOrders : IApiResult<List<ICompleteOrderItem>>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string marketId
         {
@@ -270,24 +274,26 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
 #if DEBUG
+
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string rawJson
         {
             get;
             set;
         }
+
 #endif
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class CompleteOrders : ApiResult<List<ICompleteOrderItem>>, ICompleteOrders
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CompleteOrders()
         {
@@ -295,7 +301,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CompleteOrders(string base_name, string quote_name)
                 : this()
@@ -304,7 +310,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual string marketId
         {
@@ -313,14 +319,16 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
 #if DEBUG
+
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual string rawJson
         {
             get;
             set;
         }
+
 #endif
     }
 }

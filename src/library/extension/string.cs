@@ -6,12 +6,12 @@ using System.Text.RegularExpressions;
 namespace OdinSdk.BaseLib.Extension
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static partial class CExtension
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="self"></param>
         /// <returns></returns>
@@ -21,7 +21,7 @@ namespace OdinSdk.BaseLib.Extension
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="sourceString"></param>
         /// <param name="chunkLength"></param>
@@ -42,7 +42,7 @@ namespace OdinSdk.BaseLib.Extension
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="toSearch"></param>
         /// <param name="toFind"></param>
@@ -57,7 +57,7 @@ namespace OdinSdk.BaseLib.Extension
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="length"></param>
         /// <returns></returns>

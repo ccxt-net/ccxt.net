@@ -10,7 +10,7 @@ namespace CCXT.NET.Korbit
     public class AccessToken : ApiResult
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AccessToken()
         {
@@ -18,7 +18,7 @@ namespace CCXT.NET.Korbit
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "token_type")]
         public string tokenType
@@ -28,7 +28,7 @@ namespace CCXT.NET.Korbit
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "access_token")]
         public string accessToken
@@ -38,7 +38,7 @@ namespace CCXT.NET.Korbit
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "expires_in")]
         public int expiresIn
@@ -48,7 +48,7 @@ namespace CCXT.NET.Korbit
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "refresh_token")]
         public string refreshToken
@@ -58,7 +58,7 @@ namespace CCXT.NET.Korbit
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public long timestamp
         {

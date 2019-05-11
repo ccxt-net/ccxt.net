@@ -1,17 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Telegram.Bot;
 
 namespace OdinSdk.BaseLib.Configuration
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class CTelegramMessage
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool isBroadcasting
         {
@@ -20,7 +19,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// chatting uniqueue id 
+        /// chatting uniqueue id
         /// </summary>
         public long chatid
         {
@@ -38,7 +37,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string nickName
         {
@@ -47,7 +46,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string message
         {
@@ -57,7 +56,7 @@ namespace OdinSdk.BaseLib.Configuration
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class CTelegramUser
     {
@@ -71,7 +70,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// chatting uniqueue id 
+        /// chatting uniqueue id
         /// </summary>
         public long chatid
         {
@@ -81,12 +80,12 @@ namespace OdinSdk.BaseLib.Configuration
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class CTelegram
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CTelegram(string token)
         {
@@ -95,7 +94,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CTelegram(string token, List<CTelegramUser> chatIds)
         {
@@ -132,7 +131,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="message"></param>
         public async Task SendMessage(CTelegramMessage message)

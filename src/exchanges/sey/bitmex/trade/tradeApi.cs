@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace CCXT.NET.BitMEX.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class TradeApi : OdinSdk.BaseLib.Coin.Trade.TradeApi, ITradeApi
     {
@@ -18,7 +18,7 @@ namespace CCXT.NET.BitMEX.Trade
         private readonly string __secret_key;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TradeApi(string connect_key, string secret_key, bool is_live = true)
         {
@@ -35,7 +35,7 @@ namespace CCXT.NET.BitMEX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override XApiClient tradeClient
         {
@@ -52,7 +52,7 @@ namespace CCXT.NET.BitMEX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override OdinSdk.BaseLib.Coin.Public.PublicApi publicApi
         {
@@ -657,7 +657,7 @@ namespace CCXT.NET.BitMEX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>

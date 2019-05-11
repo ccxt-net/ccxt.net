@@ -7,12 +7,12 @@ using System.Collections.Generic;
 namespace CCXT.NET.Bithumb.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BMyOpenOrders : OdinSdk.BaseLib.Coin.Trade.MyOrders, IMyOrders
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BMyOpenOrders()
         {
@@ -40,7 +40,7 @@ namespace CCXT.NET.Bithumb.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "data")]
         public new List<BMyOpenOrderItem> result
@@ -51,12 +51,12 @@ namespace CCXT.NET.Bithumb.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BMyOpenOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "order_id")]
         public override string orderId
@@ -164,7 +164,7 @@ namespace CCXT.NET.Bithumb.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "originFee")]
         public override decimal fee
@@ -174,7 +174,7 @@ namespace CCXT.NET.Bithumb.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public long? date_completed
         {

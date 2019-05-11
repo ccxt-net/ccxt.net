@@ -6,7 +6,7 @@ using System.Collections.Generic;
 namespace CCXT.NET.Kraken.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class KMyTrades
     {
@@ -30,7 +30,7 @@ namespace CCXT.NET.Kraken.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class KMyTradeItem : OdinSdk.BaseLib.Coin.Trade.MyTradeItem, IMyTradeItem
     {
@@ -65,7 +65,7 @@ namespace CCXT.NET.Kraken.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "originOrderType")]
         public override OrderType orderType
@@ -239,6 +239,6 @@ namespace CCXT.NET.Kraken.Trade
             set;
         }
 
-        #endregion
+        #endregion If the trade opened a position, the follow fields are also present in the trade info
     }
 }

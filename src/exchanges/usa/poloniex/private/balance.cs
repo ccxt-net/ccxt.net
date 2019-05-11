@@ -9,7 +9,7 @@ namespace CCXT.NET.Poloniex.Private
     public class PBalanceItem : OdinSdk.BaseLib.Coin.Private.BalanceItem, IBalanceItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "available")]
         public override decimal free
@@ -19,7 +19,7 @@ namespace CCXT.NET.Poloniex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "onOrders")]
         public override decimal used
@@ -29,7 +29,7 @@ namespace CCXT.NET.Poloniex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "btcValue")]
         public decimal btcValue

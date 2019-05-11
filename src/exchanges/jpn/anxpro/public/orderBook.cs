@@ -6,12 +6,12 @@ using System.Collections.Generic;
 namespace CCXT.NET.Anxpro.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class AOrderBooks : OdinSdk.BaseLib.Coin.Public.OrderBooks, IOrderBooks
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AOrderBooks()
         {
@@ -19,7 +19,7 @@ namespace CCXT.NET.Anxpro.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "data")]
         public new AOrderBook result
@@ -35,7 +35,7 @@ namespace CCXT.NET.Anxpro.Public
     public class AOrderBook : OdinSdk.BaseLib.Coin.Public.OrderBook, IOrderBook
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "bids")]
         private List<JToken> bidsValue
@@ -60,7 +60,7 @@ namespace CCXT.NET.Anxpro.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "asks")]
         private List<JToken> asksValue
@@ -85,7 +85,7 @@ namespace CCXT.NET.Anxpro.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "originBids")]
         public override List<IOrderBookItem> bids
@@ -95,7 +95,7 @@ namespace CCXT.NET.Anxpro.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "originAsks")]
         public override List<IOrderBookItem> asks
@@ -105,7 +105,7 @@ namespace CCXT.NET.Anxpro.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public long now
         {
@@ -114,7 +114,7 @@ namespace CCXT.NET.Anxpro.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public long dataUpdateTime
         {

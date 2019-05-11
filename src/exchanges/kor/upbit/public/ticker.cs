@@ -5,7 +5,7 @@ using System;
 namespace CCXT.NET.Upbit.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class UTickerItem : OdinSdk.BaseLib.Coin.Public.TickerItem, ITickerItem
     {
@@ -60,7 +60,7 @@ namespace CCXT.NET.Upbit.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "trade_volume")]
         public decimal closeVolume
@@ -70,17 +70,17 @@ namespace CCXT.NET.Upbit.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "prev_closing_price")]
         public override decimal prevPrice
         {
             get;
             set;
-        }        
+        }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "change")]
         public string riseAndFall
@@ -90,7 +90,7 @@ namespace CCXT.NET.Upbit.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "change_price")]
         public override decimal changePrice
@@ -100,7 +100,7 @@ namespace CCXT.NET.Upbit.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "change_rate")]
         public decimal changeRate
@@ -159,7 +159,7 @@ namespace CCXT.NET.Upbit.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "highest_52_week_price")]
         public decimal highPrice52Weeks
@@ -169,7 +169,7 @@ namespace CCXT.NET.Upbit.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "highest_52_week_date")]
         public DateTime highDate52Weeks
@@ -179,7 +179,7 @@ namespace CCXT.NET.Upbit.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "lowest_52_week_price")]
         public decimal lowPrice52Weeks
@@ -189,7 +189,7 @@ namespace CCXT.NET.Upbit.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "lowest_52_week_date")]
         public DateTime lowDate52Weeks

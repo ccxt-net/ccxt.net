@@ -9,7 +9,7 @@ namespace CCXT.NET.OKEx.Private
     public class OBalanceItem : OdinSdk.BaseLib.Coin.Private.BalanceItem, IBalanceItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "free")]
         public override decimal free
@@ -19,7 +19,7 @@ namespace CCXT.NET.OKEx.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "freezed")]
         public override decimal used

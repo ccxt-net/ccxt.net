@@ -6,12 +6,12 @@ using System.Collections.Generic;
 namespace CCXT.NET.Coinone.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class COrderBook : OdinSdk.BaseLib.Coin.Public.OrderBook, IOrderBook
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "bid")]
         private List<JToken> bidsValue
@@ -36,7 +36,7 @@ namespace CCXT.NET.Coinone.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "ask")]
         private List<JToken> asksValue

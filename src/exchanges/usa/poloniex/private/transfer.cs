@@ -4,12 +4,12 @@ using OdinSdk.BaseLib.Coin.Private;
 namespace CCXT.NET.Poloniex.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class PWithdraw : OdinSdk.BaseLib.Coin.Private.Transfer, ITransfer
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PWithdraw()
         {
@@ -27,7 +27,7 @@ namespace CCXT.NET.Poloniex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public new PTransferItem result
         {
@@ -37,12 +37,12 @@ namespace CCXT.NET.Poloniex.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class PTransferItem : OdinSdk.BaseLib.Coin.Private.TransferItem, ITransferItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "txid")]
         public override string transactionId
@@ -52,7 +52,7 @@ namespace CCXT.NET.Poloniex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "withdrawalNumber")]
         public override string transferId
@@ -62,7 +62,7 @@ namespace CCXT.NET.Poloniex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "address")]
         public override string fromAddress
@@ -72,7 +72,7 @@ namespace CCXT.NET.Poloniex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "origin_timestamp")]
         public override long timestamp
@@ -82,7 +82,7 @@ namespace CCXT.NET.Poloniex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "timestamp")]
         private long timeValue
@@ -94,7 +94,7 @@ namespace CCXT.NET.Poloniex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "status")]
         private string status

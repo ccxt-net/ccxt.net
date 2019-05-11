@@ -71,11 +71,11 @@ namespace OdinSdk.BaseLib.Serialize
             set;
         }
     }
-    
+
     /// <summary>
-         /// Default JSON serializer for request bodies
-         /// Doesn't currently use the SerializeAs attribute, defers to Newtonsoft's attributes
-         /// </summary>
+    /// Default JSON serializer for request bodies
+    /// Doesn't currently use the SerializeAs attribute, defers to Newtonsoft's attributes
+    /// </summary>
     public class RestSharpJsonNetDeserializer : IDeserializer
     {
         /// <summary>
@@ -86,7 +86,7 @@ namespace OdinSdk.BaseLib.Serialize
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="response"></param>
@@ -166,7 +166,7 @@ namespace OdinSdk.BaseLib.Serialize
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class RestSerializerSettings : JsonSerializerSettings
     {

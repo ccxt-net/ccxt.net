@@ -4,7 +4,7 @@ using OdinSdk.BaseLib.Coin.Trade;
 namespace CCXT.NET.Kraken.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class KMyPlaceOrder
     {
@@ -30,7 +30,7 @@ namespace CCXT.NET.Kraken.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class KMyPlaceDescription
     {
@@ -54,7 +54,7 @@ namespace CCXT.NET.Kraken.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class KMyPlaceOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
     {

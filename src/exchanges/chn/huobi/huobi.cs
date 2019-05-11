@@ -12,17 +12,17 @@ using System.Web;
 namespace CCXT.NET.Huobi
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed class HuobiClient : OdinSdk.BaseLib.Coin.XApiClient, IXApiClient
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string DealerName { get; set; } = "Huobi";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="division">exchange's division for communication</param>
         public HuobiClient(string division)
@@ -31,7 +31,7 @@ namespace CCXT.NET.Huobi
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="division">exchange's division for communication</param>
         /// <param name="connect_key">exchange's api key for connect</param>
@@ -122,7 +122,7 @@ namespace CCXT.NET.Huobi
         private HMACSHA256 __encryptor = null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public HMACSHA256 Encryptor
         {
@@ -136,7 +136,7 @@ namespace CCXT.NET.Huobi
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="str"></param>
         /// <returns></returns>
@@ -158,7 +158,7 @@ namespace CCXT.NET.Huobi
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="method"></param>
         /// <param name="host"></param>
@@ -172,26 +172,29 @@ namespace CCXT.NET.Huobi
             sb.Append(method.ToString().ToUpper()).Append("\n")
                 .Append(host).Append("\n")
                 .Append(resourcePath).Append("\n");
-            
+
             var paraArray = parameters.Split('&');
             List<string> parametersList = new List<string>();
             foreach (var item in paraArray)
             {
                 parametersList.Add(item);
             }
-            parametersList.Sort(delegate (string s1, string s2) { return string.CompareOrdinal(s1, s2); });
+            parametersList.Sort(delegate (string s1, string s2)
+            {
+                return string.CompareOrdinal(s1, s2);
+            });
             foreach (var item in parametersList)
             {
                 sb.Append(item).Append("&");
             }
             sign = sb.ToString().TrimEnd('&');
-            
+
             sign = Convert.ToBase64String(Encryptor.ComputeHash(Encoding.UTF8.GetBytes(sign)));
             return UrlEncode(sign);
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -224,7 +227,7 @@ namespace CCXT.NET.Huobi
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -246,12 +249,12 @@ namespace CCXT.NET.Huobi
                 if (args.Count > 0)
                     foreach (var arg in args)
                         _params.Add(arg.Key, arg.Value.ToString());
-                
+
                 _request.Parameters.Clear();
 
                 var _post_data = ToQueryString(_params);
                 var _signature = GetSignatureStr(Method.GET, ApiUrl.Replace("https://", ""), endpoint, _post_data);
-               
+
                 _post_data += "&Signature=" + _signature;
 
                 _request.AddHeader("Content-Type", "application/json");
@@ -263,7 +266,7 @@ namespace CCXT.NET.Huobi
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="response">response value arrive from exchange's server</param>
         /// <returns></returns>

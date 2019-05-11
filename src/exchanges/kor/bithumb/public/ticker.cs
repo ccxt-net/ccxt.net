@@ -7,12 +7,12 @@ using System.Collections.Generic;
 namespace CCXT.NET.Bithumb.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BTicker : OdinSdk.BaseLib.Coin.Public.Ticker, ITicker
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BTicker()
         {
@@ -20,7 +20,7 @@ namespace CCXT.NET.Bithumb.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "status")]
         public override int statusCode
@@ -40,7 +40,7 @@ namespace CCXT.NET.Bithumb.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "data")]
         public new BTickerItem result
@@ -51,12 +51,12 @@ namespace CCXT.NET.Bithumb.Public
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BTickers : OdinSdk.BaseLib.Coin.Public.Tickers, ITickers
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BTickers()
         {
@@ -64,7 +64,7 @@ namespace CCXT.NET.Bithumb.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "status")]
         public override int statusCode
@@ -84,7 +84,7 @@ namespace CCXT.NET.Bithumb.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "data")]
         public new Dictionary<string, JToken> result
@@ -95,7 +95,7 @@ namespace CCXT.NET.Bithumb.Public
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BTickerItem : OdinSdk.BaseLib.Coin.Public.TickerItem, ITickerItem
     {
@@ -204,7 +204,7 @@ namespace CCXT.NET.Bithumb.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "units_traded")]
         public decimal units_traded
@@ -224,7 +224,7 @@ namespace CCXT.NET.Bithumb.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "24H_fluctate")]
         public decimal day_fluctate
@@ -234,7 +234,7 @@ namespace CCXT.NET.Bithumb.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "24H_fluctate_rate")]
         public decimal day_fluctate_rate

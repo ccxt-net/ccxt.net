@@ -6,12 +6,12 @@ using System.Collections.Generic;
 namespace CCXT.NET.Quoinex.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class QMyTrades : OdinSdk.BaseLib.Coin.Trade.MyTrades, IMyTrades
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "models")]
         public new List<QMyTradeItem> result
@@ -21,7 +21,7 @@ namespace CCXT.NET.Quoinex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "current_page")]
         public int current_page
@@ -31,7 +31,7 @@ namespace CCXT.NET.Quoinex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "total_pages")]
         public int total_pages
@@ -42,12 +42,12 @@ namespace CCXT.NET.Quoinex.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class QMyTradeItem : OdinSdk.BaseLib.Coin.Trade.MyTradeItem, IMyTradeItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "id")]
         public override string tradeId
@@ -57,7 +57,7 @@ namespace CCXT.NET.Quoinex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "quantity")]
         public override decimal quantity
@@ -67,7 +67,7 @@ namespace CCXT.NET.Quoinex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "price")]
         public override decimal price
@@ -77,7 +77,7 @@ namespace CCXT.NET.Quoinex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "taker_side")]
         public string taker_side
@@ -87,7 +87,7 @@ namespace CCXT.NET.Quoinex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "my_side")]
         private string sideValue
@@ -99,7 +99,7 @@ namespace CCXT.NET.Quoinex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "created_at")]
         private long timeValue

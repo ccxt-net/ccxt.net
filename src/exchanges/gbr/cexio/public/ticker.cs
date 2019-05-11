@@ -1,16 +1,16 @@
-﻿using System.Collections.Generic;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using OdinSdk.BaseLib.Coin.Public;
+using System.Collections.Generic;
 
 namespace CCXT.NET.CEXIO.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class CTickers : OdinSdk.BaseLib.Coin.Public.Tickers, ITickers
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "e")]
         public string command
@@ -20,7 +20,7 @@ namespace CCXT.NET.CEXIO.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "ok")]
         private string messageValue
@@ -33,7 +33,7 @@ namespace CCXT.NET.CEXIO.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "data")]
         public new List<CTickerItem> result
@@ -44,7 +44,7 @@ namespace CCXT.NET.CEXIO.Public
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class CTickerItem : OdinSdk.BaseLib.Coin.Public.TickerItem, ITickerItem
     {
@@ -69,7 +69,7 @@ namespace CCXT.NET.CEXIO.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "timestamp")]
         private long timeValue

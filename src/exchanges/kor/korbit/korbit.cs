@@ -9,17 +9,17 @@ using System.Threading.Tasks;
 namespace CCXT.NET.Korbit
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed class KorbitClient : OdinSdk.BaseLib.Coin.XApiClient, IXApiClient
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string DealerName { get; set; } = "Korbit";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="division">exchange's division for communication</param>
         public KorbitClient(string division)
@@ -28,7 +28,7 @@ namespace CCXT.NET.Korbit
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="division">exchange's division for communication</param>
         /// <param name="connect_key">exchange's api key for connect</param>
@@ -113,7 +113,7 @@ namespace CCXT.NET.Korbit
         private static AccessToken __access_token = new AccessToken();
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         public async Task<AccessToken> GetAccessToken()
@@ -135,7 +135,7 @@ namespace CCXT.NET.Korbit
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         public async Task<AccessToken> GetAccessToken(string grant_type, string refresh_token = "")
@@ -178,7 +178,7 @@ namespace CCXT.NET.Korbit
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -209,7 +209,7 @@ namespace CCXT.NET.Korbit
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -236,7 +236,7 @@ namespace CCXT.NET.Korbit
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="response">response value arrive from exchange's server</param>
         /// <returns></returns>

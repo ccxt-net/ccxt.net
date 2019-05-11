@@ -16,14 +16,14 @@ namespace CCXT.NET.Kraken.Public
     public class PublicApi : OdinSdk.BaseLib.Coin.Public.PublicApi, IPublicApi
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PublicApi()
         {
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override XApiClient publicClient
         {

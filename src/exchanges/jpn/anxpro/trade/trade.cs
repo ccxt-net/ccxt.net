@@ -6,12 +6,12 @@ using System.Collections.Generic;
 namespace CCXT.NET.Anxpro.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class AMyTrades : OdinSdk.BaseLib.Coin.Trade.MyTrades, IMyTrades
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AMyTrades()
         {
@@ -19,7 +19,7 @@ namespace CCXT.NET.Anxpro.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "result")]
         private string resultValue
@@ -32,7 +32,7 @@ namespace CCXT.NET.Anxpro.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "data")]
         public new List<AMyTradeItem> result
@@ -43,7 +43,7 @@ namespace CCXT.NET.Anxpro.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class AMyTradeItem : OdinSdk.BaseLib.Coin.Trade.MyTradeItem, IMyTradeItem
     {
@@ -78,7 +78,7 @@ namespace CCXT.NET.Anxpro.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "ccyPair")]
         public override string symbol

@@ -15,14 +15,14 @@ namespace CCXT.NET.Bittrex.Public
     public class PublicApi : OdinSdk.BaseLib.Coin.Public.PublicApi, IPublicApi
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PublicApi()
         {
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override XApiClient publicClient
         {
@@ -106,7 +106,7 @@ namespace CCXT.NET.Bittrex.Public
         }
 
         /// <summary>
-        /// Fetch current best bid and ask, as well as the last trade price.  
+        /// Fetch current best bid and ask, as well as the last trade price.
         /// </summary>
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>

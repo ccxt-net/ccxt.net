@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace CCXT.NET.Binance.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class PrivateApi : OdinSdk.BaseLib.Coin.Private.PrivateApi, IPrivateApi
     {
@@ -19,17 +19,16 @@ namespace CCXT.NET.Binance.Private
         private readonly string __secret_key;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PrivateApi(string connect_key, string secret_key)
         {
             __connect_key = connect_key;
             __secret_key = secret_key;
-
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override XApiClient privateClient
         {
@@ -45,7 +44,7 @@ namespace CCXT.NET.Binance.Private
         private BinanceClient __wapi_client = null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BinanceClient priwapiClient
         {
@@ -58,10 +57,8 @@ namespace CCXT.NET.Binance.Private
             }
         }
 
-
-
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override OdinSdk.BaseLib.Coin.Public.PublicApi publicApi
         {

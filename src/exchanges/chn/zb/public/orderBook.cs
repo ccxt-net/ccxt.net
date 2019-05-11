@@ -7,12 +7,12 @@ using System.Collections.Generic;
 namespace CCXT.NET.Zb.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class ZOrderBooks : OdinSdk.BaseLib.Coin.Public.OrderBooks, IOrderBooks
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ZOrderBooks()
         {
@@ -20,7 +20,7 @@ namespace CCXT.NET.Zb.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public new ZOrderBook result
         {
@@ -30,12 +30,12 @@ namespace CCXT.NET.Zb.Public
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class ZOrderBook : OdinSdk.BaseLib.Coin.Public.OrderBook, IOrderBook
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ZOrderBook()
         {
@@ -44,7 +44,7 @@ namespace CCXT.NET.Zb.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "origin_timestamp")]
         public override long timestamp
@@ -54,7 +54,7 @@ namespace CCXT.NET.Zb.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "timestamp")]
         private long timeValue
@@ -66,7 +66,7 @@ namespace CCXT.NET.Zb.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "originBids")]
         public new List<ZOrderBookItem> bids
@@ -76,7 +76,7 @@ namespace CCXT.NET.Zb.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "bids")]
         private List<JArray> bidValue
@@ -91,7 +91,7 @@ namespace CCXT.NET.Zb.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "originAsks")]
         public new List<ZOrderBookItem> asks
@@ -101,7 +101,7 @@ namespace CCXT.NET.Zb.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "asks")]
         private List<JArray> askValue
@@ -117,12 +117,12 @@ namespace CCXT.NET.Zb.Public
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class ZOrderBookItem : OdinSdk.BaseLib.Coin.Public.OrderBookItem, IOrderBookItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override decimal quantity
         {
@@ -131,7 +131,7 @@ namespace CCXT.NET.Zb.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override decimal price
         {
@@ -140,7 +140,7 @@ namespace CCXT.NET.Zb.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override decimal amount
         {
@@ -149,7 +149,7 @@ namespace CCXT.NET.Zb.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int count
         {

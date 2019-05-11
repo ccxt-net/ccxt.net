@@ -9,7 +9,7 @@ namespace CCXT.NET.CEXIO.Private
     public class CBalanceItem : OdinSdk.BaseLib.Coin.Private.BalanceItem, IBalanceItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "available")]
         public override decimal free
@@ -19,7 +19,7 @@ namespace CCXT.NET.CEXIO.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "orders")]
         public override decimal used

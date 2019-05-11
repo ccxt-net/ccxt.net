@@ -20,31 +20,31 @@ namespace OdinSdk.BaseLib.Coin
         Success = 0,
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [Description("rest response error")]
         ResponseRestError = 100,
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [Description("response data error")]
         ResponseDataError = 101,
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [Description("response data empty")]
         ResponseDataEmpty = 102,
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [Description("not found data")]
         NotFoundData = 103,
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [Description("not supported error")]
         NotSupported,
@@ -62,7 +62,7 @@ namespace OdinSdk.BaseLib.Coin
         InsufficientFunds,
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [Description("cancel pending")]
         CancelPending,
@@ -92,7 +92,7 @@ namespace OdinSdk.BaseLib.Coin
         UnknownOrder,
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [Description("unknown withdraw")]
         UnknownWithdraw,

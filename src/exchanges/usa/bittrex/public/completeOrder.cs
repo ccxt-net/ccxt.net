@@ -8,12 +8,12 @@ using System.Collections.Generic;
 namespace CCXT.NET.Bittrex.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BCompleteOrders : OdinSdk.BaseLib.Coin.Public.CompleteOrders, ICompleteOrders
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BCompleteOrders()
         {
@@ -21,7 +21,7 @@ namespace CCXT.NET.Bittrex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "result")]
         public new List<BCompleteOrderItem> result
@@ -37,7 +37,7 @@ namespace CCXT.NET.Bittrex.Public
     public class BCompleteOrderItem : OdinSdk.BaseLib.Coin.Public.CompleteOrderItem, ICompleteOrderItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "Id")]
         public override string transactionId
@@ -47,7 +47,7 @@ namespace CCXT.NET.Bittrex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "Quantity")]
         public override decimal quantity
@@ -57,7 +57,7 @@ namespace CCXT.NET.Bittrex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "Price")]
         public override decimal price
@@ -65,8 +65,9 @@ namespace CCXT.NET.Bittrex.Public
             get;
             set;
         }
+
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "Total")]
         public override decimal amount
@@ -76,7 +77,7 @@ namespace CCXT.NET.Bittrex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "origin_timestamp")]
         public override long timestamp
@@ -86,7 +87,7 @@ namespace CCXT.NET.Bittrex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "TimeStamp")]
         private DateTime timeValue
@@ -98,7 +99,7 @@ namespace CCXT.NET.Bittrex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "OrderType")]
         private string sideValue
@@ -110,7 +111,7 @@ namespace CCXT.NET.Bittrex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "FillType")]
         private string fillValue

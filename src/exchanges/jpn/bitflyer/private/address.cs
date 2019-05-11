@@ -4,7 +4,7 @@ using OdinSdk.BaseLib.Coin.Private;
 namespace CCXT.NET.Bitflyer.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BAddressItem : OdinSdk.BaseLib.Coin.Private.AddressItem, IAddressItem
     {
@@ -29,7 +29,7 @@ namespace CCXT.NET.Bitflyer.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "address")]
         public override string address

@@ -8,12 +8,12 @@ using System.Collections.Generic;
 namespace CCXT.NET.Huobi.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class HPlaceOrder : OdinSdk.BaseLib.Coin.Trade.MyOrder, IMyOrder
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public HPlaceOrder()
         {
@@ -21,7 +21,7 @@ namespace CCXT.NET.Huobi.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public new HPlaceOrderItem result
         {
@@ -30,7 +30,7 @@ namespace CCXT.NET.Huobi.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "data")]
         private string data
@@ -42,7 +42,7 @@ namespace CCXT.NET.Huobi.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "status")]
         private string status
@@ -55,12 +55,12 @@ namespace CCXT.NET.Huobi.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class HPlaceOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string orderId
         {
@@ -69,7 +69,7 @@ namespace CCXT.NET.Huobi.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string symbol
         {
@@ -78,7 +78,7 @@ namespace CCXT.NET.Huobi.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override SideType sideType
         {
@@ -87,7 +87,7 @@ namespace CCXT.NET.Huobi.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override OrderType orderType
         {
@@ -96,7 +96,7 @@ namespace CCXT.NET.Huobi.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override MakerType makerType
         {
@@ -105,7 +105,7 @@ namespace CCXT.NET.Huobi.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override OrderStatus orderStatus
         {
@@ -114,7 +114,7 @@ namespace CCXT.NET.Huobi.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override long timestamp
         {
@@ -134,7 +134,7 @@ namespace CCXT.NET.Huobi.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override decimal quantity
         {
@@ -143,7 +143,7 @@ namespace CCXT.NET.Huobi.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override decimal price
         {
@@ -152,7 +152,7 @@ namespace CCXT.NET.Huobi.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override decimal amount
         {
@@ -161,7 +161,7 @@ namespace CCXT.NET.Huobi.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override decimal filled
         {
@@ -170,7 +170,7 @@ namespace CCXT.NET.Huobi.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override decimal cost
         {
@@ -179,7 +179,7 @@ namespace CCXT.NET.Huobi.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override decimal fee
         {
@@ -188,7 +188,7 @@ namespace CCXT.NET.Huobi.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int count
         {
@@ -198,12 +198,12 @@ namespace CCXT.NET.Huobi.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class HCancelOrders : OdinSdk.BaseLib.Coin.Trade.MyOrders, IMyOrders
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public HCancelOrders()
         {
@@ -211,7 +211,7 @@ namespace CCXT.NET.Huobi.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public new List<HCancelOrderItem> result
         {
@@ -220,7 +220,7 @@ namespace CCXT.NET.Huobi.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "data")]
         private JObject data
@@ -254,7 +254,7 @@ namespace CCXT.NET.Huobi.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "status")]
         private string status
@@ -267,12 +267,12 @@ namespace CCXT.NET.Huobi.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class HCancelOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "err-msg")]
         public string err_msg
@@ -282,7 +282,7 @@ namespace CCXT.NET.Huobi.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "order-id")]
         public override string orderId
@@ -292,7 +292,7 @@ namespace CCXT.NET.Huobi.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "err-code")]
         public string err_code
@@ -303,12 +303,12 @@ namespace CCXT.NET.Huobi.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class HCancelAllOrders : OdinSdk.BaseLib.Coin.Trade.MyOrders, IMyOrders
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public HCancelAllOrders()
         {
@@ -316,7 +316,7 @@ namespace CCXT.NET.Huobi.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "data")]
         public new HHCancelAllOrdersItem result
@@ -326,7 +326,7 @@ namespace CCXT.NET.Huobi.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "status")]
         private string status
@@ -339,12 +339,12 @@ namespace CCXT.NET.Huobi.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class HHCancelAllOrdersItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "success-count")]
         public int success_count
@@ -354,7 +354,7 @@ namespace CCXT.NET.Huobi.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "failed-count")]
         public int failed_count
@@ -364,7 +364,7 @@ namespace CCXT.NET.Huobi.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "next-id")]
         public string next_id

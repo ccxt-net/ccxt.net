@@ -5,12 +5,12 @@ using OdinSdk.BaseLib.Coin.Private;
 namespace CCXT.NET.Bithumb.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BAddress : OdinSdk.BaseLib.Coin.Private.Address, IAddress
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BAddress()
         {
@@ -38,7 +38,7 @@ namespace CCXT.NET.Bithumb.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "data")]
         public new BAddressItem result

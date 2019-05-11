@@ -111,7 +111,7 @@ namespace CCXT.NET.Binance.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal lastQty
         {
@@ -120,7 +120,7 @@ namespace CCXT.NET.Binance.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public long openTime
         {
@@ -129,7 +129,7 @@ namespace CCXT.NET.Binance.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public long firstId
         {
@@ -138,7 +138,7 @@ namespace CCXT.NET.Binance.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public long lastId
         {
@@ -147,7 +147,7 @@ namespace CCXT.NET.Binance.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public long count
         {

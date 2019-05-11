@@ -4,7 +4,7 @@ using OdinSdk.BaseLib.Coin.Public;
 namespace CCXT.NET.CoinCheck.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class CTickerItem : OdinSdk.BaseLib.Coin.Public.TickerItem, ITickerItem
     {
@@ -69,7 +69,7 @@ namespace CCXT.NET.CoinCheck.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "origin_timestamp")]
         public override long timestamp
@@ -79,7 +79,7 @@ namespace CCXT.NET.CoinCheck.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "timestamp")]
         private long timeValue

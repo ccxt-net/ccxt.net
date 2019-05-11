@@ -1,17 +1,17 @@
-﻿using System.Collections.Generic;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using OdinSdk.BaseLib.Coin.Trade;
 using OdinSdk.BaseLib.Coin.Types;
+using System.Collections.Generic;
 
 namespace CCXT.NET.CEXIO.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class CMyPositions : OdinSdk.BaseLib.Coin.Trade.MyPositions, IMyPositions
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CMyPositions()
         {
@@ -19,7 +19,7 @@ namespace CCXT.NET.CEXIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "e")]
         public string command
@@ -29,7 +29,7 @@ namespace CCXT.NET.CEXIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "ok")]
         private string ok
@@ -42,7 +42,7 @@ namespace CCXT.NET.CEXIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "data")]
         public new List<CMyPositionItem> result
@@ -53,7 +53,7 @@ namespace CCXT.NET.CEXIO.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class CMyPositionItem : OdinSdk.BaseLib.Coin.Trade.MyPositionItem, IMyPositionItem
     {
@@ -301,6 +301,5 @@ namespace CCXT.NET.CEXIO.Trade
                 orderStatus = value == "a" ? OrderStatus.Open : OrderStatus.Closed;
             }
         }
-
     }
 }

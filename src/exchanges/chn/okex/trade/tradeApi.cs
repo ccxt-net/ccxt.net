@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace CCXT.NET.OKEx.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class TradeApi : OdinSdk.BaseLib.Coin.Trade.TradeApi, ITradeApi
     {
@@ -20,7 +20,7 @@ namespace CCXT.NET.OKEx.Trade
         private readonly string __user_password;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TradeApi(string connect_key, string secret_key, string user_name, string user_password)
         {
@@ -31,7 +31,7 @@ namespace CCXT.NET.OKEx.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override XApiClient tradeClient
         {
@@ -45,7 +45,7 @@ namespace CCXT.NET.OKEx.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OKExClient okexClient
         {
@@ -56,7 +56,7 @@ namespace CCXT.NET.OKEx.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override OdinSdk.BaseLib.Coin.Public.PublicApi publicApi
         {
@@ -315,7 +315,6 @@ namespace CCXT.NET.OKEx.Trade
 
                     if (_json_data.result == true)
                     {
-
                         var _order = new OPlaceOrderItem
                         {
                             orderId = _json_data.orderId.ToUpper(),
@@ -390,7 +389,6 @@ namespace CCXT.NET.OKEx.Trade
 
                     if (_json_data.result == true)
                     {
-
                         var _order = new OPlaceOrderItem
                         {
                             orderId = _json_data.orderId.ToUpper(),

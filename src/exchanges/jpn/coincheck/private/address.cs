@@ -1,16 +1,15 @@
 ﻿using Newtonsoft.Json;
 using OdinSdk.BaseLib.Coin.Private;
-using System.ComponentModel;
 
 namespace CCXT.NET.CoinCheck.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class CAddressItem : OdinSdk.BaseLib.Coin.Private.AddressItem, IAddressItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "success")]
         public override bool success
@@ -20,7 +19,7 @@ namespace CCXT.NET.CoinCheck.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "id")]
         public string id
@@ -30,7 +29,7 @@ namespace CCXT.NET.CoinCheck.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "email")]
         public string email
@@ -40,7 +39,7 @@ namespace CCXT.NET.CoinCheck.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "identity_status")]
         public string identity_status
@@ -50,7 +49,7 @@ namespace CCXT.NET.CoinCheck.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "bitcoin_address")]
         public override string address
@@ -60,7 +59,7 @@ namespace CCXT.NET.CoinCheck.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "lending_leverage")]
         public decimal lending_leverage
@@ -70,7 +69,7 @@ namespace CCXT.NET.CoinCheck.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "taker_fee")]
         public decimal taker_fee
@@ -80,7 +79,7 @@ namespace CCXT.NET.CoinCheck.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "maker_fee")]
         public decimal maker_fee

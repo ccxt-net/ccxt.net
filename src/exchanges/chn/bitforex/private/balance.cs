@@ -1,16 +1,16 @@
-﻿using System.Collections.Generic;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using OdinSdk.BaseLib.Coin.Private;
+using System.Collections.Generic;
 
 namespace CCXT.NET.Bitforex.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BBalance : OdinSdk.BaseLib.Coin.Private.Balance, IBalance
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BBalance()
         {
@@ -18,7 +18,7 @@ namespace CCXT.NET.Bitforex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "data")]
         public new BBalanceItem result
@@ -28,7 +28,7 @@ namespace CCXT.NET.Bitforex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "success")]
         public override bool success
@@ -39,12 +39,12 @@ namespace CCXT.NET.Bitforex.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BBalances : OdinSdk.BaseLib.Coin.Private.Balances, IBalances
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BBalances()
         {
@@ -52,7 +52,7 @@ namespace CCXT.NET.Bitforex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "data")]
         public new List<BBalanceItem> result
@@ -62,7 +62,7 @@ namespace CCXT.NET.Bitforex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "success")]
         public override bool success
@@ -73,12 +73,12 @@ namespace CCXT.NET.Bitforex.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BBalanceItem : OdinSdk.BaseLib.Coin.Private.BalanceItem, IBalanceItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "currency")]
         public override string currency

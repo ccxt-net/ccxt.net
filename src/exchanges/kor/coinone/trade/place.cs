@@ -4,12 +4,12 @@ using OdinSdk.BaseLib.Coin.Trade;
 namespace CCXT.NET.Coinone.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class CPlaceOrder : OdinSdk.BaseLib.Coin.Trade.MyOrder, IMyOrder
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CPlaceOrder()
         {
@@ -27,7 +27,7 @@ namespace CCXT.NET.Coinone.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool success
         {
@@ -40,7 +40,7 @@ namespace CCXT.NET.Coinone.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "errorCode")]
         public override int statusCode
@@ -60,7 +60,7 @@ namespace CCXT.NET.Coinone.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "data")]
         public new CPlaceOrderItem result
@@ -71,7 +71,7 @@ namespace CCXT.NET.Coinone.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class CPlaceOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
     {

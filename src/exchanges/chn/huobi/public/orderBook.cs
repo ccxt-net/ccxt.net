@@ -7,12 +7,12 @@ using System.Collections.Generic;
 namespace CCXT.NET.Huobi.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class HOrderBooks : OdinSdk.BaseLib.Coin.Public.OrderBooks, IOrderBooks
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public HOrderBooks()
         {
@@ -20,7 +20,7 @@ namespace CCXT.NET.Huobi.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "tick")]
         public new HOrderBook result
@@ -30,7 +30,7 @@ namespace CCXT.NET.Huobi.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "status")]
         private string status
@@ -43,12 +43,12 @@ namespace CCXT.NET.Huobi.Public
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class HOrderBook : OdinSdk.BaseLib.Coin.Public.OrderBook, IOrderBook
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public HOrderBook()
         {
@@ -57,7 +57,7 @@ namespace CCXT.NET.Huobi.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "ts")]
         public override long timestamp
@@ -67,7 +67,7 @@ namespace CCXT.NET.Huobi.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "originBids")]
         public new List<BOrderBookItem> bids
@@ -77,7 +77,7 @@ namespace CCXT.NET.Huobi.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "bids")]
         private List<JArray> bidValue
@@ -92,7 +92,7 @@ namespace CCXT.NET.Huobi.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "originAsks")]
         public new List<BOrderBookItem> asks
@@ -102,7 +102,7 @@ namespace CCXT.NET.Huobi.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "asks")]
         public List<JArray> askValue
@@ -118,12 +118,12 @@ namespace CCXT.NET.Huobi.Public
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BOrderBookItem : OdinSdk.BaseLib.Coin.Public.OrderBookItem, IOrderBookItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override decimal quantity
         {
@@ -132,7 +132,7 @@ namespace CCXT.NET.Huobi.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override decimal price
         {
@@ -141,7 +141,7 @@ namespace CCXT.NET.Huobi.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override decimal amount
         {
@@ -150,7 +150,7 @@ namespace CCXT.NET.Huobi.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int count
         {

@@ -8,12 +8,12 @@ using System.Collections.Generic;
 namespace CCXT.NET.Bithumb.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BTransfers : OdinSdk.BaseLib.Coin.Private.Transfers, ITransfers
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BTransfers()
         {
@@ -41,7 +41,7 @@ namespace CCXT.NET.Bithumb.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "data")]
         public new List<BTransferItem> result
@@ -52,7 +52,7 @@ namespace CCXT.NET.Bithumb.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BTransfer : OdinSdk.BaseLib.Coin.Private.Transfer, ITransfer
     {
@@ -78,7 +78,7 @@ namespace CCXT.NET.Bithumb.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BTransferItem : OdinSdk.BaseLib.Coin.Private.TransferItem, ITransferItem
     {
@@ -103,7 +103,7 @@ namespace CCXT.NET.Bithumb.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "search")]
         private int searchValue
@@ -121,7 +121,7 @@ namespace CCXT.NET.Bithumb.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "transfer_date")]
         private long transfer_date
@@ -143,6 +143,7 @@ namespace CCXT.NET.Bithumb.Private
                 amount = Math.Abs(Convert.ToDecimal(value.Replace(" ", "")));
             }
         }
+
         /// <summary>
         /// 거래수수료
         /// </summary>

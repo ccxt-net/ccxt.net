@@ -22,12 +22,12 @@ namespace OdinSdk.BaseLib.Coin.Types
     */
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum SideType : int
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Unknown = 0,
 
@@ -43,12 +43,12 @@ namespace OdinSdk.BaseLib.Coin.Types
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class SideTypeConverter
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="s"></param>
         /// <returns></returns>
@@ -78,7 +78,7 @@ namespace OdinSdk.BaseLib.Coin.Types
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="v"></param>
         /// <returns></returns>

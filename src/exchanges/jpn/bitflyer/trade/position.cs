@@ -1,18 +1,18 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Configuration;
 using OdinSdk.BaseLib.Coin.Trade;
 using OdinSdk.BaseLib.Coin.Types;
+using OdinSdk.BaseLib.Configuration;
 using System;
 
 namespace CCXT.NET.Bitflyer.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BMyPositionItem : OdinSdk.BaseLib.Coin.Trade.MyPositionItem, IMyPositionItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string product_code
         {
@@ -21,7 +21,7 @@ namespace CCXT.NET.Bitflyer.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "side")]
         private string side
@@ -33,7 +33,7 @@ namespace CCXT.NET.Bitflyer.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "price")]
         public override decimal price
@@ -43,7 +43,7 @@ namespace CCXT.NET.Bitflyer.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "size")]
         public override decimal quantity
@@ -53,7 +53,7 @@ namespace CCXT.NET.Bitflyer.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "commission")]
         public override decimal fee
@@ -63,7 +63,7 @@ namespace CCXT.NET.Bitflyer.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "swap_point_accumulate")]
         public decimal swap
@@ -73,7 +73,7 @@ namespace CCXT.NET.Bitflyer.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal require_collateral
         {
@@ -82,7 +82,7 @@ namespace CCXT.NET.Bitflyer.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "open_date")]
         private DateTime timeValue
@@ -94,7 +94,7 @@ namespace CCXT.NET.Bitflyer.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int leverage
         {
@@ -112,7 +112,7 @@ namespace CCXT.NET.Bitflyer.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal sfd
         {

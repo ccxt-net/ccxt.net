@@ -1,7 +1,7 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using CCXT.NET.OKEx.Public;
+using Newtonsoft.Json.Linq;
 using OdinSdk.BaseLib.Coin;
 using OdinSdk.BaseLib.Coin.Public;
-using CCXT.NET.OKEx.Public;
 using RestSharp;
 using System;
 using System.Collections.Generic;
@@ -12,17 +12,17 @@ using System.Threading.Tasks;
 namespace CCXT.NET.OKEx
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed class OKExClient : OdinSdk.BaseLib.Coin.XApiClient, IXApiClient
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string DealerName { get; set; } = "OKEx";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="division">exchange's division for communication</param>
         public OKExClient(string division)
@@ -31,7 +31,7 @@ namespace CCXT.NET.OKEx
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="division">exchange's division for communication</param>
         /// <param name="connect_key">exchange's api key for connect</param>
@@ -158,7 +158,7 @@ namespace CCXT.NET.OKEx
         private MD5CryptoServiceProvider __md5crypto = null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MD5CryptoServiceProvider MD5Crypto
         {
@@ -172,7 +172,7 @@ namespace CCXT.NET.OKEx
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="market"></param>
         /// <param name="spot_url"></param>
@@ -196,7 +196,7 @@ namespace CCXT.NET.OKEx
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -241,7 +241,7 @@ namespace CCXT.NET.OKEx
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public new Dictionary<int, ErrorCode> ErrorMessages = new Dictionary<int, ErrorCode>
         {
@@ -267,7 +267,7 @@ namespace CCXT.NET.OKEx
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="error_code"></param>
         /// <returns></returns>
@@ -279,7 +279,7 @@ namespace CCXT.NET.OKEx
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="response">response value arrive from exchange's server</param>
         /// <returns></returns>

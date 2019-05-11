@@ -9,7 +9,7 @@ using System.Collections.Generic;
 namespace CCXT.NET.Poloniex.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class PPlaceOrders : OdinSdk.BaseLib.Coin.Trade.MyOrders, IMyOrders
     {
@@ -24,7 +24,7 @@ namespace CCXT.NET.Poloniex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "resultingTrades")]
         public List<PPlaceOrderItem> resultingTrades
@@ -35,12 +35,12 @@ namespace CCXT.NET.Poloniex.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class PPlaceOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "tradeID")]
         public string tradeId
@@ -50,7 +50,7 @@ namespace CCXT.NET.Poloniex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "amount")]
         public override decimal quantity
@@ -60,7 +60,7 @@ namespace CCXT.NET.Poloniex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "rate")]
         public override decimal price
@@ -70,7 +70,7 @@ namespace CCXT.NET.Poloniex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "total")]
         public override decimal amount
@@ -80,7 +80,7 @@ namespace CCXT.NET.Poloniex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "date")]
         private DateTime timeValue
@@ -92,7 +92,7 @@ namespace CCXT.NET.Poloniex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "type")]
         private string sideValue

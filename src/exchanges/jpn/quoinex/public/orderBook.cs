@@ -11,7 +11,7 @@ namespace CCXT.NET.Quoinex.Public
     public class QOrderBook : OdinSdk.BaseLib.Coin.Public.OrderBook, IOrderBook
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "originBids")]
         public override List<IOrderBookItem> bids
@@ -21,7 +21,7 @@ namespace CCXT.NET.Quoinex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "originAsks")]
         public override List<IOrderBookItem> asks
@@ -31,7 +31,7 @@ namespace CCXT.NET.Quoinex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         [JsonProperty(PropertyName = "buy_price_levels")]
@@ -57,7 +57,7 @@ namespace CCXT.NET.Quoinex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         [JsonProperty(PropertyName = "sell_price_levels")]

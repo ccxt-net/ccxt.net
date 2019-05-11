@@ -1,9 +1,7 @@
 ﻿using OdinSdk.BaseLib.Coin;
 using OdinSdk.BaseLib.Coin.Private;
-using OdinSdk.BaseLib.Coin.Public;
 using OdinSdk.BaseLib.Coin.Types;
 using OdinSdk.BaseLib.Configuration;
-using CCXT.NET.Bitfinex.Public;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -11,7 +9,7 @@ using System.Threading.Tasks;
 namespace CCXT.NET.Bitfinex.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class PrivateApi : OdinSdk.BaseLib.Coin.Private.PrivateApi, IPrivateApi
     {
@@ -19,7 +17,7 @@ namespace CCXT.NET.Bitfinex.Private
         private readonly string __secret_key;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PrivateApi(string connect_key, string secret_key)
         {
@@ -28,7 +26,7 @@ namespace CCXT.NET.Bitfinex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override XApiClient privateClient
         {
@@ -42,7 +40,7 @@ namespace CCXT.NET.Bitfinex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override OdinSdk.BaseLib.Coin.Public.PublicApi publicApi
         {

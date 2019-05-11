@@ -19,12 +19,12 @@ namespace CCXT.NET.BitMEX.Public
     */
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public interface ILeaderBoardItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         decimal profit
         {
@@ -33,7 +33,7 @@ namespace CCXT.NET.BitMEX.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         bool isRealName
         {
@@ -42,7 +42,7 @@ namespace CCXT.NET.BitMEX.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string name
         {
@@ -51,24 +51,26 @@ namespace CCXT.NET.BitMEX.Public
         }
 
 #if DEBUG
+
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string rawJson
         {
             get;
             set;
         }
+
 #endif
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class LeaderBoardItem : ILeaderBoardItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal profit
         {
@@ -77,7 +79,7 @@ namespace CCXT.NET.BitMEX.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool isRealName
         {
@@ -86,7 +88,7 @@ namespace CCXT.NET.BitMEX.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string name
         {
@@ -95,41 +97,45 @@ namespace CCXT.NET.BitMEX.Public
         }
 
 #if DEBUG
+
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string rawJson
         {
             get;
             set;
         }
+
 #endif
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public interface ILeaderBoards : IApiResult<List<ILeaderBoardItem>>
     {
 #if DEBUG
+
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string rawJson
         {
             get;
             set;
         }
+
 #endif
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class LeaderBoards : ApiResult<List<ILeaderBoardItem>>, ILeaderBoards
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public LeaderBoards()
         {
@@ -137,14 +143,16 @@ namespace CCXT.NET.BitMEX.Public
         }
 
 #if DEBUG
+
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual string rawJson
         {
             get;
             set;
         }
+
 #endif
     }
 }

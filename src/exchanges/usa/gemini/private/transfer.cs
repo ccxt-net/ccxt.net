@@ -5,7 +5,7 @@ using OdinSdk.BaseLib.Coin.Types;
 namespace CCXT.NET.Gemini.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class GWithdrawItem : OdinSdk.BaseLib.Coin.Private.TransferItem, ITransferItem
     {
@@ -40,7 +40,7 @@ namespace CCXT.NET.Gemini.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class GTransferItem : OdinSdk.BaseLib.Coin.Private.TransferItem, ITransferItem
     {

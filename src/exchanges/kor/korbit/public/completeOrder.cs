@@ -29,7 +29,7 @@ namespace CCXT.NET.Korbit.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "originAmount")]
         public override decimal amount

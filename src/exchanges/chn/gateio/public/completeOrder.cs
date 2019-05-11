@@ -2,18 +2,17 @@
 
 using OdinSdk.BaseLib.Coin.Public;
 using OdinSdk.BaseLib.Coin.Types;
-using System;
 using System.Collections.Generic;
 
 namespace CCXT.NET.GateIO.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class GCompleteOrders : OdinSdk.BaseLib.Coin.Public.CompleteOrders, ICompleteOrders
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "elapsed")]
         public string elapsed
@@ -23,7 +22,7 @@ namespace CCXT.NET.GateIO.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "result")]
         public override bool success
@@ -33,7 +32,7 @@ namespace CCXT.NET.GateIO.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "data")]
         public new List<GCompleteOrderItem> result
@@ -44,12 +43,12 @@ namespace CCXT.NET.GateIO.Public
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class GCompleteOrderItem : OdinSdk.BaseLib.Coin.Public.CompleteOrderItem, ICompleteOrderItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "tradeID")]
         public override string transactionId
@@ -59,7 +58,7 @@ namespace CCXT.NET.GateIO.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "total")]
         public override decimal amount
@@ -69,7 +68,7 @@ namespace CCXT.NET.GateIO.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "rate")]
         public override decimal price
@@ -79,7 +78,7 @@ namespace CCXT.NET.GateIO.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "amount")]
         public override decimal quantity
@@ -89,7 +88,7 @@ namespace CCXT.NET.GateIO.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "origin_timestamp")]
         public override long timestamp
@@ -99,7 +98,7 @@ namespace CCXT.NET.GateIO.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "timestamp")]
         private long timeValue
@@ -111,7 +110,7 @@ namespace CCXT.NET.GateIO.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "type")]
         private string sideValue

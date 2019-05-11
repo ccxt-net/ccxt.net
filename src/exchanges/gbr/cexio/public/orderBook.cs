@@ -11,10 +11,10 @@ namespace CCXT.NET.CEXIO.Public
     public class COrderBook : OdinSdk.BaseLib.Coin.Public.OrderBook, IOrderBook
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
-                [JsonProperty(PropertyName = "bids")]
+        [JsonProperty(PropertyName = "bids")]
         private List<JArray> bidsValue
         {
             set
@@ -37,10 +37,10 @@ namespace CCXT.NET.CEXIO.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
-                [JsonProperty(PropertyName = "asks")]
+        [JsonProperty(PropertyName = "asks")]
         private List<JArray> asksValue
         {
             set
@@ -63,7 +63,7 @@ namespace CCXT.NET.CEXIO.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         [JsonProperty(PropertyName = "originBids")]
@@ -74,7 +74,7 @@ namespace CCXT.NET.CEXIO.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         [JsonProperty(PropertyName = "originAsks")]
@@ -85,7 +85,7 @@ namespace CCXT.NET.CEXIO.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "pair")]
         public string pair
@@ -95,7 +95,7 @@ namespace CCXT.NET.CEXIO.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "origin_timestamp")]
         public override long timestamp
@@ -105,7 +105,7 @@ namespace CCXT.NET.CEXIO.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "timestamp")]
         private long timeValue
@@ -117,7 +117,7 @@ namespace CCXT.NET.CEXIO.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "id")]
         public long id
@@ -127,7 +127,7 @@ namespace CCXT.NET.CEXIO.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "sell_total")]
         public decimal sell_total
@@ -137,7 +137,7 @@ namespace CCXT.NET.CEXIO.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "buy_total")]
         public decimal buy_total

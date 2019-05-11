@@ -5,7 +5,7 @@ using System.Globalization;
 namespace CCXT.NET.Quoinex.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class QTickerItem : OdinSdk.BaseLib.Coin.Public.TickerItem, ITickerItem
     {
@@ -60,7 +60,7 @@ namespace CCXT.NET.Quoinex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "base_currency")]
         public string base_currency
@@ -70,7 +70,7 @@ namespace CCXT.NET.Quoinex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "quoted_currency")]
         public string quoted_currency
@@ -80,7 +80,7 @@ namespace CCXT.NET.Quoinex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "high_market_ask")]
         private string high_market_ask
@@ -92,7 +92,7 @@ namespace CCXT.NET.Quoinex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "low_market_bid")]
         private string low_market_bid

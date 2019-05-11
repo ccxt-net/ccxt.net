@@ -11,7 +11,7 @@ namespace CCXT.NET.Kraken.Public
     public class KOrderBook : OdinSdk.BaseLib.Coin.Public.OrderBook, IOrderBook
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         [JsonProperty(PropertyName = "bids")]
@@ -37,7 +37,7 @@ namespace CCXT.NET.Kraken.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         [JsonProperty(PropertyName = "asks")]
@@ -63,7 +63,7 @@ namespace CCXT.NET.Kraken.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         [JsonProperty(PropertyName = "originBids")]
@@ -74,7 +74,7 @@ namespace CCXT.NET.Kraken.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         [JsonProperty(PropertyName = "originAsks")]

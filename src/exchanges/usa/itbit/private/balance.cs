@@ -9,7 +9,7 @@ namespace CCXT.NET.ItBit.Private
     public class TBalanceItem : OdinSdk.BaseLib.Coin.Private.BalanceItem, IBalanceItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "currency")]
         public override string currency
@@ -19,7 +19,7 @@ namespace CCXT.NET.ItBit.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "availableBalance")]
         public override decimal free
@@ -29,7 +29,7 @@ namespace CCXT.NET.ItBit.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "totalBalance")]
         public override decimal total

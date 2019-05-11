@@ -6,12 +6,12 @@ using System.Collections.Generic;
 namespace CCXT.NET.OKEx.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class OMyOrders : OdinSdk.BaseLib.Coin.Trade.MyOrders, IMyOrders
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "result")]
         public override bool success
@@ -21,7 +21,7 @@ namespace CCXT.NET.OKEx.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "orders")]
         public new List<OMyOrderItem> result
@@ -32,7 +32,7 @@ namespace CCXT.NET.OKEx.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class OMyOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
     {
@@ -64,7 +64,7 @@ namespace CCXT.NET.OKEx.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "symbol")]
         public override string symbol
@@ -137,7 +137,7 @@ namespace CCXT.NET.OKEx.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class OCancelOrderItem
     {

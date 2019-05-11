@@ -10,7 +10,7 @@ namespace CCXT.NET.ItBit.Private
     public class TWalletItem : OdinSdk.BaseLib.Coin.Private.WalletItem, IWalletItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "userId")]
         public override string userId
@@ -20,7 +20,7 @@ namespace CCXT.NET.ItBit.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "id")]
         public override string walletId
@@ -30,7 +30,7 @@ namespace CCXT.NET.ItBit.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "name")]
         public override string walletName
@@ -40,7 +40,7 @@ namespace CCXT.NET.ItBit.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "balances")]
         public List<TBalanceItem> balances

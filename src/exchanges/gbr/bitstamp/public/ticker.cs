@@ -5,7 +5,7 @@ using OdinSdk.BaseLib.Coin.Public;
 namespace CCXT.NET.Bitstamp.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BTickerItem : OdinSdk.BaseLib.Coin.Public.TickerItem, ITickerItem
     {
@@ -30,7 +30,7 @@ namespace CCXT.NET.Bitstamp.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "timestamp")]
         private long timeValue

@@ -1,12 +1,10 @@
 ﻿using Microsoft.IdentityModel.Tokens;
-using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using OdinSdk.BaseLib.Coin;
 using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,17 +12,17 @@ using System.Threading.Tasks;
 namespace CCXT.NET.GateIO
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed class GateIOClient : OdinSdk.BaseLib.Coin.XApiClient, IXApiClient
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string DealerName { get; set; } = "GateIO";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="division">exchange's division for communication</param>
         public GateIOClient(string division)
@@ -33,7 +31,7 @@ namespace CCXT.NET.GateIO
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="division">exchange's division for communication</param>
         /// <param name="connect_key">exchange's api key for connect</param>
@@ -117,7 +115,7 @@ namespace CCXT.NET.GateIO
         private HMACSHA512 __encryptor = null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public HMACSHA512 Encryptor
         {
@@ -133,7 +131,7 @@ namespace CCXT.NET.GateIO
         private JwtHeader __jwt_header = null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public JwtHeader JwtHeader
         {
@@ -152,7 +150,7 @@ namespace CCXT.NET.GateIO
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -177,7 +175,7 @@ namespace CCXT.NET.GateIO
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="response">response value arrive from exchange's server</param>
         /// <returns></returns>

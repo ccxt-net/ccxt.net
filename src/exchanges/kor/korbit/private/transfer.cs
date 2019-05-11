@@ -6,12 +6,12 @@ using OdinSdk.BaseLib.Coin.Types;
 namespace CCXT.NET.Korbit.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class KTransactionDetails
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string transaction_id
         {
@@ -20,7 +20,7 @@ namespace CCXT.NET.Korbit.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string address
         {
@@ -29,7 +29,7 @@ namespace CCXT.NET.Korbit.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string destiantion_tag
         {
@@ -38,7 +38,7 @@ namespace CCXT.NET.Korbit.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string bank
         {
@@ -47,7 +47,7 @@ namespace CCXT.NET.Korbit.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string account_number
         {
@@ -56,7 +56,7 @@ namespace CCXT.NET.Korbit.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string owner
         {
@@ -66,12 +66,12 @@ namespace CCXT.NET.Korbit.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class KTransfer : OdinSdk.BaseLib.Coin.Private.Transfer, ITransfer
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string transferId
         {
@@ -80,7 +80,7 @@ namespace CCXT.NET.Korbit.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "status")]
         private string status
@@ -112,7 +112,7 @@ namespace CCXT.NET.Korbit.Private
             get;
             set;
         }
-        
+
         /// <summary>
         /// Unix timestamp in milliseconds by the time deposit or withdrawal request was created.
         /// </summary>
@@ -150,7 +150,7 @@ namespace CCXT.NET.Korbit.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "details")]
         private KTransactionDetails details

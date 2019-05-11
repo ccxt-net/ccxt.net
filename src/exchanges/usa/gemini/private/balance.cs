@@ -49,7 +49,7 @@ namespace CCXT.NET.Gemini.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "type")]
         public string type

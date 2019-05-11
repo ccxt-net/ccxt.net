@@ -3,12 +3,12 @@
 namespace OdinSdk.BaseLib.Converter
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
 	public class Numerical
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="value"></param>
         /// <param name="precision"></param>
@@ -20,7 +20,7 @@ namespace OdinSdk.BaseLib.Converter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
@@ -31,7 +31,7 @@ namespace OdinSdk.BaseLib.Converter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         public static bool CompareDecimal(decimal lvalue, decimal rvalue, bool round = true)
@@ -68,7 +68,7 @@ namespace OdinSdk.BaseLib.Converter
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="value"></param>
         /// <param name="maxPrecision"></param>

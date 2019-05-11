@@ -1,19 +1,19 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Configuration;
 using OdinSdk.BaseLib.Coin.Trade;
 using OdinSdk.BaseLib.Coin.Types;
+using OdinSdk.BaseLib.Configuration;
 using System;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Bittrex.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BMyOpenOrders : OdinSdk.BaseLib.Coin.Trade.MyOrders, IMyOrders
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BMyOpenOrders()
         {
@@ -21,7 +21,7 @@ namespace CCXT.NET.Bittrex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "result")]
         public new List<BMyOpenOrderItem> result
@@ -32,12 +32,12 @@ namespace CCXT.NET.Bittrex.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BMyOpenOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "Exchange")]
         public override string symbol
@@ -47,7 +47,7 @@ namespace CCXT.NET.Bittrex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "OrderUuid")]
         public override string orderId
@@ -57,7 +57,7 @@ namespace CCXT.NET.Bittrex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "Quantity")]
         public override decimal quantity
@@ -67,7 +67,7 @@ namespace CCXT.NET.Bittrex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "Price")]
         public override decimal price
@@ -77,7 +77,7 @@ namespace CCXT.NET.Bittrex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "CommissionPaid")]
         public override decimal fee
@@ -87,7 +87,7 @@ namespace CCXT.NET.Bittrex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "QuantityRemaining")]
         public override decimal remaining
@@ -97,7 +97,7 @@ namespace CCXT.NET.Bittrex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "Opened")]
         private DateTime timeValue
@@ -109,7 +109,7 @@ namespace CCXT.NET.Bittrex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "OrderType")]
         private string sideValue

@@ -1,17 +1,16 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using OdinSdk.BaseLib.Coin.Private;
-using System.Collections.Generic;
 
 namespace CCXT.NET.GateIO.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class GBalances
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "result")]
         public bool success
@@ -21,7 +20,7 @@ namespace CCXT.NET.GateIO.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "available")]
         public JObject available
@@ -31,7 +30,7 @@ namespace CCXT.NET.GateIO.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "locked")]
         public JObject locked
@@ -42,12 +41,12 @@ namespace CCXT.NET.GateIO.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class GBalanceItem : OdinSdk.BaseLib.Coin.Private.BalanceItem, IBalanceItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string currency
         {
@@ -56,7 +55,7 @@ namespace CCXT.NET.GateIO.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override decimal free
         {
@@ -65,7 +64,7 @@ namespace CCXT.NET.GateIO.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override decimal used
         {
@@ -74,7 +73,7 @@ namespace CCXT.NET.GateIO.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override decimal total
         {

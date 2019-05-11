@@ -7,12 +7,12 @@ using System.Collections.Generic;
 namespace CCXT.NET.CoinCheck.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class COrderBook : OdinSdk.BaseLib.Coin.Public.OrderBook, IOrderBook
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public COrderBook()
         {
@@ -21,7 +21,7 @@ namespace CCXT.NET.CoinCheck.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string symbol
         {
@@ -30,7 +30,7 @@ namespace CCXT.NET.CoinCheck.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "originBids")]
         public new List<COrderBookItem> bids
@@ -40,7 +40,7 @@ namespace CCXT.NET.CoinCheck.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "originAsks")]
         public new List<COrderBookItem> asks
@@ -50,7 +50,7 @@ namespace CCXT.NET.CoinCheck.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "bids")]
         private List<JArray> bidsValue
@@ -65,7 +65,7 @@ namespace CCXT.NET.CoinCheck.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "asks")]
         private List<JArray> asksValue
@@ -81,12 +81,12 @@ namespace CCXT.NET.CoinCheck.Public
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class COrderBookItem : OdinSdk.BaseLib.Coin.Public.OrderBookItem, IOrderBookItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override decimal quantity
         {
@@ -95,7 +95,7 @@ namespace CCXT.NET.CoinCheck.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override decimal price
         {
@@ -104,7 +104,7 @@ namespace CCXT.NET.CoinCheck.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override decimal amount
         {
@@ -113,7 +113,7 @@ namespace CCXT.NET.CoinCheck.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int count
         {

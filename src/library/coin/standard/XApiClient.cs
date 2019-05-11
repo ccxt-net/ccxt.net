@@ -18,12 +18,12 @@ using System.Web;
 namespace OdinSdk.BaseLib.Coin
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public interface IXApiClient
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string DealerName
         {
@@ -32,7 +32,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ExchangeInfo ExchangeInfo
         {
@@ -40,7 +40,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         bool IsAuthentication
         {
@@ -48,7 +48,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string ApiUrl
         {
@@ -56,7 +56,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string ConnectKey
         {
@@ -64,7 +64,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string SecretKey
         {
@@ -72,7 +72,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string UserName
         {
@@ -80,7 +80,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string UserPassword
         {
@@ -88,7 +88,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Dictionary<object, object> ErrorMessages
         {
@@ -99,21 +99,21 @@ namespace OdinSdk.BaseLib.Coin
         #region method common lib
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="error_code"></param>
         /// <returns></returns>
         string GetErrorMessage(int error_code);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="response">response value arrive from exchange's server</param>
         /// <returns></returns>
         BoolResult GetResponseMessage(IRestResponse response = null);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="request"></param>
         /// <param name="max_retry"></param>
@@ -121,12 +121,12 @@ namespace OdinSdk.BaseLib.Coin
         /// <returns></returns>
         Task<IRestResponse> RestExecuteAsync(IRestRequest request, int max_retry, int delay_milliseconds);
 
-        #endregion
+        #endregion method common lib
 
         #region method post
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -134,7 +134,7 @@ namespace OdinSdk.BaseLib.Coin
         Task<IRestRequest> CreatePostRequest(string endpoint, Dictionary<string, object> args = null);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="endpoint">api link address of a function</param>
@@ -143,7 +143,7 @@ namespace OdinSdk.BaseLib.Coin
         Task<T> CallApiPostAsync<T>(string endpoint, Dictionary<string, object> args = null) where T : new();
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -151,7 +151,7 @@ namespace OdinSdk.BaseLib.Coin
         Task<string> CallApiPostAsync(string endpoint, Dictionary<string, object> args = null);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -159,19 +159,19 @@ namespace OdinSdk.BaseLib.Coin
         Task<(string Content, IRestResponse Response)> CallApiPost1Async(string endpoint, Dictionary<string, object> args = null);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
         Task<IRestResponse> CallApiPost2Async(string endpoint, Dictionary<string, object> args = null);
 
-        #endregion
+        #endregion method post
 
-        #region method get 
+        #region method get
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -179,7 +179,7 @@ namespace OdinSdk.BaseLib.Coin
         Task<IRestRequest> CreateGetRequest(string endpoint, Dictionary<string, object> args = null);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="endpoint">api link address of a function</param>
@@ -188,7 +188,7 @@ namespace OdinSdk.BaseLib.Coin
         Task<T> CallApiGetAsync<T>(string endpoint, Dictionary<string, object> args = null) where T : new();
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -196,7 +196,7 @@ namespace OdinSdk.BaseLib.Coin
         Task<string> CallApiGetAsync(string endpoint, Dictionary<string, object> args = null);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -204,19 +204,19 @@ namespace OdinSdk.BaseLib.Coin
         Task<(string Content, IRestResponse Response)> CallApiGet1Async(string endpoint, Dictionary<string, object> args = null);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
         Task<IRestResponse> CallApiGet2Async(string endpoint, Dictionary<string, object> args = null);
 
-        #endregion
+        #endregion method get
 
         #region method delete
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -224,7 +224,7 @@ namespace OdinSdk.BaseLib.Coin
         Task<IRestRequest> CreateDeleteRequest(string endpoint, Dictionary<string, object> args = null);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="endpoint">api link address of a function</param>
@@ -233,7 +233,7 @@ namespace OdinSdk.BaseLib.Coin
         Task<T> CallApiDeleteAsync<T>(string endpoint, Dictionary<string, object> args = null) where T : new();
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -241,7 +241,7 @@ namespace OdinSdk.BaseLib.Coin
         Task<string> CallApiDeleteAsync(string endpoint, Dictionary<string, object> args = null);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -249,43 +249,43 @@ namespace OdinSdk.BaseLib.Coin
         Task<(string Content, IRestResponse Response)> CallApiDelete1Async(string endpoint, Dictionary<string, object> args = null);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
         Task<IRestResponse> CallApiDelete2Async(string endpoint, Dictionary<string, object> args = null);
 
-        #endregion
+        #endregion method delete
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class XApiClient : IXApiClient, IDisposable
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static XUnitMode TestXUnitMode = XUnitMode.UseExchangeServer;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ConcurrentDictionary<string, long> marketLastNonce = new ConcurrentDictionary<string, long>();
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public const string ContentType = "application/json";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public const string UserAgent = "odinsoft-ccxt.net/1.0.2018.07";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual string DealerName
         {
@@ -303,37 +303,37 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool IsAuthentication { get; set; } = false;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string ApiUrl { get; set; } = "";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string ConnectKey { get; set; } = "";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string SecretKey { get; set; } = "";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string UserName { get; set; } = "";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string UserPassword { get; set; } = "";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="division">exchange's api url for communication</param>
         /// <param name="connect_key">exchange's api key for connect</param>
@@ -357,7 +357,7 @@ namespace OdinSdk.BaseLib.Coin
         #region method common
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="digit_count"></param>
         /// <returns></returns>
@@ -380,7 +380,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="digit_count"></param>
         /// <param name="right_length"></param>
@@ -394,7 +394,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="digit_count"></param>
         /// <returns></returns>
@@ -419,7 +419,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <param name="json"></param>
@@ -435,7 +435,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <param name="json"></param>
@@ -461,7 +461,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
@@ -471,7 +471,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="buffer"></param>
         /// <returns></returns>
@@ -481,7 +481,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
@@ -491,7 +491,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="params"></param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -513,7 +513,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="baseurl"></param>
         /// <returns></returns>
@@ -535,7 +535,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="resource"></param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -585,7 +585,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual Dictionary<object, object> ErrorMessages
         {
@@ -594,7 +594,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="error_code"></param>
         /// <returns></returns>
@@ -606,7 +606,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="response">response value arrive from exchange's server</param>
         /// <returns></returns>
@@ -643,7 +643,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="request"></param>
         /// <param name="max_retry"></param>
@@ -676,11 +676,11 @@ namespace OdinSdk.BaseLib.Coin
 
                 await Task.Delay(delay_milliseconds);
             }
-            
+
             return _result;
         }
 
-        #endregion
+        #endregion method common
 
         #region method post
 
@@ -697,7 +697,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="json_string"></param>
@@ -708,7 +708,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="json_object"></param>
         /// <param name="formatting"></param>
@@ -719,7 +719,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -731,7 +731,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="endpoint">api link address of a function</param>
@@ -744,7 +744,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -756,7 +756,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -768,7 +768,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -796,12 +796,12 @@ namespace OdinSdk.BaseLib.Coin
             return await RestExecuteAsync(_request);
         }
 
-        #endregion
+        #endregion method post
 
-        #region method get 
+        #region method get
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -813,7 +813,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="endpoint">api link address of a function</param>
@@ -826,7 +826,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -838,7 +838,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -850,7 +850,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -878,12 +878,12 @@ namespace OdinSdk.BaseLib.Coin
             return await RestExecuteAsync(_request);
         }
 
-        #endregion
+        #endregion method get
 
         #region method delete
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -895,7 +895,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="endpoint">api link address of a function</param>
@@ -908,7 +908,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -920,7 +920,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -932,7 +932,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -960,12 +960,12 @@ namespace OdinSdk.BaseLib.Coin
             return await RestExecuteAsync(_request);
         }
 
-        #endregion
+        #endregion method delete
 
         #region method put
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -977,7 +977,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="endpoint">api link address of a function</param>
@@ -990,7 +990,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -1002,7 +1002,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -1014,7 +1014,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -1042,10 +1042,10 @@ namespace OdinSdk.BaseLib.Coin
             return await RestExecuteAsync(_request);
         }
 
-        #endregion
+        #endregion method put
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Dispose()
         {

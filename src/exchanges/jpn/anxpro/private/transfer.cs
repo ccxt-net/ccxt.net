@@ -6,12 +6,12 @@ using System.Collections.Generic;
 namespace CCXT.NET.Anxpro.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class ATransfer : OdinSdk.BaseLib.Coin.Private.Transfer, ITransfer
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ATransfer()
         {
@@ -19,7 +19,7 @@ namespace CCXT.NET.Anxpro.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "result")]
         private string resultValue
@@ -32,7 +32,7 @@ namespace CCXT.NET.Anxpro.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "data")]
         public new ATransferItem result
@@ -43,12 +43,12 @@ namespace CCXT.NET.Anxpro.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class ATransfers : OdinSdk.BaseLib.Coin.Private.Transfers, ITransfers
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "result")]
         private string resultValue
@@ -61,7 +61,7 @@ namespace CCXT.NET.Anxpro.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "data")]
         public ATransferData data
@@ -72,7 +72,7 @@ namespace CCXT.NET.Anxpro.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class ATransferData
     {
@@ -123,7 +123,7 @@ namespace CCXT.NET.Anxpro.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class ATransferItem : OdinSdk.BaseLib.Coin.Private.TransferItem, ITransferItem
     {
@@ -200,7 +200,6 @@ namespace CCXT.NET.Anxpro.Private
             get;
             set;
         }
-
     }
 
     /// <summary>
@@ -250,7 +249,7 @@ namespace CCXT.NET.Anxpro.Private
         /// <para>Cash/Fiat Amount                             = 10^2 => ex) HKD 1234.56 -> 123456</para>
         /// <para>Crypto/Coins Amount                          = 10^8 => ex) BTC 1234.56789 -> 123456789000</para>
         /// <para>Currency pair rate - BTC to FIAT, LTC to BTC = 10^5 => ex) BTCHKD 4,100.31234 -> 410031234</para>
-        /// <para>Currency pair rate - all other crypto        = 10^8 => ex) DOGEBTC 0.012345 -> 1234500</para>        
+        /// <para>Currency pair rate - all other crypto        = 10^8 => ex) DOGEBTC 0.012345 -> 1234500</para>
         public decimal value_int
         {
             get;
@@ -259,7 +258,7 @@ namespace CCXT.NET.Anxpro.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class ATransferTrade
     {

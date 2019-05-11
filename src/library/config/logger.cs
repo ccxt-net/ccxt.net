@@ -12,7 +12,7 @@ namespace OdinSdk.BaseLib.Configuration
         //-------------------------------------------------------------------------------------------------------------------------
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CLogger()
         {
@@ -23,7 +23,7 @@ namespace OdinSdk.BaseLib.Configuration
         //-------------------------------------------------------------------------------------------------------------------------
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="message">메시지</param>
         public void WriteLog(string message)
@@ -32,7 +32,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="exception">예외(L,X,I,etc)</param>
         public void WriteLog(Exception exception)
@@ -47,7 +47,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="format"></param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -57,7 +57,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="message_type">예외(L,X,I,etc)</param>
         /// <param name="message">메시지</param>
@@ -75,7 +75,7 @@ namespace OdinSdk.BaseLib.Configuration
         //-------------------------------------------------------------------------------------------------------------------------
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="message">메시지</param>
         public void WriteDebug(string message)
@@ -84,7 +84,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="exception">예외(L,X,I,etc)</param>
         public void WriteDebug(Exception exception)
@@ -93,7 +93,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="exception">예외(L,X,I,etc)</param>
         /// <param name="message">메시지</param>
@@ -103,7 +103,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="format"></param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -113,7 +113,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="message_type">예외(L,X,I,etc)</param>
         /// <param name="message">메시지</param>
@@ -131,7 +131,7 @@ namespace OdinSdk.BaseLib.Configuration
         //-------------------------------------------------------------------------------------------------------------------------
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="message"></param>
         public void WriteTrace(string message)
@@ -144,7 +144,7 @@ namespace OdinSdk.BaseLib.Configuration
         //-------------------------------------------------------------------------------------------------------------------------
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="message"></param>
         /// <param name="line_feed"></param>
@@ -157,7 +157,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="message"></param>
         /// <param name="line_feed"></param>

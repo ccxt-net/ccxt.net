@@ -6,7 +6,7 @@ using System;
 namespace CCXT.NET.GDAX.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class GTickerItem : OdinSdk.BaseLib.Coin.Public.TickerItem, ITickerItem
     {
@@ -21,7 +21,7 @@ namespace CCXT.NET.GDAX.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "time")]
         private DateTime timeValue

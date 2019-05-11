@@ -6,12 +6,12 @@ using System.Collections.Generic;
 namespace CCXT.NET.GateIO.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class GOrderBook : OdinSdk.BaseLib.Coin.Public.OrderBook, IOrderBook
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "elapsed")]
         public string elapsed
@@ -21,7 +21,7 @@ namespace CCXT.NET.GateIO.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "originAsks")]
         public override List<IOrderBookItem> asks
@@ -31,7 +31,7 @@ namespace CCXT.NET.GateIO.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "asks")]
         private List<JArray> askValue
@@ -56,7 +56,7 @@ namespace CCXT.NET.GateIO.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "originBids")]
         public override List<IOrderBookItem> bids
@@ -66,7 +66,7 @@ namespace CCXT.NET.GateIO.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "bids")]
         private List<JArray> bidValue
@@ -92,7 +92,7 @@ namespace CCXT.NET.GateIO.Public
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class GOrderBookItem : OdinSdk.BaseLib.Coin.Public.OrderBookItem, IOrderBookItem
     {

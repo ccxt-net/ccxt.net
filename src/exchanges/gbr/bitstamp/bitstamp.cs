@@ -10,17 +10,17 @@ using System.Threading.Tasks;
 namespace CCXT.NET.Bitstamp
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed class BitstampClient : OdinSdk.BaseLib.Coin.XApiClient, IXApiClient
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string DealerName { get; set; } = "Bitstamp";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="division">exchange's division for communication</param>
         public BitstampClient(string division)
@@ -29,7 +29,7 @@ namespace CCXT.NET.Bitstamp
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="division">exchange's division for communication</param>
         /// <param name="connect_key">exchange's api key for connect</param>
@@ -111,7 +111,7 @@ namespace CCXT.NET.Bitstamp
         private HMACSHA256 __encryptor = null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public HMACSHA256 Encryptor
         {
@@ -125,7 +125,7 @@ namespace CCXT.NET.Bitstamp
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -151,7 +151,7 @@ namespace CCXT.NET.Bitstamp
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public new Dictionary<string, ErrorCode> ErrorMessages = new Dictionary<string, ErrorCode>
         {
@@ -160,7 +160,7 @@ namespace CCXT.NET.Bitstamp
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="response">response value arrive from exchange's server</param>
         /// <returns></returns>

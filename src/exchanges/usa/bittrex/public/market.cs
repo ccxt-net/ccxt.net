@@ -5,12 +5,12 @@ using System.Collections.Generic;
 namespace CCXT.NET.Bittrex.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BMarkets : OdinSdk.BaseLib.Coin.Public.Markets, IMarkets
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BMarkets()
         {
@@ -18,7 +18,7 @@ namespace CCXT.NET.Bittrex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "result")]
         public new List<BMarketItem> result
@@ -29,7 +29,7 @@ namespace CCXT.NET.Bittrex.Public
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BMarketItem : OdinSdk.BaseLib.Coin.Public.MarketItem, IMarketItem
     {
@@ -44,7 +44,7 @@ namespace CCXT.NET.Bittrex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "MarketCurrency")]
         public override string baseId
@@ -54,7 +54,7 @@ namespace CCXT.NET.Bittrex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "BaseCurrency")]
         public override string quoteId
@@ -64,7 +64,7 @@ namespace CCXT.NET.Bittrex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "MarketCurrencyLong")]
         public override string baseLongName
@@ -74,7 +74,7 @@ namespace CCXT.NET.Bittrex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "BaseCurrencyLong")]
         public override string quoteLongName
@@ -84,7 +84,7 @@ namespace CCXT.NET.Bittrex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "IsActive")]
         public override bool active
@@ -94,7 +94,7 @@ namespace CCXT.NET.Bittrex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal MinTradeSize
         {

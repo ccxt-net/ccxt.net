@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace CCXT.NET.Upbit.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class UOrderBook : OdinSdk.BaseLib.Coin.Public.OrderBook, IOrderBook
     {
@@ -68,7 +68,7 @@ namespace CCXT.NET.Upbit.Public
                         amount = _o.ask_size * _o.ask_price,
                         count = 1
                     });
-                    
+
                     this.bids.Add(new OrderBookItem
                     {
                         quantity = _o.bid_size,
@@ -82,9 +82,9 @@ namespace CCXT.NET.Upbit.Public
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class UOrderBookItem 
+    public class UOrderBookItem
     {
         /// <summary>
         /// 매도 호가
@@ -103,7 +103,7 @@ namespace CCXT.NET.Upbit.Public
             get;
             set;
         }
-    
+
         /// <summary>
         /// 매도 수량
         /// </summary>

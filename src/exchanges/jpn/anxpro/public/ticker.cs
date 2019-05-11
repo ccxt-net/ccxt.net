@@ -7,12 +7,12 @@ using System.Collections.Generic;
 namespace CCXT.NET.Anxpro.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class ATickers : OdinSdk.BaseLib.Coin.Public.Tickers, ITickers
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ATickers()
         {
@@ -20,7 +20,7 @@ namespace CCXT.NET.Anxpro.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "data")]
         public new Dictionary<string, ATickerItem> result
@@ -31,7 +31,7 @@ namespace CCXT.NET.Anxpro.Public
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class ATickerItem : OdinSdk.BaseLib.Coin.Public.TickerItem, ITickerItem
     {
@@ -77,7 +77,7 @@ namespace CCXT.NET.Anxpro.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "dataUpdateTime")]
         public long dataUpdateTime
@@ -89,7 +89,7 @@ namespace CCXT.NET.Anxpro.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "high")]
         public JObject highObject
@@ -101,7 +101,7 @@ namespace CCXT.NET.Anxpro.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "low")]
         public JObject lowObject
@@ -113,7 +113,7 @@ namespace CCXT.NET.Anxpro.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "buy")]
         public JObject buyObject
@@ -125,7 +125,7 @@ namespace CCXT.NET.Anxpro.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "sell")]
         public JObject sellObject
@@ -137,7 +137,7 @@ namespace CCXT.NET.Anxpro.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "vwap")]
         public JObject vwapObject
@@ -149,7 +149,7 @@ namespace CCXT.NET.Anxpro.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "last")]
         public JObject lastObject
@@ -161,7 +161,7 @@ namespace CCXT.NET.Anxpro.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "avg")]
         public JObject avgObject
@@ -173,7 +173,7 @@ namespace CCXT.NET.Anxpro.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "vol")]
         public JObject volObject

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace CCXT.NET.ItBit.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class PrivateApi : OdinSdk.BaseLib.Coin.Private.PrivateApi, IPrivateApi
     {
@@ -19,7 +19,7 @@ namespace CCXT.NET.ItBit.Private
         private readonly string __wallet_id;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PrivateApi(string connect_key, string secret_key, string user_id, string wallet_id)
         {
@@ -30,7 +30,7 @@ namespace CCXT.NET.ItBit.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override XApiClient privateClient
         {
@@ -44,7 +44,7 @@ namespace CCXT.NET.ItBit.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override OdinSdk.BaseLib.Coin.Public.PublicApi publicApi
         {
@@ -226,7 +226,7 @@ namespace CCXT.NET.ItBit.Private
                         _balance.currency = base_name;
                         _balance.used = _balance.total - _balance.free;
 
-                        _result.result= _balance;
+                        _result.result = _balance;
                     }
                 }
 

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace CCXT.NET.BitMEX.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class PrivateApi : OdinSdk.BaseLib.Coin.Private.PrivateApi, IPrivateApi
     {
@@ -18,7 +18,7 @@ namespace CCXT.NET.BitMEX.Private
         private readonly string __secret_key;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PrivateApi(string connect_key, string secret_key, bool is_live = true)
         {
@@ -35,7 +35,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override XApiClient privateClient
         {
@@ -52,7 +52,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override OdinSdk.BaseLib.Coin.Public.PublicApi publicApi
         {
@@ -424,7 +424,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="message"></param>
         /// <param name="channelId"></param>

@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace CCXT.NET.Huobi.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class TradeApi : OdinSdk.BaseLib.Coin.Trade.TradeApi, ITradeApi
     {
@@ -19,7 +19,7 @@ namespace CCXT.NET.Huobi.Trade
         private readonly string __secret_key;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TradeApi(string connect_key, string secret_key)
         {
@@ -28,7 +28,7 @@ namespace CCXT.NET.Huobi.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override XApiClient tradeClient
         {
@@ -42,7 +42,7 @@ namespace CCXT.NET.Huobi.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override OdinSdk.BaseLib.Coin.Public.PublicApi publicApi
         {
@@ -579,7 +579,6 @@ namespace CCXT.NET.Huobi.Trade
                         _result.SetFailure("주문ID로 취소할 경우 string[] order_ids에 넣어주시고 Symbol로 취소할 경우 args[account-id]가 필요합니다.");
                     }
                 }
-                
             }
             else
             {
@@ -603,7 +602,6 @@ namespace CCXT.NET.Huobi.Trade
             {
                 if (args.ContainsKey("account-id") && args["account-id"].ToString() != "")
                 {
-
                     tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
                     var _params = tradeClient.MergeParamsAndArgs(args);

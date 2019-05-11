@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace CCXT.NET.Korbit.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class TradeApi : OdinSdk.BaseLib.Coin.Trade.TradeApi, ITradeApi
     {
@@ -19,7 +19,7 @@ namespace CCXT.NET.Korbit.Trade
         private readonly string __user_password;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TradeApi(string connect_key, string secret_key, string user_name, string user_password)
         {
@@ -30,7 +30,7 @@ namespace CCXT.NET.Korbit.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override XApiClient tradeClient
         {
@@ -44,7 +44,7 @@ namespace CCXT.NET.Korbit.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override OdinSdk.BaseLib.Coin.Public.PublicApi publicApi
         {

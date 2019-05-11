@@ -7,12 +7,12 @@ using System;
 namespace CCXT.NET.Bitstamp.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BPlaceOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "id")]
         public override string orderId
@@ -22,7 +22,7 @@ namespace CCXT.NET.Bitstamp.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "datetime")]
         private DateTime timeValue
@@ -34,7 +34,7 @@ namespace CCXT.NET.Bitstamp.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "type")]
         private string sideValue
@@ -46,7 +46,7 @@ namespace CCXT.NET.Bitstamp.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "price")]
         public override decimal price
@@ -56,7 +56,7 @@ namespace CCXT.NET.Bitstamp.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "amount")]
         public override decimal quantity

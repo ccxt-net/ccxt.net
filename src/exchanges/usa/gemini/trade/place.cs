@@ -6,7 +6,7 @@ using OdinSdk.BaseLib.Coin.Types;
 namespace CCXT.NET.Gemini.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class GPlaceOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
     {
@@ -115,7 +115,7 @@ namespace CCXT.NET.Gemini.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "is_hidden")]
         public bool is_hidden
@@ -155,7 +155,7 @@ namespace CCXT.NET.Gemini.Trade
         }
 
         /// <summary>
-        /// An array containing at most one supported order execution option. 
+        /// An array containing at most one supported order execution option.
         /// "maker-or-cancel"	, "immediate-or-cancel"	, "auction-only", "indication-of-interest"
         /// </summary>
         [JsonProperty(PropertyName = "options")]

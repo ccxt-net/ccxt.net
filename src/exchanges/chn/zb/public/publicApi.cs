@@ -15,14 +15,14 @@ namespace CCXT.NET.Zb.Public
     public class PublicApi : OdinSdk.BaseLib.Coin.Public.PublicApi, IPublicApi
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PublicApi()
         {
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override XApiClient publicClient
         {
@@ -38,7 +38,7 @@ namespace CCXT.NET.Zb.Public
         private ZbClient __webpub_client = null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ZbClient webpubClient
         {
@@ -116,7 +116,7 @@ namespace CCXT.NET.Zb.Public
         }
 
         /// <summary>
-        /// Fetch current best bid and ask, as well as the last trade price.  
+        /// Fetch current best bid and ask, as well as the last trade price.
         /// </summary>
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
@@ -313,7 +313,7 @@ namespace CCXT.NET.Zb.Public
                     _params.Add("market", _market.result.symbol);
                     _params.Add("type", _timeframe);
                     _params.Add("size", limits);
-                    if ( since > 0 )
+                    if (since > 0)
                         _params.Add("since", since);
 
                     publicClient.MergeParamsAndArgs(_params, args);
@@ -341,7 +341,7 @@ namespace CCXT.NET.Zb.Public
                         _json_result.SetFailure(_ohlcvs.message);
                     }
                 }
-                
+
                 _result.SetResult(_json_result);
             }
             else

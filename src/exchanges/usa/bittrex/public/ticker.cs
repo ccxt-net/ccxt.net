@@ -1,18 +1,18 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Configuration;
 using OdinSdk.BaseLib.Coin.Public;
+using OdinSdk.BaseLib.Configuration;
 using System;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Bittrex.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BTickerItems : OdinSdk.BaseLib.Coin.Public.TickerItems, ITickerItems
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BTickerItems()
         {
@@ -20,7 +20,7 @@ namespace CCXT.NET.Bittrex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public new List<BTickerItem> result
         {
@@ -30,7 +30,7 @@ namespace CCXT.NET.Bittrex.Public
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BTickerItem : OdinSdk.BaseLib.Coin.Public.TickerItem, ITickerItem
     {
@@ -55,7 +55,7 @@ namespace CCXT.NET.Bittrex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "TimeStamp")]
         private DateTime timeValue
@@ -161,7 +161,7 @@ namespace CCXT.NET.Bittrex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "OpenBuyOrders")]
         public int OpenBuyOrders
@@ -171,7 +171,7 @@ namespace CCXT.NET.Bittrex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "OpenSellOrders")]
         public int OpenSellOrders
@@ -181,7 +181,7 @@ namespace CCXT.NET.Bittrex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "Created")]
         public DateTime Created

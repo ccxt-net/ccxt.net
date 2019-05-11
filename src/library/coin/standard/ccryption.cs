@@ -13,14 +13,14 @@ You should have received a copy of the GNU General Public License
 along with this program.If not, see<http://www.gnu.org/licenses/>.
 */
 
+using Newtonsoft.Json;
+using Newtonsoft.Json.Bson;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
 using System.Security.Cryptography;
 using System.Text;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Bson;
 
 #pragma warning disable 0618
 
@@ -31,7 +31,7 @@ namespace OdinSdk.BaseLib.Cryption
     //-----------------------------------------------------------------------------------------------------------------------------
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     [Serializable]
     public class CCryption : IDisposable
@@ -41,14 +41,14 @@ namespace OdinSdk.BaseLib.Cryption
         //-----------------------------------------------------------------------------------------------------------------------------
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         private CCryption()
         {
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="p_crypto_key"></param>
         public CCryption(string p_crypto_key = "")
@@ -58,7 +58,7 @@ namespace OdinSdk.BaseLib.Cryption
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="p_rgbkey"></param>
         /// <param name="p_vector"></param>
@@ -73,7 +73,7 @@ namespace OdinSdk.BaseLib.Cryption
         //-----------------------------------------------------------------------------------------------------------------------------
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public const string DefaultKey = "V1006151";
 
@@ -123,7 +123,7 @@ namespace OdinSdk.BaseLib.Cryption
         });
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static List<string> KeyVersions
         {
@@ -134,7 +134,7 @@ namespace OdinSdk.BaseLib.Cryption
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="p_crypto_key"></param>
         /// <returns></returns>
@@ -144,7 +144,7 @@ namespace OdinSdk.BaseLib.Cryption
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         public static string GetRandomKey()
@@ -173,7 +173,7 @@ namespace OdinSdk.BaseLib.Cryption
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ICryptoTransform Encryptor
         {
@@ -182,7 +182,7 @@ namespace OdinSdk.BaseLib.Cryption
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ICryptoTransform Decryptor
         {
@@ -407,7 +407,7 @@ namespace OdinSdk.BaseLib.Cryption
         /// <param name="p_saltBytes">
         /// Salt bytes. This parameter can be null, in which case a random salt
         /// value will be generated.
-        /// </param>        
+        /// </param>
         /// <returns>
         /// Hash value formatted as a encoded byte[]. for SQL varbinary field.
         /// </returns>
@@ -507,7 +507,7 @@ namespace OdinSdk.BaseLib.Cryption
         /// does not check whether this parameter is null.
         /// </param>
         /// <param name="hash_algorithm">
-        /// Name of the hash algorithm. Allowed values are: "MD5", "SHA1", 
+        /// Name of the hash algorithm. Allowed values are: "MD5", "SHA1",
         /// "SHA256", "SHA384", and "SHA512" (if any other value is specified,
         /// MD5 hashing algorithm will be used). This value is case-insensitive.
         /// </param>
@@ -600,7 +600,7 @@ namespace OdinSdk.BaseLib.Cryption
         #region IDisposable Members
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         private bool IsDisposed
         {
@@ -629,12 +629,12 @@ namespace OdinSdk.BaseLib.Cryption
             {
                 if (disposing == true)
                 {
-                    // Dispose managed resources. 
+                    // Dispose managed resources.
                 }
 
-                // Dispose unmanaged resources. 
+                // Dispose unmanaged resources.
 
-                // Note disposing has been done. 
+                // Note disposing has been done.
                 IsDisposed = true;
             }
         }
@@ -647,6 +647,6 @@ namespace OdinSdk.BaseLib.Cryption
             Dispose(false);
         }
 
-        #endregion
+        #endregion IDisposable Members
     }
 }

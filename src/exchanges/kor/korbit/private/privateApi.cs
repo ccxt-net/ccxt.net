@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace CCXT.NET.Korbit.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class PrivateApi : OdinSdk.BaseLib.Coin.Private.PrivateApi, IPrivateApi
     {
@@ -21,7 +21,7 @@ namespace CCXT.NET.Korbit.Private
         private readonly string __user_password;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PrivateApi(string connect_key, string secret_key, string user_name, string user_password)
         {
@@ -32,7 +32,7 @@ namespace CCXT.NET.Korbit.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override XApiClient privateClient
         {
@@ -46,7 +46,7 @@ namespace CCXT.NET.Korbit.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override OdinSdk.BaseLib.Coin.Public.PublicApi publicApi
         {
@@ -60,7 +60,7 @@ namespace CCXT.NET.Korbit.Private
         }
 
         /// <summary>
-        /// Since all BTC exchanges within Korbit are made internally, a BTC address does not need to be assigned to every user. 
+        /// Since all BTC exchanges within Korbit are made internally, a BTC address does not need to be assigned to every user.
         /// However, to receive BTC from an outside source to your Korbit account, you can set up your BTC receiving address by using the following API.
         /// </summary>
         /// <param name="currency_name">base coin or quote coin name</param>
@@ -238,7 +238,7 @@ namespace CCXT.NET.Korbit.Private
         }
 
         /// <summary>
-        /// You can cancel a BTC transfer request by using following API. 
+        /// You can cancel a BTC transfer request by using following API.
         /// In case the transfer is being processed by an administrator, or it is completed, you get an error code.
         /// </summary>
         /// <param name="currency_name">base coin or quote coin name</param>

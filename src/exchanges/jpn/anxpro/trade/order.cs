@@ -7,12 +7,12 @@ using System.Collections.Generic;
 namespace CCXT.NET.Anxpro.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class AMyOrders : OdinSdk.BaseLib.Coin.Trade.MyOrders, IMyOrders
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AMyOrders()
         {
@@ -20,7 +20,7 @@ namespace CCXT.NET.Anxpro.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "result")]
         private string resultValue
@@ -33,7 +33,7 @@ namespace CCXT.NET.Anxpro.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "data")]
         public new List<AMyOrderItem> result
@@ -44,12 +44,12 @@ namespace CCXT.NET.Anxpro.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class AMyOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "oid")]
         public override string orderId
@@ -59,7 +59,7 @@ namespace CCXT.NET.Anxpro.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "item")]
         public override string symbol
@@ -69,7 +69,7 @@ namespace CCXT.NET.Anxpro.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "currency")]
         public string currency
@@ -79,7 +79,7 @@ namespace CCXT.NET.Anxpro.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "date")]
         public override long timestamp
@@ -89,7 +89,7 @@ namespace CCXT.NET.Anxpro.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "originAmount")]
         public override decimal amount
@@ -99,7 +99,7 @@ namespace CCXT.NET.Anxpro.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "originPrice")]
         public override decimal price
@@ -109,7 +109,7 @@ namespace CCXT.NET.Anxpro.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "amount")]
         public AMyOrderValue amountValue
@@ -119,7 +119,7 @@ namespace CCXT.NET.Anxpro.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "effective_amount")]
         public AMyOrderValue effectiveValue
@@ -129,7 +129,7 @@ namespace CCXT.NET.Anxpro.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "price")]
         public AMyOrderValue priceValue
@@ -139,7 +139,7 @@ namespace CCXT.NET.Anxpro.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "priority")]
         public long priority
@@ -149,7 +149,7 @@ namespace CCXT.NET.Anxpro.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public JArray actions
         {
@@ -158,7 +158,7 @@ namespace CCXT.NET.Anxpro.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "type")]
         private string sideValue
@@ -170,7 +170,7 @@ namespace CCXT.NET.Anxpro.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "status")]
         private string statusValue
@@ -229,7 +229,7 @@ namespace CCXT.NET.Anxpro.Trade
         /// <para>Cash/Fiat Amount                             = 10^2 => ex) HKD 1234.56 -> 123456</para>
         /// <para>Crypto/Coins Amount                          = 10^8 => ex) BTC 1234.56789 -> 123456789000</para>
         /// <para>Currency pair rate - BTC to FIAT, LTC to BTC = 10^5 => ex) BTCHKD 4,100.31234 -> 410031234</para>
-        /// <para>Currency pair rate - all other crypto        = 10^8 => ex) DOGEBTC 0.012345 -> 1234500</para>        
+        /// <para>Currency pair rate - all other crypto        = 10^8 => ex) DOGEBTC 0.012345 -> 1234500</para>
         public decimal value_int
         {
             get;

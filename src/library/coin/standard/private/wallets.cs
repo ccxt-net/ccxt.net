@@ -3,12 +3,12 @@
 namespace OdinSdk.BaseLib.Coin.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public interface IWalletItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string userId
         {
@@ -17,7 +17,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string walletId
         {
@@ -26,7 +26,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string walletName
         {
@@ -35,7 +35,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         long timestamp
         {
@@ -44,7 +44,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         decimal fee
         {
@@ -53,7 +53,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BalanceItem balance
         {
@@ -62,24 +62,26 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
 #if DEBUG
+
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string rawJson
         {
             get;
             set;
         }
+
 #endif
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class WalletItem : IWalletItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual string userId
         {
@@ -88,7 +90,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual string walletId
         {
@@ -97,7 +99,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual string walletName
         {
@@ -106,7 +108,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual long timestamp
         {
@@ -115,7 +117,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual decimal fee
         {
@@ -124,7 +126,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual BalanceItem balance
         {
@@ -133,41 +135,45 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
 #if DEBUG
+
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual string rawJson
         {
             get;
             set;
         }
+
 #endif
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public interface IWallet : IApiResult<IWalletItem>
     {
 #if DEBUG
+
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string rawJson
         {
             get;
             set;
         }
+
 #endif
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class Wallet : ApiResult<IWalletItem>, IWallet
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Wallet()
         {
@@ -175,41 +181,45 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
 #if DEBUG
+
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual string rawJson
         {
             get;
             set;
         }
+
 #endif
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public interface IWallets : IApiResult<List<IWalletItem>>
     {
 #if DEBUG
+
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string rawJson
         {
             get;
             set;
         }
+
 #endif
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class Wallets : ApiResult<List<IWalletItem>>, IWallets
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Wallets()
         {
@@ -217,14 +227,16 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
 #if DEBUG
+
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual string rawJson
         {
             get;
             set;
         }
+
 #endif
     }
 }

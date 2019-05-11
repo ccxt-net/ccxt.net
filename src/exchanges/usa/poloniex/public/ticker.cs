@@ -4,7 +4,7 @@ using OdinSdk.BaseLib.Coin.Public;
 namespace CCXT.NET.Poloniex.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class PTickerItem : OdinSdk.BaseLib.Coin.Public.TickerItem, ITickerItem
     {
@@ -133,7 +133,7 @@ namespace CCXT.NET.Poloniex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "frozen")]
         public bool frozen
@@ -143,7 +143,7 @@ namespace CCXT.NET.Poloniex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "isFrozen")]
         private byte frozenValue

@@ -9,7 +9,7 @@ namespace CCXT.NET.Bitflyer.Private
     public class BBalanceItem : OdinSdk.BaseLib.Coin.Private.BalanceItem, IBalanceItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "currency_code")]
         public override string currency
@@ -19,7 +19,7 @@ namespace CCXT.NET.Bitflyer.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "amount")]
         public override decimal total
@@ -29,7 +29,7 @@ namespace CCXT.NET.Bitflyer.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "available")]
         public override decimal free

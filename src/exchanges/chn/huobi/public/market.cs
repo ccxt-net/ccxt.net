@@ -5,12 +5,12 @@ using System.Collections.Generic;
 namespace CCXT.NET.Huobi.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class HMarkets : OdinSdk.BaseLib.Coin.Public.Markets, IMarkets
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public HMarkets()
         {
@@ -18,7 +18,7 @@ namespace CCXT.NET.Huobi.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "data")]
         public new List<HMarketItem> result
@@ -28,7 +28,7 @@ namespace CCXT.NET.Huobi.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "status")]
         private string status
@@ -41,12 +41,12 @@ namespace CCXT.NET.Huobi.Public
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class HMarketItem : OdinSdk.BaseLib.Coin.Public.MarketItem, IMarketItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public HMarketItem()
         {
@@ -60,7 +60,7 @@ namespace CCXT.NET.Huobi.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "symbol")]
         public override string symbol
@@ -70,7 +70,7 @@ namespace CCXT.NET.Huobi.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "base-currency")]
         public override string baseId
@@ -80,7 +80,7 @@ namespace CCXT.NET.Huobi.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "quote-currency")]
         public override string quoteId
@@ -90,7 +90,7 @@ namespace CCXT.NET.Huobi.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "amount-precision")]
         private int amountPrecision
@@ -102,7 +102,7 @@ namespace CCXT.NET.Huobi.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "price-precision")]
         private int pricePrecision
@@ -114,7 +114,7 @@ namespace CCXT.NET.Huobi.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "symbol-partition")]
         public string symbolPartition

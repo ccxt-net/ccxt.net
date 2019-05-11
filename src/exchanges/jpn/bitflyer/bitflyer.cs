@@ -9,17 +9,17 @@ using System.Threading.Tasks;
 namespace CCXT.NET.Bitflyer
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed class BitflyerClient : OdinSdk.BaseLib.Coin.XApiClient, IXApiClient
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string DealerName { get; set; } = "Bitflyer";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="division">exchange's division for communication</param>
         public BitflyerClient(string division)
@@ -28,7 +28,7 @@ namespace CCXT.NET.Bitflyer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="division">exchange's division for communication</param>
         /// <param name="connect_key">exchange's api key for connect</param>
@@ -108,7 +108,7 @@ namespace CCXT.NET.Bitflyer
         private HMACSHA256 __encryptor = null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public HMACSHA256 Encryptor
         {
@@ -122,7 +122,7 @@ namespace CCXT.NET.Bitflyer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -150,7 +150,7 @@ namespace CCXT.NET.Bitflyer
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="response">response value arrive from exchange's server</param>
         /// <returns></returns>

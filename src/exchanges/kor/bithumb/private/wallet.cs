@@ -5,12 +5,12 @@ using OdinSdk.BaseLib.Coin.Private;
 namespace CCXT.NET.Bithumb.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BWallet : OdinSdk.BaseLib.Coin.Private.Wallet, IWallet
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BWallet()
         {
@@ -38,7 +38,7 @@ namespace CCXT.NET.Bithumb.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "data")]
         public new BWalletItem result
@@ -54,7 +54,7 @@ namespace CCXT.NET.Bithumb.Private
     public class BWalletItem : OdinSdk.BaseLib.Coin.Private.WalletItem, IWalletItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "created")]
         public override long timestamp
@@ -64,7 +64,7 @@ namespace CCXT.NET.Bithumb.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "account_id")]
         public override string userId
@@ -74,7 +74,7 @@ namespace CCXT.NET.Bithumb.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "trade_fee")]
         public override decimal fee
@@ -84,7 +84,7 @@ namespace CCXT.NET.Bithumb.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "originBalance")]
         public override BalanceItem balance
@@ -94,7 +94,7 @@ namespace CCXT.NET.Bithumb.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "balance")]
         private decimal balanceValue
@@ -103,7 +103,7 @@ namespace CCXT.NET.Bithumb.Private
             {
                 balance = new BBalanceItem
                 {
-                    free = value                    
+                    free = value
                 };
             }
         }

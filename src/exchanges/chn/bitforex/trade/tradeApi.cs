@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace CCXT.NET.Bitforex.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class TradeApi : OdinSdk.BaseLib.Coin.Trade.TradeApi, ITradeApi
     {
@@ -17,7 +17,7 @@ namespace CCXT.NET.Bitforex.Trade
         private readonly string __secret_key;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TradeApi(string connect_key, string secret_key)
         {
@@ -26,7 +26,7 @@ namespace CCXT.NET.Bitforex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override XApiClient tradeClient
         {
@@ -40,7 +40,7 @@ namespace CCXT.NET.Bitforex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override OdinSdk.BaseLib.Coin.Public.PublicApi publicApi
         {
@@ -159,7 +159,7 @@ namespace CCXT.NET.Bitforex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
@@ -389,7 +389,7 @@ namespace CCXT.NET.Bitforex.Trade
                         }
                         _params.Add("orderIds", _orderIds);
                     }
-                    
+
                     _params.Add("symbol", _market.result.symbol);
 
                     tradeClient.MergeParamsAndArgs(_params, args);

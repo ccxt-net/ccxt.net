@@ -1,18 +1,18 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Configuration;
 using OdinSdk.BaseLib.Coin.Private;
 using OdinSdk.BaseLib.Coin.Types;
+using OdinSdk.BaseLib.Configuration;
 using System;
 
 namespace CCXT.NET.ItBit.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class TTransferItem : OdinSdk.BaseLib.Coin.Private.TransferItem, ITransferItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "txnHash")]
         public override string transactionId
@@ -22,7 +22,7 @@ namespace CCXT.NET.ItBit.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "originTransactionType")]
         public override TransactionType transactionType
@@ -32,7 +32,7 @@ namespace CCXT.NET.ItBit.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "destinationAddress")]
         public override string toAddress
@@ -42,7 +42,7 @@ namespace CCXT.NET.ItBit.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "walletName")]
         public string walletName
@@ -52,7 +52,7 @@ namespace CCXT.NET.ItBit.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "status")]
         private string status
@@ -64,7 +64,7 @@ namespace CCXT.NET.ItBit.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "transactionType")]
         private string typeValue
@@ -76,7 +76,7 @@ namespace CCXT.NET.ItBit.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "time")]
         private DateTime timeValue

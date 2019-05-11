@@ -7,12 +7,12 @@ using System.Collections.Generic;
 namespace CCXT.NET.Bitforex.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BMyTrades : OdinSdk.BaseLib.Coin.Trade.MyTrades, IMyTrades
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BMyTrades()
         {
@@ -20,7 +20,7 @@ namespace CCXT.NET.Bitforex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "data")]
         public new List<BMyTradeItem> result
@@ -30,7 +30,7 @@ namespace CCXT.NET.Bitforex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "success")]
         public override bool success
@@ -40,9 +40,8 @@ namespace CCXT.NET.Bitforex.Trade
         }
     }
 
-
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BMyTradeItem : OdinSdk.BaseLib.Coin.Trade.MyTradeItem, IMyTradeItem
     {

@@ -16,12 +16,12 @@ namespace CCXT.NET.Binance
     public sealed class BinanceClient : OdinSdk.BaseLib.Coin.XApiClient, IXApiClient
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string DealerName { get; set; } = "Binance";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="division">exchange's division for communication</param>
         public BinanceClient(string division)
@@ -30,7 +30,7 @@ namespace CCXT.NET.Binance
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="division">exchange's division for communication</param>
         /// <param name="connect_key">exchange's api key for connect</param>
@@ -146,7 +146,7 @@ namespace CCXT.NET.Binance
         private HMACSHA256 __encryptor = null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public HMACSHA256 Encryptor
         {
@@ -160,7 +160,7 @@ namespace CCXT.NET.Binance
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -197,7 +197,7 @@ namespace CCXT.NET.Binance
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -224,7 +224,7 @@ namespace CCXT.NET.Binance
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -261,7 +261,7 @@ namespace CCXT.NET.Binance
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public new Dictionary<int, ErrorCode> ErrorMessages = new Dictionary<int, ErrorCode>
         {
@@ -277,7 +277,7 @@ namespace CCXT.NET.Binance
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="response">response value arrive from exchange's server</param>
         /// <returns></returns>
@@ -319,7 +319,7 @@ namespace CCXT.NET.Binance
                     if (String.IsNullOrEmpty(response.Content) == false && response.Content[0] == '{')
                     {
                         var _json_result = this.DeserializeObject<JToken>(response.Content);
-                        
+
                         // check success value for wapi endpoints
                         // response in format {'msg': 'The coin does not exist.', 'success': true/false}
 

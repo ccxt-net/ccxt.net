@@ -6,12 +6,12 @@ using System.Collections.Generic;
 namespace CCXT.NET.OKEx.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class OMarkets : OdinSdk.BaseLib.Coin.Public.Markets, IMarkets
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "detailMsg")]
         public override string message
@@ -21,7 +21,7 @@ namespace CCXT.NET.OKEx.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string msg
         {
@@ -30,7 +30,7 @@ namespace CCXT.NET.OKEx.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "code")]
         private int statusValue
@@ -43,7 +43,7 @@ namespace CCXT.NET.OKEx.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "data")]
         public new List<OMarketItem> result
@@ -54,12 +54,12 @@ namespace CCXT.NET.OKEx.Public
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class OMarketItem : OdinSdk.BaseLib.Coin.Public.MarketItem, IMarketItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "baseCurrency")]
         public int baseNumericId
@@ -69,7 +69,7 @@ namespace CCXT.NET.OKEx.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "quoteCurrency")]
         public int quoteNumericId
@@ -79,7 +79,7 @@ namespace CCXT.NET.OKEx.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public JToken callNoCancelSwitchTime
         {
@@ -88,7 +88,7 @@ namespace CCXT.NET.OKEx.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int collect
         {
@@ -97,7 +97,7 @@ namespace CCXT.NET.OKEx.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public JToken continuousSwitchTime
         {
@@ -106,7 +106,7 @@ namespace CCXT.NET.OKEx.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool isMarginOpen
         {
@@ -115,7 +115,7 @@ namespace CCXT.NET.OKEx.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int listDisplay
         {
@@ -124,7 +124,7 @@ namespace CCXT.NET.OKEx.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal marginRiskPreRatio
         {
@@ -133,7 +133,7 @@ namespace CCXT.NET.OKEx.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal marginRiskRatio
         {
@@ -142,7 +142,7 @@ namespace CCXT.NET.OKEx.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int marketFrom
         {
@@ -151,7 +151,7 @@ namespace CCXT.NET.OKEx.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal maxMarginLeverage
         {
@@ -160,7 +160,7 @@ namespace CCXT.NET.OKEx.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int maxPriceDigit
         {
@@ -169,7 +169,7 @@ namespace CCXT.NET.OKEx.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int maxSizeDigit
         {
@@ -178,7 +178,7 @@ namespace CCXT.NET.OKEx.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public JToken mergeTypes
         {
@@ -187,7 +187,7 @@ namespace CCXT.NET.OKEx.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal minTradeSize
         {
@@ -196,7 +196,7 @@ namespace CCXT.NET.OKEx.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int online
         {
@@ -205,7 +205,7 @@ namespace CCXT.NET.OKEx.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int productId
         {
@@ -214,7 +214,7 @@ namespace CCXT.NET.OKEx.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal quoteIncrement
         {
@@ -223,7 +223,7 @@ namespace CCXT.NET.OKEx.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int quotePrecision
         {
@@ -232,7 +232,7 @@ namespace CCXT.NET.OKEx.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int sort
         {
@@ -241,7 +241,7 @@ namespace CCXT.NET.OKEx.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int tradingMode
         {
@@ -250,7 +250,7 @@ namespace CCXT.NET.OKEx.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string type
         {
@@ -259,7 +259,7 @@ namespace CCXT.NET.OKEx.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool spot
         {
@@ -268,7 +268,7 @@ namespace CCXT.NET.OKEx.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool future
         {

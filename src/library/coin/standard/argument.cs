@@ -1,12 +1,12 @@
 ﻿namespace OdinSdk.BaseLib.Coin
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class CArgument
     {
         ///// <summary>
-        ///// 
+        /////
         ///// </summary>
         //public string key
         //{
@@ -15,7 +15,7 @@
         //}
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object value
         {
@@ -24,7 +24,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool isArray
         {
@@ -33,7 +33,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool isJson
         {

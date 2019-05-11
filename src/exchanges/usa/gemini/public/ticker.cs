@@ -8,7 +8,7 @@ using System.Linq;
 namespace CCXT.NET.Gemini.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class GTickerItem : OdinSdk.BaseLib.Coin.Public.TickerItem, ITickerItem
     {
@@ -67,7 +67,7 @@ namespace CCXT.NET.Gemini.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "volume")]
         public JObject volumeData

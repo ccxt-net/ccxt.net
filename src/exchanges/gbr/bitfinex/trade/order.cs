@@ -6,12 +6,12 @@ using System;
 namespace CCXT.NET.Bitfinex.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BCancelOrders
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string result
         {
@@ -21,12 +21,12 @@ namespace CCXT.NET.Bitfinex.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BCancelAllOrders
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string result
         {
@@ -36,12 +36,12 @@ namespace CCXT.NET.Bitfinex.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BCancelOrderItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string orderId
         {
@@ -50,7 +50,7 @@ namespace CCXT.NET.Bitfinex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string status
         {
@@ -60,12 +60,12 @@ namespace CCXT.NET.Bitfinex.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BMyOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "id")]
         public override string orderId
@@ -75,7 +75,7 @@ namespace CCXT.NET.Bitfinex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "symbol")]
         public override string symbol
@@ -85,7 +85,7 @@ namespace CCXT.NET.Bitfinex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "original_amount")]
         public override decimal quantity
@@ -95,7 +95,7 @@ namespace CCXT.NET.Bitfinex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "executed_amount")]
         public override decimal filled
@@ -105,7 +105,7 @@ namespace CCXT.NET.Bitfinex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override OrderStatus orderStatus
         {
@@ -122,7 +122,7 @@ namespace CCXT.NET.Bitfinex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public long? cid
         {
@@ -131,7 +131,7 @@ namespace CCXT.NET.Bitfinex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DateTime? cid_date
         {
@@ -140,7 +140,7 @@ namespace CCXT.NET.Bitfinex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string gid
         {
@@ -149,7 +149,7 @@ namespace CCXT.NET.Bitfinex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string exchange
         {
@@ -158,7 +158,7 @@ namespace CCXT.NET.Bitfinex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal avg_execution_price
         {
@@ -167,7 +167,7 @@ namespace CCXT.NET.Bitfinex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool is_live
         {
@@ -176,7 +176,7 @@ namespace CCXT.NET.Bitfinex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool is_cancelled
         {
@@ -185,7 +185,7 @@ namespace CCXT.NET.Bitfinex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool is_hidden
         {
@@ -194,7 +194,7 @@ namespace CCXT.NET.Bitfinex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string oco_order
         {
@@ -203,7 +203,7 @@ namespace CCXT.NET.Bitfinex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool was_forced
         {
@@ -212,7 +212,7 @@ namespace CCXT.NET.Bitfinex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal remaining_amount
         {
@@ -221,7 +221,7 @@ namespace CCXT.NET.Bitfinex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string src
         {
@@ -230,7 +230,7 @@ namespace CCXT.NET.Bitfinex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "side")]
         private string sideValue
@@ -242,7 +242,7 @@ namespace CCXT.NET.Bitfinex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "type")]
         private string orderValue
@@ -254,7 +254,7 @@ namespace CCXT.NET.Bitfinex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "origin_timestamp")]
         public override long timestamp
@@ -264,7 +264,7 @@ namespace CCXT.NET.Bitfinex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "timestamp")]
         private decimal timeValue

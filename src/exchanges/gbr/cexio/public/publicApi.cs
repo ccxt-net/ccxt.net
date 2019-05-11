@@ -17,16 +17,14 @@ namespace CCXT.NET.CEXIO.Public
     public class PublicApi : OdinSdk.BaseLib.Coin.Public.PublicApi, IPublicApi
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PublicApi()
         {
         }
 
-        
-
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override XApiClient publicClient
         {
@@ -128,7 +126,7 @@ namespace CCXT.NET.CEXIO.Public
         }
 
         /// <summary>
-        /// Fetch current best bid and ask, as well as the last trade price.  
+        /// Fetch current best bid and ask, as well as the last trade price.
         /// </summary>
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
@@ -153,7 +151,7 @@ namespace CCXT.NET.CEXIO.Public
                 if (_json_result.success == true)
                 {
                     var _ticker = publicClient.DeserializeObject<CTickerItem>(_json_value.Content);
-                    {                        
+                    {
                         _ticker.symbol = _market.result.symbol;
                         _result.result = _ticker;
                     }

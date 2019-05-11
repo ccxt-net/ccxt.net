@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace CCXT.NET.CEXIO.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class PrivateApi : OdinSdk.BaseLib.Coin.Private.PrivateApi, IPrivateApi
     {
@@ -18,7 +18,7 @@ namespace CCXT.NET.CEXIO.Private
         private readonly string __user_password;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PrivateApi(string connect_key, string secret_key, string user_name, string user_password)
         {
@@ -29,7 +29,7 @@ namespace CCXT.NET.CEXIO.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override XApiClient privateClient
         {
@@ -43,7 +43,7 @@ namespace CCXT.NET.CEXIO.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override OdinSdk.BaseLib.Coin.Public.PublicApi publicApi
         {
@@ -146,7 +146,7 @@ namespace CCXT.NET.CEXIO.Private
                             _balance.currency = base_name;
                             _balance.total = _balance.free + _balance.used;
 
-                            _result.result= _balance;
+                            _result.result = _balance;
                             break;
                         }
                     }
@@ -193,12 +193,10 @@ namespace CCXT.NET.CEXIO.Private
 
                             if (_balances.SelectToken(_currency_id.Key) != null)
                             {
-
                                 _balance = privateClient.DeserializeObject<CBalanceItem>(_balances[_currency_id.Key].ToString());
                                 if (_balance != null)
                                 {
                                     _balance.total = _balance.free + _balance.used;
-                                    
                                 }
                             }
                             _balance.currency = _currency_id.Value;

@@ -1,11 +1,10 @@
 ﻿using Newtonsoft.Json;
 using OdinSdk.BaseLib.Coin.Trade;
-using OdinSdk.BaseLib.Coin.Types;
 
 namespace CCXT.NET.OKEx.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class OPlaceOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
     {

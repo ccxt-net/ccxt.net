@@ -6,7 +6,7 @@ using System.Collections.Generic;
 namespace CCXT.NET.Bithumb.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BPlaceOrder : OdinSdk.BaseLib.Coin.Trade.MyOrder, IMyOrder
     {
@@ -32,12 +32,12 @@ namespace CCXT.NET.Bithumb.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BPlaceOrders : OdinSdk.BaseLib.Coin.Trade.MyOrders, IMyOrders
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BPlaceOrders()
         {
@@ -75,7 +75,7 @@ namespace CCXT.NET.Bithumb.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public new List<BPlaceOrderItem> result
         {
@@ -84,7 +84,7 @@ namespace CCXT.NET.Bithumb.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "data")]
         public List<BPlaceOrderItem> data
@@ -95,7 +95,7 @@ namespace CCXT.NET.Bithumb.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BPlaceOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
     {

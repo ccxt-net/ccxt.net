@@ -1,17 +1,17 @@
-﻿using System.Collections.Generic;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using OdinSdk.BaseLib.Coin.Private;
+using System.Collections.Generic;
 
 namespace CCXT.NET.Zb.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class ZBalances : OdinSdk.BaseLib.Coin.Private.Balances, IBalances
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ZBalances()
         {
@@ -19,7 +19,7 @@ namespace CCXT.NET.Zb.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "originResult")]
         public new List<ZBalanceItem> result
@@ -29,7 +29,7 @@ namespace CCXT.NET.Zb.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "result")]
         private JObject data
@@ -42,7 +42,7 @@ namespace CCXT.NET.Zb.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class ZBalanceItem : OdinSdk.BaseLib.Coin.Private.BalanceItem, IBalanceItem
     {
@@ -67,7 +67,7 @@ namespace CCXT.NET.Zb.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "fundstype")]
         public int fundstype

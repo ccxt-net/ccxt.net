@@ -5,12 +5,12 @@ using OdinSdk.BaseLib.Coin.Types;
 namespace CCXT.NET.Bittrex.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BMyTradeItem : OdinSdk.BaseLib.Coin.Trade.MyTradeItem, IMyTradeItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "order_id")]
         public override string orderId
@@ -20,7 +20,7 @@ namespace CCXT.NET.Bittrex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "tid")]
         public override string tradeId
@@ -30,7 +30,7 @@ namespace CCXT.NET.Bittrex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "amount")]
         public override decimal quantity
@@ -40,7 +40,7 @@ namespace CCXT.NET.Bittrex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "price")]
         public override decimal price
@@ -50,7 +50,7 @@ namespace CCXT.NET.Bittrex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "fee_amount")]
         public override decimal fee
@@ -60,7 +60,7 @@ namespace CCXT.NET.Bittrex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "origin_timestamp")]
         public override long timestamp
@@ -70,7 +70,7 @@ namespace CCXT.NET.Bittrex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "timestamp")]
         private long timeValue
@@ -82,7 +82,7 @@ namespace CCXT.NET.Bittrex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "type")]
         private string sideValue

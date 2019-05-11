@@ -4,12 +4,12 @@ using OdinSdk.BaseLib.Coin.Private;
 namespace CCXT.NET.CEXIO.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class CAddressItem : OdinSdk.BaseLib.Coin.Private.AddressItem, IAddressItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string ok
         {

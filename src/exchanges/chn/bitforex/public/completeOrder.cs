@@ -2,18 +2,17 @@
 
 using OdinSdk.BaseLib.Coin.Public;
 using OdinSdk.BaseLib.Coin.Types;
-using System;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Bitforex.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BCompleteOrders : OdinSdk.BaseLib.Coin.Public.CompleteOrders, ICompleteOrders
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BCompleteOrders()
         {
@@ -21,7 +20,7 @@ namespace CCXT.NET.Bitforex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "data")]
         public new List<BCompleteOrderItem> result
@@ -31,7 +30,7 @@ namespace CCXT.NET.Bitforex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "success")]
         public override bool success
@@ -42,7 +41,7 @@ namespace CCXT.NET.Bitforex.Public
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BCompleteOrderItem : OdinSdk.BaseLib.Coin.Public.CompleteOrderItem, ICompleteOrderItem
     {

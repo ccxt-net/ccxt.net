@@ -2,8 +2,6 @@
 
 using OdinSdk.BaseLib.Coin.Public;
 using OdinSdk.BaseLib.Coin.Types;
-using System;
-using System.Collections.Generic;
 
 namespace CCXT.NET.Zb.Public
 {
@@ -13,7 +11,7 @@ namespace CCXT.NET.Zb.Public
     public class ZCompleteOrderItem : OdinSdk.BaseLib.Coin.Public.CompleteOrderItem, ICompleteOrderItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "tid")]
         public override string transactionId
@@ -23,7 +21,7 @@ namespace CCXT.NET.Zb.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "date")]
         private long timeValue
@@ -35,7 +33,7 @@ namespace CCXT.NET.Zb.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "type")]
         private string sideValue
@@ -47,7 +45,7 @@ namespace CCXT.NET.Zb.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "amount")]
         public override decimal quantity
@@ -57,7 +55,7 @@ namespace CCXT.NET.Zb.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "price")]
         public override decimal price

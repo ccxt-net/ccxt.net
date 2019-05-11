@@ -17,14 +17,14 @@ namespace CCXT.NET.GDAX.Public
     public class PublicApi : OdinSdk.BaseLib.Coin.Public.PublicApi, IPublicApi
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PublicApi()
         {
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override XApiClient publicClient
         {
@@ -127,7 +127,7 @@ namespace CCXT.NET.GDAX.Public
         }
 
         /// <summary>
-        /// Fetch current best bid and ask, as well as the last trade price.  
+        /// Fetch current best bid and ask, as well as the last trade price.
         /// </summary>
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
@@ -167,7 +167,7 @@ namespace CCXT.NET.GDAX.Public
 
             return _result;
         }
-        
+
         /// <summary>
         /// Fetch pending or registered order details
         /// </summary>
@@ -189,7 +189,7 @@ namespace CCXT.NET.GDAX.Public
                 {
                     if (limits == 1)
                         _params.Add("level", 1);        // Only the best bid and ask
-                    else 
+                    else
                         _params.Add("level", 2);        // Top 50 bids and asks (aggregated)
 
                     publicClient.MergeParamsAndArgs(_params, args);
@@ -232,7 +232,7 @@ namespace CCXT.NET.GDAX.Public
         /// <param name="since">return committed data since given time (milli-seconds) (optional): default 0</param>
         /// <param name="limits">maximum number of items (optional): default 20</param>
         /// <param name="args">Add additional attributes for each exchange</param>
-        /// <returns></returns> 
+        /// <returns></returns>
         public override async Task<OHLCVs> FetchOHLCVs(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
         {
             var _result = new OHLCVs(base_name, quote_name);

@@ -1,5 +1,4 @@
-﻿
-using OdinSdk.BaseLib.Coin;
+﻿using OdinSdk.BaseLib.Coin;
 using OdinSdk.BaseLib.Coin.Public;
 using OdinSdk.BaseLib.Coin.Types;
 using OdinSdk.BaseLib.Configuration;
@@ -16,14 +15,14 @@ namespace CCXT.NET.Bitforex.Public
     public class PublicApi : OdinSdk.BaseLib.Coin.Public.PublicApi, IPublicApi
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PublicApi()
         {
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override XApiClient publicClient
         {
@@ -79,7 +78,7 @@ namespace CCXT.NET.Bitforex.Public
                         _m.limits.quantity.max = decimal.MaxValue;
                         _m.limits.price.min = (decimal)Math.Pow(10.0, -_m.precision.price);
                         _m.limits.price.max = decimal.MaxValue;
-                        
+
                         _m.limits.amount = new MarketMinMax
                         {
                             min = _m.limits.quantity.min * _m.limits.price.min,
@@ -97,7 +96,7 @@ namespace CCXT.NET.Bitforex.Public
         }
 
         /// <summary>
-        /// Fetch current best bid and ask, as well as the last trade price.  
+        /// Fetch current best bid and ask, as well as the last trade price.
         /// </summary>
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
@@ -205,7 +204,7 @@ namespace CCXT.NET.Bitforex.Public
                         }
 
                         _result.result = _orderbook;
-                        
+
                         _result.result.symbol = _market.result.symbol;
                         _result.result.timestamp = CUnixTime.NowMilli;
                         _result.result.nonce = CUnixTime.Now;

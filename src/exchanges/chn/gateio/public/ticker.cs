@@ -1,11 +1,10 @@
 ﻿using Newtonsoft.Json;
 using OdinSdk.BaseLib.Coin.Public;
-using System;
 
 namespace CCXT.NET.GateIO.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class GTickerItem : OdinSdk.BaseLib.Coin.Public.TickerItem, ITickerItem
     {
@@ -70,7 +69,7 @@ namespace CCXT.NET.GateIO.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "elapsed")]
         public string elapsed

@@ -1,13 +1,13 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Configuration;
 using OdinSdk.BaseLib.Coin.Trade;
 using OdinSdk.BaseLib.Coin.Types;
+using OdinSdk.BaseLib.Configuration;
 using System;
 
 namespace CCXT.NET.Upbit.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class UMyTradeItem : OdinSdk.BaseLib.Coin.Trade.MyTradeItem, IMyTradeItem
     {
@@ -127,7 +127,7 @@ namespace CCXT.NET.Upbit.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OrderStatus orderStatus
         {

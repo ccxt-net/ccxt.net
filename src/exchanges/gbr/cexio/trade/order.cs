@@ -1,19 +1,19 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Configuration;
 using OdinSdk.BaseLib.Coin.Trade;
 using OdinSdk.BaseLib.Coin.Types;
+using OdinSdk.BaseLib.Configuration;
 using System;
 using System.Collections.Generic;
 
 namespace CCXT.NET.CEXIO.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class CCancelOrders : OdinSdk.BaseLib.Coin.Trade.MyOrders, IMyOrders
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CCancelOrders()
         {
@@ -21,7 +21,7 @@ namespace CCXT.NET.CEXIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "e")]
         public string command
@@ -31,7 +31,7 @@ namespace CCXT.NET.CEXIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "ok")]
         private string messageValue
@@ -44,7 +44,7 @@ namespace CCXT.NET.CEXIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public new List<CCancelOrderItem> result
         {
@@ -53,7 +53,7 @@ namespace CCXT.NET.CEXIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "data")]
         public List<string> data
@@ -64,12 +64,12 @@ namespace CCXT.NET.CEXIO.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class CCancelOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         ///// <summary>
-        ///// 
+        /////
         ///// </summary>
         //public override string orderId
         //{
@@ -78,7 +78,7 @@ namespace CCXT.NET.CEXIO.Trade
         //}
 
         ///// <summary>
-        ///// 
+        /////
         ///// </summary>
         //public string status
         //{
@@ -88,12 +88,12 @@ namespace CCXT.NET.CEXIO.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class CCancelAllOrders : OdinSdk.BaseLib.Coin.Trade.MyOrders, IMyOrders
     {
         ///// <summary>
-        ///// 
+        /////
         ///// </summary>
         //public string result
         //{
@@ -103,7 +103,7 @@ namespace CCXT.NET.CEXIO.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class CMyOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
     {
@@ -140,7 +140,7 @@ namespace CCXT.NET.CEXIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "price")]
         public override decimal price
@@ -150,7 +150,7 @@ namespace CCXT.NET.CEXIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "amount")]
         public override decimal quantity
@@ -170,7 +170,7 @@ namespace CCXT.NET.CEXIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string symbol
         {
@@ -182,7 +182,7 @@ namespace CCXT.NET.CEXIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "symbol1")]
         private string symbol1
@@ -192,7 +192,7 @@ namespace CCXT.NET.CEXIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "symbol2")]
         private string symbol2
@@ -202,7 +202,7 @@ namespace CCXT.NET.CEXIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "symbol1Amount")]
         public decimal symbol1Amount
@@ -212,7 +212,7 @@ namespace CCXT.NET.CEXIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "symbol2Amount")]
         public decimal symbol2Amount
@@ -222,7 +222,7 @@ namespace CCXT.NET.CEXIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "originLastTxTime")]
         public long lastTxTime
@@ -244,7 +244,7 @@ namespace CCXT.NET.CEXIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "tradingFeeUserVolumeAmount")]
         public decimal tradingFeeUserVolumeAmount
@@ -290,7 +290,7 @@ namespace CCXT.NET.CEXIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "remains")]
         private decimal remains
@@ -300,9 +300,9 @@ namespace CCXT.NET.CEXIO.Trade
                 filled = quantity - value;
             }
         }
-        
+
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "orderId")]
         public string clientOrderId
@@ -312,7 +312,7 @@ namespace CCXT.NET.CEXIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "pos")]
         public string pos
@@ -335,7 +335,7 @@ namespace CCXT.NET.CEXIO.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class CMyOrderItems : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
     {
@@ -374,7 +374,7 @@ namespace CCXT.NET.CEXIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "price")]
         public override decimal price
@@ -384,7 +384,7 @@ namespace CCXT.NET.CEXIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "amount")]
         public override decimal quantity
@@ -404,7 +404,7 @@ namespace CCXT.NET.CEXIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string symbol
         {
@@ -416,7 +416,7 @@ namespace CCXT.NET.CEXIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "symbol1")]
         private string symbol1
@@ -426,7 +426,7 @@ namespace CCXT.NET.CEXIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "symbol2")]
         private string symbol2
@@ -436,7 +436,7 @@ namespace CCXT.NET.CEXIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "symbol1Amount")]
         public decimal symbol1Amount
@@ -446,7 +446,7 @@ namespace CCXT.NET.CEXIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "symbol2Amount")]
         public decimal symbol2Amount
@@ -456,7 +456,7 @@ namespace CCXT.NET.CEXIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "originLastTxTime")]
         public long lastTxTime
@@ -478,7 +478,7 @@ namespace CCXT.NET.CEXIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "tradingFeeUserVolumeAmount")]
         public decimal tradingFeeUserVolumeAmount
@@ -524,7 +524,7 @@ namespace CCXT.NET.CEXIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "remains")]
         private decimal remains
@@ -536,7 +536,7 @@ namespace CCXT.NET.CEXIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "orderId")]
         public string clientOrderId
@@ -546,7 +546,7 @@ namespace CCXT.NET.CEXIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "pos")]
         public string pos
@@ -569,12 +569,12 @@ namespace CCXT.NET.CEXIO.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class COpenOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "id")]
         public override string orderId
@@ -584,7 +584,7 @@ namespace CCXT.NET.CEXIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "time")]
         public override long timestamp
@@ -594,7 +594,7 @@ namespace CCXT.NET.CEXIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "type")]
         private string sideValue
@@ -606,7 +606,7 @@ namespace CCXT.NET.CEXIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "price")]
         public override decimal price
@@ -616,7 +616,7 @@ namespace CCXT.NET.CEXIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "amount")]
         public override decimal quantity
@@ -638,7 +638,7 @@ namespace CCXT.NET.CEXIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string symbol
         {
@@ -650,7 +650,7 @@ namespace CCXT.NET.CEXIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "symbol1")]
         private string symbol1
@@ -660,7 +660,7 @@ namespace CCXT.NET.CEXIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "symbol2")]
         private string symbol2
@@ -670,7 +670,7 @@ namespace CCXT.NET.CEXIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "symbol1Amount")]
         public decimal symbol1Amount
@@ -680,7 +680,7 @@ namespace CCXT.NET.CEXIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "symbol2Amount")]
         public decimal symbol2Amount

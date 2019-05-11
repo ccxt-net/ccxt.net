@@ -1,27 +1,27 @@
 ﻿namespace OdinSdk.BaseLib.Coin
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum XUnitMode : int
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ModeUnknown = 0,
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseEmptyData = 1,
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseExchangeServer = 2,
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UseJsonFile = 3
     }

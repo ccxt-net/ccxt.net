@@ -8,12 +8,12 @@ using System.Collections.Generic;
 namespace CCXT.NET.CoinCheck.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class CMyPositions : OdinSdk.BaseLib.Coin.Trade.MyPositions, IMyPositions
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CMyPositions()
         {
@@ -21,7 +21,7 @@ namespace CCXT.NET.CoinCheck.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "data")]
         public new List<CMyPositionItem> result
@@ -31,7 +31,7 @@ namespace CCXT.NET.CoinCheck.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "success")]
         public override bool success
@@ -42,7 +42,7 @@ namespace CCXT.NET.CoinCheck.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class CMyPositionItem : OdinSdk.BaseLib.Coin.Trade.MyPositionItem, IMyPositionItem
     {
@@ -88,7 +88,7 @@ namespace CCXT.NET.CoinCheck.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "created_at")]
         private DateTime timeValue
@@ -109,7 +109,7 @@ namespace CCXT.NET.CoinCheck.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "closed_at")]
         private DateTime closedTimeValue

@@ -1,17 +1,16 @@
 ﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using OdinSdk.BaseLib.Coin.Public;
 using OdinSdk.BaseLib.Coin.Types;
 
 namespace CCXT.NET.OKEx.Public
 {
     /// <summary>
-    /// recent trade data 
+    /// recent trade data
     /// </summary>
     public class OCompleteOrderItem : OdinSdk.BaseLib.Coin.Public.CompleteOrderItem, ICompleteOrderItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "tid")]
         public override string transactionId
@@ -21,7 +20,7 @@ namespace CCXT.NET.OKEx.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "date_ms")]
         public override long timestamp
@@ -31,7 +30,7 @@ namespace CCXT.NET.OKEx.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "amount")]
         public override decimal quantity
@@ -41,7 +40,7 @@ namespace CCXT.NET.OKEx.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "originAmount")]
         public override decimal amount
@@ -51,7 +50,7 @@ namespace CCXT.NET.OKEx.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "type")]
         private string sideValue

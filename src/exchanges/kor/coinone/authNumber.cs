@@ -4,12 +4,12 @@ using OdinSdk.BaseLib.Coin;
 namespace CCXT.NET.Coinone
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class CAuthNumber : OdinSdk.BaseLib.Coin.NameResult, INameResult
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "errorCode")]
         public override int statusCode
@@ -19,7 +19,7 @@ namespace CCXT.NET.Coinone
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "result")]
         private string messageValue

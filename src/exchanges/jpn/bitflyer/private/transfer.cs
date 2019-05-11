@@ -1,18 +1,18 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Configuration;
 using OdinSdk.BaseLib.Coin.Private;
 using OdinSdk.BaseLib.Coin.Types;
+using OdinSdk.BaseLib.Configuration;
 using System;
 
 namespace CCXT.NET.Bitflyer.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BWithdraw : OdinSdk.BaseLib.Coin.Private.Transfer, ITransfer
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool success
         {
@@ -25,7 +25,7 @@ namespace CCXT.NET.Bitflyer.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "message_id")]
         public string transferId
@@ -36,12 +36,12 @@ namespace CCXT.NET.Bitflyer.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BDepositItem : OdinSdk.BaseLib.Coin.Private.TransferItem, ITransferItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "id")]
         public override string transferId
@@ -51,7 +51,7 @@ namespace CCXT.NET.Bitflyer.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "order_id")]
         public string orderId
@@ -61,7 +61,7 @@ namespace CCXT.NET.Bitflyer.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "currency_code")]
         public override string currency
@@ -71,7 +71,7 @@ namespace CCXT.NET.Bitflyer.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override decimal amount
         {
@@ -80,7 +80,7 @@ namespace CCXT.NET.Bitflyer.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "address")]
         public override string fromAddress
@@ -90,7 +90,7 @@ namespace CCXT.NET.Bitflyer.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "tx_hash")]
         public override string transactionId
@@ -100,7 +100,7 @@ namespace CCXT.NET.Bitflyer.Private
         }
 
         /// <summary>
-        /// If the Bitcoin deposit is being processed, it will be listed as "PENDING". 
+        /// If the Bitcoin deposit is being processed, it will be listed as "PENDING".
         /// If the deposit has been completed, it will be listed as "COMPLETED".
         /// </summary>
         [JsonProperty(PropertyName = "status")]
@@ -123,7 +123,7 @@ namespace CCXT.NET.Bitflyer.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "event_date")]
         private DateTime timeValue
@@ -136,12 +136,12 @@ namespace CCXT.NET.Bitflyer.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BWithdrawItem : OdinSdk.BaseLib.Coin.Private.TransferItem, ITransferItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "id")]
         public override string transferId
@@ -151,7 +151,7 @@ namespace CCXT.NET.Bitflyer.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "order_id")]
         public string orderId
@@ -161,7 +161,7 @@ namespace CCXT.NET.Bitflyer.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "currency_code")]
         public override string currency
@@ -171,7 +171,7 @@ namespace CCXT.NET.Bitflyer.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override decimal amount
         {
@@ -180,7 +180,7 @@ namespace CCXT.NET.Bitflyer.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "address")]
         public override string toAddress
@@ -190,7 +190,7 @@ namespace CCXT.NET.Bitflyer.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "tx_hash")]
         public override string transactionId
@@ -200,7 +200,7 @@ namespace CCXT.NET.Bitflyer.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override decimal fee
         {
@@ -209,7 +209,7 @@ namespace CCXT.NET.Bitflyer.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "additional_fee")]
         public decimal additional_fee
@@ -219,7 +219,7 @@ namespace CCXT.NET.Bitflyer.Private
         }
 
         /// <summary>
-        /// If the remittance is being processed, it will be listed as "PENDING". 
+        /// If the remittance is being processed, it will be listed as "PENDING".
         /// If the remittance has been completed, it will be listed as "COMPLETED".
         /// </summary>
         [JsonProperty(PropertyName = "status")]
@@ -233,7 +233,7 @@ namespace CCXT.NET.Bitflyer.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "event_date")]
         private DateTime timeValue

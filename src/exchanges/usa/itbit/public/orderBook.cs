@@ -11,10 +11,10 @@ namespace CCXT.NET.ItBit.Public
     public class TOrderBook : OdinSdk.BaseLib.Coin.Public.OrderBook, IOrderBook
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
-                [JsonProperty(PropertyName = "bids")]
+        [JsonProperty(PropertyName = "bids")]
         private List<JArray> bidsValue
         {
             set
@@ -37,10 +37,10 @@ namespace CCXT.NET.ItBit.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
-                [JsonProperty(PropertyName = "asks")]
+        [JsonProperty(PropertyName = "asks")]
         private List<JArray> asksValue
         {
             set
@@ -63,7 +63,7 @@ namespace CCXT.NET.ItBit.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         [JsonProperty(PropertyName = "originBids")]
@@ -74,7 +74,7 @@ namespace CCXT.NET.ItBit.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         [JsonProperty(PropertyName = "originAsks")]

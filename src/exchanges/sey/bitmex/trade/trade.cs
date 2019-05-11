@@ -7,12 +7,12 @@ using System;
 namespace CCXT.NET.BitMEX.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BMyTradeItem : OdinSdk.BaseLib.Coin.Trade.MyTradeItem, IMyTradeItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "execID")]
         public override string tradeId
@@ -20,9 +20,9 @@ namespace CCXT.NET.BitMEX.Trade
             get;
             set;
         }
-        
+
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "orderID")]
         public override string orderId
@@ -32,7 +32,7 @@ namespace CCXT.NET.BitMEX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "clOrdID")]
         public string clOrdID
@@ -42,7 +42,7 @@ namespace CCXT.NET.BitMEX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "clOrdLinkID")]
         public string clOrdLinkID
@@ -52,7 +52,7 @@ namespace CCXT.NET.BitMEX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "account")]
         public decimal account
@@ -62,7 +62,7 @@ namespace CCXT.NET.BitMEX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "symbol")]
         public override string symbol
@@ -72,7 +72,7 @@ namespace CCXT.NET.BitMEX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "side")]
         private string sideValue
@@ -84,7 +84,7 @@ namespace CCXT.NET.BitMEX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "lastQty")]
         public decimal lastQty
@@ -94,7 +94,7 @@ namespace CCXT.NET.BitMEX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "lastPx")]
         public decimal lastPx
@@ -104,7 +104,7 @@ namespace CCXT.NET.BitMEX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "underlyingLastPx")]
         public decimal underlyingLastPx
@@ -114,7 +114,7 @@ namespace CCXT.NET.BitMEX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "lastMkt")]
         public string lastMkt
@@ -124,7 +124,7 @@ namespace CCXT.NET.BitMEX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "lastLiquidityInd")]
         public string lastLiquidityInd
@@ -134,7 +134,7 @@ namespace CCXT.NET.BitMEX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "simpleOrderQty")]
         public decimal simpleOrderQty
@@ -144,7 +144,7 @@ namespace CCXT.NET.BitMEX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "orderQty")]
         public override decimal quantity
@@ -154,7 +154,7 @@ namespace CCXT.NET.BitMEX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "price")]
         public override decimal price
@@ -164,7 +164,7 @@ namespace CCXT.NET.BitMEX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "displayQty")]
         public decimal displayQty
@@ -174,7 +174,7 @@ namespace CCXT.NET.BitMEX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "stopPx")]
         public decimal stopPx
@@ -184,7 +184,7 @@ namespace CCXT.NET.BitMEX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "pegOffsetValue")]
         public decimal pegOffsetValue
@@ -194,7 +194,7 @@ namespace CCXT.NET.BitMEX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "pegPriceType")]
         public string pegPriceType
@@ -204,7 +204,7 @@ namespace CCXT.NET.BitMEX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "currency")]
         public string currency
@@ -214,7 +214,7 @@ namespace CCXT.NET.BitMEX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "settlCurrency")]
         public string settlCurrency
@@ -224,7 +224,7 @@ namespace CCXT.NET.BitMEX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "execType")]
         public string execType
@@ -234,7 +234,7 @@ namespace CCXT.NET.BitMEX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "ordType")]
         private string orderValue
@@ -244,9 +244,9 @@ namespace CCXT.NET.BitMEX.Trade
                 orderType = OrderTypeConverter.FromString(value);
             }
         }
-        
+
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "timeInForce")]
         public string timeInForce
@@ -256,7 +256,7 @@ namespace CCXT.NET.BitMEX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "execInst")]
         public string execInst
@@ -266,7 +266,7 @@ namespace CCXT.NET.BitMEX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "contingencyType")]
         public string contingencyType
@@ -276,7 +276,7 @@ namespace CCXT.NET.BitMEX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "exDestination")]
         public string exDestination
@@ -286,7 +286,7 @@ namespace CCXT.NET.BitMEX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "ordStatus")]
         public string ordStatus
@@ -296,7 +296,7 @@ namespace CCXT.NET.BitMEX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "triggered")]
         public string triggered
@@ -306,7 +306,7 @@ namespace CCXT.NET.BitMEX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "workingIndicator")]
         public bool workingIndicator
@@ -316,7 +316,7 @@ namespace CCXT.NET.BitMEX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "ordRejReason")]
         public string ordRejReason
@@ -326,7 +326,7 @@ namespace CCXT.NET.BitMEX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "simpleLeavesQty")]
         public decimal simpleLeavesQty
@@ -336,7 +336,7 @@ namespace CCXT.NET.BitMEX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "leavesQty")]
         public decimal leavesQty
@@ -346,7 +346,7 @@ namespace CCXT.NET.BitMEX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "simpleCumQty")]
         public decimal simpleCumQty
@@ -356,7 +356,7 @@ namespace CCXT.NET.BitMEX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "cumQty")]
         public decimal cumQty
@@ -366,7 +366,7 @@ namespace CCXT.NET.BitMEX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "avgPx")]
         public decimal avgPx
@@ -376,7 +376,7 @@ namespace CCXT.NET.BitMEX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "commission")]
         public override decimal fee
@@ -386,7 +386,7 @@ namespace CCXT.NET.BitMEX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "tradePublishIndicator")]
         public string tradePublishIndicator
@@ -396,7 +396,7 @@ namespace CCXT.NET.BitMEX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "multiLegReportingType")]
         public string multiLegReportingType
@@ -406,7 +406,7 @@ namespace CCXT.NET.BitMEX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "text")]
         public string text
@@ -416,7 +416,7 @@ namespace CCXT.NET.BitMEX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "trdMatchID")]
         public string trdMatchID
@@ -426,7 +426,7 @@ namespace CCXT.NET.BitMEX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "execCost")]
         public decimal execCost
@@ -436,7 +436,7 @@ namespace CCXT.NET.BitMEX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "execComm")]
         public decimal execComm
@@ -446,7 +446,7 @@ namespace CCXT.NET.BitMEX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "homeNotional")]
         public decimal homeNotional
@@ -456,7 +456,7 @@ namespace CCXT.NET.BitMEX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "foreignNotional")]
         public decimal foreignNotional
@@ -466,7 +466,7 @@ namespace CCXT.NET.BitMEX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "transactTime_ms")]
         public long transactTime
@@ -476,7 +476,7 @@ namespace CCXT.NET.BitMEX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "transactTime")]
         private DateTime transactTimeValue
@@ -488,7 +488,7 @@ namespace CCXT.NET.BitMEX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "origin_timestamp")]
         public override long timestamp
@@ -498,7 +498,7 @@ namespace CCXT.NET.BitMEX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "timestamp")]
         private DateTime timeValue

@@ -4,7 +4,7 @@ using OdinSdk.BaseLib.Coin.Private;
 namespace CCXT.NET.Gemini.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class GAddressItem : OdinSdk.BaseLib.Coin.Private.AddressItem, IAddressItem
     {

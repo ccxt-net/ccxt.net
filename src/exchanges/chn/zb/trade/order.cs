@@ -2,18 +2,16 @@
 
 using OdinSdk.BaseLib.Coin.Trade;
 using OdinSdk.BaseLib.Coin.Types;
-using System;
-using System.Collections.Generic;
 
 namespace CCXT.NET.Zb.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class ZMyOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "currency")]
         public override string symbol
@@ -33,7 +31,7 @@ namespace CCXT.NET.Zb.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "price")]
         public override decimal price
@@ -58,7 +56,7 @@ namespace CCXT.NET.Zb.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "total_amount")]
         public override decimal quantity
@@ -78,7 +76,7 @@ namespace CCXT.NET.Zb.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "trade_date")]
         public override long timestamp

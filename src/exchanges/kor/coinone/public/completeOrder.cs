@@ -6,12 +6,12 @@ using System.Collections.Generic;
 namespace CCXT.NET.Coinone.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class CCompleteOrders : OdinSdk.BaseLib.Coin.Public.CompleteOrders, ICompleteOrders
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CCompleteOrders()
         {
@@ -19,7 +19,7 @@ namespace CCXT.NET.Coinone.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "result")]
         public override string message
@@ -29,7 +29,7 @@ namespace CCXT.NET.Coinone.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public long timestamp
         {
@@ -38,7 +38,7 @@ namespace CCXT.NET.Coinone.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string currency
         {
@@ -47,7 +47,7 @@ namespace CCXT.NET.Coinone.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "completeOrders")]
         public new List<CCompleteOrderItem> result
@@ -57,7 +57,7 @@ namespace CCXT.NET.Coinone.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "errorCode")]
         public override int statusCode
@@ -78,12 +78,12 @@ namespace CCXT.NET.Coinone.Public
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class CCompleteOrderItem : OdinSdk.BaseLib.Coin.Public.CompleteOrderItem, ICompleteOrderItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "origin_timestamp")]
         public override long timestamp
@@ -93,7 +93,7 @@ namespace CCXT.NET.Coinone.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "timestamp")]
         private long timeValue
@@ -106,7 +106,7 @@ namespace CCXT.NET.Coinone.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "qty")]
         public override decimal quantity

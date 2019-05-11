@@ -4,12 +4,12 @@ using OdinSdk.BaseLib.Coin.Private;
 namespace CCXT.NET.Binance.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BAddressItem : OdinSdk.BaseLib.Coin.Private.AddressItem, IAddressItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "asset")]
         public override string currency
@@ -19,7 +19,7 @@ namespace CCXT.NET.Binance.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "address")]
         public override string address
@@ -29,7 +29,7 @@ namespace CCXT.NET.Binance.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "addressTag")]
         public override string tag
@@ -39,7 +39,7 @@ namespace CCXT.NET.Binance.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "success")]
         public override bool success

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace CCXT.NET.Kraken.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class PrivateApi : OdinSdk.BaseLib.Coin.Private.PrivateApi, IPrivateApi
     {
@@ -19,7 +19,7 @@ namespace CCXT.NET.Kraken.Private
         private readonly string __key_name;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PrivateApi(string connect_key, string secret_key, string key_name)
         {
@@ -30,10 +30,8 @@ namespace CCXT.NET.Kraken.Private
             this.depositMethods = new Dictionary<string, string>();
         }
 
-        
-
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override XApiClient privateClient
         {
@@ -46,10 +44,8 @@ namespace CCXT.NET.Kraken.Private
             }
         }
 
-        
-
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override OdinSdk.BaseLib.Coin.Public.PublicApi publicApi
         {

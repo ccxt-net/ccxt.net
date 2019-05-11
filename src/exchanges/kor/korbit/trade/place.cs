@@ -4,12 +4,12 @@ using OdinSdk.BaseLib.Coin.Trade;
 namespace CCXT.NET.Korbit.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class KPlaceOrder : OdinSdk.BaseLib.Coin.Trade.MyOrder, IMyOrder
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public KPlaceOrder()
         {
@@ -27,7 +27,7 @@ namespace CCXT.NET.Korbit.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool success
         {
@@ -60,7 +60,7 @@ namespace CCXT.NET.Korbit.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public new KPlaceOrderItem result
         {
@@ -70,7 +70,7 @@ namespace CCXT.NET.Korbit.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class KPlaceOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
     {

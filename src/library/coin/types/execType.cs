@@ -26,48 +26,48 @@ namespace OdinSdk.BaseLib.Coin.Types
      */
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ExecType : int
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Unknown = 0,
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Trade = 1,
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Replaced = 2,
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         New = 3,
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Canceled = 4,
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Rejected = 8
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class ExecTypeConverter
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="s"></param>
         /// <returns></returns>
@@ -96,7 +96,7 @@ namespace OdinSdk.BaseLib.Coin.Types
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="c"></param>
         /// <returns></returns>
@@ -125,7 +125,7 @@ namespace OdinSdk.BaseLib.Coin.Types
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="v"></param>
         /// <returns></returns>

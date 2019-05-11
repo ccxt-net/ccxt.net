@@ -1,16 +1,15 @@
 ﻿using Newtonsoft.Json;
 using OdinSdk.BaseLib.Coin.Trade;
-using OdinSdk.BaseLib.Coin.Types;
 
 namespace CCXT.NET.Anxpro.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class APlaceOrder : OdinSdk.BaseLib.Coin.Trade.MyOrder, IMyOrder
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public APlaceOrder()
         {
@@ -31,7 +30,7 @@ namespace CCXT.NET.Anxpro.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "originResult")]
         public new APlaceOrderItem result
@@ -54,12 +53,12 @@ namespace CCXT.NET.Anxpro.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class ACancelOrder : OdinSdk.BaseLib.Coin.Trade.MyOrder, IMyOrder
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ACancelOrder()
         {
@@ -80,7 +79,7 @@ namespace CCXT.NET.Anxpro.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "data")]
         public new APlaceOrderItem result
@@ -91,12 +90,12 @@ namespace CCXT.NET.Anxpro.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class APlaceOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "oid")]
         public override string orderId

@@ -1,18 +1,17 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Public;
-using System;
-using System.Collections.Generic;
 using Newtonsoft.Json.Linq;
+using OdinSdk.BaseLib.Coin.Public;
+using System.Collections.Generic;
 
 namespace CCXT.NET.Zb.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class ZOHLCVs : OdinSdk.BaseLib.Coin.Public.OHLCVs, IOHLCVs
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ZOHLCVs()
         {
@@ -20,7 +19,7 @@ namespace CCXT.NET.Zb.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public new List<ZOHLCVItem> result
         {
@@ -29,7 +28,7 @@ namespace CCXT.NET.Zb.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "data")]
         private List<JArray> data
@@ -56,12 +55,12 @@ namespace CCXT.NET.Zb.Public
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class ZOHLCVItem : OdinSdk.BaseLib.Coin.Public.OHLCVItem, IOHLCVItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override long timestamp
         {
@@ -70,7 +69,7 @@ namespace CCXT.NET.Zb.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override decimal openPrice
         {
@@ -79,7 +78,7 @@ namespace CCXT.NET.Zb.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override decimal highPrice
         {
@@ -88,7 +87,7 @@ namespace CCXT.NET.Zb.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override decimal lowPrice
         {
@@ -97,7 +96,7 @@ namespace CCXT.NET.Zb.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override decimal closePrice
         {
@@ -106,7 +105,7 @@ namespace CCXT.NET.Zb.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override decimal volume
         {

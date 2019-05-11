@@ -12,17 +12,17 @@ using System.Threading.Tasks;
 namespace CCXT.NET.Kraken
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed class KrakenClient : OdinSdk.BaseLib.Coin.XApiClient, IXApiClient
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string DealerName { get; set; } = "Kraken";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="division">exchange's division for communication</param>
         public KrakenClient(string division)
@@ -31,7 +31,7 @@ namespace CCXT.NET.Kraken
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="division">exchange's division for communication</param>
         /// <param name="connect_key">exchange's api key for connect</param>
@@ -129,7 +129,7 @@ namespace CCXT.NET.Kraken
         private SHA256Managed __sha256 = null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SHA256Managed Sha256Managed
         {
@@ -142,11 +142,10 @@ namespace CCXT.NET.Kraken
             }
         }
 
-
         private HMACSHA512 __encryptor = null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public HMACSHA512 Encryptor
         {
@@ -160,7 +159,7 @@ namespace CCXT.NET.Kraken
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -202,7 +201,7 @@ namespace CCXT.NET.Kraken
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public new Dictionary<string, ErrorCode> ErrorMessages = new Dictionary<string, ErrorCode>
         {
@@ -218,7 +217,7 @@ namespace CCXT.NET.Kraken
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="response">response value arrive from exchange's server</param>
         /// <returns></returns>
@@ -268,10 +267,10 @@ namespace CCXT.NET.Kraken
                         else
                         {
                             var _token_result = _json_result.SelectToken("result");
-                            if (_token_result == null || 
+                            if (_token_result == null ||
                                     (
-                                        _token_result != null && 
-                                        _token_result.GetType() == typeof(JArray) && 
+                                        _token_result != null &&
+                                        _token_result.GetType() == typeof(JArray) &&
                                         _token_result.Count() <= 0
                                      )
                                 )

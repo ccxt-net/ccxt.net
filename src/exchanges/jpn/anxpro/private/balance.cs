@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Private;
+﻿using OdinSdk.BaseLib.Coin.Private;
 
 namespace CCXT.NET.Anxpro.Private
 {

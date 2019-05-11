@@ -6,12 +6,12 @@ using System.Collections.Generic;
 namespace CCXT.NET.Binance.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BOrderBook : OdinSdk.BaseLib.Coin.Public.OrderBook, IOrderBook
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "bids")]
         private List<JArray> bidsValue
@@ -36,7 +36,7 @@ namespace CCXT.NET.Binance.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "asks")]
         private List<JArray> asksValue
@@ -61,7 +61,7 @@ namespace CCXT.NET.Binance.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         [JsonProperty(PropertyName = "originBids")]
@@ -72,7 +72,7 @@ namespace CCXT.NET.Binance.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         [JsonProperty(PropertyName = "originAsks")]
@@ -83,7 +83,7 @@ namespace CCXT.NET.Binance.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public long lastUpdateId
         {

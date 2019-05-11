@@ -8,12 +8,12 @@ using System.Collections.Generic;
 namespace CCXT.NET.Bithumb.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BMyTrades : OdinSdk.BaseLib.Coin.Trade.MyTrades, IMyTrades
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BMyTrades()
         {
@@ -41,7 +41,7 @@ namespace CCXT.NET.Bithumb.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "data")]
         public new List<BMyTradeItem> result
@@ -52,7 +52,7 @@ namespace CCXT.NET.Bithumb.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BMyTradeItem : OdinSdk.BaseLib.Coin.Trade.MyTradeItem, IMyTradeItem
     {
@@ -87,7 +87,7 @@ namespace CCXT.NET.Bithumb.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal coin1krw
         {
@@ -96,7 +96,7 @@ namespace CCXT.NET.Bithumb.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal coin_remain
         {
@@ -105,7 +105,7 @@ namespace CCXT.NET.Bithumb.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal krw_remain
         {
@@ -127,7 +127,7 @@ namespace CCXT.NET.Bithumb.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "search")]
         private int searchValue
@@ -155,7 +155,7 @@ namespace CCXT.NET.Bithumb.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "fee")]
         private string feeValue

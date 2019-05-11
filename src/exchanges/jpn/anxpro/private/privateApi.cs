@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace CCXT.NET.Anxpro.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class PrivateApi : OdinSdk.BaseLib.Coin.Private.PrivateApi, IPrivateApi
     {
@@ -18,17 +18,16 @@ namespace CCXT.NET.Anxpro.Private
         private readonly string __secret_key;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PrivateApi(string connect_key, string secret_key)
         {
             __connect_key = connect_key;
             __secret_key = secret_key;
-
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override XApiClient privateClient
         {
@@ -42,7 +41,7 @@ namespace CCXT.NET.Anxpro.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override OdinSdk.BaseLib.Coin.Public.PublicApi publicApi
         {
@@ -99,7 +98,7 @@ namespace CCXT.NET.Anxpro.Private
         }
 
         /// <summary>
-        /// Send bitcoin/altcoin to a crypto-currency address. 
+        /// Send bitcoin/altcoin to a crypto-currency address.
         /// </summary>
         /// <param name="currency_name">base coin or quote coin name</param>
         /// <param name="address">coin address for send</param>
