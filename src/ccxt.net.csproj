@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net462;netstandard2.0</TargetFrameworks>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <Title>CryptoCurrency eXchange Trading Library for .NET</Title>
     <Description>CCXT.NET – CryptoCurrency eXchange Trading Library for .NET</Description>
     <Copyright>Copyright OdinSoftware Co., Ltd. 2019</Copyright>
@@ -27,6 +27,7 @@
     <LangVersion>latest</LangVersion>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net462|AnyCPU'">
@@ -54,7 +55,7 @@
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.4.0" />
     <PackageReference Include="System.ServiceModel.Primitives" Version="4.5.3" />
     <PackageReference Include="System.ValueTuple" Version="4.5.0" />
-    <PackageReference Include="Telegram.Bot" Version="14.11.0" />
+    <PackageReference Include="Telegram.Bot" Version="14.12.0" />
   </ItemGroup>
 
 </Project>
