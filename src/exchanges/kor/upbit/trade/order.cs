@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
-using CCXT.NET.Coin.Trade;
-using CCXT.NET.Coin.Types;
-using CCXT.NET.Configuration;
+using OdinSdk.BaseLib.Coin.Trade;
+using OdinSdk.BaseLib.Coin.Types;
+using OdinSdk.BaseLib.Configuration;
 using System;
 using System.Collections.Generic;
 
@@ -10,7 +10,7 @@ namespace CCXT.NET.Upbit.Trade
     /// <summary>
     ///
     /// </summary>
-    public class UMyOrderItem : CCXT.NET.Coin.Trade.MyOrderItem, IMyOrderItem
+    public class UMyOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
         /// 주문의 고유 아이디

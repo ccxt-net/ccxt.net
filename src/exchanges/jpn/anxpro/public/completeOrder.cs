@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
-using CCXT.NET.Coin.Public;
-using CCXT.NET.Coin.Types;
-using CCXT.NET.Configuration;
+using OdinSdk.BaseLib.Coin.Public;
+using OdinSdk.BaseLib.Coin.Types;
+using OdinSdk.BaseLib.Configuration;
 using System;
 
 namespace CCXT.NET.Anxpro.Public
@@ -9,7 +9,7 @@ namespace CCXT.NET.Anxpro.Public
     /// <summary>
     /// recent trade data
     /// </summary>
-    public class ACompleteOrderItem : CCXT.NET.Coin.Public.CompleteOrderItem, ICompleteOrderItem
+    public class ACompleteOrderItem : OdinSdk.BaseLib.Coin.Public.CompleteOrderItem, ICompleteOrderItem
     {
         /// <summary>
         ///

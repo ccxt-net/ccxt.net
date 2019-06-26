@@ -1,12 +1,12 @@
 ﻿using Newtonsoft.Json;
-using CCXT.NET.Coin.Private;
+using OdinSdk.BaseLib.Coin.Private;
 
 namespace CCXT.NET.Binance.Private
 {
     /// <summary>
     /// 거래소 회원 지갑 정보
     /// </summary>
-    public class BBalanceItem : CCXT.NET.Coin.Private.BalanceItem, IBalanceItem
+    public class BBalanceItem : OdinSdk.BaseLib.Coin.Private.BalanceItem, IBalanceItem
     {
         /// <summary>
         ///

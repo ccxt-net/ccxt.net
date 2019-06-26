@@ -1,11 +1,11 @@
-﻿using CCXT.NET.Coin.Private;
+﻿using OdinSdk.BaseLib.Coin.Private;
 
 namespace CCXT.NET.Huobi.Private
 {
     /// <summary>
     ///
     /// </summary>
-    public class HAddressItem : CCXT.NET.Coin.Private.AddressItem, IAddressItem
+    public class HAddressItem : OdinSdk.BaseLib.Coin.Private.AddressItem, IAddressItem
     {
         /// <summary>
         ///

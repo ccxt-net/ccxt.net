@@ -51,6 +51,7 @@ namespace CCXT.NET.BitMEX.Public
         }
 
 #if DEBUG
+
         /// <summary>
         ///
         /// </summary>
@@ -59,6 +60,7 @@ namespace CCXT.NET.BitMEX.Public
             get;
             set;
         }
+
 #endif
     }
 
@@ -95,6 +97,7 @@ namespace CCXT.NET.BitMEX.Public
         }
 
 #if DEBUG
+
         /// <summary>
         ///
         /// </summary>
@@ -103,6 +106,7 @@ namespace CCXT.NET.BitMEX.Public
             get;
             set;
         }
+
 #endif
     }
 
@@ -112,6 +116,7 @@ namespace CCXT.NET.BitMEX.Public
     public interface ILeaderBoards : IApiResult<List<ILeaderBoardItem>>
     {
 #if DEBUG
+
         /// <summary>
         ///
         /// </summary>
@@ -120,6 +125,7 @@ namespace CCXT.NET.BitMEX.Public
             get;
             set;
         }
+
 #endif
     }
 
@@ -137,6 +143,7 @@ namespace CCXT.NET.BitMEX.Public
         }
 
 #if DEBUG
+
         /// <summary>
         ///
         /// </summary>
@@ -145,6 +152,7 @@ namespace CCXT.NET.BitMEX.Public
             get;
             set;
         }
+
 #endif
     }
 }

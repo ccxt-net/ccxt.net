@@ -44,6 +44,7 @@ namespace CCXT.NET.Coin.Private
         }
 
 #if DEBUG
+
         /// <summary>
         ///
         /// </summary>
@@ -52,6 +53,7 @@ namespace CCXT.NET.Coin.Private
             get;
             set;
         }
+
 #endif
     }
 
@@ -105,6 +107,7 @@ namespace CCXT.NET.Coin.Private
         }
 
 #if DEBUG
+
         /// <summary>
         ///
         /// </summary>
@@ -113,6 +116,7 @@ namespace CCXT.NET.Coin.Private
             get;
             set;
         }
+
 #endif
     }
 
@@ -122,6 +126,7 @@ namespace CCXT.NET.Coin.Private
     public interface IAddress : IApiResult<IAddressItem>
     {
 #if DEBUG
+
         /// <summary>
         ///
         /// </summary>
@@ -130,6 +135,7 @@ namespace CCXT.NET.Coin.Private
             get;
             set;
         }
+
 #endif
     }
 
@@ -147,6 +153,7 @@ namespace CCXT.NET.Coin.Private
         }
 
 #if DEBUG
+
         /// <summary>
         ///
         /// </summary>
@@ -155,6 +162,7 @@ namespace CCXT.NET.Coin.Private
             get;
             set;
         }
+
 #endif
     }
 
@@ -164,6 +172,7 @@ namespace CCXT.NET.Coin.Private
     public interface IAddresses : IApiResult<List<IAddressItem>>
     {
 #if DEBUG
+
         /// <summary>
         ///
         /// </summary>
@@ -172,6 +181,7 @@ namespace CCXT.NET.Coin.Private
             get;
             set;
         }
+
 #endif
     }
 
@@ -189,6 +199,7 @@ namespace CCXT.NET.Coin.Private
         }
 
 #if DEBUG
+
         /// <summary>
         ///
         /// </summary>
@@ -197,6 +208,7 @@ namespace CCXT.NET.Coin.Private
             get;
             set;
         }
+
 #endif
     }
 }

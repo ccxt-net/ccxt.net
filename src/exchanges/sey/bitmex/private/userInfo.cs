@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json.Linq;
-using CCXT.NET.Coin;
+using OdinSdk.BaseLib.Coin;
 using System;
 using System.Collections.Generic;
 
@@ -606,6 +606,7 @@ namespace CCXT.NET.BitMEX.Private
     public interface IUserInfo : IApiResult<IUserInfoItem>
     {
 #if DEBUG
+
         /// <summary>
         ///
         /// </summary>
@@ -614,6 +615,7 @@ namespace CCXT.NET.BitMEX.Private
             get;
             set;
         }
+
 #endif
     }
 
@@ -631,6 +633,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
 #if DEBUG
+
         /// <summary>
         ///
         /// </summary>
@@ -639,6 +642,7 @@ namespace CCXT.NET.BitMEX.Private
             get;
             set;
         }
+
 #endif
     }
 }

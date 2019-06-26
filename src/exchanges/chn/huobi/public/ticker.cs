@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using CCXT.NET.Coin.Public;
+using OdinSdk.BaseLib.Coin.Public;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Huobi.Public
@@ -8,7 +8,7 @@ namespace CCXT.NET.Huobi.Public
     /// <summary>
     ///
     /// </summary>
-    public class HTickers : CCXT.NET.Coin.Public.Tickers, ITickers
+    public class HTickers : OdinSdk.BaseLib.Coin.Public.Tickers, ITickers
     {
         /// <summary>
         ///
@@ -44,7 +44,7 @@ namespace CCXT.NET.Huobi.Public
     /// <summary>
     ///
     /// </summary>
-    public class HTickersItem : CCXT.NET.Coin.Public.TickerItem, ITickerItem
+    public class HTickersItem : OdinSdk.BaseLib.Coin.Public.TickerItem, ITickerItem
     {
         /// <summary>
         ///
@@ -130,7 +130,7 @@ namespace CCXT.NET.Huobi.Public
     /// <summary>
     ///
     /// </summary>
-    public class HTicker : CCXT.NET.Coin.Public.Ticker, ITicker
+    public class HTicker : OdinSdk.BaseLib.Coin.Public.Ticker, ITicker
     {
         /// <summary>
         ///
@@ -178,7 +178,7 @@ namespace CCXT.NET.Huobi.Public
     /// <summary>
     ///
     /// </summary>
-    public class HTickerItem : CCXT.NET.Coin.Public.TickerItem, ITickerItem
+    public class HTickerItem : OdinSdk.BaseLib.Coin.Public.TickerItem, ITickerItem
     {
         /// <summary>
         ///

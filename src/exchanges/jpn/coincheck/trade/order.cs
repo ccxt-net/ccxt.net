@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
-using CCXT.NET.Coin.Trade;
-using CCXT.NET.Coin.Types;
-using CCXT.NET.Configuration;
+using OdinSdk.BaseLib.Coin.Trade;
+using OdinSdk.BaseLib.Coin.Types;
+using OdinSdk.BaseLib.Configuration;
 using System;
 using System.Collections.Generic;
 
@@ -10,7 +10,7 @@ namespace CCXT.NET.CoinCheck.Trade
     /// <summary>
     ///
     /// </summary>
-    public class CMyOrders : CCXT.NET.Coin.Trade.MyOrders, IMyOrders
+    public class CMyOrders : OdinSdk.BaseLib.Coin.Trade.MyOrders, IMyOrders
     {
         /// <summary>
         ///
@@ -44,7 +44,7 @@ namespace CCXT.NET.CoinCheck.Trade
     /// <summary>
     ///
     /// </summary>
-    public class CMyOrderItem : CCXT.NET.Coin.Trade.MyOrderItem, IMyOrderItem
+    public class CMyOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
         /// Order ID（It's the same ID in New order.）

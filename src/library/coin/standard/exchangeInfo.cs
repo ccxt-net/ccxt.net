@@ -1,14 +1,14 @@
 ﻿using Microsoft.EntityFrameworkCore.Internal;
-using CCXT.NET.Coin.Public;
-using CCXT.NET.Coin.Types;
-using CCXT.NET.Configuration;
+using OdinSdk.BaseLib.Coin.Public;
+using OdinSdk.BaseLib.Coin.Types;
+using OdinSdk.BaseLib.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace CCXT.NET.Coin
+namespace OdinSdk.BaseLib.Coin
 {
     /// <summary>
     ///

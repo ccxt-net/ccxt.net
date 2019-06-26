@@ -44,6 +44,7 @@ namespace CCXT.NET.Coin.Private
         }
 
 #if DEBUG
+
         /// <summary>
         ///
         /// </summary>
@@ -52,6 +53,7 @@ namespace CCXT.NET.Coin.Private
             get;
             set;
         }
+
 #endif
     }
 
@@ -97,6 +99,7 @@ namespace CCXT.NET.Coin.Private
         }
 
 #if DEBUG
+
         /// <summary>
         ///
         /// </summary>
@@ -105,6 +108,7 @@ namespace CCXT.NET.Coin.Private
             get;
             set;
         }
+
 #endif
     }
 
@@ -114,6 +118,7 @@ namespace CCXT.NET.Coin.Private
     public interface IBalance : IApiResult<IBalanceItem>
     {
 #if DEBUG
+
         /// <summary>
         ///
         /// </summary>
@@ -122,6 +127,7 @@ namespace CCXT.NET.Coin.Private
             get;
             set;
         }
+
 #endif
     }
 
@@ -139,6 +145,7 @@ namespace CCXT.NET.Coin.Private
         }
 
 #if DEBUG
+
         /// <summary>
         ///
         /// </summary>
@@ -147,6 +154,7 @@ namespace CCXT.NET.Coin.Private
             get;
             set;
         }
+
 #endif
     }
 
@@ -156,6 +164,7 @@ namespace CCXT.NET.Coin.Private
     public interface IBalances : IApiResult<List<IBalanceItem>>
     {
 #if DEBUG
+
         /// <summary>
         ///
         /// </summary>
@@ -164,6 +173,7 @@ namespace CCXT.NET.Coin.Private
             get;
             set;
         }
+
 #endif
     }
 
@@ -181,6 +191,7 @@ namespace CCXT.NET.Coin.Private
         }
 
 #if DEBUG
+
         /// <summary>
         ///
         /// </summary>
@@ -189,6 +200,7 @@ namespace CCXT.NET.Coin.Private
             get;
             set;
         }
+
 #endif
     }
 }

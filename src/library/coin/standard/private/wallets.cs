@@ -62,6 +62,7 @@ namespace CCXT.NET.Coin.Private
         }
 
 #if DEBUG
+
         /// <summary>
         ///
         /// </summary>
@@ -70,6 +71,7 @@ namespace CCXT.NET.Coin.Private
             get;
             set;
         }
+
 #endif
     }
 
@@ -133,6 +135,7 @@ namespace CCXT.NET.Coin.Private
         }
 
 #if DEBUG
+
         /// <summary>
         ///
         /// </summary>
@@ -141,6 +144,7 @@ namespace CCXT.NET.Coin.Private
             get;
             set;
         }
+
 #endif
     }
 
@@ -150,6 +154,7 @@ namespace CCXT.NET.Coin.Private
     public interface IWallet : IApiResult<IWalletItem>
     {
 #if DEBUG
+
         /// <summary>
         ///
         /// </summary>
@@ -158,6 +163,7 @@ namespace CCXT.NET.Coin.Private
             get;
             set;
         }
+
 #endif
     }
 
@@ -175,6 +181,7 @@ namespace CCXT.NET.Coin.Private
         }
 
 #if DEBUG
+
         /// <summary>
         ///
         /// </summary>
@@ -183,6 +190,7 @@ namespace CCXT.NET.Coin.Private
             get;
             set;
         }
+
 #endif
     }
 
@@ -192,6 +200,7 @@ namespace CCXT.NET.Coin.Private
     public interface IWallets : IApiResult<List<IWalletItem>>
     {
 #if DEBUG
+
         /// <summary>
         ///
         /// </summary>
@@ -200,6 +209,7 @@ namespace CCXT.NET.Coin.Private
             get;
             set;
         }
+
 #endif
     }
 
@@ -217,6 +227,7 @@ namespace CCXT.NET.Coin.Private
         }
 
 #if DEBUG
+
         /// <summary>
         ///
         /// </summary>
@@ -225,6 +236,7 @@ namespace CCXT.NET.Coin.Private
             get;
             set;
         }
+
 #endif
     }
 }

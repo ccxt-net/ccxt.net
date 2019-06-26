@@ -1,7 +1,7 @@
 ﻿using CCXT.NET.OKEx.Public;
 using Newtonsoft.Json.Linq;
-using CCXT.NET.Coin;
-using CCXT.NET.Coin.Public;
+using OdinSdk.BaseLib.Coin;
+using OdinSdk.BaseLib.Coin.Public;
 using RestSharp;
 using System;
 using System.Collections.Generic;
@@ -14,7 +14,7 @@ namespace CCXT.NET.OKEx
     /// <summary>
     ///
     /// </summary>
-    public sealed class OKExClient : CCXT.NET.Coin.XApiClient, IXApiClient
+    public sealed class OKExClient : OdinSdk.BaseLib.Coin.XApiClient, IXApiClient
     {
         /// <summary>
         ///

@@ -207,6 +207,7 @@ namespace CCXT.NET.Coin.Public
         }
 
 #if DEBUG
+
         /// <summary>
         ///
         /// </summary>
@@ -215,6 +216,7 @@ namespace CCXT.NET.Coin.Public
             get;
             set;
         }
+
 #endif
     }
 
@@ -377,6 +379,7 @@ namespace CCXT.NET.Coin.Public
         }
 
 #if DEBUG
+
         /// <summary>
         ///
         /// </summary>
@@ -385,6 +388,7 @@ namespace CCXT.NET.Coin.Public
             get;
             set;
         }
+
 #endif
     }
 
@@ -418,6 +422,7 @@ namespace CCXT.NET.Coin.Public
     public interface IMarkets : IApiResult<IDictionary<string, IMarketItem>>
     {
 #if DEBUG
+
         /// <summary>
         ///
         /// </summary>
@@ -426,6 +431,7 @@ namespace CCXT.NET.Coin.Public
             get;
             set;
         }
+
 #endif
     }
 
@@ -444,6 +450,7 @@ namespace CCXT.NET.Coin.Public
         }
 
 #if DEBUG
+
         /// <summary>
         ///
         /// </summary>
@@ -452,6 +459,7 @@ namespace CCXT.NET.Coin.Public
             get;
             set;
         }
+
 #endif
 
         private Dictionary<string, string> __coin_names = null;

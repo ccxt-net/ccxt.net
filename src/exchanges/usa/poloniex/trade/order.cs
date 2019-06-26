@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
-using CCXT.NET.Coin.Trade;
-using CCXT.NET.Coin.Types;
-using CCXT.NET.Configuration;
+using OdinSdk.BaseLib.Coin.Trade;
+using OdinSdk.BaseLib.Coin.Types;
+using OdinSdk.BaseLib.Configuration;
 using System;
 
 namespace CCXT.NET.Poloniex.Trade
@@ -9,7 +9,7 @@ namespace CCXT.NET.Poloniex.Trade
     /// <summary>
     ///
     /// </summary>
-    public class PMyOrderItem : CCXT.NET.Coin.Trade.MyOrderItem, IMyOrderItem
+    public class PMyOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
         ///

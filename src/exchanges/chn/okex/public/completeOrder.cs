@@ -1,13 +1,13 @@
 ﻿using Newtonsoft.Json;
-using CCXT.NET.Coin.Public;
-using CCXT.NET.Coin.Types;
+using OdinSdk.BaseLib.Coin.Public;
+using OdinSdk.BaseLib.Coin.Types;
 
 namespace CCXT.NET.OKEx.Public
 {
     /// <summary>
     /// recent trade data
     /// </summary>
-    public class OCompleteOrderItem : CCXT.NET.Coin.Public.CompleteOrderItem, ICompleteOrderItem
+    public class OCompleteOrderItem : OdinSdk.BaseLib.Coin.Public.CompleteOrderItem, ICompleteOrderItem
     {
         /// <summary>
         ///

@@ -12,6 +12,7 @@ namespace CCXT.NET.BitMEX.Private
     public interface ITrollboxes : IApiResult<IList<TrollboxItem>>
     {
 #if DEBUG
+
         /// <summary>
         ///
         /// </summary>
@@ -20,6 +21,7 @@ namespace CCXT.NET.BitMEX.Private
             get;
             set;
         }
+
 #endif
     }
 
@@ -37,6 +39,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
 #if DEBUG
+
         /// <summary>
         ///
         /// </summary>
@@ -45,6 +48,7 @@ namespace CCXT.NET.BitMEX.Private
             get;
             set;
         }
+
 #endif
     }
 
@@ -54,6 +58,7 @@ namespace CCXT.NET.BitMEX.Private
     public interface ITrollbox : IApiResult<ITrollboxItem>
     {
 #if DEBUG
+
         /// <summary>
         ///
         /// </summary>
@@ -62,6 +67,7 @@ namespace CCXT.NET.BitMEX.Private
             get;
             set;
         }
+
 #endif
     }
 
@@ -79,6 +85,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
 #if DEBUG
+
         /// <summary>
         ///
         /// </summary>
@@ -87,6 +94,7 @@ namespace CCXT.NET.BitMEX.Private
             get;
             set;
         }
+
 #endif
     }
 

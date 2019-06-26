@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
-using CCXT.NET.Coin.Trade;
-using CCXT.NET.Coin.Types;
+using OdinSdk.BaseLib.Coin.Trade;
+using OdinSdk.BaseLib.Coin.Types;
 using System.Collections.Generic;
 
 namespace CCXT.NET.GateIO.Trade
@@ -8,7 +8,7 @@ namespace CCXT.NET.GateIO.Trade
     /// <summary>
     ///
     /// </summary>
-    public class GMyTrades : CCXT.NET.Coin.Trade.MyTrades, IMyTrades
+    public class GMyTrades : OdinSdk.BaseLib.Coin.Trade.MyTrades, IMyTrades
     {
         /// <summary>
         ///
@@ -44,7 +44,7 @@ namespace CCXT.NET.GateIO.Trade
     /// <summary>
     ///
     /// </summary>
-    public class GMyTradeItem : CCXT.NET.Coin.Trade.MyTradeItem, IMyTradeItem
+    public class GMyTradeItem : OdinSdk.BaseLib.Coin.Trade.MyTradeItem, IMyTradeItem
     {
         /// <summary>
         ///

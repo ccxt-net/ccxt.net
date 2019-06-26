@@ -1,12 +1,12 @@
 ﻿using Newtonsoft.Json;
-using CCXT.NET.Coin.Private;
+using OdinSdk.BaseLib.Coin.Private;
 
 namespace CCXT.NET.GateIO.Private
 {
     /// <summary>
     ///
     /// </summary>
-    public class GAddressItem : CCXT.NET.Coin.Private.AddressItem, IAddressItem
+    public class GAddressItem : OdinSdk.BaseLib.Coin.Private.AddressItem, IAddressItem
     {
         /// <summary>
         ///

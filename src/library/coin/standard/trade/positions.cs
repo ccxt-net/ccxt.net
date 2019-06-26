@@ -1,8 +1,8 @@
-﻿using CCXT.NET.Coin.Types;
-using CCXT.NET.Configuration;
+﻿using OdinSdk.BaseLib.Coin.Types;
+using OdinSdk.BaseLib.Configuration;
 using System.Collections.Generic;
 
-namespace CCXT.NET.Coin.Trade
+namespace OdinSdk.BaseLib.Coin.Trade
 {
     /// <summary>
     ///
@@ -144,6 +144,7 @@ namespace CCXT.NET.Coin.Trade
         }
 
 #if DEBUG
+
         /// <summary>
         ///
         /// </summary>
@@ -152,6 +153,7 @@ namespace CCXT.NET.Coin.Trade
             get;
             set;
         }
+
 #endif
     }
 
@@ -298,6 +300,7 @@ namespace CCXT.NET.Coin.Trade
         }
 
 #if DEBUG
+
         /// <summary>
         ///
         /// </summary>
@@ -306,6 +309,7 @@ namespace CCXT.NET.Coin.Trade
             get;
             set;
         }
+
 #endif
     }
 
@@ -324,6 +328,7 @@ namespace CCXT.NET.Coin.Trade
         }
 
 #if DEBUG
+
         /// <summary>
         ///
         /// </summary>
@@ -332,6 +337,7 @@ namespace CCXT.NET.Coin.Trade
             get;
             set;
         }
+
 #endif
     }
 
@@ -369,6 +375,7 @@ namespace CCXT.NET.Coin.Trade
         }
 
 #if DEBUG
+
         /// <summary>
         ///
         /// </summary>
@@ -377,6 +384,7 @@ namespace CCXT.NET.Coin.Trade
             get;
             set;
         }
+
 #endif
     }
 
@@ -395,6 +403,7 @@ namespace CCXT.NET.Coin.Trade
         }
 
 #if DEBUG
+
         /// <summary>
         ///
         /// </summary>
@@ -403,6 +412,7 @@ namespace CCXT.NET.Coin.Trade
             get;
             set;
         }
+
 #endif
     }
 
@@ -440,6 +450,7 @@ namespace CCXT.NET.Coin.Trade
         }
 
 #if DEBUG
+
         /// <summary>
         ///
         /// </summary>
@@ -448,6 +459,7 @@ namespace CCXT.NET.Coin.Trade
             get;
             set;
         }
+
 #endif
     }
 }

@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
-using CCXT.NET.Coin.Public;
-using CCXT.NET.Coin.Types;
-using CCXT.NET.Configuration;
+using OdinSdk.BaseLib.Coin.Public;
+using OdinSdk.BaseLib.Coin.Types;
+using OdinSdk.BaseLib.Configuration;
 using System;
 using System.Collections.Generic;
 
@@ -10,7 +10,7 @@ namespace CCXT.NET.CoinCheck.Public
     /// <summary>
     ///
     /// </summary>
-    public class CCompleteOrders : CCXT.NET.Coin.Public.CompleteOrders, ICompleteOrders
+    public class CCompleteOrders : OdinSdk.BaseLib.Coin.Public.CompleteOrders, ICompleteOrders
     {
         /// <summary>
         ///
@@ -44,7 +44,7 @@ namespace CCXT.NET.CoinCheck.Public
     /// <summary>
     ///
     /// </summary>
-    public class CCompleteOrderItem : CCXT.NET.Coin.Public.CompleteOrderItem, ICompleteOrderItem
+    public class CCompleteOrderItem : OdinSdk.BaseLib.Coin.Public.CompleteOrderItem, ICompleteOrderItem
     {
         /// <summary>
         ///

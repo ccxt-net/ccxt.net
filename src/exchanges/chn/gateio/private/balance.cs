@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using CCXT.NET.Coin.Private;
+using OdinSdk.BaseLib.Coin.Private;
 
 namespace CCXT.NET.GateIO.Private
 {
@@ -43,7 +43,7 @@ namespace CCXT.NET.GateIO.Private
     /// <summary>
     ///
     /// </summary>
-    public class GBalanceItem : CCXT.NET.Coin.Private.BalanceItem, IBalanceItem
+    public class GBalanceItem : OdinSdk.BaseLib.Coin.Private.BalanceItem, IBalanceItem
     {
         /// <summary>
         ///

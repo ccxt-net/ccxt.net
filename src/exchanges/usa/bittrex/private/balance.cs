@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json;
-using CCXT.NET.Coin.Private;
+using OdinSdk.BaseLib.Coin.Private;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Bittrex.Private
@@ -7,7 +7,7 @@ namespace CCXT.NET.Bittrex.Private
     /// <summary>
     ///
     /// </summary>
-    public class BBalance : CCXT.NET.Coin.Private.Balance, IBalance
+    public class BBalance : OdinSdk.BaseLib.Coin.Private.Balance, IBalance
     {
         /// <summary>
         ///
@@ -30,7 +30,7 @@ namespace CCXT.NET.Bittrex.Private
     /// <summary>
     ///
     /// </summary>
-    public class BBalances : CCXT.NET.Coin.Private.Balances, IBalances
+    public class BBalances : OdinSdk.BaseLib.Coin.Private.Balances, IBalances
     {
         /// <summary>
         ///
@@ -53,7 +53,7 @@ namespace CCXT.NET.Bittrex.Private
     /// <summary>
     /// 거래소 회원 지갑 정보
     /// </summary>
-    public class BBalanceItem : CCXT.NET.Coin.Private.BalanceItem, IBalanceItem
+    public class BBalanceItem : OdinSdk.BaseLib.Coin.Private.BalanceItem, IBalanceItem
     {
         /// <summary>
         ///

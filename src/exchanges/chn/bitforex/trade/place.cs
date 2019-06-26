@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using CCXT.NET.Coin.Trade;
-using CCXT.NET.Coin.Types;
+using OdinSdk.BaseLib.Coin.Trade;
+using OdinSdk.BaseLib.Coin.Types;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Bitforex.Trade
@@ -9,7 +9,7 @@ namespace CCXT.NET.Bitforex.Trade
     /// <summary>
     ///
     /// </summary>
-    public class BPlaceOrder : CCXT.NET.Coin.Trade.MyOrder, IMyOrder
+    public class BPlaceOrder : OdinSdk.BaseLib.Coin.Trade.MyOrder, IMyOrder
     {
         /// <summary>
         ///
@@ -43,7 +43,7 @@ namespace CCXT.NET.Bitforex.Trade
     /// <summary>
     ///
     /// </summary>
-    public class BPlaceOrderItem : CCXT.NET.Coin.Trade.MyOrderItem, IMyOrderItem
+    public class BPlaceOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
         /// Order ID
@@ -59,7 +59,7 @@ namespace CCXT.NET.Bitforex.Trade
     /// <summary>
     ///
     /// </summary>
-    public class BCancelOrder : CCXT.NET.Coin.Trade.MyOrder, IMyOrder
+    public class BCancelOrder : OdinSdk.BaseLib.Coin.Trade.MyOrder, IMyOrder
     {
         /// <summary>
         ///
@@ -102,14 +102,14 @@ namespace CCXT.NET.Bitforex.Trade
     /// <summary>
     ///
     /// </summary>
-    public class BCancelOrderItem : CCXT.NET.Coin.Trade.MyOrderItem, IMyOrderItem
+    public class BCancelOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
     {
     }
 
     /// <summary>
     ///
     /// </summary>
-    public class BCancelOrders : CCXT.NET.Coin.Trade.MyOrder, IMyOrder
+    public class BCancelOrders : OdinSdk.BaseLib.Coin.Trade.MyOrder, IMyOrder
     {
         /// <summary>
         ///
@@ -164,7 +164,7 @@ namespace CCXT.NET.Bitforex.Trade
     /// <summary>
     ///
     /// </summary>
-    public class BCancelOrdersItem : CCXT.NET.Coin.Trade.MyOrderItem, IMyOrderItem
+    public class BCancelOrdersItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
         ///

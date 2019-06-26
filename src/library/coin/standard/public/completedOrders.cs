@@ -117,6 +117,7 @@ namespace CCXT.NET.Coin.Public
         }
 
 #if DEBUG
+
         /// <summary>
         ///
         /// </summary>
@@ -125,6 +126,7 @@ namespace CCXT.NET.Coin.Public
             get;
             set;
         }
+
 #endif
     }
 
@@ -244,6 +246,7 @@ namespace CCXT.NET.Coin.Public
         }
 
 #if DEBUG
+
         /// <summary>
         ///
         /// </summary>
@@ -252,6 +255,7 @@ namespace CCXT.NET.Coin.Public
             get;
             set;
         }
+
 #endif
     }
 
@@ -270,6 +274,7 @@ namespace CCXT.NET.Coin.Public
         }
 
 #if DEBUG
+
         /// <summary>
         ///
         /// </summary>
@@ -278,6 +283,7 @@ namespace CCXT.NET.Coin.Public
             get;
             set;
         }
+
 #endif
     }
 
@@ -313,6 +319,7 @@ namespace CCXT.NET.Coin.Public
         }
 
 #if DEBUG
+
         /// <summary>
         ///
         /// </summary>
@@ -321,6 +328,7 @@ namespace CCXT.NET.Coin.Public
             get;
             set;
         }
+
 #endif
     }
 }

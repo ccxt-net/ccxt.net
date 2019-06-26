@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 
-using CCXT.NET.Coin.Trade;
-using CCXT.NET.Coin.Types;
+using OdinSdk.BaseLib.Coin.Trade;
+using OdinSdk.BaseLib.Coin.Types;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Huobi.Trade
@@ -9,7 +9,7 @@ namespace CCXT.NET.Huobi.Trade
     /// <summary>
     ///
     /// </summary>
-    public class HMyOrder : CCXT.NET.Coin.Trade.MyOrder, IMyOrder
+    public class HMyOrder : OdinSdk.BaseLib.Coin.Trade.MyOrder, IMyOrder
     {
         /// <summary>
         ///
@@ -45,7 +45,7 @@ namespace CCXT.NET.Huobi.Trade
     /// <summary>
     ///
     /// </summary>
-    public class HMyOrders : CCXT.NET.Coin.Trade.MyOrders, IMyOrders
+    public class HMyOrders : OdinSdk.BaseLib.Coin.Trade.MyOrders, IMyOrders
     {
         /// <summary>
         ///
@@ -81,7 +81,7 @@ namespace CCXT.NET.Huobi.Trade
     /// <summary>
     ///
     /// </summary>
-    public class HMyOrderItem : CCXT.NET.Coin.Trade.MyOrderItem, IMyOrderItem
+    public class HMyOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
         ///

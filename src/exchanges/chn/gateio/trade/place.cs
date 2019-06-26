@@ -1,12 +1,12 @@
 ﻿using Newtonsoft.Json;
-using CCXT.NET.Coin.Trade;
+using OdinSdk.BaseLib.Coin.Trade;
 
 namespace CCXT.NET.GateIO.Trade
 {
     /// <summary>
     ///
     /// </summary>
-    public class GPlaceOrderItem : CCXT.NET.Coin.Trade.MyOrderItem, IMyOrderItem
+    public class GPlaceOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
         ///
@@ -82,7 +82,7 @@ namespace CCXT.NET.GateIO.Trade
     /// <summary>
     ///
     /// </summary>
-    public class GCancelOrder : CCXT.NET.Coin.Trade.MyOrderItem, IMyOrderItem
+    public class GCancelOrder : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
         ///
@@ -108,7 +108,7 @@ namespace CCXT.NET.GateIO.Trade
     /// <summary>
     ///
     /// </summary>
-    public class GCancelOrders : CCXT.NET.Coin.Trade.MyOrderItem, IMyOrderItem
+    public class GCancelOrders : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
         ///

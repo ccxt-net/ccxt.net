@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
-using CCXT.NET.Coin.Public;
-using CCXT.NET.Configuration;
+using OdinSdk.BaseLib.Coin.Public;
+using OdinSdk.BaseLib.Configuration;
 using System;
 
 namespace CCXT.NET.Bitflyer.Public
@@ -8,7 +8,7 @@ namespace CCXT.NET.Bitflyer.Public
     /// <summary>
     ///
     /// </summary>
-    public class BTickerItem : CCXT.NET.Coin.Public.TickerItem, ITickerItem
+    public class BTickerItem : OdinSdk.BaseLib.Coin.Public.TickerItem, ITickerItem
     {
         /// <summary>
         /// string symbol of the market ('BTCUSD', 'ETHBTC', ...)

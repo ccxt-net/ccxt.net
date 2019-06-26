@@ -1,12 +1,12 @@
 ﻿using Newtonsoft.Json;
-using CCXT.NET.Coin.Public;
+using OdinSdk.BaseLib.Coin.Public;
 
 namespace CCXT.NET.BitMEX.Public
 {
     /// <summary>
     ///
     /// </summary>
-    public class BOrderBookItem : CCXT.NET.Coin.Public.OrderBookItem, IOrderBookItem
+    public class BOrderBookItem : OdinSdk.BaseLib.Coin.Public.OrderBookItem, IOrderBookItem
     {
         /// <summary>
         ///

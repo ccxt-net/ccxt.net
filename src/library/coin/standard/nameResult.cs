@@ -6,6 +6,7 @@
     public interface INameResult
     {
 #if DEBUG
+
         /// <summary>
         ///
         /// </summary>
@@ -14,6 +15,7 @@
             get;
             set;
         }
+
 #endif
     }
 
@@ -34,6 +36,7 @@
         }
 
 #if DEBUG
+
         /// <summary>
         ///
         /// </summary>
@@ -42,6 +45,7 @@
             get;
             set;
         }
+
 #endif
     }
 

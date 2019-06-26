@@ -1,12 +1,12 @@
 ﻿using Newtonsoft.Json;
-using CCXT.NET.Coin.Trade;
+using OdinSdk.BaseLib.Coin.Trade;
 
 namespace CCXT.NET.OKEx.Trade
 {
     /// <summary>
     ///
     /// </summary>
-    public class OPlaceOrderItem : CCXT.NET.Coin.Trade.MyOrderItem, IMyOrderItem
+    public class OPlaceOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
         /// order ID of the newly placed order

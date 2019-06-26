@@ -1,8 +1,8 @@
-﻿using CCXT.NET.Coin.Types;
-using CCXT.NET.Configuration;
+﻿using OdinSdk.BaseLib.Coin.Types;
+using OdinSdk.BaseLib.Configuration;
 using System.Collections.Generic;
 
-namespace CCXT.NET.Coin.Private
+namespace OdinSdk.BaseLib.Coin.Private
 {
     /// <summary>
     ///
@@ -153,6 +153,7 @@ namespace CCXT.NET.Coin.Private
         //}
 
 #if DEBUG
+
         /// <summary>
         ///
         /// </summary>
@@ -161,6 +162,7 @@ namespace CCXT.NET.Coin.Private
             get;
             set;
         }
+
 #endif
     }
 
@@ -316,6 +318,7 @@ namespace CCXT.NET.Coin.Private
         //}
 
 #if DEBUG
+
         /// <summary>
         ///
         /// </summary>
@@ -324,6 +327,7 @@ namespace CCXT.NET.Coin.Private
             get;
             set;
         }
+
 #endif
     }
 
@@ -333,6 +337,7 @@ namespace CCXT.NET.Coin.Private
     public interface ITransfer : IApiResult<ITransferItem>
     {
 #if DEBUG
+
         /// <summary>
         ///
         /// </summary>
@@ -341,6 +346,7 @@ namespace CCXT.NET.Coin.Private
             get;
             set;
         }
+
 #endif
     }
 
@@ -358,6 +364,7 @@ namespace CCXT.NET.Coin.Private
         }
 
 #if DEBUG
+
         /// <summary>
         ///
         /// </summary>
@@ -366,6 +373,7 @@ namespace CCXT.NET.Coin.Private
             get;
             set;
         }
+
 #endif
     }
 
@@ -375,6 +383,7 @@ namespace CCXT.NET.Coin.Private
     public interface ITransfers : IApiResult<List<ITransferItem>>
     {
 #if DEBUG
+
         /// <summary>
         ///
         /// </summary>
@@ -383,6 +392,7 @@ namespace CCXT.NET.Coin.Private
             get;
             set;
         }
+
 #endif
     }
 
@@ -400,6 +410,7 @@ namespace CCXT.NET.Coin.Private
         }
 
 #if DEBUG
+
         /// <summary>
         ///
         /// </summary>
@@ -408,6 +419,7 @@ namespace CCXT.NET.Coin.Private
             get;
             set;
         }
+
 #endif
     }
 }

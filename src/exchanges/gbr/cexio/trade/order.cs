@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
-using CCXT.NET.Coin.Trade;
-using CCXT.NET.Coin.Types;
-using CCXT.NET.Configuration;
+using OdinSdk.BaseLib.Coin.Trade;
+using OdinSdk.BaseLib.Coin.Types;
+using OdinSdk.BaseLib.Configuration;
 using System;
 using System.Collections.Generic;
 
@@ -10,7 +10,7 @@ namespace CCXT.NET.CEXIO.Trade
     /// <summary>
     ///
     /// </summary>
-    public class CCancelOrders : CCXT.NET.Coin.Trade.MyOrders, IMyOrders
+    public class CCancelOrders : OdinSdk.BaseLib.Coin.Trade.MyOrders, IMyOrders
     {
         /// <summary>
         ///
@@ -66,7 +66,7 @@ namespace CCXT.NET.CEXIO.Trade
     /// <summary>
     ///
     /// </summary>
-    public class CCancelOrderItem : CCXT.NET.Coin.Trade.MyOrderItem, IMyOrderItem
+    public class CCancelOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         ///// <summary>
         /////
@@ -90,7 +90,7 @@ namespace CCXT.NET.CEXIO.Trade
     /// <summary>
     ///
     /// </summary>
-    public class CCancelAllOrders : CCXT.NET.Coin.Trade.MyOrders, IMyOrders
+    public class CCancelAllOrders : OdinSdk.BaseLib.Coin.Trade.MyOrders, IMyOrders
     {
         ///// <summary>
         /////
@@ -105,7 +105,7 @@ namespace CCXT.NET.CEXIO.Trade
     /// <summary>
     ///
     /// </summary>
-    public class CMyOrderItem : CCXT.NET.Coin.Trade.MyOrderItem, IMyOrderItem
+    public class CMyOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
         /// order id
@@ -337,7 +337,7 @@ namespace CCXT.NET.CEXIO.Trade
     /// <summary>
     ///
     /// </summary>
-    public class CMyOrderItems : CCXT.NET.Coin.Trade.MyOrderItem, IMyOrderItem
+    public class CMyOrderItems : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
         /// order id
@@ -571,7 +571,7 @@ namespace CCXT.NET.CEXIO.Trade
     /// <summary>
     ///
     /// </summary>
-    public class COpenOrderItem : CCXT.NET.Coin.Trade.MyOrderItem, IMyOrderItem
+    public class COpenOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
         ///

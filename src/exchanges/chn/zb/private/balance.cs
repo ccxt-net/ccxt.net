@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using CCXT.NET.Coin.Private;
+using OdinSdk.BaseLib.Coin.Private;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Zb.Private
@@ -8,7 +8,7 @@ namespace CCXT.NET.Zb.Private
     /// <summary>
     ///
     /// </summary>
-    public class ZBalances : CCXT.NET.Coin.Private.Balances, IBalances
+    public class ZBalances : OdinSdk.BaseLib.Coin.Private.Balances, IBalances
     {
         /// <summary>
         ///
@@ -44,7 +44,7 @@ namespace CCXT.NET.Zb.Private
     /// <summary>
     ///
     /// </summary>
-    public class ZBalanceItem : CCXT.NET.Coin.Private.BalanceItem, IBalanceItem
+    public class ZBalanceItem : OdinSdk.BaseLib.Coin.Private.BalanceItem, IBalanceItem
     {
         /// <summary>
         /// English name of the coin

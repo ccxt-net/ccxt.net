@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-using CCXT.NET.Coin.Public;
+using OdinSdk.BaseLib.Coin.Public;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Bitforex.Public
@@ -8,7 +8,7 @@ namespace CCXT.NET.Bitforex.Public
     /// <summary>
     ///
     /// </summary>
-    public class BOHLCVs : CCXT.NET.Coin.Public.OHLCVs, IOHLCVs
+    public class BOHLCVs : OdinSdk.BaseLib.Coin.Public.OHLCVs, IOHLCVs
     {
         /// <summary>
         ///
@@ -42,7 +42,7 @@ namespace CCXT.NET.Bitforex.Public
     /// <summary>
     ///
     /// </summary>
-    public class BOHLCVItem : CCXT.NET.Coin.Public.OHLCVItem, IOHLCVItem
+    public class BOHLCVItem : OdinSdk.BaseLib.Coin.Public.OHLCVItem, IOHLCVItem
     {
         /// <summary>
         /// Timestamp, milliseconds
