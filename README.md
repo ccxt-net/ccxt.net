@@ -38,6 +38,8 @@ The ccxt.net library currently supports the following cryptocurrency exchange ma
 |[![itbit](https://user-images.githubusercontent.com/1294454/27822159-66153620-60ad-11e7-89e7-005f6d7f3de0.jpg)](https://www.itbit.com)                                                       | itbit              | [itBit](https://www.itbit.com)                                                       | 1     | [API](https://api.itbit.com/docs)                                                                |                                  | US																					  |
 |[![kraken](https://user-images.githubusercontent.com/1294454/27766599-22709304-5ede-11e7-9de1-9f33732e1509.jpg)](https://www.kraken.com)                                                     | kraken             | [Kraken](https://www.kraken.com)                                                     | 0     | [API](https://www.kraken.com/en-us/help/api)                                                     | 									| US																					  |
 |[![poloniex](https://user-images.githubusercontent.com/1294454/27766817-e9456312-5ee6-11e7-9b3c-b628ca5626a5.jpg)](https://poloniex.com)                                                     | poloniex           | [Poloniex](https://poloniex.com)                                                     | *     | [API](https://docs.poloniex.com)                                                                 |                                  | US																					  |
+|[![gopax](https://www.gopax.co.kr/images/brand/logo-primary.svg)](https://www.gopax.co.kr/)																								  | gopax              | [Gopax](https://www.gopax.co.kr/)                                                    | 1     | [API](https://www.gopax.co.kr/API)																 |									| South Korea																			  |
+|[![okcoinkr](https://user-images.githubusercontent.com/1294454/27766791-89ffb502-5ee5-11e7-8a5b-c5950b68ac65.jpg)](https://www.okcoinkr.com)                                                 | okcoinkr           | [OKCoin KOR](https://www.okcoinkr.com)                                               | 1     | [API](https://www.okcoinkr.com/api)																 |									| South Korea																			  |
 
 The list above is updated frequently, new crypto markets, altcoin exchanges, bug fixes, API endpoints are introduced and added on a regular basis. 
 If you don't find a cryptocurrency exchange market in the list above and/or want another exchange to be added, post or send us a link to it by opening an issue here on GitHub or via email.
@@ -78,9 +80,9 @@ We appreciate all contributions!
 
 ### Add Reference
 
- > Install-Package CCXT.NET -Version 1.3.3
+ > Install-Package CCXT.NET -Version 1.3.4
 
- > dotnet add package CCXT.NET --version 1.3.3
+ > dotnet add package CCXT.NET --version 1.3.4
 
 
 ### Donations gratefully accepted.
