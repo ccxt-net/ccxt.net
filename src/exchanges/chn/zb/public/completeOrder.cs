@@ -1,14 +1,14 @@
 ﻿using Newtonsoft.Json;
 
-using OdinSdk.BaseLib.Coin.Public;
-using OdinSdk.BaseLib.Coin.Types;
+using CCXT.NET.Coin.Public;
+using CCXT.NET.Coin.Types;
 
 namespace CCXT.NET.Zb.Public
 {
     /// <summary>
     /// Used to retrieve the latest trades that have occured for a specific market.
     /// </summary>
-    public class ZCompleteOrderItem : OdinSdk.BaseLib.Coin.Public.CompleteOrderItem, ICompleteOrderItem
+    public class ZCompleteOrderItem : CCXT.NET.Coin.Public.CompleteOrderItem, ICompleteOrderItem
     {
         /// <summary>
         ///

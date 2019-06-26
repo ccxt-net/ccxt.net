@@ -1,4 +1,4 @@
-﻿using OdinSdk.BaseLib.Coin.Private;
+﻿using CCXT.NET.Coin.Private;
 using System.Collections.Generic;
 
 namespace CCXT.NET.CoinCheck.Private
@@ -6,7 +6,7 @@ namespace CCXT.NET.CoinCheck.Private
     /// <summary>
     ///
     /// </summary>
-    public class CBalances : OdinSdk.BaseLib.Coin.Private.Balances, IBalances
+    public class CBalances : CCXT.NET.Coin.Private.Balances, IBalances
     {
         /// <summary>
         ///
@@ -38,7 +38,7 @@ namespace CCXT.NET.CoinCheck.Private
     /// <summary>
     ///
     /// </summary>
-    public class CBalanceItem : OdinSdk.BaseLib.Coin.Private.BalanceItem, IBalanceItem
+    public class CBalanceItem : CCXT.NET.Coin.Private.BalanceItem, IBalanceItem
     {
         /// <summary>
         ///

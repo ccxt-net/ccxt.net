@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin;
+using CCXT.NET.Coin;
 using System;
 using System.Collections.Generic;
 

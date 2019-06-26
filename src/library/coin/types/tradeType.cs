@@ -1,4 +1,4 @@
-﻿namespace OdinSdk.BaseLib.Coin.Types
+﻿namespace CCXT.NET.Coin.Types
 {
     /// <summary>
     ///

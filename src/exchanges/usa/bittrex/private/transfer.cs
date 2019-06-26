@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Private;
-using OdinSdk.BaseLib.Configuration;
+using CCXT.NET.Coin.Private;
+using CCXT.NET.Configuration;
 using System;
 using System.Collections.Generic;
 
@@ -9,7 +9,7 @@ namespace CCXT.NET.Bittrex.Private
     /// <summary>
     ///
     /// </summary>
-    public class BWithdraw : OdinSdk.BaseLib.Coin.Private.Transfer, ITransfer
+    public class BWithdraw : CCXT.NET.Coin.Private.Transfer, ITransfer
     {
         /// <summary>
         ///
@@ -33,7 +33,7 @@ namespace CCXT.NET.Bittrex.Private
     /// <summary>
     ///
     /// </summary>
-    public class BWithdrawItem : OdinSdk.BaseLib.Coin.Private.TransferItem, ITransferItem
+    public class BWithdrawItem : CCXT.NET.Coin.Private.TransferItem, ITransferItem
     {
         /// <summary>
         ///
@@ -49,7 +49,7 @@ namespace CCXT.NET.Bittrex.Private
     /// <summary>
     ///
     /// </summary>
-    public class BTransfers : OdinSdk.BaseLib.Coin.Private.Transfers, ITransfers
+    public class BTransfers : CCXT.NET.Coin.Private.Transfers, ITransfers
     {
         /// <summary>
         ///
@@ -73,7 +73,7 @@ namespace CCXT.NET.Bittrex.Private
     /// <summary>
     ///
     /// </summary>
-    public class BTransfer : OdinSdk.BaseLib.Coin.Private.Transfer, ITransfer
+    public class BTransfer : CCXT.NET.Coin.Private.Transfer, ITransfer
     {
         /// <summary>
         ///
@@ -97,7 +97,7 @@ namespace CCXT.NET.Bittrex.Private
     /// <summary>
     ///
     /// </summary>
-    public class BTransferItem : OdinSdk.BaseLib.Coin.Private.TransferItem, ITransferItem
+    public class BTransferItem : CCXT.NET.Coin.Private.TransferItem, ITransferItem
     {
         /// <summary>
         ///

@@ -1,10 +1,10 @@
-﻿using OdinSdk.BaseLib.Coin.Public;
-using OdinSdk.BaseLib.Coin.Types;
-using OdinSdk.BaseLib.Configuration;
+﻿using CCXT.NET.Coin.Public;
+using CCXT.NET.Coin.Types;
+using CCXT.NET.Configuration;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace OdinSdk.BaseLib.Coin.Trade
+namespace CCXT.NET.Coin.Trade
 {
     /// <summary>
     ///

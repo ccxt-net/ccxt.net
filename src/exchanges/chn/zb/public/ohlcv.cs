@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin.Public;
+using CCXT.NET.Coin.Public;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Zb.Public
@@ -8,7 +8,7 @@ namespace CCXT.NET.Zb.Public
     /// <summary>
     ///
     /// </summary>
-    public class ZOHLCVs : OdinSdk.BaseLib.Coin.Public.OHLCVs, IOHLCVs
+    public class ZOHLCVs : CCXT.NET.Coin.Public.OHLCVs, IOHLCVs
     {
         /// <summary>
         ///
@@ -57,7 +57,7 @@ namespace CCXT.NET.Zb.Public
     /// <summary>
     ///
     /// </summary>
-    public class ZOHLCVItem : OdinSdk.BaseLib.Coin.Public.OHLCVItem, IOHLCVItem
+    public class ZOHLCVItem : CCXT.NET.Coin.Public.OHLCVItem, IOHLCVItem
     {
         /// <summary>
         ///

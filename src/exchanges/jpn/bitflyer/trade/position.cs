@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Trade;
-using OdinSdk.BaseLib.Coin.Types;
-using OdinSdk.BaseLib.Configuration;
+using CCXT.NET.Coin.Trade;
+using CCXT.NET.Coin.Types;
+using CCXT.NET.Configuration;
 using System;
 
 namespace CCXT.NET.Bitflyer.Trade
@@ -9,7 +9,7 @@ namespace CCXT.NET.Bitflyer.Trade
     /// <summary>
     ///
     /// </summary>
-    public class BMyPositionItem : OdinSdk.BaseLib.Coin.Trade.MyPositionItem, IMyPositionItem
+    public class BMyPositionItem : CCXT.NET.Coin.Trade.MyPositionItem, IMyPositionItem
     {
         /// <summary>
         ///

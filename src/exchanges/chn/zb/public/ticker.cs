@@ -1,12 +1,12 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Public;
+using CCXT.NET.Coin.Public;
 
 namespace CCXT.NET.Zb.Public
 {
     /// <summary>
     ///
     /// </summary>
-    public class ZTicker : OdinSdk.BaseLib.Coin.Public.Ticker, ITicker
+    public class ZTicker : CCXT.NET.Coin.Public.Ticker, ITicker
     {
         /// <summary>
         ///
@@ -30,7 +30,7 @@ namespace CCXT.NET.Zb.Public
     /// <summary>
     ///
     /// </summary>
-    public class ZTickerItem : OdinSdk.BaseLib.Coin.Public.TickerItem, ITickerItem
+    public class ZTickerItem : CCXT.NET.Coin.Public.TickerItem, ITickerItem
     {
         /// <summary>
         ///

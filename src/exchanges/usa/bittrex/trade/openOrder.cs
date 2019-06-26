@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Trade;
-using OdinSdk.BaseLib.Coin.Types;
-using OdinSdk.BaseLib.Configuration;
+using CCXT.NET.Coin.Trade;
+using CCXT.NET.Coin.Types;
+using CCXT.NET.Configuration;
 using System;
 using System.Collections.Generic;
 
@@ -10,7 +10,7 @@ namespace CCXT.NET.Bittrex.Trade
     /// <summary>
     ///
     /// </summary>
-    public class BMyOpenOrders : OdinSdk.BaseLib.Coin.Trade.MyOrders, IMyOrders
+    public class BMyOpenOrders : CCXT.NET.Coin.Trade.MyOrders, IMyOrders
     {
         /// <summary>
         ///
@@ -34,7 +34,7 @@ namespace CCXT.NET.Bittrex.Trade
     /// <summary>
     ///
     /// </summary>
-    public class BMyOpenOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
+    public class BMyOpenOrderItem : CCXT.NET.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
         ///

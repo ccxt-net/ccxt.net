@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Private;
-using OdinSdk.BaseLib.Coin.Types;
+using CCXT.NET.Coin.Private;
+using CCXT.NET.Coin.Types;
 using System.Collections.Generic;
 
 namespace CCXT.NET.GateIO.Private
@@ -54,7 +54,7 @@ namespace CCXT.NET.GateIO.Private
     /// <summary>
     ///
     /// </summary>
-    public class GDepositItem : OdinSdk.BaseLib.Coin.Private.TransferItem, ITransferItem
+    public class GDepositItem : CCXT.NET.Coin.Private.TransferItem, ITransferItem
     {
         /// <summary>
         ///
@@ -134,7 +134,7 @@ namespace CCXT.NET.GateIO.Private
     /// <summary>
     ///
     /// </summary>
-    public class GWithdrawItem : OdinSdk.BaseLib.Coin.Private.TransferItem, ITransferItem
+    public class GWithdrawItem : CCXT.NET.Coin.Private.TransferItem, ITransferItem
     {
         /// <summary>
         ///
@@ -214,7 +214,7 @@ namespace CCXT.NET.GateIO.Private
     /// <summary>
     ///
     /// </summary>
-    public class GTransferItem : OdinSdk.BaseLib.Coin.Private.TransferItem, ITransferItem
+    public class GTransferItem : CCXT.NET.Coin.Private.TransferItem, ITransferItem
     {
     }
 }

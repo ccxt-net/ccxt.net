@@ -1,9 +1,9 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin;
-using OdinSdk.BaseLib.Coin.Private;
-using OdinSdk.BaseLib.Coin.Types;
-using OdinSdk.BaseLib.Configuration;
+using CCXT.NET.Coin;
+using CCXT.NET.Coin.Private;
+using CCXT.NET.Coin.Types;
+using CCXT.NET.Configuration;
 using System;
 using System.Collections.Generic;
 
@@ -12,7 +12,7 @@ namespace CCXT.NET.Zb.Private
     /// <summary>
     ///
     /// </summary>
-    public class ZWithdraw : OdinSdk.BaseLib.Coin.Private.Transfer, ITransfer
+    public class ZWithdraw : CCXT.NET.Coin.Private.Transfer, ITransfer
     {
         /// <summary>
         ///
@@ -72,7 +72,7 @@ namespace CCXT.NET.Zb.Private
     /// <summary>
     ///
     /// </summary>
-    public class ZWithdraws : OdinSdk.BaseLib.Coin.Private.Transfers, ITransfers
+    public class ZWithdraws : CCXT.NET.Coin.Private.Transfers, ITransfers
     {
         /// <summary>
         ///
@@ -129,7 +129,7 @@ namespace CCXT.NET.Zb.Private
     /// <summary>
     ///
     /// </summary>
-    public class ZWithdrawItem : OdinSdk.BaseLib.Coin.Private.TransferItem, ITransferItem
+    public class ZWithdrawItem : CCXT.NET.Coin.Private.TransferItem, ITransferItem
     {
         /// <summary>
         ///
@@ -206,7 +206,7 @@ namespace CCXT.NET.Zb.Private
     /// <summary>
     ///
     /// </summary>
-    public class ZDeposits : OdinSdk.BaseLib.Coin.Private.Transfers, ITransfers
+    public class ZDeposits : CCXT.NET.Coin.Private.Transfers, ITransfers
     {
         /// <summary>
         ///
@@ -263,7 +263,7 @@ namespace CCXT.NET.Zb.Private
     /// <summary>
     ///
     /// </summary>
-    public class ZDepositItem : OdinSdk.BaseLib.Coin.Private.TransferItem, ITransferItem
+    public class ZDepositItem : CCXT.NET.Coin.Private.TransferItem, ITransferItem
     {
         /// <summary>
         ///

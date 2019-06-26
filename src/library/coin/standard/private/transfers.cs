@@ -1,8 +1,8 @@
-﻿using OdinSdk.BaseLib.Coin.Types;
-using OdinSdk.BaseLib.Configuration;
+﻿using CCXT.NET.Coin.Types;
+using CCXT.NET.Configuration;
 using System.Collections.Generic;
 
-namespace OdinSdk.BaseLib.Coin.Private
+namespace CCXT.NET.Coin.Private
 {
     /// <summary>
     ///

@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Public;
+using CCXT.NET.Coin.Public;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Zb.Public
@@ -7,7 +7,7 @@ namespace CCXT.NET.Zb.Public
     /// <summary>
     ///
     /// </summary>
-    public class ZMarkets : OdinSdk.BaseLib.Coin.Public.Markets, IMarkets
+    public class ZMarkets : CCXT.NET.Coin.Public.Markets, IMarkets
     {
         /// <summary>
         ///
@@ -30,7 +30,7 @@ namespace CCXT.NET.Zb.Public
     /// <summary>
     ///
     /// </summary>
-    public class ZMarketItem : OdinSdk.BaseLib.Coin.Public.MarketItem, IMarketItem
+    public class ZMarketItem : CCXT.NET.Coin.Public.MarketItem, IMarketItem
     {
         /// <summary>
         ///

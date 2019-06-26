@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Private;
-using OdinSdk.BaseLib.Coin.Types;
-using OdinSdk.BaseLib.Configuration;
+using CCXT.NET.Coin.Private;
+using CCXT.NET.Coin.Types;
+using CCXT.NET.Configuration;
 using System;
 
 namespace CCXT.NET.ItBit.Private
@@ -9,7 +9,7 @@ namespace CCXT.NET.ItBit.Private
     /// <summary>
     ///
     /// </summary>
-    public class TTransferItem : OdinSdk.BaseLib.Coin.Private.TransferItem, ITransferItem
+    public class TTransferItem : CCXT.NET.Coin.Private.TransferItem, ITransferItem
     {
         /// <summary>
         ///

@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Trade;
-using OdinSdk.BaseLib.Coin.Types;
+using CCXT.NET.Coin.Trade;
+using CCXT.NET.Coin.Types;
 using System.Collections.Generic;
 
 namespace CCXT.NET.GateIO.Trade
@@ -8,7 +8,7 @@ namespace CCXT.NET.GateIO.Trade
     /// <summary>
     ///
     /// </summary>
-    public class GMyOrder : OdinSdk.BaseLib.Coin.Trade.MyOrder, IMyOrder
+    public class GMyOrder : CCXT.NET.Coin.Trade.MyOrder, IMyOrder
     {
         /// <summary>
         ///
@@ -44,7 +44,7 @@ namespace CCXT.NET.GateIO.Trade
     /// <summary>
     ///
     /// </summary>
-    public class GMyOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
+    public class GMyOrderItem : CCXT.NET.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
         /// 주문의 고유 아이디
@@ -134,7 +134,7 @@ namespace CCXT.NET.GateIO.Trade
     /// <summary>
     ///
     /// </summary>
-    public class GOpenOrders : OdinSdk.BaseLib.Coin.Trade.MyOrder, IMyOrder
+    public class GOpenOrders : CCXT.NET.Coin.Trade.MyOrder, IMyOrder
     {
         /// <summary>
         ///
@@ -170,7 +170,7 @@ namespace CCXT.NET.GateIO.Trade
     /// <summary>
     ///
     /// </summary>
-    public class GOpenOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
+    public class GOpenOrderItem : CCXT.NET.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
         /// 주문의 고유 아이디

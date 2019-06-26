@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-using OdinSdk.BaseLib.Coin.Public;
+using CCXT.NET.Coin.Public;
 using System.Collections.Generic;
 
 namespace CCXT.NET.CoinCheck.Public
@@ -8,7 +8,7 @@ namespace CCXT.NET.CoinCheck.Public
     /// <summary>
     ///
     /// </summary>
-    public class COHLCVs : OdinSdk.BaseLib.Coin.Public.OHLCVs, IOHLCVs
+    public class COHLCVs : CCXT.NET.Coin.Public.OHLCVs, IOHLCVs
     {
         /// <summary>
         ///
@@ -42,7 +42,7 @@ namespace CCXT.NET.CoinCheck.Public
     /// <summary>
     ///
     /// </summary>
-    public class COHLCVItem : OdinSdk.BaseLib.Coin.Public.OHLCVItem, IOHLCVItem
+    public class COHLCVItem : CCXT.NET.Coin.Public.OHLCVItem, IOHLCVItem
     {
         /// <summary>
         /// Timestamp, milliseconds
