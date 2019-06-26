@@ -1,6 +1,7 @@
 using CCXT.NET.Coin;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using Xunit.Abstractions;
 
 namespace XUnit

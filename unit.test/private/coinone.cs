@@ -2,6 +2,7 @@ using CCXT.NET.Coin;
 using CCXT.NET.Converter;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Xunit;
 
 namespace XUnit

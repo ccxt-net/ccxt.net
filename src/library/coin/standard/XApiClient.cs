@@ -13,6 +13,7 @@ using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
+using System.Diagnostics;
 
 namespace CCXT.NET.Coin
 {

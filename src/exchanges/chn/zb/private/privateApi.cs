@@ -2,6 +2,7 @@
 using CCXT.NET.Coin.Private;
 using CCXT.NET.Coin.Types;
 using CCXT.NET.Configuration;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
