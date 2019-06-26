@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin;
+using CCXT.NET.Coin;
 using RestSharp;
 using System;
 using System.Collections.Generic;
@@ -12,17 +12,17 @@ using System.Threading.Tasks;
 namespace CCXT.NET.BitMEX
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public sealed class BitmexClient : OdinSdk.BaseLib.Coin.XApiClient, IXApiClient
+    public sealed class BitmexClient : CCXT.NET.Coin.XApiClient, IXApiClient
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string DealerName { get; set; } = "BitMEX";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="division">exchange's division for communication</param>
         public BitmexClient(string division)
@@ -31,7 +31,7 @@ namespace CCXT.NET.BitMEX
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="division">exchange's division for communication</param>
         /// <param name="connect_key">exchange's api key for connect</param>
@@ -109,7 +109,7 @@ namespace CCXT.NET.BitMEX
                             {
                                 tierBased = false,          // true for tier-based/progressive
                                 percentage = false,         // fixed commission
-                                
+
                                 maker = -0.0250m / 100m,    // https://www.bitmex.com/app/fees
                                 taker = 0.0750m / 100m
                             }
@@ -131,7 +131,7 @@ namespace CCXT.NET.BitMEX
         private HMACSHA256 __encryptor = null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public HMACSHA256 Encryptor
         {
@@ -145,7 +145,7 @@ namespace CCXT.NET.BitMEX
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -191,7 +191,7 @@ namespace CCXT.NET.BitMEX
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="endpoint"></param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -230,7 +230,7 @@ namespace CCXT.NET.BitMEX
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -260,7 +260,7 @@ namespace CCXT.NET.BitMEX
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -306,7 +306,7 @@ namespace CCXT.NET.BitMEX
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         public async Task<string> CreateSignature(Method verb, string endpoint, string nonce, string json_body = "")
@@ -325,7 +325,7 @@ namespace CCXT.NET.BitMEX
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public new Dictionary<string, ErrorCode> ErrorMessages = new Dictionary<string, ErrorCode>
         {
@@ -335,7 +335,7 @@ namespace CCXT.NET.BitMEX
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="response">response value arrive from exchange's server</param>
         /// <returns></returns>

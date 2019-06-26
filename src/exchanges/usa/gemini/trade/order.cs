@@ -1,18 +1,18 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin.Trade;
-using OdinSdk.BaseLib.Coin.Types;
+using CCXT.NET.Coin.Trade;
+using CCXT.NET.Coin.Types;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Gemini.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class GCancelAllOrders : OdinSdk.BaseLib.Coin.Trade.MyOrders, IMyOrders
+    public class GCancelAllOrders : CCXT.NET.Coin.Trade.MyOrders, IMyOrders
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public GCancelAllOrders()
         {
@@ -33,7 +33,7 @@ namespace CCXT.NET.Gemini.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "_result")]
         public new List<GPlaceOrderItem> result
@@ -60,9 +60,9 @@ namespace CCXT.NET.Gemini.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class GMyOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
+    public class GMyOrderItem : CCXT.NET.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
         /// The order id
@@ -149,7 +149,7 @@ namespace CCXT.NET.Gemini.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override OrderStatus orderStatus
         {
@@ -186,7 +186,7 @@ namespace CCXT.NET.Gemini.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "is_hidden")]
         public bool is_hidden
@@ -226,7 +226,7 @@ namespace CCXT.NET.Gemini.Trade
         }
 
         /// <summary>
-        /// An array containing at most one supported order execution option. 
+        /// An array containing at most one supported order execution option.
         /// "maker-or-cancel"	, "immediate-or-cancel"	, "auction-only", "indication-of-interest"
         /// </summary>
         [JsonProperty(PropertyName = "options")]

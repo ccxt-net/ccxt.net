@@ -1,13 +1,12 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Public;
-using System;
+using CCXT.NET.Coin.Public;
 
 namespace CCXT.NET.GateIO.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class GTickerItem : OdinSdk.BaseLib.Coin.Public.TickerItem, ITickerItem
+    public class GTickerItem : CCXT.NET.Coin.Public.TickerItem, ITickerItem
     {
         /// <summary>
         /// volume of quote currency traded for last 24 hours
@@ -70,7 +69,7 @@ namespace CCXT.NET.GateIO.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "elapsed")]
         public string elapsed

@@ -1,15 +1,15 @@
-﻿using OdinSdk.BaseLib.Configuration;
+﻿using CCXT.NET.Configuration;
 using System.Collections.Generic;
 
-namespace OdinSdk.BaseLib.Coin.Public
+namespace CCXT.NET.Coin.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public interface IOHLCVItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         long timestamp
         {
@@ -18,7 +18,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string datetime
         {
@@ -26,7 +26,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         decimal openPrice
         {
@@ -35,7 +35,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         decimal highPrice
         {
@@ -44,7 +44,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         decimal lowPrice
         {
@@ -53,7 +53,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         decimal closePrice
         {
@@ -62,7 +62,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         decimal amount
         {
@@ -71,7 +71,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         decimal volume
         {
@@ -80,7 +80,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         long count
         {
@@ -90,7 +90,7 @@ namespace OdinSdk.BaseLib.Coin.Public
 
 #if DEBUG
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string rawJson
         {
@@ -101,12 +101,12 @@ namespace OdinSdk.BaseLib.Coin.Public
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class OHLCVItem : IOHLCVItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OHLCVItem()
         {
@@ -114,7 +114,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual long timestamp
         {
@@ -134,7 +134,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual decimal openPrice
         {
@@ -143,7 +143,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual decimal highPrice
         {
@@ -152,7 +152,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual decimal lowPrice
         {
@@ -161,7 +161,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual decimal closePrice
         {
@@ -170,7 +170,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual decimal amount
         {
@@ -179,7 +179,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual decimal volume
         {
@@ -188,7 +188,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual long count
         {
@@ -198,7 +198,7 @@ namespace OdinSdk.BaseLib.Coin.Public
 
 #if DEBUG
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual string rawJson
         {
@@ -209,12 +209,12 @@ namespace OdinSdk.BaseLib.Coin.Public
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public interface IOHLCVs : IApiResult<List<IOHLCVItem>>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string marketId
         {
@@ -224,7 +224,7 @@ namespace OdinSdk.BaseLib.Coin.Public
 
 #if DEBUG
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string rawJson
         {
@@ -235,12 +235,12 @@ namespace OdinSdk.BaseLib.Coin.Public
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class OHLCVs : ApiResult<List<IOHLCVItem>>, IOHLCVs
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OHLCVs()
         {
@@ -248,7 +248,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
@@ -259,7 +259,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual string marketId
         {
@@ -269,7 +269,7 @@ namespace OdinSdk.BaseLib.Coin.Public
 
 #if DEBUG
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual string rawJson
         {

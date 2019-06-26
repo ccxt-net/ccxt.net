@@ -1,12 +1,12 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Private;
+using CCXT.NET.Coin.Private;
 
 namespace CCXT.NET.Korbit.Private
 {
     /// <summary>
     ///
     /// </summary>
-    public class KBalanceItem : OdinSdk.BaseLib.Coin.Private.BalanceItem, IBalanceItem
+    public class KBalanceItem : CCXT.NET.Coin.Private.BalanceItem, IBalanceItem
     {
         /// <summary>
         /// The amount of funds you can use.

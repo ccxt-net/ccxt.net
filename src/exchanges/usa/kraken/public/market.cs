@@ -1,17 +1,17 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin.Public;
+using CCXT.NET.Coin.Public;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Kraken.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class KMarketItem : OdinSdk.BaseLib.Coin.Public.MarketItem, IMarketItem
+    public class KMarketItem : CCXT.NET.Coin.Public.MarketItem, IMarketItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "base")]
         public override string baseLongName
@@ -21,7 +21,7 @@ namespace CCXT.NET.Kraken.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "quote")]
         public override string quoteLongName
@@ -51,7 +51,7 @@ namespace CCXT.NET.Kraken.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string aclass_base
         {
@@ -60,7 +60,7 @@ namespace CCXT.NET.Kraken.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string aclass_quote
         {
@@ -69,7 +69,7 @@ namespace CCXT.NET.Kraken.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "lot")]
         public string lotUnit
@@ -79,7 +79,7 @@ namespace CCXT.NET.Kraken.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool dark_pool
         {
@@ -88,7 +88,7 @@ namespace CCXT.NET.Kraken.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int pair_decimals
         {
@@ -97,7 +97,7 @@ namespace CCXT.NET.Kraken.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int lot_decimals
         {
@@ -106,7 +106,7 @@ namespace CCXT.NET.Kraken.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int lot_multiplier
         {
@@ -115,7 +115,7 @@ namespace CCXT.NET.Kraken.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public JArray leverage_buy
         {
@@ -124,7 +124,7 @@ namespace CCXT.NET.Kraken.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public JArray leverage_sell
         {
@@ -133,7 +133,7 @@ namespace CCXT.NET.Kraken.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public List<JArray> fees
         {
@@ -142,7 +142,7 @@ namespace CCXT.NET.Kraken.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public List<JArray> fees_maker
         {
@@ -151,7 +151,7 @@ namespace CCXT.NET.Kraken.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string fee_volume_currency
         {
@@ -160,7 +160,7 @@ namespace CCXT.NET.Kraken.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal margin_call
         {
@@ -169,7 +169,7 @@ namespace CCXT.NET.Kraken.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal margin_stop
         {

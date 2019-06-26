@@ -1,19 +1,17 @@
 ﻿using Newtonsoft.Json;
-
-using OdinSdk.BaseLib.Coin.Public;
-using System;
-using System.Collections.Generic;
 using Newtonsoft.Json.Linq;
+using CCXT.NET.Coin.Public;
+using System.Collections.Generic;
 
 namespace CCXT.NET.Huobi.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class HTickers : OdinSdk.BaseLib.Coin.Public.Tickers, ITickers
+    public class HTickers : CCXT.NET.Coin.Public.Tickers, ITickers
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public HTickers()
         {
@@ -21,7 +19,7 @@ namespace CCXT.NET.Huobi.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "data")]
         public new List<HTickerItem> result
@@ -31,7 +29,7 @@ namespace CCXT.NET.Huobi.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "status")]
         private string status
@@ -44,12 +42,12 @@ namespace CCXT.NET.Huobi.Public
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class HTickersItem : OdinSdk.BaseLib.Coin.Public.TickerItem, ITickerItem
+    public class HTickersItem : CCXT.NET.Coin.Public.TickerItem, ITickerItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "open")]
         public override decimal openPrice
@@ -59,7 +57,7 @@ namespace CCXT.NET.Huobi.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "close")]
         public override decimal closePrice
@@ -69,7 +67,7 @@ namespace CCXT.NET.Huobi.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "low")]
         public override decimal lowPrice
@@ -79,7 +77,7 @@ namespace CCXT.NET.Huobi.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "high")]
         public override decimal highPrice
@@ -89,7 +87,7 @@ namespace CCXT.NET.Huobi.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "amount")]
         public decimal amount
@@ -99,7 +97,7 @@ namespace CCXT.NET.Huobi.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "count")]
         public int count
@@ -109,7 +107,7 @@ namespace CCXT.NET.Huobi.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "vol")]
         public override decimal baseVolume
@@ -119,7 +117,7 @@ namespace CCXT.NET.Huobi.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "symbol")]
         public override string symbol
@@ -130,12 +128,12 @@ namespace CCXT.NET.Huobi.Public
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class HTicker : OdinSdk.BaseLib.Coin.Public.Ticker, ITicker
+    public class HTicker : CCXT.NET.Coin.Public.Ticker, ITicker
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public HTicker()
         {
@@ -143,7 +141,7 @@ namespace CCXT.NET.Huobi.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "tick")]
         public new HTickerItem result
@@ -153,7 +151,7 @@ namespace CCXT.NET.Huobi.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "ts")]
         private long timestamp
@@ -165,7 +163,7 @@ namespace CCXT.NET.Huobi.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "status")]
         private string status
@@ -178,12 +176,12 @@ namespace CCXT.NET.Huobi.Public
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class HTickerItem : OdinSdk.BaseLib.Coin.Public.TickerItem, ITickerItem
+    public class HTickerItem : CCXT.NET.Coin.Public.TickerItem, ITickerItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "close")]
         public override decimal closePrice
@@ -193,7 +191,7 @@ namespace CCXT.NET.Huobi.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "open")]
         public override decimal openPrice
@@ -203,7 +201,7 @@ namespace CCXT.NET.Huobi.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "high")]
         public override decimal highPrice
@@ -213,7 +211,7 @@ namespace CCXT.NET.Huobi.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "low")]
         public override decimal lowPrice
@@ -223,7 +221,7 @@ namespace CCXT.NET.Huobi.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "amount")]
         public decimal amount
@@ -233,7 +231,7 @@ namespace CCXT.NET.Huobi.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "count")]
         public int count
@@ -243,7 +241,7 @@ namespace CCXT.NET.Huobi.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "vol")]
         public override decimal baseVolume
@@ -253,7 +251,7 @@ namespace CCXT.NET.Huobi.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "ask")]
         private JArray ask
@@ -266,7 +264,7 @@ namespace CCXT.NET.Huobi.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "bid")]
         private JArray bid

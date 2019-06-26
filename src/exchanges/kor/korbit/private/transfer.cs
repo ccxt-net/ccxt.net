@@ -1,17 +1,17 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin;
-using OdinSdk.BaseLib.Coin.Private;
-using OdinSdk.BaseLib.Coin.Types;
+using CCXT.NET.Coin;
+using CCXT.NET.Coin.Private;
+using CCXT.NET.Coin.Types;
 
 namespace CCXT.NET.Korbit.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class KTransactionDetails
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string transaction_id
         {
@@ -20,7 +20,7 @@ namespace CCXT.NET.Korbit.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string address
         {
@@ -29,7 +29,7 @@ namespace CCXT.NET.Korbit.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string destiantion_tag
         {
@@ -38,7 +38,7 @@ namespace CCXT.NET.Korbit.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string bank
         {
@@ -47,7 +47,7 @@ namespace CCXT.NET.Korbit.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string account_number
         {
@@ -56,7 +56,7 @@ namespace CCXT.NET.Korbit.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string owner
         {
@@ -66,12 +66,12 @@ namespace CCXT.NET.Korbit.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class KTransfer : OdinSdk.BaseLib.Coin.Private.Transfer, ITransfer
+    public class KTransfer : CCXT.NET.Coin.Private.Transfer, ITransfer
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string transferId
         {
@@ -80,7 +80,7 @@ namespace CCXT.NET.Korbit.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "status")]
         private string status
@@ -101,7 +101,7 @@ namespace CCXT.NET.Korbit.Private
     /// <summary>
     /// Query Status of BTC Deposit and Transfer
     /// </summary>
-    public class KTransferItem : OdinSdk.BaseLib.Coin.Private.TransferItem, ITransferItem
+    public class KTransferItem : CCXT.NET.Coin.Private.TransferItem, ITransferItem
     {
         /// <summary>
         /// The unique ID of BTC deposit or withdrawal request.
@@ -112,7 +112,7 @@ namespace CCXT.NET.Korbit.Private
             get;
             set;
         }
-        
+
         /// <summary>
         /// Unix timestamp in milliseconds by the time deposit or withdrawal request was created.
         /// </summary>
@@ -150,7 +150,7 @@ namespace CCXT.NET.Korbit.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "details")]
         private KTransactionDetails details

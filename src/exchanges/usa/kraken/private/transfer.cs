@@ -1,15 +1,15 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Private;
+using CCXT.NET.Coin.Private;
 
 namespace CCXT.NET.Kraken.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class KTransferItem : OdinSdk.BaseLib.Coin.Private.TransferItem, ITransferItem
+    public class KTransferItem : CCXT.NET.Coin.Private.TransferItem, ITransferItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "refid")]
         public override string transferId
@@ -19,7 +19,7 @@ namespace CCXT.NET.Kraken.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "txid")]
         public override string transactionId
@@ -29,7 +29,7 @@ namespace CCXT.NET.Kraken.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "asset")]
         public override string currency
@@ -39,7 +39,7 @@ namespace CCXT.NET.Kraken.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "info")]
         public override string toAddress
@@ -49,7 +49,7 @@ namespace CCXT.NET.Kraken.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string method
         {
@@ -58,7 +58,7 @@ namespace CCXT.NET.Kraken.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string aclass
         {
@@ -67,7 +67,7 @@ namespace CCXT.NET.Kraken.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "time")]
         private long timeValue
@@ -79,7 +79,7 @@ namespace CCXT.NET.Kraken.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "status")]
         private string status
@@ -92,12 +92,12 @@ namespace CCXT.NET.Kraken.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class KWithdrawCancel : OdinSdk.BaseLib.Coin.Private.TransferItem, ITransferItem
+    public class KWithdrawCancel : CCXT.NET.Coin.Private.TransferItem, ITransferItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "result")]
         public bool result

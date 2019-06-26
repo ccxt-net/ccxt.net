@@ -1,7 +1,7 @@
-﻿using OdinSdk.BaseLib.Coin;
-using OdinSdk.BaseLib.Coin.Public;
-using OdinSdk.BaseLib.Coin.Types;
-using OdinSdk.BaseLib.Configuration;
+﻿using CCXT.NET.Coin;
+using CCXT.NET.Coin.Public;
+using CCXT.NET.Coin.Types;
+using CCXT.NET.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,19 +12,17 @@ namespace CCXT.NET.GateIO.Public
     /// <summary>
     /// exchange's public API implement class
     /// </summary>
-    public class PublicApi : OdinSdk.BaseLib.Coin.Public.PublicApi, IPublicApi
+    public class PublicApi : CCXT.NET.Coin.Public.PublicApi, IPublicApi
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PublicApi()
         {
         }
 
-        
-
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override XApiClient publicClient
         {
@@ -114,7 +112,7 @@ namespace CCXT.NET.GateIO.Public
         }
 
         /// <summary>
-        /// Fetch current best bid and ask, as well as the last trade price.  
+        /// Fetch current best bid and ask, as well as the last trade price.
         /// </summary>
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
@@ -200,7 +198,7 @@ namespace CCXT.NET.GateIO.Public
                             // openPrice 제공안함
                             _ticker.average = (_ticker.lastPrice + _ticker.openPrice) / 2;
                             _ticker.timestamp = CUnixTime.NowMilli;
-                            if(_ticker.baseVolume!=0)
+                            if (_ticker.baseVolume != 0)
                                 _ticker.vwap = _ticker.quoteVolume / _ticker.baseVolume;
 
                             _result.result.Add(_ticker);
@@ -246,7 +244,7 @@ namespace CCXT.NET.GateIO.Public
                 {
                     var _orderbooks = publicClient.DeserializeObject<GOrderBook>(_json_value.Content);
                     {
-                        if (_orderbooks.asks.Count > 0 || _orderbooks.bids.Count>0)
+                        if (_orderbooks.asks.Count > 0 || _orderbooks.bids.Count > 0)
                         {
                             _orderbooks.symbol = _market.result.symbol;
 

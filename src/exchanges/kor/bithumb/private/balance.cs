@@ -1,17 +1,17 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin;
-using OdinSdk.BaseLib.Coin.Private;
+using CCXT.NET.Coin;
+using CCXT.NET.Coin.Private;
 
 namespace CCXT.NET.Bithumb.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class BBalance : OdinSdk.BaseLib.Coin.Private.Balance, IBalance
+    public class BBalance : CCXT.NET.Coin.Private.Balance, IBalance
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BBalance()
         {
@@ -39,7 +39,7 @@ namespace CCXT.NET.Bithumb.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public new BBalanceItem result
         {
@@ -48,7 +48,7 @@ namespace CCXT.NET.Bithumb.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "data")]
         public JToken data
@@ -61,10 +61,10 @@ namespace CCXT.NET.Bithumb.Private
     /// <summary>
     /// bithumb 거래소 회원 지갑 정보
     /// </summary>
-    public class BBalanceItem : OdinSdk.BaseLib.Coin.Private.BalanceItem, IBalanceItem
+    public class BBalanceItem : CCXT.NET.Coin.Private.BalanceItem, IBalanceItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal misu
         {
@@ -73,7 +73,7 @@ namespace CCXT.NET.Bithumb.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal xcoin_last
         {

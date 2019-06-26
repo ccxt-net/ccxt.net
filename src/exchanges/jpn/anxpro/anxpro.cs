@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin;
+using CCXT.NET.Coin;
 using RestSharp;
 using System;
 using System.Collections.Generic;
@@ -10,17 +10,17 @@ using System.Threading.Tasks;
 namespace CCXT.NET.Anxpro
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public sealed class AnxproClient : OdinSdk.BaseLib.Coin.XApiClient, IXApiClient
+    public sealed class AnxproClient : CCXT.NET.Coin.XApiClient, IXApiClient
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string DealerName { get; set; } = "Anxpro";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="division">exchange's division for communication</param>
         public AnxproClient(string division)
@@ -29,7 +29,7 @@ namespace CCXT.NET.Anxpro
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="division">exchange's division for communication</param>
         /// <param name="connect_key">exchange's api key for connect</param>
@@ -121,7 +121,7 @@ namespace CCXT.NET.Anxpro
         private HMACSHA512 __encryptor = null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public HMACSHA512 Encryptor
         {
@@ -135,7 +135,7 @@ namespace CCXT.NET.Anxpro
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -164,7 +164,7 @@ namespace CCXT.NET.Anxpro
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="response">response value arrive from exchange's server</param>
         /// <returns></returns>

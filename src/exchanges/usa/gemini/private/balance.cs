@@ -1,12 +1,12 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Private;
+using CCXT.NET.Coin.Private;
 
 namespace CCXT.NET.Gemini.Private
 {
     /// <summary>
     /// 거래소 회원 지갑 정보
     /// </summary>
-    public class GBalanceItem : OdinSdk.BaseLib.Coin.Private.BalanceItem, IBalanceItem
+    public class GBalanceItem : CCXT.NET.Coin.Private.BalanceItem, IBalanceItem
     {
         /// <summary>
         /// The current balance
@@ -49,7 +49,7 @@ namespace CCXT.NET.Gemini.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "type")]
         public string type

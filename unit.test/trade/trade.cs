@@ -7,7 +7,7 @@ namespace XUnit
     public partial class TradeApi : XUnit.RootApi
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TradeApi(ITestOutputHelper outputHelper)
                 : base(outputHelper)

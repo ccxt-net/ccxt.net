@@ -1,18 +1,17 @@
 ﻿using Newtonsoft.Json;
 
-using OdinSdk.BaseLib.Coin.Public;
-using System;
+using CCXT.NET.Coin.Public;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Huobi.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class HOHLCVs : OdinSdk.BaseLib.Coin.Public.OHLCVs, IOHLCVs
+    public class HOHLCVs : CCXT.NET.Coin.Public.OHLCVs, IOHLCVs
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public HOHLCVs()
         {
@@ -20,7 +19,7 @@ namespace CCXT.NET.Huobi.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "data")]
         public new List<HOHLCVItem> result
@@ -30,7 +29,7 @@ namespace CCXT.NET.Huobi.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "status")]
         private string status
@@ -43,12 +42,12 @@ namespace CCXT.NET.Huobi.Public
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class HOHLCVItem : OdinSdk.BaseLib.Coin.Public.OHLCVItem, IOHLCVItem
+    public class HOHLCVItem : CCXT.NET.Coin.Public.OHLCVItem, IOHLCVItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "id")]
         private long timeValue
@@ -60,7 +59,7 @@ namespace CCXT.NET.Huobi.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "open")]
         public override decimal openPrice
@@ -70,7 +69,7 @@ namespace CCXT.NET.Huobi.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "high")]
         public override decimal highPrice
@@ -80,7 +79,7 @@ namespace CCXT.NET.Huobi.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "low")]
         public override decimal lowPrice
@@ -90,7 +89,7 @@ namespace CCXT.NET.Huobi.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "close")]
         public override decimal closePrice
@@ -100,7 +99,7 @@ namespace CCXT.NET.Huobi.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "amount")]
         public override decimal amount
@@ -110,7 +109,7 @@ namespace CCXT.NET.Huobi.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "vol")]
         public override decimal volume

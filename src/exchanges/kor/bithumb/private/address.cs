@@ -1,16 +1,16 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin;
-using OdinSdk.BaseLib.Coin.Private;
+using CCXT.NET.Coin;
+using CCXT.NET.Coin.Private;
 
 namespace CCXT.NET.Bithumb.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class BAddress : OdinSdk.BaseLib.Coin.Private.Address, IAddress
+    public class BAddress : CCXT.NET.Coin.Private.Address, IAddress
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BAddress()
         {
@@ -38,7 +38,7 @@ namespace CCXT.NET.Bithumb.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "data")]
         public new BAddressItem result
@@ -51,7 +51,7 @@ namespace CCXT.NET.Bithumb.Private
     /// <summary>
     /// bithumb 거래소 회원 지갑 정보
     /// </summary>
-    public class BAddressItem : OdinSdk.BaseLib.Coin.Private.AddressItem, IAddressItem
+    public class BAddressItem : CCXT.NET.Coin.Private.AddressItem, IAddressItem
     {
         /// <summary>
         /// BTC, ETH, DASH, LTC, ETC, XRP, BCH, XMR, ZEC, QTUM, BTG, EOS, ICX, VEN, TRX, ELF, MITH, MCO, OMG, KNC, GNT, HSR, ZIL, ETHOS, PAY, WAX, POWR, LRC, GTO, STEEM, STRAT, ZRX, REP, AE, XEM, SNT, ADA

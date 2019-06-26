@@ -1,17 +1,17 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin;
-using OdinSdk.BaseLib.Coin.Private;
-using OdinSdk.BaseLib.Coin.Types;
+using CCXT.NET.Coin;
+using CCXT.NET.Coin.Private;
+using CCXT.NET.Coin.Types;
 
 namespace CCXT.NET.Bitfinex.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class BTransfer : OdinSdk.BaseLib.Coin.Private.Transfer, ITransfer
+    public class BTransfer : CCXT.NET.Coin.Private.Transfer, ITransfer
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "withdrawal_id")]
         public string transferId
@@ -21,7 +21,7 @@ namespace CCXT.NET.Bitfinex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "status")]
         private string status
@@ -39,11 +39,11 @@ namespace CCXT.NET.Bitfinex.Private
             }
         }
     }
-    
+
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class BTransferItem : OdinSdk.BaseLib.Coin.Private.TransferItem, ITransferItem
+    public class BTransferItem : CCXT.NET.Coin.Private.TransferItem, ITransferItem
     {
         /// <summary>
         /// transaction id
@@ -56,7 +56,7 @@ namespace CCXT.NET.Bitfinex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "txid")]
         public override string transactionId
@@ -66,7 +66,7 @@ namespace CCXT.NET.Bitfinex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "address")]
         public override string fromAddress
@@ -76,7 +76,7 @@ namespace CCXT.NET.Bitfinex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "method")]
         public string method
@@ -86,7 +86,7 @@ namespace CCXT.NET.Bitfinex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "description")]
         public string description
@@ -96,7 +96,7 @@ namespace CCXT.NET.Bitfinex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "timestamp_created")]
         public decimal timestamp_created
@@ -116,7 +116,7 @@ namespace CCXT.NET.Bitfinex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "timestamp")]
         private decimal timeValue
@@ -128,7 +128,7 @@ namespace CCXT.NET.Bitfinex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "status")]
         private string status
@@ -140,7 +140,7 @@ namespace CCXT.NET.Bitfinex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "type")]
         private string typeValue

@@ -1,12 +1,12 @@
-﻿namespace OdinSdk.BaseLib.Coin
+﻿namespace CCXT.NET.Coin
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class ConnectionKey
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string key_name
         {
@@ -15,7 +15,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string connect_key
         {
@@ -24,7 +24,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string secret_key
         {
@@ -33,7 +33,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string user_name
         {
@@ -42,7 +42,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string password
         {
@@ -51,7 +51,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string user_mail
         {
@@ -60,7 +60,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string user_id
         {
@@ -69,7 +69,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string wallet_id
         {

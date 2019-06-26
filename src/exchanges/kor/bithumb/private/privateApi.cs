@@ -1,8 +1,8 @@
 ﻿using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin;
-using OdinSdk.BaseLib.Coin.Private;
-using OdinSdk.BaseLib.Coin.Types;
-using OdinSdk.BaseLib.Configuration;
+using CCXT.NET.Coin;
+using CCXT.NET.Coin.Private;
+using CCXT.NET.Coin.Types;
+using CCXT.NET.Configuration;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -10,15 +10,15 @@ using System.Threading.Tasks;
 namespace CCXT.NET.Bithumb.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class PrivateApi : OdinSdk.BaseLib.Coin.Private.PrivateApi, IPrivateApi
+    public class PrivateApi : CCXT.NET.Coin.Private.PrivateApi, IPrivateApi
     {
         private readonly string __connect_key;
         private readonly string __secret_key;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PrivateApi(string connect_key, string secret_key)
         {
@@ -27,7 +27,7 @@ namespace CCXT.NET.Bithumb.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override XApiClient privateClient
         {
@@ -41,9 +41,9 @@ namespace CCXT.NET.Bithumb.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
-        public override OdinSdk.BaseLib.Coin.Public.PublicApi publicApi
+        public override CCXT.NET.Coin.Public.PublicApi publicApi
         {
             get
             {
@@ -359,7 +359,7 @@ namespace CCXT.NET.Bithumb.Private
                     var _json_data = privateClient.DeserializeObject<BWallet>(_json_value.Content);
                     if (_json_data.success == true)
                     {
-                        var _balance =_json_data.result.balance;
+                        var _balance = _json_data.result.balance;
                         {
                             _balance.currency = base_name;
                             _balance.total = _balance.free + _balance.used;
@@ -427,7 +427,7 @@ namespace CCXT.NET.Bithumb.Private
                                 free = _json_data.data[$"available_{_base_id}"].Value<decimal>(),
                                 used = _json_data.data[$"in_use_{_base_id}"].Value<decimal>(),
                                 total = _json_data.data[$"total_{_base_id}"].Value<decimal>(),
-                                
+
                                 misu = _json_data.data[$"misu_{_base_id}"].Value<decimal>(),
                                 xcoin_last = _json_data.data[$"xcoin_last"].Value<decimal>()
                             };

@@ -1,13 +1,13 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Public;
+using CCXT.NET.Coin.Public;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Kraken.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class KTickerItem : OdinSdk.BaseLib.Coin.Public.TickerItem, ITickerItem
+    public class KTickerItem : CCXT.NET.Coin.Public.TickerItem, ITickerItem
     {
         /// <summary>
         /// string symbol of the market ('BTCUSD', 'ETHBTC', ...)
@@ -20,7 +20,7 @@ namespace CCXT.NET.Kraken.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "h")]
         private List<decimal> highPriceList
@@ -32,7 +32,7 @@ namespace CCXT.NET.Kraken.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "l")]
         private List<decimal> lowPriceList
@@ -44,7 +44,7 @@ namespace CCXT.NET.Kraken.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "b")]
         private List<decimal> bidPriceList
@@ -56,7 +56,7 @@ namespace CCXT.NET.Kraken.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "a")]
         private List<decimal> askPriceList
@@ -78,7 +78,7 @@ namespace CCXT.NET.Kraken.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "c")]
         private List<decimal> closePriceList
@@ -90,7 +90,7 @@ namespace CCXT.NET.Kraken.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "v")]
         private List<decimal> volumeList

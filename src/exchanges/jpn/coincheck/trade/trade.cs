@@ -1,20 +1,20 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Configuration;
-using OdinSdk.BaseLib.Coin.Trade;
-using OdinSdk.BaseLib.Coin.Types;
-using System.Collections.Generic;
-using System;
 using Newtonsoft.Json.Linq;
+using CCXT.NET.Coin.Trade;
+using CCXT.NET.Coin.Types;
+using CCXT.NET.Configuration;
+using System;
+using System.Collections.Generic;
 
 namespace CCXT.NET.CoinCheck.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class CMyTrades : OdinSdk.BaseLib.Coin.Trade.MyTrades, IMyTrades
+    public class CMyTrades : CCXT.NET.Coin.Trade.MyTrades, IMyTrades
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CMyTrades()
         {
@@ -22,7 +22,7 @@ namespace CCXT.NET.CoinCheck.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "transactions")]
         public new List<CMyTradeItem> result
@@ -32,7 +32,7 @@ namespace CCXT.NET.CoinCheck.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "success")]
         public override bool success
@@ -42,14 +42,13 @@ namespace CCXT.NET.CoinCheck.Trade
         }
     }
 
-
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class CMyTradeItem : OdinSdk.BaseLib.Coin.Trade.MyTradeItem, IMyTradeItem
+    public class CMyTradeItem : CCXT.NET.Coin.Trade.MyTradeItem, IMyTradeItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "id")]
         public override string tradeId
@@ -59,7 +58,7 @@ namespace CCXT.NET.CoinCheck.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "order_id")]
         public override string orderId
@@ -69,7 +68,7 @@ namespace CCXT.NET.CoinCheck.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "created_at")]
         private DateTime timeValue
@@ -81,7 +80,7 @@ namespace CCXT.NET.CoinCheck.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "funds")]
         private JObject funds
@@ -98,7 +97,7 @@ namespace CCXT.NET.CoinCheck.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "pair")]
         private string pair
@@ -112,7 +111,7 @@ namespace CCXT.NET.CoinCheck.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "rate")]
         public override decimal price
@@ -122,7 +121,7 @@ namespace CCXT.NET.CoinCheck.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "fee_currency")]
         public string fee_currency
@@ -132,7 +131,7 @@ namespace CCXT.NET.CoinCheck.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "fee")]
         public override decimal fee
@@ -142,7 +141,7 @@ namespace CCXT.NET.CoinCheck.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MakerType makerType
         {
@@ -151,7 +150,7 @@ namespace CCXT.NET.CoinCheck.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "liquidity")]
         private string liquidity
@@ -163,7 +162,7 @@ namespace CCXT.NET.CoinCheck.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "side")]
         private string side

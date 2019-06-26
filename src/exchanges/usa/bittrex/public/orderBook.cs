@@ -1,17 +1,17 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin.Public;
+using CCXT.NET.Coin.Public;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Bittrex.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class BOrderBooks : OdinSdk.BaseLib.Coin.Public.OrderBooks, IOrderBooks
+    public class BOrderBooks : CCXT.NET.Coin.Public.OrderBooks, IOrderBooks
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BOrderBooks()
         {
@@ -19,7 +19,7 @@ namespace CCXT.NET.Bittrex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public new BOrderBook result
         {
@@ -29,12 +29,12 @@ namespace CCXT.NET.Bittrex.Public
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class BOrderBook : OdinSdk.BaseLib.Coin.Public.OrderBook, IOrderBook
+    public class BOrderBook : CCXT.NET.Coin.Public.OrderBook, IOrderBook
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "buy")]
         private List<JToken> bidsValue
@@ -59,7 +59,7 @@ namespace CCXT.NET.Bittrex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "sell")]
         private List<JToken> asksValue
@@ -84,7 +84,7 @@ namespace CCXT.NET.Bittrex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "originBids")]
         public override List<IOrderBookItem> bids
@@ -94,7 +94,7 @@ namespace CCXT.NET.Bittrex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "originAsks")]
         public override List<IOrderBookItem> asks

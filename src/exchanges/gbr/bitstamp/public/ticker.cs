@@ -1,13 +1,13 @@
 ﻿using Newtonsoft.Json;
 
-using OdinSdk.BaseLib.Coin.Public;
+using CCXT.NET.Coin.Public;
 
 namespace CCXT.NET.Bitstamp.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class BTickerItem : OdinSdk.BaseLib.Coin.Public.TickerItem, ITickerItem
+    public class BTickerItem : CCXT.NET.Coin.Public.TickerItem, ITickerItem
     {
         /// <summary>
         /// string symbol of the market ('BTCUSD', 'ETHBTC', ...)
@@ -30,7 +30,7 @@ namespace CCXT.NET.Bitstamp.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "timestamp")]
         private long timeValue

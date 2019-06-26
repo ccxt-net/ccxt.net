@@ -1,9 +1,9 @@
 ﻿using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin;
-using OdinSdk.BaseLib.Coin.Trade;
-using OdinSdk.BaseLib.Coin.Types;
-using OdinSdk.BaseLib.Configuration;
-using OdinSdk.BaseLib.Extension;
+using CCXT.NET.Coin;
+using CCXT.NET.Coin.Trade;
+using CCXT.NET.Coin.Types;
+using CCXT.NET.Configuration;
+using CCXT.NET.Extension;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,9 +12,9 @@ using System.Threading.Tasks;
 namespace CCXT.NET.GDAX.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class TradeApi : OdinSdk.BaseLib.Coin.Trade.TradeApi, ITradeApi
+    public class TradeApi : CCXT.NET.Coin.Trade.TradeApi, ITradeApi
     {
         private readonly string __connect_key;
         private readonly string __secret_key;
@@ -22,7 +22,7 @@ namespace CCXT.NET.GDAX.Trade
         private readonly string __user_password;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TradeApi(string connect_key, string secret_key, string user_name, string user_password)
         {
@@ -33,7 +33,7 @@ namespace CCXT.NET.GDAX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override XApiClient tradeClient
         {
@@ -47,9 +47,9 @@ namespace CCXT.NET.GDAX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
-        public override OdinSdk.BaseLib.Coin.Public.PublicApi publicApi
+        public override CCXT.NET.Coin.Public.PublicApi publicApi
         {
             get
             {
@@ -326,10 +326,10 @@ namespace CCXT.NET.GDAX.Trade
         }
 
         /// <summary>
-        /// You can place two types of orders: limit and market. 
-        /// Orders can only be placed if your account has sufficient funds. 
-        /// Once an order is placed, your account funds will be put on hold for the duration of the order. 
-        /// How much and which funds are put on hold depends on the order type and parameters specified. 
+        /// You can place two types of orders: limit and market.
+        /// Orders can only be placed if your account has sufficient funds.
+        /// Once an order is placed, your account funds will be put on hold for the duration of the order.
+        /// How much and which funds are put on hold depends on the order type and parameters specified.
         /// See the Holds details below.
         /// </summary>
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
@@ -388,10 +388,10 @@ namespace CCXT.NET.GDAX.Trade
         }
 
         /// <summary>
-        /// You can place two types of orders: limit and market. 
-        /// Orders can only be placed if your account has sufficient funds. 
-        /// Once an order is placed, your account funds will be put on hold for the duration of the order. 
-        /// How much and which funds are put on hold depends on the order type and parameters specified. 
+        /// You can place two types of orders: limit and market.
+        /// Orders can only be placed if your account has sufficient funds.
+        /// Once an order is placed, your account funds will be put on hold for the duration of the order.
+        /// How much and which funds are put on hold depends on the order type and parameters specified.
         /// See the Holds details below.
         /// </summary>
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>

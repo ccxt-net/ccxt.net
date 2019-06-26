@@ -1,14 +1,14 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Trade;
-using OdinSdk.BaseLib.Coin.Types;
+using CCXT.NET.Coin.Trade;
+using CCXT.NET.Coin.Types;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Coinone.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class CMyOpenOrders : OdinSdk.BaseLib.Coin.Trade.MyOrders, IMyOrders
+    public class CMyOpenOrders : CCXT.NET.Coin.Trade.MyOrders, IMyOrders
     {
         /// <summary>
         /// 성공이면 “success”, 실패할 경우 에러 심블이 세팅된다.
@@ -21,7 +21,7 @@ namespace CCXT.NET.Coinone.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool success
         {
@@ -34,7 +34,7 @@ namespace CCXT.NET.Coinone.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "errorCode")]
         public override int statusCode
@@ -44,7 +44,7 @@ namespace CCXT.NET.Coinone.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public List<CMyOpenOrderItem> limitOrders
         {
@@ -54,12 +54,12 @@ namespace CCXT.NET.Coinone.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class CMyOpenOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
+    public class CMyOpenOrderItem : CCXT.NET.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "orderId")]
         public override string orderId
@@ -69,7 +69,7 @@ namespace CCXT.NET.Coinone.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "qty")]
         public override decimal quantity
@@ -79,7 +79,7 @@ namespace CCXT.NET.Coinone.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "price")]
         public override decimal price
@@ -89,7 +89,7 @@ namespace CCXT.NET.Coinone.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "index")]
         public int index
@@ -99,7 +99,7 @@ namespace CCXT.NET.Coinone.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "feeRate")]
         public decimal feeRate
@@ -109,7 +109,7 @@ namespace CCXT.NET.Coinone.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "origin_timestamp")]
         public override long timestamp
@@ -119,7 +119,7 @@ namespace CCXT.NET.Coinone.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "timestamp")]
         private long timeValue
@@ -131,7 +131,7 @@ namespace CCXT.NET.Coinone.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "type")]
         private string sideValue

@@ -1,14 +1,14 @@
 ﻿using System.Collections.Generic;
 
-namespace OdinSdk.BaseLib.Coin.Private
+namespace CCXT.NET.Coin.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public interface IAddressItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string currency
         {
@@ -17,7 +17,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string address
         {
@@ -26,7 +26,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string tag
         {
@@ -35,7 +35,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         bool success
         {
@@ -45,7 +45,7 @@ namespace OdinSdk.BaseLib.Coin.Private
 
 #if DEBUG
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string rawJson
         {
@@ -56,12 +56,12 @@ namespace OdinSdk.BaseLib.Coin.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class AddressItem : IAddressItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AddressItem()
         {
@@ -69,7 +69,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual string currency
         {
@@ -78,7 +78,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual string address
         {
@@ -87,7 +87,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual string tag
         {
@@ -96,7 +96,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual bool success
         {
@@ -106,7 +106,7 @@ namespace OdinSdk.BaseLib.Coin.Private
 
 #if DEBUG
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual string rawJson
         {
@@ -117,13 +117,13 @@ namespace OdinSdk.BaseLib.Coin.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public interface IAddress : IApiResult<IAddressItem>
     {
 #if DEBUG
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string rawJson
         {
@@ -134,12 +134,12 @@ namespace OdinSdk.BaseLib.Coin.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class Address : ApiResult<IAddressItem>, IAddress
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Address()
         {
@@ -148,7 +148,7 @@ namespace OdinSdk.BaseLib.Coin.Private
 
 #if DEBUG
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual string rawJson
         {
@@ -159,13 +159,13 @@ namespace OdinSdk.BaseLib.Coin.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public interface IAddresses : IApiResult<List<IAddressItem>>
     {
 #if DEBUG
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string rawJson
         {
@@ -176,12 +176,12 @@ namespace OdinSdk.BaseLib.Coin.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class Addresses : ApiResult<List<IAddressItem>>, IAddresses
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Addresses()
         {
@@ -190,7 +190,7 @@ namespace OdinSdk.BaseLib.Coin.Private
 
 #if DEBUG
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual string rawJson
         {

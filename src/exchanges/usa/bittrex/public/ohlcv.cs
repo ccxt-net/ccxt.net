@@ -1,18 +1,18 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Public;
-using OdinSdk.BaseLib.Configuration;
+using CCXT.NET.Coin.Public;
+using CCXT.NET.Configuration;
 using System;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Bittrex.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class BOHLCVs : OdinSdk.BaseLib.Coin.Public.OHLCVs, IOHLCVs
+    public class BOHLCVs : CCXT.NET.Coin.Public.OHLCVs, IOHLCVs
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BOHLCVs()
         {
@@ -20,7 +20,7 @@ namespace CCXT.NET.Bittrex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "result")]
         public new List<BOHLCVItem> result
@@ -31,12 +31,12 @@ namespace CCXT.NET.Bittrex.Public
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class BOHLCVItem : OdinSdk.BaseLib.Coin.Public.OHLCVItem, IOHLCVItem
+    public class BOHLCVItem : CCXT.NET.Coin.Public.OHLCVItem, IOHLCVItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "O")]
         public override decimal openPrice
@@ -46,7 +46,7 @@ namespace CCXT.NET.Bittrex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "H")]
         public override decimal highPrice
@@ -56,7 +56,7 @@ namespace CCXT.NET.Bittrex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "L")]
         public override decimal lowPrice
@@ -66,7 +66,7 @@ namespace CCXT.NET.Bittrex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "C")]
         public override decimal closePrice
@@ -76,7 +76,7 @@ namespace CCXT.NET.Bittrex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "V")]
         public override decimal volume
@@ -86,7 +86,7 @@ namespace CCXT.NET.Bittrex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "T")]
         private DateTime timeValue

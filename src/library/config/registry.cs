@@ -1,53 +1,53 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.IO;
-using Microsoft.Win32;
 
-namespace OdinSdk.BaseLib.Configuration
+namespace CCXT.NET.Configuration
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class CRegistry
     {
         private static CConfig __cconfig = new CConfig();
 
         //-------------------------------------------------------------------------------------------------------------------------
-        // 
+        //
         //-------------------------------------------------------------------------------------------------------------------------
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public const string c_regRootKey = @"Software\OdinSoft\";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public enum RegistryFolderType
         {
             /// <summary>
-            /// 
+            ///
             /// </summary>
             client,
 
             /// <summary>
-            /// 
+            ///
             /// </summary>
             server,
 
             /// <summary>
-            /// 
+            ///
             /// </summary>
             manager,
 
             /// <summary>
-            /// 
+            ///
             /// </summary>
             shared
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="p_folder_type"></param>
         /// <param name="p_registry_hive"></param>
@@ -81,11 +81,11 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         //-------------------------------------------------------------------------------------------------------------------------
-        // 
+        //
         //-------------------------------------------------------------------------------------------------------------------------
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool UserInteractive
         {
@@ -96,7 +96,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string SdkRegistryRoot
         {
@@ -105,7 +105,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string SdkResistryBase
         {
@@ -116,7 +116,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RegistryHive SdkRegisryHive
         {
@@ -125,11 +125,11 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         //-------------------------------------------------------------------------------------------------------------------------
-        // 
+        //
         //-------------------------------------------------------------------------------------------------------------------------
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="p_registry_root"></param>
         /// <returns></returns>
@@ -152,7 +152,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void DeleteRegistry(string p_registry_root = "")
         {
@@ -162,7 +162,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="p_regkey"></param>
         /// <param name="p_defult"></param>
@@ -191,7 +191,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="p_regkey"></param>
         /// <param name="p_value"></param>
@@ -207,7 +207,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="p_appkey"></param>
         /// <param name="p_default"></param>
@@ -231,7 +231,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="p_appkey"></param>
         /// <param name="p_default"></param>
@@ -244,7 +244,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="p_appkey"></param>
         /// <param name="p_default"></param>
@@ -257,7 +257,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="p_appkey"></param>
         /// <param name="p_default"></param>
@@ -274,7 +274,7 @@ namespace OdinSdk.BaseLib.Configuration
         //-------------------------------------------------------------------------------------------------------------------------
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string SolutionName
         {
@@ -283,7 +283,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string ModuleName
         {
@@ -292,7 +292,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string Version
         {
@@ -301,7 +301,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RegistryFolderType FolderType
         {
@@ -310,13 +310,13 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         //-------------------------------------------------------------------------------------------------------------------------
-        // 
+        //
         //-------------------------------------------------------------------------------------------------------------------------
 
         private readonly string RegistryNDP = @"SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full\";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int Get46or461FromRegistry()
         {
@@ -336,7 +336,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         ///// <summary>
-        ///// 
+        /////
         ///// </summary>
         ///// <returns></returns>
         //public string GetFrameworkVersion()
@@ -345,9 +345,8 @@ namespace OdinSdk.BaseLib.Configuration
         //    return String.Format(@"v{0}.{1}.{2}", Environment.Version.Major, Environment.Version.Minor, Environment.Version.Build);
         //}
 
-
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         public string GetFrameworkRoot()
@@ -371,7 +370,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         public bool CheckNetFrameworkInstalled(int releaseKey = 393295)
@@ -400,7 +399,7 @@ namespace OdinSdk.BaseLib.Configuration
 	            if ((releaseKey >= 378389)) {
 		            return "4.5 or later";
 	            }
-            
+
                 return "No 4.5 or later version detected";
             */
 
@@ -415,7 +414,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="releaseKey"></param>
         /// <returns></returns>
@@ -436,7 +435,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="displayName"></param>
         /// <returns></returns>
@@ -467,7 +466,6 @@ namespace OdinSdk.BaseLib.Configuration
                             _result = true;
                             break;
                         }
-
                     }
                 }
             }
@@ -476,7 +474,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="is64bit"></param>
         /// <returns></returns>
@@ -519,7 +517,7 @@ namespace OdinSdk.BaseLib.Configuration
         //-------------------------------------------------------------------------------------------------------------------------
 
         //-------------------------------------------------------------------------------------------------------------------------
-        // 
+        //
         //-------------------------------------------------------------------------------------------------------------------------
     }
 }

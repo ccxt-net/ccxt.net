@@ -1,19 +1,19 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin;
-using OdinSdk.BaseLib.Coin.Private;
+using CCXT.NET.Coin;
+using CCXT.NET.Coin.Private;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace CCXT.NET.Huobi.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class HBalances : OdinSdk.BaseLib.Coin.Private.Balances, IBalances
+    public class HBalances : CCXT.NET.Coin.Private.Balances, IBalances
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public HBalances()
         {
@@ -21,7 +21,7 @@ namespace CCXT.NET.Huobi.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public new List<HBalanceItem> result
         {
@@ -30,7 +30,7 @@ namespace CCXT.NET.Huobi.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "status")]
         private string status
@@ -42,7 +42,7 @@ namespace CCXT.NET.Huobi.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "data")]
         private JObject data
@@ -63,12 +63,12 @@ namespace CCXT.NET.Huobi.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class HBalanceItem : OdinSdk.BaseLib.Coin.Private.BalanceItem, IBalanceItem
+    public class HBalanceItem : CCXT.NET.Coin.Private.BalanceItem, IBalanceItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "currency")]
         public override string currency
@@ -78,7 +78,7 @@ namespace CCXT.NET.Huobi.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "type")]
         private string type
@@ -88,7 +88,7 @@ namespace CCXT.NET.Huobi.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "balance")]
         private decimal balance
@@ -104,12 +104,12 @@ namespace CCXT.NET.Huobi.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class HAccounts : ApiResult<List<HAccountItem>>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public HAccounts()
         {
@@ -117,7 +117,7 @@ namespace CCXT.NET.Huobi.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "data")]
         public new List<HAccountItem> result
@@ -127,7 +127,7 @@ namespace CCXT.NET.Huobi.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "status")]
         private string status
@@ -140,12 +140,12 @@ namespace CCXT.NET.Huobi.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class HAccountItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "id")]
         public string id
@@ -155,7 +155,7 @@ namespace CCXT.NET.Huobi.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "type")]
         public string type
@@ -165,7 +165,7 @@ namespace CCXT.NET.Huobi.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "state")]
         public string state
@@ -175,7 +175,7 @@ namespace CCXT.NET.Huobi.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "user-id")]
         public string userId

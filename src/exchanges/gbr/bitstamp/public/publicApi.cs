@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin;
-using OdinSdk.BaseLib.Coin.Public;
-using OdinSdk.BaseLib.Coin.Types;
+using CCXT.NET.Coin;
+using CCXT.NET.Coin.Public;
+using CCXT.NET.Coin.Types;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,17 +12,17 @@ namespace CCXT.NET.Bitstamp.Public
     /// <summary>
     /// exchange's public API implement class
     /// </summary>
-    public class PublicApi : OdinSdk.BaseLib.Coin.Public.PublicApi, IPublicApi
+    public class PublicApi : CCXT.NET.Coin.Public.PublicApi, IPublicApi
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PublicApi()
         {
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override XApiClient publicClient
         {
@@ -128,7 +128,7 @@ namespace CCXT.NET.Bitstamp.Public
         }
 
         /// <summary>
-        /// Fetch current best bid and ask, as well as the last trade price.  
+        /// Fetch current best bid and ask, as well as the last trade price.
         /// </summary>
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
@@ -153,7 +153,7 @@ namespace CCXT.NET.Bitstamp.Public
                 if (_json_result.success == true)
                 {
                     var _ticker = publicClient.DeserializeObject<BTickerItem>(_json_value.Content);
-                    {                        
+                    {
                         _ticker.symbol = _market.result.symbol;
                         _result.result = _ticker;
                     }
@@ -168,7 +168,7 @@ namespace CCXT.NET.Bitstamp.Public
 
             return _result;
         }
-        
+
         /// <summary>
         /// Fetch pending or registered order details
         /// </summary>

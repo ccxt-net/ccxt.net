@@ -1,18 +1,18 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Public;
-using OdinSdk.BaseLib.Coin.Types;
-using OdinSdk.BaseLib.Configuration;
+using CCXT.NET.Coin.Public;
+using CCXT.NET.Coin.Types;
+using CCXT.NET.Configuration;
 using System;
 
 namespace CCXT.NET.BitMEX.Public
 {
     /// <summary>
-    /// recent trade data 
+    /// recent trade data
     /// </summary>
-    public class BCompleteOrderItem : OdinSdk.BaseLib.Coin.Public.CompleteOrderItem, ICompleteOrderItem
+    public class BCompleteOrderItem : CCXT.NET.Coin.Public.CompleteOrderItem, ICompleteOrderItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "trdMatchID")]
         public override string transactionId
@@ -22,7 +22,7 @@ namespace CCXT.NET.BitMEX.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "size")]
         public override decimal quantity
@@ -32,7 +32,7 @@ namespace CCXT.NET.BitMEX.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "symbol")]
         public string symbol
@@ -42,7 +42,7 @@ namespace CCXT.NET.BitMEX.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "tickDirection")]
         public string tickDirection
@@ -52,7 +52,7 @@ namespace CCXT.NET.BitMEX.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "grossValue")]
         public decimal grossValue
@@ -62,7 +62,7 @@ namespace CCXT.NET.BitMEX.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "homeNotional")]
         public decimal homeNotional
@@ -72,7 +72,7 @@ namespace CCXT.NET.BitMEX.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "foreignNotional")]
         public decimal foreignNotional
@@ -82,7 +82,7 @@ namespace CCXT.NET.BitMEX.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "origin_timestamp")]
         public override long timestamp
@@ -92,7 +92,7 @@ namespace CCXT.NET.BitMEX.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "timestamp")]
         private DateTime timeValue
@@ -104,7 +104,7 @@ namespace CCXT.NET.BitMEX.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "side")]
         private string sideValue

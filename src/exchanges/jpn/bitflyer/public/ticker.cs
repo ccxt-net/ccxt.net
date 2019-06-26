@@ -1,14 +1,14 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Configuration;
-using OdinSdk.BaseLib.Coin.Public;
+using CCXT.NET.Coin.Public;
+using CCXT.NET.Configuration;
 using System;
 
 namespace CCXT.NET.Bitflyer.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class BTickerItem : OdinSdk.BaseLib.Coin.Public.TickerItem, ITickerItem
+    public class BTickerItem : CCXT.NET.Coin.Public.TickerItem, ITickerItem
     {
         /// <summary>
         /// string symbol of the market ('BTCUSD', 'ETHBTC', ...)
@@ -31,7 +31,7 @@ namespace CCXT.NET.Bitflyer.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "timestamp")]
         private DateTime timeValue
@@ -91,7 +91,7 @@ namespace CCXT.NET.Bitflyer.Public
             get;
             set;
         }
-        
+
         /// <summary>
         /// volume of base currency traded for last 24 hours
         /// </summary>
@@ -103,7 +103,7 @@ namespace CCXT.NET.Bitflyer.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "tick_id")]
         public long tick_id
@@ -113,7 +113,7 @@ namespace CCXT.NET.Bitflyer.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "total_bid_depth")]
         public decimal total_bid_depth
@@ -123,7 +123,7 @@ namespace CCXT.NET.Bitflyer.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "total_ask_depth")]
         public decimal total_ask_depth
@@ -133,7 +133,7 @@ namespace CCXT.NET.Bitflyer.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "volume")]
         public decimal volume

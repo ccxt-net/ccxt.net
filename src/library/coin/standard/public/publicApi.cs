@@ -1,18 +1,18 @@
 ﻿using Microsoft.EntityFrameworkCore.Internal;
-using OdinSdk.BaseLib.Coin.Types;
+using CCXT.NET.Coin.Types;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace OdinSdk.BaseLib.Coin.Public
+namespace CCXT.NET.Coin.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public interface IPublicApi
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         XApiClient publicClient
         {
@@ -29,7 +29,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         Task<Markets> LoadMarkets(bool reload, Dictionary<string, object> args);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="marketId"></param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -37,7 +37,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         Task<Market> LoadMarket(string marketId, Dictionary<string, object> args);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="currency_name">base coin or quote coin name</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -45,7 +45,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         Task<NameResult> LoadCurrencyId(string currency_name, Dictionary<string, object> args);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="currency_name">base coin or quote coin name</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -86,7 +86,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         Task<OrderBooks> FetchOrderBooks(string base_name, string quote_name, int limits, Dictionary<string, object> args);
 
         ///// <summary>
-        ///// 
+        /////
         ///// </summary>
         ///// <param name="limits">maximum number of items (optional): default 20</param>
         ///// <param name="args">Add additional attributes for each exchange</param>
@@ -129,19 +129,19 @@ namespace OdinSdk.BaseLib.Coin.Public
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class PublicApi : IPublicApi
     {
         private static AsyncLock __market_async_lock = new AsyncLock();
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ConcurrentDictionary<string, IMarkets> marketPool = new ConcurrentDictionary<string, IMarkets>();
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual XApiClient publicClient
         {
@@ -184,7 +184,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="marketId"></param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -219,7 +219,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="currency_name">base coin or quote coin name</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -254,7 +254,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="currency_name">base coin or quote coin name</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -306,7 +306,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// Fetch current best bid and ask, as well as the last trade price.  
+        /// Fetch current best bid and ask, as well as the last trade price.
         /// </summary>
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>

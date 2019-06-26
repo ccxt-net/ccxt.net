@@ -1,13 +1,13 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Public;
-using OdinSdk.BaseLib.Coin.Types;
+using CCXT.NET.Coin.Public;
+using CCXT.NET.Coin.Types;
 
 namespace CCXT.NET.Upbit.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class UCompleteOrderItem : OdinSdk.BaseLib.Coin.Public.CompleteOrderItem, ICompleteOrderItem
+    public class UCompleteOrderItem : CCXT.NET.Coin.Public.CompleteOrderItem, ICompleteOrderItem
     {
         /// <summary>
         /// 마켓 구분 코드
@@ -30,7 +30,7 @@ namespace CCXT.NET.Upbit.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "trade_volume")]
         public override decimal quantity
@@ -40,7 +40,7 @@ namespace CCXT.NET.Upbit.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "trade_price")]
         public override decimal price
@@ -50,7 +50,7 @@ namespace CCXT.NET.Upbit.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "prev_closing_price")]
         public decimal prevPrice
@@ -60,7 +60,7 @@ namespace CCXT.NET.Upbit.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "change_price")]
         public decimal changePrice
@@ -70,7 +70,7 @@ namespace CCXT.NET.Upbit.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "chane_price")]
         private decimal chane_price
@@ -82,7 +82,7 @@ namespace CCXT.NET.Upbit.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "ask_bid")]
         private string sideValue

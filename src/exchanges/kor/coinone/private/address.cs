@@ -1,13 +1,11 @@
-﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Private;
-using System.ComponentModel;
+﻿using CCXT.NET.Coin.Private;
 
 namespace CCXT.NET.Coinone.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class CAddressItem : OdinSdk.BaseLib.Coin.Private.AddressItem, IAddressItem
+    public class CAddressItem : CCXT.NET.Coin.Private.AddressItem, IAddressItem
     {
     }
 }

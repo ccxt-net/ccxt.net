@@ -1,7 +1,7 @@
 ﻿namespace CCXT.NET.Korbit.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class UserInfoPrefs
     {
@@ -78,7 +78,7 @@
         //public decimal maxFiatOutPerDay;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public UserInfoPrefs prefs;
 

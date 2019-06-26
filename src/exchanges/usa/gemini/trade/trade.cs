@@ -1,13 +1,13 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Trade;
-using OdinSdk.BaseLib.Coin.Types;
+using CCXT.NET.Coin.Trade;
+using CCXT.NET.Coin.Types;
 
 namespace CCXT.NET.Gemini.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class GMyTradeItem : OdinSdk.BaseLib.Coin.Trade.MyTradeItem, IMyTradeItem
+    public class GMyTradeItem : CCXT.NET.Coin.Trade.MyTradeItem, IMyTradeItem
     {
         /// <summary>
         /// The price that the execution happened at

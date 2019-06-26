@@ -1,20 +1,20 @@
-﻿using OdinSdk.BaseLib.Extension;
+﻿using CCXT.NET.Extension;
 using System;
 
-namespace OdinSdk.BaseLib.Configuration
+namespace CCXT.NET.Configuration
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class CUnixTime
     {
         //-----------------------------------------------------------------------------------------------------------------------------
-        // 
+        //
         //-----------------------------------------------------------------------------------------------------------------------------
         private static DateTime DateTimeUnixEpochStart = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
 
         /// <summary>
-        /// 1970년 1월 1일 00:00:00 협정 세계시(UTC) 
+        /// 1970년 1월 1일 00:00:00 협정 세계시(UTC)
         /// </summary>
         public static DateTime UnixEpoch
         {
@@ -69,7 +69,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static DateTime MaxValue
         {
@@ -80,7 +80,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static DateTime MinValue
         {
@@ -155,7 +155,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="unixTime"></param>
         /// <returns></returns>
@@ -165,7 +165,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="unixTime"></param>
         /// <returns></returns>
@@ -365,97 +365,97 @@ namespace OdinSdk.BaseLib.Configuration
         //
         //-----------------------------------------------------------------------------------------------------------------------------
 
-        /// <summary> 
-        /// Get the first day of the month for any full date submitted 
-        /// </summary> 
-        /// <param name="p_dayOfTarget"></param> 
-        /// <returns></returns> 
+        /// <summary>
+        /// Get the first day of the month for any full date submitted
+        /// </summary>
+        /// <param name="p_dayOfTarget"></param>
+        /// <returns></returns>
         public static DateTime GetFirstDayOfMonth(DateTime p_dayOfTarget)
         {
-            // set return value to the first day of the month 
-            // for any date passed in to the method 
+            // set return value to the first day of the month
+            // for any date passed in to the method
 
-            // create a datetime variable set to the passed in date 
+            // create a datetime variable set to the passed in date
             DateTime _firstDay = p_dayOfTarget;
 
-            // remove all of the days in the month 
-            // except the first day and set the 
-            // variable to hold that date 
+            // remove all of the days in the month
+            // except the first day and set the
+            // variable to hold that date
             _firstDay = _firstDay.AddDays(-(_firstDay.Day - 1));
 
-            // return the first day of the month 
+            // return the first day of the month
             return _firstDay;
         }
 
-        /// <summary> 
-        /// Get the first day of the month for a month passed by it's integer value 
-        /// </summary> 
-        /// <param name="p_monthOfTarget"></param> 
-        /// <returns></returns> 
+        /// <summary>
+        /// Get the first day of the month for a month passed by it's integer value
+        /// </summary>
+        /// <param name="p_monthOfTarget"></param>
+        /// <returns></returns>
         public static DateTime GetFirstDayOfMonth(int p_monthOfTarget)
         {
-            // set return value to the last day of the month 
-            // for any date passed in to the method 
+            // set return value to the last day of the month
+            // for any date passed in to the method
 
-            // create a datetime variable set to the passed in date 
+            // create a datetime variable set to the passed in date
             var _firstDay = new DateTime(UtcNow.Year, p_monthOfTarget, 1).ToUniversalTime();
 
-            // remove all of the days in the month 
-            // except the first day and set the 
-            // variable to hold that date 
+            // remove all of the days in the month
+            // except the first day and set the
+            // variable to hold that date
             _firstDay = _firstDay.AddDays(-(_firstDay.Day - 1));
 
-            // return the first day of the month 
+            // return the first day of the month
             return _firstDay;
         }
 
-        /// <summary> 
-        /// Get the last day of the month for any full date 
-        /// </summary> 
-        /// <param name="p_dayOfTarget"></param> 
-        /// <returns></returns> 
+        /// <summary>
+        /// Get the last day of the month for any full date
+        /// </summary>
+        /// <param name="p_dayOfTarget"></param>
+        /// <returns></returns>
         public static DateTime GetLastDayOfMonth(DateTime p_dayOfTarget)
         {
-            // set return value to the last day of the month 
-            // for any date passed in to the method 
+            // set return value to the last day of the month
+            // for any date passed in to the method
 
-            // create a datetime variable set to the passed in date 
+            // create a datetime variable set to the passed in date
             DateTime _lastDay = p_dayOfTarget;
 
-            // overshoot the date by a month 
+            // overshoot the date by a month
             _lastDay = _lastDay.AddMonths(1);
 
-            // remove all of the days in the next month 
-            // to get bumped down to the last day of the 
-            // previous month 
+            // remove all of the days in the next month
+            // to get bumped down to the last day of the
+            // previous month
             _lastDay = _lastDay.AddDays(-(_lastDay.Day));
 
-            // return the last day of the month 
+            // return the last day of the month
             return _lastDay;
         }
 
-        /// <summary> 
-        /// Get the last day of a month expressed by it's integer value 
-        /// </summary> 
-        /// <param name="p_monthOfTarget"></param> 
-        /// <returns></returns> 
+        /// <summary>
+        /// Get the last day of a month expressed by it's integer value
+        /// </summary>
+        /// <param name="p_monthOfTarget"></param>
+        /// <returns></returns>
         public static DateTime GetLastDayOfMonth(int p_monthOfTarget)
         {
-            // set return value to the last day of the month 
-            // for any date passed in to the method 
+            // set return value to the last day of the month
+            // for any date passed in to the method
 
-            // create a datetime variable set to the passed in date 
+            // create a datetime variable set to the passed in date
             var _lastDay = new DateTime(UtcNow.Year, p_monthOfTarget, 1).ToUniversalTime();
 
-            // overshoot the date by a month 
+            // overshoot the date by a month
             _lastDay = _lastDay.AddMonths(1);
 
-            // remove all of the days in the next month 
-            // to get bumped down to the last day of the 
-            // previous month 
+            // remove all of the days in the next month
+            // to get bumped down to the last day of the
+            // previous month
             _lastDay = _lastDay.AddDays(-(_lastDay.Day));
 
-            // return the last day of the month 
+            // return the last day of the month
             return _lastDay;
         }
 
@@ -497,7 +497,7 @@ namespace OdinSdk.BaseLib.Configuration
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="year"></param>
         /// <returns></returns>
@@ -510,7 +510,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="year"></param>
         /// <returns></returns>
@@ -524,7 +524,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="year"></param>
         /// <param name="month"></param>
@@ -539,7 +539,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="days"></param>
         /// <param name="hours"></param>
@@ -552,14 +552,14 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /*-----------------------------------------------------------------------------------------------------------------------------
-        
+
             var _now_time = DateTime.UtcNow;
 
             var _unix_epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
             var _unix_time = (UInt64)((_now_time - _unix_epoch).TotalSeconds);
 
             var _days = DaysInYear(_now_time.Year - 1) - DaysInYear(1969)
-                        + DaysInMonth(_now_time.Year, _now_time.Month) 
+                        + DaysInMonth(_now_time.Year, _now_time.Month)
                         + _now_time.Day - 1;
 
             var _hours = _now_time.Hour;

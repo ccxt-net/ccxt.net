@@ -1,24 +1,24 @@
-﻿using System.Collections.Generic;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
+using System.Collections.Generic;
 
 #pragma warning disable 1591
 
-namespace OdinSdk.BaseLib.Configuration
+namespace CCXT.NET.Configuration
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class CConfigProvider : ConfigurationProvider, IConfigurationSource
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CConfigProvider()
         {
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override void Load()
         {
@@ -45,12 +45,12 @@ namespace OdinSdk.BaseLib.Configuration
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class CustomConfigProviderExtensions
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="builder"></param>
         /// <returns></returns>

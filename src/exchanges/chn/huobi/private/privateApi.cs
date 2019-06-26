@@ -1,7 +1,7 @@
-﻿using OdinSdk.BaseLib.Coin;
-using OdinSdk.BaseLib.Coin.Private;
-using OdinSdk.BaseLib.Coin.Types;
-using OdinSdk.BaseLib.Configuration;
+﻿using CCXT.NET.Coin;
+using CCXT.NET.Coin.Private;
+using CCXT.NET.Coin.Types;
+using CCXT.NET.Configuration;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -11,13 +11,13 @@ namespace CCXT.NET.Huobi.Private
     /// <summary>
     ///
     /// </summary>
-    public class PrivateApi : OdinSdk.BaseLib.Coin.Private.PrivateApi, IPrivateApi
+    public class PrivateApi : CCXT.NET.Coin.Private.PrivateApi, IPrivateApi
     {
         private readonly string __connect_key;
         private readonly string __secret_key;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PrivateApi(string connect_key, string secret_key)
         {
@@ -26,7 +26,7 @@ namespace CCXT.NET.Huobi.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override XApiClient privateClient
         {
@@ -40,9 +40,9 @@ namespace CCXT.NET.Huobi.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
-        public override OdinSdk.BaseLib.Coin.Public.PublicApi publicApi
+        public override CCXT.NET.Coin.Public.PublicApi publicApi
         {
             get
             {
@@ -76,7 +76,7 @@ namespace CCXT.NET.Huobi.Private
                     _params.Add("currency", _currency_id.result);      // asset being withdrawn
                     _params.Add("address", address);                    // withdrawal key name, as set up on your account
                     _params.Add("amount", quantity);                // amount to withdraw, including fees
-                    if(tag != null || tag != "")
+                    if (tag != null || tag != "")
                         _params.Add("addr-tag", tag);                // only in xrp，xem，bts，steem，eos，xmr
 
                     privateClient.MergeParamsAndArgs(_params, args);
@@ -362,15 +362,15 @@ namespace CCXT.NET.Huobi.Private
                 var _params = privateClient.MergeParamsAndArgs(args);
 
                 var _json_value = await privateClient.CallApiGet1Async($"/v1/account/accounts", _params);
-//#if DEBUG
-//                _result.rawJson = _json_value.Content;
-//#endif
+                //#if DEBUG
+                //                _result.rawJson = _json_value.Content;
+                //#endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
                 if (_json_result.success == true)
                 {
                     var _accounts = privateClient.DeserializeObject<HAccounts>(_json_value.Content);
 
-                    if(_accounts.success == true)
+                    if (_accounts.success == true)
                         _result = _accounts;
                 }
 

@@ -1,19 +1,19 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Configuration;
-using OdinSdk.BaseLib.Coin.Trade;
-using OdinSdk.BaseLib.Coin.Types;
+using CCXT.NET.Coin.Trade;
+using CCXT.NET.Coin.Types;
+using CCXT.NET.Configuration;
 using System;
 using System.Collections.Generic;
 
 namespace CCXT.NET.CoinCheck.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class CMyOrders : OdinSdk.BaseLib.Coin.Trade.MyOrders, IMyOrders
+    public class CMyOrders : CCXT.NET.Coin.Trade.MyOrders, IMyOrders
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CMyOrders()
         {
@@ -21,7 +21,7 @@ namespace CCXT.NET.CoinCheck.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "orders")]
         public new List<CMyOrderItem> result
@@ -31,7 +31,7 @@ namespace CCXT.NET.CoinCheck.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "success")]
         public override bool success
@@ -42,9 +42,9 @@ namespace CCXT.NET.CoinCheck.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class CMyOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
+    public class CMyOrderItem : CCXT.NET.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
         /// Order ID（It's the same ID in New order.）
@@ -131,7 +131,7 @@ namespace CCXT.NET.CoinCheck.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "created_at")]
         private DateTime timeValue

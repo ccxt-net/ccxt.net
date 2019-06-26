@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin;
+using CCXT.NET.Coin;
 using RestSharp;
 using System;
 using System.Collections.Generic;
@@ -11,17 +11,17 @@ using System.Threading.Tasks;
 namespace CCXT.NET.Coinone
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public sealed class CoinoneClient : OdinSdk.BaseLib.Coin.XApiClient, IXApiClient
+    public sealed class CoinoneClient : CCXT.NET.Coin.XApiClient, IXApiClient
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string DealerName { get; set; } = "Coinone";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="division">exchange's division for communication</param>
         public CoinoneClient(string division)
@@ -30,7 +30,7 @@ namespace CCXT.NET.Coinone
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="division">exchange's division for communication</param>
         /// <param name="connect_key">exchange's api key for connect</param>
@@ -114,7 +114,7 @@ namespace CCXT.NET.Coinone
         private HMACSHA512 __encryptor = null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public HMACSHA512 Encryptor
         {
@@ -128,7 +128,7 @@ namespace CCXT.NET.Coinone
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -166,7 +166,7 @@ namespace CCXT.NET.Coinone
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public new Dictionary<int, string> ErrorMessages = new Dictionary<int, string>
         {
@@ -228,7 +228,7 @@ namespace CCXT.NET.Coinone
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="error_code"></param>
         /// <returns></returns>
@@ -240,7 +240,7 @@ namespace CCXT.NET.Coinone
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="response">response value arrive from exchange's server</param>
         /// <returns></returns>

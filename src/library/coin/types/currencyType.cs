@@ -1,65 +1,65 @@
 ﻿using System;
 
-namespace OdinSdk.BaseLib.Coin.Types
+namespace CCXT.NET.Coin.Types
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum CurrencyType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         unknown,
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         cny,
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         krw,
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         usd,
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         usdt,
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         eur,
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         hkd,
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         jpy,
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         btc
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class CurrencyTypeConverter
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="s"></param>
         /// <returns></returns>
@@ -74,7 +74,7 @@ namespace OdinSdk.BaseLib.Coin.Types
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="v"></param>
         /// <returns></returns>

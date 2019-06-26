@@ -1,18 +1,15 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Trade;
-using OdinSdk.BaseLib.Coin.Types;
-
-using System;
+using CCXT.NET.Coin.Trade;
 
 namespace CCXT.NET.GateIO.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class GPlaceOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
+    public class GPlaceOrderItem : CCXT.NET.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "result")]
         public bool success
@@ -22,7 +19,7 @@ namespace CCXT.NET.GateIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "msg")]
         public string message
@@ -32,7 +29,7 @@ namespace CCXT.NET.GateIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "orderNumber")]
         public override string orderId
@@ -42,7 +39,7 @@ namespace CCXT.NET.GateIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "rate")]
         public override decimal price
@@ -52,7 +49,7 @@ namespace CCXT.NET.GateIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "leftAmount")]
         public decimal remaining_volume
@@ -62,7 +59,7 @@ namespace CCXT.NET.GateIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "filledAmount")]
         public override decimal filled
@@ -72,7 +69,7 @@ namespace CCXT.NET.GateIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "filledRate")]
         public decimal filledRate
@@ -83,12 +80,12 @@ namespace CCXT.NET.GateIO.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class GCancelOrder : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
+    public class GCancelOrder : CCXT.NET.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "result")]
         public bool success
@@ -98,7 +95,7 @@ namespace CCXT.NET.GateIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "msg")]
         public string message
@@ -109,12 +106,12 @@ namespace CCXT.NET.GateIO.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class GCancelOrders : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
+    public class GCancelOrders : CCXT.NET.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "result")]
         public bool success
@@ -124,7 +121,7 @@ namespace CCXT.NET.GateIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "message")]
         public string message

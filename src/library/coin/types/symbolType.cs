@@ -1,14 +1,14 @@
 ﻿using System.Diagnostics;
 
-namespace OdinSdk.BaseLib.Coin.Types
+namespace CCXT.NET.Coin.Types
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class SymbolType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string id
         {
@@ -17,7 +17,7 @@ namespace OdinSdk.BaseLib.Coin.Types
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string symbol
         {
@@ -26,7 +26,7 @@ namespace OdinSdk.BaseLib.Coin.Types
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string coin
         {
@@ -35,7 +35,7 @@ namespace OdinSdk.BaseLib.Coin.Types
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string fiat
         {
@@ -44,7 +44,7 @@ namespace OdinSdk.BaseLib.Coin.Types
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="symbol"></param>
         /// <returns></returns>

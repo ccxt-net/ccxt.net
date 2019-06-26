@@ -1,7 +1,7 @@
-﻿using OdinSdk.BaseLib.Coin;
-using OdinSdk.BaseLib.Coin.Private;
-using OdinSdk.BaseLib.Coin.Types;
-using OdinSdk.BaseLib.Configuration;
+﻿using CCXT.NET.Coin;
+using CCXT.NET.Coin.Private;
+using CCXT.NET.Coin.Types;
+using CCXT.NET.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,15 +10,15 @@ using System.Threading.Tasks;
 namespace CCXT.NET.Gemini.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class PrivateApi : OdinSdk.BaseLib.Coin.Private.PrivateApi, IPrivateApi
+    public class PrivateApi : CCXT.NET.Coin.Private.PrivateApi, IPrivateApi
     {
         private readonly string __connect_key;
         private readonly string __secret_key;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PrivateApi(string connect_key, string secret_key)
         {
@@ -26,10 +26,8 @@ namespace CCXT.NET.Gemini.Private
             __secret_key = secret_key;
         }
 
-        
-
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override XApiClient privateClient
         {
@@ -42,12 +40,10 @@ namespace CCXT.NET.Gemini.Private
             }
         }
 
-        
-
         /// <summary>
-        /// 
+        ///
         /// </summary>
-        public override OdinSdk.BaseLib.Coin.Public.PublicApi publicApi
+        public override CCXT.NET.Coin.Public.PublicApi publicApi
         {
             get
             {
@@ -177,7 +173,7 @@ namespace CCXT.NET.Gemini.Private
         }
 
         /// <summary>
-        /// This endpoint shows deposits and withdrawals in the supported currencies. 
+        /// This endpoint shows deposits and withdrawals in the supported currencies.
         /// When deposits show as Advanced or Complete they are available for trading.
         /// This endpoint does not currently show cancelled advances, returned outgoing wires or ACH transactions, admin credits and debits, or other exceptional transaction circumstances.
         /// </summary>
@@ -197,9 +193,9 @@ namespace CCXT.NET.Gemini.Private
 
                 var _params = privateClient.MergeParamsAndArgs(args);
 
-                // This endpoint shows deposits and withdrawals in the supported currencies. 
+                // This endpoint shows deposits and withdrawals in the supported currencies.
                 // When deposits show as Advanced or Complete they are available for trading.
-                // This endpoint does not currently show cancelled advances, returned outgoing wires or ACH transactions, 
+                // This endpoint does not currently show cancelled advances, returned outgoing wires or ACH transactions,
                 // admin credits and debits, or other exceptional transaction circumstances.
                 var _json_value = await privateClient.CallApiPost1Async($"/v1/transfers", _params);
 #if DEBUG

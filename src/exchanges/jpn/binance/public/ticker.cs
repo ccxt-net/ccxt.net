@@ -1,12 +1,12 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Public;
+using CCXT.NET.Coin.Public;
 
 namespace CCXT.NET.Binance.Public
 {
     /// <summary>
     /// 4hr ticker price change statistics (GET /api/v1/ticker/24hr)
     /// </summary>
-    public class BTickerItem : OdinSdk.BaseLib.Coin.Public.TickerItem, ITickerItem
+    public class BTickerItem : CCXT.NET.Coin.Public.TickerItem, ITickerItem
     {
         /// <summary>
         /// string symbol of the market ('BTCUSD', 'ETHBTC', ...)
@@ -111,7 +111,7 @@ namespace CCXT.NET.Binance.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal lastQty
         {
@@ -120,7 +120,7 @@ namespace CCXT.NET.Binance.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public long openTime
         {
@@ -129,7 +129,7 @@ namespace CCXT.NET.Binance.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public long firstId
         {
@@ -138,7 +138,7 @@ namespace CCXT.NET.Binance.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public long lastId
         {
@@ -147,7 +147,7 @@ namespace CCXT.NET.Binance.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public long count
         {

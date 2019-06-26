@@ -1,7 +1,7 @@
-﻿using OdinSdk.BaseLib.Configuration;
+﻿using CCXT.NET.Configuration;
 using System.Collections.Generic;
 
-namespace OdinSdk.BaseLib.Coin.Public
+namespace CCXT.NET.Coin.Public
 {
     /// <summary>
     /// interface item of orderbook
@@ -18,7 +18,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// unit price 
+        /// unit price
         /// </summary>
         decimal price
         {
@@ -36,7 +36,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         int count
         {
@@ -46,7 +46,7 @@ namespace OdinSdk.BaseLib.Coin.Public
 
 #if DEBUG
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string rawJson
         {
@@ -89,7 +89,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual int count
         {
@@ -99,7 +99,7 @@ namespace OdinSdk.BaseLib.Coin.Public
 
 #if DEBUG
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual string rawJson
         {
@@ -246,7 +246,7 @@ namespace OdinSdk.BaseLib.Coin.Public
 
 #if DEBUG
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string rawJson
         {
@@ -262,7 +262,7 @@ namespace OdinSdk.BaseLib.Coin.Public
     public class OrderBooks : ApiResult<IOrderBook>, IOrderBooks
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OrderBooks()
         {
@@ -270,7 +270,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
@@ -291,7 +291,7 @@ namespace OdinSdk.BaseLib.Coin.Public
 
 #if DEBUG
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual string rawJson
         {

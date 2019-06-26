@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin;
+using CCXT.NET.Coin;
 using RestSharp;
 using System;
 using System.Collections.Generic;
@@ -9,17 +9,17 @@ using System.Threading.Tasks;
 namespace CCXT.NET.Korbit
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public sealed class KorbitClient : OdinSdk.BaseLib.Coin.XApiClient, IXApiClient
+    public sealed class KorbitClient : CCXT.NET.Coin.XApiClient, IXApiClient
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string DealerName { get; set; } = "Korbit";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="division">exchange's division for communication</param>
         public KorbitClient(string division)
@@ -28,7 +28,7 @@ namespace CCXT.NET.Korbit
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="division">exchange's division for communication</param>
         /// <param name="connect_key">exchange's api key for connect</param>
@@ -113,7 +113,7 @@ namespace CCXT.NET.Korbit
         private static AccessToken __access_token = new AccessToken();
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         public async Task<AccessToken> GetAccessToken()
@@ -135,7 +135,7 @@ namespace CCXT.NET.Korbit
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         public async Task<AccessToken> GetAccessToken(string grant_type, string refresh_token = "")
@@ -178,7 +178,7 @@ namespace CCXT.NET.Korbit
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -193,13 +193,13 @@ namespace CCXT.NET.Korbit
                 if (TestXUnitMode == XUnitMode.UseExchangeServer)
                 {
 #endif
-                    var _nonce = GenerateOnlyNonce(13);
+                var _nonce = GenerateOnlyNonce(13);
 
-                    var _access_token = await GetAccessToken();
-                    if (_access_token != null)
-                        _request.AddHeader("Authorization", $"{_access_token.tokenType} {_access_token.accessToken}");
+                var _access_token = await GetAccessToken();
+                if (_access_token != null)
+                    _request.AddHeader("Authorization", $"{_access_token.tokenType} {_access_token.accessToken}");
 
-                    _request.AddParameter("nonce", _nonce);
+                _request.AddParameter("nonce", _nonce);
 #if DEBUG
                 }
 #endif
@@ -209,7 +209,7 @@ namespace CCXT.NET.Korbit
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -224,9 +224,9 @@ namespace CCXT.NET.Korbit
                 if (TestXUnitMode == XUnitMode.UseExchangeServer)
                 {
 #endif
-                    var _access_token = await GetAccessToken();
-                    if (_access_token != null)
-                        _request.AddHeader("Authorization", $"{_access_token.tokenType} {_access_token.accessToken}");
+                var _access_token = await GetAccessToken();
+                if (_access_token != null)
+                    _request.AddHeader("Authorization", $"{_access_token.tokenType} {_access_token.accessToken}");
 #if DEBUG
                 }
 #endif
@@ -236,7 +236,7 @@ namespace CCXT.NET.Korbit
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="response">response value arrive from exchange's server</param>
         /// <returns></returns>

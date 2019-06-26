@@ -1,15 +1,15 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Private;
+using CCXT.NET.Coin.Private;
 
 namespace CCXT.NET.Bitfinex.Private
 {
     /// <summary>
     /// 거래소 회원 지갑 정보
     /// </summary>
-    public class BBalanceItem : OdinSdk.BaseLib.Coin.Private.BalanceItem, IBalanceItem
+    public class BBalanceItem : CCXT.NET.Coin.Private.BalanceItem, IBalanceItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "currency")]
         public override string currency
@@ -19,7 +19,7 @@ namespace CCXT.NET.Bitfinex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "available")]
         public override decimal free
@@ -29,7 +29,7 @@ namespace CCXT.NET.Bitfinex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "amount")]
         public override decimal total
@@ -39,7 +39,7 @@ namespace CCXT.NET.Bitfinex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "type")]
         public string exchangeType

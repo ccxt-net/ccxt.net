@@ -1,16 +1,16 @@
-﻿using OdinSdk.BaseLib.Configuration;
+﻿using CCXT.NET.Configuration;
 using System;
 using System.Globalization;
 
-namespace OdinSdk.BaseLib.Extension
+namespace CCXT.NET.Extension
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static partial class CExtension
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="unixTimeStamp"></param>
         /// <returns></returns>
@@ -20,7 +20,7 @@ namespace OdinSdk.BaseLib.Extension
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="dateTime"></param>
         /// <returns></returns>
@@ -30,7 +30,7 @@ namespace OdinSdk.BaseLib.Extension
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="dateTime"></param>
         /// <returns></returns>
@@ -40,7 +40,7 @@ namespace OdinSdk.BaseLib.Extension
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="dateTime"></param>
         /// <param name="hours"></param>
@@ -62,7 +62,7 @@ namespace OdinSdk.BaseLib.Extension
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         public static string ToLogDateTimeString()
@@ -71,7 +71,7 @@ namespace OdinSdk.BaseLib.Extension
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="datetime"></param>
         /// <returns></returns>

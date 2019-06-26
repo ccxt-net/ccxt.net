@@ -1,20 +1,20 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin;
-using OdinSdk.BaseLib.Coin.Public;
-using OdinSdk.BaseLib.Coin.Types;
-using OdinSdk.BaseLib.Configuration;
+using CCXT.NET.Coin;
+using CCXT.NET.Coin.Public;
+using CCXT.NET.Coin.Types;
+using CCXT.NET.Configuration;
 using System;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Bithumb.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class BCompleteOrders : OdinSdk.BaseLib.Coin.Public.CompleteOrders, ICompleteOrders
+    public class BCompleteOrders : CCXT.NET.Coin.Public.CompleteOrders, ICompleteOrders
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BCompleteOrders()
         {
@@ -22,7 +22,7 @@ namespace CCXT.NET.Bithumb.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "status")]
         public override int statusCode
@@ -42,7 +42,7 @@ namespace CCXT.NET.Bithumb.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "data")]
         public new List<BCompleteOrderItem> result
@@ -53,12 +53,12 @@ namespace CCXT.NET.Bithumb.Public
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class BCompleteOrderItem : OdinSdk.BaseLib.Coin.Public.CompleteOrderItem, ICompleteOrderItem
+    public class BCompleteOrderItem : CCXT.NET.Coin.Public.CompleteOrderItem, ICompleteOrderItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "cont_no")]
         public override string transactionId
@@ -98,7 +98,7 @@ namespace CCXT.NET.Bithumb.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "transaction_date")]
         private string timeValue

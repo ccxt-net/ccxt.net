@@ -1,7 +1,7 @@
-﻿using OdinSdk.BaseLib.Coin;
-using OdinSdk.BaseLib.Coin.Trade;
-using OdinSdk.BaseLib.Coin.Types;
-using OdinSdk.BaseLib.Extension;
+﻿using CCXT.NET.Coin;
+using CCXT.NET.Coin.Trade;
+using CCXT.NET.Coin.Types;
+using CCXT.NET.Extension;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,15 +10,15 @@ using System.Threading.Tasks;
 namespace CCXT.NET.Gemini.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class TradeApi : OdinSdk.BaseLib.Coin.Trade.TradeApi, ITradeApi
+    public class TradeApi : CCXT.NET.Coin.Trade.TradeApi, ITradeApi
     {
         private readonly string __connect_key;
         private readonly string __secret_key;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TradeApi(string connect_key, string secret_key)
         {
@@ -27,7 +27,7 @@ namespace CCXT.NET.Gemini.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override XApiClient tradeClient
         {
@@ -40,11 +40,10 @@ namespace CCXT.NET.Gemini.Trade
             }
         }
 
-
         /// <summary>
-        /// 
+        ///
         /// </summary>
-        public override OdinSdk.BaseLib.Coin.Public.PublicApi publicApi
+        public override CCXT.NET.Coin.Public.PublicApi publicApi
         {
             get
             {
@@ -272,9 +271,8 @@ namespace CCXT.NET.Gemini.Trade
             return _result;
         }
 
-
         // The API doesn't directly support market orders because they provide you with no price protection.
-        // Instead, use the “immediate-or-cancel” order execution option, 
+        // Instead, use the “immediate-or-cancel” order execution option,
         // coupled with an aggressive limit price(i.e.very high for a buy order or very low for a sell order), to achieve the same result.
         /// <summary>
         /// New Order

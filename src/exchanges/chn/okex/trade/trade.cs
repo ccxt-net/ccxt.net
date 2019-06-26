@@ -1,17 +1,17 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Trade;
-using OdinSdk.BaseLib.Coin.Types;
+using CCXT.NET.Coin.Trade;
+using CCXT.NET.Coin.Types;
 using System.Collections.Generic;
 
 namespace CCXT.NET.OKEx.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class OMyTrades : OdinSdk.BaseLib.Coin.Trade.MyTrades, IMyTrades
+    public class OMyTrades : CCXT.NET.Coin.Trade.MyTrades, IMyTrades
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "result")]
         public override bool success
@@ -21,7 +21,7 @@ namespace CCXT.NET.OKEx.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "orders")]
         public new List<OMyTradeItem> result
@@ -31,7 +31,7 @@ namespace CCXT.NET.OKEx.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "current_page")]
         public int current_page
@@ -41,7 +41,7 @@ namespace CCXT.NET.OKEx.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "page_length")]
         public int page_length
@@ -51,7 +51,7 @@ namespace CCXT.NET.OKEx.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "total")]
         public int total
@@ -62,12 +62,12 @@ namespace CCXT.NET.OKEx.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class OMyTradeItem : OdinSdk.BaseLib.Coin.Trade.MyTradeItem, IMyTradeItem
+    public class OMyTradeItem : CCXT.NET.Coin.Trade.MyTradeItem, IMyTradeItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "amount")]
         public override decimal quantity
@@ -77,7 +77,7 @@ namespace CCXT.NET.OKEx.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "avg_price")]
         public decimal avg_price
@@ -87,7 +87,7 @@ namespace CCXT.NET.OKEx.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "create_date")]
         public override long timestamp
@@ -97,7 +97,7 @@ namespace CCXT.NET.OKEx.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "deal_amount")]
         public decimal deal_amount
@@ -107,7 +107,7 @@ namespace CCXT.NET.OKEx.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "order_id")]
         public override string orderId
@@ -117,7 +117,7 @@ namespace CCXT.NET.OKEx.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "price")]
         public override decimal price
@@ -127,7 +127,7 @@ namespace CCXT.NET.OKEx.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "symbol")]
         public override string symbol
@@ -137,7 +137,7 @@ namespace CCXT.NET.OKEx.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "type")]
         private string sideValue

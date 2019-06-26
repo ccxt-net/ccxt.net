@@ -1,17 +1,17 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Trade;
-using OdinSdk.BaseLib.Coin.Types;
+using CCXT.NET.Coin.Trade;
+using CCXT.NET.Coin.Types;
 using System.Collections.Generic;
 
 namespace CCXT.NET.OKEx.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class OMyOrders : OdinSdk.BaseLib.Coin.Trade.MyOrders, IMyOrders
+    public class OMyOrders : CCXT.NET.Coin.Trade.MyOrders, IMyOrders
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "result")]
         public override bool success
@@ -21,7 +21,7 @@ namespace CCXT.NET.OKEx.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "orders")]
         public new List<OMyOrderItem> result
@@ -32,9 +32,9 @@ namespace CCXT.NET.OKEx.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class OMyOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
+    public class OMyOrderItem : CCXT.NET.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
         /// order ID
@@ -64,7 +64,7 @@ namespace CCXT.NET.OKEx.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "symbol")]
         public override string symbol
@@ -137,7 +137,7 @@ namespace CCXT.NET.OKEx.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class OCancelOrderItem
     {

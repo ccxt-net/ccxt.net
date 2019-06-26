@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin;
+using CCXT.NET.Coin;
 using RestSharp;
 using System;
 using System.Collections.Generic;
@@ -12,17 +12,17 @@ using System.Threading.Tasks;
 namespace CCXT.NET.ItBit
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public sealed class ItbitClient : OdinSdk.BaseLib.Coin.XApiClient, IXApiClient
+    public sealed class ItbitClient : CCXT.NET.Coin.XApiClient, IXApiClient
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string DealerName { get; set; } = "ItBit";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="division">exchange's division for communication</param>
         public ItbitClient(string division)
@@ -31,7 +31,7 @@ namespace CCXT.NET.ItBit
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="division">exchange's division for communication</param>
         /// <param name="connect_key">exchange's api key for connect</param>
@@ -113,7 +113,7 @@ namespace CCXT.NET.ItBit
         private SHA256Managed __sha256 = null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SHA256Managed Sha256Managed
         {
@@ -129,7 +129,7 @@ namespace CCXT.NET.ItBit
         private HMACSHA512 __encryptor = null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public HMACSHA512 Encryptor
         {
@@ -143,7 +143,7 @@ namespace CCXT.NET.ItBit
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -189,7 +189,7 @@ namespace CCXT.NET.ItBit
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -249,7 +249,7 @@ namespace CCXT.NET.ItBit
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -309,7 +309,7 @@ namespace CCXT.NET.ItBit
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="response">response value arrive from exchange's server</param>
         /// <returns></returns>
@@ -332,7 +332,7 @@ namespace CCXT.NET.ItBit
                         var _json_code = _statusValue.Value<int>();
 
                         _result.SetFailure(
-                                _json_message, 
+                                _json_message,
                                 ErrorCode.ResponseDataError,
                                 _json_code
                             );

@@ -1,9 +1,8 @@
 ﻿using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin;
-using OdinSdk.BaseLib.Coin.Private;
-using OdinSdk.BaseLib.Coin.Types;
-using OdinSdk.BaseLib.Configuration;
-using System;
+using CCXT.NET.Coin;
+using CCXT.NET.Coin.Private;
+using CCXT.NET.Coin.Types;
+using CCXT.NET.Configuration;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -13,13 +12,13 @@ namespace CCXT.NET.CoinCheck.Private
     /// <summary>
     ///
     /// </summary>
-    public class PrivateApi : OdinSdk.BaseLib.Coin.Private.PrivateApi, IPrivateApi
+    public class PrivateApi : CCXT.NET.Coin.Private.PrivateApi, IPrivateApi
     {
         private readonly string __connect_key;
         private readonly string __secret_key;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PrivateApi(string connect_key, string secret_key)
         {
@@ -28,7 +27,7 @@ namespace CCXT.NET.CoinCheck.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override XApiClient privateClient
         {
@@ -42,9 +41,9 @@ namespace CCXT.NET.CoinCheck.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
-        public override OdinSdk.BaseLib.Coin.Public.PublicApi publicApi
+        public override CCXT.NET.Coin.Public.PublicApi publicApi
         {
             get
             {
@@ -132,7 +131,6 @@ namespace CCXT.NET.CoinCheck.Private
                 {
                     var _withdraw = privateClient.DeserializeObject<CTransferItem>(_json_value.Content);
                     {
-
                         _withdraw.timestamp = CUnixTime.NowMilli;
                         _withdraw.transactionId = (_withdraw.timestamp * 1000).ToString();      // transactionId 없음
 

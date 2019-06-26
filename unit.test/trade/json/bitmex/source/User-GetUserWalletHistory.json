@@ -1,4 +1,5 @@
-[{
+[
+  {
     "transactID": "string",
     "account": 0,
     "currency": "string",
@@ -11,4 +12,5 @@
     "text": "string",
     "transactTime": "2018-07-03T01:52:46.897Z",
     "timestamp": "2018-07-03T01:52:46.897Z"
-}]
+  }
+]

@@ -1,16 +1,16 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Trade;
-using OdinSdk.BaseLib.Coin.Types;
+using CCXT.NET.Coin.Trade;
+using CCXT.NET.Coin.Types;
 
 namespace CCXT.NET.Binance.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class BPlaceOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
+    public class BPlaceOrderItem : CCXT.NET.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "orderId")]
         public override string orderId
@@ -20,7 +20,7 @@ namespace CCXT.NET.Binance.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "transactTime")]
         public override long timestamp
@@ -30,7 +30,7 @@ namespace CCXT.NET.Binance.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "origQty")]
         public override decimal quantity
@@ -40,7 +40,7 @@ namespace CCXT.NET.Binance.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "price")]
         public override decimal price
@@ -50,7 +50,7 @@ namespace CCXT.NET.Binance.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "executedQty")]
         public override decimal filled
@@ -60,7 +60,7 @@ namespace CCXT.NET.Binance.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "clientOrderId")]
         public string clientOrderId
@@ -70,7 +70,7 @@ namespace CCXT.NET.Binance.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "timeInForce")]
         public string timeInForce
@@ -80,7 +80,7 @@ namespace CCXT.NET.Binance.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "status")]
         private string statusValue
@@ -92,7 +92,7 @@ namespace CCXT.NET.Binance.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "type")]
         private string orderValue
@@ -104,7 +104,7 @@ namespace CCXT.NET.Binance.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "side")]
         private string sideValue

@@ -1,16 +1,16 @@
-﻿using System.Collections.Generic;
-using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Public;
+﻿using Newtonsoft.Json;
+using CCXT.NET.Coin.Public;
+using System.Collections.Generic;
 
 namespace CCXT.NET.OKEx.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class OTickers : OdinSdk.BaseLib.Coin.Public.Tickers, ITickers
+    public class OTickers : CCXT.NET.Coin.Public.Tickers, ITickers
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OTickers()
         {
@@ -18,7 +18,7 @@ namespace CCXT.NET.OKEx.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "tickers")]
         public new List<OTickerItem> result
@@ -28,7 +28,7 @@ namespace CCXT.NET.OKEx.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "date")]
         public long timestamp
@@ -39,12 +39,12 @@ namespace CCXT.NET.OKEx.Public
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class OTicker : OdinSdk.BaseLib.Coin.Public.Ticker, ITicker
+    public class OTicker : CCXT.NET.Coin.Public.Ticker, ITicker
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OTicker()
         {
@@ -52,7 +52,7 @@ namespace CCXT.NET.OKEx.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "ticker")]
         public new OTickerItem result
@@ -62,7 +62,7 @@ namespace CCXT.NET.OKEx.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "date")]
         public long timestamp
@@ -73,9 +73,9 @@ namespace CCXT.NET.OKEx.Public
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class OTickerItem : OdinSdk.BaseLib.Coin.Public.TickerItem, ITickerItem
+    public class OTickerItem : CCXT.NET.Coin.Public.TickerItem, ITickerItem
     {
         /// <summary>
         /// string symbol of the market ('BTCUSD', 'ETHBTC', ...)
@@ -88,7 +88,7 @@ namespace CCXT.NET.OKEx.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "date")]
         private long timeValue

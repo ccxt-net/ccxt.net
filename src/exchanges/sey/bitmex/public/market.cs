@@ -1,15 +1,15 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Public;
+using CCXT.NET.Coin.Public;
 
 namespace CCXT.NET.BitMEX.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class BMarketItem : OdinSdk.BaseLib.Coin.Public.MarketItem, IMarketItem
+    public class BMarketItem : CCXT.NET.Coin.Public.MarketItem, IMarketItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string state
         {
@@ -18,7 +18,7 @@ namespace CCXT.NET.BitMEX.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "symbol")]
         public override string symbol
@@ -28,7 +28,7 @@ namespace CCXT.NET.BitMEX.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string rootSymbol
         {
@@ -37,7 +37,7 @@ namespace CCXT.NET.BitMEX.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string underlying
         {
@@ -55,7 +55,7 @@ namespace CCXT.NET.BitMEX.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string quoteCurrency
         {
@@ -64,7 +64,7 @@ namespace CCXT.NET.BitMEX.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string settlCurrency
         {
@@ -73,7 +73,7 @@ namespace CCXT.NET.BitMEX.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string orderBase
         {
@@ -82,7 +82,7 @@ namespace CCXT.NET.BitMEX.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string orderQuote
         {
@@ -91,7 +91,7 @@ namespace CCXT.NET.BitMEX.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal maxOrderQty
         {
@@ -100,7 +100,7 @@ namespace CCXT.NET.BitMEX.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal maxPrice
         {
@@ -109,7 +109,7 @@ namespace CCXT.NET.BitMEX.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal lastPrice
         {
@@ -118,7 +118,7 @@ namespace CCXT.NET.BitMEX.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal lotSize
         {
@@ -127,7 +127,7 @@ namespace CCXT.NET.BitMEX.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal tickSize
         {
@@ -136,7 +136,7 @@ namespace CCXT.NET.BitMEX.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal multiplier
         {
@@ -145,7 +145,7 @@ namespace CCXT.NET.BitMEX.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal initMargin
         {
@@ -154,7 +154,7 @@ namespace CCXT.NET.BitMEX.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal maintMargin
         {
@@ -163,7 +163,7 @@ namespace CCXT.NET.BitMEX.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal riskLimit
         {
@@ -172,7 +172,7 @@ namespace CCXT.NET.BitMEX.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal riskStep
         {
@@ -181,7 +181,7 @@ namespace CCXT.NET.BitMEX.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal settlementFee
         {
@@ -190,7 +190,7 @@ namespace CCXT.NET.BitMEX.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal insuranceFee
         {
@@ -199,7 +199,7 @@ namespace CCXT.NET.BitMEX.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "takerFee")]
         public override decimal takerFee
@@ -209,7 +209,7 @@ namespace CCXT.NET.BitMEX.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "makerFee")]
         public override decimal makerFee
@@ -219,7 +219,7 @@ namespace CCXT.NET.BitMEX.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool future
         {
@@ -228,7 +228,7 @@ namespace CCXT.NET.BitMEX.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool prediction
         {
@@ -237,7 +237,7 @@ namespace CCXT.NET.BitMEX.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string type
         {
@@ -246,7 +246,7 @@ namespace CCXT.NET.BitMEX.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool swap
         {
@@ -255,7 +255,7 @@ namespace CCXT.NET.BitMEX.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int maxLeverage
         {

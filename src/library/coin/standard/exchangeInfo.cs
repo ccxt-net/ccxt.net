@@ -1,22 +1,22 @@
 ﻿using Microsoft.EntityFrameworkCore.Internal;
-using OdinSdk.BaseLib.Coin.Types;
-using OdinSdk.BaseLib.Coin.Public;
+using CCXT.NET.Coin.Public;
+using CCXT.NET.Coin.Types;
+using CCXT.NET.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using OdinSdk.BaseLib.Configuration;
 
-namespace OdinSdk.BaseLib.Coin
+namespace CCXT.NET.Coin
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class ExchangeInfo
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ExchangeInfo(string dealer_name)
         {
@@ -25,12 +25,12 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         private AsyncLock __info_async_lock = new AsyncLock();
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string DealerName
         {
@@ -39,7 +39,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public List<string> Countries
         {
@@ -48,7 +48,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ExchangeUrls Urls
         {
@@ -57,7 +57,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public NonceStyle NonceStyle
         {
@@ -68,7 +68,7 @@ namespace OdinSdk.BaseLib.Coin
         private Dictionary<string, string> __currency_ids;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Dictionary<string, string> CurrencyIds
         {
@@ -93,7 +93,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Dictionary<string, string> CurrencyNicks
         {
@@ -104,7 +104,7 @@ namespace OdinSdk.BaseLib.Coin
         private Dictionary<string, string> __timeframe;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Dictionary<string, string> Timeframes
         {
@@ -145,7 +145,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Dictionary<string, decimal> AmountMultiplier
         {
@@ -154,7 +154,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RequiredCredentials RequiredCredentials
         {
@@ -163,7 +163,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ExchangeLimitRate LimitRate
         {
@@ -172,7 +172,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MarketFees Fees
         {
@@ -190,7 +190,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ExchangeOptions Options
         {
@@ -199,7 +199,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void ApiCallLock(ExchangeLimitCalled limitCalled)
         {
@@ -219,7 +219,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void ApiCallWait(TradeType tradeType = TradeType.Total)
         {
@@ -243,7 +243,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="timeframe">time frame interval (optional): default "1d"</param>
         /// <returns></returns>
@@ -273,7 +273,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="currency_ids"></param>
         /// <returns></returns>
@@ -294,7 +294,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// read only 
+        /// read only
         /// </summary>
         /// <param name="currency_id">base or quote id which is used on exchange's server</param>
         /// <returns></returns>
@@ -315,7 +315,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="currency_name">base or quote name which is used on exchange's server</param>
         /// <returns></returns>
@@ -336,7 +336,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="timeframes"></param>
         /// <returns></returns>
@@ -354,7 +354,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="timeframe">time frame interval (optional): default "1d"</param>
         /// <returns></returns>
@@ -366,7 +366,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="division"></param>
         /// <returns></returns>
@@ -381,7 +381,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="currency_name">base coin or quote coin name</param>
         /// <param name="value"></param>
@@ -398,12 +398,12 @@ namespace OdinSdk.BaseLib.Coin
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class ExchangeOptions
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string[] fiats
         {
@@ -412,7 +412,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Dictionary<string, bool> futures
         {
@@ -421,7 +421,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool hasAlreadyAuthenticatedSuccessfully
         {
@@ -431,12 +431,12 @@ namespace OdinSdk.BaseLib.Coin
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class ExchangeLimitCalled
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public long rate
         {
@@ -445,7 +445,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public long called
         {
@@ -455,7 +455,7 @@ namespace OdinSdk.BaseLib.Coin
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class ExchangeLimitRate
     {
@@ -469,7 +469,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TradeType lastType
         {
@@ -524,12 +524,12 @@ namespace OdinSdk.BaseLib.Coin
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class ExchangeUrls
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string logo
         {
@@ -538,7 +538,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string www
         {
@@ -547,7 +547,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public List<string> fees
         {
@@ -556,7 +556,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool testnet
         {
@@ -565,7 +565,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Dictionary<string, string> api
         {
@@ -574,7 +574,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public List<string> doc
         {
@@ -584,12 +584,12 @@ namespace OdinSdk.BaseLib.Coin
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class RequiredCredentials
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool apikey
         {
@@ -598,7 +598,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool secret
         {
@@ -607,7 +607,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool uid
         {
@@ -616,7 +616,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool login
         {
@@ -625,7 +625,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool password
         {
@@ -634,7 +634,7 @@ namespace OdinSdk.BaseLib.Coin
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool twofa
         {

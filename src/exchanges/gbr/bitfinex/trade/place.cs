@@ -1,16 +1,16 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Trade;
-using OdinSdk.BaseLib.Coin.Types;
+using CCXT.NET.Coin.Trade;
+using CCXT.NET.Coin.Types;
 
 namespace CCXT.NET.Bitfinex.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class BPlaceOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
+    public class BPlaceOrderItem : CCXT.NET.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "id")]
         public override string orderId
@@ -20,7 +20,7 @@ namespace CCXT.NET.Bitfinex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "origin_timestamp")]
         public override long timestamp
@@ -30,7 +30,7 @@ namespace CCXT.NET.Bitfinex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "timestamp")]
         private decimal timeValue
@@ -42,7 +42,7 @@ namespace CCXT.NET.Bitfinex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "price")]
         public override decimal price
@@ -52,7 +52,7 @@ namespace CCXT.NET.Bitfinex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "original_amount")]
         public override decimal quantity
@@ -62,7 +62,7 @@ namespace CCXT.NET.Bitfinex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "executed_amount")]
         public override decimal filled
@@ -72,14 +72,14 @@ namespace CCXT.NET.Bitfinex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override OrderStatus orderStatus
         {
             get
             {
-                base.orderStatus = statusLive == true ? OrderStatus.Open 
-                                 : statusCanceled == true ? OrderStatus.Canceled 
+                base.orderStatus = statusLive == true ? OrderStatus.Open
+                                 : statusCanceled == true ? OrderStatus.Canceled
                                  : OrderStatus.Closed;
 
                 return base.orderStatus;
@@ -88,7 +88,7 @@ namespace CCXT.NET.Bitfinex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "is_live")]
         private bool statusLive
@@ -98,7 +98,7 @@ namespace CCXT.NET.Bitfinex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "is_cancelled")]
         private bool statusCanceled
@@ -108,7 +108,7 @@ namespace CCXT.NET.Bitfinex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "type")]
         private string orderValue
@@ -120,7 +120,7 @@ namespace CCXT.NET.Bitfinex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "side")]
         private string sideValue

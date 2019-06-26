@@ -1,19 +1,18 @@
 ﻿using Newtonsoft.Json;
 
-using OdinSdk.BaseLib.Coin.Trade;
-using OdinSdk.BaseLib.Coin.Types;
-using System;
+using CCXT.NET.Coin.Trade;
+using CCXT.NET.Coin.Types;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Bitforex.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class BMyOrder : OdinSdk.BaseLib.Coin.Trade.MyOrder, IMyOrder
+    public class BMyOrder : CCXT.NET.Coin.Trade.MyOrder, IMyOrder
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BMyOrder()
         {
@@ -21,7 +20,7 @@ namespace CCXT.NET.Bitforex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "data")]
         public new BMyOrderItem result
@@ -31,7 +30,7 @@ namespace CCXT.NET.Bitforex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "success")]
         public override bool success
@@ -42,12 +41,12 @@ namespace CCXT.NET.Bitforex.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class BMyOrders : OdinSdk.BaseLib.Coin.Trade.MyOrders, IMyOrders
+    public class BMyOrders : CCXT.NET.Coin.Trade.MyOrders, IMyOrders
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BMyOrders()
         {
@@ -55,7 +54,7 @@ namespace CCXT.NET.Bitforex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "data")]
         public new List<BMyOrderItem> result
@@ -65,7 +64,7 @@ namespace CCXT.NET.Bitforex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "success")]
         public override bool success
@@ -76,9 +75,9 @@ namespace CCXT.NET.Bitforex.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class BMyOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
+    public class BMyOrderItem : CCXT.NET.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
         /// Transaction pairs such as coin-usd-btc, coin-usd-eth, etc.

@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin.Public;
+using CCXT.NET.Coin.Public;
 using System.Collections.Generic;
 
 namespace CCXT.NET.OKEx.Public
@@ -8,13 +8,13 @@ namespace CCXT.NET.OKEx.Public
     /// <summary>
     ///
     /// </summary>
-    public class OOrderBook : OdinSdk.BaseLib.Coin.Public.OrderBook, IOrderBook
+    public class OOrderBook : CCXT.NET.Coin.Public.OrderBook, IOrderBook
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
-                [JsonProperty(PropertyName = "bids")]
+        [JsonProperty(PropertyName = "bids")]
         private List<JArray> bidsValue
         {
             set
@@ -37,10 +37,10 @@ namespace CCXT.NET.OKEx.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
-                [JsonProperty(PropertyName = "asks")]
+        [JsonProperty(PropertyName = "asks")]
         private List<JArray> asksValue
         {
             set
@@ -63,7 +63,7 @@ namespace CCXT.NET.OKEx.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         [JsonProperty(PropertyName = "originBids")]
@@ -74,7 +74,7 @@ namespace CCXT.NET.OKEx.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         [JsonProperty(PropertyName = "originAsks")]

@@ -1,7 +1,7 @@
-﻿using OdinSdk.BaseLib.Coin;
-using OdinSdk.BaseLib.Coin.Trade;
-using OdinSdk.BaseLib.Coin.Types;
-using OdinSdk.BaseLib.Configuration;
+﻿using CCXT.NET.Coin;
+using CCXT.NET.Coin.Trade;
+using CCXT.NET.Coin.Types;
+using CCXT.NET.Configuration;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,15 +9,15 @@ using System.Threading.Tasks;
 namespace CCXT.NET.Bitforex.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class TradeApi : OdinSdk.BaseLib.Coin.Trade.TradeApi, ITradeApi
+    public class TradeApi : CCXT.NET.Coin.Trade.TradeApi, ITradeApi
     {
         private readonly string __connect_key;
         private readonly string __secret_key;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TradeApi(string connect_key, string secret_key)
         {
@@ -26,7 +26,7 @@ namespace CCXT.NET.Bitforex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override XApiClient tradeClient
         {
@@ -40,9 +40,9 @@ namespace CCXT.NET.Bitforex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
-        public override OdinSdk.BaseLib.Coin.Public.PublicApi publicApi
+        public override CCXT.NET.Coin.Public.PublicApi publicApi
         {
             get
             {
@@ -159,7 +159,7 @@ namespace CCXT.NET.Bitforex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
@@ -389,7 +389,7 @@ namespace CCXT.NET.Bitforex.Trade
                         }
                         _params.Add("orderIds", _orderIds);
                     }
-                    
+
                     _params.Add("symbol", _market.result.symbol);
 
                     tradeClient.MergeParamsAndArgs(_params, args);

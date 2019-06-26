@@ -1,13 +1,13 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Trade;
-using OdinSdk.BaseLib.Coin.Types;
+using CCXT.NET.Coin.Trade;
+using CCXT.NET.Coin.Types;
 
 namespace CCXT.NET.Kraken.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class KMyPositionItem : OdinSdk.BaseLib.Coin.Trade.MyPositionItem, IMyPositionItem
+    public class KMyPositionItem : CCXT.NET.Coin.Trade.MyPositionItem, IMyPositionItem
     {
         /// <summary>
         /// Order responsible for execution of trade.
@@ -125,7 +125,7 @@ namespace CCXT.NET.Kraken.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string terms
         {
@@ -134,7 +134,7 @@ namespace CCXT.NET.Kraken.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal rollovertm
         {

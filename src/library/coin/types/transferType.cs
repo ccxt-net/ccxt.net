@@ -1,55 +1,55 @@
 ﻿using System;
 
-namespace OdinSdk.BaseLib.Coin.Types
+namespace CCXT.NET.Coin.Types
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum TransferType : int
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Unknown = 0,
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Submitted = 10,
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Rejected = 11,
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Accepted = 20,
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Processing = 21,
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Done = 31,
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Canceled = 41
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class TransferTypeConverter
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="s"></param>
         /// <returns></returns>
@@ -88,7 +88,7 @@ namespace OdinSdk.BaseLib.Coin.Types
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="v"></param>
         /// <returns></returns>

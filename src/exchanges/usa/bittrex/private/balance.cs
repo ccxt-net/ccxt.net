@@ -1,16 +1,16 @@
-﻿using System.Collections.Generic;
-using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Private;
+﻿using Newtonsoft.Json;
+using CCXT.NET.Coin.Private;
+using System.Collections.Generic;
 
 namespace CCXT.NET.Bittrex.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class BBalance : OdinSdk.BaseLib.Coin.Private.Balance, IBalance
+    public class BBalance : CCXT.NET.Coin.Private.Balance, IBalance
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BBalance()
         {
@@ -18,7 +18,7 @@ namespace CCXT.NET.Bittrex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public new BBalanceItem result
         {
@@ -28,12 +28,12 @@ namespace CCXT.NET.Bittrex.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class BBalances : OdinSdk.BaseLib.Coin.Private.Balances, IBalances
+    public class BBalances : CCXT.NET.Coin.Private.Balances, IBalances
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BBalances()
         {
@@ -41,7 +41,7 @@ namespace CCXT.NET.Bittrex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public new List<BBalanceItem> result
         {
@@ -53,10 +53,10 @@ namespace CCXT.NET.Bittrex.Private
     /// <summary>
     /// 거래소 회원 지갑 정보
     /// </summary>
-    public class BBalanceItem : OdinSdk.BaseLib.Coin.Private.BalanceItem, IBalanceItem
+    public class BBalanceItem : CCXT.NET.Coin.Private.BalanceItem, IBalanceItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "Currency")]
         public override string currency
@@ -66,7 +66,7 @@ namespace CCXT.NET.Bittrex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "Available")]
         public override decimal free
@@ -76,7 +76,7 @@ namespace CCXT.NET.Bittrex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "Pending")]
         public override decimal used
@@ -86,7 +86,7 @@ namespace CCXT.NET.Bittrex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "Balance")]
         public override decimal total
@@ -96,7 +96,7 @@ namespace CCXT.NET.Bittrex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "CryptoAddress")]
         public string address
@@ -106,7 +106,7 @@ namespace CCXT.NET.Bittrex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "Requested")]
         public bool requested
@@ -116,7 +116,7 @@ namespace CCXT.NET.Bittrex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "Uuid")]
         public string uuid

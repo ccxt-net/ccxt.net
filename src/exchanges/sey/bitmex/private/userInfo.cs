@@ -1,18 +1,17 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin;
+﻿using Newtonsoft.Json.Linq;
+using CCXT.NET.Coin;
 using System;
 using System.Collections.Generic;
 
 namespace CCXT.NET.BitMEX.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BUserPreferences
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool alertOnLiquidations
         {
@@ -20,7 +19,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool animationsEnabled
         {
@@ -28,7 +27,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DateTime announcementsLastSeen
         {
@@ -36,7 +35,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int chatChannelID
         {
@@ -44,7 +43,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string colorTheme
         {
@@ -52,7 +51,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string currency
         {
@@ -60,7 +59,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool debug
         {
@@ -68,7 +67,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public List<string> disableEmails
         {
@@ -76,7 +75,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public List<string> disablePush
         {
@@ -84,7 +83,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public List<string> hideConfirmDialogs
         {
@@ -92,7 +91,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool hideConnectionModal
         {
@@ -100,7 +99,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool hideFromLeaderboard
         {
@@ -108,7 +107,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool hideNameFromLeaderboard
         {
@@ -116,7 +115,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public List<string> hideNotifications
         {
@@ -124,7 +123,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string locale
         {
@@ -132,7 +131,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public List<string> msgsSeen
         {
@@ -140,7 +139,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public JToken orderBookBinning
         {
@@ -149,7 +148,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string orderBookType
         {
@@ -157,7 +156,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool orderClearImmediate
         {
@@ -165,7 +164,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool orderControlsPlusMinus
         {
@@ -173,7 +172,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool showLocaleNumbers
         {
@@ -181,7 +180,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public List<string> sounds
         {
@@ -189,7 +188,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool strictIPCheck
         {
@@ -197,7 +196,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool strictTimeout
         {
@@ -205,7 +204,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string tickerGroup
         {
@@ -213,7 +212,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool tickerPinned
         {
@@ -221,7 +220,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string tradeLayout
         {
@@ -230,12 +229,12 @@ namespace CCXT.NET.BitMEX.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public interface IUserInfoItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string id
         {
@@ -244,7 +243,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string ownerId
         {
@@ -253,7 +252,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string firstName
         {
@@ -262,7 +261,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string lastName
         {
@@ -271,7 +270,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string userName
         {
@@ -280,7 +279,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string email
         {
@@ -289,7 +288,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string phone
         {
@@ -298,7 +297,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DateTime created
         {
@@ -307,7 +306,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DateTime lastUpdated
         {
@@ -316,7 +315,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BUserPreferences preferences
         {
@@ -325,7 +324,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         JToken restrictedEngineFields
         {
@@ -334,7 +333,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string TFAEnabled
         {
@@ -343,7 +342,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string affiliateId
         {
@@ -352,7 +351,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string pgpPubKey
         {
@@ -361,7 +360,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string country
         {
@@ -370,7 +369,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string geoipCountry
         {
@@ -379,7 +378,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string geoipRegion
         {
@@ -388,7 +387,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string typ
         {
@@ -397,7 +396,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         bool isRestricted
         {
@@ -406,7 +405,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         JArray roles
         {
@@ -416,12 +415,12 @@ namespace CCXT.NET.BitMEX.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BUserInfoItem : IUserInfoItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string id
         {
@@ -430,7 +429,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string ownerId
         {
@@ -439,7 +438,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string firstName
         {
@@ -448,7 +447,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string lastName
         {
@@ -457,7 +456,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string userName
         {
@@ -466,7 +465,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string email
         {
@@ -475,7 +474,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string phone
         {
@@ -484,7 +483,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DateTime created
         {
@@ -493,7 +492,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DateTime lastUpdated
         {
@@ -502,7 +501,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BUserPreferences preferences
         {
@@ -511,7 +510,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public JToken restrictedEngineFields
         {
@@ -520,7 +519,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string TFAEnabled
         {
@@ -529,7 +528,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string affiliateId
         {
@@ -538,7 +537,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string pgpPubKey
         {
@@ -547,7 +546,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string country
         {
@@ -556,7 +555,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string geoipCountry
         {
@@ -565,7 +564,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string geoipRegion
         {
@@ -574,7 +573,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string typ
         {
@@ -583,7 +582,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool isRestricted
         {
@@ -592,7 +591,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public JArray roles
         {
@@ -602,13 +601,13 @@ namespace CCXT.NET.BitMEX.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public interface IUserInfo : IApiResult<IUserInfoItem>
     {
 #if DEBUG
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string rawJson
         {
@@ -619,12 +618,12 @@ namespace CCXT.NET.BitMEX.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BUserInfo : ApiResult<IUserInfoItem>, IUserInfo
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BUserInfo()
         {
@@ -633,7 +632,7 @@ namespace CCXT.NET.BitMEX.Private
 
 #if DEBUG
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual string rawJson
         {

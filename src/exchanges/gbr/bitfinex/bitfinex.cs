@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin;
+using CCXT.NET.Coin;
 using RestSharp;
 using System;
 using System.Collections.Generic;
@@ -12,17 +12,17 @@ using System.Threading.Tasks;
 namespace CCXT.NET.Bitfinex
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public sealed class BitfinexClient : OdinSdk.BaseLib.Coin.XApiClient, IXApiClient
+    public sealed class BitfinexClient : CCXT.NET.Coin.XApiClient, IXApiClient
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string DealerName { get; set; } = "Bitfinex";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="division">exchange's division for communication</param>
         public BitfinexClient(string division)
@@ -31,7 +31,7 @@ namespace CCXT.NET.Bitfinex
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="division">exchange's division for communication</param>
         /// <param name="connect_key">exchange's api key for connect</param>
@@ -210,7 +210,7 @@ namespace CCXT.NET.Bitfinex
         private HMACSHA384 __encryptor = null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public HMACSHA384 Encryptor
         {
@@ -224,7 +224,7 @@ namespace CCXT.NET.Bitfinex
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -263,7 +263,7 @@ namespace CCXT.NET.Bitfinex
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public new Dictionary<string, ErrorCode> ErrorMessages = new Dictionary<string, ErrorCode>
         {
@@ -286,7 +286,7 @@ namespace CCXT.NET.Bitfinex
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="response">response value arrive from exchange's server</param>
         /// <returns></returns>

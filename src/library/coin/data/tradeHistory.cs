@@ -1,16 +1,16 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using OdinSdk.BaseLib.Coin.Types;
+using CCXT.NET.Coin.Types;
 
-namespace OdinSdk.BaseLib.Coin.Data
+namespace CCXT.NET.Coin.Data
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class TradeHistory
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public DealerType dealer
@@ -48,7 +48,7 @@ namespace OdinSdk.BaseLib.Coin.Data
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public CurrencyType currency
@@ -58,7 +58,7 @@ namespace OdinSdk.BaseLib.Coin.Data
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public CoinType coin
@@ -86,7 +86,7 @@ namespace OdinSdk.BaseLib.Coin.Data
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal amount
         {

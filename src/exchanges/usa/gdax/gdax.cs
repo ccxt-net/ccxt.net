@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin;
+using CCXT.NET.Coin;
 using RestSharp;
 using System.Collections.Generic;
 using System.Security.Cryptography;
@@ -10,17 +10,17 @@ using System.Threading.Tasks;
 namespace CCXT.NET.GDAX
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public sealed class GdaxClient : OdinSdk.BaseLib.Coin.XApiClient, IXApiClient
+    public sealed class GdaxClient : CCXT.NET.Coin.XApiClient, IXApiClient
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string DealerName { get; set; } = "GDAX";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="division">exchange's division for communication</param>
         public GdaxClient(string division)
@@ -29,7 +29,7 @@ namespace CCXT.NET.GDAX
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="division">exchange's division for communication</param>
         /// <param name="connect_key">exchange's api key for connect</param>
@@ -89,7 +89,7 @@ namespace CCXT.NET.GDAX
                         LimitRate = new ExchangeLimitRate
                         {
                             useTotal = false,
-                            token = new ExchangeLimitCalled { rate = 60000 },           // 
+                            token = new ExchangeLimitCalled { rate = 60000 },           //
                             @public = new ExchangeLimitCalled { rate = 334 },           // We throttle public endpoints by IP: 3 requests per second, up to 6 requests per second in bursts.
                             @private = new ExchangeLimitCalled { rate = 200 },          // We throttle private endpoints by user ID: 5 requests per second, up to 10 requests per second in bursts.
                             trade = new ExchangeLimitCalled { rate = 200 },
@@ -125,7 +125,7 @@ namespace CCXT.NET.GDAX
         private HMACSHA256 __encryptor = null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public HMACSHA256 Encryptor
         {
@@ -139,7 +139,7 @@ namespace CCXT.NET.GDAX
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -184,7 +184,7 @@ namespace CCXT.NET.GDAX
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="response">response value arrive from exchange's server</param>
         /// <returns></returns>

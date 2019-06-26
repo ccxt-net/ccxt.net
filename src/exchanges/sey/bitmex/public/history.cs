@@ -3,12 +3,12 @@
 namespace CCXT.NET.BitMEX.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BUdfHistory
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string s
         {
@@ -17,7 +17,7 @@ namespace CCXT.NET.BitMEX.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public List<long> t
         {
@@ -26,7 +26,7 @@ namespace CCXT.NET.BitMEX.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public List<decimal> c
         {
@@ -35,7 +35,7 @@ namespace CCXT.NET.BitMEX.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public List<decimal> o
         {
@@ -44,7 +44,7 @@ namespace CCXT.NET.BitMEX.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public List<decimal> h
         {
@@ -53,7 +53,7 @@ namespace CCXT.NET.BitMEX.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public List<decimal> l
         {
@@ -62,7 +62,7 @@ namespace CCXT.NET.BitMEX.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public List<decimal> v
         {

@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin;
-using OdinSdk.BaseLib.Coin.Public;
-using OdinSdk.BaseLib.Coin.Types;
+using CCXT.NET.Coin;
+using CCXT.NET.Coin.Public;
+using CCXT.NET.Coin.Types;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -11,17 +11,17 @@ namespace CCXT.NET.Korbit.Public
     /// <summary>
     /// exchange's public API implement class
     /// </summary>
-    public class PublicApi : OdinSdk.BaseLib.Coin.Public.PublicApi, IPublicApi
+    public class PublicApi : CCXT.NET.Coin.Public.PublicApi, IPublicApi
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PublicApi()
         {
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override XApiClient publicClient
         {
@@ -126,7 +126,7 @@ namespace CCXT.NET.Korbit.Public
         }
 
         /// <summary>
-        /// Fetch current best bid and ask, as well as the last trade price.  
+        /// Fetch current best bid and ask, as well as the last trade price.
         /// </summary>
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
@@ -250,7 +250,7 @@ namespace CCXT.NET.Korbit.Public
                 var _params = new Dictionary<string, object>();
                 {
                     _params.Add("currency_pair", _market.result.symbol);
-                    //_params.Add("time", "hour");              // default hour, The time period you want to query. If this parameter is specified as minute, 
+                    //_params.Add("time", "hour");              // default hour, The time period you want to query. If this parameter is specified as minute,
                     // it queries data within the last minute, hour means the last hour, day means the last 24 hours.
 
                     publicClient.MergeParamsAndArgs(_params, args);

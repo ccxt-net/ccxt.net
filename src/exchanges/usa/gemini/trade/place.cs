@@ -1,14 +1,14 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin.Trade;
-using OdinSdk.BaseLib.Coin.Types;
+using CCXT.NET.Coin.Trade;
+using CCXT.NET.Coin.Types;
 
 namespace CCXT.NET.Gemini.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class GPlaceOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
+    public class GPlaceOrderItem : CCXT.NET.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
         /// The order id
@@ -115,7 +115,7 @@ namespace CCXT.NET.Gemini.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "is_hidden")]
         public bool is_hidden
@@ -155,7 +155,7 @@ namespace CCXT.NET.Gemini.Trade
         }
 
         /// <summary>
-        /// An array containing at most one supported order execution option. 
+        /// An array containing at most one supported order execution option.
         /// "maker-or-cancel"	, "immediate-or-cancel"	, "auction-only", "indication-of-interest"
         /// </summary>
         [JsonProperty(PropertyName = "options")]

@@ -1,16 +1,15 @@
 ﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin.Private;
+using CCXT.NET.Coin.Private;
 
 namespace CCXT.NET.Binance.Private
 {
     /// <summary>
     /// 거래소 회원 지갑 정보
     /// </summary>
-    public class BBalanceItem : OdinSdk.BaseLib.Coin.Private.BalanceItem, IBalanceItem
+    public class BBalanceItem : CCXT.NET.Coin.Private.BalanceItem, IBalanceItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "asset")]
         public override string currency
@@ -20,7 +19,7 @@ namespace CCXT.NET.Binance.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "free")]
         public override decimal free
@@ -30,7 +29,7 @@ namespace CCXT.NET.Binance.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "locked")]
         public override decimal used

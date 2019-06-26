@@ -1,16 +1,16 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin.Public;
-using OdinSdk.BaseLib.Configuration;
+using CCXT.NET.Coin.Public;
+using CCXT.NET.Configuration;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace CCXT.NET.Gemini.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class GTickerItem : OdinSdk.BaseLib.Coin.Public.TickerItem, ITickerItem
+    public class GTickerItem : CCXT.NET.Coin.Public.TickerItem, ITickerItem
     {
         /// <summary>
         /// string symbol of the market ('BTCUSD', 'ETHBTC', ...)
@@ -67,7 +67,7 @@ namespace CCXT.NET.Gemini.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "volume")]
         public JObject volumeData

@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Public;
+using CCXT.NET.Coin.Public;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Runtime.CompilerServices;
@@ -7,12 +7,12 @@ using System.Runtime.CompilerServices;
 namespace CCXT.NET.Poloniex.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class POrderBook : OdinSdk.BaseLib.Coin.Public.OrderBook, IOrderBook
+    public class POrderBook : CCXT.NET.Coin.Public.OrderBook, IOrderBook
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "bids")]
         private List<string[]> bidsValue
@@ -24,7 +24,7 @@ namespace CCXT.NET.Poloniex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "asks")]
         private List<string[]> asksValue
@@ -36,7 +36,7 @@ namespace CCXT.NET.Poloniex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "originBids")]
         public override List<IOrderBookItem> bids
@@ -46,7 +46,7 @@ namespace CCXT.NET.Poloniex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "originAsks")]
         public override List<IOrderBookItem> asks
@@ -56,7 +56,7 @@ namespace CCXT.NET.Poloniex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int isFrozen
         {
@@ -65,7 +65,7 @@ namespace CCXT.NET.Poloniex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public long seq
         {

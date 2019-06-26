@@ -1,16 +1,16 @@
-﻿using OdinSdk.BaseLib.Configuration;
-using OdinSdk.BaseLib.Coin.Types;
+﻿using CCXT.NET.Coin.Types;
+using CCXT.NET.Configuration;
 using System.Collections.Generic;
 
-namespace OdinSdk.BaseLib.Coin.Trade
+namespace CCXT.NET.Coin.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public interface IMyTradeItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string tradeId
         {
@@ -19,7 +19,7 @@ namespace OdinSdk.BaseLib.Coin.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string symbol
         {
@@ -37,7 +37,7 @@ namespace OdinSdk.BaseLib.Coin.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OrderType orderType
         {
@@ -46,7 +46,7 @@ namespace OdinSdk.BaseLib.Coin.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         long timestamp
         {
@@ -63,7 +63,7 @@ namespace OdinSdk.BaseLib.Coin.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         decimal quantity
         {
@@ -72,7 +72,7 @@ namespace OdinSdk.BaseLib.Coin.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         decimal price
         {
@@ -81,7 +81,7 @@ namespace OdinSdk.BaseLib.Coin.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         decimal amount
         {
@@ -90,7 +90,7 @@ namespace OdinSdk.BaseLib.Coin.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         decimal fee
         {
@@ -99,7 +99,7 @@ namespace OdinSdk.BaseLib.Coin.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string orderId
         {
@@ -109,7 +109,7 @@ namespace OdinSdk.BaseLib.Coin.Trade
 
 #if DEBUG
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string rawJson
         {
@@ -120,12 +120,12 @@ namespace OdinSdk.BaseLib.Coin.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class MyTradeItem : IMyTradeItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual string tradeId
         {
@@ -134,7 +134,7 @@ namespace OdinSdk.BaseLib.Coin.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual string symbol
         {
@@ -143,7 +143,7 @@ namespace OdinSdk.BaseLib.Coin.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual SideType sideType
         {
@@ -152,7 +152,7 @@ namespace OdinSdk.BaseLib.Coin.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual OrderType orderType
         {
@@ -161,7 +161,7 @@ namespace OdinSdk.BaseLib.Coin.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual long timestamp
         {
@@ -181,7 +181,7 @@ namespace OdinSdk.BaseLib.Coin.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual decimal quantity
         {
@@ -190,7 +190,7 @@ namespace OdinSdk.BaseLib.Coin.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual decimal price
         {
@@ -199,7 +199,7 @@ namespace OdinSdk.BaseLib.Coin.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual decimal amount
         {
@@ -208,7 +208,7 @@ namespace OdinSdk.BaseLib.Coin.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual decimal fee
         {
@@ -217,7 +217,7 @@ namespace OdinSdk.BaseLib.Coin.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual string orderId
         {
@@ -227,7 +227,7 @@ namespace OdinSdk.BaseLib.Coin.Trade
 
 #if DEBUG
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual string rawJson
         {
@@ -238,12 +238,12 @@ namespace OdinSdk.BaseLib.Coin.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public interface IMyTrades : IApiResult<List<IMyTradeItem>>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string marketId
         {
@@ -253,7 +253,7 @@ namespace OdinSdk.BaseLib.Coin.Trade
 
 #if DEBUG
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string rawJson
         {
@@ -264,12 +264,12 @@ namespace OdinSdk.BaseLib.Coin.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class MyTrades : ApiResult<List<IMyTradeItem>>, IMyTrades
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MyTrades()
         {
@@ -277,7 +277,7 @@ namespace OdinSdk.BaseLib.Coin.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
@@ -288,7 +288,7 @@ namespace OdinSdk.BaseLib.Coin.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual string marketId
         {
@@ -298,7 +298,7 @@ namespace OdinSdk.BaseLib.Coin.Trade
 
 #if DEBUG
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual string rawJson
         {

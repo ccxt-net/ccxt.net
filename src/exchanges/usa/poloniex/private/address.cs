@@ -1,15 +1,15 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Private;
+using CCXT.NET.Coin.Private;
 
 namespace CCXT.NET.Poloniex.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class PAddressItem : OdinSdk.BaseLib.Coin.Private.AddressItem, IAddressItem
+    public class PAddressItem : CCXT.NET.Coin.Private.AddressItem, IAddressItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "success")]
         private long successValue
@@ -21,7 +21,7 @@ namespace CCXT.NET.Poloniex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "response")]
         public override string address

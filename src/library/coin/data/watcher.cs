@@ -1,12 +1,12 @@
-﻿namespace OdinSdk.BaseLib.Coin.Data
+﻿namespace CCXT.NET.Coin.Data
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class XWatcherSite
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string site_name
         {
@@ -15,7 +15,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string X_status
         {
@@ -33,7 +33,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string Y_status
         {
@@ -51,7 +51,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal has_currency
         {
@@ -61,12 +61,12 @@
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class XWatcherMessage
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public XWatcherSite A
         {
@@ -75,7 +75,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public XWatcherSite B
         {
@@ -84,7 +84,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string quote_name
         {
@@ -93,7 +93,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string base_name
         {
@@ -102,7 +102,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal stock_qty
         {
@@ -111,7 +111,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal target_rate
         {

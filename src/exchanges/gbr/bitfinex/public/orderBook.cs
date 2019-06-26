@@ -1,17 +1,17 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin.Public;
+using CCXT.NET.Coin.Public;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Bitfinex.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class BOrderBook : OdinSdk.BaseLib.Coin.Public.OrderBook, IOrderBook
+    public class BOrderBook : CCXT.NET.Coin.Public.OrderBook, IOrderBook
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "bids")]
         private List<JToken> bidsValue
@@ -36,7 +36,7 @@ namespace CCXT.NET.Bitfinex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "asks")]
         private List<JToken> asksValue
@@ -61,7 +61,7 @@ namespace CCXT.NET.Bitfinex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         [JsonProperty(PropertyName = "originBids")]
@@ -72,7 +72,7 @@ namespace CCXT.NET.Bitfinex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         [JsonProperty(PropertyName = "originAsks")]

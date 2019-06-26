@@ -1,18 +1,18 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Configuration;
-using OdinSdk.BaseLib.Coin.Trade;
-using OdinSdk.BaseLib.Coin.Types;
+using CCXT.NET.Coin.Trade;
+using CCXT.NET.Coin.Types;
+using CCXT.NET.Configuration;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Zb.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class ZMyTrades : OdinSdk.BaseLib.Coin.Trade.MyTrades, IMyTrades
+    public class ZMyTrades : CCXT.NET.Coin.Trade.MyTrades, IMyTrades
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ZMyTrades()
         {
@@ -20,7 +20,7 @@ namespace CCXT.NET.Zb.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "result")]
         public new List<ZMyTradeItem> result
@@ -30,14 +30,13 @@ namespace CCXT.NET.Zb.Trade
         }
     }
 
-
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class ZMyTradeItem : OdinSdk.BaseLib.Coin.Trade.MyTradeItem, IMyTradeItem
+    public class ZMyTradeItem : CCXT.NET.Coin.Trade.MyTradeItem, IMyTradeItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string tradeId
         {
@@ -46,7 +45,7 @@ namespace CCXT.NET.Zb.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string symbol
         {
@@ -55,7 +54,7 @@ namespace CCXT.NET.Zb.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override SideType sideType
         {
@@ -64,7 +63,7 @@ namespace CCXT.NET.Zb.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override OrderType orderType
         {
@@ -73,7 +72,7 @@ namespace CCXT.NET.Zb.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override long timestamp
         {
@@ -93,7 +92,7 @@ namespace CCXT.NET.Zb.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override decimal quantity
         {
@@ -102,7 +101,7 @@ namespace CCXT.NET.Zb.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override decimal price
         {
@@ -111,7 +110,7 @@ namespace CCXT.NET.Zb.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override decimal amount
         {
@@ -120,7 +119,7 @@ namespace CCXT.NET.Zb.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override decimal fee
         {
@@ -129,7 +128,7 @@ namespace CCXT.NET.Zb.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string orderId
         {

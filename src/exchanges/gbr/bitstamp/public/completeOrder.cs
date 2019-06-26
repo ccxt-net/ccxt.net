@@ -1,14 +1,13 @@
 ﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin.Public;
-using OdinSdk.BaseLib.Coin.Types;
+using CCXT.NET.Coin.Public;
+using CCXT.NET.Coin.Types;
 
 namespace CCXT.NET.Bitstamp.Public
 {
     /// <summary>
-    /// recent trade data 
+    /// recent trade data
     /// </summary>
-    public class BCompleteOrderItem : OdinSdk.BaseLib.Coin.Public.CompleteOrderItem, ICompleteOrderItem
+    public class BCompleteOrderItem : CCXT.NET.Coin.Public.CompleteOrderItem, ICompleteOrderItem
     {
         /// <summary>
         /// Transaction ID.
@@ -31,7 +30,7 @@ namespace CCXT.NET.Bitstamp.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "originAmount")]
         public override decimal amount

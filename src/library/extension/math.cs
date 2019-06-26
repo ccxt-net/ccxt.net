@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Globalization;
 
-namespace OdinSdk.BaseLib.Extension
+namespace CCXT.NET.Extension
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static partial class CExtension
     {
         private const int DoubleRoundingPrecisionDigits = 8;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
@@ -21,7 +21,7 @@ namespace OdinSdk.BaseLib.Extension
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="value"></param>
         /// <param name="decimals"></param>
@@ -32,7 +32,7 @@ namespace OdinSdk.BaseLib.Extension
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
@@ -42,7 +42,7 @@ namespace OdinSdk.BaseLib.Extension
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="source"></param>

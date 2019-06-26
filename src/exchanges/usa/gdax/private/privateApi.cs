@@ -1,7 +1,7 @@
-﻿using OdinSdk.BaseLib.Coin;
-using OdinSdk.BaseLib.Coin.Private;
-using OdinSdk.BaseLib.Coin.Types;
-using OdinSdk.BaseLib.Configuration;
+﻿using CCXT.NET.Coin;
+using CCXT.NET.Coin.Private;
+using CCXT.NET.Coin.Types;
+using CCXT.NET.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 namespace CCXT.NET.GDAX.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class PrivateApi : OdinSdk.BaseLib.Coin.Private.PrivateApi, IPrivateApi
+    public class PrivateApi : CCXT.NET.Coin.Private.PrivateApi, IPrivateApi
     {
         private readonly string __connect_key;
         private readonly string __secret_key;
@@ -20,7 +20,7 @@ namespace CCXT.NET.GDAX.Private
         private readonly string __user_password;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PrivateApi(string connect_key, string secret_key, string user_name, string user_password)
         {
@@ -31,7 +31,7 @@ namespace CCXT.NET.GDAX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override XApiClient privateClient
         {
@@ -45,9 +45,9 @@ namespace CCXT.NET.GDAX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
-        public override OdinSdk.BaseLib.Coin.Public.PublicApi publicApi
+        public override CCXT.NET.Coin.Public.PublicApi publicApi
         {
             get
             {
@@ -167,7 +167,7 @@ namespace CCXT.NET.GDAX.Private
                             _balance.currency = base_name;
                             _balance.total = _balance.free + _balance.used;
 
-                            _result.result= _balance;
+                            _result.result = _balance;
                             break;
                         }
                     }

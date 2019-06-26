@@ -1,16 +1,16 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Private;
-using OdinSdk.BaseLib.Coin.Types;
+using CCXT.NET.Coin.Private;
+using CCXT.NET.Coin.Types;
 
 namespace CCXT.NET.Coinone.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class CTransfer : OdinSdk.BaseLib.Coin.Private.Transfer, ITransfer
+    public class CTransfer : CCXT.NET.Coin.Private.Transfer, ITransfer
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "errorCode")]
         public override int statusCode
@@ -20,7 +20,7 @@ namespace CCXT.NET.Coinone.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "result")]
         private string messageValue
@@ -34,12 +34,12 @@ namespace CCXT.NET.Coinone.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class CTransferItem : OdinSdk.BaseLib.Coin.Private.TransferItem, ITransferItem
+    public class CTransferItem : CCXT.NET.Coin.Private.TransferItem, ITransferItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "txid")]
         public override string transactionId
@@ -49,7 +49,7 @@ namespace CCXT.NET.Coinone.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override TransactionType transactionType
         {
@@ -58,7 +58,7 @@ namespace CCXT.NET.Coinone.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "from")]
         public override string fromAddress
@@ -68,7 +68,7 @@ namespace CCXT.NET.Coinone.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "to")]
         public override string toAddress
@@ -78,7 +78,7 @@ namespace CCXT.NET.Coinone.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "type")]
         private string transactionValue
@@ -90,7 +90,7 @@ namespace CCXT.NET.Coinone.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "origin_timestamp")]
         public override long timestamp
@@ -100,7 +100,7 @@ namespace CCXT.NET.Coinone.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "timestamp")]
         private long timeValue
@@ -112,7 +112,7 @@ namespace CCXT.NET.Coinone.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "quantity")]
         public override decimal amount

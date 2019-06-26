@@ -1,19 +1,18 @@
 ﻿using Newtonsoft.Json;
-
-using OdinSdk.BaseLib.Coin.Trade;
-using OdinSdk.BaseLib.Coin.Types;
-using System.Collections.Generic;
 using Newtonsoft.Json.Linq;
+using CCXT.NET.Coin.Trade;
+using CCXT.NET.Coin.Types;
+using System.Collections.Generic;
 
 namespace CCXT.NET.Bitforex.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class BPlaceOrder : OdinSdk.BaseLib.Coin.Trade.MyOrder, IMyOrder
+    public class BPlaceOrder : CCXT.NET.Coin.Trade.MyOrder, IMyOrder
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BPlaceOrder()
         {
@@ -21,7 +20,7 @@ namespace CCXT.NET.Bitforex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "data")]
         public new BPlaceOrderItem result
@@ -31,7 +30,7 @@ namespace CCXT.NET.Bitforex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "success")]
         public override bool success
@@ -42,9 +41,9 @@ namespace CCXT.NET.Bitforex.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class BPlaceOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
+    public class BPlaceOrderItem : CCXT.NET.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
         /// Order ID
@@ -58,12 +57,12 @@ namespace CCXT.NET.Bitforex.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class BCancelOrder : OdinSdk.BaseLib.Coin.Trade.MyOrder, IMyOrder
+    public class BCancelOrder : CCXT.NET.Coin.Trade.MyOrder, IMyOrder
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BCancelOrder()
         {
@@ -71,7 +70,7 @@ namespace CCXT.NET.Bitforex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public new BCancelOrderItem result
         {
@@ -80,7 +79,7 @@ namespace CCXT.NET.Bitforex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "success")]
         public override bool success
@@ -90,7 +89,7 @@ namespace CCXT.NET.Bitforex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "data")]
         public bool data
@@ -101,19 +100,19 @@ namespace CCXT.NET.Bitforex.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class BCancelOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
+    public class BCancelOrderItem : CCXT.NET.Coin.Trade.MyOrderItem, IMyOrderItem
     {
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class BCancelOrders : OdinSdk.BaseLib.Coin.Trade.MyOrder, IMyOrder
+    public class BCancelOrders : CCXT.NET.Coin.Trade.MyOrder, IMyOrder
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BCancelOrders()
         {
@@ -121,7 +120,7 @@ namespace CCXT.NET.Bitforex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public new List<BCancelOrdersItem> result
         {
@@ -130,7 +129,7 @@ namespace CCXT.NET.Bitforex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "success")]
         public override bool success
@@ -140,7 +139,7 @@ namespace CCXT.NET.Bitforex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "data")]
         private JObject data
@@ -163,12 +162,12 @@ namespace CCXT.NET.Bitforex.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class BCancelOrdersItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
+    public class BCancelOrdersItem : CCXT.NET.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "orderId")]
         public override string orderId
@@ -178,7 +177,7 @@ namespace CCXT.NET.Bitforex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "code")]
         public string code
@@ -188,7 +187,7 @@ namespace CCXT.NET.Bitforex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "message")]
         public string message

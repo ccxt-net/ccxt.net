@@ -1,17 +1,17 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Trade;
-using OdinSdk.BaseLib.Coin.Types;
+using CCXT.NET.Coin.Trade;
+using CCXT.NET.Coin.Types;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Kraken.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class KMyOpenOrders
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Dictionary<string, KMyOrderItem> open
         {
@@ -20,7 +20,7 @@ namespace CCXT.NET.Kraken.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int count
         {
@@ -30,12 +30,12 @@ namespace CCXT.NET.Kraken.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class KMyClosedOrders
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Dictionary<string, KMyOrderItem> closed
         {
@@ -44,7 +44,7 @@ namespace CCXT.NET.Kraken.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int count
         {
@@ -54,7 +54,7 @@ namespace CCXT.NET.Kraken.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class KMyCancelOrder
     {
@@ -78,12 +78,12 @@ namespace CCXT.NET.Kraken.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class KMyOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
+    public class KMyOrderItem : CCXT.NET.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "refid")]
         public override string orderId
@@ -133,7 +133,7 @@ namespace CCXT.NET.Kraken.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override OrderStatus orderStatus
         {
@@ -149,7 +149,7 @@ namespace CCXT.NET.Kraken.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string userref
         {
@@ -158,7 +158,7 @@ namespace CCXT.NET.Kraken.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string reason
         {
@@ -167,7 +167,7 @@ namespace CCXT.NET.Kraken.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal clsoetm
         {
@@ -176,7 +176,7 @@ namespace CCXT.NET.Kraken.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal starttm
         {
@@ -185,7 +185,7 @@ namespace CCXT.NET.Kraken.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal expiretm
         {
@@ -282,7 +282,7 @@ namespace CCXT.NET.Kraken.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "opentm")]
         private decimal opentm
@@ -295,7 +295,7 @@ namespace CCXT.NET.Kraken.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class KMyOrderDescription
     {
@@ -329,7 +329,7 @@ namespace CCXT.NET.Kraken.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal price
         {
@@ -338,7 +338,7 @@ namespace CCXT.NET.Kraken.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal price2
         {
@@ -347,7 +347,7 @@ namespace CCXT.NET.Kraken.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string leverage
         {
@@ -356,7 +356,7 @@ namespace CCXT.NET.Kraken.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string order
         {
@@ -365,7 +365,7 @@ namespace CCXT.NET.Kraken.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string close
         {

@@ -1,15 +1,15 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Private;
+using CCXT.NET.Coin.Private;
 
 namespace CCXT.NET.Bitfinex.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class BAddressItem : OdinSdk.BaseLib.Coin.Private.AddressItem, IAddressItem
+    public class BAddressItem : CCXT.NET.Coin.Private.AddressItem, IAddressItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "result")]
         public string result
@@ -21,7 +21,7 @@ namespace CCXT.NET.Bitfinex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "method")]
         public string method
@@ -31,7 +31,7 @@ namespace CCXT.NET.Bitfinex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "address_pool")]
         public string address_pool

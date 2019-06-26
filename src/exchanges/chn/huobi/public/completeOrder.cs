@@ -1,20 +1,18 @@
 ﻿using Newtonsoft.Json;
-
-using OdinSdk.BaseLib.Coin.Public;
-using OdinSdk.BaseLib.Coin.Types;
-using System;
-using System.Collections.Generic;
 using Newtonsoft.Json.Linq;
+using CCXT.NET.Coin.Public;
+using CCXT.NET.Coin.Types;
+using System.Collections.Generic;
 
 namespace CCXT.NET.Huobi.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class HCompleteOrders : OdinSdk.BaseLib.Coin.Public.CompleteOrders, ICompleteOrders
+    public class HCompleteOrders : CCXT.NET.Coin.Public.CompleteOrders, ICompleteOrders
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public HCompleteOrders()
         {
@@ -22,7 +20,7 @@ namespace CCXT.NET.Huobi.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public new List<HCompleteOrderItem> result
         {
@@ -31,7 +29,7 @@ namespace CCXT.NET.Huobi.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "status")]
         private string status
@@ -43,7 +41,7 @@ namespace CCXT.NET.Huobi.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "data")]
         public List<JObject> data
@@ -64,12 +62,12 @@ namespace CCXT.NET.Huobi.Public
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class HCompleteOrderItem : OdinSdk.BaseLib.Coin.Public.CompleteOrderItem, ICompleteOrderItem
+    public class HCompleteOrderItem : CCXT.NET.Coin.Public.CompleteOrderItem, ICompleteOrderItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "id")]
         public override string transactionId
@@ -79,7 +77,7 @@ namespace CCXT.NET.Huobi.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "ts")]
         public override long timestamp
@@ -89,7 +87,7 @@ namespace CCXT.NET.Huobi.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "price")]
         public override decimal price
@@ -99,7 +97,7 @@ namespace CCXT.NET.Huobi.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "amount")]
         public override decimal quantity
@@ -109,7 +107,7 @@ namespace CCXT.NET.Huobi.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "direction")]
         private string direction

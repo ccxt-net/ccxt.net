@@ -1,18 +1,18 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Configuration;
-using OdinSdk.BaseLib.Coin.Trade;
-using OdinSdk.BaseLib.Coin.Types;
+using CCXT.NET.Coin.Trade;
+using CCXT.NET.Coin.Types;
+using CCXT.NET.Configuration;
 using System;
 
 namespace CCXT.NET.ItBit.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class TPlaceOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
+    public class TPlaceOrderItem : CCXT.NET.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "id")]
         public override string orderId
@@ -22,7 +22,7 @@ namespace CCXT.NET.ItBit.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "instrument")]
         public override string symbol
@@ -32,7 +32,7 @@ namespace CCXT.NET.ItBit.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "currency")]
         public string currency
@@ -42,7 +42,7 @@ namespace CCXT.NET.ItBit.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "amount")]
         public override decimal quantity
@@ -52,7 +52,7 @@ namespace CCXT.NET.ItBit.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "price")]
         public override decimal price
@@ -62,7 +62,7 @@ namespace CCXT.NET.ItBit.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "amountFilled")]
         public override decimal filled
@@ -72,7 +72,7 @@ namespace CCXT.NET.ItBit.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "walletId")]
         public string walletId
@@ -82,7 +82,7 @@ namespace CCXT.NET.ItBit.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "volumeWeightedAveragePrice")]
         public decimal volumeWeightedAveragePrice
@@ -92,7 +92,7 @@ namespace CCXT.NET.ItBit.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "clientOrderIdentifier")]
         public string clientOrderIdentifier
@@ -102,7 +102,7 @@ namespace CCXT.NET.ItBit.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "createdTime")]
         private DateTime timeValue
@@ -114,7 +114,7 @@ namespace CCXT.NET.ItBit.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "status")]
         private string statusValue
@@ -126,7 +126,7 @@ namespace CCXT.NET.ItBit.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "type")]
         private string orderValue
@@ -138,7 +138,7 @@ namespace CCXT.NET.ItBit.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "side")]
         private string sideValue

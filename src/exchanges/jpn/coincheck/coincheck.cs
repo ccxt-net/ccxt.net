@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin;
+using CCXT.NET.Coin;
 using RestSharp;
 using System.Collections.Generic;
 using System.Security.Cryptography;
@@ -11,15 +11,15 @@ namespace CCXT.NET.CoinCheck
     /// <summary>
     /// https://coincheck.com/
     /// </summary>
-    public sealed class CoinCheckClient : OdinSdk.BaseLib.Coin.XApiClient, IXApiClient
+    public sealed class CoinCheckClient : CCXT.NET.Coin.XApiClient, IXApiClient
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string DealerName { get; set; } = "CoinCheck";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="division">exchange's division for communication</param>
         public CoinCheckClient(string division)
@@ -28,7 +28,7 @@ namespace CCXT.NET.CoinCheck
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="division">exchange's division for communication</param>
         /// <param name="connect_key">exchange's api key for connect</param>
@@ -107,7 +107,7 @@ namespace CCXT.NET.CoinCheck
         private HMACSHA256 __encryptor = null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public HMACSHA256 Encryptor
         {
@@ -121,7 +121,7 @@ namespace CCXT.NET.CoinCheck
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -152,7 +152,7 @@ namespace CCXT.NET.CoinCheck
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -169,7 +169,7 @@ namespace CCXT.NET.CoinCheck
                 if (_post_data.Length > 0)
                     _post_data = "?" + _post_data;
 
-                var _message = _nonce + ApiUrl + endpoint +_post_data;
+                var _message = _nonce + ApiUrl + endpoint + _post_data;
                 {
                     var _signature = this.ConvertHexString(Encryptor.ComputeHash(Encoding.UTF8.GetBytes(_message))).Replace("-", "").ToLower();
                     _request.AddHeader("ACCESS-KEY", ConnectKey);
@@ -183,7 +183,7 @@ namespace CCXT.NET.CoinCheck
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="response">response value arrive from exchange's server</param>
         /// <returns></returns>

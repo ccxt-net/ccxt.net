@@ -1,24 +1,22 @@
-﻿using System;
-
-namespace OdinSdk.BaseLib.Coin.Types
+﻿namespace CCXT.NET.Coin.Types
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum TradeType : int
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Unknown = 0,
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Token = 1,
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Public = 2,
 
@@ -33,7 +31,7 @@ namespace OdinSdk.BaseLib.Coin.Types
         Trade = 4,
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Total = 5
     }

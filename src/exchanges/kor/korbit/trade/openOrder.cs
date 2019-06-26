@@ -1,29 +1,29 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Trade;
-using OdinSdk.BaseLib.Coin.Types;
+using CCXT.NET.Coin.Trade;
+using CCXT.NET.Coin.Types;
 
 namespace CCXT.NET.Korbit.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class KCurrencyValue
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string currency;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal value;
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class KMyOpenOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
+    public class KMyOpenOrderItem : CCXT.NET.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
         /// 주문 일련번호
@@ -46,7 +46,7 @@ namespace CCXT.NET.Korbit.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "originPrice")]
         public override decimal price
@@ -56,8 +56,8 @@ namespace CCXT.NET.Korbit.Trade
         }
 
         /// <summary>
-        /// 주문가격. price.value로 주문 가격이 들어온다. 
-        /// 이후 원화 이외의 통화로 거래하도록 허용할 경우에 대비하여 currency 구분을 두도록 하였으나, 
+        /// 주문가격. price.value로 주문 가격이 들어온다.
+        /// 이후 원화 이외의 통화로 거래하도록 허용할 경우에 대비하여 currency 구분을 두도록 하였으나,
         /// 지금은 항상 krw로 세팅된다.
         /// </summary>
         [JsonProperty(PropertyName = "price")]

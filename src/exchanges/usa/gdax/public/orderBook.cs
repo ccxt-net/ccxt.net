@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin.Public;
+using CCXT.NET.Coin.Public;
 using System.Collections.Generic;
 
 namespace CCXT.NET.GDAX.Public
@@ -8,10 +8,10 @@ namespace CCXT.NET.GDAX.Public
     /// <summary>
     ///
     /// </summary>
-    public class GOrderBook : OdinSdk.BaseLib.Coin.Public.OrderBook, IOrderBook
+    public class GOrderBook : CCXT.NET.Coin.Public.OrderBook, IOrderBook
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         [JsonProperty(PropertyName = "bids")]
@@ -37,7 +37,7 @@ namespace CCXT.NET.GDAX.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         [JsonProperty(PropertyName = "asks")]
@@ -63,7 +63,7 @@ namespace CCXT.NET.GDAX.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         [JsonProperty(PropertyName = "originBids")]
@@ -74,7 +74,7 @@ namespace CCXT.NET.GDAX.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         [JsonProperty(PropertyName = "originAsks")]
@@ -85,7 +85,7 @@ namespace CCXT.NET.GDAX.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public long sequence
         {

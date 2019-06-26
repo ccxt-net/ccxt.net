@@ -1,12 +1,12 @@
-﻿namespace OdinSdk.BaseLib.Coin
+﻿namespace CCXT.NET.Coin
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class MarketFee
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool tierBased
         {
@@ -15,7 +15,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool percentage
         {
@@ -24,7 +24,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal maker
         {
@@ -33,7 +33,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal taker
         {
@@ -43,12 +43,12 @@
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class MarketFees
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MarketFee trading
         {
@@ -57,7 +57,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MarketFee funding
         {

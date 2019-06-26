@@ -1,16 +1,16 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Public;
+using CCXT.NET.Coin.Public;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Bitforex.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class BMarkets : OdinSdk.BaseLib.Coin.Public.Markets, IMarkets
+    public class BMarkets : CCXT.NET.Coin.Public.Markets, IMarkets
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BMarkets()
         {
@@ -18,7 +18,7 @@ namespace CCXT.NET.Bitforex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "success")]
         public override bool success
@@ -28,7 +28,7 @@ namespace CCXT.NET.Bitforex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "data")]
         public new List<BMarketItem> result
@@ -39,17 +39,18 @@ namespace CCXT.NET.Bitforex.Public
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class BMarketItem : OdinSdk.BaseLib.Coin.Public.MarketItem, IMarketItem
+    public class BMarketItem : CCXT.NET.Coin.Public.MarketItem, IMarketItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BMarketItem()
         {
             this.precision = new MarketPrecision();
-            this.limits = new MarketLimits {
+            this.limits = new MarketLimits
+            {
                 price = new MarketMinMax(),
                 quantity = new MarketMinMax(),
                 amount = new MarketMinMax()

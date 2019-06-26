@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin;
+using CCXT.NET.Coin;
 using RestSharp;
 using System;
 using System.Collections.Generic;
@@ -10,17 +10,17 @@ using System.Threading.Tasks;
 namespace CCXT.NET.Poloniex
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public sealed class PoloniexClient : OdinSdk.BaseLib.Coin.XApiClient, IXApiClient
+    public sealed class PoloniexClient : CCXT.NET.Coin.XApiClient, IXApiClient
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string DealerName { get; set; } = "Poloniex";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="division">exchange's division for communication</param>
         public PoloniexClient(string division)
@@ -29,7 +29,7 @@ namespace CCXT.NET.Poloniex
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="division">exchange's division for communication</param>
         /// <param name="connect_key">exchange's api key for connect</param>
@@ -128,7 +128,7 @@ namespace CCXT.NET.Poloniex
         private HMACSHA512 __encryptor = null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public HMACSHA512 Encryptor
         {
@@ -142,7 +142,7 @@ namespace CCXT.NET.Poloniex
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -170,7 +170,7 @@ namespace CCXT.NET.Poloniex
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="response">response value arrive from exchange's server</param>
         /// <returns></returns>
@@ -201,7 +201,7 @@ namespace CCXT.NET.Poloniex
                     }
                     else
                     {
-                        _result.SetFailure(_json_error.Value<string>(),ErrorCode.ResponseDataError);
+                        _result.SetFailure(_json_error.Value<string>(), ErrorCode.ResponseDataError);
                     }
                 }
                 else

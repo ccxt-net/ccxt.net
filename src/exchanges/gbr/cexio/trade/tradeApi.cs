@@ -1,8 +1,8 @@
-﻿using OdinSdk.BaseLib.Coin;
-using OdinSdk.BaseLib.Coin.Trade;
-using OdinSdk.BaseLib.Coin.Types;
-using OdinSdk.BaseLib.Configuration;
-using OdinSdk.BaseLib.Extension;
+﻿using CCXT.NET.Coin;
+using CCXT.NET.Coin.Trade;
+using CCXT.NET.Coin.Types;
+using CCXT.NET.Configuration;
+using CCXT.NET.Extension;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +11,9 @@ using System.Threading.Tasks;
 namespace CCXT.NET.CEXIO.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class TradeApi : OdinSdk.BaseLib.Coin.Trade.TradeApi, ITradeApi
+    public class TradeApi : CCXT.NET.Coin.Trade.TradeApi, ITradeApi
     {
         private readonly string __connect_key;
         private readonly string __secret_key;
@@ -21,7 +21,7 @@ namespace CCXT.NET.CEXIO.Trade
         private readonly string __user_password;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TradeApi(string connect_key, string secret_key, string user_name, string user_password)
         {
@@ -32,7 +32,7 @@ namespace CCXT.NET.CEXIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override XApiClient tradeClient
         {
@@ -46,9 +46,9 @@ namespace CCXT.NET.CEXIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
-        public override OdinSdk.BaseLib.Coin.Public.PublicApi publicApi
+        public override CCXT.NET.Coin.Public.PublicApi publicApi
         {
             get
             {

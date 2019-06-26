@@ -1,22 +1,22 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Private;
+using CCXT.NET.Coin.Private;
 
 namespace CCXT.NET.GDAX.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class GTransfer : OdinSdk.BaseLib.Coin.Private.Transfer, ITransfer
+    public class GTransfer : CCXT.NET.Coin.Private.Transfer, ITransfer
     {
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class GTransferItem : OdinSdk.BaseLib.Coin.Private.TransferItem, ITransferItem
+    public class GTransferItem : CCXT.NET.Coin.Private.TransferItem, ITransferItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "id")]
         public override string transferId
@@ -26,7 +26,7 @@ namespace CCXT.NET.GDAX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override decimal amount
         {
@@ -35,7 +35,7 @@ namespace CCXT.NET.GDAX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string currency
         {

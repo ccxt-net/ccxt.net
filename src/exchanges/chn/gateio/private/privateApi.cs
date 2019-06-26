@@ -1,11 +1,9 @@
 ﻿using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Configuration;
-using OdinSdk.BaseLib.Coin;
-using OdinSdk.BaseLib.Coin.Private;
-using OdinSdk.BaseLib.Coin.Types;
-using System;
+using CCXT.NET.Coin;
+using CCXT.NET.Coin.Private;
+using CCXT.NET.Coin.Types;
+using CCXT.NET.Configuration;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace CCXT.NET.GateIO.Private
@@ -13,13 +11,13 @@ namespace CCXT.NET.GateIO.Private
     /// <summary>
     ///
     /// </summary>
-    public class PrivateApi : OdinSdk.BaseLib.Coin.Private.PrivateApi, IPrivateApi
+    public class PrivateApi : CCXT.NET.Coin.Private.PrivateApi, IPrivateApi
     {
         private readonly string __connect_key;
         private readonly string __secret_key;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PrivateApi(string connect_key, string secret_key)
         {
@@ -28,7 +26,7 @@ namespace CCXT.NET.GateIO.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override XApiClient privateClient
         {
@@ -42,9 +40,9 @@ namespace CCXT.NET.GateIO.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
-        public override OdinSdk.BaseLib.Coin.Public.PublicApi publicApi
+        public override CCXT.NET.Coin.Public.PublicApi publicApi
         {
             get
             {
@@ -56,7 +54,7 @@ namespace CCXT.NET.GateIO.Private
         }
 
         /// <summary>
-        /// Since all BTC exchanges within Korbit are made internally, a BTC address does not need to be assigned to every user. 
+        /// Since all BTC exchanges within Korbit are made internally, a BTC address does not need to be assigned to every user.
         /// However, to receive BTC from an outside source to your Korbit account, you can set up your BTC receiving address by using the following API.
         /// </summary>
         /// <param name="currency_name">base coin or quote coin name</param>
@@ -173,7 +171,7 @@ namespace CCXT.NET.GateIO.Private
                     _params.Add("amount", quantity);
                     _params.Add("currency", _currency_id.result);
                     _params.Add("address", address);
-                    
+
                     privateClient.MergeParamsAndArgs(_params, args);
                 }
 
@@ -219,7 +217,7 @@ namespace CCXT.NET.GateIO.Private
 
             return _result;
         }
-        
+
         /// <summary>
         /// 전체 출금 조회
         /// </summary>
@@ -242,7 +240,7 @@ namespace CCXT.NET.GateIO.Private
 
                 var _params = new Dictionary<string, object>();
                 {
-                    _params.Add("start", since/1000);
+                    _params.Add("start", since / 1000);
                     //_params.Add("end", since);
 
                     privateClient.MergeParamsAndArgs(_params, args);

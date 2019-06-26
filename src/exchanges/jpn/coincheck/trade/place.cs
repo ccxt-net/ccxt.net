@@ -1,20 +1,18 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Configuration;
-using OdinSdk.BaseLib.Coin.Trade;
-using OdinSdk.BaseLib.Coin.Types;
-using System.Collections.Generic;
-using Newtonsoft.Json.Linq;
+using CCXT.NET.Coin.Trade;
+using CCXT.NET.Coin.Types;
+using CCXT.NET.Configuration;
 using System;
 
 namespace CCXT.NET.CoinCheck.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class CPlaceOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
+    public class CPlaceOrderItem : CCXT.NET.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "id")]
         public override string orderId
@@ -24,7 +22,7 @@ namespace CCXT.NET.CoinCheck.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "rate")]
         public override decimal price
@@ -34,7 +32,7 @@ namespace CCXT.NET.CoinCheck.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "amount")]
         public override decimal quantity
@@ -44,7 +42,7 @@ namespace CCXT.NET.CoinCheck.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "order_type")]
         private string sideValue
@@ -56,7 +54,7 @@ namespace CCXT.NET.CoinCheck.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "stop_loss_rate")]
         public decimal stop_loss_rate
@@ -66,7 +64,7 @@ namespace CCXT.NET.CoinCheck.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "pair")]
         public override string symbol
@@ -76,7 +74,7 @@ namespace CCXT.NET.CoinCheck.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "created_at")]
         private DateTime timeValue
@@ -89,12 +87,12 @@ namespace CCXT.NET.CoinCheck.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class CCancelOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
+    public class CCancelOrderItem : CCXT.NET.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "id")]
         public override string orderId

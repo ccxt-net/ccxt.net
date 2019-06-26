@@ -1,16 +1,16 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Configuration;
-using OdinSdk.BaseLib.Coin.Trade;
-using OdinSdk.BaseLib.Coin.Types;
+using CCXT.NET.Coin.Trade;
+using CCXT.NET.Coin.Types;
+using CCXT.NET.Configuration;
 using System;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Upbit.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class UMyOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
+    public class UMyOrderItem : CCXT.NET.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
         /// 주문의 고유 아이디
@@ -128,7 +128,7 @@ namespace CCXT.NET.Upbit.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public List<UMyOrderTrade> trades
         {
@@ -186,7 +186,7 @@ namespace CCXT.NET.Upbit.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class UMyOrderTrade
     {
@@ -241,7 +241,7 @@ namespace CCXT.NET.Upbit.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SideType sideType
         {

@@ -1,16 +1,14 @@
-﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Private;
-using System.ComponentModel;
+﻿using CCXT.NET.Coin.Private;
 
 namespace CCXT.NET.Huobi.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class HAddressItem : OdinSdk.BaseLib.Coin.Private.AddressItem, IAddressItem
+    public class HAddressItem : CCXT.NET.Coin.Private.AddressItem, IAddressItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string currency
         {
@@ -19,7 +17,7 @@ namespace CCXT.NET.Huobi.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string address
         {
@@ -28,7 +26,7 @@ namespace CCXT.NET.Huobi.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string tag
         {
@@ -37,7 +35,7 @@ namespace CCXT.NET.Huobi.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool success
         {

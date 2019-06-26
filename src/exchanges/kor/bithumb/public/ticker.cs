@@ -1,18 +1,18 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin;
-using OdinSdk.BaseLib.Coin.Public;
+using CCXT.NET.Coin;
+using CCXT.NET.Coin.Public;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Bithumb.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class BTicker : OdinSdk.BaseLib.Coin.Public.Ticker, ITicker
+    public class BTicker : CCXT.NET.Coin.Public.Ticker, ITicker
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BTicker()
         {
@@ -20,7 +20,7 @@ namespace CCXT.NET.Bithumb.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "status")]
         public override int statusCode
@@ -40,7 +40,7 @@ namespace CCXT.NET.Bithumb.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "data")]
         public new BTickerItem result
@@ -51,12 +51,12 @@ namespace CCXT.NET.Bithumb.Public
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class BTickers : OdinSdk.BaseLib.Coin.Public.Tickers, ITickers
+    public class BTickers : CCXT.NET.Coin.Public.Tickers, ITickers
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BTickers()
         {
@@ -64,7 +64,7 @@ namespace CCXT.NET.Bithumb.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "status")]
         public override int statusCode
@@ -84,7 +84,7 @@ namespace CCXT.NET.Bithumb.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "data")]
         public new Dictionary<string, JToken> result
@@ -95,9 +95,9 @@ namespace CCXT.NET.Bithumb.Public
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class BTickerItem : OdinSdk.BaseLib.Coin.Public.TickerItem, ITickerItem
+    public class BTickerItem : CCXT.NET.Coin.Public.TickerItem, ITickerItem
     {
         /// <summary>
         /// 64-bit Unix Timestamp in milliseconds since Epoch 1 Jan 1970
@@ -204,7 +204,7 @@ namespace CCXT.NET.Bithumb.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "units_traded")]
         public decimal units_traded
@@ -224,7 +224,7 @@ namespace CCXT.NET.Bithumb.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "24H_fluctate")]
         public decimal day_fluctate
@@ -234,7 +234,7 @@ namespace CCXT.NET.Bithumb.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "24H_fluctate_rate")]
         public decimal day_fluctate_rate

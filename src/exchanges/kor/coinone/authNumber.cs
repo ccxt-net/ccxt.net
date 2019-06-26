@@ -1,15 +1,15 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin;
+using CCXT.NET.Coin;
 
 namespace CCXT.NET.Coinone
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class CAuthNumber : OdinSdk.BaseLib.Coin.NameResult, INameResult
+    public class CAuthNumber : CCXT.NET.Coin.NameResult, INameResult
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "errorCode")]
         public override int statusCode
@@ -19,7 +19,7 @@ namespace CCXT.NET.Coinone
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "result")]
         private string messageValue

@@ -1,27 +1,27 @@
 ﻿{
-    "krw" : {
-        "available" : "123000",
-        "trade_in_use" : "13000",
-        "withdrawal_in_use" : "0"
-    },
-    "btc" : {
-        "available" : "1.50200000",
-        "trade_in_use" : "0.42000000",
-        "withdrawal_in_use" : "0.50280000"
-    },
-    "eth" : {
-        "available" : "4.80200000",
-        "trade_in_use" : "1.23238000",
-        "withdrawal_in_use" : "0.00000000"
-    },
-    "etc" : {
-        "available" : "10.00000000",
-        "trade_in_use" : "2.00000000",
-        "withdrawal_in_use" : "0.00000000"
-    },
-    "xrp" : {
-        "available" : "134524.657899",
-        "trade_in_use" : "2332.000000",
-        "withdrawal_in_use" : "0.000000"
-    }
+  "krw": {
+    "available": "123000",
+    "trade_in_use": "13000",
+    "withdrawal_in_use": "0"
+  },
+  "btc": {
+    "available": "1.50200000",
+    "trade_in_use": "0.42000000",
+    "withdrawal_in_use": "0.50280000"
+  },
+  "eth": {
+    "available": "4.80200000",
+    "trade_in_use": "1.23238000",
+    "withdrawal_in_use": "0.00000000"
+  },
+  "etc": {
+    "available": "10.00000000",
+    "trade_in_use": "2.00000000",
+    "withdrawal_in_use": "0.00000000"
+  },
+  "xrp": {
+    "available": "134524.657899",
+    "trade_in_use": "2332.000000",
+    "withdrawal_in_use": "0.000000"
   }
+}

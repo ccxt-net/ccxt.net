@@ -1,15 +1,15 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Public;
+using CCXT.NET.Coin.Public;
 
 namespace CCXT.NET.Upbit.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class UMarketItem : OdinSdk.BaseLib.Coin.Public.MarketItem, IMarketItem
+    public class UMarketItem : CCXT.NET.Coin.Public.MarketItem, IMarketItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "market")]
         public override string symbol
@@ -19,7 +19,7 @@ namespace CCXT.NET.Upbit.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "english_name")]
         public override string baseLongName
@@ -29,7 +29,7 @@ namespace CCXT.NET.Upbit.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string korean_name
         {

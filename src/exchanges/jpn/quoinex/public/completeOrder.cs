@@ -1,17 +1,17 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Public;
-using OdinSdk.BaseLib.Coin.Types;
+using CCXT.NET.Coin.Public;
+using CCXT.NET.Coin.Types;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Quoinex.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class QCompleteOrders : OdinSdk.BaseLib.Coin.Public.CompleteOrders, ICompleteOrders
+    public class QCompleteOrders : CCXT.NET.Coin.Public.CompleteOrders, ICompleteOrders
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public QCompleteOrders()
         {
@@ -19,7 +19,7 @@ namespace CCXT.NET.Quoinex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "current_page")]
         public int current_page
@@ -29,7 +29,7 @@ namespace CCXT.NET.Quoinex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "total_pages")]
         public int total_pages
@@ -39,7 +39,7 @@ namespace CCXT.NET.Quoinex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "models")]
         public new List<QCompleteOrderItem> result
@@ -50,12 +50,12 @@ namespace CCXT.NET.Quoinex.Public
     }
 
     /// <summary>
-    /// recent trade data 
+    /// recent trade data
     /// </summary>
-    public class QCompleteOrderItem : OdinSdk.BaseLib.Coin.Public.CompleteOrderItem, ICompleteOrderItem
+    public class QCompleteOrderItem : CCXT.NET.Coin.Public.CompleteOrderItem, ICompleteOrderItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "id")]
         public override string transactionId
@@ -65,7 +65,7 @@ namespace CCXT.NET.Quoinex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "created_at")]
         private long timeValue
@@ -77,7 +77,7 @@ namespace CCXT.NET.Quoinex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "taker_side")]
         private string sideValue

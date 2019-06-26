@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.Configuration;
-using OdinSdk.BaseLib.Cryption;
+using CCXT.NET.Cryption;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -12,22 +12,22 @@ using System.Text.RegularExpressions;
 
 #pragma warning disable 1589, 1591
 
-namespace OdinSdk.BaseLib.Configuration
+namespace CCXT.NET.Configuration
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class CConfig
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CConfig() : this("appsettings")
         {
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="section_name"></param>
         public CConfig(string section_name)
@@ -38,6 +38,7 @@ namespace OdinSdk.BaseLib.Configuration
         private string __section_name;
 
         private static CCryption __cryptor = null;
+
         public CCryption Cryptor
         {
             get
@@ -55,6 +56,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         private static bool? __is_encrypt_connection_string;
+
         public bool IsEncryptionConnectionString
         {
             get
@@ -72,6 +74,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         private static IConfiguration __config_root = null;
+
         public IConfiguration ConfigRoot
         {
             get
@@ -89,7 +92,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         public Dictionary<string, string> AllAppString()
@@ -104,7 +107,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="p_appkey"></param>
         /// <param name="p_default"></param>
@@ -134,7 +137,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="p_appkey"></param>
         /// <returns></returns>
@@ -145,7 +148,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="p_appkey"></param>
         /// <param name="p_default"></param>
@@ -157,7 +160,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="p_appkey"></param>
         /// <param name="p_default"></param>
@@ -169,7 +172,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="p_appkey"></param>
         /// <param name="p_default"></param>
@@ -181,7 +184,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="p_appkey"></param>
         /// <param name="p_default"></param>
@@ -193,12 +196,12 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         //-----------------------------------------------------------------------------------------------------------------------------
-        // 
+        //
         //-----------------------------------------------------------------------------------------------------------------------------
         private string __product_name = null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string ProductName
         {
@@ -214,7 +217,7 @@ namespace OdinSdk.BaseLib.Configuration
         private string __applicationFolder = null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string ApplicationDataFolder
         {
@@ -230,7 +233,7 @@ namespace OdinSdk.BaseLib.Configuration
         private string __workingFolder = null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string WorkingFolder
         {
@@ -259,7 +262,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="p_folders"></param>
         /// <returns></returns>
@@ -269,7 +272,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="p_folders"></param>
         /// <returns></returns>
@@ -279,7 +282,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="p_folders"></param>
         /// <returns></returns>
@@ -289,7 +292,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="p_folders"></param>
         /// <returns></returns>
@@ -299,7 +302,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="p_folders"></param>
         /// <returns></returns>
@@ -309,11 +312,11 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         //-----------------------------------------------------------------------------------------------------------------------------
-        // 
+        //
         //-----------------------------------------------------------------------------------------------------------------------------
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         public string[] GetIPAddresses()
@@ -322,7 +325,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="host_name">name of host PC</param>
         /// <returns></returns>
@@ -357,7 +360,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         public string GetIPAddress()
@@ -366,7 +369,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="host_name">name of host PC</param>
         /// <returns></returns>
@@ -394,7 +397,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         public string GetIP6Address()
@@ -403,7 +406,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="host_name">name of host PC</param>
         /// <returns></returns>
@@ -431,7 +434,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         public string GetMacAddress()
@@ -441,7 +444,7 @@ namespace OdinSdk.BaseLib.Configuration
             var _mac_address = "";
             foreach (NetworkInterface _adapter in _nics)
             {
-                // only return MAC Address from first card  
+                // only return MAC Address from first card
                 if (String.IsNullOrEmpty(_mac_address) == true)
                 {
                     //IPInterfaceProperties properties = adapter.GetIPProperties(); Line is not required
@@ -453,11 +456,11 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         //-----------------------------------------------------------------------------------------------------------------------------
-        // 
+        //
         //-----------------------------------------------------------------------------------------------------------------------------
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="host_name">name of host PC</param>
         /// <returns></returns>
@@ -503,7 +506,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="host_name">name of host PC</param>
         /// <returns></returns>
@@ -539,7 +542,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="p_local_host_name"></param>
         /// <param name="p_remote_host_name"></param>
@@ -573,7 +576,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string MachineName
         {
@@ -584,7 +587,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string UserDomainName
         {
@@ -595,7 +598,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string UserName
         {
@@ -609,7 +612,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool IsUnix
         {
@@ -620,7 +623,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool IsWindows
         {
@@ -631,7 +634,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool IsOSX
         {
@@ -652,7 +655,7 @@ namespace OdinSdk.BaseLib.Configuration
         private string[] __ip_addresses;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string[] IPAddresses
         {
@@ -668,7 +671,7 @@ namespace OdinSdk.BaseLib.Configuration
         private string __ip_address;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string IPAddress
         {
@@ -684,7 +687,7 @@ namespace OdinSdk.BaseLib.Configuration
         private string __ip6_address;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string IP6Address
         {
@@ -700,7 +703,7 @@ namespace OdinSdk.BaseLib.Configuration
         private string __mac_address;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string MacAddress
         {
@@ -714,7 +717,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="p_assembly_string"></param>
         /// <returns></returns>
@@ -733,7 +736,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="p_assembly_string"></param>
         /// <returns></returns>
@@ -757,7 +760,7 @@ namespace OdinSdk.BaseLib.Configuration
         private ArrayList __culture = new ArrayList(new string[] { "ko-kr", "en-us", "ja-jp", "zh-cn", "zh-chs", "zh-cht", "th-th", "fil-ph" });
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string GetDefaultCulture
         {
@@ -768,7 +771,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="p_culture"></param>
         /// <returns></returns>
@@ -778,7 +781,7 @@ namespace OdinSdk.BaseLib.Configuration
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="p_culture"></param>
         /// <returns></returns>
@@ -851,7 +854,7 @@ namespace OdinSdk.BaseLib.Configuration
         //-----------------------------------------------------------------------------------------------------------------------------
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         public bool IsAdministrator()
@@ -861,7 +864,6 @@ namespace OdinSdk.BaseLib.Configuration
             //WindowsIdentity _identity = WindowsIdentity.GetCurrent();
             //if (_identity != null)
             //{
-
             //    WindowsPrincipal principal = new WindowsPrincipal(_identity);
             //    _result = principal.IsInRole(WindowsBuiltInRole.Administrator);
             //}

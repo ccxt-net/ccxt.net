@@ -1,14 +1,14 @@
 ﻿using System;
 
-namespace OdinSdk.BaseLib.Coin.Types
+namespace CCXT.NET.Coin.Types
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum MakerType : int
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Unknown = 0,
 
@@ -24,12 +24,12 @@ namespace OdinSdk.BaseLib.Coin.Types
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class MakerTypeConverter
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="s"></param>
         /// <returns></returns>
@@ -51,7 +51,7 @@ namespace OdinSdk.BaseLib.Coin.Types
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="v"></param>
         /// <returns></returns>

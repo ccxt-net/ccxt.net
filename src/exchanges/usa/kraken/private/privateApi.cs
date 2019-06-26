@@ -1,8 +1,8 @@
 ﻿using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin;
-using OdinSdk.BaseLib.Coin.Private;
-using OdinSdk.BaseLib.Coin.Types;
-using OdinSdk.BaseLib.Configuration;
+using CCXT.NET.Coin;
+using CCXT.NET.Coin.Private;
+using CCXT.NET.Coin.Types;
+using CCXT.NET.Configuration;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -10,16 +10,16 @@ using System.Threading.Tasks;
 namespace CCXT.NET.Kraken.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class PrivateApi : OdinSdk.BaseLib.Coin.Private.PrivateApi, IPrivateApi
+    public class PrivateApi : CCXT.NET.Coin.Private.PrivateApi, IPrivateApi
     {
         private readonly string __connect_key;
         private readonly string __secret_key;
         private readonly string __key_name;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PrivateApi(string connect_key, string secret_key, string key_name)
         {
@@ -30,10 +30,8 @@ namespace CCXT.NET.Kraken.Private
             this.depositMethods = new Dictionary<string, string>();
         }
 
-        
-
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override XApiClient privateClient
         {
@@ -46,12 +44,10 @@ namespace CCXT.NET.Kraken.Private
             }
         }
 
-        
-
         /// <summary>
-        /// 
+        ///
         /// </summary>
-        public override OdinSdk.BaseLib.Coin.Public.PublicApi publicApi
+        public override CCXT.NET.Coin.Public.PublicApi publicApi
         {
             get
             {
@@ -93,22 +89,22 @@ namespace CCXT.NET.Kraken.Private
                 else
                 {
 #endif
-                    var _json_value = await privateClient.CallApiPost1Async("/0/private/DepositMethods", _params);
+                var _json_value = await privateClient.CallApiPost1Async("/0/private/DepositMethods", _params);
 #if DEBUG
                     _result.rawJson = _json_value.Content;
 #endif
-                    var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                    if (_json_result.success == true)
+                var _json_result = privateClient.GetResponseMessage(_json_value.Response);
+                if (_json_result.success == true)
+                {
+                    var _json_data = privateClient.DeserializeObject<JToken>(_json_value.Content);
                     {
-                        var _json_data = privateClient.DeserializeObject<JToken>(_json_value.Content);
-                        {
-                            _result.result = _json_data["result"][0]["method"].Value<string>();
+                        _result.result = _json_data["result"][0]["method"].Value<string>();
 
-                            depositMethods.Add(currency_id, _result.result);
-                        }
+                        depositMethods.Add(currency_id, _result.result);
                     }
+                }
 
-                    _result.SetResult(_json_result);
+                _result.SetResult(_json_result);
 #if DEBUG
                 }
 #endif

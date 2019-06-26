@@ -1,18 +1,18 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Private;
-using OdinSdk.BaseLib.Coin.Types;
-using OdinSdk.BaseLib.Configuration;
+using CCXT.NET.Coin.Private;
+using CCXT.NET.Coin.Types;
+using CCXT.NET.Configuration;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Huobi.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class HWithdraw : OdinSdk.BaseLib.Coin.Private.Transfer, ITransfer
+    public class HWithdraw : CCXT.NET.Coin.Private.Transfer, ITransfer
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public HWithdraw()
         {
@@ -20,7 +20,7 @@ namespace CCXT.NET.Huobi.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public new HWithdrawItem result
         {
@@ -29,7 +29,7 @@ namespace CCXT.NET.Huobi.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "status")]
         private string status
@@ -41,7 +41,7 @@ namespace CCXT.NET.Huobi.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "data")]
         private string data
@@ -54,12 +54,12 @@ namespace CCXT.NET.Huobi.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class HWithdrawItem : OdinSdk.BaseLib.Coin.Private.TransferItem, ITransferItem
+    public class HWithdrawItem : CCXT.NET.Coin.Private.TransferItem, ITransferItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string transferId
         {
@@ -68,7 +68,7 @@ namespace CCXT.NET.Huobi.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string transactionId
         {
@@ -77,7 +77,7 @@ namespace CCXT.NET.Huobi.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override TransactionType transactionType
         {
@@ -86,7 +86,7 @@ namespace CCXT.NET.Huobi.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override TransferType transferType
         {
@@ -115,7 +115,7 @@ namespace CCXT.NET.Huobi.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string currency
         {
@@ -124,7 +124,7 @@ namespace CCXT.NET.Huobi.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string fromAddress
         {
@@ -142,7 +142,7 @@ namespace CCXT.NET.Huobi.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string toAddress
         {
@@ -160,7 +160,7 @@ namespace CCXT.NET.Huobi.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override decimal amount
         {
@@ -169,7 +169,7 @@ namespace CCXT.NET.Huobi.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override decimal fee
         {
@@ -197,12 +197,12 @@ namespace CCXT.NET.Huobi.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class HTransfers : OdinSdk.BaseLib.Coin.Private.Transfers, ITransfers
+    public class HTransfers : CCXT.NET.Coin.Private.Transfers, ITransfers
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public HTransfers()
         {
@@ -210,7 +210,7 @@ namespace CCXT.NET.Huobi.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "data")]
         public new List<HTransferItem> result
@@ -220,7 +220,7 @@ namespace CCXT.NET.Huobi.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "status")]
         private string status
@@ -233,12 +233,12 @@ namespace CCXT.NET.Huobi.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class HTransferItem : OdinSdk.BaseLib.Coin.Private.TransferItem, ITransferItem
+    public class HTransferItem : CCXT.NET.Coin.Private.TransferItem, ITransferItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "id")]
         public override string transferId
@@ -248,7 +248,7 @@ namespace CCXT.NET.Huobi.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "type")]
         private string type
@@ -260,7 +260,7 @@ namespace CCXT.NET.Huobi.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "currency")]
         public override string currency
@@ -270,7 +270,7 @@ namespace CCXT.NET.Huobi.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "tx-hash")]
         public override string transactionId
@@ -280,7 +280,7 @@ namespace CCXT.NET.Huobi.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "amount")]
         public override decimal amount
@@ -290,7 +290,7 @@ namespace CCXT.NET.Huobi.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "address")]
         private string address
@@ -305,7 +305,7 @@ namespace CCXT.NET.Huobi.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "address-tag")]
         public string tag
@@ -320,7 +320,7 @@ namespace CCXT.NET.Huobi.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "fee")]
         public override decimal fee
@@ -343,7 +343,7 @@ namespace CCXT.NET.Huobi.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "created-at")]
         public long createdTimestamp
@@ -353,7 +353,7 @@ namespace CCXT.NET.Huobi.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "updated-at")]
         public override long timestamp

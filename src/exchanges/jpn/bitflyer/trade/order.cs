@@ -1,18 +1,18 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Configuration;
-using OdinSdk.BaseLib.Coin.Trade;
-using OdinSdk.BaseLib.Coin.Types;
+using CCXT.NET.Coin.Trade;
+using CCXT.NET.Coin.Types;
+using CCXT.NET.Configuration;
 
 namespace CCXT.NET.Bitflyer.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class BMyOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
+    public class BMyOrderItem : CCXT.NET.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
-        /// This is the paging ID. 
-        /// If child_order_state is unspecified or set to ACTIVE, currently the response id for all open orders is set to the fixed value of 0. 
+        /// This is the paging ID.
+        /// If child_order_state is unspecified or set to ACTIVE, currently the response id for all open orders is set to the fixed value of 0.
         /// (If before or after is specified, orders that have never been executed are not included in the results.)
         /// </summary>
         [JsonProperty(PropertyName = "id")]
@@ -33,7 +33,7 @@ namespace CCXT.NET.Bitflyer.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "product_code")]
         public override string symbol
@@ -43,7 +43,7 @@ namespace CCXT.NET.Bitflyer.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "side")]
         private string sideValue
@@ -55,7 +55,7 @@ namespace CCXT.NET.Bitflyer.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "child_order_type")]
         private string orderValue
@@ -67,7 +67,7 @@ namespace CCXT.NET.Bitflyer.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "price")]
         public override decimal price
@@ -77,7 +77,7 @@ namespace CCXT.NET.Bitflyer.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "average_price")]
         public decimal average_price
@@ -87,7 +87,7 @@ namespace CCXT.NET.Bitflyer.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "size")]
         public override decimal quantity
@@ -97,7 +97,7 @@ namespace CCXT.NET.Bitflyer.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "child_order_state")]
         private string statusValue
@@ -109,7 +109,7 @@ namespace CCXT.NET.Bitflyer.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "expire_date")]
         public string expire_date
@@ -119,7 +119,7 @@ namespace CCXT.NET.Bitflyer.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "child_order_date")]
         private string timeValue
@@ -131,7 +131,7 @@ namespace CCXT.NET.Bitflyer.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "child_order_acceptance_id")]
         public string child_order_acceptance_id
@@ -141,7 +141,7 @@ namespace CCXT.NET.Bitflyer.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "outstanding_size")]
         public decimal outstanding_size
@@ -151,7 +151,7 @@ namespace CCXT.NET.Bitflyer.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "cancel_size")]
         public decimal cancel_size
@@ -161,7 +161,7 @@ namespace CCXT.NET.Bitflyer.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "executed_size")]
         public override decimal filled
@@ -171,7 +171,7 @@ namespace CCXT.NET.Bitflyer.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "total_commission")]
         public override decimal fee

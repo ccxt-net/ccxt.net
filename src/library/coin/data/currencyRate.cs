@@ -1,14 +1,14 @@
 ﻿using System.Collections.Generic;
 
-namespace OdinSdk.BaseLib.Coin.Data
+namespace CCXT.NET.Coin.Data
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class CurrencyRateData
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string currency
         {
@@ -17,7 +17,7 @@ namespace OdinSdk.BaseLib.Coin.Data
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string sign
         {
@@ -26,7 +26,7 @@ namespace OdinSdk.BaseLib.Coin.Data
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal rate
         {
@@ -36,7 +36,7 @@ namespace OdinSdk.BaseLib.Coin.Data
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class CurrencyRates : List<CurrencyRateData>
     {

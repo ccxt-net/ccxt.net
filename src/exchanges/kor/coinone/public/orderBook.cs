@@ -1,17 +1,17 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin.Public;
+using CCXT.NET.Coin.Public;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Coinone.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class COrderBook : OdinSdk.BaseLib.Coin.Public.OrderBook, IOrderBook
+    public class COrderBook : CCXT.NET.Coin.Public.OrderBook, IOrderBook
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "bid")]
         private List<JToken> bidsValue
@@ -36,7 +36,7 @@ namespace CCXT.NET.Coinone.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "ask")]
         private List<JToken> asksValue

@@ -1,12 +1,11 @@
-﻿using OdinSdk.BaseLib.Coin.Private;
-using System.ComponentModel;
+﻿using CCXT.NET.Coin.Private;
 
 namespace CCXT.NET.Bitstamp.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class BAddressItem : OdinSdk.BaseLib.Coin.Private.AddressItem, IAddressItem
+    public class BAddressItem : CCXT.NET.Coin.Private.AddressItem, IAddressItem
     {
     }
 }

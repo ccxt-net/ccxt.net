@@ -1,37 +1,38 @@
 {
-    "errorCode": "0",
-    "krwHistory": [{
-            "accountNumber": "0123456789",
-            "timestamp": "1416884686",
-            "depositor": "John",
-            "amount": "10000",
-            "bankCode": "20",
-            "processLevel": "1"
-        },
-        {
-            "accountNumber": "0123456789",
-            "timestamp": "1416884686",
-            "depositor": "John",
-            "amount": "10000",
-            "bankCode": "20",
-            "processLevel": "3"
-        },
-        {
-            "accountNumber": "0123456789",
-            "timestamp": "1416884686",
-            "depositor": "John",
-            "amount": "10000",
-            "bankCode": "20",
-            "processLevel": "2"
-        },
-        {
-            "accountNumber": "0123456789",
-            "timestamp": "1416884686",
-            "depositor": "John",
-            "amount": "10000",
-            "bankCode": "20",
-            "processLevel": "5"
-        }
-    ],
-    "result": "success"
+  "errorCode": "0",
+  "krwHistory": [
+    {
+      "accountNumber": "0123456789",
+      "timestamp": "1416884686",
+      "depositor": "John",
+      "amount": "10000",
+      "bankCode": "20",
+      "processLevel": "1"
+    },
+    {
+      "accountNumber": "0123456789",
+      "timestamp": "1416884686",
+      "depositor": "John",
+      "amount": "10000",
+      "bankCode": "20",
+      "processLevel": "3"
+    },
+    {
+      "accountNumber": "0123456789",
+      "timestamp": "1416884686",
+      "depositor": "John",
+      "amount": "10000",
+      "bankCode": "20",
+      "processLevel": "2"
+    },
+    {
+      "accountNumber": "0123456789",
+      "timestamp": "1416884686",
+      "depositor": "John",
+      "amount": "10000",
+      "bankCode": "20",
+      "processLevel": "5"
+    }
+  ],
+  "result": "success"
 }

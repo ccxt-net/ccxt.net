@@ -1,6 +1,6 @@
-﻿using OdinSdk.BaseLib.Coin;
-using OdinSdk.BaseLib.Coin.Private;
-using OdinSdk.BaseLib.Coin.Types;
+﻿using CCXT.NET.Coin;
+using CCXT.NET.Coin.Private;
+using CCXT.NET.Coin.Types;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,25 +8,24 @@ using System.Threading.Tasks;
 namespace CCXT.NET.Bitflyer.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class PrivateApi : OdinSdk.BaseLib.Coin.Private.PrivateApi, IPrivateApi
+    public class PrivateApi : CCXT.NET.Coin.Private.PrivateApi, IPrivateApi
     {
         private readonly string __connect_key;
         private readonly string __secret_key;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PrivateApi(string connect_key, string secret_key)
         {
             __connect_key = connect_key;
             __secret_key = secret_key;
-
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override XApiClient privateClient
         {
@@ -40,9 +39,9 @@ namespace CCXT.NET.Bitflyer.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
-        public override OdinSdk.BaseLib.Coin.Public.PublicApi publicApi
+        public override CCXT.NET.Coin.Public.PublicApi publicApi
         {
             get
             {
@@ -232,7 +231,7 @@ namespace CCXT.NET.Bitflyer.Private
                             _balance.currency = base_name;
                             _balance.used = _balance.total - _balance.free;
 
-                            _result.result= _balance;
+                            _result.result = _balance;
                             break;
                         }
                     }

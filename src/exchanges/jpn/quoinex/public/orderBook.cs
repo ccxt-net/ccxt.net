@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin.Public;
+using CCXT.NET.Coin.Public;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Quoinex.Public
@@ -8,10 +8,10 @@ namespace CCXT.NET.Quoinex.Public
     /// <summary>
     ///
     /// </summary>
-    public class QOrderBook : OdinSdk.BaseLib.Coin.Public.OrderBook, IOrderBook
+    public class QOrderBook : CCXT.NET.Coin.Public.OrderBook, IOrderBook
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "originBids")]
         public override List<IOrderBookItem> bids
@@ -21,7 +21,7 @@ namespace CCXT.NET.Quoinex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "originAsks")]
         public override List<IOrderBookItem> asks
@@ -31,7 +31,7 @@ namespace CCXT.NET.Quoinex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         [JsonProperty(PropertyName = "buy_price_levels")]
@@ -57,7 +57,7 @@ namespace CCXT.NET.Quoinex.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         [JsonProperty(PropertyName = "sell_price_levels")]

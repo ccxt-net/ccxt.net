@@ -1,12 +1,12 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Public;
+using CCXT.NET.Coin.Public;
 
 namespace CCXT.NET.Korbit.Public
 {
     /// <summary>
     /// 체결 내역 ( List of Filled Orders )
     /// </summary>
-    public class KCompleteOrderItem : OdinSdk.BaseLib.Coin.Public.CompleteOrderItem, ICompleteOrderItem
+    public class KCompleteOrderItem : CCXT.NET.Coin.Public.CompleteOrderItem, ICompleteOrderItem
     {
         /// <summary>
         /// Unique ID that identifies the transaction.
@@ -29,7 +29,7 @@ namespace CCXT.NET.Korbit.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "originAmount")]
         public override decimal amount

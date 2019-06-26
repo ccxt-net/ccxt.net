@@ -1,14 +1,14 @@
 ﻿using System.Collections.Generic;
 
-namespace OdinSdk.BaseLib.Coin.Private
+namespace CCXT.NET.Coin.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public interface IBalanceItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string currency
         {
@@ -17,7 +17,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         decimal free
         {
@@ -26,7 +26,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         decimal used
         {
@@ -35,7 +35,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         decimal total
         {
@@ -45,7 +45,7 @@ namespace OdinSdk.BaseLib.Coin.Private
 
 #if DEBUG
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string rawJson
         {
@@ -56,12 +56,12 @@ namespace OdinSdk.BaseLib.Coin.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BalanceItem : IBalanceItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual string currency
         {
@@ -70,7 +70,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual decimal free
         {
@@ -79,7 +79,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual decimal used
         {
@@ -88,7 +88,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual decimal total
         {
@@ -98,7 +98,7 @@ namespace OdinSdk.BaseLib.Coin.Private
 
 #if DEBUG
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual string rawJson
         {
@@ -109,13 +109,13 @@ namespace OdinSdk.BaseLib.Coin.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public interface IBalance : IApiResult<IBalanceItem>
     {
 #if DEBUG
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string rawJson
         {
@@ -126,12 +126,12 @@ namespace OdinSdk.BaseLib.Coin.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class Balance : ApiResult<IBalanceItem>, IBalance
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Balance()
         {
@@ -140,7 +140,7 @@ namespace OdinSdk.BaseLib.Coin.Private
 
 #if DEBUG
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual string rawJson
         {
@@ -151,13 +151,13 @@ namespace OdinSdk.BaseLib.Coin.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public interface IBalances : IApiResult<List<IBalanceItem>>
     {
 #if DEBUG
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string rawJson
         {
@@ -168,12 +168,12 @@ namespace OdinSdk.BaseLib.Coin.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class Balances : ApiResult<List<IBalanceItem>>, IBalances
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Balances()
         {
@@ -182,7 +182,7 @@ namespace OdinSdk.BaseLib.Coin.Private
 
 #if DEBUG
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual string rawJson
         {

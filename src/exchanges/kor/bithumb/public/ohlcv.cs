@@ -1,18 +1,18 @@
-﻿using OdinSdk.BaseLib.Coin.Public;
+﻿using CCXT.NET.Coin.Public;
 
 namespace CCXT.NET.Bithumb.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class BOHLCVs : OdinSdk.BaseLib.Coin.Public.OHLCVs, IOHLCVs
+    public class BOHLCVs : CCXT.NET.Coin.Public.OHLCVs, IOHLCVs
     {
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class BOHLCVItem : OdinSdk.BaseLib.Coin.Public.OHLCVItem, IOHLCVItem
+    public class BOHLCVItem : CCXT.NET.Coin.Public.OHLCVItem, IOHLCVItem
     {
     }
 }

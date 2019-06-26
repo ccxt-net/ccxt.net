@@ -1,6 +1,6 @@
 ﻿using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin;
+using CCXT.NET.Coin;
 using RestSharp;
 using System;
 using System.Collections.Generic;
@@ -11,17 +11,17 @@ using System.Threading.Tasks;
 namespace CCXT.NET.Quoinex
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public sealed class QuoinexClient : OdinSdk.BaseLib.Coin.XApiClient, IXApiClient
+    public sealed class QuoinexClient : CCXT.NET.Coin.XApiClient, IXApiClient
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string DealerName { get; set; } = "Quoinex";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="division">exchange's division for communication</param>
         public QuoinexClient(string division)
@@ -30,7 +30,7 @@ namespace CCXT.NET.Quoinex
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="division">exchange's division for communication</param>
         /// <param name="connect_key">exchange's api key for connect</param>
@@ -117,7 +117,7 @@ namespace CCXT.NET.Quoinex
         private JwtHeader __jwt_header = null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public JwtHeader JwtHeader
         {
@@ -138,7 +138,7 @@ namespace CCXT.NET.Quoinex
         private JwtSecurityTokenHandler __jwt_handler = null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public JwtSecurityTokenHandler JwtHandler
         {
@@ -152,7 +152,7 @@ namespace CCXT.NET.Quoinex
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -189,7 +189,7 @@ namespace CCXT.NET.Quoinex
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
@@ -226,7 +226,7 @@ namespace CCXT.NET.Quoinex
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public new Dictionary<string, ErrorCode> ErrorMessages = new Dictionary<string, ErrorCode>
         {
@@ -234,7 +234,7 @@ namespace CCXT.NET.Quoinex
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="response">response value arrive from exchange's server</param>
         /// <returns></returns>

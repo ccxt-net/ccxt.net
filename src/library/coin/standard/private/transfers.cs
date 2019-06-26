@@ -1,11 +1,11 @@
-﻿using OdinSdk.BaseLib.Configuration;
-using OdinSdk.BaseLib.Coin.Types;
+﻿using CCXT.NET.Coin.Types;
+using CCXT.NET.Configuration;
 using System.Collections.Generic;
 
-namespace OdinSdk.BaseLib.Coin.Private
+namespace CCXT.NET.Coin.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public interface ITransferItem
     {
@@ -19,7 +19,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string transactionId
         {
@@ -28,7 +28,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TransactionType transactionType
         {
@@ -37,7 +37,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TransferType transferType
         {
@@ -63,7 +63,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string currency
         {
@@ -72,7 +72,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string fromAddress
         {
@@ -81,7 +81,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string fromTag
         {
@@ -90,7 +90,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string toAddress
         {
@@ -99,7 +99,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string toTag
         {
@@ -108,7 +108,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         decimal amount
         {
@@ -117,7 +117,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         decimal fee
         {
@@ -144,7 +144,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
         ///// <summary>
-        ///// 
+        /////
         ///// </summary>
         //string ipAddress
         //{
@@ -154,7 +154,7 @@ namespace OdinSdk.BaseLib.Coin.Private
 
 #if DEBUG
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string rawJson
         {
@@ -165,12 +165,12 @@ namespace OdinSdk.BaseLib.Coin.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class TransferItem : ITransferItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual string transferId
         {
@@ -179,7 +179,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual string transactionId
         {
@@ -188,7 +188,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual TransactionType transactionType
         {
@@ -197,7 +197,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual TransferType transferType
         {
@@ -226,7 +226,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual string currency
         {
@@ -235,7 +235,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual string fromAddress
         {
@@ -253,7 +253,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual string toAddress
         {
@@ -271,7 +271,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual decimal amount
         {
@@ -280,7 +280,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual decimal fee
         {
@@ -307,7 +307,7 @@ namespace OdinSdk.BaseLib.Coin.Private
         }
 
         ///// <summary>
-        ///// 
+        /////
         ///// </summary>
         //public virtual string ipAddress
         //{
@@ -317,7 +317,7 @@ namespace OdinSdk.BaseLib.Coin.Private
 
 #if DEBUG
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual string rawJson
         {
@@ -328,13 +328,13 @@ namespace OdinSdk.BaseLib.Coin.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public interface ITransfer : IApiResult<ITransferItem>
     {
 #if DEBUG
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string rawJson
         {
@@ -345,12 +345,12 @@ namespace OdinSdk.BaseLib.Coin.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class Transfer : ApiResult<ITransferItem>, ITransfer
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Transfer()
         {
@@ -359,7 +359,7 @@ namespace OdinSdk.BaseLib.Coin.Private
 
 #if DEBUG
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual string rawJson
         {
@@ -370,13 +370,13 @@ namespace OdinSdk.BaseLib.Coin.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public interface ITransfers : IApiResult<List<ITransferItem>>
     {
 #if DEBUG
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string rawJson
         {
@@ -387,12 +387,12 @@ namespace OdinSdk.BaseLib.Coin.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class Transfers : ApiResult<List<ITransferItem>>, ITransfers
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Transfers()
         {
@@ -401,7 +401,7 @@ namespace OdinSdk.BaseLib.Coin.Private
 
 #if DEBUG
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual string rawJson
         {

@@ -1,8 +1,8 @@
 ﻿using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin;
-using OdinSdk.BaseLib.Coin.Private;
-using OdinSdk.BaseLib.Coin.Types;
-using OdinSdk.BaseLib.Configuration;
+using CCXT.NET.Coin;
+using CCXT.NET.Coin.Private;
+using CCXT.NET.Coin.Types;
+using CCXT.NET.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,15 +11,15 @@ using System.Threading.Tasks;
 namespace CCXT.NET.Coinone.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class PrivateApi : OdinSdk.BaseLib.Coin.Private.PrivateApi, IPrivateApi
+    public class PrivateApi : CCXT.NET.Coin.Private.PrivateApi, IPrivateApi
     {
         private readonly string __connect_key;
         private readonly string __secret_key;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PrivateApi(string connect_key, string secret_key)
         {
@@ -28,7 +28,7 @@ namespace CCXT.NET.Coinone.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override XApiClient privateClient
         {
@@ -42,9 +42,9 @@ namespace CCXT.NET.Coinone.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
-        public override OdinSdk.BaseLib.Coin.Public.PublicApi publicApi
+        public override CCXT.NET.Coin.Public.PublicApi publicApi
         {
             get
             {
@@ -56,7 +56,7 @@ namespace CCXT.NET.Coinone.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="currency_name">base coin or quote coin name</param>
         /// <param name="timeframe">time frame interval (optional): default "1d"</param>
@@ -125,7 +125,7 @@ namespace CCXT.NET.Coinone.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
@@ -185,7 +185,7 @@ namespace CCXT.NET.Coinone.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="currency_name">base coin or quote coin name</param>
         /// <param name="address">coin address for send</param>
@@ -262,7 +262,7 @@ namespace CCXT.NET.Coinone.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
@@ -302,7 +302,7 @@ namespace CCXT.NET.Coinone.Private
                             _balance.currency = base_name;
                             _balance.used = _balance.total - _balance.free;
 
-                            _result.result= _balance;
+                            _result.result = _balance;
                             break;
                         }
                     }
@@ -319,7 +319,7 @@ namespace CCXT.NET.Coinone.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>

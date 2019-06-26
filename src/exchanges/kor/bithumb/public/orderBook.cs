@@ -1,18 +1,18 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin;
-using OdinSdk.BaseLib.Coin.Public;
+using CCXT.NET.Coin;
+using CCXT.NET.Coin.Public;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Bithumb.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class BOrderBooks : OdinSdk.BaseLib.Coin.Public.OrderBooks, IOrderBooks
+    public class BOrderBooks : CCXT.NET.Coin.Public.OrderBooks, IOrderBooks
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BOrderBooks()
         {
@@ -20,7 +20,7 @@ namespace CCXT.NET.Bithumb.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "status")]
         public override int statusCode
@@ -40,7 +40,7 @@ namespace CCXT.NET.Bithumb.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "data")]
         public new BOrderBook result
@@ -51,9 +51,9 @@ namespace CCXT.NET.Bithumb.Public
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class BOrderBook : OdinSdk.BaseLib.Coin.Public.OrderBook, IOrderBook
+    public class BOrderBook : CCXT.NET.Coin.Public.OrderBook, IOrderBook
     {
         /// <summary>
         /// 결제 화폐단위
@@ -74,7 +74,7 @@ namespace CCXT.NET.Bithumb.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "bids")]
         private List<JToken> bidsValue
@@ -99,7 +99,7 @@ namespace CCXT.NET.Bithumb.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "asks")]
         private List<JToken> asksValue
@@ -124,7 +124,7 @@ namespace CCXT.NET.Bithumb.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         [JsonProperty(PropertyName = "originBids")]
@@ -135,7 +135,7 @@ namespace CCXT.NET.Bithumb.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         [JsonProperty(PropertyName = "originAsks")]

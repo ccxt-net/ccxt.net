@@ -1,21 +1,21 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Configuration;
-using OdinSdk.BaseLib.Coin.Private;
-using OdinSdk.BaseLib.Coin.Types;
+using Newtonsoft.Json.Linq;
+using CCXT.NET.Coin;
+using CCXT.NET.Coin.Private;
+using CCXT.NET.Coin.Types;
+using CCXT.NET.Configuration;
 using System;
 using System.Collections.Generic;
-using OdinSdk.BaseLib.Coin;
-using Newtonsoft.Json.Linq;
 
 namespace CCXT.NET.Zb.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class ZWithdraw : OdinSdk.BaseLib.Coin.Private.Transfer, ITransfer
+    public class ZWithdraw : CCXT.NET.Coin.Private.Transfer, ITransfer
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ZWithdraw()
         {
@@ -23,7 +23,7 @@ namespace CCXT.NET.Zb.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public new ZWithdrawItem result
         {
@@ -32,7 +32,7 @@ namespace CCXT.NET.Zb.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "message")]
         public override string message
@@ -42,7 +42,7 @@ namespace CCXT.NET.Zb.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "code")]
         private int code
@@ -57,7 +57,7 @@ namespace CCXT.NET.Zb.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "id")]
         private string id
@@ -70,12 +70,12 @@ namespace CCXT.NET.Zb.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class ZWithdraws : OdinSdk.BaseLib.Coin.Private.Transfers, ITransfers
+    public class ZWithdraws : CCXT.NET.Coin.Private.Transfers, ITransfers
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ZWithdraws()
         {
@@ -83,7 +83,7 @@ namespace CCXT.NET.Zb.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public new List<ZWithdrawItem> result
         {
@@ -92,7 +92,7 @@ namespace CCXT.NET.Zb.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "code")]
         public override ErrorCode errorCode
@@ -102,7 +102,7 @@ namespace CCXT.NET.Zb.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "originMsg")]
         public override string message
@@ -112,7 +112,7 @@ namespace CCXT.NET.Zb.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "message")]
         private JObject msg
@@ -127,12 +127,12 @@ namespace CCXT.NET.Zb.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class ZWithdrawItem : OdinSdk.BaseLib.Coin.Private.TransferItem, ITransferItem
+    public class ZWithdrawItem : CCXT.NET.Coin.Private.TransferItem, ITransferItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "amount")]
         public override decimal amount
@@ -142,7 +142,7 @@ namespace CCXT.NET.Zb.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "fees")]
         public override decimal fee
@@ -152,7 +152,7 @@ namespace CCXT.NET.Zb.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "id")]
         public override string transferId
@@ -162,7 +162,7 @@ namespace CCXT.NET.Zb.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "manageTime")]
         public long manageTime
@@ -172,14 +172,13 @@ namespace CCXT.NET.Zb.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "status")]
         private int status
         {
             set
             {
-
             }
         }
 
@@ -194,7 +193,7 @@ namespace CCXT.NET.Zb.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "toAddress")]
         public override string toAddress
@@ -205,12 +204,12 @@ namespace CCXT.NET.Zb.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class ZDeposits : OdinSdk.BaseLib.Coin.Private.Transfers, ITransfers
+    public class ZDeposits : CCXT.NET.Coin.Private.Transfers, ITransfers
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ZDeposits()
         {
@@ -218,7 +217,7 @@ namespace CCXT.NET.Zb.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public new List<ZDepositItem> result
         {
@@ -227,7 +226,7 @@ namespace CCXT.NET.Zb.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "code")]
         public override ErrorCode errorCode
@@ -237,7 +236,7 @@ namespace CCXT.NET.Zb.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "originMsg")]
         public override string message
@@ -247,7 +246,7 @@ namespace CCXT.NET.Zb.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "message")]
         private JObject msg
@@ -262,12 +261,12 @@ namespace CCXT.NET.Zb.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class ZDepositItem : OdinSdk.BaseLib.Coin.Private.TransferItem, ITransferItem
+    public class ZDepositItem : CCXT.NET.Coin.Private.TransferItem, ITransferItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "address")]
         public override string fromAddress
@@ -277,7 +276,7 @@ namespace CCXT.NET.Zb.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "amount")]
         public override decimal amount
@@ -297,7 +296,7 @@ namespace CCXT.NET.Zb.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "currency")]
         public override string currency
@@ -307,7 +306,7 @@ namespace CCXT.NET.Zb.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "description")]
         public string description
@@ -317,7 +316,7 @@ namespace CCXT.NET.Zb.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "hash")]
         public override string transactionId
@@ -327,7 +326,7 @@ namespace CCXT.NET.Zb.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "id")]
         public override string transferId
@@ -337,7 +336,7 @@ namespace CCXT.NET.Zb.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "itransfer")]
         public int itransfer
@@ -364,7 +363,7 @@ namespace CCXT.NET.Zb.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "submit_time")]
         private DateTime timeValue

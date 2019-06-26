@@ -1,16 +1,16 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Trade;
-using OdinSdk.BaseLib.Coin.Types;
+using CCXT.NET.Coin.Trade;
+using CCXT.NET.Coin.Types;
 
 namespace CCXT.NET.CEXIO.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class CMyTradeItem : OdinSdk.BaseLib.Coin.Trade.MyTradeItem, IMyTradeItem
+    public class CMyTradeItem : CCXT.NET.Coin.Trade.MyTradeItem, IMyTradeItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "")]
         public override string orderId
@@ -20,7 +20,7 @@ namespace CCXT.NET.CEXIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "")]
         public override string tradeId
@@ -30,7 +30,7 @@ namespace CCXT.NET.CEXIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "")]
         public override decimal quantity
@@ -40,7 +40,7 @@ namespace CCXT.NET.CEXIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "")]
         public override decimal price
@@ -50,7 +50,7 @@ namespace CCXT.NET.CEXIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "")]
         public override decimal amount
@@ -60,7 +60,7 @@ namespace CCXT.NET.CEXIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "")]
         public override long timestamp
@@ -70,7 +70,7 @@ namespace CCXT.NET.CEXIO.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "")]
         private bool sideValue

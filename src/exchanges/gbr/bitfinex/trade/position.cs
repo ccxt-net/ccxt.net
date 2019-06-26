@@ -1,16 +1,16 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Trade;
-using OdinSdk.BaseLib.Coin.Types;
+using CCXT.NET.Coin.Trade;
+using CCXT.NET.Coin.Types;
 
 namespace CCXT.NET.Bitfinex.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class BMyPositionItem : OdinSdk.BaseLib.Coin.Trade.MyPositionItem, IMyPositionItem
+    public class BMyPositionItem : CCXT.NET.Coin.Trade.MyPositionItem, IMyPositionItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "id")]
         public override string positionId
@@ -30,7 +30,7 @@ namespace CCXT.NET.Bitfinex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "origin_timestamp")]
         public override long timestamp
@@ -62,7 +62,7 @@ namespace CCXT.NET.Bitfinex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "base")]
         public override decimal price
@@ -72,7 +72,7 @@ namespace CCXT.NET.Bitfinex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "status")]
         private string status
@@ -84,7 +84,7 @@ namespace CCXT.NET.Bitfinex.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal swap
         {
@@ -93,7 +93,7 @@ namespace CCXT.NET.Bitfinex.Trade
         }
 
         /// <summary>
-        /// partially realized 
+        /// partially realized
         /// </summary>
         public decimal pl
         {

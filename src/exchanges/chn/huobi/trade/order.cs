@@ -1,19 +1,18 @@
 ﻿using Newtonsoft.Json;
 
-using OdinSdk.BaseLib.Coin.Trade;
-using OdinSdk.BaseLib.Coin.Types;
-using System;
+using CCXT.NET.Coin.Trade;
+using CCXT.NET.Coin.Types;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Huobi.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class HMyOrder : OdinSdk.BaseLib.Coin.Trade.MyOrder, IMyOrder
+    public class HMyOrder : CCXT.NET.Coin.Trade.MyOrder, IMyOrder
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public HMyOrder()
         {
@@ -21,7 +20,7 @@ namespace CCXT.NET.Huobi.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "data")]
         public new HMyOrderItem result
@@ -31,7 +30,7 @@ namespace CCXT.NET.Huobi.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "status")]
         private string status
@@ -44,12 +43,12 @@ namespace CCXT.NET.Huobi.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class HMyOrders : OdinSdk.BaseLib.Coin.Trade.MyOrders, IMyOrders
+    public class HMyOrders : CCXT.NET.Coin.Trade.MyOrders, IMyOrders
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public HMyOrders()
         {
@@ -57,7 +56,7 @@ namespace CCXT.NET.Huobi.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "data")]
         public new List<HMyOrderItem> result
@@ -67,7 +66,7 @@ namespace CCXT.NET.Huobi.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "status")]
         private string status
@@ -80,12 +79,12 @@ namespace CCXT.NET.Huobi.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class HMyOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
+    public class HMyOrderItem : CCXT.NET.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "id")]
         public override string orderId
@@ -95,7 +94,7 @@ namespace CCXT.NET.Huobi.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "symbol")]
         public override string symbol
@@ -105,7 +104,7 @@ namespace CCXT.NET.Huobi.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "account-id")]
         public string accountId
@@ -115,7 +114,7 @@ namespace CCXT.NET.Huobi.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "amount")]
         public override decimal quantity
@@ -125,7 +124,7 @@ namespace CCXT.NET.Huobi.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "price")]
         public override decimal price
@@ -135,7 +134,7 @@ namespace CCXT.NET.Huobi.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "created-at")]
         public override long timestamp
@@ -145,7 +144,7 @@ namespace CCXT.NET.Huobi.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "type")]
         private string type
@@ -159,7 +158,7 @@ namespace CCXT.NET.Huobi.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "filled-amount")]
         public override decimal filled
@@ -169,7 +168,7 @@ namespace CCXT.NET.Huobi.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "filled-cash-amount")]
         public decimal filledCashAmount
@@ -179,7 +178,7 @@ namespace CCXT.NET.Huobi.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "filled-fees")]
         public override decimal fee
@@ -189,7 +188,7 @@ namespace CCXT.NET.Huobi.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "finished-at")]
         public long finishedAt
@@ -199,7 +198,7 @@ namespace CCXT.NET.Huobi.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "user-id")]
         public string userId
@@ -209,7 +208,7 @@ namespace CCXT.NET.Huobi.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "source")]
         public string source
@@ -219,7 +218,7 @@ namespace CCXT.NET.Huobi.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "state")]
         private string state
@@ -231,7 +230,7 @@ namespace CCXT.NET.Huobi.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "canceled-at")]
         public long canceledAt
@@ -241,7 +240,7 @@ namespace CCXT.NET.Huobi.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "exchange")]
         public string exchange
@@ -251,7 +250,7 @@ namespace CCXT.NET.Huobi.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "batch")]
         public string batch

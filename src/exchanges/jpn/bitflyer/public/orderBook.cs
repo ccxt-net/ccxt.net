@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin.Public;
+using CCXT.NET.Coin.Public;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Bitflyer.Public
@@ -8,10 +8,10 @@ namespace CCXT.NET.Bitflyer.Public
     /// <summary>
     ///
     /// </summary>
-    public class BOrderBook : OdinSdk.BaseLib.Coin.Public.OrderBook, IOrderBook
+    public class BOrderBook : CCXT.NET.Coin.Public.OrderBook, IOrderBook
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "bids")]
         private List<JToken> bidsValue
@@ -36,7 +36,7 @@ namespace CCXT.NET.Bitflyer.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "asks")]
         private List<JToken> asksValue
@@ -61,7 +61,7 @@ namespace CCXT.NET.Bitflyer.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "originBids")]
         public override List<IOrderBookItem> bids
@@ -71,7 +71,7 @@ namespace CCXT.NET.Bitflyer.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "originAsks")]
         public override List<IOrderBookItem> asks
@@ -81,7 +81,7 @@ namespace CCXT.NET.Bitflyer.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "mid_price")]
         public decimal mid_price

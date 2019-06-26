@@ -1,8 +1,8 @@
-﻿using OdinSdk.BaseLib.Coin;
-using OdinSdk.BaseLib.Coin.Trade;
-using OdinSdk.BaseLib.Coin.Types;
-using OdinSdk.BaseLib.Configuration;
-using OdinSdk.BaseLib.Extension;
+﻿using CCXT.NET.Coin;
+using CCXT.NET.Coin.Trade;
+using CCXT.NET.Coin.Types;
+using CCXT.NET.Configuration;
+using CCXT.NET.Extension;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,15 +11,15 @@ using System.Threading.Tasks;
 namespace CCXT.NET.Huobi.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class TradeApi : OdinSdk.BaseLib.Coin.Trade.TradeApi, ITradeApi
+    public class TradeApi : CCXT.NET.Coin.Trade.TradeApi, ITradeApi
     {
         private readonly string __connect_key;
         private readonly string __secret_key;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TradeApi(string connect_key, string secret_key)
         {
@@ -28,7 +28,7 @@ namespace CCXT.NET.Huobi.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override XApiClient tradeClient
         {
@@ -42,9 +42,9 @@ namespace CCXT.NET.Huobi.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
-        public override OdinSdk.BaseLib.Coin.Public.PublicApi publicApi
+        public override CCXT.NET.Coin.Public.PublicApi publicApi
         {
             get
             {
@@ -579,7 +579,6 @@ namespace CCXT.NET.Huobi.Trade
                         _result.SetFailure("주문ID로 취소할 경우 string[] order_ids에 넣어주시고 Symbol로 취소할 경우 args[account-id]가 필요합니다.");
                     }
                 }
-                
             }
             else
             {
@@ -603,7 +602,6 @@ namespace CCXT.NET.Huobi.Trade
             {
                 if (args.ContainsKey("account-id") && args["account-id"].ToString() != "")
                 {
-
                     tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
                     var _params = tradeClient.MergeParamsAndArgs(args);

@@ -1,12 +1,12 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Trade;
-using OdinSdk.BaseLib.Coin.Types;
+using CCXT.NET.Coin.Trade;
+using CCXT.NET.Coin.Types;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Kraken.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class KMyTrades
     {
@@ -30,9 +30,9 @@ namespace CCXT.NET.Kraken.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class KMyTradeItem : OdinSdk.BaseLib.Coin.Trade.MyTradeItem, IMyTradeItem
+    public class KMyTradeItem : CCXT.NET.Coin.Trade.MyTradeItem, IMyTradeItem
     {
         /// <summary>
         /// prder transaction id
@@ -65,7 +65,7 @@ namespace CCXT.NET.Kraken.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "originOrderType")]
         public override OrderType orderType
@@ -239,6 +239,6 @@ namespace CCXT.NET.Kraken.Trade
             set;
         }
 
-        #endregion
+        #endregion If the trade opened a position, the follow fields are also present in the trade info
     }
 }

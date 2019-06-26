@@ -1,13 +1,13 @@
-﻿using OdinSdk.BaseLib.Configuration;
+﻿using CCXT.NET.Configuration;
 using System.Collections.Generic;
 
-namespace OdinSdk.BaseLib.Coin.Public
+namespace CCXT.NET.Coin.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public interface ITickerItem
-    {   
+    {
         /// <summary>
         /// string symbol of the market ('BTCUSD', 'ETHBTC', ...)
         /// </summary>
@@ -176,7 +176,7 @@ namespace OdinSdk.BaseLib.Coin.Public
 
 #if DEBUG
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string rawJson
         {
@@ -187,7 +187,7 @@ namespace OdinSdk.BaseLib.Coin.Public
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class TickerItem : ITickerItem
     {
@@ -368,7 +368,7 @@ namespace OdinSdk.BaseLib.Coin.Public
 
 #if DEBUG
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual string rawJson
         {
@@ -379,12 +379,12 @@ namespace OdinSdk.BaseLib.Coin.Public
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public interface ITicker : IApiResult<ITickerItem>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string marketId
         {
@@ -394,7 +394,7 @@ namespace OdinSdk.BaseLib.Coin.Public
 
 #if DEBUG
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string rawJson
         {
@@ -405,12 +405,12 @@ namespace OdinSdk.BaseLib.Coin.Public
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class Ticker : ApiResult<ITickerItem>, ITicker
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Ticker()
         {
@@ -418,7 +418,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
@@ -429,7 +429,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual string marketId
         {
@@ -439,7 +439,7 @@ namespace OdinSdk.BaseLib.Coin.Public
 
 #if DEBUG
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual string rawJson
         {
@@ -450,19 +450,19 @@ namespace OdinSdk.BaseLib.Coin.Public
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public interface ITickerItems : IApiResult<List<ITickerItem>>
     {
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class TickerItems : ApiResult<List<ITickerItem>>, ITickerItems
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TickerItems()
         {
@@ -477,7 +477,7 @@ namespace OdinSdk.BaseLib.Coin.Public
     {
 #if DEBUG
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string rawJson
         {
@@ -488,12 +488,12 @@ namespace OdinSdk.BaseLib.Coin.Public
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class Tickers : ApiResult<List<ITickerItem>>, ITickerItems
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Tickers()
         {
@@ -502,7 +502,7 @@ namespace OdinSdk.BaseLib.Coin.Public
 
 #if DEBUG
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual string rawJson
         {

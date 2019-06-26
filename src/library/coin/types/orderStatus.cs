@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace OdinSdk.BaseLib.Coin.Types
+namespace CCXT.NET.Coin.Types
 {
     /* FIX 5.0 SP2 : OrdStatus <39> field
      0 = New
@@ -21,7 +21,7 @@ namespace OdinSdk.BaseLib.Coin.Types
     */
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum OrderStatus : int
     {
@@ -52,12 +52,12 @@ namespace OdinSdk.BaseLib.Coin.Types
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class OrderStatusConverter
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="orderStatus"></param>
         /// <returns></returns>
@@ -67,7 +67,7 @@ namespace OdinSdk.BaseLib.Coin.Types
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="s"></param>
         /// <returns></returns>
@@ -118,7 +118,7 @@ namespace OdinSdk.BaseLib.Coin.Types
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="v"></param>
         /// <returns></returns>

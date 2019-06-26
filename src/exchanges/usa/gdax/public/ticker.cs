@@ -1,14 +1,14 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Public;
-using OdinSdk.BaseLib.Configuration;
+using CCXT.NET.Coin.Public;
+using CCXT.NET.Configuration;
 using System;
 
 namespace CCXT.NET.GDAX.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class GTickerItem : OdinSdk.BaseLib.Coin.Public.TickerItem, ITickerItem
+    public class GTickerItem : CCXT.NET.Coin.Public.TickerItem, ITickerItem
     {
         /// <summary>
         /// string symbol of the market ('BTCUSD', 'ETHBTC', ...)
@@ -21,7 +21,7 @@ namespace CCXT.NET.GDAX.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "time")]
         private DateTime timeValue

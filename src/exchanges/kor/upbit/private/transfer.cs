@@ -1,15 +1,15 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Configuration;
-using OdinSdk.BaseLib.Coin.Private;
-using OdinSdk.BaseLib.Coin.Types;
+using CCXT.NET.Coin.Private;
+using CCXT.NET.Coin.Types;
+using CCXT.NET.Configuration;
 using System;
 
 namespace CCXT.NET.Upbit.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class UTransferItem : OdinSdk.BaseLib.Coin.Private.TransferItem, ITransferItem
+    public class UTransferItem : CCXT.NET.Coin.Private.TransferItem, ITransferItem
     {
         /// <summary>
         /// 입출금 종류
@@ -66,7 +66,7 @@ namespace CCXT.NET.Upbit.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "created_at")]
         private DateTime timeValue
@@ -78,7 +78,7 @@ namespace CCXT.NET.Upbit.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "done_at")]
         public DateTime? doneAt
@@ -88,7 +88,7 @@ namespace CCXT.NET.Upbit.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override decimal amount
         {
@@ -97,7 +97,7 @@ namespace CCXT.NET.Upbit.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override decimal fee
         {
@@ -106,7 +106,7 @@ namespace CCXT.NET.Upbit.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "krw_amount")]
         public decimal quoteAmount

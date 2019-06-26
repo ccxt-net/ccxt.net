@@ -1,18 +1,18 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Private;
-using OdinSdk.BaseLib.Coin.Types;
-using OdinSdk.BaseLib.Configuration;
+using CCXT.NET.Coin.Private;
+using CCXT.NET.Coin.Types;
+using CCXT.NET.Configuration;
 using System;
 
 namespace CCXT.NET.BitMEX.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class BTransferItem : OdinSdk.BaseLib.Coin.Private.TransferItem, ITransferItem
+    public class BTransferItem : CCXT.NET.Coin.Private.TransferItem, ITransferItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "transactID")]
         public override string transferId
@@ -22,7 +22,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "tx")]
         public override string transactionId
@@ -32,7 +32,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string account
         {
@@ -41,7 +41,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string currency
         {
@@ -50,7 +50,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string transactType
         {
@@ -61,7 +61,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "transactStatus")]
         public string transactStatus
@@ -71,7 +71,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "address")]
         public override string toAddress
@@ -81,7 +81,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "origin_timestamp")]
         public override long timestamp
@@ -91,7 +91,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "timestamp")]
         private DateTime timeValue
@@ -103,7 +103,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal? walletBalance
         {
@@ -112,7 +112,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal? marginBalance
         {
@@ -121,7 +121,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string text
         {
@@ -130,7 +130,7 @@ namespace CCXT.NET.BitMEX.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DateTime transactTime
         {

@@ -1,8 +1,8 @@
 ﻿using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin;
-using OdinSdk.BaseLib.Coin.Public;
-using OdinSdk.BaseLib.Coin.Types;
-using OdinSdk.BaseLib.Configuration;
+using CCXT.NET.Coin;
+using CCXT.NET.Coin.Public;
+using CCXT.NET.Coin.Types;
+using CCXT.NET.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,17 +13,17 @@ namespace CCXT.NET.Bithumb.Public
     /// <summary>
     /// exchange's public API implement class
     /// </summary>
-    public class PublicApi : OdinSdk.BaseLib.Coin.Public.PublicApi, IPublicApi
+    public class PublicApi : CCXT.NET.Coin.Public.PublicApi, IPublicApi
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PublicApi()
         {
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override XApiClient publicClient
         {
@@ -39,7 +39,7 @@ namespace CCXT.NET.Bithumb.Public
         private BithumbClient __public_web = null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BithumbClient publicWeb
         {
@@ -143,7 +143,7 @@ namespace CCXT.NET.Bithumb.Public
         }
 
         /// <summary>
-        /// Fetch current best bid and ask, as well as the last trade price.  
+        /// Fetch current best bid and ask, as well as the last trade price.
         /// </summary>
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
@@ -283,7 +283,7 @@ namespace CCXT.NET.Bithumb.Public
                                : 50;
 
                     _params.Add("count", _limit);
-                    _params.Add("group_orders", 1); // group_orders Int Value : 0 또는 1 
+                    _params.Add("group_orders", 1); // group_orders Int Value : 0 또는 1
 
                     publicClient.MergeParamsAndArgs(_params, args);
                 }

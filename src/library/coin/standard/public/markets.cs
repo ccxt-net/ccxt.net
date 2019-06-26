@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace OdinSdk.BaseLib.Coin.Public
+namespace CCXT.NET.Coin.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class MarketPrecision
     {
@@ -37,7 +37,7 @@ namespace OdinSdk.BaseLib.Coin.Public
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class MarketMinMax
     {
@@ -61,7 +61,7 @@ namespace OdinSdk.BaseLib.Coin.Public
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class MarketLimits
     {
@@ -94,12 +94,12 @@ namespace OdinSdk.BaseLib.Coin.Public
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public interface IMarketItem
     {
         /// <summary>
-        /// string literal for referencing within an exchange (ex) 'BTC/USD' 
+        /// string literal for referencing within an exchange (ex) 'BTC/USD'
         /// </summary>
         string marketId
         {
@@ -135,7 +135,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string baseId
         {
@@ -144,7 +144,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string quoteId
         {
@@ -153,7 +153,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string baseLongName
         {
@@ -162,7 +162,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string quoteLongName
         {
@@ -208,7 +208,7 @@ namespace OdinSdk.BaseLib.Coin.Public
 
 #if DEBUG
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string rawJson
         {
@@ -219,12 +219,12 @@ namespace OdinSdk.BaseLib.Coin.Public
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class MarketItem : IMarketItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MarketItem()
         {
@@ -269,7 +269,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual string baseId
         {
@@ -278,7 +278,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual string quoteId
         {
@@ -287,7 +287,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual string baseLongName
         {
@@ -296,7 +296,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual string quoteLongName
         {
@@ -314,7 +314,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual decimal makerFee
         {
@@ -323,7 +323,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual decimal takerFee
         {
@@ -341,7 +341,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual bool depositEnabled
         {
@@ -350,7 +350,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual bool withdrawEnabled
         {
@@ -378,7 +378,7 @@ namespace OdinSdk.BaseLib.Coin.Public
 
 #if DEBUG
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual string rawJson
         {
@@ -389,19 +389,19 @@ namespace OdinSdk.BaseLib.Coin.Public
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public interface IMarket : IApiResult<IMarketItem>
     {
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class Market : ApiResult<IMarketItem>, IMarket
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Market(string marketId)
         {
@@ -413,13 +413,13 @@ namespace OdinSdk.BaseLib.Coin.Public
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public interface IMarkets : IApiResult<IDictionary<string, IMarketItem>>
     {
 #if DEBUG
         /// <summary>
-        /// 
+        ///
         /// </summary>
         string rawJson
         {
@@ -430,12 +430,12 @@ namespace OdinSdk.BaseLib.Coin.Public
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class Markets : ApiResult<IDictionary<string, IMarketItem>>, IMarkets
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Markets(bool success = false)
             : base(success)
@@ -445,7 +445,7 @@ namespace OdinSdk.BaseLib.Coin.Public
 
 #if DEBUG
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual string rawJson
         {
@@ -457,7 +457,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         private Dictionary<string, string> __coin_names = null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Dictionary<string, string> CoinNames
         {
@@ -487,7 +487,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         private Dictionary<string, string> __currency_names = null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Dictionary<string, string> CurrencyNames
         {
@@ -523,9 +523,8 @@ namespace OdinSdk.BaseLib.Coin.Public
             }
         }
 
-
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="coin_id">base id which is used on exchange's server</param>
         /// <returns></returns>
@@ -537,7 +536,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="coin_name">base coin name</param>
         /// <returns></returns>
@@ -549,7 +548,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="currency_id">base or quote id which is used on exchange's server</param>
         /// <returns></returns>
@@ -561,7 +560,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="currency_name">base coin or quote coin name</param>
         /// <returns></returns>
@@ -573,7 +572,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="market_id"></param>
         /// <returns></returns>
@@ -587,7 +586,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="symbol"></param>
         /// <returns></returns>
@@ -601,7 +600,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="base_id"></param>
         /// <returns></returns>
@@ -615,7 +614,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
         /// <returns></returns>
@@ -629,7 +628,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="quote_id"></param>
         /// <returns></returns>
@@ -643,7 +642,7 @@ namespace OdinSdk.BaseLib.Coin.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="quote_name"></param>
         /// <returns></returns>

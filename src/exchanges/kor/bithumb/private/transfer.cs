@@ -1,19 +1,19 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin;
-using OdinSdk.BaseLib.Coin.Private;
-using OdinSdk.BaseLib.Coin.Types;
+using CCXT.NET.Coin;
+using CCXT.NET.Coin.Private;
+using CCXT.NET.Coin.Types;
 using System;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Bithumb.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class BTransfers : OdinSdk.BaseLib.Coin.Private.Transfers, ITransfers
+    public class BTransfers : CCXT.NET.Coin.Private.Transfers, ITransfers
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BTransfers()
         {
@@ -41,7 +41,7 @@ namespace CCXT.NET.Bithumb.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "data")]
         public new List<BTransferItem> result
@@ -52,9 +52,9 @@ namespace CCXT.NET.Bithumb.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class BTransfer : OdinSdk.BaseLib.Coin.Private.Transfer, ITransfer
+    public class BTransfer : CCXT.NET.Coin.Private.Transfer, ITransfer
     {
         /// <summary>
         /// 결과 상태 코드 (정상 : 0000, 정상이외 코드는 에러 코드 참조)
@@ -78,9 +78,9 @@ namespace CCXT.NET.Bithumb.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class BTransferItem : OdinSdk.BaseLib.Coin.Private.TransferItem, ITransferItem
+    public class BTransferItem : CCXT.NET.Coin.Private.TransferItem, ITransferItem
     {
         /// <summary>
         /// 거래수수료
@@ -103,7 +103,7 @@ namespace CCXT.NET.Bithumb.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "search")]
         private int searchValue
@@ -121,7 +121,7 @@ namespace CCXT.NET.Bithumb.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "transfer_date")]
         private long transfer_date
@@ -143,6 +143,7 @@ namespace CCXT.NET.Bithumb.Private
                 amount = Math.Abs(Convert.ToDecimal(value.Replace(" ", "")));
             }
         }
+
         /// <summary>
         /// 거래수수료
         /// </summary>

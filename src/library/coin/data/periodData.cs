@@ -1,14 +1,14 @@
 ﻿using System.Collections.Generic;
 
-namespace OdinSdk.BaseLib.Coin.Data
+namespace CCXT.NET.Coin.Data
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class PeriodData
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string dealer
         {
@@ -17,7 +17,7 @@ namespace OdinSdk.BaseLib.Coin.Data
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string currency
         {
@@ -26,7 +26,7 @@ namespace OdinSdk.BaseLib.Coin.Data
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string coin
         {
@@ -35,7 +35,7 @@ namespace OdinSdk.BaseLib.Coin.Data
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public long time_value
         {
@@ -89,7 +89,7 @@ namespace OdinSdk.BaseLib.Coin.Data
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal sell_amount
         {
@@ -98,7 +98,7 @@ namespace OdinSdk.BaseLib.Coin.Data
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal sell_count
         {
@@ -116,7 +116,7 @@ namespace OdinSdk.BaseLib.Coin.Data
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal buy_amount
         {
@@ -125,7 +125,7 @@ namespace OdinSdk.BaseLib.Coin.Data
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal buy_count
         {
@@ -135,7 +135,7 @@ namespace OdinSdk.BaseLib.Coin.Data
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class Periods : List<PeriodData>
     {

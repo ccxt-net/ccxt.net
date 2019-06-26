@@ -1,6 +1,6 @@
-using OdinSdk.BaseLib.Coin;
-using OdinSdk.BaseLib.Coin.Types;
-using OdinSdk.BaseLib.Converter;
+using CCXT.NET.Coin;
+using CCXT.NET.Coin.Types;
+using CCXT.NET.Converter;
 using System;
 using System.Collections.Generic;
 using Xunit;

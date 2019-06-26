@@ -1,15 +1,15 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Private;
+using CCXT.NET.Coin.Private;
 
 namespace CCXT.NET.Anxpro.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class AAddress : OdinSdk.BaseLib.Coin.Private.Address, IAddress
+    public class AAddress : CCXT.NET.Coin.Private.Address, IAddress
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AAddress()
         {
@@ -17,7 +17,7 @@ namespace CCXT.NET.Anxpro.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "data")]
         public new AAddressItem result
@@ -28,9 +28,9 @@ namespace CCXT.NET.Anxpro.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class AAddressItem : OdinSdk.BaseLib.Coin.Private.AddressItem, IAddressItem
+    public class AAddressItem : CCXT.NET.Coin.Private.AddressItem, IAddressItem
     {
         /// <summary>
         /// 전자지갑 Address

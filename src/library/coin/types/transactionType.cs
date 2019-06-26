@@ -1,45 +1,45 @@
 ﻿using System;
 
-namespace OdinSdk.BaseLib.Coin.Types
+namespace CCXT.NET.Coin.Types
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum TransactionType : int
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Unknown = 0,
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Withdraw = 10,
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Withdrawing = 11,
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Deposit = 20,
 
-            /// <summary>
-        /// 
+        /// <summary>
+        ///
         /// </summary>
         Depositing = 21
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class TransactionTypeConverter
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="s"></param>
         /// <returns></returns>
@@ -74,7 +74,7 @@ namespace OdinSdk.BaseLib.Coin.Types
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="v"></param>
         /// <returns></returns>

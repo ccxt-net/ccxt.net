@@ -1,16 +1,15 @@
-﻿using System.Collections.Generic;
-using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Private;
+﻿using CCXT.NET.Coin.Private;
+using System.Collections.Generic;
 
 namespace CCXT.NET.CoinCheck.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class CBalances : OdinSdk.BaseLib.Coin.Private.Balances, IBalances
+    public class CBalances : CCXT.NET.Coin.Private.Balances, IBalances
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CBalances()
         {
@@ -18,7 +17,7 @@ namespace CCXT.NET.CoinCheck.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public new List<CBalanceItem> result
         {
@@ -27,7 +26,7 @@ namespace CCXT.NET.CoinCheck.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool success
         {
@@ -37,12 +36,12 @@ namespace CCXT.NET.CoinCheck.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class CBalanceItem : OdinSdk.BaseLib.Coin.Private.BalanceItem, IBalanceItem
+    public class CBalanceItem : CCXT.NET.Coin.Private.BalanceItem, IBalanceItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string currency
         {
@@ -51,7 +50,7 @@ namespace CCXT.NET.CoinCheck.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override decimal free
         {
@@ -60,7 +59,7 @@ namespace CCXT.NET.CoinCheck.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override decimal used
         {
@@ -69,7 +68,7 @@ namespace CCXT.NET.CoinCheck.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override decimal total
         {

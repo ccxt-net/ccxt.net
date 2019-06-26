@@ -1,18 +1,18 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin.Public;
+using CCXT.NET.Coin.Public;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Korbit.Public
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class KOrderBook : OdinSdk.BaseLib.Coin.Public.OrderBook, IOrderBook
+    public class KOrderBook : CCXT.NET.Coin.Public.OrderBook, IOrderBook
     {
         /// <summary>
-        /// An array containing a list of ask prices. 
-        /// Each order has two elements: price and the unfilled amount. 
+        /// An array containing a list of ask prices.
+        /// Each order has two elements: price and the unfilled amount.
         /// The third element is deprecated and is always 1.
         /// </summary>
         [JsonProperty(PropertyName = "bids")]
@@ -38,8 +38,8 @@ namespace CCXT.NET.Korbit.Public
         }
 
         /// <summary>
-        /// An array containing a list of bid prices. 
-        /// Each order has two elements: price and the unfilled amount. 
+        /// An array containing a list of bid prices.
+        /// Each order has two elements: price and the unfilled amount.
         /// The third element is deprecated and is always 1.
         /// </summary>
         [JsonProperty(PropertyName = "asks")]
@@ -65,7 +65,7 @@ namespace CCXT.NET.Korbit.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         [JsonProperty(PropertyName = "originBids")]
@@ -76,7 +76,7 @@ namespace CCXT.NET.Korbit.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         [JsonProperty(PropertyName = "originAsks")]

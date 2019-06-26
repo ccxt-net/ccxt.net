@@ -1,19 +1,19 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Configuration;
-using OdinSdk.BaseLib.Coin.Trade;
-using OdinSdk.BaseLib.Coin.Types;
+using CCXT.NET.Coin.Trade;
+using CCXT.NET.Coin.Types;
+using CCXT.NET.Configuration;
 using System;
 using System.Collections.Generic;
 
 namespace CCXT.NET.ItBit.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class TMyTrades : OdinSdk.BaseLib.Coin.Trade.MyTrades, IMyTrades
+    public class TMyTrades : CCXT.NET.Coin.Trade.MyTrades, IMyTrades
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TMyTrades()
         {
@@ -21,7 +21,7 @@ namespace CCXT.NET.ItBit.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int totalNumberOfRecords
         {
@@ -30,7 +30,7 @@ namespace CCXT.NET.ItBit.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int currentPageNumber
         {
@@ -39,7 +39,7 @@ namespace CCXT.NET.ItBit.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string latestExecutionId
         {
@@ -48,7 +48,7 @@ namespace CCXT.NET.ItBit.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int recordsPerPage
         {
@@ -57,7 +57,7 @@ namespace CCXT.NET.ItBit.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "tradingHistory")]
         public new List<TMyTradeItem> result
@@ -68,12 +68,12 @@ namespace CCXT.NET.ItBit.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class TMyTradeItem : OdinSdk.BaseLib.Coin.Trade.MyTradeItem, IMyTradeItem
+    public class TMyTradeItem : CCXT.NET.Coin.Trade.MyTradeItem, IMyTradeItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "orderId")]
         public override string tradeId
@@ -83,7 +83,7 @@ namespace CCXT.NET.ItBit.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "instrument")]
         public override string symbol
@@ -93,7 +93,7 @@ namespace CCXT.NET.ItBit.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "origin_timestamp")]
         public override long timestamp
@@ -103,7 +103,7 @@ namespace CCXT.NET.ItBit.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "timestamp")]
         private DateTime timeValue
@@ -115,7 +115,7 @@ namespace CCXT.NET.ItBit.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "currency1")]
         public string currency1
@@ -125,7 +125,7 @@ namespace CCXT.NET.ItBit.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "currency2")]
         public string currency2
@@ -165,7 +165,7 @@ namespace CCXT.NET.ItBit.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "commissionPaid")]
         public override decimal fee
@@ -175,7 +175,7 @@ namespace CCXT.NET.ItBit.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "rebatesApplied")]
         public decimal rebatesApplied
@@ -185,7 +185,7 @@ namespace CCXT.NET.ItBit.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "rebateCurrency")]
         public string rebateCurrency
@@ -195,7 +195,7 @@ namespace CCXT.NET.ItBit.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "commissionCurrency")]
         public string commissionCurrency
@@ -205,7 +205,7 @@ namespace CCXT.NET.ItBit.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "direction")]
         private string sideValue

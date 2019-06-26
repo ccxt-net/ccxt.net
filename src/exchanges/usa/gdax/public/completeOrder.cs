@@ -1,19 +1,18 @@
 ﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Configuration;
-using OdinSdk.BaseLib.Coin.Public;
-using OdinSdk.BaseLib.Coin.Types;
+using CCXT.NET.Coin.Public;
+using CCXT.NET.Coin.Types;
+using CCXT.NET.Configuration;
 using System;
 
 namespace CCXT.NET.GDAX.Public
 {
     /// <summary>
-    /// recent trade data 
+    /// recent trade data
     /// </summary>
-    public class GCompleteOrderItem : OdinSdk.BaseLib.Coin.Public.CompleteOrderItem, ICompleteOrderItem
+    public class GCompleteOrderItem : CCXT.NET.Coin.Public.CompleteOrderItem, ICompleteOrderItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "trade_id")]
         public override string transactionId
@@ -23,7 +22,7 @@ namespace CCXT.NET.GDAX.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "size")]
         public override decimal quantity
@@ -33,7 +32,7 @@ namespace CCXT.NET.GDAX.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "time")]
         private DateTime timeValue
@@ -45,7 +44,7 @@ namespace CCXT.NET.GDAX.Public
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "side")]
         private string sideValue

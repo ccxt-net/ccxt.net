@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace OdinSdk.BaseLib.Extension
+namespace CCXT.NET.Extension
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static partial class CExtension
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="this"></param>
@@ -27,7 +27,7 @@ namespace OdinSdk.BaseLib.Extension
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="this"></param>
@@ -60,7 +60,7 @@ namespace OdinSdk.BaseLib.Extension
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="this"></param>
@@ -92,7 +92,7 @@ namespace OdinSdk.BaseLib.Extension
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="this"></param>

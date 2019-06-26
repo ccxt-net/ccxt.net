@@ -1,4 +1,5 @@
-[{
+[
+  {
     "execID": "string",
     "orderID": "string",
     "clOrdID": "string",
@@ -46,4 +47,5 @@
     "foreignNotional": 0,
     "transactTime": "2018-07-03T01:52:45.670Z",
     "timestamp": "2018-07-03T01:52:45.670Z"
-}]
+  }
+]

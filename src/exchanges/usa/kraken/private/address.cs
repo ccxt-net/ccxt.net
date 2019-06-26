@@ -1,14 +1,14 @@
-﻿using OdinSdk.BaseLib.Coin.Private;
+﻿using CCXT.NET.Coin.Private;
 
 namespace CCXT.NET.Kraken.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class KAddressItem : OdinSdk.BaseLib.Coin.Private.AddressItem, IAddressItem
+    public class KAddressItem : CCXT.NET.Coin.Private.AddressItem, IAddressItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public long expiretm
         {
@@ -17,7 +17,7 @@ namespace CCXT.NET.Kraken.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool @new
         {

@@ -1,18 +1,18 @@
-﻿using OdinSdk.BaseLib.Configuration;
-using OdinSdk.BaseLib.Coin.Public;
-using OdinSdk.BaseLib.Coin.Types;
+﻿using CCXT.NET.Coin.Public;
+using CCXT.NET.Coin.Types;
+using CCXT.NET.Configuration;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace OdinSdk.BaseLib.Coin.Trade
+namespace CCXT.NET.Coin.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public interface ITradeApi
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         XApiClient tradeClient
         {
@@ -21,7 +21,7 @@ namespace OdinSdk.BaseLib.Coin.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PublicApi publicApi
         {
@@ -30,7 +30,7 @@ namespace OdinSdk.BaseLib.Coin.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
@@ -40,7 +40,7 @@ namespace OdinSdk.BaseLib.Coin.Trade
         Task<MyOrder> FetchMyOrder(string base_name, string quote_name, string order_id, Dictionary<string, object> args);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
@@ -52,7 +52,7 @@ namespace OdinSdk.BaseLib.Coin.Trade
         Task<MyOrders> FetchMyOrders(string base_name, string quote_name, string timeframe, long since, int limits, Dictionary<string, object> args);
 
         ///// <summary>
-        ///// 
+        /////
         ///// </summary>
         ///// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
         ///// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
@@ -62,7 +62,7 @@ namespace OdinSdk.BaseLib.Coin.Trade
         //Task<MyOrder> FetchOpenOrder(string base_name, string quote_name, string order_id, Dictionary<string, object> args);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
@@ -71,14 +71,14 @@ namespace OdinSdk.BaseLib.Coin.Trade
         Task<MyOrders> FetchOpenOrders(string base_name, string quote_name, Dictionary<string, object> args);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
         Task<MyOrders> FetchAllOpenOrders(Dictionary<string, object> args);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
@@ -87,14 +87,14 @@ namespace OdinSdk.BaseLib.Coin.Trade
         Task<MyPositions> FetchOpenPositions(string base_name, string quote_name, Dictionary<string, object> args);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
         Task<MyPositions> FetchAllOpenPositions(Dictionary<string, object> args);
 
         ///// <summary>
-        ///// 
+        /////
         ///// </summary>
         ///// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
         ///// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
@@ -107,7 +107,7 @@ namespace OdinSdk.BaseLib.Coin.Trade
         //Task<MyTrades> FetchMyTrade(string base_name, string quote_name, string transaction_id, string timeframe, long since, int limits, Dictionary<string, object> args);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
@@ -119,7 +119,7 @@ namespace OdinSdk.BaseLib.Coin.Trade
         Task<MyTrades> FetchMyTrades(string base_name, string quote_name, string timeframe, long since, int limits, Dictionary<string, object> args);
 
         ///// <summary>
-        ///// 
+        /////
         ///// </summary>
         ///// <param name="timeframe">time frame interval (optional): default "1d"</param>
         ///// <param name="since">return committed data since given time (milli-seconds) (optional): default 0</param>
@@ -129,7 +129,7 @@ namespace OdinSdk.BaseLib.Coin.Trade
         //Task<MyTrades> FetchAllMyTrades(string timeframe, long since, int limits, Dictionary<string, object> args);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
@@ -141,7 +141,7 @@ namespace OdinSdk.BaseLib.Coin.Trade
         Task<MyOrder> CreateOrder(string base_name, string quote_name, decimal quantity, decimal price, SideType sideType, Dictionary<string, object> args);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
@@ -153,7 +153,7 @@ namespace OdinSdk.BaseLib.Coin.Trade
         Task<MyOrder> CreateLimitOrder(string base_name, string quote_name, decimal quantity, decimal price, SideType sideType, Dictionary<string, object> args);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
@@ -165,7 +165,7 @@ namespace OdinSdk.BaseLib.Coin.Trade
         Task<MyOrder> CreateMarketOrder(string base_name, string quote_name, decimal quantity, decimal price, SideType sideType, Dictionary<string, object> args);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
@@ -178,7 +178,7 @@ namespace OdinSdk.BaseLib.Coin.Trade
         Task<MyOrder> CancelOrder(string base_name, string quote_name, string order_id, decimal quantity, decimal price, SideType sideType, Dictionary<string, object> args);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
@@ -187,19 +187,19 @@ namespace OdinSdk.BaseLib.Coin.Trade
         Task<MyOrders> CancelOrders(string base_name, string quote_name, string[] order_ids, Dictionary<string, object> args);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="args">Add additional attributes for each exchange</param>
         Task<MyOrders> CancelAllOrders(Dictionary<string, object> args);
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class TradeApi : ITradeApi
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual XApiClient tradeClient
         {
@@ -208,7 +208,7 @@ namespace OdinSdk.BaseLib.Coin.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual PublicApi publicApi
         {
@@ -217,7 +217,7 @@ namespace OdinSdk.BaseLib.Coin.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
@@ -247,7 +247,7 @@ namespace OdinSdk.BaseLib.Coin.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
@@ -282,7 +282,7 @@ namespace OdinSdk.BaseLib.Coin.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
@@ -311,7 +311,7 @@ namespace OdinSdk.BaseLib.Coin.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
@@ -338,7 +338,7 @@ namespace OdinSdk.BaseLib.Coin.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
@@ -367,7 +367,7 @@ namespace OdinSdk.BaseLib.Coin.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
@@ -394,7 +394,7 @@ namespace OdinSdk.BaseLib.Coin.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
@@ -429,7 +429,7 @@ namespace OdinSdk.BaseLib.Coin.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
@@ -470,7 +470,7 @@ namespace OdinSdk.BaseLib.Coin.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
@@ -511,7 +511,7 @@ namespace OdinSdk.BaseLib.Coin.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
@@ -552,7 +552,7 @@ namespace OdinSdk.BaseLib.Coin.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
@@ -592,7 +592,7 @@ namespace OdinSdk.BaseLib.Coin.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
@@ -622,7 +622,7 @@ namespace OdinSdk.BaseLib.Coin.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>

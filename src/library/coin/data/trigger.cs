@@ -1,12 +1,12 @@
-﻿namespace OdinSdk.BaseLib.Coin.Data
+﻿namespace CCXT.NET.Coin.Data
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class XTriggerSite
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string site_name
         {
@@ -14,7 +14,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal btc_price
         {
@@ -22,7 +22,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal ask_price
         {
@@ -30,7 +30,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal bid_price
         {
@@ -39,12 +39,12 @@
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class XTriggerMessage
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string quote_name
         {
@@ -52,7 +52,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string base_name
         {
@@ -60,7 +60,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public XTriggerSite a_site
         {
@@ -68,7 +68,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public XTriggerSite b_site
         {
@@ -76,7 +76,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal fee
         {
@@ -84,7 +84,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal profit_qty
         {
@@ -92,7 +92,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public decimal profit_rate
         {

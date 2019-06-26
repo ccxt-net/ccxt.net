@@ -1,18 +1,18 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Configuration;
-using OdinSdk.BaseLib.Coin.Private;
+using CCXT.NET.Coin.Private;
+using CCXT.NET.Configuration;
 using System;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Bittrex.Private
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class BWithdraw : OdinSdk.BaseLib.Coin.Private.Transfer, ITransfer
+    public class BWithdraw : CCXT.NET.Coin.Private.Transfer, ITransfer
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BWithdraw()
         {
@@ -20,7 +20,7 @@ namespace CCXT.NET.Bittrex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "result")]
         public new BWithdrawItem result
@@ -31,12 +31,12 @@ namespace CCXT.NET.Bittrex.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class BWithdrawItem : OdinSdk.BaseLib.Coin.Private.TransferItem, ITransferItem
+    public class BWithdrawItem : CCXT.NET.Coin.Private.TransferItem, ITransferItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "uuid")]
         public override string transferId
@@ -47,12 +47,12 @@ namespace CCXT.NET.Bittrex.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class BTransfers : OdinSdk.BaseLib.Coin.Private.Transfers, ITransfers
+    public class BTransfers : CCXT.NET.Coin.Private.Transfers, ITransfers
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BTransfers()
         {
@@ -60,7 +60,7 @@ namespace CCXT.NET.Bittrex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "result")]
         public new List<BTransferItem> result
@@ -71,12 +71,12 @@ namespace CCXT.NET.Bittrex.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class BTransfer : OdinSdk.BaseLib.Coin.Private.Transfer, ITransfer
+    public class BTransfer : CCXT.NET.Coin.Private.Transfer, ITransfer
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BTransfer()
         {
@@ -84,7 +84,7 @@ namespace CCXT.NET.Bittrex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "result")]
         public new BTransferItem result
@@ -95,12 +95,12 @@ namespace CCXT.NET.Bittrex.Private
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class BTransferItem : OdinSdk.BaseLib.Coin.Private.TransferItem, ITransferItem
+    public class BTransferItem : CCXT.NET.Coin.Private.TransferItem, ITransferItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "PaymentUuid")]
         public override string transferId
@@ -110,7 +110,7 @@ namespace CCXT.NET.Bittrex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "TxId")]
         public override string transactionId
@@ -120,7 +120,7 @@ namespace CCXT.NET.Bittrex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "Currency")]
         public override string currency
@@ -130,7 +130,7 @@ namespace CCXT.NET.Bittrex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "Address")]
         public override string toAddress
@@ -140,7 +140,7 @@ namespace CCXT.NET.Bittrex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "Amount")]
         public override decimal amount
@@ -150,7 +150,7 @@ namespace CCXT.NET.Bittrex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "TxCost")]
         public override decimal fee
@@ -160,7 +160,7 @@ namespace CCXT.NET.Bittrex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "Authorized")]
         public bool authorized
@@ -170,7 +170,7 @@ namespace CCXT.NET.Bittrex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "PendingPayment")]
         public bool pendingPayment
@@ -180,7 +180,7 @@ namespace CCXT.NET.Bittrex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "InvalidAddress")]
         public bool invalidAddress
@@ -190,7 +190,7 @@ namespace CCXT.NET.Bittrex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "Canceled")]
         private bool canceled
@@ -202,7 +202,7 @@ namespace CCXT.NET.Bittrex.Private
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "Opened")]
         private DateTime timeValue

@@ -1,18 +1,18 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Trade;
-using OdinSdk.BaseLib.Coin.Types;
-using OdinSdk.BaseLib.Configuration;
+using CCXT.NET.Coin.Trade;
+using CCXT.NET.Coin.Types;
+using CCXT.NET.Configuration;
 using System;
 
 namespace CCXT.NET.GDAX.Trade
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class GCancelOrderItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string orderId
         {
@@ -21,7 +21,7 @@ namespace CCXT.NET.GDAX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string status
         {
@@ -31,12 +31,12 @@ namespace CCXT.NET.GDAX.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class GCancelAllOrders
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string result
         {
@@ -46,12 +46,12 @@ namespace CCXT.NET.GDAX.Trade
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class GMyOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
+    public class GMyOrderItem : CCXT.NET.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "id")]
         public override string orderId
@@ -61,7 +61,7 @@ namespace CCXT.NET.GDAX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "size")]
         public override decimal quantity
@@ -71,7 +71,7 @@ namespace CCXT.NET.GDAX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "product_id")]
         public override string symbol
@@ -81,7 +81,7 @@ namespace CCXT.NET.GDAX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "side")]
         private string sideValue
@@ -113,7 +113,7 @@ namespace CCXT.NET.GDAX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "specified_funds")]
         public decimal specified_funds
@@ -123,7 +123,7 @@ namespace CCXT.NET.GDAX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "type")]
         private string orderValue
@@ -135,7 +135,7 @@ namespace CCXT.NET.GDAX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "post_only")]
         public bool post_only
@@ -145,7 +145,7 @@ namespace CCXT.NET.GDAX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "created_at")]
         private DateTime timeValue
@@ -157,7 +157,7 @@ namespace CCXT.NET.GDAX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "done_at")]
         private DateTime done_at
@@ -169,7 +169,7 @@ namespace CCXT.NET.GDAX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "done_reason")]
         public string done_reason
@@ -179,7 +179,7 @@ namespace CCXT.NET.GDAX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "fill_fees")]
         public override decimal fee
@@ -189,7 +189,7 @@ namespace CCXT.NET.GDAX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "filled_size")]
         public override decimal filled
@@ -209,7 +209,7 @@ namespace CCXT.NET.GDAX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "status")]
         private string statusValue
@@ -221,7 +221,7 @@ namespace CCXT.NET.GDAX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "settled")]
         public bool settled
@@ -240,15 +240,13 @@ namespace CCXT.NET.GDAX.Trade
         }
     }
 
-
-
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class GMyOrdersItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
+    public class GMyOrdersItem : CCXT.NET.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "id")]
         public override string orderId
@@ -258,7 +256,7 @@ namespace CCXT.NET.GDAX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "price")]
         public override decimal price
@@ -268,7 +266,7 @@ namespace CCXT.NET.GDAX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "size")]
         public override decimal quantity
@@ -278,7 +276,7 @@ namespace CCXT.NET.GDAX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "product_id")]
         public override string symbol
@@ -288,7 +286,7 @@ namespace CCXT.NET.GDAX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "side")]
         private string sideValue
@@ -300,7 +298,7 @@ namespace CCXT.NET.GDAX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "stp")]
         public string stp
@@ -310,7 +308,7 @@ namespace CCXT.NET.GDAX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "funds")]
         public decimal funds
@@ -320,7 +318,7 @@ namespace CCXT.NET.GDAX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "specified_funds")]
         public decimal specified_funds
@@ -330,7 +328,7 @@ namespace CCXT.NET.GDAX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "type")]
         private string orderValue
@@ -342,7 +340,7 @@ namespace CCXT.NET.GDAX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "post_only")]
         public bool post_only
@@ -352,7 +350,7 @@ namespace CCXT.NET.GDAX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "created_at")]
         private DateTime timeValue
@@ -364,7 +362,7 @@ namespace CCXT.NET.GDAX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "done_at")]
         private DateTime done_at
@@ -376,7 +374,7 @@ namespace CCXT.NET.GDAX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "done_reason")]
         public string done_reason
@@ -386,7 +384,7 @@ namespace CCXT.NET.GDAX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "fill_fees")]
         public override decimal fee
@@ -396,7 +394,7 @@ namespace CCXT.NET.GDAX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "filled_size")]
         public override decimal filled
@@ -406,7 +404,7 @@ namespace CCXT.NET.GDAX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "executed_value")]
         public decimal executed_value
@@ -416,7 +414,7 @@ namespace CCXT.NET.GDAX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "status")]
         private string statusValue
@@ -428,7 +426,7 @@ namespace CCXT.NET.GDAX.Trade
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "settled")]
         public bool settled
