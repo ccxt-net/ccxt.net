@@ -1,6 +1,6 @@
-﻿using Newtonsoft.Json;
+﻿using CCXT.NET.Coin;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using CCXT.NET.Coin;
 using RestSharp;
 using System;
 using System.Collections.Generic;

@@ -1,7 +1,7 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using CCXT.NET.Coin;
+﻿using CCXT.NET.Coin;
 using CCXT.NET.Coin.Private;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace CCXT.NET.Zb.Private
 {

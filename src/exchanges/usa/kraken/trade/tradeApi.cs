@@ -1,8 +1,8 @@
-﻿using CCXT.NET.Kraken.Public;
-using CCXT.NET.Coin;
+﻿using CCXT.NET.Coin;
 using CCXT.NET.Coin.Trade;
 using CCXT.NET.Coin.Types;
 using CCXT.NET.Configuration;
+using CCXT.NET.Kraken.Public;
 using System;
 using System.Collections.Generic;
 using System.Linq;

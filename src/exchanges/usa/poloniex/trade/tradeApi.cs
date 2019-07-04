@@ -1,9 +1,9 @@
-﻿using Newtonsoft.Json.Linq;
-using CCXT.NET.Coin;
+﻿using CCXT.NET.Coin;
 using CCXT.NET.Coin.Trade;
 using CCXT.NET.Coin.Types;
 using CCXT.NET.Configuration;
 using CCXT.NET.Extension;
+using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;

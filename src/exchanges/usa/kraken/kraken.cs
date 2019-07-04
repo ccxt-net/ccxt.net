@@ -1,13 +1,13 @@
-﻿using Newtonsoft.Json.Linq;
-using CCXT.NET.Coin;
+﻿using CCXT.NET.Coin;
+using Newtonsoft.Json.Linq;
 using RestSharp;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
-using System.Diagnostics;
 
 namespace CCXT.NET.Kraken
 {

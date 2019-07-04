@@ -1,7 +1,7 @@
-﻿using Newtonsoft.Json;
-using CCXT.NET.Coin;
+﻿using CCXT.NET.Coin;
 using CCXT.NET.Coin.Private;
 using CCXT.NET.Coin.Types;
+using Newtonsoft.Json;
 
 namespace CCXT.NET.Korbit.Private
 {

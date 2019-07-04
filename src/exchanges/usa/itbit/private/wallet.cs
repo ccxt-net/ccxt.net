@@ -1,5 +1,5 @@
-﻿using Newtonsoft.Json;
-using CCXT.NET.Coin.Private;
+﻿using CCXT.NET.Coin.Private;
+using Newtonsoft.Json;
 using System.Collections.Generic;
 
 namespace CCXT.NET.ItBit.Private

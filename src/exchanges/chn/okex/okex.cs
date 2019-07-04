@@ -1,7 +1,7 @@
-﻿using CCXT.NET.OKEx.Public;
-using Newtonsoft.Json.Linq;
-using CCXT.NET.Coin;
+﻿using CCXT.NET.Coin;
 using CCXT.NET.Coin.Public;
+using CCXT.NET.OKEx.Public;
+using Newtonsoft.Json.Linq;
 using RestSharp;
 using System;
 using System.Collections.Generic;

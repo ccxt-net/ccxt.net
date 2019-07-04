@@ -1,8 +1,8 @@
-﻿using Newtonsoft.Json.Linq;
-using CCXT.NET.Coin;
+﻿using CCXT.NET.Coin;
 using CCXT.NET.Coin.Private;
 using CCXT.NET.Coin.Types;
 using CCXT.NET.Configuration;
+using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -89,22 +89,22 @@ namespace CCXT.NET.Kraken.Private
                 else
                 {
 #endif
-                var _json_value = await privateClient.CallApiPost1Async("/0/private/DepositMethods", _params);
+                    var _json_value = await privateClient.CallApiPost1Async("/0/private/DepositMethods", _params);
 #if DEBUG
                     _result.rawJson = _json_value.Content;
 #endif
-                var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
-                {
-                    var _json_data = privateClient.DeserializeObject<JToken>(_json_value.Content);
+                    var _json_result = privateClient.GetResponseMessage(_json_value.Response);
+                    if (_json_result.success == true)
                     {
-                        _result.result = _json_data["result"][0]["method"].Value<string>();
+                        var _json_data = privateClient.DeserializeObject<JToken>(_json_value.Content);
+                        {
+                            _result.result = _json_data["result"][0]["method"].Value<string>();
 
-                        depositMethods.Add(currency_id, _result.result);
+                            depositMethods.Add(currency_id, _result.result);
+                        }
                     }
-                }
 
-                _result.SetResult(_json_result);
+                    _result.SetResult(_json_result);
 #if DEBUG
                 }
 #endif

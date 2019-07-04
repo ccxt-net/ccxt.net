@@ -1,5 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
-using CCXT.NET.Cryption;
+﻿using CCXT.NET.Cryption;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections;
 using System.Collections.Generic;

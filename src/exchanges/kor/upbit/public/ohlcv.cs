@@ -1,5 +1,5 @@
-﻿using Newtonsoft.Json;
-using CCXT.NET.Coin.Public;
+﻿using CCXT.NET.Coin.Public;
+using Newtonsoft.Json;
 using System;
 
 namespace CCXT.NET.Upbit.Public

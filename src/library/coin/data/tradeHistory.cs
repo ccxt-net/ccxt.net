@@ -1,6 +1,6 @@
-﻿using Newtonsoft.Json;
+﻿using CCXT.NET.Coin.Types;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using CCXT.NET.Coin.Types;
 
 namespace CCXT.NET.Coin.Data
 {

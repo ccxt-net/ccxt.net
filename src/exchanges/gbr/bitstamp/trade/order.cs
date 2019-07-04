@@ -1,8 +1,8 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using CCXT.NET.Coin.Trade;
+﻿using CCXT.NET.Coin.Trade;
 using CCXT.NET.Coin.Types;
 using CCXT.NET.Configuration;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 
 namespace CCXT.NET.Bitstamp.Trade

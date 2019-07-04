@@ -1,6 +1,6 @@
-﻿using Newtonsoft.Json;
-using CCXT.NET.Coin;
+﻿using CCXT.NET.Coin;
 using CCXT.NET.Coin.Private;
+using Newtonsoft.Json;
 
 namespace CCXT.NET.Bithumb.Private
 {

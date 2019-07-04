@@ -1,6 +1,6 @@
-﻿using Newtonsoft.Json;
-using CCXT.NET.Coin.Private;
+﻿using CCXT.NET.Coin.Private;
 using CCXT.NET.Configuration;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 

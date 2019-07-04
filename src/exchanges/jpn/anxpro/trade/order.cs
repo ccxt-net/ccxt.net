@@ -1,7 +1,7 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using CCXT.NET.Coin.Trade;
+﻿using CCXT.NET.Coin.Trade;
 using CCXT.NET.Coin.Types;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Anxpro.Trade

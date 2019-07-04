@@ -1,6 +1,6 @@
-﻿using Microsoft.IdentityModel.Tokens;
+﻿using CCXT.NET.Coin;
+using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json.Linq;
-using CCXT.NET.Coin;
 using RestSharp;
 using System;
 using System.Collections.Generic;

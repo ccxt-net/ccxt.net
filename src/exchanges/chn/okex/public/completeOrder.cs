@@ -1,6 +1,6 @@
-﻿using Newtonsoft.Json;
-using CCXT.NET.Coin.Public;
+﻿using CCXT.NET.Coin.Public;
 using CCXT.NET.Coin.Types;
+using Newtonsoft.Json;
 
 namespace CCXT.NET.OKEx.Public
 {

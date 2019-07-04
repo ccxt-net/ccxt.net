@@ -1,6 +1,5 @@
-﻿using Newtonsoft.Json;
-
-using CCXT.NET.Coin.Public;
+﻿using CCXT.NET.Coin.Public;
+using Newtonsoft.Json;
 
 namespace CCXT.NET.Bitstamp.Public
 {

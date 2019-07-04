@@ -1,5 +1,5 @@
-﻿using Newtonsoft.Json;
-using CCXT.NET.Coin.Public;
+﻿using CCXT.NET.Coin.Public;
+using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Runtime.CompilerServices;

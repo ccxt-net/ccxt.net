@@ -1,11 +1,12 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using CCXT.NET.Configuration;
+﻿using CCXT.NET.Configuration;
 using CCXT.NET.Serialize;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using RestSharp;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
 using System.Net;
@@ -13,7 +14,6 @@ using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
-using System.Diagnostics;
 
 namespace CCXT.NET.Coin
 {

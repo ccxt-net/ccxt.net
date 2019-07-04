@@ -1,6 +1,6 @@
-﻿using Newtonsoft.Json;
-using CCXT.NET.Coin;
+﻿using CCXT.NET.Coin;
 using CCXT.NET.Coin.Trade;
+using Newtonsoft.Json;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Bithumb.Trade

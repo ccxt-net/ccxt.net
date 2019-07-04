@@ -1,6 +1,6 @@
-﻿using Newtonsoft.Json;
-using CCXT.NET.Coin.Trade;
+﻿using CCXT.NET.Coin.Trade;
 using CCXT.NET.Coin.Types;
+using Newtonsoft.Json;
 using System;
 
 namespace CCXT.NET.Bitfinex.Trade

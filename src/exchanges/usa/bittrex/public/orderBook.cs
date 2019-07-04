@@ -1,6 +1,6 @@
-﻿using Newtonsoft.Json;
+﻿using CCXT.NET.Coin.Public;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using CCXT.NET.Coin.Public;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Bittrex.Public

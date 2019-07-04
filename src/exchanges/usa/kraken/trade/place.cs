@@ -1,5 +1,5 @@
-﻿using Newtonsoft.Json;
-using CCXT.NET.Coin.Trade;
+﻿using CCXT.NET.Coin.Trade;
+using Newtonsoft.Json;
 
 namespace CCXT.NET.Kraken.Trade
 {

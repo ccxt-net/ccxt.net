@@ -1,5 +1,5 @@
-﻿using Newtonsoft.Json;
-using CCXT.NET.Coin;
+﻿using CCXT.NET.Coin;
+using Newtonsoft.Json;
 
 namespace CCXT.NET.Coinone
 {

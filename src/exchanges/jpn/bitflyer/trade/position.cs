@@ -1,7 +1,7 @@
-﻿using Newtonsoft.Json;
-using CCXT.NET.Coin.Trade;
+﻿using CCXT.NET.Coin.Trade;
 using CCXT.NET.Coin.Types;
 using CCXT.NET.Configuration;
+using Newtonsoft.Json;
 using System;
 
 namespace CCXT.NET.Bitflyer.Trade

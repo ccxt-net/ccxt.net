@@ -1,5 +1,5 @@
-﻿using Newtonsoft.Json.Linq;
-using CCXT.NET.Coin;
+﻿using CCXT.NET.Coin;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 
