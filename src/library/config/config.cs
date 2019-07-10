@@ -165,6 +165,18 @@ namespace CCXT.NET.Configuration
         /// <param name="p_appkey"></param>
         /// <param name="p_default"></param>
         /// <returns></returns>
+        public long GetAppInteger64(string p_appkey, int p_default = 0)
+        {
+            var _value = GetAppString(p_appkey);
+            return String.IsNullOrEmpty(_value) ? p_default : Convert.ToInt64(_value);
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="p_appkey"></param>
+        /// <param name="p_default"></param>
+        /// <returns></returns>
         public decimal GetAppDecimal(string p_appkey, decimal p_default = 0)
         {
             var _value = GetAppString(p_appkey);
