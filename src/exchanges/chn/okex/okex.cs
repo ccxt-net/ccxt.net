@@ -254,7 +254,7 @@ namespace CCXT.NET.OKEx
             { 1003, ErrorCode.InvalidOrder },               // "The transaction amount is less than the minimum requirement"
             { 1004, ErrorCode.InvalidOrder },               // "The transaction amount is less than 0"
             { 1013, ErrorCode.InvalidOrder },               // no contract type (PR-1101)
-            { 1027, ErrorCode.InvalidOrder },               // createLimitBuyOrder(symbol, 0, 0): Incorrect parameter may exceeded limits
+            { 1027, ErrorCode.InvalidOrder },               // createLimitBuyOrder(symbol, 0, 0): Incorrect parameter may exceeded limit
             { 1050, ErrorCode.InvalidOrder },               // returned when trying to cancel an order that was filled or canceled previously
             { 1217, ErrorCode.InvalidOrder },               // "Order was sent at ±5% of the current market price. Please resend"
             { 10014, ErrorCode.InvalidOrder },              // "Order price must be between 0 and 1,000,000"

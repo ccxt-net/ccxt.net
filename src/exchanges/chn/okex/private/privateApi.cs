@@ -207,10 +207,10 @@ namespace CCXT.NET.OKEx.Private
         /// <param name="currency_name">base coin or quote coin name</param>
         /// <param name="timeframe">time frame interval (optional): default "1d"</param>
         /// <param name="since">return committed data since given time (milli-seconds) (optional): default 0</param>
-        /// <param name="limits">You can set the maximum number of transactions you want to get with this parameter</param>
+        /// <param name="limit">You can set the maximum number of transactions you want to get with this parameter</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<Transfers> FetchTransfers(string currency_name, string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
+        public override async Task<Transfers> FetchTransfers(string currency_name, string timeframe = "1d", long since = 0, int limit = 20, Dictionary<string, object> args = null)
         {
             var _result = new Transfers();
 
@@ -246,7 +246,7 @@ namespace CCXT.NET.OKEx.Private
                             var _deposits = _json_deposits.result
                                                       .Where(t => t.timestamp >= since)
                                                       .OrderByDescending(t => t.timestamp)
-                                                      .Take(limits);
+                                                      .Take(limit);
 
                             foreach (var _d in _deposits)
                             {
@@ -281,7 +281,7 @@ namespace CCXT.NET.OKEx.Private
                             var _withdraws = _json_withdraws.result
                                                         .Where(t => t.timestamp >= since)
                                                         .OrderByDescending(t => t.timestamp)
-                                                        .Take(limits);
+                                                        .Take(limit);
 
                             foreach (var _w in _withdraws)
                             {

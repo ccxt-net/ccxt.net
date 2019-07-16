@@ -76,7 +76,7 @@ namespace CCXT.NET.CEXIO
                             fees = new List<string>
                             {
                                 "https://cex.io/fee-schedule",
-                                "https://cex.io/limits-commissions"
+                                "https://cex.io/limit-commissions"
                             }
                         },
                         RequiredCredentials = new RequiredCredentials

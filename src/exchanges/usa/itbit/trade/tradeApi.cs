@@ -110,10 +110,10 @@ namespace CCXT.NET.ItBit.Trade
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
         /// <param name="timeframe">time frame interval (optional): default "1d"</param>
         /// <param name="since">return committed data since given time (milli-seconds) (optional): default 0</param>
-        /// <param name="limits">maximum number of items (optional): default 20</param>
+        /// <param name="limit">maximum number of items (optional): default 20</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<MyOrders> FetchMyOrders(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
+        public override async Task<MyOrders> FetchMyOrders(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limit = 20, Dictionary<string, object> args = null)
         {
             var _result = new MyOrders(base_name, quote_name);
 
@@ -144,7 +144,7 @@ namespace CCXT.NET.ItBit.Trade
                         var _orders = _json_data
                                             .Where(o => o.symbol == _market.result.symbol && o.timestamp >= since)
                                             .OrderByDescending(o => o.timestamp)
-                                            .Take(limits);
+                                            .Take(limit);
 
                         foreach (var _o in _orders)
                         {
@@ -278,10 +278,10 @@ namespace CCXT.NET.ItBit.Trade
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
         /// <param name="timeframe">time frame interval (optional): default "1d"</param>
         /// <param name="since">return committed data since given time (milli-seconds) (optional): default 0</param>
-        /// <param name="limits">maximum number of items (optional): default 20</param>
+        /// <param name="limit">maximum number of items (optional): default 20</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<MyTrades> FetchMyTrades(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
+        public override async Task<MyTrades> FetchMyTrades(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limit = 20, Dictionary<string, object> args = null)
         {
             var _result = new MyTrades(base_name, quote_name);
 
@@ -296,7 +296,7 @@ namespace CCXT.NET.ItBit.Trade
                 var _params = new Dictionary<string, object>();
                 {
                     //var _till_time = CUnixTime.Now;
-                    //var _from_time = (since > 0) ? since / 1000 : _till_time - _timestamp * limits;     // 가져올 갯수 만큼 timeframe * limits 간격으로 데이터 양 계산
+                    //var _from_time = (since > 0) ? since / 1000 : _till_time - _timestamp * limit;     // 가져올 갯수 만큼 timeframe * limit 간격으로 데이터 양 계산
 
                     //_params.Add("rangeStart", CUnixTime.ConvertToUtcTime(_from_time).ToString("o"));    // ISO 8601 datetime string with seconds
                     //_params.Add("rangeEnd", CUnixTime.ConvertToUtcTime(_till_time).ToString("o"));
@@ -316,7 +316,7 @@ namespace CCXT.NET.ItBit.Trade
                         var _trades = _json_data.result
                                                   .Where(t => t.symbol == _market.result.symbol && t.timestamp >= since)
                                                   .OrderByDescending(t => t.timestamp)
-                                                  .Take(limits);
+                                                  .Take(limit);
 
                         foreach (var _t in _trades)
                         {

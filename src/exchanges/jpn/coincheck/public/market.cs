@@ -49,7 +49,7 @@ namespace CCXT.NET.CoinCheck.Public
         public CMarketItem()
         {
             this.precision = new MarketPrecision();
-            this.limits = new MarketLimits
+            this.limit = new MarketLimits
             {
                 price = new MarketMinMax(),
                 quantity = new MarketMinMax(),
@@ -99,7 +99,7 @@ namespace CCXT.NET.CoinCheck.Public
         {
             set
             {
-                limits.quantity.min = value;
+                limit.quantity.min = value;
             }
         }
     }

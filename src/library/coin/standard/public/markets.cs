@@ -75,7 +75,7 @@ namespace CCXT.NET.Coin.Public
         }
 
         /// <summary>
-        /// min/max limits for the price of the order (단가)
+        /// min/max limit for the price of the order (단가)
         /// </summary>
         public MarketMinMax price
         {
@@ -84,7 +84,7 @@ namespace CCXT.NET.Coin.Public
         }
 
         /// <summary>
-        /// limits for order cost = price * amount (금액)
+        /// limit for order cost = price * amount (금액)
         /// </summary>
         public MarketMinMax amount
         {
@@ -198,9 +198,9 @@ namespace CCXT.NET.Coin.Public
         }
 
         /// <summary>
-        /// value limits when placing orders on this market
+        /// value limit when placing orders on this market
         /// </summary>
-        MarketLimits limits
+        MarketLimits limit
         {
             get;
             set;
@@ -370,9 +370,9 @@ namespace CCXT.NET.Coin.Public
         }
 
         /// <summary>
-        /// value limits when placing orders on this market
+        /// value limit when placing orders on this market
         /// </summary>
-        public virtual MarketLimits limits
+        public virtual MarketLimits limit
         {
             get;
             set;

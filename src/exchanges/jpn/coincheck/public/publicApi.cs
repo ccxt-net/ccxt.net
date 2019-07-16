@@ -144,10 +144,10 @@ namespace CCXT.NET.CoinCheck.Public
         /// </summary>
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
-        /// <param name="limits">maximum number of items (optional): default 20</param>
+        /// <param name="limit">maximum number of items (optional): default 20</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<OrderBooks> FetchOrderBooks(string base_name, string quote_name, int limits = 20, Dictionary<string, object> args = null)
+        public override async Task<OrderBooks> FetchOrderBooks(string base_name, string quote_name, int limit = 20, Dictionary<string, object> args = null)
         {
             var _result = new OrderBooks(base_name, quote_name);
 
@@ -169,7 +169,7 @@ namespace CCXT.NET.CoinCheck.Public
                     {
                         var _orderbook = new OrderBook { asks = new List<IOrderBookItem>(), bids = new List<IOrderBookItem>() };
 
-                        foreach (var _ask in _json_data.asks.OrderBy(o => o.price).Take(limits).ToList())
+                        foreach (var _ask in _json_data.asks.OrderBy(o => o.price).Take(limit).ToList())
                         {
                             _ask.amount = _ask.price * _ask.quantity;
                             _ask.count = 1;
@@ -177,7 +177,7 @@ namespace CCXT.NET.CoinCheck.Public
                             _orderbook.asks.Add(_ask);
                         }
 
-                        foreach (var _bid in _json_data.bids.OrderByDescending(o => o.price).Take(limits).ToList())
+                        foreach (var _bid in _json_data.bids.OrderByDescending(o => o.price).Take(limit).ToList())
                         {
                             _bid.amount = _bid.price * _bid.quantity;
                             _bid.count = 1;
@@ -210,10 +210,10 @@ namespace CCXT.NET.CoinCheck.Public
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
         /// <param name="timeframe">time frame interval (optional): default "1d"</param>
         /// <param name="since">return committed data since given time (milli-seconds) (optional): default 0</param>
-        /// <param name="limits">maximum number of items (optional): default 20, max 100</param>
+        /// <param name="limit">maximum number of items (optional): default 20, max 100</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<CompleteOrders> FetchCompleteOrders(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
+        public override async Task<CompleteOrders> FetchCompleteOrders(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limit = 20, Dictionary<string, object> args = null)
         {
             var _result = new CompleteOrders(base_name, quote_name);
 
@@ -228,7 +228,7 @@ namespace CCXT.NET.CoinCheck.Public
                 var _params = new Dictionary<string, object>();
                 {
                     _params.Add("pair", _market.result.symbol);
-                    _params.Add("limit", limits);
+                    _params.Add("limit", limit);
 
                     publicClient.MergeParamsAndArgs(_params, args);
                 }
@@ -245,7 +245,7 @@ namespace CCXT.NET.CoinCheck.Public
                         var _orders = _json_data.result
                                                 .Where(t => t.timestamp >= since)
                                                 .OrderByDescending(t => t.timestamp)
-                                                .Take(limits);
+                                                .Take(limit);
 
                         foreach (var _o in _orders)
                         {

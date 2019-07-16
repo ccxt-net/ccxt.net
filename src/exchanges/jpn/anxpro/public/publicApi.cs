@@ -196,10 +196,10 @@ namespace CCXT.NET.Anxpro.Public
         /// </summary>
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
-        /// <param name="limits">maximum number of items (optional): default 20</param>
+        /// <param name="limit">maximum number of items (optional): default 20</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<OrderBooks> FetchOrderBooks(string base_name, string quote_name, int limits = 20, Dictionary<string, object> args = null)
+        public override async Task<OrderBooks> FetchOrderBooks(string base_name, string quote_name, int limit = 20, Dictionary<string, object> args = null)
         {
             var _result = new OrderBooks(base_name, quote_name);
 
@@ -219,8 +219,8 @@ namespace CCXT.NET.Anxpro.Public
                 {
                     var _orderbook = publicClient.DeserializeObject<AOrderBooks>(_json_value.Content);
                     {
-                        _result.result.asks = _orderbook.result.asks.OrderBy(o => o.price).Take(limits).ToList();
-                        _result.result.bids = _orderbook.result.bids.OrderByDescending(o => o.price).Take(limits).ToList();
+                        _result.result.asks = _orderbook.result.asks.OrderBy(o => o.price).Take(limit).ToList();
+                        _result.result.bids = _orderbook.result.bids.OrderByDescending(o => o.price).Take(limit).ToList();
 
                         _result.result.symbol = _market.result.symbol;
                         _result.result.timestamp = _orderbook.result.dataUpdateTime / 1000;

@@ -200,7 +200,7 @@ namespace CCXT.NET.Gemini
             { "NoSSL", "You must use HTTPS to access the API" },
             { "OptionsMustBeArray", "The options parameter must be an array." },
             { "OrderNotFound", "The order specified was not found" },
-            { "RateLimit", "Requests were made too frequently. See Rate Limits below." },
+            { "RateLimit", "Requests were made too frequently. See Rate limit below." },
             { "System", "We are experiencing technical issues" },
             { "UnsupportedOption", "This order execution option is not supported." }
         };

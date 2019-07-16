@@ -152,10 +152,10 @@ namespace CCXT.NET.Gemini.Trade
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
         /// <param name="timeframe">time frame interval (optional): default "1d"</param>
         /// <param name="since">return committed data since given time (milli-seconds) (optional): default 0</param>
-        /// <param name="limits">maximum number of items (optional): default 20</param>
+        /// <param name="limit">maximum number of items (optional): default 20</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<MyTrades> FetchMyTrades(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
+        public override async Task<MyTrades> FetchMyTrades(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limit = 20, Dictionary<string, object> args = null)
         {
             var _result = new MyTrades(base_name, quote_name);
 
@@ -170,7 +170,7 @@ namespace CCXT.NET.Gemini.Trade
                 var _params = new Dictionary<string, object>();
                 {
                     _params.Add("symbol", _market.result.symbol);
-                    _params.Add("limit_trades", limits);
+                    _params.Add("limit_trades", limit);
                     _params.Add("timestamp", since);
 
                     tradeClient.MergeParamsAndArgs(_params, args);
@@ -188,7 +188,7 @@ namespace CCXT.NET.Gemini.Trade
                         var _trades = _json_data
                                             .Where(t => t.timestamp >= since)
                                             .OrderByDescending(t => t.timestamp)
-                                            .Take(limits);
+                                            .Take(limit);
 
                         foreach (var _t in _trades)
                         {

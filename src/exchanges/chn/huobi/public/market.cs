@@ -51,7 +51,7 @@ namespace CCXT.NET.Huobi.Public
         public HMarketItem()
         {
             this.precision = new MarketPrecision();
-            this.limits = new MarketLimits
+            this.limit = new MarketLimits
             {
                 price = new MarketMinMax(),
                 quantity = new MarketMinMax(),

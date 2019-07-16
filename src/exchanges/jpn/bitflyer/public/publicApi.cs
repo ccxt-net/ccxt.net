@@ -137,7 +137,7 @@ namespace CCXT.NET.Bitflyer.Public
                             active = true,
 
                             precision = _precision,
-                            limits = _limits
+                            limit = _limits
                         };
 
                         _result.result.Add(_entry.marketId, _entry);
@@ -205,10 +205,10 @@ namespace CCXT.NET.Bitflyer.Public
         /// </summary>
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
-        /// <param name="limits">maximum number of items (optional): default 20</param>
+        /// <param name="limit">maximum number of items (optional): default 20</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<OrderBooks> FetchOrderBooks(string base_name, string quote_name, int limits = 20, Dictionary<string, object> args = null)
+        public override async Task<OrderBooks> FetchOrderBooks(string base_name, string quote_name, int limit = 20, Dictionary<string, object> args = null)
         {
             var _result = new OrderBooks(base_name, quote_name);
 
@@ -233,8 +233,8 @@ namespace CCXT.NET.Bitflyer.Public
                 {
                     var _orderbook = publicClient.DeserializeObject<BOrderBook>(_json_value.Content);
                     {
-                        _result.result.asks = _orderbook.asks.OrderBy(o => o.price).Take(limits).ToList();
-                        _result.result.bids = _orderbook.bids.OrderByDescending(o => o.price).Take(limits).ToList();
+                        _result.result.asks = _orderbook.asks.OrderBy(o => o.price).Take(limit).ToList();
+                        _result.result.bids = _orderbook.bids.OrderByDescending(o => o.price).Take(limit).ToList();
 
                         _result.result.symbol = _market.result.symbol;
                         _result.result.timestamp = CUnixTime.NowMilli;
@@ -259,10 +259,10 @@ namespace CCXT.NET.Bitflyer.Public
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
         /// <param name="timeframe">time frame interval (optional): default "1d"</param>
         /// <param name="since">return committed data since given time (milli-seconds) (optional): default 0</param>
-        /// <param name="limits">maximum number of items (optional): default 20</param>
+        /// <param name="limit">maximum number of items (optional): default 20</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<CompleteOrders> FetchCompleteOrders(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
+        public override async Task<CompleteOrders> FetchCompleteOrders(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limit = 20, Dictionary<string, object> args = null)
         {
             var _result = new CompleteOrders(base_name, quote_name);
 
@@ -277,7 +277,7 @@ namespace CCXT.NET.Bitflyer.Public
                 var _params = new Dictionary<string, object>();
                 {
                     _params.Add("product_code", _market.result.symbol);
-                    _params.Add("count", limits);
+                    _params.Add("count", limit);
 
                     publicClient.MergeParamsAndArgs(_params, args);
                 }
@@ -294,7 +294,7 @@ namespace CCXT.NET.Bitflyer.Public
                         var _orders = _json_data
                                             .Where(t => t.timestamp >= since)
                                             .OrderByDescending(t => t.timestamp)
-                                            .Take(limits);
+                                            .Take(limit);
 
                         foreach (var _o in _orders)
                         {
