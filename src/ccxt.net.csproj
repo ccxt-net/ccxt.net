@@ -8,7 +8,7 @@
     <AssemblyTitle>CCXT.NET</AssemblyTitle>
     <VersionPrefix>1.0.0</VersionPrefix>
     <Authors>SEONGAHN LEE</Authors>
-    <AssemblyName>CCXT.NET</AssemblyName>
+    <AssemblyName>ccxt.net</AssemblyName>
     <PackageId>CCXT.NET</PackageId>
     <PackageTags>bitcoin;cryptocurrency;exchange;trading;market-data;ccxt;exchange-markets;altcoin;api;arbitrage;bot;crypto;e-commerce;invest;library;strategy;trade;merchant;cryptocoin</PackageTags>
     <PackageIconUrl>https://github.com/lisa3907/ccxt.net/blob/master/logo-files/ccxt.net.ico?raw=true</PackageIconUrl>
@@ -17,7 +17,7 @@
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
-    <RootNamespace>CCXT.NET</RootNamespace>
+    <RootNamespace>ccxt.net</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Version>1.3.4</Version>
     <PackageReleaseNotes>- add exchanges gopax, okcoinkr
