@@ -24,7 +24,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9E137A9C-8E9
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ccxt.net", "src\ccxt.net.csproj", "{1AF35DB8-580D-4D5B-A50F-B2C63CF5856D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ccxt.test", "unit.test\ccxt.test.csproj", "{9AC45F07-CD67-4AB0-910E-2D3BC787F851}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ccxt.test", "sample\ccxt.test.csproj", "{9AC45F07-CD67-4AB0-910E-2D3BC787F851}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{07A0B48B-26F9-457D-BADD-F279D0A01A74}"
 EndProject
