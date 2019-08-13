@@ -19,11 +19,10 @@
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
     <RootNamespace>ccxt.net</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.3.4</Version>
-    <PackageReleaseNotes>- add exchanges gopax, okcoinkr
-- rename namespace OdinSdk to CCXT.NET</PackageReleaseNotes>
-    <AssemblyVersion>1.3.4.0</AssemblyVersion>
-    <FileVersion>1.3.4.0</FileVersion>
+    <Version>1.3.5</Version>
+    <PackageReleaseNotes>netstandard 2.0</PackageReleaseNotes>
+    <AssemblyVersion>1.3.5.0</AssemblyVersion>
+    <FileVersion>1.3.5.0</FileVersion>
     <LangVersion>latest</LangVersion>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
