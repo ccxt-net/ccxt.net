@@ -100,7 +100,8 @@ namespace CCXT.NET.Upbit.Trade
         /// <summary>
         /// 거래에 사용중인 비용
         /// </summary>
-        public decimal locked
+        [JsonProperty(PropertyName = "locked")]
+        public decimal used
         {
             get;
             set;
@@ -119,7 +120,7 @@ namespace CCXT.NET.Upbit.Trade
         /// <summary>
         /// 해당 주문에 걸린 체결 수
         /// </summary>
-        [JsonProperty(PropertyName = "trade_count")]
+        [JsonProperty(PropertyName = "trades_count")]
         public int count
         {
             get;

@@ -23,9 +23,32 @@ namespace CCXT.NET.Upbit.Trade
         }
 
         /// <summary>
+        /// 주문 종류
+        /// </summary>
+        [JsonProperty(PropertyName = "side")]
+        private string sideValue
+        {
+            set
+            {
+                sideType = SideTypeConverter.FromString(value);
+            }
+        }
+
+        /// <summary>
+        /// 주문 방식
+        /// </summary>
+        [JsonProperty(PropertyName = "ord_type")]
+        private string orderValue
+        {
+            set
+            {
+                orderType = OrderTypeConverter.FromString(value);
+            }
+        }
+
+        /// <summary>
         /// 주문 당시 화폐 가격
         /// </summary>
-        [JsonProperty(PropertyName = "price")]
         public override decimal price
         {
             get;
@@ -33,12 +56,15 @@ namespace CCXT.NET.Upbit.Trade
         }
 
         /// <summary>
-        /// 체결 가격의 평균가
+        /// 주문 상태
         /// </summary>
-        public decimal avg_price
+        [JsonProperty(PropertyName = "state")]
+        private string statusValue
         {
-            get;
-            set;
+            set
+            {
+                orderStatus = OrderStatusConverter.FromString(value);
+            }
         }
 
         /// <summary>
@@ -49,6 +75,18 @@ namespace CCXT.NET.Upbit.Trade
         {
             get;
             set;
+        }
+
+        /// <summary>
+        /// 주문 생성 시간
+        /// </summary>
+        [JsonProperty(PropertyName = "created_at")]
+        private DateTime timeValue
+        {
+            set
+            {
+                timestamp = CUnixTime.ConvertToUnixTimeMilli(value);
+            }
         }
 
         /// <summary>
@@ -101,7 +139,8 @@ namespace CCXT.NET.Upbit.Trade
         /// <summary>
         /// 거래에 사용중인 비용
         /// </summary>
-        public decimal locked
+        [JsonProperty(PropertyName = "locked")]
+        public decimal used
         {
             get;
             set;
@@ -120,7 +159,7 @@ namespace CCXT.NET.Upbit.Trade
         /// <summary>
         /// 해당 주문에 걸린 체결 수
         /// </summary>
-        [JsonProperty(PropertyName = "trade_count")]
+        [JsonProperty(PropertyName = "trades_count")]
         public override int count
         {
             get;
@@ -134,54 +173,6 @@ namespace CCXT.NET.Upbit.Trade
         {
             get;
             set;
-        }
-
-        /// <summary>
-        /// 주문 상태
-        /// </summary>
-        [JsonProperty(PropertyName = "state")]
-        private string statusValue
-        {
-            set
-            {
-                orderStatus = OrderStatusConverter.FromString(value);
-            }
-        }
-
-        /// <summary>
-        /// 주문 생성 시간
-        /// </summary>
-        [JsonProperty(PropertyName = "created_at")]
-        private DateTime timeValue
-        {
-            set
-            {
-                timestamp = CUnixTime.ConvertToUnixTimeMilli(value);
-            }
-        }
-
-        /// <summary>
-        /// 주문 방식
-        /// </summary>
-        [JsonProperty(PropertyName = "ord_type")]
-        private string orderValue
-        {
-            set
-            {
-                orderType = OrderTypeConverter.FromString(value);
-            }
-        }
-
-        /// <summary>
-        /// 주문 종류
-        /// </summary>
-        [JsonProperty(PropertyName = "side")]
-        private string sideValue
-        {
-            set
-            {
-                sideType = SideTypeConverter.FromString(value);
-            }
         }
     }
 
@@ -213,7 +204,6 @@ namespace CCXT.NET.Upbit.Trade
         /// <summary>
         /// 체결 가격
         /// </summary>
-        [JsonProperty(PropertyName = "price")]
         public decimal price
         {
             get;
@@ -241,15 +231,6 @@ namespace CCXT.NET.Upbit.Trade
         }
 
         /// <summary>
-        ///
-        /// </summary>
-        public SideType sideType
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
         /// 주문 종류
         /// </summary>
         [JsonProperty(PropertyName = "side")]
@@ -259,6 +240,15 @@ namespace CCXT.NET.Upbit.Trade
             {
                 sideType = SideTypeConverter.FromString(value);
             }
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public SideType sideType
+        {
+            get;
+            set;
         }
     }
 }
