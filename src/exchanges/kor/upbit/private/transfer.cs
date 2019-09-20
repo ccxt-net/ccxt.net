@@ -104,12 +104,22 @@ namespace CCXT.NET.Upbit.Private
             get;
             set;
         }
-
+ 
         /// <summary>
         ///
         /// </summary>
         [JsonProperty(PropertyName = "krw_amount")]
         public decimal quoteAmount
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 출금 유형: default(일반출금), internal(바로출금)
+        /// </summary>
+        [JsonProperty(PropertyName = "transaction_type")]
+        public string withdraw_type
         {
             get;
             set;
