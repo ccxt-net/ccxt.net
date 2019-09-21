@@ -119,7 +119,7 @@ namespace CCXT.NET.Upbit.Private
         /// 출금 유형: default(일반출금), internal(바로출금)
         /// </summary>
         [JsonProperty(PropertyName = "transaction_type")]
-        public string withdraw_type
+        public string withdrawType
         {
             get;
             set;
