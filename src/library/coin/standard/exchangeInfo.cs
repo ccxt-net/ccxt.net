@@ -9,6 +9,8 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
+#pragma warning disable EF1001
+
 namespace CCXT.NET
 {
     /// <summary>

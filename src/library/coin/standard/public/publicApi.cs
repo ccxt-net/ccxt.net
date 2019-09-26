@@ -4,6 +4,8 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
+#pragma warning disable EF1001
+
 namespace CCXT.NET.Coin.Public
 {
     /// <summary>
