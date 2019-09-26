@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <Title>CryptoCurrency eXchange Trading Library for .NET</Title>
     <Description>CCXT.NET – CryptoCurrency eXchange Trading Library for .NET</Description>
     <Copyright>Copyright OdinSoftware Co., Ltd. 2019</Copyright>
@@ -11,9 +11,9 @@
     <AssemblyName>ccxt.net</AssemblyName>
     <PackageId>CCXT.NET</PackageId>
     <PackageTags>bitcoin;cryptocurrency;exchange;trading;market-data;ccxt;exchange-markets;altcoin;api;arbitrage;bot;crypto;e-commerce;invest;library;strategy;trade;merchant;cryptocoin</PackageTags>
-    <PackageIconUrl>https://github.com/lisa3907/ccxt.net/blob/master/logo-files/ccxt.net.ico?raw=true</PackageIconUrl>
     <PackageProjectUrl>https://github.com/lisa3907/ccxt.net</PackageProjectUrl>
     <PackageLicenseUrl></PackageLicenseUrl>
+    <PackageIcon>ccxt.net.api.png</PackageIcon>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
@@ -44,14 +44,21 @@
       <PackagePath></PackagePath>
     </None>
   </ItemGroup>
-
+  
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.6" />
-    <PackageReference Include="Microsoft.Win32.Registry" Version="4.5.0" />
+    <None Include="..\logo-files\ccxt.net.api.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.0.0" />
+    <PackageReference Include="Microsoft.Win32.Registry" Version="4.6.0" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
     <PackageReference Include="RestSharp" Version="106.6.10" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.5.0" />
-    <PackageReference Include="System.ServiceModel.Primitives" Version="4.5.3" />
+    <PackageReference Include="System.ServiceModel.Primitives" Version="4.6.0" />
     <PackageReference Include="System.ValueTuple" Version="4.5.0" />
     <PackageReference Include="Telegram.Bot" Version="15.0.0" />
   </ItemGroup>
