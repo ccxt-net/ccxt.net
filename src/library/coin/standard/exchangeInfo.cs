@@ -2,7 +2,7 @@
 using CCXT.NET.Coin.Public;
 using CCXT.NET.Coin.Types;
 using CCXT.NET.Configuration;
-using Microsoft.EntityFrameworkCore.Internal;
+using CellWars.Threading;
 using System;
 using System.Collections.Generic;
 using System.Linq;
