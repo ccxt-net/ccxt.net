@@ -19,23 +19,23 @@
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
     <RootNamespace>ccxt.net</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.3.5</Version>
-    <PackageReleaseNotes>netstandard 2.0</PackageReleaseNotes>
-    <AssemblyVersion>1.3.5.0</AssemblyVersion>
-    <FileVersion>1.3.5.0</FileVersion>
+    <Version>1.3.6</Version>
+    <PackageReleaseNotes>net472, async lock</PackageReleaseNotes>
+    <AssemblyVersion>1.3.6.0</AssemblyVersion>
+    <FileVersion>1.3.6.0</FileVersion>
     <LangVersion>latest</LangVersion>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net462|AnyCPU'">
-    <DocumentationFile>bin\Debug\net462\CCXT.NET.xml</DocumentationFile>
-    <DefineConstants>TRACE;DEBUG;NETFRAMEWORK;NET462</DefineConstants>
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net472|AnyCPU'">
+    <DocumentationFile>bin\Debug\net472\CCXT.NET.xml</DocumentationFile>
+    <DefineConstants>TRACE;DEBUG;NETFRAMEWORK;NET472</DefineConstants>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net462|AnyCPU'">
-    <DefineConstants>TRACE;RELEASE;NETFRAMEWORK;NET462</DefineConstants>
-    <DocumentationFile>bin\Release\net462\CCXT.NET.xml</DocumentationFile>
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net472|AnyCPU'">
+    <DefineConstants>TRACE;RELEASE;NETFRAMEWORK;NET472</DefineConstants>
+    <DocumentationFile>bin\Release\net472\CCXT.NET.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
