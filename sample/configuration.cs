@@ -1,5 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
-using CCXT.NET.Coin;
+﻿using CCXT.NET.Coin;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.IO;
 

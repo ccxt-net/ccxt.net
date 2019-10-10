@@ -152,10 +152,10 @@ namespace CCXT.NET.Bithumb.Trade
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
         /// <param name="timeframe">time frame interval (optional): default "1d"</param>
         /// <param name="since">return committed data since given time (milli-seconds) (optional): default 0</param>
-        /// <param name="limit">maximum number of items (optional): default 20</param>
+        /// <param name="limits">maximum number of items (optional): default 20</param>
         /// <param name="args">Add additional attributes for each exchange: (require) order_id, type</param>
         /// <returns></returns>
-        public override async Task<MyOrders> FetchMyOrders(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limit = 20, Dictionary<string, object> args = null)
+        public override async Task<MyOrders> FetchMyOrders(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
         {
             var _result = new MyOrders(base_name, quote_name);
 
@@ -173,7 +173,7 @@ namespace CCXT.NET.Bithumb.Trade
                     _params.Add("order_id", "");
                     _params.Add("type", "");
                     _params.Add("after", since);
-                    _params.Add("count", limit);
+                    _params.Add("count", limits);
 
                     tradeClient.MergeParamsAndArgs(_params, args);
                 }
@@ -337,10 +337,10 @@ namespace CCXT.NET.Bithumb.Trade
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
         /// <param name="timeframe">time frame interval (optional): default "1d"</param>
         /// <param name="since">return committed data since given time (milli-seconds) (optional): default 0</param>
-        /// <param name="limit">maximum number of items (optional): default 20</param>
+        /// <param name="limits">maximum number of items (optional): default 20</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<MyTrades> FetchMyTrades(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limit = 20, Dictionary<string, object> args = null)
+        public override async Task<MyTrades> FetchMyTrades(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
         {
             var _result = new MyTrades(base_name, quote_name);
 
@@ -356,7 +356,7 @@ namespace CCXT.NET.Bithumb.Trade
                 {
                     _params.Add("currency", _market.result.symbol);
                     _params.Add("offset", 0);
-                    _params.Add("count", limit);
+                    _params.Add("count", limits);
                     _params.Add("searchGb", 0);     // 0 : 전체, 1 : 구매완료, 2 : 판매완료, 3 : 출금중, 4 : 입금, 5 : 출금, 9 : KRW입금중
 
                     tradeClient.MergeParamsAndArgs(_params, args);
@@ -375,7 +375,7 @@ namespace CCXT.NET.Bithumb.Trade
                         var _orders = _json_data.result
                                                 .Where(o => o.timestamp >= since && (o.sideType == SideType.Ask || o.sideType == SideType.Bid))
                                                 .OrderByDescending(t => t.timestamp)
-                                                .Take(limit);
+                                                .Take(limits);
 
                         foreach (var _o in _orders)
                         {

@@ -129,7 +129,7 @@ namespace CCXT.NET.Bithumb.Public
                             active = true,
 
                             precision = _precision,
-                            limit = _limits
+                            limits = _limits
                         };
 
                         _result.result.Add(_entry.marketId, _entry);
@@ -264,10 +264,10 @@ namespace CCXT.NET.Bithumb.Public
         /// </summary>
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
-        /// <param name="limit">maximum number of items (optional): default 20</param>
+        /// <param name="limits">maximum number of items (optional): default 20</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<OrderBooks> FetchOrderBooks(string base_name, string quote_name, int limit = 20, Dictionary<string, object> args = null)
+        public override async Task<OrderBooks> FetchOrderBooks(string base_name, string quote_name, int limits = 20, Dictionary<string, object> args = null)
         {
             var _result = new OrderBooks(base_name, quote_name);
 
@@ -278,11 +278,11 @@ namespace CCXT.NET.Bithumb.Public
 
                 var _params = new Dictionary<string, object>();
                 {
-                    var _limit = limit <= 1 ? 1
-                               : limit <= 50 ? limit
+                    var _limits = limits <= 1 ? 1
+                               : limits <= 50 ? limits
                                : 50;
 
-                    _params.Add("count", _limit);
+                    _params.Add("count", _limits);
                     _params.Add("group_orders", 1); // group_orders Int Value : 0 또는 1
 
                     publicClient.MergeParamsAndArgs(_params, args);
@@ -298,8 +298,8 @@ namespace CCXT.NET.Bithumb.Public
                     var _json_data = publicClient.DeserializeObject<BOrderBooks>(_json_value.Content);
                     if (_json_data.success == true)
                     {
-                        _result.result.asks = _json_data.result.asks.OrderBy(o => o.price).Take(limit).ToList();
-                        _result.result.bids = _json_data.result.bids.OrderByDescending(o => o.price).Take(limit).ToList();
+                        _result.result.asks = _json_data.result.asks.OrderBy(o => o.price).Take(limits).ToList();
+                        _result.result.bids = _json_data.result.bids.OrderByDescending(o => o.price).Take(limits).ToList();
 
                         _result.result.symbol = _market.result.symbol;
                         _result.result.timestamp = _json_data.result.timestamp;
@@ -332,10 +332,10 @@ namespace CCXT.NET.Bithumb.Public
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
         /// <param name="timeframe">time frame interval (optional): default "1d"</param>
         /// <param name="since">return committed data since given time (milli-seconds) (optional): default 0</param>
-        /// <param name="limit">maximum number of items (optional): default 20</param>
+        /// <param name="limits">maximum number of items (optional): default 20</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<OHLCVs> FetchOHLCVs(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limit = 20, Dictionary<string, object> args = null)
+        public override async Task<OHLCVs> FetchOHLCVs(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
         {
             var _result = new OHLCVs(base_name, quote_name);
 
@@ -352,10 +352,10 @@ namespace CCXT.NET.Bithumb.Public
                     _params.Add("symbol", _market.result.symbol);
                     _params.Add("resolution", 0.5);
 
-                    if (since > 0 && limit > 0)
+                    if (since > 0 && limits > 0)
                     {
                         _params.Add("from", since);
-                        _params.Add("to", since + limit * _timestamp);     // 가져올 갯수 만큼 timeframe * limit 간격으로 데이터 양 계산
+                        _params.Add("to", since + limits * _timestamp);     // 가져올 갯수 만큼 timeframe * limits 간격으로 데이터 양 계산
                     }
 
                     _params.Add("strTime", CUnixTime.NowMilli);
@@ -385,7 +385,7 @@ namespace CCXT.NET.Bithumb.Public
                                 })
                                 .Where(o => o.timestamp >= since)
                                 .OrderByDescending(o => o.timestamp)
-                                .Take(limit)
+                                .Take(limits)
                             );
                     }
                 }
@@ -407,10 +407,10 @@ namespace CCXT.NET.Bithumb.Public
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
         /// <param name="timeframe">time frame interval (optional): default "1d"</param>
         /// <param name="since">return committed data since given time (milli-seconds) (optional): default 0</param>
-        /// <param name="limit">maximum number of items (optional): default 20</param>
+        /// <param name="limits">maximum number of items (optional): default 20</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<CompleteOrders> FetchCompleteOrders(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limit = 20, Dictionary<string, object> args = null)
+        public override async Task<CompleteOrders> FetchCompleteOrders(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
         {
             var _result = new CompleteOrders(base_name, quote_name);
 
@@ -424,12 +424,12 @@ namespace CCXT.NET.Bithumb.Public
 
                 var _params = new Dictionary<string, object>();
                 {
-                    var _limit = limit <= 1 ? 1
-                               : limit <= 100 ? limit
+                    var _limits = limits <= 1 ? 1
+                               : limits <= 100 ? limits
                                : 100;
 
                     //_params.Add("cont_no", 0);    // 체결 번호
-                    _params.Add("count", _limit);
+                    _params.Add("count", _limits);
 
                     publicClient.MergeParamsAndArgs(_params, args);
                 }
@@ -447,7 +447,7 @@ namespace CCXT.NET.Bithumb.Public
                         var _orders = _json_data.result
                                                 .Where(t => t.timestamp >= since)
                                                 .OrderByDescending(t => t.timestamp)
-                                                .Take(limit);
+                                                .Take(limits);
 
                         foreach (var _o in _orders)
                         {

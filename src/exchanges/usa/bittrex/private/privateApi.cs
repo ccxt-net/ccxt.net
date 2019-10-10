@@ -184,10 +184,10 @@ namespace CCXT.NET.Bittrex.Private
         /// <param name="currency_name">base coin or quote coin name</param>
         /// <param name="timeframe">time frame interval (optional): default "1d"</param>
         /// <param name="since">return committed data since given time (milli-seconds) (optional): default 0</param>
-        /// <param name="limit">maximum number of items (optional): default 20</param>
+        /// <param name="limits">maximum number of items (optional): default 20</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<Transfers> FetchTransfers(string currency_name, string timeframe = "1d", long since = 0, int limit = 20, Dictionary<string, object> args = null)
+        public override async Task<Transfers> FetchTransfers(string currency_name, string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
         {
             var _result = new Transfers();
 
@@ -221,7 +221,7 @@ namespace CCXT.NET.Bittrex.Private
                             var _deposits = _json_data.result
                                                         .Where(d => d.timestamp >= since)
                                                         .OrderByDescending(d => d.timestamp)
-                                                        .Take(limit);
+                                                        .Take(limits);
 
                             foreach (var _d in _deposits)
                             {
@@ -264,7 +264,7 @@ namespace CCXT.NET.Bittrex.Private
                             var _withdraws = _json_data.result
                                                         .Where(w => w.timestamp >= since)
                                                         .OrderByDescending(w => w.timestamp)
-                                                        .Take(limit);
+                                                        .Take(limits);
 
                             foreach (var _w in _withdraws)
                             {
@@ -303,10 +303,10 @@ namespace CCXT.NET.Bittrex.Private
         /// </summary>
         /// <param name="timeframe">time frame interval (optional): default "1d"</param>
         /// <param name="since">return committed data since given time (milli-seconds) (optional): default 0</param>
-        /// <param name="limit">maximum number of items (optional): default 20</param>
+        /// <param name="limits">maximum number of items (optional): default 20</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<Transfers> FetchAllTransfers(string timeframe = "1d", long since = 0, int limit = 20, Dictionary<string, object> args = null)
+        public override async Task<Transfers> FetchAllTransfers(string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
         {
             var _result = new Transfers();
 
@@ -335,7 +335,7 @@ namespace CCXT.NET.Bittrex.Private
                             var _deposits = _json_data.result
                                                         .Where(d => d.timestamp >= since)
                                                         .OrderByDescending(d => d.timestamp)
-                                                        .Take(limit);
+                                                        .Take(limits);
 
                             foreach (var _d in _deposits)
                             {
@@ -376,7 +376,7 @@ namespace CCXT.NET.Bittrex.Private
                             var _withdraws = _json_data.result
                                                         .Where(w => w.timestamp >= since)
                                                         .OrderByDescending(w => w.timestamp)
-                                                        .Take(limit);
+                                                        .Take(limits);
 
                             foreach (var _w in _withdraws)
                             {

@@ -200,7 +200,7 @@ namespace CCXT.NET.Coin.Public
         /// <summary>
         /// value limit when placing orders on this market
         /// </summary>
-        MarketLimits limit
+        MarketLimits limits
         {
             get;
             set;
@@ -372,7 +372,7 @@ namespace CCXT.NET.Coin.Public
         /// <summary>
         /// value limit when placing orders on this market
         /// </summary>
-        public virtual MarketLimits limit
+        public virtual MarketLimits limits
         {
             get;
             set;

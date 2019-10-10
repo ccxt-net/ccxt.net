@@ -82,18 +82,18 @@ namespace CCXT.NET.Coin.Public
         /// </summary>
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
-        /// <param name="limit">maximum number of items (optional): default 20</param>
+        /// <param name="limits">maximum number of items (optional): default 20</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        Task<OrderBooks> FetchOrderBooks(string base_name, string quote_name, int limit, Dictionary<string, object> args);
+        Task<OrderBooks> FetchOrderBooks(string base_name, string quote_name, int limits, Dictionary<string, object> args);
 
         ///// <summary>
         /////
         ///// </summary>
-        ///// <param name="limit">maximum number of items (optional): default 20</param>
+        ///// <param name="limits">maximum number of items (optional): default 20</param>
         ///// <param name="args">Add additional attributes for each exchange</param>
         ///// <returns></returns>
-        //Task<OrderBooks> FetchAllOrderBooks(int limit, Dictionary<string, object> args);
+        //Task<OrderBooks> FetchAllOrderBooks(int limits, Dictionary<string, object> args);
 
         /// <summary>
         /// Fetch array of symbol name and OHLCVs data
@@ -102,10 +102,10 @@ namespace CCXT.NET.Coin.Public
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
         /// <param name="timeframe">time frame interval (optional): default "1d"</param>
         /// <param name="since">return committed data since given time (milli-seconds) (optional): default 0</param>
-        /// <param name="limit">maximum number of items (optional): default 20</param>
+        /// <param name="limits">maximum number of items (optional): default 20</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        Task<OHLCVs> FetchOHLCVs(string base_name, string quote_name, string timeframe, long since, int limit, Dictionary<string, object> args);
+        Task<OHLCVs> FetchOHLCVs(string base_name, string quote_name, string timeframe, long since, int limits, Dictionary<string, object> args);
 
         /// <summary>
         /// Fetch array of recent trades data
@@ -114,20 +114,20 @@ namespace CCXT.NET.Coin.Public
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
         /// <param name="timeframe">time frame interval (optional): default "1d"</param>
         /// <param name="since">return committed data since given time (milli-seconds) (optional): default 0</param>
-        /// <param name="limit">maximum number of items (optional): default 20</param>
+        /// <param name="limits">maximum number of items (optional): default 20</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        Task<CompleteOrders> FetchCompleteOrders(string base_name, string quote_name, string timeframe, long since, int limit, Dictionary<string, object> args);
+        Task<CompleteOrders> FetchCompleteOrders(string base_name, string quote_name, string timeframe, long since, int limits, Dictionary<string, object> args);
 
         ///// <summary>
         ///// Fetch array of recent trades all currency data
         ///// </summary>
         ///// <param name="timeframe">time frame interval (optional): default "1d"</param>
         ///// <param name="since">return committed data since given time (milli-seconds) (optional): default 0</param>
-        ///// <param name="limit">maximum number of items (optional): default 20</param>
+        ///// <param name="limits">maximum number of items (optional): default 20</param>
         ///// <param name="args">Add additional attributes for each exchange</param>
         ///// <returns></returns>
-        //Task<AllCompleteOrders> FetchAllCompleteOrders(string timeframe, long since, int limit, Dictionary<string, object> args);
+        //Task<AllCompleteOrders> FetchAllCompleteOrders(string timeframe, long since, int limits, Dictionary<string, object> args);
     }
 
     /// <summary>
@@ -368,10 +368,10 @@ namespace CCXT.NET.Coin.Public
         /// </summary>
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
-        /// <param name="limit">maximum number of items (optional): default 20</param>
+        /// <param name="limits">maximum number of items (optional): default 20</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public virtual async Task<OrderBooks> FetchOrderBooks(string base_name, string quote_name, int limit = 20, Dictionary<string, object> args = null)
+        public virtual async Task<OrderBooks> FetchOrderBooks(string base_name, string quote_name, int limits = 20, Dictionary<string, object> args = null)
         {
             var _result = new OrderBooks(base_name, quote_name);
 
@@ -400,10 +400,10 @@ namespace CCXT.NET.Coin.Public
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
         /// <param name="timeframe">time frame interval (optional): default "1d"</param>
         /// <param name="since">return committed data since given time (milli-seconds) (optional): default 0</param>
-        /// <param name="limit">maximum number of items (optional): default 20</param>
+        /// <param name="limits">maximum number of items (optional): default 20</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public virtual async Task<OHLCVs> FetchOHLCVs(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limit = 20, Dictionary<string, object> args = null)
+        public virtual async Task<OHLCVs> FetchOHLCVs(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
         {
             var _result = new OHLCVs(base_name, quote_name);
 
@@ -435,10 +435,10 @@ namespace CCXT.NET.Coin.Public
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
         /// <param name="timeframe">time frame interval (optional): default "1d"</param>
         /// <param name="since">return committed data since given time (milli-seconds) (optional): default 0</param>
-        /// <param name="limit">maximum number of items (optional): default 20</param>
+        /// <param name="limits">maximum number of items (optional): default 20</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public virtual async Task<CompleteOrders> FetchCompleteOrders(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limit = 20, Dictionary<string, object> args = null)
+        public virtual async Task<CompleteOrders> FetchCompleteOrders(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
         {
             var _result = new CompleteOrders(base_name, quote_name);
 

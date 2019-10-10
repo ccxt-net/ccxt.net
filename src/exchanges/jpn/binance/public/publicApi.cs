@@ -115,7 +115,7 @@ namespace CCXT.NET.Binance.Public
                             active = _active,
 
                             precision = _precision,
-                            limit = _limits
+                            limits = _limits
                         };
 
                         var _filters = _market["filters"];
@@ -124,22 +124,22 @@ namespace CCXT.NET.Binance.Public
                             if (_price_filter != null)
                             {
                                 _entry.precision.price = Numerical.PrecisionFromString(_price_filter["tickSize"].ToString());
-                                _entry.limit.price.min = _price_filter["minPrice"].Value<decimal>();
-                                _entry.limit.price.max = _price_filter["maxPrice"].Value<decimal>();
+                                _entry.limits.price.min = _price_filter["minPrice"].Value<decimal>();
+                                _entry.limits.price.max = _price_filter["maxPrice"].Value<decimal>();
                             }
 
                             var _lot_size = _filters.SingleOrDefault(f => f["filterType"].ToString() == "LOT_SIZE");
                             if (_lot_size != null)
                             {
                                 _entry.precision.quantity = Numerical.PrecisionFromString(_lot_size["stepSize"].ToString());
-                                _entry.limit.quantity.min = _lot_size["minQty"].Value<decimal>();
-                                _entry.limit.quantity.max = _lot_size["maxQty"].Value<decimal>();
+                                _entry.limits.quantity.min = _lot_size["minQty"].Value<decimal>();
+                                _entry.limits.quantity.max = _lot_size["maxQty"].Value<decimal>();
                             }
 
                             var _min_notional = _filters.SingleOrDefault(f => f["filterType"].ToString() == "MIN_NOTIONAL");
                             if (_min_notional != null)
                             {
-                                _entry.limit.amount.min = _min_notional["minNotional"].Value<decimal>();
+                                _entry.limits.amount.min = _min_notional["minNotional"].Value<decimal>();
                             }
                         }
 
@@ -250,10 +250,10 @@ namespace CCXT.NET.Binance.Public
         /// </summary>
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
-        /// <param name="limit">maximum number of items (optional): default 20</param>
+        /// <param name="limits">maximum number of items (optional): default 20</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<OrderBooks> FetchOrderBooks(string base_name, string quote_name, int limit = 20, Dictionary<string, object> args = null)
+        public override async Task<OrderBooks> FetchOrderBooks(string base_name, string quote_name, int limits = 20, Dictionary<string, object> args = null)
         {
             var _result = new OrderBooks(base_name, quote_name);
 
@@ -264,16 +264,16 @@ namespace CCXT.NET.Binance.Public
 
                 var _params = new Dictionary<string, object>();
                 {
-                    var _limit = limit <= 5 ? 5
-                                : limit <= 10 ? 10
-                                : limit <= 20 ? 20
-                                : limit <= 50 ? 50
-                                : limit <= 100 ? 100
-                                : limit <= 500 ? 500
+                    var _limits = limits <= 5 ? 5
+                                : limits <= 10 ? 10
+                                : limits <= 20 ? 20
+                                : limits <= 50 ? 50
+                                : limits <= 100 ? 100
+                                : limits <= 500 ? 500
                                 : 1000;
 
                     _params.Add("symbol", _market.result.symbol);
-                    _params.Add("limit", _limit);
+                    _params.Add("limit", _limits);
 
                     publicClient.MergeParamsAndArgs(_params, args);
                 }
@@ -287,8 +287,8 @@ namespace CCXT.NET.Binance.Public
                 {
                     var _orderbook = publicClient.DeserializeObject<BOrderBook>(_json_value.Content);
                     {
-                        _result.result.asks = _orderbook.asks.OrderBy(o => o.price).Take(limit).ToList();
-                        _result.result.bids = _orderbook.bids.OrderByDescending(o => o.price).Take(limit).ToList();
+                        _result.result.asks = _orderbook.asks.OrderBy(o => o.price).Take(limits).ToList();
+                        _result.result.bids = _orderbook.bids.OrderByDescending(o => o.price).Take(limits).ToList();
 
                         _result.result.symbol = _market.result.symbol;
                         _result.result.timestamp = CUnixTime.NowMilli;
@@ -313,10 +313,10 @@ namespace CCXT.NET.Binance.Public
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
         /// <param name="timeframe">time frame interval (optional): default "1d"</param>
         /// <param name="since">return committed data since given time (milli-seconds) (optional): default 0</param>
-        /// <param name="limit">maximum number of items (optional): default 20</param>
+        /// <param name="limits">maximum number of items (optional): default 20</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<OHLCVs> FetchOHLCVs(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limit = 20, Dictionary<string, object> args = null)
+        public override async Task<OHLCVs> FetchOHLCVs(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
         {
             var _result = new OHLCVs(base_name, quote_name);
 
@@ -336,7 +336,7 @@ namespace CCXT.NET.Binance.Public
                     if (since > 0)
                         _params.Add("startTime", since);
 
-                    _params.Add("limit", limit);
+                    _params.Add("limit", limits);
 
                     publicClient.MergeParamsAndArgs(_params, args);
                 }
@@ -363,7 +363,7 @@ namespace CCXT.NET.Binance.Public
                                 })
                                 .Where(o => o.timestamp >= since)
                                 .OrderByDescending(o => o.timestamp)
-                                .Take(limit)
+                                .Take(limits)
                             );
                 }
 
@@ -384,10 +384,10 @@ namespace CCXT.NET.Binance.Public
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
         /// <param name="timeframe">time frame interval (optional): default "1d"</param>
         /// <param name="since">return committed data since given time (milli-seconds) (optional): default 0</param>
-        /// <param name="limit">maximum number of items (optional): default 20</param>
+        /// <param name="limits">maximum number of items (optional): default 20</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<CompleteOrders> FetchCompleteOrders(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limit = 20, Dictionary<string, object> args = null)
+        public override async Task<CompleteOrders> FetchCompleteOrders(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
         {
             var _result = new CompleteOrders(base_name, quote_name);
 
@@ -407,8 +407,8 @@ namespace CCXT.NET.Binance.Public
                         _params.Add("startTime", since);
                         _params.Add("endTime", since + 3600 * 1000);        // More than 1 hours between startTime and endTime
                     }
-                    if (limit > 0)
-                        _params.Add("limit", limit);
+                    if (limits > 0)
+                        _params.Add("limit", limits);
 
                     publicClient.MergeParamsAndArgs(_params, args);
                 }
@@ -425,7 +425,7 @@ namespace CCXT.NET.Binance.Public
                         var _orders = _json_data
                                             .Where(t => t.timestamp >= since)
                                             .OrderByDescending(t => t.timestamp)
-                                            .Take(limit);
+                                            .Take(limits);
 
                         foreach (var _o in _orders)
                         {

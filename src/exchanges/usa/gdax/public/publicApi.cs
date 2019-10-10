@@ -113,7 +113,7 @@ namespace CCXT.NET.GDAX.Public
                             active = _active,
 
                             precision = _precision,
-                            limit = _limits
+                            limits = _limits
                         };
 
                         _result.result.Add(_entry.marketId, _entry);
@@ -173,10 +173,10 @@ namespace CCXT.NET.GDAX.Public
         /// </summary>
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
-        /// <param name="limit">maximum number of items (optional): default 20</param>
+        /// <param name="limits">maximum number of items (optional): default 20</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<OrderBooks> FetchOrderBooks(string base_name, string quote_name, int limit = 20, Dictionary<string, object> args = null)
+        public override async Task<OrderBooks> FetchOrderBooks(string base_name, string quote_name, int limits = 20, Dictionary<string, object> args = null)
         {
             var _result = new OrderBooks(base_name, quote_name);
 
@@ -187,7 +187,7 @@ namespace CCXT.NET.GDAX.Public
 
                 var _params = new Dictionary<string, object>();
                 {
-                    if (limit == 1)
+                    if (limits == 1)
                         _params.Add("level", 1);        // Only the best bid and ask
                     else
                         _params.Add("level", 2);        // Top 50 bids and asks (aggregated)
@@ -204,8 +204,8 @@ namespace CCXT.NET.GDAX.Public
                 {
                     var _orderbook = publicClient.DeserializeObject<GOrderBook>(_json_value.Content);
                     {
-                        _result.result.asks = _orderbook.asks.OrderBy(o => o.price).Take(limit).ToList();
-                        _result.result.bids = _orderbook.bids.OrderByDescending(o => o.price).Take(limit).ToList();
+                        _result.result.asks = _orderbook.asks.OrderBy(o => o.price).Take(limits).ToList();
+                        _result.result.bids = _orderbook.bids.OrderByDescending(o => o.price).Take(limits).ToList();
 
                         _result.result.symbol = _market.result.symbol;
                         _result.result.timestamp = CUnixTime.NowMilli;
@@ -230,10 +230,10 @@ namespace CCXT.NET.GDAX.Public
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
         /// <param name="timeframe">time frame interval (optional): default "1d"</param>
         /// <param name="since">return committed data since given time (milli-seconds) (optional): default 0</param>
-        /// <param name="limit">maximum number of items (optional): default 20</param>
+        /// <param name="limits">maximum number of items (optional): default 20</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<OHLCVs> FetchOHLCVs(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limit = 20, Dictionary<string, object> args = null)
+        public override async Task<OHLCVs> FetchOHLCVs(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
         {
             var _result = new OHLCVs(base_name, quote_name);
 
@@ -250,7 +250,7 @@ namespace CCXT.NET.GDAX.Public
                     _params.Add("granularity", _timestamp);
 
                     var _till_time = CUnixTime.Now;
-                    var _from_time = (since > 0) ? since / 1000 : _till_time - _timestamp * limit;     // 가져올 갯수 만큼 timeframe * limit 간격으로 데이터 양 계산
+                    var _from_time = (since > 0) ? since / 1000 : _till_time - _timestamp * limits;     // 가져올 갯수 만큼 timeframe * limits 간격으로 데이터 양 계산
 
                     _params.Add("start", CUnixTime.ConvertToUtcTime(_from_time).ToString("o"));         // ISO 8601 datetime string with seconds
                     _params.Add("end", CUnixTime.ConvertToUtcTime(_till_time).ToString("o"));
@@ -280,7 +280,7 @@ namespace CCXT.NET.GDAX.Public
                              })
                              .Where(o => o.timestamp >= since)
                              .OrderByDescending(o => o.timestamp)
-                             .Take(limit)
+                             .Take(limits)
                          );
                 }
 
@@ -301,10 +301,10 @@ namespace CCXT.NET.GDAX.Public
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
         /// <param name="timeframe">time frame interval (optional): default "1d"</param>
         /// <param name="since">return committed data since given time (milli-seconds) (optional): default 0</param>
-        /// <param name="limit">maximum number of items (optional): default 20</param>
+        /// <param name="limits">maximum number of items (optional): default 20</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<CompleteOrders> FetchCompleteOrders(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limit = 20, Dictionary<string, object> args = null)
+        public override async Task<CompleteOrders> FetchCompleteOrders(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
         {
             var _result = new CompleteOrders(base_name, quote_name);
 
@@ -330,7 +330,7 @@ namespace CCXT.NET.GDAX.Public
                         var _orders = _json_data
                                                 .Where(t => t.timestamp >= since)
                                                 .OrderByDescending(t => t.timestamp)
-                                                .Take(limit);
+                                                .Take(limits);
 
                         foreach (var _o in _orders)
                         {

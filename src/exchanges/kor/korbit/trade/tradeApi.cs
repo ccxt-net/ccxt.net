@@ -118,10 +118,10 @@ namespace CCXT.NET.Korbit.Trade
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
         /// <param name="timeframe">time frame interval (optional): default "1d"</param>
         /// <param name="since">return committed data since given time (milli-seconds) (optional): default 0</param>
-        /// <param name="limit">maximum number of items (optional): default 20</param>
+        /// <param name="limits">maximum number of items (optional): default 20</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<MyOrders> FetchMyOrders(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limit = 20, Dictionary<string, object> args = null)
+        public override async Task<MyOrders> FetchMyOrders(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
         {
             var _result = new MyOrders(base_name, quote_name);
 
@@ -137,7 +137,7 @@ namespace CCXT.NET.Korbit.Trade
                 {
                     _params.Add("currency_pair", _market.result.symbol);
                     _params.Add("offset", 0);
-                    _params.Add("limit", limit);
+                    _params.Add("limit", limits);
 
                     tradeClient.MergeParamsAndArgs(_params, args);
                 }
@@ -154,7 +154,7 @@ namespace CCXT.NET.Korbit.Trade
                         var _orders = _json_data
                                             .Where(o => o.symbol == _market.result.symbol && o.timestamp >= since)
                                             .OrderByDescending(o => o.timestamp)
-                                            .Take(limit);
+                                            .Take(limits);
 
                         foreach (var _o in _orders)
                         {
@@ -245,10 +245,10 @@ namespace CCXT.NET.Korbit.Trade
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
         /// <param name="timeframe">time frame interval (optional): default "1d"</param>
         /// <param name="since">return committed data since given time (milli-seconds) (optional): default 0</param>
-        /// <param name="limit">maximum number of items (optional): default 20</param>
+        /// <param name="limits">maximum number of items (optional): default 20</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<MyTrades> FetchMyTrades(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limit = 20, Dictionary<string, object> args = null)
+        public override async Task<MyTrades> FetchMyTrades(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
         {
             var _result = new MyTrades(base_name, quote_name);
 
@@ -265,7 +265,7 @@ namespace CCXT.NET.Korbit.Trade
                     _params.Add("currency_pair", _market.result.symbol);
                     _params.Add("status", "filled");
                     _params.Add("offset", 0);
-                    _params.Add("limit", limit);
+                    _params.Add("limit", limits);
 
                     tradeClient.MergeParamsAndArgs(_params, args);
                 }
@@ -282,7 +282,7 @@ namespace CCXT.NET.Korbit.Trade
                         var _trades = _json_data
                                             .Where(t => t.timestamp >= since)
                                             .OrderByDescending(t => t.timestamp)
-                                            .Take(limit);
+                                            .Take(limits);
 
                         foreach (var _t in _trades)
                         {

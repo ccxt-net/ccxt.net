@@ -97,20 +97,20 @@ namespace CCXT.NET.Coin.Private
         /// <param name="currency_name">base coin or quote coin name</param>
         /// <param name="timeframe">time frame interval (optional): default "1d"</param>
         /// <param name="since">return committed data since given time (milli-seconds) (optional): default 0</param>
-        /// <param name="limit">You can set the maximum number of transactions you want to get with this parameter</param>
+        /// <param name="limits">You can set the maximum number of transactions you want to get with this parameter</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        Task<Transfers> FetchTransfers(string currency_name, string timeframe, long since, int limit, Dictionary<string, object> args);
+        Task<Transfers> FetchTransfers(string currency_name, string timeframe, long since, int limits, Dictionary<string, object> args);
 
         /// <summary>
         ///
         /// </summary>
         /// <param name="timeframe">time frame interval (optional): default "1d"</param>
         /// <param name="since">return committed data since given time (milli-seconds) (optional): default 0</param>
-        /// <param name="limit">You can set the maximum number of transactions you want to get with this parameter</param>
+        /// <param name="limits">You can set the maximum number of transactions you want to get with this parameter</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        Task<Transfers> FetchAllTransfers(string timeframe, long since, int limit, Dictionary<string, object> args);
+        Task<Transfers> FetchAllTransfers(string timeframe, long since, int limits, Dictionary<string, object> args);
 
         /// <summary>
         /// Get information about a wallet in your account.
@@ -378,10 +378,10 @@ namespace CCXT.NET.Coin.Private
         /// <param name="currency_name">base coin or quote coin name</param>
         /// <param name="timeframe">time frame interval (optional): default "1d"</param>
         /// <param name="since">return committed data since given time (milli-seconds) (optional): default 0</param>
-        /// <param name="limit">You can set the maximum number of transactions you want to get with this parameter</param>
+        /// <param name="limits">You can set the maximum number of transactions you want to get with this parameter</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public virtual async Task<Transfers> FetchTransfers(string currency_name, string timeframe = "1d", long since = 0, int limit = 20, Dictionary<string, object> args = null)
+        public virtual async Task<Transfers> FetchTransfers(string currency_name, string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
         {
             var _result = new Transfers();
 
@@ -411,10 +411,10 @@ namespace CCXT.NET.Coin.Private
         /// </summary>
         /// <param name="timeframe">time frame interval (optional): default "1d"</param>
         /// <param name="since">return committed data since given time (milli-seconds) (optional): default 0</param>
-        /// <param name="limit">You can set the maximum number of transactions you want to get with this parameter</param>
+        /// <param name="limits">You can set the maximum number of transactions you want to get with this parameter</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public virtual async Task<Transfers> FetchAllTransfers(string timeframe = "1d", long since = 0, int limit = 20, Dictionary<string, object> args = null)
+        public virtual async Task<Transfers> FetchAllTransfers(string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
         {
             var _result = new Transfers();
 

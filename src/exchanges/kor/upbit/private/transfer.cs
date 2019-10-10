@@ -104,7 +104,7 @@ namespace CCXT.NET.Upbit.Private
             get;
             set;
         }
- 
+
         /// <summary>
         ///
         /// </summary>

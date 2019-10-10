@@ -144,7 +144,7 @@ namespace CCXT.NET.BitMEX.Public
                         var _tick_size = _m.tickSize;
                         var _max_price = _m.maxPrice;
 
-                        _m.limit = new MarketLimits
+                        _m.limits = new MarketLimits
                         {
                             quantity = new MarketMinMax
                             {
@@ -299,10 +299,10 @@ namespace CCXT.NET.BitMEX.Public
         /// </summary>
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
-        /// <param name="limit">maximum number of items (optional): default 20</param>
+        /// <param name="limits">maximum number of items (optional): default 20</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<OrderBooks> FetchOrderBooks(string base_name, string quote_name, int limit = 20, Dictionary<string, object> args = null)
+        public override async Task<OrderBooks> FetchOrderBooks(string base_name, string quote_name, int limits = 20, Dictionary<string, object> args = null)
         {
             var _result = new OrderBooks(base_name, quote_name);
 
@@ -314,7 +314,7 @@ namespace CCXT.NET.BitMEX.Public
                 var _params = new Dictionary<string, object>();
                 {
                     _params.Add("symbol", _market.result.symbol);
-                    _params.Add("depth", limit);
+                    _params.Add("depth", limits);
 
                     publicClient.MergeParamsAndArgs(_params, args);
                 }
@@ -342,8 +342,8 @@ namespace CCXT.NET.BitMEX.Public
                                 _bids.Add(_o);
                         }
 
-                        _result.result.asks = _asks.OrderBy(o => o.price).Take(limit).ToList();
-                        _result.result.bids = _bids.OrderByDescending(o => o.price).Take(limit).ToList();
+                        _result.result.asks = _asks.OrderBy(o => o.price).Take(limits).ToList();
+                        _result.result.bids = _bids.OrderByDescending(o => o.price).Take(limits).ToList();
 
                         _result.result.symbol = _market.result.symbol;
                         _result.result.timestamp = CUnixTime.NowMilli;
@@ -368,10 +368,10 @@ namespace CCXT.NET.BitMEX.Public
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
         /// <param name="timeframe">time frame interval (optional): default "1d"</param>
         /// <param name="since">return committed data since given time (milli-seconds) (optional): default 0</param>
-        /// <param name="limit">maximum number of items (optional): default 20</param>
+        /// <param name="limits">maximum number of items (optional): default 20</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<OHLCVs> FetchOHLCVs(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limit = 20, Dictionary<string, object> args = null)
+        public override async Task<OHLCVs> FetchOHLCVs(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
         {
             var _result = new OHLCVs(base_name, quote_name);
 
@@ -385,8 +385,8 @@ namespace CCXT.NET.BitMEX.Public
 
                 var _params = new Dictionary<string, object>();
                 {
-                    var _limits = limit <= 1 ? 1
-                                : limit <= 500 ? limit
+                    var _limits = limits <= 1 ? 1
+                                : limits <= 500 ? limits
                                 : 500;
 
                     _params.Add("symbol", _market.result.symbol);
@@ -421,7 +421,7 @@ namespace CCXT.NET.BitMEX.Public
                              })
                              .Where(o => o.timestamp >= since)
                              .OrderByDescending(o => o.timestamp)
-                             .Take(limit)
+                             .Take(limits)
                          );
                 }
 
@@ -511,10 +511,10 @@ namespace CCXT.NET.BitMEX.Public
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
         /// <param name="timeframe">time frame interval (optional): default "1d"</param>
         /// <param name="since">return committed data since given time (milli-seconds) (optional): default 0</param>
-        /// <param name="limit">maximum number of items (optional): default 20</param>
+        /// <param name="limits">maximum number of items (optional): default 20</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<CompleteOrders> FetchCompleteOrders(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limit = 20, Dictionary<string, object> args = null)
+        public override async Task<CompleteOrders> FetchCompleteOrders(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
         {
             var _result = new CompleteOrders(base_name, quote_name);
 
@@ -528,8 +528,8 @@ namespace CCXT.NET.BitMEX.Public
 
                 var _params = new Dictionary<string, object>();
                 {
-                    var _limits = limit <= 1 ? 1
-                                : limit <= 500 ? limit
+                    var _limits = limits <= 1 ? 1
+                                : limits <= 500 ? limits
                                 : 500;
 
                     _params.Add("symbol", _market.result.symbol);
@@ -551,7 +551,7 @@ namespace CCXT.NET.BitMEX.Public
                         var _orders = _json_data
                                                 .Where(t => t.timestamp >= since)
                                                 .OrderByDescending(t => t.timestamp)
-                                                .Take(limit);
+                                                .Take(limits);
 
                         foreach (var _o in _orders)
                         {

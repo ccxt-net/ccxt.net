@@ -70,14 +70,14 @@ namespace CCXT.NET.Huobi.Public
 
                         _m.precision.amount = _m.precision.price * _m.precision.quantity;
 
-                        _m.limit.quantity.min = (decimal)Math.Pow(10.0, -_m.precision.quantity);
-                        _m.limit.quantity.max = decimal.MaxValue;
-                        _m.limit.price.min = (decimal)Math.Pow(10.0, -_m.precision.price);
-                        _m.limit.price.max = decimal.MaxValue;
+                        _m.limits.quantity.min = (decimal)Math.Pow(10.0, -_m.precision.quantity);
+                        _m.limits.quantity.max = decimal.MaxValue;
+                        _m.limits.price.min = (decimal)Math.Pow(10.0, -_m.precision.price);
+                        _m.limits.price.max = decimal.MaxValue;
 
-                        _m.limit.amount = new MarketMinMax
+                        _m.limits.amount = new MarketMinMax
                         {
-                            min = _m.limit.quantity.min * _m.limit.price.min,
+                            min = _m.limits.quantity.min * _m.limits.price.min,
                             max = decimal.MaxValue
                         };
 
@@ -194,10 +194,10 @@ namespace CCXT.NET.Huobi.Public
         /// </summary>
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
-        /// <param name="limit">maximum number of items (optional): default 20</param>
+        /// <param name="limits">maximum number of items (optional): default 20</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<OrderBooks> FetchOrderBooks(string base_name, string quote_name, int limit = 20, Dictionary<string, object> args = null)
+        public override async Task<OrderBooks> FetchOrderBooks(string base_name, string quote_name, int limits = 20, Dictionary<string, object> args = null)
         {
             var _result = new OrderBooks(base_name, quote_name);
 
@@ -224,8 +224,8 @@ namespace CCXT.NET.Huobi.Public
                     var _orderbooks = publicClient.DeserializeObject<HOrderBooks>(_json_value.Content);
                     if (_orderbooks.success == true)
                     {
-                        var _ob_asks = _orderbooks.result.asks.OrderBy(o => o.price).Take(limit).ToList();
-                        var _ob_bids = _orderbooks.result.bids.OrderByDescending(o => o.price).Take(limit).ToList();
+                        var _ob_asks = _orderbooks.result.asks.OrderBy(o => o.price).Take(limits).ToList();
+                        var _ob_bids = _orderbooks.result.bids.OrderByDescending(o => o.price).Take(limits).ToList();
 
                         var _orderbook = new OrderBook
                         {
@@ -278,10 +278,10 @@ namespace CCXT.NET.Huobi.Public
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
         /// <param name="timeframe">time frame interval (optional): default "1d"</param>
         /// <param name="since">return committed data since given time (milli-seconds) (optional): default 0</param>
-        /// <param name="limit">maximum number of items (optional): default 20</param>
+        /// <param name="limits">maximum number of items (optional): default 20</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<OHLCVs> FetchOHLCVs(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limit = 20, Dictionary<string, object> args = null)
+        public override async Task<OHLCVs> FetchOHLCVs(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
         {
             var _result = new OHLCVs(base_name, quote_name);
 
@@ -297,7 +297,7 @@ namespace CCXT.NET.Huobi.Public
                 {
                     _params.Add("symbol", _market.result.symbol);
                     _params.Add("period", _timeframe);
-                    _params.Add("size", limit);
+                    _params.Add("size", limits);
 
                     publicClient.MergeParamsAndArgs(_params, args);
                 }
@@ -316,7 +316,7 @@ namespace CCXT.NET.Huobi.Public
                                     _ohlcvs.result
                                         .Where(o => o.timestamp >= since)
                                         .OrderByDescending(o => o.timestamp)
-                                        .Take(limit)
+                                        .Take(limits)
                                 );
                     }
                     else
@@ -342,10 +342,10 @@ namespace CCXT.NET.Huobi.Public
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
         /// <param name="timeframe">time frame interval (optional): default "1d"</param>
         /// <param name="since">return committed data since given time (milli-seconds) (optional): default 0</param>
-        /// <param name="limit">maximum number of items (optional): default 20</param>
+        /// <param name="limits">maximum number of items (optional): default 20</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<CompleteOrders> FetchCompleteOrders(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limit = 20, Dictionary<string, object> args = null)
+        public override async Task<CompleteOrders> FetchCompleteOrders(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
         {
             var _result = new CompleteOrders(base_name, quote_name);
 
@@ -376,7 +376,7 @@ namespace CCXT.NET.Huobi.Public
                         var _orders = _json_data.result
                                                 .Where(t => t.timestamp >= since)
                                                 .OrderByDescending(t => t.timestamp)
-                                                .Take(limit);
+                                                .Take(limits);
 
                         foreach (var _o in _orders)
                         {

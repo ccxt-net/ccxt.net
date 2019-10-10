@@ -49,7 +49,7 @@ namespace CCXT.NET.Bitforex.Public
         public BMarketItem()
         {
             this.precision = new MarketPrecision();
-            this.limit = new MarketLimits
+            this.limits = new MarketLimits
             {
                 price = new MarketMinMax(),
                 quantity = new MarketMinMax(),
@@ -99,7 +99,7 @@ namespace CCXT.NET.Bitforex.Public
         {
             set
             {
-                limit.quantity.min = value;
+                limits.quantity.min = value;
             }
         }
     }

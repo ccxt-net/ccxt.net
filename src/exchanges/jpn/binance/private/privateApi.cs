@@ -203,10 +203,10 @@ namespace CCXT.NET.Binance.Private
         /// <param name="currency_name">base coin or quote coin name</param>
         /// <param name="timeframe">time frame interval (optional): default "1d"</param>
         /// <param name="since">return committed data since given time (milli-seconds) (optional): default 0</param>
-        /// <param name="limit">maximum number of items (optional): default 20</param>
+        /// <param name="limits">maximum number of items (optional): default 20</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<Transfers> FetchTransfers(string currency_name, string timeframe = "1d", long since = 0, int limit = 20, Dictionary<string, object> args = null)
+        public override async Task<Transfers> FetchTransfers(string currency_name, string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
         {
             var _result = new Transfers();
 
@@ -241,7 +241,7 @@ namespace CCXT.NET.Binance.Private
                             var _deposits = _json_data.result
                                                       .Where(t => t.timestamp >= since)
                                                       .OrderByDescending(t => t.timestamp)
-                                                      .Take(limit);
+                                                      .Take(limits);
 
                             foreach (var _d in _deposits)
                             {
@@ -276,7 +276,7 @@ namespace CCXT.NET.Binance.Private
                             var _withdraws = _json_withdraws.result
                                                         .Where(t => t.timestamp >= since)
                                                         .OrderByDescending(t => t.timestamp)
-                                                        .Take(limit);
+                                                        .Take(limits);
 
                             foreach (var _w in _withdraws)
                             {
@@ -307,10 +307,10 @@ namespace CCXT.NET.Binance.Private
         /// </summary>
         /// <param name="timeframe">time frame interval (optional): default "1d"</param>
         /// <param name="since">return committed data since given time (milli-seconds) (optional): default 0</param>
-        /// <param name="limit">You can set the maximum number of transactions you want to get with this parameter</param>
+        /// <param name="limits">You can set the maximum number of transactions you want to get with this parameter</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<Transfers> FetchAllTransfers(string timeframe = "1d", long since = 0, int limit = 20, Dictionary<string, object> args = null)
+        public override async Task<Transfers> FetchAllTransfers(string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
         {
             var _result = new Transfers();
 
@@ -323,7 +323,7 @@ namespace CCXT.NET.Binance.Private
                 var _params = new Dictionary<string, object>();
                 {
                     var _till_time = CUnixTime.NowMilli;
-                    var _from_time = (since > 0) ? since : _till_time - _timestamp * 1000 * limit;     // 가져올 갯수 만큼 timeframe * limit 간격으로 데이터 양 계산
+                    var _from_time = (since > 0) ? since : _till_time - _timestamp * 1000 * limits;     // 가져올 갯수 만큼 timeframe * limits 간격으로 데이터 양 계산
 
                     _params.Add("startTime", _from_time);
                     _params.Add("endTime", _till_time);
@@ -347,7 +347,7 @@ namespace CCXT.NET.Binance.Private
                             var _deposits = _json_deposits.result
                                                         .Where(t => t.timestamp >= since)
                                                         .OrderByDescending(t => t.timestamp)
-                                                        .Take(limit);
+                                                        .Take(limits);
 
                             foreach (var _d in _deposits)
                             {
@@ -381,7 +381,7 @@ namespace CCXT.NET.Binance.Private
                             var _withdraws = _json_withdraws.result
                                                         .Where(t => t.timestamp >= since)
                                                         .OrderByDescending(t => t.timestamp)
-                                                        .Take(limit);
+                                                        .Take(limits);
 
                             foreach (var _w in _withdraws)
                             {

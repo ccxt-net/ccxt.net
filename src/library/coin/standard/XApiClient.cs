@@ -671,7 +671,7 @@ namespace CCXT.NET.Coin
                     break;
 
 #if DEBUG
-                Debug.Write($"request timeout: {_retry_count}/{max_retry}, {request.Resource}");
+                Debug.WriteLine($"request timeout: {_retry_count}/{max_retry}, {request.Resource}");
 #endif
 
                 await Task.Delay(delay_milliseconds);
