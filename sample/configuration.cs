@@ -1,4 +1,4 @@
-﻿using CCXT.NET.Coin;
+﻿using OdinSdk.BaseLib.Coin;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.IO;
