@@ -1,6 +1,6 @@
-﻿using OdinSdk.BaseLib.Coin;
+﻿using Newtonsoft.Json;
+using OdinSdk.BaseLib.Coin;
 using OdinSdk.BaseLib.Coin.Trade;
-using Newtonsoft.Json;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Bithumb.Trade

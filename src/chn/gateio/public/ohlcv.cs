@@ -1,5 +1,5 @@
-﻿using OdinSdk.BaseLib.Coin.Public;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
+using OdinSdk.BaseLib.Coin.Public;
 using System;
 
 namespace CCXT.NET.GateIO.Public

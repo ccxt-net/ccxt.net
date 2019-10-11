@@ -1,6 +1,6 @@
-﻿using OdinSdk.BaseLib.Coin.Trade;
+﻿using Newtonsoft.Json;
+using OdinSdk.BaseLib.Coin.Trade;
 using OdinSdk.BaseLib.Coin.Types;
-using Newtonsoft.Json;
 
 namespace CCXT.NET.Quoinex.Trade
 {

@@ -1,6 +1,6 @@
-﻿using OdinSdk.BaseLib.Coin.Private;
+﻿using Newtonsoft.Json;
+using OdinSdk.BaseLib.Coin.Private;
 using OdinSdk.BaseLib.Coin.Types;
-using Newtonsoft.Json;
 
 namespace CCXT.NET.Gemini.Private
 {

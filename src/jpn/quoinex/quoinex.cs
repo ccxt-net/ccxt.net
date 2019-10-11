@@ -1,6 +1,6 @@
-﻿using OdinSdk.BaseLib.Coin;
-using Microsoft.IdentityModel.Tokens;
+﻿using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json.Linq;
+using OdinSdk.BaseLib.Coin;
 using RestSharp;
 using System;
 using System.Collections.Generic;

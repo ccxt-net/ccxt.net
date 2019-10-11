@@ -1,5 +1,5 @@
-﻿using OdinSdk.BaseLib.Coin;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
+using OdinSdk.BaseLib.Coin;
 
 namespace CCXT.NET.Coinone
 {

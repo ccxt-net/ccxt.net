@@ -1,5 +1,5 @@
-﻿using OdinSdk.BaseLib.Coin.Trade;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
+using OdinSdk.BaseLib.Coin.Trade;
 using System.Collections.Generic;
 
 namespace CCXT.NET.OkCoinKr.Trade

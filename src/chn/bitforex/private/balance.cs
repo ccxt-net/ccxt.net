@@ -1,5 +1,5 @@
-﻿using OdinSdk.BaseLib.Coin.Private;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
+using OdinSdk.BaseLib.Coin.Private;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Bitforex.Private

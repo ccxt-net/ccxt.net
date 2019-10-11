@@ -1,6 +1,6 @@
-﻿using OdinSdk.BaseLib.Coin.Trade;
+﻿using Newtonsoft.Json;
+using OdinSdk.BaseLib.Coin.Trade;
 using OdinSdk.BaseLib.Configuration;
-using Newtonsoft.Json;
 using System;
 
 namespace CCXT.NET.BitMEX.Trade

@@ -1,7 +1,7 @@
-﻿using OdinSdk.BaseLib.Coin.Public;
+﻿using Newtonsoft.Json;
+using OdinSdk.BaseLib.Coin.Public;
 using OdinSdk.BaseLib.Coin.Types;
 using OdinSdk.BaseLib.Configuration;
-using Newtonsoft.Json;
 using System;
 
 namespace CCXT.NET.Poloniex.Public

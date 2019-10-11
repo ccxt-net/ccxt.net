@@ -1,7 +1,7 @@
-﻿using OdinSdk.BaseLib.Coin.Private;
+﻿using Newtonsoft.Json;
+using OdinSdk.BaseLib.Coin.Private;
 using OdinSdk.BaseLib.Coin.Types;
 using OdinSdk.BaseLib.Configuration;
-using Newtonsoft.Json;
 using System;
 
 namespace CCXT.NET.Bitflyer.Private

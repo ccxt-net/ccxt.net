@@ -1,8 +1,8 @@
-﻿using OdinSdk.BaseLib.Coin.Trade;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using OdinSdk.BaseLib.Coin.Trade;
 using OdinSdk.BaseLib.Coin.Types;
 using OdinSdk.BaseLib.Configuration;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using System;
 
 namespace CCXT.NET.ItBit.Trade

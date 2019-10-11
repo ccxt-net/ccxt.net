@@ -1,9 +1,9 @@
-﻿using OdinSdk.BaseLib.Coin;
+﻿using Newtonsoft.Json.Linq;
+using OdinSdk.BaseLib.Coin;
 using OdinSdk.BaseLib.Coin.Public;
 using OdinSdk.BaseLib.Coin.Types;
 using OdinSdk.BaseLib.Configuration;
 using OdinSdk.BaseLib.Converter;
-using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;

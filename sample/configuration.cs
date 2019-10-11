@@ -1,5 +1,5 @@
-﻿using OdinSdk.BaseLib.Coin;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
+using OdinSdk.BaseLib.Coin;
 using System;
 using System.IO;
 

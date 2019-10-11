@@ -1,6 +1,6 @@
-﻿using OdinSdk.BaseLib.Coin.Public;
+﻿using Newtonsoft.Json;
+using OdinSdk.BaseLib.Coin.Public;
 using OdinSdk.BaseLib.Coin.Types;
-using Newtonsoft.Json;
 using System.Collections.Generic;
 
 namespace CCXT.NET.GateIO.Public

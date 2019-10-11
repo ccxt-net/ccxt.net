@@ -1,8 +1,8 @@
-﻿using OdinSdk.BaseLib.Coin;
+﻿using CCXT.NET.Kraken.Public;
+using OdinSdk.BaseLib.Coin;
 using OdinSdk.BaseLib.Coin.Trade;
 using OdinSdk.BaseLib.Coin.Types;
 using OdinSdk.BaseLib.Configuration;
-using CCXT.NET.Kraken.Public;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -1,6 +1,6 @@
-﻿using OdinSdk.BaseLib.Coin;
+﻿using Newtonsoft.Json;
+using OdinSdk.BaseLib.Coin;
 using OdinSdk.BaseLib.Coin.Private;
-using Newtonsoft.Json;
 
 namespace CCXT.NET.Bithumb.Private
 {

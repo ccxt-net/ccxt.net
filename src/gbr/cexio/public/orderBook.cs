@@ -1,6 +1,6 @@
-﻿using OdinSdk.BaseLib.Coin.Public;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using OdinSdk.BaseLib.Coin.Public;
 using System.Collections.Generic;
 
 namespace CCXT.NET.CEXIO.Public

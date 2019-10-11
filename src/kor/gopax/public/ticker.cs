@@ -1,6 +1,6 @@
-﻿using OdinSdk.BaseLib.Coin.Public;
+﻿using Newtonsoft.Json;
+using OdinSdk.BaseLib.Coin.Public;
 using OdinSdk.BaseLib.Configuration;
-using Newtonsoft.Json;
 using System;
 
 namespace CCXT.NET.GOPAX.Public

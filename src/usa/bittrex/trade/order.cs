@@ -1,7 +1,7 @@
-﻿using OdinSdk.BaseLib.Coin.Trade;
+﻿using Newtonsoft.Json;
+using OdinSdk.BaseLib.Coin.Trade;
 using OdinSdk.BaseLib.Coin.Types;
 using OdinSdk.BaseLib.Configuration;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 

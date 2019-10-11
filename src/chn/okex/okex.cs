@@ -1,7 +1,7 @@
-﻿using OdinSdk.BaseLib.Coin;
-using OdinSdk.BaseLib.Coin.Public;
-using CCXT.NET.OKEx.Public;
+﻿using CCXT.NET.OKEx.Public;
 using Newtonsoft.Json.Linq;
+using OdinSdk.BaseLib.Coin;
+using OdinSdk.BaseLib.Coin.Public;
 using RestSharp;
 using System;
 using System.Collections.Generic;
