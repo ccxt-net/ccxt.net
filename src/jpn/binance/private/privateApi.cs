@@ -144,7 +144,7 @@ namespace CCXT.NET.Binance.Private
                         _params.Add("addressTag", tag);
 
                     _params.Add("amount", quantity);
-                    _params.Add("name", "ccxt.net api address");
+                    _params.Add("name", "crypto-coin exchange for .net api address");
 
                     privateClient.MergeParamsAndArgs(_params, args);
                 }
