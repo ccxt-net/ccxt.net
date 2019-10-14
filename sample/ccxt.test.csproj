@@ -3,8 +3,8 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
     <IsPackable>false</IsPackable>
-    <AssemblyName>Tester</AssemblyName>
-    <RootNamespace>Tester</RootNamespace>
+    <AssemblyName>ccxt.test</AssemblyName>
+    <RootNamespace>CCXT.TEST</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
