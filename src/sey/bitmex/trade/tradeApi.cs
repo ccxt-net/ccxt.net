@@ -297,7 +297,7 @@ namespace CCXT.NET.BitMEX.Trade
                         var _positions = _json_data
                                             .OrderByDescending(p => p.timestamp);
 
-                        foreach (var _p in _json_data)
+                        foreach (var _p in _positions)
                         {
                             _p.orderType = OrderType.Position;
 
