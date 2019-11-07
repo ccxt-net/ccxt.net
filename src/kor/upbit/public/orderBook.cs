@@ -56,8 +56,8 @@ namespace CCXT.NET.Upbit.Public
         {
             set
             {
-                this.asks = new List<IOrderBookItem>();
-                this.bids = new List<IOrderBookItem>();
+                this.asks = new List<OrderBookItem>();
+                this.bids = new List<OrderBookItem>();
 
                 foreach (var _o in value)
                 {

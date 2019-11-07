@@ -59,7 +59,7 @@ namespace CCXT.NET.GOPAX.Private
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<Balance> FetchBalance(string base_name, string quote_name, Dictionary<string, object> args = null)
+        public override async ValueTask<Balance> FetchBalance(string base_name, string quote_name, Dictionary<string, object> args = null)
         {
             var _result = new Balance();
 
@@ -101,7 +101,7 @@ namespace CCXT.NET.GOPAX.Private
         /// </summary>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<Balances> FetchBalances(Dictionary<string, object> args = null)
+        public override async ValueTask<Balances> FetchBalances(Dictionary<string, object> args = null)
         {
             var _result = new Balances();
 

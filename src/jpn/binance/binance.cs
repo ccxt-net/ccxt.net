@@ -165,7 +165,7 @@ namespace CCXT.NET.Binance
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<IRestRequest> CreatePostRequest(string endpoint, Dictionary<string, object> args = null)
+        public override async ValueTask<IRestRequest> CreatePostRequest(string endpoint, Dictionary<string, object> args = null)
         {
             var _request = await base.CreatePostRequest(endpoint, args);
 
@@ -202,7 +202,7 @@ namespace CCXT.NET.Binance
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<IRestRequest> CreateGetRequest(string endpoint, Dictionary<string, object> args = null)
+        public override async ValueTask<IRestRequest> CreateGetRequest(string endpoint, Dictionary<string, object> args = null)
         {
             var _request = await base.CreateGetRequest(endpoint, args);
 
@@ -229,7 +229,7 @@ namespace CCXT.NET.Binance
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<IRestRequest> CreateDeleteRequest(string endpoint, Dictionary<string, object> args = null)
+        public override async ValueTask<IRestRequest> CreateDeleteRequest(string endpoint, Dictionary<string, object> args = null)
         {
             var _request = await base.CreateDeleteRequest(endpoint, args);
 

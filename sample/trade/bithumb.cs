@@ -142,7 +142,7 @@ namespace XUnit
                         Assert.True(Math.Abs(_p.quantity) > 0.0m);
                         Assert.True(_p.price > 0.0m);
                         Assert.True(_p.amount == Math.Abs(_p.quantity) * _p.price);
-                        Assert.True(_p.liqPrice >= 0.0m);
+                        Assert.True(_p.liquidationPrice >= 0.0m);
                     }
                 }
 

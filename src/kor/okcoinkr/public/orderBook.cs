@@ -14,7 +14,7 @@ namespace CCXT.NET.OkCoinKr.Public
         ///
         /// </summary>
         [JsonProperty(PropertyName = "originBids")]
-        public override List<IOrderBookItem> bids
+        public override List<OrderBookItem> bids
         {
             get;
             set;
@@ -24,7 +24,7 @@ namespace CCXT.NET.OkCoinKr.Public
         ///
         /// </summary>
         [JsonProperty(PropertyName = "originAsks")]
-        public override List<IOrderBookItem> asks
+        public override List<OrderBookItem> asks
         {
             get;
             set;
@@ -39,7 +39,7 @@ namespace CCXT.NET.OkCoinKr.Public
         {
             set
             {
-                asks = new List<IOrderBookItem>();
+                asks = new List<OrderBookItem>();
 
                 foreach (var _b in value)
                 {
@@ -65,7 +65,7 @@ namespace CCXT.NET.OkCoinKr.Public
         {
             set
             {
-                bids = new List<IOrderBookItem>();
+                bids = new List<OrderBookItem>();
 
                 foreach (var _a in value)
                 {

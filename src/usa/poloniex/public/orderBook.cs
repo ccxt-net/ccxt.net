@@ -39,7 +39,7 @@ namespace CCXT.NET.Poloniex.Public
         ///
         /// </summary>
         [JsonProperty(PropertyName = "originBids")]
-        public override List<IOrderBookItem> bids
+        public override List<OrderBookItem> bids
         {
             get;
             set;
@@ -49,7 +49,7 @@ namespace CCXT.NET.Poloniex.Public
         ///
         /// </summary>
         [JsonProperty(PropertyName = "originAsks")]
-        public override List<IOrderBookItem> asks
+        public override List<OrderBookItem> asks
         {
             get;
             set;
@@ -74,9 +74,9 @@ namespace CCXT.NET.Poloniex.Public
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        private List<IOrderBookItem> ParseOrders(List<string[]> orders)
+        private List<OrderBookItem> ParseOrders(List<string[]> orders)
         {
-            var _result = new List<IOrderBookItem>();
+            var _result = new List<OrderBookItem>();
 
             foreach (var _order in orders)
             {

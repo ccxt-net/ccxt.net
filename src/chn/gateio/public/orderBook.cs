@@ -24,7 +24,7 @@ namespace CCXT.NET.GateIO.Public
         ///
         /// </summary>
         [JsonProperty(PropertyName = "originAsks")]
-        public override List<IOrderBookItem> asks
+        public override List<OrderBookItem> asks
         {
             get;
             set;
@@ -38,7 +38,7 @@ namespace CCXT.NET.GateIO.Public
         {
             set
             {
-                this.asks = new List<IOrderBookItem>();
+                this.asks = new List<OrderBookItem>();
 
                 foreach (var _ask in value)
                 {
@@ -59,7 +59,7 @@ namespace CCXT.NET.GateIO.Public
         ///
         /// </summary>
         [JsonProperty(PropertyName = "originBids")]
-        public override List<IOrderBookItem> bids
+        public override List<OrderBookItem> bids
         {
             get;
             set;
@@ -73,7 +73,7 @@ namespace CCXT.NET.GateIO.Public
         {
             set
             {
-                this.bids = new List<IOrderBookItem>();
+                this.bids = new List<OrderBookItem>();
 
                 foreach (var _bid in value)
                 {

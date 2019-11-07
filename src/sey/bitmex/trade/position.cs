@@ -146,7 +146,7 @@ namespace CCXT.NET.BitMEX.Trade
         /// Once markPrice reaches this price, this position will be liquidated.
         /// </summary>
         [JsonProperty(PropertyName = "LiquidationPrice")]
-        public override decimal liqPrice
+        public override decimal liquidationPrice
         {
             get;
             set;

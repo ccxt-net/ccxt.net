@@ -60,7 +60,7 @@ namespace CCXT.NET.Bithumb.Private
         /// <param name="currency_name">base coin or quote coin name</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<Address> FetchAddress(string currency_name, Dictionary<string, object> args = null)
+        public override async ValueTask<Address> FetchAddress(string currency_name, Dictionary<string, object> args = null)
         {
             var _result = new Address();
 
@@ -109,7 +109,7 @@ namespace CCXT.NET.Bithumb.Private
         /// <param name="quantity">amount of coin</param>
         /// <param name="args">Add additional attributes for each exchange: [destination]</param>
         /// <returns></returns>
-        public override async Task<Transfer> CoinWithdraw(string currency_name, string address, string tag, decimal quantity, Dictionary<string, object> args = null)
+        public override async ValueTask<Transfer> CoinWithdraw(string currency_name, string address, string tag, decimal quantity, Dictionary<string, object> args = null)
         {
             var _result = new Transfer();
 
@@ -183,7 +183,7 @@ namespace CCXT.NET.Bithumb.Private
         /// <param name="amount">출금 금액</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<Transfer> FiatWithdraw(string currency_name, string bank_name, string account, decimal amount, Dictionary<string, object> args = null)
+        public override async ValueTask<Transfer> FiatWithdraw(string currency_name, string bank_name, string account, decimal amount, Dictionary<string, object> args = null)
         {
             var _result = new Transfer();
 
@@ -257,7 +257,7 @@ namespace CCXT.NET.Bithumb.Private
         /// <param name="limits">maximum number of items (optional): default 20</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<Transfers> FetchTransfers(string currency_name, string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
+        public override async ValueTask<Transfers> FetchTransfers(string currency_name, string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
         {
             var _result = new Transfers();
 
@@ -333,7 +333,7 @@ namespace CCXT.NET.Bithumb.Private
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<Wallet> FetchWallet(string base_name, string quote_name, Dictionary<string, object> args = null)
+        public override async ValueTask<Wallet> FetchWallet(string base_name, string quote_name, Dictionary<string, object> args = null)
         {
             var _result = new Wallet();
 
@@ -390,7 +390,7 @@ namespace CCXT.NET.Bithumb.Private
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<Balance> FetchBalance(string base_name, string quote_name, Dictionary<string, object> args = null)
+        public override async ValueTask<Balance> FetchBalance(string base_name, string quote_name, Dictionary<string, object> args = null)
         {
             var _result = new Balance();
 
@@ -456,7 +456,7 @@ namespace CCXT.NET.Bithumb.Private
         /// </summary>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<Balances> FetchBalances(Dictionary<string, object> args = null)
+        public override async ValueTask<Balances> FetchBalances(Dictionary<string, object> args = null)
         {
             var _result = new Balances();
 

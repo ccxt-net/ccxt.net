@@ -65,7 +65,7 @@ namespace CCXT.NET.ItBit.Private
         /// <param name="limits">You can set the maximum number of transactions you want to get with this parameter</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<Transfers> FetchAllTransfers(string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
+        public override async ValueTask<Transfers> FetchAllTransfers(string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
         {
             var _result = new Transfers();
 
@@ -126,7 +126,7 @@ namespace CCXT.NET.ItBit.Private
         /// <param name="user_id"></param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<Wallets> FetchWallets(string user_id, Dictionary<string, object> args = null)
+        public override async ValueTask<Wallets> FetchWallets(string user_id, Dictionary<string, object> args = null)
         {
             var _result = new Wallets();
 
@@ -192,7 +192,7 @@ namespace CCXT.NET.ItBit.Private
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
         /// <param name="args">Add additional attributes for each exchange: [walletId]</param>
         /// <returns></returns>
-        public override async Task<Balance> FetchBalance(string base_name, string quote_name, Dictionary<string, object> args = null)
+        public override async ValueTask<Balance> FetchBalance(string base_name, string quote_name, Dictionary<string, object> args = null)
         {
             var _result = new Balance();
 
@@ -245,7 +245,7 @@ namespace CCXT.NET.ItBit.Private
         /// </summary>
         /// <param name="args">Add additional attributes for each exchange: [walletId]</param>
         /// <returns></returns>
-        public override async Task<Balances> FetchBalances(Dictionary<string, object> args = null)
+        public override async ValueTask<Balances> FetchBalances(Dictionary<string, object> args = null)
         {
             var _result = new Balances();
 

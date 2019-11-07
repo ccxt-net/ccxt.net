@@ -67,7 +67,7 @@ namespace CCXT.NET.ItBit.Trade
         /// <param name="order_id">Order number registered for sale or purchase</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<MyOrder> FetchMyOrder(string base_name, string quote_name, string order_id = "", Dictionary<string, object> args = null)
+        public override async ValueTask<MyOrder> FetchMyOrder(string base_name, string quote_name, string order_id = "", Dictionary<string, object> args = null)
         {
             var _result = new MyOrder(base_name, quote_name);
 
@@ -113,7 +113,7 @@ namespace CCXT.NET.ItBit.Trade
         /// <param name="limits">maximum number of items (optional): default 20</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<MyOrders> FetchMyOrders(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
+        public override async ValueTask<MyOrders> FetchMyOrders(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
         {
             var _result = new MyOrders(base_name, quote_name);
 
@@ -171,7 +171,7 @@ namespace CCXT.NET.ItBit.Trade
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<MyOrders> FetchOpenOrders(string base_name, string quote_name, Dictionary<string, object> args = null)
+        public override async ValueTask<MyOrders> FetchOpenOrders(string base_name, string quote_name, Dictionary<string, object> args = null)
         {
             var _result = new MyOrders(base_name, quote_name);
 
@@ -224,7 +224,7 @@ namespace CCXT.NET.ItBit.Trade
         /// </summary>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<MyOrders> FetchAllOpenOrders(Dictionary<string, object> args = null)
+        public override async ValueTask<MyOrders> FetchAllOpenOrders(Dictionary<string, object> args = null)
         {
             var _result = new MyOrders();
 
@@ -281,7 +281,7 @@ namespace CCXT.NET.ItBit.Trade
         /// <param name="limits">maximum number of items (optional): default 20</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<MyTrades> FetchMyTrades(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
+        public override async ValueTask<MyTrades> FetchMyTrades(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
         {
             var _result = new MyTrades(base_name, quote_name);
 
@@ -348,7 +348,7 @@ namespace CCXT.NET.ItBit.Trade
         /// <param name="sideType">type of buy(bid) or sell(ask)</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<MyOrder> CreateLimitOrder(string base_name, string quote_name, decimal quantity, decimal price, SideType sideType, Dictionary<string, object> args = null)
+        public override async ValueTask<MyOrder> CreateLimitOrder(string base_name, string quote_name, decimal quantity, decimal price, SideType sideType, Dictionary<string, object> args = null)
         {
             var _result = new MyOrder(base_name, quote_name);
 
@@ -408,7 +408,7 @@ namespace CCXT.NET.ItBit.Trade
         /// <param name="sideType">type of buy(bid) or sell(ask)</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<MyOrder> CancelOrder(string base_name, string quote_name, string order_id, decimal quantity, decimal price, SideType sideType, Dictionary<string, object> args = null)
+        public override async ValueTask<MyOrder> CancelOrder(string base_name, string quote_name, string order_id, decimal quantity, decimal price, SideType sideType, Dictionary<string, object> args = null)
         {
             var _result = new MyOrder(base_name, quote_name);
 

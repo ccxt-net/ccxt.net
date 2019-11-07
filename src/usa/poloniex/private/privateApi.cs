@@ -60,7 +60,7 @@ namespace CCXT.NET.Poloniex.Private
         /// <param name="currency_name">base coin or quote coin name</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<Address> CreateAddress(string currency_name, Dictionary<string, object> args = null)
+        public override async ValueTask<Address> CreateAddress(string currency_name, Dictionary<string, object> args = null)
         {
             var _result = new Address();
 
@@ -106,7 +106,7 @@ namespace CCXT.NET.Poloniex.Private
         /// </summary>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<Addresses> FetchAddresses(Dictionary<string, object> args = null)
+        public override async ValueTask<Addresses> FetchAddresses(Dictionary<string, object> args = null)
         {
             var _result = new Addresses();
 
@@ -169,7 +169,7 @@ namespace CCXT.NET.Poloniex.Private
         /// <param name="quantity">amount of coin</param>
         /// <param name="args">Add additional attributes for each exchange: [paymentId]</param>
         /// <returns></returns>
-        public override async Task<Transfer> CoinWithdraw(string currency_name, string address, string tag, decimal quantity, Dictionary<string, object> args = null)
+        public override async ValueTask<Transfer> CoinWithdraw(string currency_name, string address, string tag, decimal quantity, Dictionary<string, object> args = null)
         {
             var _result = new Transfer();
 
@@ -243,7 +243,7 @@ namespace CCXT.NET.Poloniex.Private
         /// <param name="limits">You can set the maximum number of transactions you want to get with this parameter</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<Transfers> FetchAllTransfers(string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
+        public override async ValueTask<Transfers> FetchAllTransfers(string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
         {
             var _result = new Transfers();
 
@@ -326,7 +326,7 @@ namespace CCXT.NET.Poloniex.Private
         /// </summary>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<Balances> FetchBalances(Dictionary<string, object> args = null)
+        public override async ValueTask<Balances> FetchBalances(Dictionary<string, object> args = null)
         {
             var _result = new Balances();
 

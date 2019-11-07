@@ -56,7 +56,7 @@ namespace CCXT.NET.Zb.Public
         /// </summary>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<Markets> FetchMarkets(Dictionary<string, object> args = null)
+        public override async ValueTask<Markets> FetchMarkets(Dictionary<string, object> args = null)
         {
             var _result = new Markets();
 
@@ -122,7 +122,7 @@ namespace CCXT.NET.Zb.Public
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<Ticker> FetchTicker(string base_name, string quote_name, Dictionary<string, object> args = null)
+        public override async ValueTask<Ticker> FetchTicker(string base_name, string quote_name, Dictionary<string, object> args = null)
         {
             var _result = new Ticker(base_name, quote_name);
 
@@ -168,7 +168,7 @@ namespace CCXT.NET.Zb.Public
         /// </summary>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<Tickers> FetchTickers(Dictionary<string, object> args = null)
+        public override async ValueTask<Tickers> FetchTickers(Dictionary<string, object> args = null)
         {
             var _result = new Tickers();
 
@@ -217,7 +217,7 @@ namespace CCXT.NET.Zb.Public
         /// <param name="limits">maximum number of items (optional): default 20</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<OrderBooks> FetchOrderBooks(string base_name, string quote_name, int limits = 20, Dictionary<string, object> args = null)
+        public override async ValueTask<OrderBooks> FetchOrderBooks(string base_name, string quote_name, int limits = 20, Dictionary<string, object> args = null)
         {
             var _result = new OrderBooks(base_name, quote_name);
 
@@ -248,8 +248,8 @@ namespace CCXT.NET.Zb.Public
 
                         var _orderbook = new OrderBook
                         {
-                            asks = new List<IOrderBookItem>(),
-                            bids = new List<IOrderBookItem>()
+                            asks = new List<OrderBookItem>(),
+                            bids = new List<OrderBookItem>()
                         };
 
                         foreach (var _ask in _ob_asks)
@@ -296,7 +296,7 @@ namespace CCXT.NET.Zb.Public
         /// <param name="limits">maximum number of items (optional): default 20</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<OHLCVs> FetchOHLCVs(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
+        public override async ValueTask<OHLCVs> FetchOHLCVs(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
         {
             var _result = new OHLCVs(base_name, quote_name);
 
@@ -362,7 +362,7 @@ namespace CCXT.NET.Zb.Public
         /// <param name="limits">maximum number of items (optional): default 20</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<CompleteOrders> FetchCompleteOrders(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
+        public override async ValueTask<CompleteOrders> FetchCompleteOrders(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
         {
             var _result = new CompleteOrders(base_name, quote_name);
 

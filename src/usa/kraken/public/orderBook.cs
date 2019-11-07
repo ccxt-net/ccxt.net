@@ -19,7 +19,7 @@ namespace CCXT.NET.Kraken.Public
         {
             set
             {
-                this.bids = new List<IOrderBookItem>();
+                this.bids = new List<OrderBookItem>();
 
                 foreach (var _bid in value)
                 {
@@ -45,7 +45,7 @@ namespace CCXT.NET.Kraken.Public
         {
             set
             {
-                this.asks = new List<IOrderBookItem>();
+                this.asks = new List<OrderBookItem>();
 
                 foreach (var _ask in value)
                 {
@@ -67,7 +67,7 @@ namespace CCXT.NET.Kraken.Public
         /// </summary>
         /// <returns></returns>
         [JsonProperty(PropertyName = "originBids")]
-        public override List<IOrderBookItem> bids
+        public override List<OrderBookItem> bids
         {
             get;
             set;
@@ -78,7 +78,7 @@ namespace CCXT.NET.Kraken.Public
         /// </summary>
         /// <returns></returns>
         [JsonProperty(PropertyName = "originAsks")]
-        public override List<IOrderBookItem> asks
+        public override List<OrderBookItem> asks
         {
             get;
             set;

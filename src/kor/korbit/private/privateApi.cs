@@ -66,7 +66,7 @@ namespace CCXT.NET.Korbit.Private
         /// <param name="currency_name">base coin or quote coin name</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<Address> CreateAddress(string currency_name, Dictionary<string, object> args = null)
+        public override async ValueTask<Address> CreateAddress(string currency_name, Dictionary<string, object> args = null)
         {
             var _result = new Address();
 
@@ -111,7 +111,7 @@ namespace CCXT.NET.Korbit.Private
         /// </summary>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<Addresses> FetchAddresses(Dictionary<string, object> args = null)
+        public override async ValueTask<Addresses> FetchAddresses(Dictionary<string, object> args = null)
         {
             var _result = new Addresses();
 
@@ -172,7 +172,7 @@ namespace CCXT.NET.Korbit.Private
         /// <param name="quantity">amount of coin</param>
         /// <param name="args">Add additional attributes for each exchange: [fee_priority]</param>
         /// <returns></returns>
-        public override async Task<Transfer> CoinWithdraw(string currency_name, string address, string tag, decimal quantity, Dictionary<string, object> args = null)
+        public override async ValueTask<Transfer> CoinWithdraw(string currency_name, string address, string tag, decimal quantity, Dictionary<string, object> args = null)
         {
             var _result = new Transfer();
 
@@ -245,7 +245,7 @@ namespace CCXT.NET.Korbit.Private
         /// <param name="transferId">The unique id of the withdrawal request specified</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<Transfer> CancelCoinWithdraw(string currency_name, string transferId, Dictionary<string, object> args = null)
+        public override async ValueTask<Transfer> CancelCoinWithdraw(string currency_name, string transferId, Dictionary<string, object> args = null)
         {
             var _result = new Transfer();
 
@@ -312,7 +312,7 @@ namespace CCXT.NET.Korbit.Private
         /// <param name="limits">maximum number of items (optional): default 20</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<Transfers> FetchTransfers(string currency_name, string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
+        public override async ValueTask<Transfers> FetchTransfers(string currency_name, string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
         {
             var _result = new Transfers();
 
@@ -376,7 +376,7 @@ namespace CCXT.NET.Korbit.Private
         /// </summary>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<Balances> FetchBalances(Dictionary<string, object> args = null)
+        public override async ValueTask<Balances> FetchBalances(Dictionary<string, object> args = null)
         {
             var _result = new Balances();
 

@@ -64,7 +64,7 @@ namespace CCXT.NET.Coinone.Private
         /// <param name="limits">maximum number of items (optional): default 20</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<Transfers> FetchTransfers(string currency_name, string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
+        public override async ValueTask<Transfers> FetchTransfers(string currency_name, string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
         {
             var _result = new Transfers();
 
@@ -129,7 +129,7 @@ namespace CCXT.NET.Coinone.Private
         /// </summary>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<Addresses> FetchAddresses(Dictionary<string, object> args = null)
+        public override async ValueTask<Addresses> FetchAddresses(Dictionary<string, object> args = null)
         {
             var _result = new Addresses();
 
@@ -193,7 +193,7 @@ namespace CCXT.NET.Coinone.Private
         /// <param name="quantity">amount of coin</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<Transfer> CoinWithdraw(string currency_name, string address, string tag, decimal quantity, Dictionary<string, object> args = null)
+        public override async ValueTask<Transfer> CoinWithdraw(string currency_name, string address, string tag, decimal quantity, Dictionary<string, object> args = null)
         {
             var _result = new Transfer();
 
@@ -268,7 +268,7 @@ namespace CCXT.NET.Coinone.Private
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<Balance> FetchBalance(string base_name, string quote_name, Dictionary<string, object> args = null)
+        public override async ValueTask<Balance> FetchBalance(string base_name, string quote_name, Dictionary<string, object> args = null)
         {
             var _result = new Balance();
 
@@ -323,7 +323,7 @@ namespace CCXT.NET.Coinone.Private
         /// </summary>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async Task<Balances> FetchBalances(Dictionary<string, object> args = null)
+        public override async ValueTask<Balances> FetchBalances(Dictionary<string, object> args = null)
         {
             var _result = new Balances();
 
