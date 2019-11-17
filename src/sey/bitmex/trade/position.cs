@@ -769,7 +769,7 @@ namespace CCXT.NET.BitMEX.Trade
         ///
         /// </summary>
         [JsonProperty(PropertyName = "indicativeTaxRate")]
-        public decimal indicativeTaxRate
+        public decimal? indicativeTaxRate
         {
             get;
             set;
@@ -809,7 +809,7 @@ namespace CCXT.NET.BitMEX.Trade
         ///
         /// </summary>
         [JsonProperty(PropertyName = "simpleQty")]
-        public decimal simpleQty
+        public decimal? simpleQty
         {
             get;
             set;
@@ -819,7 +819,7 @@ namespace CCXT.NET.BitMEX.Trade
         ///
         /// </summary>
         [JsonProperty(PropertyName = "simpleCost")]
-        public decimal simpleCost
+        public decimal? simpleCost
         {
             get;
             set;
@@ -829,7 +829,7 @@ namespace CCXT.NET.BitMEX.Trade
         ///
         /// </summary>
         [JsonProperty(PropertyName = "simpleValue")]
-        public decimal simpleValue
+        public decimal? simpleValue
         {
             get;
             set;
@@ -839,7 +839,7 @@ namespace CCXT.NET.BitMEX.Trade
         ///
         /// </summary>
         [JsonProperty(PropertyName = "simplePnl")]
-        public decimal simplePnl
+        public decimal? simplePnl
         {
             get;
             set;
@@ -849,7 +849,7 @@ namespace CCXT.NET.BitMEX.Trade
         ///
         /// </summary>
         [JsonProperty(PropertyName = "simplePnlPcnt")]
-        public decimal simplePnlPcnt
+        public decimal? simplePnlPcnt
         {
             get;
             set;
