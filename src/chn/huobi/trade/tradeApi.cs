@@ -75,7 +75,7 @@ namespace CCXT.NET.Huobi.Trade
                 var _params = tradeClient.MergeParamsAndArgs(args);
 
                 var _json_value = await tradeClient.CallApiGet1Async($"/v1/order/orders/{order_id}", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -130,7 +130,7 @@ namespace CCXT.NET.Huobi.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiGet1Async("/v1/order/orders", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -188,7 +188,7 @@ namespace CCXT.NET.Huobi.Trade
                     }
 
                     var _json_value = await tradeClient.CallApiGet1Async("/v1/order/openOrders", _params);
-#if DEBUG
+#if RAWJSON
                     _result.rawJson = _json_value.Content;
 #endif
                     var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -253,7 +253,7 @@ namespace CCXT.NET.Huobi.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiGet1Async("/v1/order/orders", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -321,7 +321,7 @@ namespace CCXT.NET.Huobi.Trade
                     }
 
                     var _json_value = await tradeClient.CallApiPost1Async($"/v1/order/orders/place", _params);
-#if DEBUG
+#if RAWJSON
                     _result.rawJson = _json_value.Content;
 #endif
                     var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -392,7 +392,7 @@ namespace CCXT.NET.Huobi.Trade
                     }
 
                     var _json_value = await tradeClient.CallApiPost1Async($"/v1/order/orders/place", _params);
-#if DEBUG
+#if RAWJSON
                     _result.rawJson = _json_value.Content;
 #endif
                     var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -451,7 +451,7 @@ namespace CCXT.NET.Huobi.Trade
                 var _params = tradeClient.MergeParamsAndArgs(args);
 
                 var _json_value = await tradeClient.CallApiPost1Async($"/v1/order/orders/{order_id}/submitcancel", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -514,7 +514,7 @@ namespace CCXT.NET.Huobi.Trade
                     }
 
                     var _json_value = await tradeClient.CallApiPost1Async("/v1/order/orders/batchcancel", _params);
-#if DEBUG
+#if RAWJSON
                     _result.rawJson = _json_value.Content;
 #endif
                     var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -553,7 +553,7 @@ namespace CCXT.NET.Huobi.Trade
                         }
 
                         var _json_value = await tradeClient.CallApiPost1Async("/v1/order/orders/batchCancelOpenOrders", _params);
-#if DEBUG
+#if RAWJSON
                         _result.rawJson = _json_value.Content;
 #endif
                         var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -607,7 +607,7 @@ namespace CCXT.NET.Huobi.Trade
                     var _params = tradeClient.MergeParamsAndArgs(args);
 
                     var _json_value = await tradeClient.CallApiPost1Async($"/v1/order/orders/batchCancelOpenOrders", _params);
-#if DEBUG
+#if RAWJSON
                     _result.rawJson = _json_value.Content;
 #endif
                     var _json_result = tradeClient.GetResponseMessage(_json_value.Response);

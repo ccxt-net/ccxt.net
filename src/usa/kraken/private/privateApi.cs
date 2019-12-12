@@ -80,7 +80,7 @@ namespace CCXT.NET.Kraken.Private
                     _params.Add("asset", currency_id);
                 }
 
-#if DEBUG
+#if RAWJSON
                 if (XApiClient.TestXUnitMode != XUnitMode.UseExchangeServer)
                 {
                     _result.result = currency_id;
@@ -90,7 +90,7 @@ namespace CCXT.NET.Kraken.Private
                 {
 #endif
                     var _json_value = await privateClient.CallApiPost1Async("/0/private/DepositMethods", _params);
-#if DEBUG
+#if RAWJSON
                     _result.rawJson = _json_value.Content;
 #endif
                     var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -105,7 +105,7 @@ namespace CCXT.NET.Kraken.Private
                     }
 
                     _result.SetResult(_json_result);
-#if DEBUG
+#if RAWJSON
                 }
 #endif
             }
@@ -147,7 +147,7 @@ namespace CCXT.NET.Kraken.Private
                     }
 
                     var _json_value = await privateClient.CallApiPost1Async("/0/private/DepositAddresses", _params);
-#if DEBUG
+#if RAWJSON
                     _result.rawJson = _json_value.Content;
 #endif
                     var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -204,7 +204,7 @@ namespace CCXT.NET.Kraken.Private
                     }
 
                     var _json_value = await privateClient.CallApiPost1Async("/0/private/DepositAddresses", _params);
-#if DEBUG
+#if RAWJSON
                     _result.rawJson = _json_value.Content;
 #endif
                     var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -262,7 +262,7 @@ namespace CCXT.NET.Kraken.Private
                 }
 
                 var _json_value = await privateClient.CallApiPost1Async("/0/private/Withdraw", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -328,7 +328,7 @@ namespace CCXT.NET.Kraken.Private
                 }
 
                 var _json_value = await privateClient.CallApiPost1Async("/0/private/WithdrawCancel", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -403,7 +403,7 @@ namespace CCXT.NET.Kraken.Private
                         privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
                         var _json_value = await privateClient.CallApiPost1Async("/0/private/DepositStatus", _params);
-#if DEBUG
+#if RAWJSON
                         _result.rawJson += _json_value.Content;
 #endif
                         var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -438,7 +438,7 @@ namespace CCXT.NET.Kraken.Private
                         privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
                         var _json_value = await privateClient.CallApiPost1Async("/0/private/WithdrawStatus", _params);
-#if DEBUG
+#if RAWJSON
                         _result.rawJson += _json_value.Content;
 #endif
                         var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -497,7 +497,7 @@ namespace CCXT.NET.Kraken.Private
                 var _params = privateClient.MergeParamsAndArgs(args);
 
                 var _json_value = await privateClient.CallApiPost1Async("/0/private/Balance", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);

@@ -115,7 +115,7 @@ namespace CCXT.NET.CoinCheck.Public
                 var _params = publicClient.MergeParamsAndArgs(args);
 
                 var _json_value = await publicClient.CallApiGet1Async("/api/ticker", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -159,7 +159,7 @@ namespace CCXT.NET.CoinCheck.Public
                 var _params = publicClient.MergeParamsAndArgs(args);
 
                 var _json_value = await publicClient.CallApiGet1Async("/api/order_books", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -234,7 +234,7 @@ namespace CCXT.NET.CoinCheck.Public
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async("/api/trades", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);

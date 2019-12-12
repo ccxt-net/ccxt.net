@@ -74,7 +74,7 @@ namespace CCXT.NET.Quoinex.Trade
                 var _params = tradeClient.MergeParamsAndArgs(args);
 
                 var _json_value = await tradeClient.CallApiGet1Async($"/orders/{order_id}", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -127,7 +127,7 @@ namespace CCXT.NET.Quoinex.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiGet1Async("/orders", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -183,7 +183,7 @@ namespace CCXT.NET.Quoinex.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiGet1Async("/orders", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -235,7 +235,7 @@ namespace CCXT.NET.Quoinex.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiGet1Async("/orders", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -294,7 +294,7 @@ namespace CCXT.NET.Quoinex.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiGet1Async("/executions/me", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -358,7 +358,7 @@ namespace CCXT.NET.Quoinex.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async($"/orders", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -417,7 +417,7 @@ namespace CCXT.NET.Quoinex.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async($"/orders", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -467,7 +467,7 @@ namespace CCXT.NET.Quoinex.Trade
                 var _params = tradeClient.MergeParamsAndArgs(args);
 
                 var _json_value = await tradeClient.CallApiPut1Async($"/orders/{order_id}/cancel", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);

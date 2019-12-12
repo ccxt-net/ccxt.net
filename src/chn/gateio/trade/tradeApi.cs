@@ -79,7 +79,7 @@ namespace CCXT.NET.GateIO.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async("/1/private/getOrder", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -132,7 +132,7 @@ namespace CCXT.NET.GateIO.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async("/1/private/openOrders", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -192,7 +192,7 @@ namespace CCXT.NET.GateIO.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async("/1/private/tradeHistory", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -257,7 +257,7 @@ namespace CCXT.NET.GateIO.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async($"/1/private/{_buy_sell}", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -318,7 +318,7 @@ namespace CCXT.NET.GateIO.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async($"/1/private/cancelOrder", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -378,7 +378,7 @@ namespace CCXT.NET.GateIO.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async($"/1/private/cancelAllOrders", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);

@@ -77,7 +77,7 @@ namespace CCXT.NET.ItBit.Private
                 var _params = privateClient.MergeParamsAndArgs(args);
 
                 var _json_value = await privateClient.CallApiGet1Async($"/wallets/{__wallet_id}/funding_history", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -142,7 +142,7 @@ namespace CCXT.NET.ItBit.Private
                 }
 
                 var _json_value = await privateClient.CallApiGet1Async("/wallets", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -215,7 +215,7 @@ namespace CCXT.NET.ItBit.Private
                 }
 
                 var _json_value = await privateClient.CallApiGet1Async($"/wallets/{_wallet_id}/balances/{_currency_id.result}", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -268,7 +268,7 @@ namespace CCXT.NET.ItBit.Private
                 }
 
                 var _json_value = await privateClient.CallApiGet1Async($"/wallets/{_wallet_id}", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);

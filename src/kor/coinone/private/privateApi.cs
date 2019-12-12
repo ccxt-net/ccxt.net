@@ -84,7 +84,7 @@ namespace CCXT.NET.Coinone.Private
                 }
 
                 var _json_value = await privateClient.CallApiPost1Async("/v2/transaction/history/", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -141,7 +141,7 @@ namespace CCXT.NET.Coinone.Private
                 var _params = privateClient.MergeParamsAndArgs(args);
 
                 var _json_value = await privateClient.CallApiPost1Async("/v2/account/deposit_address", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -215,7 +215,7 @@ namespace CCXT.NET.Coinone.Private
                 }
 
                 var _json_value = await privateClient.CallApiPost1Async($"/v2/transaction/{_currency_id.result}/", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -280,7 +280,7 @@ namespace CCXT.NET.Coinone.Private
                 var _params = privateClient.MergeParamsAndArgs(args);
 
                 var _json_value = await privateClient.CallApiPost1Async("/v2/account/balance", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -335,7 +335,7 @@ namespace CCXT.NET.Coinone.Private
                 var _params = privateClient.MergeParamsAndArgs(args);
 
                 var _json_value = await privateClient.CallApiPost1Async("/v2/account/balance", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);

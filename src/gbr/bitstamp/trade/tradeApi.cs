@@ -84,7 +84,7 @@ namespace CCXT.NET.Bitstamp.Trade
                 );
 
                 var _json_value = await tradeClient.CallApiPost1Async("/order_status/", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -165,7 +165,7 @@ namespace CCXT.NET.Bitstamp.Trade
                 var _params = tradeClient.MergeParamsAndArgs(args);
 
                 var _json_value = await tradeClient.CallApiPost1Async($"/v2/open_orders/{_market.result.symbol}/", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -210,7 +210,7 @@ namespace CCXT.NET.Bitstamp.Trade
                 var _params = tradeClient.MergeParamsAndArgs(args);
 
                 var _json_value = await tradeClient.CallApiPost1Async("/v2/open_orders/all/", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -281,7 +281,7 @@ namespace CCXT.NET.Bitstamp.Trade
                 );
 
                 var _json_value = await tradeClient.CallApiPost1Async($"/v2/user_transactions/{_market.result.symbol}/", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -350,7 +350,7 @@ namespace CCXT.NET.Bitstamp.Trade
                 );
 
                 var _json_value = await tradeClient.CallApiPost1Async($"/v2/{_buy_sell}/{_market.result.symbol}/", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -412,7 +412,7 @@ namespace CCXT.NET.Bitstamp.Trade
                 );
 
                 var _json_value = await tradeClient.CallApiPost1Async($"/v2/{_buy_sell}/market/{_market.result.symbol}/", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -473,7 +473,7 @@ namespace CCXT.NET.Bitstamp.Trade
                 );
 
                 var _json_value = await tradeClient.CallApiPost1Async($"/v2/cancel_order/", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -515,7 +515,7 @@ namespace CCXT.NET.Bitstamp.Trade
                 var _params = tradeClient.MergeParamsAndArgs(args);
 
                 var _json_value = await tradeClient.CallApiPost1Async($"/cancel_all_orders/", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);

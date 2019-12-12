@@ -79,7 +79,7 @@ namespace CCXT.NET.ItBit.Trade
                 var _params = tradeClient.MergeParamsAndArgs(args);
 
                 var _json_value = await tradeClient.CallApiGet1Async($"/v1/wallets/{__wallet_id}/orders/{order_id}", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -133,7 +133,7 @@ namespace CCXT.NET.ItBit.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiGet1Async($"/v1/wallets/{__wallet_id}/orders", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -189,7 +189,7 @@ namespace CCXT.NET.ItBit.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiGet1Async($"/v1/wallets/{__wallet_id}/orders", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -241,7 +241,7 @@ namespace CCXT.NET.ItBit.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiGet1Async($"/v1/wallets/{__wallet_id}/orders", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -305,7 +305,7 @@ namespace CCXT.NET.ItBit.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiGet1Async($"/v1/wallets/{__wallet_id}/trades", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -373,7 +373,7 @@ namespace CCXT.NET.ItBit.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async($"/v1/wallets/{__wallet_id}/orders", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -420,7 +420,7 @@ namespace CCXT.NET.ItBit.Trade
                 var _params = tradeClient.MergeParamsAndArgs(args);
 
                 var _json_value = await tradeClient.CallApiDelete1Async($"/v1/wallets/{__wallet_id}/orders/{order_id}", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);

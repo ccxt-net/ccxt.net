@@ -83,7 +83,7 @@ namespace CCXT.NET.Korbit.Private
                 }
 
                 var _json_value = await privateClient.CallApiPost1Async("/user/coins/address/assign", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -123,7 +123,7 @@ namespace CCXT.NET.Korbit.Private
                 var _params = privateClient.MergeParamsAndArgs(args);
 
                 var _json_value = await privateClient.CallApiGet1Async("/user/accounts", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -191,7 +191,7 @@ namespace CCXT.NET.Korbit.Private
                 }
 
                 var _json_value = await privateClient.CallApiPost1Async("/user/coins/out", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -263,7 +263,7 @@ namespace CCXT.NET.Korbit.Private
                 }
 
                 var _json_value = await privateClient.CallApiPost1Async("/user/coins/out/cancel", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -335,7 +335,7 @@ namespace CCXT.NET.Korbit.Private
                 }
 
                 var _json_value = await privateClient.CallApiGet1Async("/user/transfers", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -388,7 +388,7 @@ namespace CCXT.NET.Korbit.Private
                 var _params = privateClient.MergeParamsAndArgs(args);
 
                 var _json_value = await privateClient.CallApiGet1Async("/user/balances", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);

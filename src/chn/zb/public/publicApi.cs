@@ -65,7 +65,7 @@ namespace CCXT.NET.Zb.Public
                 var _params = publicClient.MergeParamsAndArgs(args);
 
                 var _json_value = await publicClient.CallApiGet1Async("/v1/markets", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -139,7 +139,7 @@ namespace CCXT.NET.Zb.Public
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async("/v1/ticker", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -180,7 +180,7 @@ namespace CCXT.NET.Zb.Public
                 var _params = publicClient.MergeParamsAndArgs(args);
 
                 var _json_value = await publicClient.CallApiGet1Async("/v1/allTicker", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -235,7 +235,7 @@ namespace CCXT.NET.Zb.Public
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async("/v1/depth", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -320,7 +320,7 @@ namespace CCXT.NET.Zb.Public
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async("/v1/kline", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -382,7 +382,7 @@ namespace CCXT.NET.Zb.Public
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async("/v1/trades", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);

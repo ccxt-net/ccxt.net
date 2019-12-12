@@ -11,7 +11,7 @@ namespace CCXT.NET.BitMEX.Private
     /// </summary>
     public interface ITrollboxes : IApiResult<IList<TrollboxItem>>
     {
-#if DEBUG
+#if RAWJSON
 
         /// <summary>
         ///
@@ -38,7 +38,7 @@ namespace CCXT.NET.BitMEX.Private
             this.result = new List<TrollboxItem>();
         }
 
-#if DEBUG
+#if RAWJSON
 
         /// <summary>
         ///
@@ -57,7 +57,7 @@ namespace CCXT.NET.BitMEX.Private
     /// </summary>
     public interface ITrollbox : IApiResult<ITrollboxItem>
     {
-#if DEBUG
+#if RAWJSON
 
         /// <summary>
         ///
@@ -84,7 +84,7 @@ namespace CCXT.NET.BitMEX.Private
             this.result = new TrollboxItem();
         }
 
-#if DEBUG
+#if RAWJSON
 
         /// <summary>
         ///

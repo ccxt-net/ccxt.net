@@ -88,7 +88,7 @@ namespace CCXT.NET.OKEx.Private
                 }
 
                 var _json_value = await privateClient.CallApiPost1Async("/withdraw.do", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -159,7 +159,7 @@ namespace CCXT.NET.OKEx.Private
                 }
 
                 var _json_value = await privateClient.CallApiPost1Async("/cancel_withdraw.do", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -235,7 +235,7 @@ namespace CCXT.NET.OKEx.Private
                     privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
                     var _json_value = await privateClient.CallApiPost1Async("/account_records.do", _params);
-#if DEBUG
+#if RAWJSON
                     _result.rawJson += _json_value.Content;
 #endif
                     var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -270,7 +270,7 @@ namespace CCXT.NET.OKEx.Private
                     privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
                     var _json_value = await privateClient.CallApiPost1Async("/account_records.do", _params);
-#if DEBUG
+#if RAWJSON
                     _result.rawJson += _json_value.Content;
 #endif
                     var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -323,7 +323,7 @@ namespace CCXT.NET.OKEx.Private
                 var _params = privateClient.MergeParamsAndArgs(args);
 
                 var _json_value = await privateClient.CallApiPost1Async("/userinfo.do", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -379,7 +379,7 @@ namespace CCXT.NET.OKEx.Private
                 var _params = privateClient.MergeParamsAndArgs(args);
 
                 var _json_value = await privateClient.CallApiPost1Async("/userinfo.do", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);

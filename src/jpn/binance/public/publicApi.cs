@@ -51,7 +51,7 @@ namespace CCXT.NET.Binance.Public
                 var _params = publicClient.MergeParamsAndArgs(args);
 
                 var _json_value = await publicClient.CallApiGet1Async("/exchangeInfo", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -143,7 +143,8 @@ namespace CCXT.NET.Binance.Public
                             }
                         }
 
-                        _result.result.Add(_entry.marketId, _entry);
+                        if (_result.result.ContainsKey(_entry.marketId) == false)
+                            _result.result.Add(_entry.marketId, _entry);
                     }
                 }
 
@@ -177,7 +178,7 @@ namespace CCXT.NET.Binance.Public
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async("/ticker/24hr", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -217,7 +218,7 @@ namespace CCXT.NET.Binance.Public
                 var _params = publicClient.MergeParamsAndArgs(args);
 
                 var _json_value = await publicClient.CallApiGet1Async("/ticker/24hr", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -279,7 +280,7 @@ namespace CCXT.NET.Binance.Public
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async("/depth", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -342,7 +343,7 @@ namespace CCXT.NET.Binance.Public
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async("/klines", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -414,7 +415,7 @@ namespace CCXT.NET.Binance.Public
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async("/aggTrades", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);

@@ -59,7 +59,7 @@ namespace CCXT.NET.BitMEX.Public
                 var _params = publicClient.MergeParamsAndArgs(args);
 
                 var _json_value = await publicClient.CallApiGet1Async("/api/v1/instrument/active", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -197,7 +197,7 @@ namespace CCXT.NET.BitMEX.Public
                     var _leaderboard_result = publicClient.GetResponseMessage(_json_leader.Response);
                     if (_leaderboard_result.success == true)
                     {
-#if DEBUG
+#if RAWJSON
                         _result.rawJson = _json_leader.Content;
 #endif
                         var _leaders = publicClient.DeserializeObject<List<LeaderBoardItem>>(_json_leader.Content);
@@ -253,7 +253,7 @@ namespace CCXT.NET.BitMEX.Public
                 var _trade_result = publicClient.GetResponseMessage(_json_trade.Response);
                 if (_trade_result.success == true)
                 {
-#if DEBUG
+#if RAWJSON
                     _result.rawJson = _json_trade.Content;
 #endif
                     var _trade = (publicClient.DeserializeObject<List<BTickerItem>>(_json_trade.Content))[0];
@@ -263,7 +263,7 @@ namespace CCXT.NET.BitMEX.Public
                     var _quote_result = publicClient.GetResponseMessage(_json_quote.Response);
                     if (_quote_result.success == true)
                     {
-#if DEBUG
+#if RAWJSON
                         _result.rawJson += _json_quote.Content;
 #endif
                         var _quote = (publicClient.DeserializeObject<List<BTickerItem>>(_json_quote.Content))[0];
@@ -320,7 +320,7 @@ namespace CCXT.NET.BitMEX.Public
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async("/api/v1/orderBook/L2", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -399,7 +399,7 @@ namespace CCXT.NET.BitMEX.Public
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async("/api/v1/trade/bucketed", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -465,7 +465,7 @@ namespace CCXT.NET.BitMEX.Public
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async("/api/udf/history", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -540,7 +540,7 @@ namespace CCXT.NET.BitMEX.Public
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async("/api/v1/trade", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);

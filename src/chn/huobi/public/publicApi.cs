@@ -49,7 +49,7 @@ namespace CCXT.NET.Huobi.Public
                 var _params = publicClient.MergeParamsAndArgs(args);
 
                 var _json_value = await publicClient.CallApiGet1Async("/v1/common/symbols", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -115,7 +115,7 @@ namespace CCXT.NET.Huobi.Public
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async("/market/detail/merged", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -158,7 +158,7 @@ namespace CCXT.NET.Huobi.Public
                 var _params = publicClient.MergeParamsAndArgs(args);
 
                 var _json_value = await publicClient.CallApiGet1Async("/market/tickers", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -215,7 +215,7 @@ namespace CCXT.NET.Huobi.Public
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async("/market/depth", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -303,7 +303,7 @@ namespace CCXT.NET.Huobi.Public
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async("/market/history/kline", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -365,7 +365,7 @@ namespace CCXT.NET.Huobi.Public
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async("/market/history/trade", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);

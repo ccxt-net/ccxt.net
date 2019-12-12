@@ -55,7 +55,7 @@ namespace CCXT.NET.Bitflyer.Public
                 {
                     var _json_data_jp = publicClient.DeserializeObject<List<JObject>>(_json_value_jp.Content);
 
-#if DEBUG
+#if RAWJSON
                     if (XApiClient.TestXUnitMode == XUnitMode.UseExchangeServer)
                     {
 #endif
@@ -78,7 +78,7 @@ namespace CCXT.NET.Bitflyer.Public
                             var _json_data_eu = publicClient.DeserializeObject<List<JObject>>(_json_value_eu.Content);
                             _json_data_jp = _json_data_jp.Concat(_json_data_eu).ToList();
                         }
-#if DEBUG
+#if RAWJSON
                     }
 #endif
                     foreach (var _market in _json_data_jp)
@@ -176,7 +176,7 @@ namespace CCXT.NET.Bitflyer.Public
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async("/v1/ticker", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -225,7 +225,7 @@ namespace CCXT.NET.Bitflyer.Public
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async("/v1/board", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -283,7 +283,7 @@ namespace CCXT.NET.Bitflyer.Public
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async("/v1/executions", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);

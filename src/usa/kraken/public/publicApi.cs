@@ -50,7 +50,7 @@ namespace CCXT.NET.Kraken.Public
                 var _params = publicClient.MergeParamsAndArgs(args);
 
                 var _json_value = await publicClient.CallApiGet1Async("/0/public/AssetPairs", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -151,7 +151,7 @@ namespace CCXT.NET.Kraken.Public
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async("/0/public/Ticker", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -209,7 +209,7 @@ namespace CCXT.NET.Kraken.Public
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async("/0/public/Depth", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -273,7 +273,7 @@ namespace CCXT.NET.Kraken.Public
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async("/0/public/OHLC", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -342,7 +342,7 @@ namespace CCXT.NET.Kraken.Public
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async("/0/public/Trades", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);

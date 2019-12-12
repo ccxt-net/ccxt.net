@@ -84,7 +84,7 @@ namespace CCXT.NET.CEXIO.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async("/get_order/", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -137,7 +137,7 @@ namespace CCXT.NET.CEXIO.Trade
                 var _params = tradeClient.MergeParamsAndArgs(args);
 
                 var _json_value = await tradeClient.CallApiPost1Async($"/archived_orders/{_market.result.symbol}", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -187,7 +187,7 @@ namespace CCXT.NET.CEXIO.Trade
                 var _params = tradeClient.MergeParamsAndArgs(args);
 
                 var _json_value = await tradeClient.CallApiPost1Async($"/open_orders/{_market.result.symbol}", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -231,7 +231,7 @@ namespace CCXT.NET.CEXIO.Trade
                 var _params = tradeClient.MergeParamsAndArgs(args);
 
                 var _json_value = await tradeClient.CallApiPost1Async("/open_orders/", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -275,7 +275,7 @@ namespace CCXT.NET.CEXIO.Trade
                 var _params = tradeClient.MergeParamsAndArgs(args);
 
                 var _json_value = await tradeClient.CallApiPost1Async($"/get_position", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -338,7 +338,7 @@ namespace CCXT.NET.CEXIO.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async($"/place_order/{_market.result.symbol}", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -396,7 +396,7 @@ namespace CCXT.NET.CEXIO.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async($"/place_order/{_market.result.symbol}", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -450,7 +450,7 @@ namespace CCXT.NET.CEXIO.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async($"/cancel_order/", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -513,7 +513,7 @@ namespace CCXT.NET.CEXIO.Trade
                 var _params = tradeClient.MergeParamsAndArgs(args);
 
                 var _json_value = await tradeClient.CallApiPost1Async($"/cancel_orders/{_market.result.symbol}", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);

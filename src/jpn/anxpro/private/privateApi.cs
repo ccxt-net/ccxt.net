@@ -72,7 +72,7 @@ namespace CCXT.NET.Anxpro.Private
                 var _params = privateClient.MergeParamsAndArgs(args);
 
                 var _json_value = await privateClient.CallApiPost1Async($"money/{_currency_id.result}/address", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -126,7 +126,7 @@ namespace CCXT.NET.Anxpro.Private
                 }
 
                 var _json_value = await privateClient.CallApiPost1Async($"money/{_currency_id.result}/send_simple", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -202,7 +202,7 @@ namespace CCXT.NET.Anxpro.Private
                 }
 
                 var _json_value = await privateClient.CallApiPost1Async("/money/wallet/history", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -277,7 +277,7 @@ namespace CCXT.NET.Anxpro.Private
                 var _params = privateClient.MergeParamsAndArgs(args);
 
                 var _json_value = await privateClient.CallApiPost1Async($"money/info", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -333,7 +333,7 @@ namespace CCXT.NET.Anxpro.Private
                 var _params = privateClient.MergeParamsAndArgs(args);
 
                 var _json_value = await privateClient.CallApiPost1Async($"money/info", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);

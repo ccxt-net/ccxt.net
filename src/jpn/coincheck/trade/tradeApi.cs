@@ -74,7 +74,7 @@ namespace CCXT.NET.CoinCheck.Trade
                 var _params = tradeClient.MergeParamsAndArgs(args);
 
                 var _json_value = await tradeClient.CallApiGet1Async("/api/exchange/orders/opens", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -119,7 +119,7 @@ namespace CCXT.NET.CoinCheck.Trade
                 var _params = tradeClient.MergeParamsAndArgs(args);
 
                 var _json_value = await tradeClient.CallApiGet1Async("/api/exchange/leverage/positions", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -173,7 +173,7 @@ namespace CCXT.NET.CoinCheck.Trade
                 var _params = tradeClient.MergeParamsAndArgs(args);
 
                 var _json_value = await tradeClient.CallApiGet1Async("/api/exchange/orders/transactions", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -239,7 +239,7 @@ namespace CCXT.NET.CoinCheck.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async($"/api/exchange/orders", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -301,7 +301,7 @@ namespace CCXT.NET.CoinCheck.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async($"/api/exchange/orders", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -350,7 +350,7 @@ namespace CCXT.NET.CoinCheck.Trade
                 var _params = tradeClient.MergeParamsAndArgs(args);
 
                 var _json_value = await tradeClient.CallApiDelete1Async($"/api/exchange/orders/{order_id}", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);

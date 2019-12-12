@@ -173,7 +173,7 @@ namespace CCXT.NET.Kraken
                 var _nonce = GenerateOnlyNonce(16);
                 _request.AddParameter("nonce", _nonce);
 
-#if DEBUG
+#if RAWJSON
                 Debug.WriteLine($"{this.DealerName}: nonce => '{_nonce}'");
 #endif
 

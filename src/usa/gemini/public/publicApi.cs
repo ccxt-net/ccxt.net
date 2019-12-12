@@ -50,7 +50,7 @@ namespace CCXT.NET.Gemini.Public
                 var _params = publicClient.MergeParamsAndArgs(args);
 
                 var _json_value = await publicClient.CallApiGet1Async("/v1/symbols", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -144,7 +144,7 @@ namespace CCXT.NET.Gemini.Public
                 var _params = publicClient.MergeParamsAndArgs(args);
 
                 var _json_value = await publicClient.CallApiGet1Async($"/v1/pubticker/{_market.result.symbol}", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -193,7 +193,7 @@ namespace CCXT.NET.Gemini.Public
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async($"/v1/book/{_market.result.symbol}", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -262,7 +262,7 @@ namespace CCXT.NET.Gemini.Public
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async($"/v1/trades/{_market.result.symbol}", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);

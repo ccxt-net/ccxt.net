@@ -49,7 +49,7 @@ namespace CCXT.NET.Bittrex.Public
                 var _params = publicClient.MergeParamsAndArgs(args);
 
                 var _json_value = await publicClient.CallApiGet1Async("/v1.1/public/getmarkets", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -129,7 +129,7 @@ namespace CCXT.NET.Bittrex.Public
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async("/v1.1/public/getmarketsummary", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -171,7 +171,7 @@ namespace CCXT.NET.Bittrex.Public
                 var _params = publicClient.MergeParamsAndArgs(args);
 
                 var _json_value = await publicClient.CallApiGet1Async("/v1.1/public/getmarketsummaries", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -222,7 +222,7 @@ namespace CCXT.NET.Bittrex.Public
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async("/v1.1/public/getorderbook", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -287,7 +287,7 @@ namespace CCXT.NET.Bittrex.Public
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async("/v2.0/pub/market/GetTicks", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -349,7 +349,7 @@ namespace CCXT.NET.Bittrex.Public
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async("/v1.1/public/getmarkethistory", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);

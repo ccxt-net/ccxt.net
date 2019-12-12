@@ -74,7 +74,7 @@ namespace CCXT.NET.Anxpro.Trade
                 var _params = tradeClient.MergeParamsAndArgs(args);
 
                 var _json_value = await tradeClient.CallApiPost1Async($"/{_market.result.symbol}/money/orders", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -145,7 +145,7 @@ namespace CCXT.NET.Anxpro.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async("/money/trade/list", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -212,7 +212,7 @@ namespace CCXT.NET.Anxpro.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async($"/{_market.result.symbol}/money/order/add", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -284,7 +284,7 @@ namespace CCXT.NET.Anxpro.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async($"/{_market.result.symbol}/money/order/add", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -353,7 +353,7 @@ namespace CCXT.NET.Anxpro.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiDelete1Async($"/{_market.result.symbol}/money/order/cancel", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);

@@ -49,7 +49,7 @@ namespace CCXT.NET.Bitforex.Public
                 var _params = publicClient.MergeParamsAndArgs(args);
 
                 var _json_value = await publicClient.CallApiGet1Async("/api/v1/market/symbols", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -119,7 +119,7 @@ namespace CCXT.NET.Bitforex.Public
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async("/api/v1/market/ticker", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -169,7 +169,7 @@ namespace CCXT.NET.Bitforex.Public
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async("/api/v1/market/depth", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -257,7 +257,7 @@ namespace CCXT.NET.Bitforex.Public
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async("/api/v1/market/kline", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -320,7 +320,7 @@ namespace CCXT.NET.Bitforex.Public
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async("/api/v1/market/trades", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);

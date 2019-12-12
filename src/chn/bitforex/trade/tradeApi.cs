@@ -79,7 +79,7 @@ namespace CCXT.NET.Bitforex.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async("/api/v1/trade/orderInfo", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -130,7 +130,7 @@ namespace CCXT.NET.Bitforex.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async("/api/v1/trade/orderInfos", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -189,7 +189,7 @@ namespace CCXT.NET.Bitforex.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async("/api/v1/trade/orderInfos", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -254,7 +254,7 @@ namespace CCXT.NET.Bitforex.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async($"/api/v1/trade/placeOrder", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -317,7 +317,7 @@ namespace CCXT.NET.Bitforex.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async($"/api/v1/trade/cancelOrder", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -402,7 +402,7 @@ namespace CCXT.NET.Bitforex.Trade
                     _url = "/api/v1/trade/cancelAllOrder";
 
                 var _json_value = await tradeClient.CallApiPost1Async(_url, _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);

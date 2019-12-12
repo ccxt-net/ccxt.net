@@ -80,7 +80,7 @@ namespace CCXT.NET.Poloniex.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async("", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -132,7 +132,7 @@ namespace CCXT.NET.Poloniex.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async("", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -203,7 +203,7 @@ namespace CCXT.NET.Poloniex.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async("", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -262,7 +262,7 @@ namespace CCXT.NET.Poloniex.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async("", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -336,7 +336,7 @@ namespace CCXT.NET.Poloniex.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async("", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);

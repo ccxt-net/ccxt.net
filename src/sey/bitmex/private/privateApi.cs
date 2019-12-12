@@ -88,7 +88,7 @@ namespace CCXT.NET.BitMEX.Private
                 }
 
                 var _json_value = await privateClient.CallApiGet1Async("/api/v1/user/depositAddress", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -139,7 +139,7 @@ namespace CCXT.NET.BitMEX.Private
                 }
 
                 var _json_value = await privateClient.CallApiPost1Async("/api/v1/user/requestWithdrawal", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -219,7 +219,7 @@ namespace CCXT.NET.BitMEX.Private
                 }
 
                 var _json_value = await privateClient.CallApiGet1Async("/api/v1/user/walletHistory", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -298,7 +298,7 @@ namespace CCXT.NET.BitMEX.Private
                 }
 
                 var _json_value = await privateClient.CallApiGet1Async("/api/v1/user/margin", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -353,7 +353,7 @@ namespace CCXT.NET.BitMEX.Private
                 }
 
                 var _json_value = await privateClient.CallApiGet1Async("/api/v1/user/margin", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -407,7 +407,7 @@ namespace CCXT.NET.BitMEX.Private
                 var _params = privateClient.MergeParamsAndArgs(args);
 
                 var _json_value = await privateClient.CallApiGet1Async("/api/v1/user", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -445,7 +445,7 @@ namespace CCXT.NET.BitMEX.Private
                 }
 
                 var _json_value = await privateClient.CallApiPost1Async("/api/v1/chat", _params);
-#if DEBUG
+#if RAWJSON
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
