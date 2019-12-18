@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net472;netstandard2.1</TargetFrameworks>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <Title>CryptoCurrency eXchange Trading Library for .NET</Title>
     <Description>CCXT.NET – CryptoCurrency eXchange Trading Library for .NET</Description>
     <Copyright>Copyright OdinSoftware Co., Ltd. 2019</Copyright>
