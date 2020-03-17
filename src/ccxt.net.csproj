@@ -3,11 +3,13 @@
   <PropertyGroup>
     <TargetFrameworks>net472;netstandard2.1</TargetFrameworks>
     <Title>CryptoCurrency eXchange Trading Library for .NET</Title>
+    <Product>CCXT</Product>
+    <Company>ODINSOFT</Company>
     <Description>CCXT.NET – CryptoCurrency eXchange Trading Library for .NET</Description>
-    <Copyright>Copyright OdinSoftware Co., Ltd. 2019</Copyright>
+    <Copyright>Copyright OdinSoftware Co., Ltd. 2020</Copyright>
     <AssemblyTitle>CCXT.NET</AssemblyTitle>
     <Authors>SEONGAHN LEE</Authors>
-    <AssemblyName>ccxt.net</AssemblyName>
+    <AssemblyName>CCXT.NET</AssemblyName>
     <PackageId>CCXT.NET</PackageId>
     <PackageTags>bitcoin;cryptocurrency;exchange;trading;market-data;ccxt;exchange-markets;altcoin;api;arbitrage;bot;crypto;e-commerce;invest;library;strategy;trade;merchant;cryptocoin</PackageTags>
     <PackageProjectUrl>https://github.com/lisa3907/ccxt.net</PackageProjectUrl>
@@ -18,7 +20,7 @@
     <RootNamespace>CCXT.NET</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Version>1.3.7</Version>
-    <PackageReleaseNotes>ValueTask</PackageReleaseNotes>
+    <PackageReleaseNotes></PackageReleaseNotes>
     <AssemblyVersion>1.3.7.0</AssemblyVersion>
     <FileVersion>1.3.7.0</FileVersion>
     <LangVersion>latest</LangVersion>
@@ -48,6 +50,10 @@
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="..\LICENSE.txt" Link="LICENSE.txt" />
   </ItemGroup>
   
   <ItemGroup>
