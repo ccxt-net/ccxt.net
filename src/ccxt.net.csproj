@@ -57,16 +57,11 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="CellWars.Threading.AsyncLock" Version="1.0.0" />
-        <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.1.7" />
-        <PackageReference Include="Microsoft.Win32.Registry" Version="4.7.0" />
         <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
         <PackageReference Include="RestSharp" Version="106.11.4" />
         <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.7.1" />
-        <PackageReference Include="System.ServiceModel.Primitives" Version="4.7.0" />
         <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.5.4" />
-        <PackageReference Include="System.ValueTuple" Version="4.5.0" />
-        <PackageReference Include="Telegram.Bot" Version="15.7.1" />
+        <PackageReference Include="CellWars.Threading.AsyncLock" Version="1.0.0" />
     </ItemGroup>
 
 </Project>
