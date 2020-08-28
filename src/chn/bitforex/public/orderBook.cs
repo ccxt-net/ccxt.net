@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Public;
-using OdinSdk.BaseLib.Configuration;
+using CCXT.NET.Shared.Coin.Public;
+using CCXT.NET.Shared.Configuration;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Bitforex.Public
@@ -8,7 +8,7 @@ namespace CCXT.NET.Bitforex.Public
     /// <summary>
     ///
     /// </summary>
-    public class BOrderBooks : OdinSdk.BaseLib.Coin.Public.OrderBooks, IOrderBooks
+    public class BOrderBooks : CCXT.NET.Shared.Coin.Public.OrderBooks, IOrderBooks
     {
         /// <summary>
         ///
@@ -42,7 +42,7 @@ namespace CCXT.NET.Bitforex.Public
     /// <summary>
     ///
     /// </summary>
-    public class BOrderBook : OdinSdk.BaseLib.Coin.Public.OrderBook, IOrderBook
+    public class BOrderBook : CCXT.NET.Shared.Coin.Public.OrderBook, IOrderBook
     {
         /// <summary>
         ///
@@ -115,7 +115,7 @@ namespace CCXT.NET.Bitforex.Public
     /// <summary>
     ///
     /// </summary>
-    public class BOrderBookItem : OdinSdk.BaseLib.Coin.Public.OrderBookItem, IOrderBookItem
+    public class BOrderBookItem : CCXT.NET.Shared.Coin.Public.OrderBookItem, IOrderBookItem
     {
         /// <summary>
         ///

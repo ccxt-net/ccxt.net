@@ -1,12 +1,12 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Public;
+using CCXT.NET.Shared.Coin.Public;
 
 namespace CCXT.NET.Korbit.Public
 {
     /// <summary>
     /// 시장 현황 상세정보 ( Detailed Ticker )
     /// </summary>
-    public class KTickerItem : OdinSdk.BaseLib.Coin.Public.TickerItem, ITickerItem
+    public class KTickerItem : CCXT.NET.Shared.Coin.Public.TickerItem, ITickerItem
     {
         /// <summary>
         /// 64-bit Unix Timestamp in milliseconds since Epoch 1 Jan 1970

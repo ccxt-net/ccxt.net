@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Private;
-using OdinSdk.BaseLib.Coin.Types;
-using OdinSdk.BaseLib.Configuration;
+using CCXT.NET.Shared.Coin.Private;
+using CCXT.NET.Shared.Coin.Types;
+using CCXT.NET.Shared.Configuration;
 using System;
 
 namespace CCXT.NET.Bitflyer.Private
@@ -9,7 +9,7 @@ namespace CCXT.NET.Bitflyer.Private
     /// <summary>
     ///
     /// </summary>
-    public class BWithdraw : OdinSdk.BaseLib.Coin.Private.Transfer, ITransfer
+    public class BWithdraw : CCXT.NET.Shared.Coin.Private.Transfer, ITransfer
     {
         /// <summary>
         ///
@@ -38,7 +38,7 @@ namespace CCXT.NET.Bitflyer.Private
     /// <summary>
     ///
     /// </summary>
-    public class BDepositItem : OdinSdk.BaseLib.Coin.Private.TransferItem, ITransferItem
+    public class BDepositItem : CCXT.NET.Shared.Coin.Private.TransferItem, ITransferItem
     {
         /// <summary>
         ///
@@ -138,7 +138,7 @@ namespace CCXT.NET.Bitflyer.Private
     /// <summary>
     ///
     /// </summary>
-    public class BWithdrawItem : OdinSdk.BaseLib.Coin.Private.TransferItem, ITransferItem
+    public class BWithdrawItem : CCXT.NET.Shared.Coin.Private.TransferItem, ITransferItem
     {
         /// <summary>
         ///

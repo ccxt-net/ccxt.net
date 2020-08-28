@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Private;
-using OdinSdk.BaseLib.Coin.Types;
+using CCXT.NET.Shared.Coin.Private;
+using CCXT.NET.Shared.Coin.Types;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Anxpro.Private
@@ -8,7 +8,7 @@ namespace CCXT.NET.Anxpro.Private
     /// <summary>
     ///
     /// </summary>
-    public class ATransfer : OdinSdk.BaseLib.Coin.Private.Transfer, ITransfer
+    public class ATransfer : CCXT.NET.Shared.Coin.Private.Transfer, ITransfer
     {
         /// <summary>
         ///
@@ -45,7 +45,7 @@ namespace CCXT.NET.Anxpro.Private
     /// <summary>
     ///
     /// </summary>
-    public class ATransfers : OdinSdk.BaseLib.Coin.Private.Transfers, ITransfers
+    public class ATransfers : CCXT.NET.Shared.Coin.Private.Transfers, ITransfers
     {
         /// <summary>
         ///
@@ -125,7 +125,7 @@ namespace CCXT.NET.Anxpro.Private
     /// <summary>
     ///
     /// </summary>
-    public class ATransferItem : OdinSdk.BaseLib.Coin.Private.TransferItem, ITransferItem
+    public class ATransferItem : CCXT.NET.Shared.Coin.Private.TransferItem, ITransferItem
     {
         /// <summary>
         /// Index no of this wallet history object

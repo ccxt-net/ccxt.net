@@ -1,12 +1,12 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Private;
+using CCXT.NET.Shared.Coin.Private;
 
 namespace CCXT.NET.Poloniex.Private
 {
     /// <summary>
     ///
     /// </summary>
-    public class PWithdraw : OdinSdk.BaseLib.Coin.Private.Transfer, ITransfer
+    public class PWithdraw : CCXT.NET.Shared.Coin.Private.Transfer, ITransfer
     {
         /// <summary>
         ///
@@ -39,7 +39,7 @@ namespace CCXT.NET.Poloniex.Private
     /// <summary>
     ///
     /// </summary>
-    public class PTransferItem : OdinSdk.BaseLib.Coin.Private.TransferItem, ITransferItem
+    public class PTransferItem : CCXT.NET.Shared.Coin.Private.TransferItem, ITransferItem
     {
         /// <summary>
         ///

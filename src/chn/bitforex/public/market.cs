@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Public;
+using CCXT.NET.Shared.Coin.Public;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Bitforex.Public
@@ -7,7 +7,7 @@ namespace CCXT.NET.Bitforex.Public
     /// <summary>
     ///
     /// </summary>
-    public class BMarkets : OdinSdk.BaseLib.Coin.Public.Markets, IMarkets
+    public class BMarkets : CCXT.NET.Shared.Coin.Public.Markets, IMarkets
     {
         /// <summary>
         ///
@@ -41,7 +41,7 @@ namespace CCXT.NET.Bitforex.Public
     /// <summary>
     ///
     /// </summary>
-    public class BMarketItem : OdinSdk.BaseLib.Coin.Public.MarketItem, IMarketItem
+    public class BMarketItem : CCXT.NET.Shared.Coin.Public.MarketItem, IMarketItem
     {
         /// <summary>
         ///

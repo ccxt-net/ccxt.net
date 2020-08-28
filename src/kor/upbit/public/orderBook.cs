@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Public;
+using CCXT.NET.Shared.Coin.Public;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Upbit.Public
@@ -7,7 +7,7 @@ namespace CCXT.NET.Upbit.Public
     /// <summary>
     ///
     /// </summary>
-    public class UOrderBook : OdinSdk.BaseLib.Coin.Public.OrderBook, IOrderBook
+    public class UOrderBook : CCXT.NET.Shared.Coin.Public.OrderBook, IOrderBook
     {
         /// <summary>
         /// 마켓 코드

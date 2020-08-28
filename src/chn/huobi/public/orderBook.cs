@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin.Public;
+using CCXT.NET.Shared.Coin.Public;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Huobi.Public
@@ -8,7 +8,7 @@ namespace CCXT.NET.Huobi.Public
     /// <summary>
     ///
     /// </summary>
-    public class HOrderBooks : OdinSdk.BaseLib.Coin.Public.OrderBooks, IOrderBooks
+    public class HOrderBooks : CCXT.NET.Shared.Coin.Public.OrderBooks, IOrderBooks
     {
         /// <summary>
         ///
@@ -44,7 +44,7 @@ namespace CCXT.NET.Huobi.Public
     /// <summary>
     ///
     /// </summary>
-    public class HOrderBook : OdinSdk.BaseLib.Coin.Public.OrderBook, IOrderBook
+    public class HOrderBook : CCXT.NET.Shared.Coin.Public.OrderBook, IOrderBook
     {
         /// <summary>
         ///
@@ -119,7 +119,7 @@ namespace CCXT.NET.Huobi.Public
     /// <summary>
     ///
     /// </summary>
-    public class BOrderBookItem : OdinSdk.BaseLib.Coin.Public.OrderBookItem, IOrderBookItem
+    public class BOrderBookItem : CCXT.NET.Shared.Coin.Public.OrderBookItem, IOrderBookItem
     {
         /// <summary>
         ///

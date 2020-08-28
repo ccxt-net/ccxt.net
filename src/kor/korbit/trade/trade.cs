@@ -1,13 +1,13 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Trade;
-using OdinSdk.BaseLib.Coin.Types;
+using CCXT.NET.Shared.Coin.Trade;
+using CCXT.NET.Shared.Coin.Types;
 
 namespace CCXT.NET.Korbit.Trade
 {
     /// <summary>
     ///
     /// </summary>
-    public class KMyTradeItem : OdinSdk.BaseLib.Coin.Trade.MyTradeItem, IMyTradeItem
+    public class KMyTradeItem : CCXT.NET.Shared.Coin.Trade.MyTradeItem, IMyTradeItem
     {
         /// <summary>
         /// 주문의 ID 식별번호.

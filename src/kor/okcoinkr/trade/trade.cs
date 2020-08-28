@@ -1,13 +1,13 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Trade;
-using OdinSdk.BaseLib.Coin.Types;
+using CCXT.NET.Shared.Coin.Trade;
+using CCXT.NET.Shared.Coin.Types;
 
 namespace CCXT.NET.OkCoinKr.Trade
 {
     /// <summary>
     ///
     /// </summary>
-    public class OMyTradeItem : OdinSdk.BaseLib.Coin.Trade.MyTradeItem, IMyTradeItem
+    public class OMyTradeItem : CCXT.NET.Shared.Coin.Trade.MyTradeItem, IMyTradeItem
     {
         /// <summary>
         /// 거래ID

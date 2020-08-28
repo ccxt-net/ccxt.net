@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Private;
-using OdinSdk.BaseLib.Coin.Types;
+using CCXT.NET.Shared.Coin.Private;
+using CCXT.NET.Shared.Coin.Types;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Binance.Private
@@ -8,7 +8,7 @@ namespace CCXT.NET.Binance.Private
     /// <summary>
     ///
     /// </summary>
-    public class BDeposits : OdinSdk.BaseLib.Coin.Private.Transfers, ITransfers
+    public class BDeposits : CCXT.NET.Shared.Coin.Private.Transfers, ITransfers
     {
         /// <summary>
         ///
@@ -32,7 +32,7 @@ namespace CCXT.NET.Binance.Private
     /// <summary>
     ///
     /// </summary>
-    public class BDepositItem : OdinSdk.BaseLib.Coin.Private.TransferItem, ITransferItem
+    public class BDepositItem : CCXT.NET.Shared.Coin.Private.TransferItem, ITransferItem
     {
         /// <summary>
         ///
@@ -104,7 +104,7 @@ namespace CCXT.NET.Binance.Private
     /// <summary>
     ///
     /// </summary>
-    public class BTransfer : OdinSdk.BaseLib.Coin.Private.Transfer, ITransfer
+    public class BTransfer : CCXT.NET.Shared.Coin.Private.Transfer, ITransfer
     {
         /// <summary>
         ///
@@ -139,7 +139,7 @@ namespace CCXT.NET.Binance.Private
     /// <summary>
     ///
     /// </summary>
-    public class BWithdraws : OdinSdk.BaseLib.Coin.Private.Transfers, ITransfers
+    public class BWithdraws : CCXT.NET.Shared.Coin.Private.Transfers, ITransfers
     {
         /// <summary>
         ///
@@ -163,7 +163,7 @@ namespace CCXT.NET.Binance.Private
     /// <summary>
     ///
     /// </summary>
-    public class BWithdrawItem : OdinSdk.BaseLib.Coin.Private.TransferItem, ITransferItem
+    public class BWithdrawItem : CCXT.NET.Shared.Coin.Private.TransferItem, ITransferItem
     {
         /// <summary>
         ///

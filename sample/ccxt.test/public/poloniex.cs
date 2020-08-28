@@ -17,7 +17,7 @@ namespace XUnit
             var _since = 0; //1514764800000;
             var _limit = 100;
 
-            var _markets = await _public_api.LoadMarkets(false, GetJsonContent(_public_api.publicClient, "fetchMarkets", _args));
+            var _markets = await _public_api.LoadMarketsAsync(false, GetJsonContent(_public_api.publicClient, "fetchMarkets", _args));
             if (_markets.supported == true || TestConfig.SupportedCheck == true)
             {
                 this.WriteJson(_public_api.publicClient, _markets);
@@ -37,7 +37,7 @@ namespace XUnit
                 }
             }
 
-            var _ticker = await _public_api.FetchTicker("BTC", "USDT", GetJsonContent(_public_api.publicClient, "fetchTicker", _args));
+            var _ticker = await _public_api.FetchTickerAsync("BTC", "USDT", GetJsonContent(_public_api.publicClient, "fetchTicker", _args));
             if (_ticker.supported == true || TestConfig.SupportedCheck == true)
             {
                 this.WriteJson(_public_api.publicClient, _ticker);
@@ -58,7 +58,7 @@ namespace XUnit
                 Assert.NotNull(_symbol);
             }
 
-            var _tickers = await _public_api.FetchTickers(GetJsonContent(_public_api.publicClient, "fetchTickers", _args));
+            var _tickers = await _public_api.FetchTickersAsync(GetJsonContent(_public_api.publicClient, "fetchTickers", _args));
             if (_tickers.supported == true || TestConfig.SupportedCheck == true)
             {
                 this.WriteJson(_public_api.publicClient, _tickers);
@@ -81,7 +81,7 @@ namespace XUnit
                 }
             }
 
-            var _orderbook = await _public_api.FetchOrderBooks("BTC", "USDT", _limit, GetJsonContent(_public_api.publicClient, "fetchOrderBooks", _args));
+            var _orderbook = await _public_api.FetchOrderBooksAsync("BTC", "USDT", _limit, GetJsonContent(_public_api.publicClient, "fetchOrderBooks", _args));
             if (_orderbook.supported == true || TestConfig.SupportedCheck == true)
             {
                 this.WriteJson(_public_api.publicClient, _orderbook);
@@ -121,7 +121,7 @@ namespace XUnit
                 }
             }
 
-            var _ohlcvs = await _public_api.FetchOHLCVs("BTC", "USDT", _timeframe, _since, _limit, GetJsonContent(_public_api.publicClient, "fetchOHLCVs", _args));
+            var _ohlcvs = await _public_api.FetchOHLCVsAsync("BTC", "USDT", _timeframe, _since, _limit, GetJsonContent(_public_api.publicClient, "fetchOHLCVs", _args));
             if (_ohlcvs.supported == true || TestConfig.SupportedCheck == true)
             {
                 this.WriteJson(_public_api.publicClient, _ohlcvs);
@@ -141,7 +141,7 @@ namespace XUnit
                 Assert.NotNull(_market);
             }
 
-            var _trades = await _public_api.FetchCompleteOrders("BTC", "USDT", _timeframe, _since, _limit, GetJsonContent(_public_api.publicClient, "fetchCompleteOrders", _args));
+            var _trades = await _public_api.FetchCompleteOrdersAsync("BTC", "USDT", _timeframe, _since, _limit, GetJsonContent(_public_api.publicClient, "fetchCompleteOrders", _args));
             if (_trades.supported == true || TestConfig.SupportedCheck == true)
             {
                 this.WriteJson(_public_api.publicClient, _trades);

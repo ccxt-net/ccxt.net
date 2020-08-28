@@ -1,12 +1,12 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Private;
+using CCXT.NET.Shared.Coin.Private;
 
 namespace CCXT.NET.Poloniex.Private
 {
     /// <summary>
     ///
     /// </summary>
-    public class PAddressItem : OdinSdk.BaseLib.Coin.Private.AddressItem, IAddressItem
+    public class PAddressItem : CCXT.NET.Shared.Coin.Private.AddressItem, IAddressItem
     {
         /// <summary>
         ///

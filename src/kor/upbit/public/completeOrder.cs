@@ -1,13 +1,13 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Public;
-using OdinSdk.BaseLib.Coin.Types;
+using CCXT.NET.Shared.Coin.Public;
+using CCXT.NET.Shared.Coin.Types;
 
 namespace CCXT.NET.Upbit.Public
 {
     /// <summary>
     ///
     /// </summary>
-    public class UCompleteOrderItem : OdinSdk.BaseLib.Coin.Public.CompleteOrderItem, ICompleteOrderItem
+    public class UCompleteOrderItem : CCXT.NET.Shared.Coin.Public.CompleteOrderItem, ICompleteOrderItem
     {
         /// <summary>
         /// 마켓 구분 코드

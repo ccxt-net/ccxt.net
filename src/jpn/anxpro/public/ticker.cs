@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin.Public;
+using CCXT.NET.Shared.Coin.Public;
 using System;
 using System.Collections.Generic;
 
@@ -9,7 +9,7 @@ namespace CCXT.NET.Anxpro.Public
     /// <summary>
     ///
     /// </summary>
-    public class ATickers : OdinSdk.BaseLib.Coin.Public.Tickers, ITickers
+    public class ATickers : CCXT.NET.Shared.Coin.Public.Tickers, ITickers
     {
         /// <summary>
         ///
@@ -33,7 +33,7 @@ namespace CCXT.NET.Anxpro.Public
     /// <summary>
     ///
     /// </summary>
-    public class ATickerItem : OdinSdk.BaseLib.Coin.Public.TickerItem, ITickerItem
+    public class ATickerItem : CCXT.NET.Shared.Coin.Public.TickerItem, ITickerItem
     {
         /// <summary>
         /// string symbol of the market ('BTCUSD', 'ETHBTC', ...)

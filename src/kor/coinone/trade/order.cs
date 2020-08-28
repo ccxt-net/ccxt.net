@@ -1,13 +1,13 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Trade;
-using OdinSdk.BaseLib.Coin.Types;
+using CCXT.NET.Shared.Coin.Trade;
+using CCXT.NET.Shared.Coin.Types;
 
 namespace CCXT.NET.Coinone.Trade
 {
     /// <summary>
     ///
     /// </summary>
-    public class CMyOrder : OdinSdk.BaseLib.Coin.Trade.MyOrder, IMyOrder
+    public class CMyOrder : CCXT.NET.Shared.Coin.Trade.MyOrder, IMyOrder
     {
         /// <summary>
         ///
@@ -72,7 +72,7 @@ namespace CCXT.NET.Coinone.Trade
     /// <summary>
     ///
     /// </summary>
-    public class CMyOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
+    public class CMyOrderItem : CCXT.NET.Shared.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
         ///

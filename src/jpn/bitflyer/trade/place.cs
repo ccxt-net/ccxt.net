@@ -1,12 +1,12 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Trade;
+using CCXT.NET.Shared.Coin.Trade;
 
 namespace CCXT.NET.Bitflyer.Trade
 {
     /// <summary>
     ///
     /// </summary>
-    public class BPlaceOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
+    public class BPlaceOrderItem : CCXT.NET.Shared.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
         ///

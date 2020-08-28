@@ -1,13 +1,13 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Private;
-using OdinSdk.BaseLib.Coin.Types;
+using CCXT.NET.Shared.Coin.Private;
+using CCXT.NET.Shared.Coin.Types;
 
 namespace CCXT.NET.Gemini.Private
 {
     /// <summary>
     ///
     /// </summary>
-    public class GWithdrawItem : OdinSdk.BaseLib.Coin.Private.TransferItem, ITransferItem
+    public class GWithdrawItem : CCXT.NET.Shared.Coin.Private.TransferItem, ITransferItem
     {
         /// <summary>
         /// Standard string format of the transaction hash of the withdrawal transaction
@@ -42,7 +42,7 @@ namespace CCXT.NET.Gemini.Private
     /// <summary>
     ///
     /// </summary>
-    public class GTransferItem : OdinSdk.BaseLib.Coin.Private.TransferItem, ITransferItem
+    public class GTransferItem : CCXT.NET.Shared.Coin.Private.TransferItem, ITransferItem
     {
         /// <summary>
         /// Transfer event id

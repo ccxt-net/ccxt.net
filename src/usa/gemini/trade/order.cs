@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin.Trade;
-using OdinSdk.BaseLib.Coin.Types;
+using CCXT.NET.Shared.Coin.Trade;
+using CCXT.NET.Shared.Coin.Types;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Gemini.Trade
@@ -9,7 +9,7 @@ namespace CCXT.NET.Gemini.Trade
     /// <summary>
     ///
     /// </summary>
-    public class GCancelAllOrders : OdinSdk.BaseLib.Coin.Trade.MyOrders, IMyOrders
+    public class GCancelAllOrders : CCXT.NET.Shared.Coin.Trade.MyOrders, IMyOrders
     {
         /// <summary>
         ///
@@ -62,7 +62,7 @@ namespace CCXT.NET.Gemini.Trade
     /// <summary>
     ///
     /// </summary>
-    public class GMyOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
+    public class GMyOrderItem : CCXT.NET.Shared.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
         /// The order id

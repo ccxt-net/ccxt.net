@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin.Public;
+using CCXT.NET.Shared.Coin.Public;
 using System.Collections.Generic;
 
 namespace CCXT.NET.CoinCheck.Public
@@ -8,7 +8,7 @@ namespace CCXT.NET.CoinCheck.Public
     /// <summary>
     ///
     /// </summary>
-    public class COrderBook : OdinSdk.BaseLib.Coin.Public.OrderBook, IOrderBook
+    public class COrderBook : CCXT.NET.Shared.Coin.Public.OrderBook, IOrderBook
     {
         /// <summary>
         ///
@@ -82,7 +82,7 @@ namespace CCXT.NET.CoinCheck.Public
     /// <summary>
     ///
     /// </summary>
-    public class COrderBookItem : OdinSdk.BaseLib.Coin.Public.OrderBookItem, IOrderBookItem
+    public class COrderBookItem : CCXT.NET.Shared.Coin.Public.OrderBookItem, IOrderBookItem
     {
         /// <summary>
         ///

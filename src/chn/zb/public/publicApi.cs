@@ -1,7 +1,7 @@
-﻿using OdinSdk.BaseLib.Coin;
-using OdinSdk.BaseLib.Coin.Public;
-using OdinSdk.BaseLib.Coin.Types;
-using OdinSdk.BaseLib.Configuration;
+﻿using CCXT.NET.Shared.Coin;
+using CCXT.NET.Shared.Coin.Public;
+using CCXT.NET.Shared.Coin.Types;
+using CCXT.NET.Shared.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +12,7 @@ namespace CCXT.NET.Zb.Public
     /// <summary>
     /// exchange's public API implement class
     /// </summary>
-    public class PublicApi : OdinSdk.BaseLib.Coin.Public.PublicApi, IPublicApi
+    public class PublicApi : CCXT.NET.Shared.Coin.Public.PublicApi, IPublicApi
     {
         /// <summary>
         ///
@@ -56,7 +56,7 @@ namespace CCXT.NET.Zb.Public
         /// </summary>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async ValueTask<Markets> FetchMarkets(Dictionary<string, object> args = null)
+        public override async ValueTask<Markets> FetchMarketsAsync(Dictionary<string, object> args = null)
         {
             var _result = new Markets();
 
@@ -89,12 +89,12 @@ namespace CCXT.NET.Zb.Public
 
                         _m.marketId = _m.baseName + "/" + _m.quoteName;
 
-                        _m.lot = (decimal)Math.Pow(10.0, -_m.precision.quantity);
+                        _m.lot = (decimal)Math.Pow(10.0, -(double)_m.precision.quantity);
                         _m.active = true;
 
-                        _m.limits.quantity.min = (decimal)Math.Pow(10.0, -_m.precision.quantity);
+                        _m.limits.quantity.min = (decimal)Math.Pow(10.0, -(double)_m.precision.quantity);
                         _m.limits.quantity.max = decimal.MaxValue;
-                        _m.limits.price.min = (decimal)Math.Pow(10.0, -_m.precision.price);
+                        _m.limits.price.min = (decimal)Math.Pow(10.0, -(double)_m.precision.price);
                         _m.limits.price.max = decimal.MaxValue;
 
                         _m.limits.amount = new MarketMinMax
@@ -122,11 +122,11 @@ namespace CCXT.NET.Zb.Public
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async ValueTask<Ticker> FetchTicker(string base_name, string quote_name, Dictionary<string, object> args = null)
+        public override async ValueTask<Ticker> FetchTickerAsync(string base_name, string quote_name, Dictionary<string, object> args = null)
         {
             var _result = new Ticker(base_name, quote_name);
 
-            var _market = await this.LoadMarket(_result.marketId);
+            var _market = await this.LoadMarketAsync(_result.marketId);
             if (_market.success == true)
             {
                 publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
@@ -168,11 +168,11 @@ namespace CCXT.NET.Zb.Public
         /// </summary>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async ValueTask<Tickers> FetchTickers(Dictionary<string, object> args = null)
+        public override async ValueTask<Tickers> FetchTickersAsync(Dictionary<string, object> args = null)
         {
             var _result = new Tickers();
 
-            var _markets = await this.LoadMarkets();
+            var _markets = await this.LoadMarketsAsync();
             if (_markets.success == true)
             {
                 publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
@@ -217,11 +217,11 @@ namespace CCXT.NET.Zb.Public
         /// <param name="limits">maximum number of items (optional): default 20</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async ValueTask<OrderBooks> FetchOrderBooks(string base_name, string quote_name, int limits = 20, Dictionary<string, object> args = null)
+        public override async ValueTask<OrderBooks> FetchOrderBooksAsync(string base_name, string quote_name, int limits = 20, Dictionary<string, object> args = null)
         {
             var _result = new OrderBooks(base_name, quote_name);
 
-            var _market = await this.LoadMarket(_result.marketId);
+            var _market = await this.LoadMarketAsync(_result.marketId);
             if (_market.success == true)
             {
                 publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
@@ -296,11 +296,11 @@ namespace CCXT.NET.Zb.Public
         /// <param name="limits">maximum number of items (optional): default 20</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async ValueTask<OHLCVs> FetchOHLCVs(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
+        public override async ValueTask<OHLCVs> FetchOHLCVsAsync(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
         {
             var _result = new OHLCVs(base_name, quote_name);
 
-            var _market = await this.LoadMarket(_result.marketId);
+            var _market = await this.LoadMarketAsync(_result.marketId);
             if (_market.success == true)
             {
                 publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
@@ -362,11 +362,11 @@ namespace CCXT.NET.Zb.Public
         /// <param name="limits">maximum number of items (optional): default 20</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async ValueTask<CompleteOrders> FetchCompleteOrders(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
+        public override async ValueTask<CompleteOrders> FetchCompleteOrdersAsync(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
         {
             var _result = new CompleteOrders(base_name, quote_name);
 
-            var _market = await this.LoadMarket(_result.marketId);
+            var _market = await this.LoadMarketAsync(_result.marketId);
             if (_market.success == true)
             {
                 publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);

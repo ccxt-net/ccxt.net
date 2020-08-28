@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin;
-using OdinSdk.BaseLib.Coin.Public;
+using CCXT.NET.Shared.Coin;
+using CCXT.NET.Shared.Coin.Public;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Bithumb.Public
@@ -9,7 +9,7 @@ namespace CCXT.NET.Bithumb.Public
     /// <summary>
     ///
     /// </summary>
-    public class BTicker : OdinSdk.BaseLib.Coin.Public.Ticker, ITicker
+    public class BTicker : CCXT.NET.Shared.Coin.Public.Ticker, ITicker
     {
         /// <summary>
         ///
@@ -53,7 +53,7 @@ namespace CCXT.NET.Bithumb.Public
     /// <summary>
     ///
     /// </summary>
-    public class BTickers : OdinSdk.BaseLib.Coin.Public.Tickers, ITickers
+    public class BTickers : CCXT.NET.Shared.Coin.Public.Tickers, ITickers
     {
         /// <summary>
         ///
@@ -97,7 +97,7 @@ namespace CCXT.NET.Bithumb.Public
     /// <summary>
     ///
     /// </summary>
-    public class BTickerItem : OdinSdk.BaseLib.Coin.Public.TickerItem, ITickerItem
+    public class BTickerItem : CCXT.NET.Shared.Coin.Public.TickerItem, ITickerItem
     {
         /// <summary>
         /// 64-bit Unix Timestamp in milliseconds since Epoch 1 Jan 1970

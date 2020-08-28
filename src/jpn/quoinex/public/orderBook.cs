@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin.Public;
+using CCXT.NET.Shared.Coin.Public;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Quoinex.Public
@@ -8,7 +8,7 @@ namespace CCXT.NET.Quoinex.Public
     /// <summary>
     ///
     /// </summary>
-    public class QOrderBook : OdinSdk.BaseLib.Coin.Public.OrderBook, IOrderBook
+    public class QOrderBook : CCXT.NET.Shared.Coin.Public.OrderBook, IOrderBook
     {
         /// <summary>
         ///

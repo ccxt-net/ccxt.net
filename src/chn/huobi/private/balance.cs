@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin;
-using OdinSdk.BaseLib.Coin.Private;
+using CCXT.NET.Shared.Coin;
+using CCXT.NET.Shared.Coin.Private;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -10,7 +10,7 @@ namespace CCXT.NET.Huobi.Private
     /// <summary>
     ///
     /// </summary>
-    public class HBalances : OdinSdk.BaseLib.Coin.Private.Balances, IBalances
+    public class HBalances : CCXT.NET.Shared.Coin.Private.Balances, IBalances
     {
         /// <summary>
         ///
@@ -65,7 +65,7 @@ namespace CCXT.NET.Huobi.Private
     /// <summary>
     ///
     /// </summary>
-    public class HBalanceItem : OdinSdk.BaseLib.Coin.Private.BalanceItem, IBalanceItem
+    public class HBalanceItem : CCXT.NET.Shared.Coin.Private.BalanceItem, IBalanceItem
     {
         /// <summary>
         ///

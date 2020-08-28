@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Public;
+using CCXT.NET.Shared.Coin.Public;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Runtime.CompilerServices;
@@ -9,7 +9,7 @@ namespace CCXT.NET.Poloniex.Public
     /// <summary>
     ///
     /// </summary>
-    public class POrderBook : OdinSdk.BaseLib.Coin.Public.OrderBook, IOrderBook
+    public class POrderBook : CCXT.NET.Shared.Coin.Public.OrderBook, IOrderBook
     {
         /// <summary>
         ///

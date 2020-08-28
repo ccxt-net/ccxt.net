@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Public;
-using OdinSdk.BaseLib.Coin.Types;
-using OdinSdk.BaseLib.Configuration;
+using CCXT.NET.Shared.Coin.Public;
+using CCXT.NET.Shared.Coin.Types;
+using CCXT.NET.Shared.Configuration;
 using System;
 
 namespace CCXT.NET.Bitflyer.Public
@@ -9,7 +9,7 @@ namespace CCXT.NET.Bitflyer.Public
     /// <summary>
     /// recent trade data
     /// </summary>
-    public class BCompleteOrderItem : OdinSdk.BaseLib.Coin.Public.CompleteOrderItem, ICompleteOrderItem
+    public class BCompleteOrderItem : CCXT.NET.Shared.Coin.Public.CompleteOrderItem, ICompleteOrderItem
     {
         /// <summary>
         ///

@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Public;
-using OdinSdk.BaseLib.Coin.Types;
+using CCXT.NET.Shared.Coin.Public;
+using CCXT.NET.Shared.Coin.Types;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Quoinex.Public
@@ -8,7 +8,7 @@ namespace CCXT.NET.Quoinex.Public
     /// <summary>
     ///
     /// </summary>
-    public class QCompleteOrders : OdinSdk.BaseLib.Coin.Public.CompleteOrders, ICompleteOrders
+    public class QCompleteOrders : CCXT.NET.Shared.Coin.Public.CompleteOrders, ICompleteOrders
     {
         /// <summary>
         ///
@@ -52,7 +52,7 @@ namespace CCXT.NET.Quoinex.Public
     /// <summary>
     /// recent trade data
     /// </summary>
-    public class QCompleteOrderItem : OdinSdk.BaseLib.Coin.Public.CompleteOrderItem, ICompleteOrderItem
+    public class QCompleteOrderItem : CCXT.NET.Shared.Coin.Public.CompleteOrderItem, ICompleteOrderItem
     {
         /// <summary>
         ///

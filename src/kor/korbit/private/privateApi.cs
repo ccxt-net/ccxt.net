@@ -1,8 +1,8 @@
 ﻿using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin;
-using OdinSdk.BaseLib.Coin.Private;
-using OdinSdk.BaseLib.Coin.Types;
-using OdinSdk.BaseLib.Configuration;
+using CCXT.NET.Shared.Coin;
+using CCXT.NET.Shared.Coin.Private;
+using CCXT.NET.Shared.Coin.Types;
+using CCXT.NET.Shared.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +13,7 @@ namespace CCXT.NET.Korbit.Private
     /// <summary>
     ///
     /// </summary>
-    public class PrivateApi : OdinSdk.BaseLib.Coin.Private.PrivateApi, IPrivateApi
+    public class PrivateApi : CCXT.NET.Shared.Coin.Private.PrivateApi, IPrivateApi
     {
         private readonly string __connect_key;
         private readonly string __secret_key;
@@ -48,7 +48,7 @@ namespace CCXT.NET.Korbit.Private
         /// <summary>
         ///
         /// </summary>
-        public override OdinSdk.BaseLib.Coin.Public.PublicApi publicApi
+        public override CCXT.NET.Shared.Coin.Public.PublicApi publicApi
         {
             get
             {
@@ -66,11 +66,11 @@ namespace CCXT.NET.Korbit.Private
         /// <param name="currency_name">base coin or quote coin name</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async ValueTask<Address> CreateAddress(string currency_name, Dictionary<string, object> args = null)
+        public override async ValueTask<Address> CreateAddressAsync(string currency_name, Dictionary<string, object> args = null)
         {
             var _result = new Address();
 
-            var _currency_id = await publicApi.LoadCurrencyId(currency_name);
+            var _currency_id = await publicApi.LoadCurrencyIdAsync(currency_name);
             if (_currency_id.success == true)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
@@ -111,11 +111,11 @@ namespace CCXT.NET.Korbit.Private
         /// </summary>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async ValueTask<Addresses> FetchAddresses(Dictionary<string, object> args = null)
+        public override async ValueTask<Addresses> FetchAddressesAsync(Dictionary<string, object> args = null)
         {
             var _result = new Addresses();
 
-            var _markets = await publicApi.LoadMarkets();
+            var _markets = await publicApi.LoadMarketsAsync();
             if (_markets.success == true)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
@@ -172,11 +172,11 @@ namespace CCXT.NET.Korbit.Private
         /// <param name="quantity">amount of coin</param>
         /// <param name="args">Add additional attributes for each exchange: [fee_priority]</param>
         /// <returns></returns>
-        public override async ValueTask<Transfer> CoinWithdraw(string currency_name, string address, string tag, decimal quantity, Dictionary<string, object> args = null)
+        public override async ValueTask<Transfer> CoinWithdrawAsync(string currency_name, string address, string tag, decimal quantity, Dictionary<string, object> args = null)
         {
             var _result = new Transfer();
 
-            var _currency_id = await publicApi.LoadCurrencyId(currency_name);
+            var _currency_id = await publicApi.LoadCurrencyIdAsync(currency_name);
             if (_currency_id.success == true)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
@@ -245,11 +245,11 @@ namespace CCXT.NET.Korbit.Private
         /// <param name="transferId">The unique id of the withdrawal request specified</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async ValueTask<Transfer> CancelCoinWithdraw(string currency_name, string transferId, Dictionary<string, object> args = null)
+        public override async ValueTask<Transfer> CancelCoinWithdrawAsync(string currency_name, string transferId, Dictionary<string, object> args = null)
         {
             var _result = new Transfer();
 
-            var _currency_id = await publicApi.LoadCurrencyId(currency_name);
+            var _currency_id = await publicApi.LoadCurrencyIdAsync(currency_name);
             if (_currency_id.success == true)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
@@ -312,11 +312,11 @@ namespace CCXT.NET.Korbit.Private
         /// <param name="limits">maximum number of items (optional): default 20</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async ValueTask<Transfers> FetchTransfers(string currency_name, string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
+        public override async ValueTask<Transfers> FetchTransfersAsync(string currency_name, string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
         {
             var _result = new Transfers();
 
-            var _currency_id = await publicApi.LoadCurrencyId(currency_name);
+            var _currency_id = await publicApi.LoadCurrencyIdAsync(currency_name);
             if (_currency_id.success == true)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
@@ -376,11 +376,11 @@ namespace CCXT.NET.Korbit.Private
         /// </summary>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async ValueTask<Balances> FetchBalances(Dictionary<string, object> args = null)
+        public override async ValueTask<Balances> FetchBalancesAsync(Dictionary<string, object> args = null)
         {
             var _result = new Balances();
 
-            var _markets = await publicApi.LoadMarkets();
+            var _markets = await publicApi.LoadMarketsAsync();
             if (_markets.success == true)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);

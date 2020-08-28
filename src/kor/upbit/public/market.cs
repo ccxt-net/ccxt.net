@@ -1,12 +1,12 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Public;
+using CCXT.NET.Shared.Coin.Public;
 
 namespace CCXT.NET.Upbit.Public
 {
     /// <summary>
     ///
     /// </summary>
-    public class UMarketItem : OdinSdk.BaseLib.Coin.Public.MarketItem, IMarketItem
+    public class UMarketItem : CCXT.NET.Shared.Coin.Public.MarketItem, IMarketItem
     {
         /// <summary>
         ///

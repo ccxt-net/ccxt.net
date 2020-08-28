@@ -1,12 +1,12 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Public;
+using CCXT.NET.Shared.Coin.Public;
 
 namespace CCXT.NET.BitMEX.Public
 {
     /// <summary>
     ///
     /// </summary>
-    public class BMarketItem : OdinSdk.BaseLib.Coin.Public.MarketItem, IMarketItem
+    public class BMarketItem : CCXT.NET.Shared.Coin.Public.MarketItem, IMarketItem
     {
         /// <summary>
         ///

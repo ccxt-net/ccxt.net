@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Trade;
+using CCXT.NET.Shared.Coin.Trade;
 
 namespace CCXT.NET.Kraken.Trade
 {
@@ -56,7 +56,7 @@ namespace CCXT.NET.Kraken.Trade
     /// <summary>
     ///
     /// </summary>
-    public class KMyPlaceOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
+    public class KMyPlaceOrderItem : CCXT.NET.Shared.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
         /// Number of orders cancelled.

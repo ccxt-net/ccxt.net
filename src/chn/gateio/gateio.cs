@@ -1,6 +1,6 @@
 ﻿using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin;
+using CCXT.NET.Shared.Coin;
 using RestSharp;
 using System;
 using System.Collections.Generic;
@@ -14,7 +14,7 @@ namespace CCXT.NET.GateIO
     /// <summary>
     ///
     /// </summary>
-    public sealed class GateIOClient : OdinSdk.BaseLib.Coin.XApiClient, IXApiClient
+    public sealed class GateIOClient : CCXT.NET.Shared.Coin.XApiClient, IXApiClient
     {
         /// <summary>
         ///
@@ -155,9 +155,9 @@ namespace CCXT.NET.GateIO
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async ValueTask<IRestRequest> CreatePostRequest(string endpoint, Dictionary<string, object> args = null)
+        public override async ValueTask<IRestRequest> CreatePostRequestAsync(string endpoint, Dictionary<string, object> args = null)
         {
-            var _request = await base.CreatePostRequest(endpoint, args);
+            var _request = await base.CreatePostRequestAsync(endpoint, args);
 
             if (IsAuthentication == true)
             {

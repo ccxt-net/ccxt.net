@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.Configuration;
-using OdinSdk.BaseLib.Coin;
+using CCXT.NET.Shared.Coin;
 using System;
 using System.IO;
 

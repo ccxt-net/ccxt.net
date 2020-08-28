@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Trade;
-using OdinSdk.BaseLib.Coin.Types;
+using CCXT.NET.Shared.Coin.Trade;
+using CCXT.NET.Shared.Coin.Types;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Bitforex.Trade
@@ -8,7 +8,7 @@ namespace CCXT.NET.Bitforex.Trade
     /// <summary>
     ///
     /// </summary>
-    public class BMyOrder : OdinSdk.BaseLib.Coin.Trade.MyOrder, IMyOrder
+    public class BMyOrder : CCXT.NET.Shared.Coin.Trade.MyOrder, IMyOrder
     {
         /// <summary>
         ///
@@ -42,7 +42,7 @@ namespace CCXT.NET.Bitforex.Trade
     /// <summary>
     ///
     /// </summary>
-    public class BMyOrders : OdinSdk.BaseLib.Coin.Trade.MyOrders, IMyOrders
+    public class BMyOrders : CCXT.NET.Shared.Coin.Trade.MyOrders, IMyOrders
     {
         /// <summary>
         ///
@@ -76,7 +76,7 @@ namespace CCXT.NET.Bitforex.Trade
     /// <summary>
     ///
     /// </summary>
-    public class BMyOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
+    public class BMyOrderItem : CCXT.NET.Shared.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
         /// Transaction pairs such as coin-usd-btc, coin-usd-eth, etc.

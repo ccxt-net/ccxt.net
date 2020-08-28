@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin;
+using CCXT.NET.Shared.Coin;
 using RestSharp;
 using System.Collections.Generic;
 using System.Security.Cryptography;
@@ -11,7 +11,7 @@ namespace CCXT.NET.CoinCheck
     /// <summary>
     /// https://coincheck.com/
     /// </summary>
-    public sealed class CoinCheckClient : OdinSdk.BaseLib.Coin.XApiClient, IXApiClient
+    public sealed class CoinCheckClient : CCXT.NET.Shared.Coin.XApiClient, IXApiClient
     {
         /// <summary>
         ///
@@ -126,9 +126,9 @@ namespace CCXT.NET.CoinCheck
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async ValueTask<IRestRequest> CreatePostRequest(string endpoint, Dictionary<string, object> args = null)
+        public override async ValueTask<IRestRequest> CreatePostRequestAsync(string endpoint, Dictionary<string, object> args = null)
         {
-            var _request = await base.CreatePostRequest(endpoint, args);
+            var _request = await base.CreatePostRequestAsync(endpoint, args);
 
             if (IsAuthentication == true)
             {
@@ -157,9 +157,9 @@ namespace CCXT.NET.CoinCheck
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async ValueTask<IRestRequest> CreateGetRequest(string endpoint, Dictionary<string, object> args = null)
+        public override async ValueTask<IRestRequest> CreateGetRequestAsync(string endpoint, Dictionary<string, object> args = null)
         {
-            var _request = await base.CreateGetRequest(endpoint, args);
+            var _request = await base.CreateGetRequestAsync(endpoint, args);
 
             if (IsAuthentication == true)
             {

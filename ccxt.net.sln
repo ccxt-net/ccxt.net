@@ -28,6 +28,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ccxt.test", "sample\ccxt.te
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "binance", "sample\binance\binance.csproj", "{07C1BDD2-6A52-4E6F-845B-ADAE37016395}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kraken", "sample\kraken\kraken.csproj", "{175C73B8-341C-471A-B9F6-559E3D0D41C6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -74,6 +76,18 @@ Global
 		{07C1BDD2-6A52-4E6F-845B-ADAE37016395}.Release|x64.Build.0 = Release|x64
 		{07C1BDD2-6A52-4E6F-845B-ADAE37016395}.Release|x86.ActiveCfg = Release|x86
 		{07C1BDD2-6A52-4E6F-845B-ADAE37016395}.Release|x86.Build.0 = Release|x86
+		{175C73B8-341C-471A-B9F6-559E3D0D41C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{175C73B8-341C-471A-B9F6-559E3D0D41C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{175C73B8-341C-471A-B9F6-559E3D0D41C6}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{175C73B8-341C-471A-B9F6-559E3D0D41C6}.Debug|x64.Build.0 = Debug|Any CPU
+		{175C73B8-341C-471A-B9F6-559E3D0D41C6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{175C73B8-341C-471A-B9F6-559E3D0D41C6}.Debug|x86.Build.0 = Debug|Any CPU
+		{175C73B8-341C-471A-B9F6-559E3D0D41C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{175C73B8-341C-471A-B9F6-559E3D0D41C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{175C73B8-341C-471A-B9F6-559E3D0D41C6}.Release|x64.ActiveCfg = Release|Any CPU
+		{175C73B8-341C-471A-B9F6-559E3D0D41C6}.Release|x64.Build.0 = Release|Any CPU
+		{175C73B8-341C-471A-B9F6-559E3D0D41C6}.Release|x86.ActiveCfg = Release|Any CPU
+		{175C73B8-341C-471A-B9F6-559E3D0D41C6}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -82,6 +96,7 @@ Global
 		{1AF35DB8-580D-4D5B-A50F-B2C63CF5856D} = {9E137A9C-8E9F-4484-B4A2-D190573B082C}
 		{E972A495-D622-4D66-9564-E8EB170E740A} = {F5F13CB7-91AE-498C-AD71-9EC31AA49A5B}
 		{07C1BDD2-6A52-4E6F-845B-ADAE37016395} = {F5F13CB7-91AE-498C-AD71-9EC31AA49A5B}
+		{175C73B8-341C-471A-B9F6-559E3D0D41C6} = {F5F13CB7-91AE-498C-AD71-9EC31AA49A5B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {10D0D5D6-447B-4484-A230-BBDBAA48885C}

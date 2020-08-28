@@ -1,4 +1,4 @@
-using OdinSdk.BaseLib.Coin;
+using CCXT.NET.Shared.Coin;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;

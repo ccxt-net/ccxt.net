@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Public;
+using CCXT.NET.Shared.Coin.Public;
 using System;
 
 namespace CCXT.NET.Upbit.Public
@@ -7,7 +7,7 @@ namespace CCXT.NET.Upbit.Public
     /// <summary>
     ///
     /// </summary>
-    public class UOHLCVItem : OdinSdk.BaseLib.Coin.Public.OHLCVItem, IOHLCVItem
+    public class UOHLCVItem : CCXT.NET.Shared.Coin.Public.OHLCVItem, IOHLCVItem
     {
         /// <summary>
         /// 마켓명

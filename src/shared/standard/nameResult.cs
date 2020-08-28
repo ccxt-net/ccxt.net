@@ -1,0 +1,84 @@
+﻿using Newtonsoft.Json;
+
+namespace CCXT.NET.Shared.Coin
+{
+    /// <summary>
+    ///
+    /// </summary>
+    public interface INameResult
+    {
+#if RAWJSON
+
+        /// <summary>
+        ///
+        /// </summary>
+        string rawJson
+        {
+            get;
+            set;
+        }
+
+#endif
+    }
+
+    /// <summary>
+    ///
+    /// </summary>
+    public class NameResult : ApiResult<string>, INameResult
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        public NameResult(bool success = true)
+        {
+            if (success == true)
+                this.SetSuccess();
+            else
+                this.SetFailure();
+        }
+
+#if RAWJSON
+
+        /// <summary>
+        ///
+        /// </summary>
+        [JsonIgnore]
+        public virtual string rawJson
+        {
+            get;
+            set;
+        }
+
+#endif
+    }
+
+    /// <summary>
+    ///
+    /// </summary>
+    public interface IBoolResult
+    {
+    }
+
+    /// <summary>
+    ///
+    /// </summary>
+    public class BoolResult : ApiResult<bool>, IBoolResult
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        public BoolResult(bool success = true)
+        {
+            if (success == true)
+            {
+                this.SetSuccess();
+                this.result = true;
+            }
+            else
+            {
+                this.SetFailure();
+                this.result = false;
+            }
+        }
+    }
+}

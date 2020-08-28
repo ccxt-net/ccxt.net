@@ -1,12 +1,12 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Private;
+using CCXT.NET.Shared.Coin.Private;
 
 namespace CCXT.NET.Upbit.Private
 {
     /// <summary>
     /// Upbit 거래소 회원 지갑 정보
     /// </summary>
-    public class UBalanceItem : OdinSdk.BaseLib.Coin.Private.BalanceItem, IBalanceItem
+    public class UBalanceItem : CCXT.NET.Shared.Coin.Private.BalanceItem, IBalanceItem
     {
         /// <summary>
         /// 화폐를 의미하는 영문 대문자 코드

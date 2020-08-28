@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin;
-using OdinSdk.BaseLib.Coin.Private;
-using OdinSdk.BaseLib.Coin.Types;
+using CCXT.NET.Shared.Coin;
+using CCXT.NET.Shared.Coin.Private;
+using CCXT.NET.Shared.Coin.Types;
 
 namespace CCXT.NET.Korbit.Private
 {
@@ -68,7 +68,7 @@ namespace CCXT.NET.Korbit.Private
     /// <summary>
     ///
     /// </summary>
-    public class KTransfer : OdinSdk.BaseLib.Coin.Private.Transfer, ITransfer
+    public class KTransfer : CCXT.NET.Shared.Coin.Private.Transfer, ITransfer
     {
         /// <summary>
         ///
@@ -101,7 +101,7 @@ namespace CCXT.NET.Korbit.Private
     /// <summary>
     /// Query Status of BTC Deposit and Transfer
     /// </summary>
-    public class KTransferItem : OdinSdk.BaseLib.Coin.Private.TransferItem, ITransferItem
+    public class KTransferItem : CCXT.NET.Shared.Coin.Private.TransferItem, ITransferItem
     {
         /// <summary>
         /// The unique ID of BTC deposit or withdrawal request.

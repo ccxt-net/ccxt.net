@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Trade;
-using OdinSdk.BaseLib.Coin.Types;
+using CCXT.NET.Shared.Coin.Trade;
+using CCXT.NET.Shared.Coin.Types;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Kraken.Trade
@@ -80,7 +80,7 @@ namespace CCXT.NET.Kraken.Trade
     /// <summary>
     ///
     /// </summary>
-    public class KMyOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
+    public class KMyOrderItem : CCXT.NET.Shared.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
         ///
@@ -320,7 +320,7 @@ namespace CCXT.NET.Kraken.Trade
         }
 
         /// <summary>
-        /// Order type (See <see cref="TradeApi.CreateLimitOrder(string, string, decimal, decimal, SideType, Dictionary{string, object})"/>).
+        /// Order type
         /// </summary>
         public string orderType
         {

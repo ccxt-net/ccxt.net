@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin.Public;
+using CCXT.NET.Shared.Coin.Public;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Anxpro.Public
@@ -8,7 +8,7 @@ namespace CCXT.NET.Anxpro.Public
     /// <summary>
     ///
     /// </summary>
-    public class AOrderBooks : OdinSdk.BaseLib.Coin.Public.OrderBooks, IOrderBooks
+    public class AOrderBooks : CCXT.NET.Shared.Coin.Public.OrderBooks, IOrderBooks
     {
         /// <summary>
         ///
@@ -32,7 +32,7 @@ namespace CCXT.NET.Anxpro.Public
     /// <summary>
     ///
     /// </summary>
-    public class AOrderBook : OdinSdk.BaseLib.Coin.Public.OrderBook, IOrderBook
+    public class AOrderBook : CCXT.NET.Shared.Coin.Public.OrderBook, IOrderBook
     {
         /// <summary>
         ///

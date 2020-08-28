@@ -1,12 +1,12 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Public;
+using CCXT.NET.Shared.Coin.Public;
 
 namespace CCXT.NET.GateIO.Public
 {
     /// <summary>
     ///
     /// </summary>
-    public class GTickerItem : OdinSdk.BaseLib.Coin.Public.TickerItem, ITickerItem
+    public class GTickerItem : CCXT.NET.Shared.Coin.Public.TickerItem, ITickerItem
     {
         /// <summary>
         /// volume of quote currency traded for last 24 hours

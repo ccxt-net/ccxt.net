@@ -1,8 +1,8 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin.Trade;
-using OdinSdk.BaseLib.Coin.Types;
-using OdinSdk.BaseLib.Configuration;
+using CCXT.NET.Shared.Coin.Trade;
+using CCXT.NET.Shared.Coin.Types;
+using CCXT.NET.Shared.Configuration;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Huobi.Trade
@@ -10,7 +10,7 @@ namespace CCXT.NET.Huobi.Trade
     /// <summary>
     ///
     /// </summary>
-    public class HPlaceOrder : OdinSdk.BaseLib.Coin.Trade.MyOrder, IMyOrder
+    public class HPlaceOrder : CCXT.NET.Shared.Coin.Trade.MyOrder, IMyOrder
     {
         /// <summary>
         ///
@@ -57,7 +57,7 @@ namespace CCXT.NET.Huobi.Trade
     /// <summary>
     ///
     /// </summary>
-    public class HPlaceOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
+    public class HPlaceOrderItem : CCXT.NET.Shared.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
         ///
@@ -200,7 +200,7 @@ namespace CCXT.NET.Huobi.Trade
     /// <summary>
     ///
     /// </summary>
-    public class HCancelOrders : OdinSdk.BaseLib.Coin.Trade.MyOrders, IMyOrders
+    public class HCancelOrders : CCXT.NET.Shared.Coin.Trade.MyOrders, IMyOrders
     {
         /// <summary>
         ///
@@ -269,7 +269,7 @@ namespace CCXT.NET.Huobi.Trade
     /// <summary>
     ///
     /// </summary>
-    public class HCancelOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
+    public class HCancelOrderItem : CCXT.NET.Shared.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
         ///
@@ -305,7 +305,7 @@ namespace CCXT.NET.Huobi.Trade
     /// <summary>
     ///
     /// </summary>
-    public class HCancelAllOrders : OdinSdk.BaseLib.Coin.Trade.MyOrders, IMyOrders
+    public class HCancelAllOrders : CCXT.NET.Shared.Coin.Trade.MyOrders, IMyOrders
     {
         /// <summary>
         ///
@@ -341,7 +341,7 @@ namespace CCXT.NET.Huobi.Trade
     /// <summary>
     ///
     /// </summary>
-    public class HHCancelAllOrdersItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
+    public class HHCancelAllOrdersItem : CCXT.NET.Shared.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
         ///

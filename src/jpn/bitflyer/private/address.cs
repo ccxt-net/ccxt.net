@@ -1,12 +1,12 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Private;
+using CCXT.NET.Shared.Coin.Private;
 
 namespace CCXT.NET.Bitflyer.Private
 {
     /// <summary>
     ///
     /// </summary>
-    public class BAddressItem : OdinSdk.BaseLib.Coin.Private.AddressItem, IAddressItem
+    public class BAddressItem : CCXT.NET.Shared.Coin.Private.AddressItem, IAddressItem
     {
         /// <summary>
         /// "NORMAL" for general deposit addresses.

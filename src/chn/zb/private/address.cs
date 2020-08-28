@@ -1,14 +1,14 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin;
-using OdinSdk.BaseLib.Coin.Private;
+using CCXT.NET.Shared.Coin;
+using CCXT.NET.Shared.Coin.Private;
 
 namespace CCXT.NET.Zb.Private
 {
     /// <summary>
     ///
     /// </summary>
-    public class ZAddress : OdinSdk.BaseLib.Coin.Private.Address, IAddress
+    public class ZAddress : CCXT.NET.Shared.Coin.Private.Address, IAddress
     {
         /// <summary>
         ///
@@ -65,7 +65,7 @@ namespace CCXT.NET.Zb.Private
     /// <summary>
     ///
     /// </summary>
-    public class ZAddressItem : OdinSdk.BaseLib.Coin.Private.AddressItem, IAddressItem
+    public class ZAddressItem : CCXT.NET.Shared.Coin.Private.AddressItem, IAddressItem
     {
         /// <summary>
         ///

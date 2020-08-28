@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Trade;
-using OdinSdk.BaseLib.Coin.Types;
+using CCXT.NET.Shared.Coin.Trade;
+using CCXT.NET.Shared.Coin.Types;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Anxpro.Trade
@@ -8,7 +8,7 @@ namespace CCXT.NET.Anxpro.Trade
     /// <summary>
     ///
     /// </summary>
-    public class AMyTrades : OdinSdk.BaseLib.Coin.Trade.MyTrades, IMyTrades
+    public class AMyTrades : CCXT.NET.Shared.Coin.Trade.MyTrades, IMyTrades
     {
         /// <summary>
         ///
@@ -45,7 +45,7 @@ namespace CCXT.NET.Anxpro.Trade
     /// <summary>
     ///
     /// </summary>
-    public class AMyTradeItem : OdinSdk.BaseLib.Coin.Trade.MyTradeItem, IMyTradeItem
+    public class AMyTradeItem : CCXT.NET.Shared.Coin.Trade.MyTradeItem, IMyTradeItem
     {
         /// <summary>
         /// Trade id

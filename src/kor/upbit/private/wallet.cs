@@ -1,11 +1,11 @@
-﻿using OdinSdk.BaseLib.Coin.Private;
+﻿using CCXT.NET.Shared.Coin.Private;
 
 namespace CCXT.NET.Upbit.Private
 {
     /// <summary>
     ///
     /// </summary>
-    public class UWalletItem : OdinSdk.BaseLib.Coin.Private.WalletItem, IWalletItem
+    public class UWalletItem : CCXT.NET.Shared.Coin.Private.WalletItem, IWalletItem
     {
     }
 }

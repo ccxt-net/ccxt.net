@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Public;
+using CCXT.NET.Shared.Coin.Public;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Huobi.Public
@@ -7,7 +7,7 @@ namespace CCXT.NET.Huobi.Public
     /// <summary>
     ///
     /// </summary>
-    public class HMarkets : OdinSdk.BaseLib.Coin.Public.Markets, IMarkets
+    public class HMarkets : CCXT.NET.Shared.Coin.Public.Markets, IMarkets
     {
         /// <summary>
         ///
@@ -43,7 +43,7 @@ namespace CCXT.NET.Huobi.Public
     /// <summary>
     ///
     /// </summary>
-    public class HMarketItem : OdinSdk.BaseLib.Coin.Public.MarketItem, IMarketItem
+    public class HMarketItem : CCXT.NET.Shared.Coin.Public.MarketItem, IMarketItem
     {
         /// <summary>
         ///

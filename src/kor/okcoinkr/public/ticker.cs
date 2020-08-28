@@ -1,12 +1,12 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Public;
+using CCXT.NET.Shared.Coin.Public;
 
 namespace CCXT.NET.OkCoinKr.Public
 {
     /// <summary>
     ///
     /// </summary>
-    public class OTicker : OdinSdk.BaseLib.Coin.Public.Ticker, ITicker
+    public class OTicker : CCXT.NET.Shared.Coin.Public.Ticker, ITicker
     {
         /// <summary>
         ///
@@ -43,7 +43,7 @@ namespace CCXT.NET.OkCoinKr.Public
     /// <summary>
     ///
     /// </summary>
-    public class OTickerItem : OdinSdk.BaseLib.Coin.Public.TickerItem, ITickerItem
+    public class OTickerItem : CCXT.NET.Shared.Coin.Public.TickerItem, ITickerItem
     {
         /// <summary>
         /// 고가

@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Private;
-using OdinSdk.BaseLib.Coin.Types;
-using OdinSdk.BaseLib.Configuration;
+using CCXT.NET.Shared.Coin.Private;
+using CCXT.NET.Shared.Coin.Types;
+using CCXT.NET.Shared.Configuration;
 using System;
 
 namespace CCXT.NET.Upbit.Private
@@ -9,7 +9,7 @@ namespace CCXT.NET.Upbit.Private
     /// <summary>
     ///
     /// </summary>
-    public class UTransferItem : OdinSdk.BaseLib.Coin.Private.TransferItem, ITransferItem
+    public class UTransferItem : CCXT.NET.Shared.Coin.Private.TransferItem, ITransferItem
     {
         /// <summary>
         /// 입출금 종류

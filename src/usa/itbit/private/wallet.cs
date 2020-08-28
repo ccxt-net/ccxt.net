@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Private;
+using CCXT.NET.Shared.Coin.Private;
 using System.Collections.Generic;
 
 namespace CCXT.NET.ItBit.Private
@@ -7,7 +7,7 @@ namespace CCXT.NET.ItBit.Private
     /// <summary>
     /// 거래소 회원 지갑 정보
     /// </summary>
-    public class TWalletItem : OdinSdk.BaseLib.Coin.Private.WalletItem, IWalletItem
+    public class TWalletItem : CCXT.NET.Shared.Coin.Private.WalletItem, IWalletItem
     {
         /// <summary>
         ///

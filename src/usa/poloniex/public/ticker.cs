@@ -1,12 +1,12 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Public;
+using CCXT.NET.Shared.Coin.Public;
 
 namespace CCXT.NET.Poloniex.Public
 {
     /// <summary>
     ///
     /// </summary>
-    public class PTickerItem : OdinSdk.BaseLib.Coin.Public.TickerItem, ITickerItem
+    public class PTickerItem : CCXT.NET.Shared.Coin.Public.TickerItem, ITickerItem
     {
         /// <summary>
         /// string symbol of the market ('BTCUSD', 'ETHBTC', ...)

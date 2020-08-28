@@ -1,8 +1,8 @@
 ﻿using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin;
-using OdinSdk.BaseLib.Coin.Private;
-using OdinSdk.BaseLib.Coin.Types;
-using OdinSdk.BaseLib.Configuration;
+using CCXT.NET.Shared.Coin;
+using CCXT.NET.Shared.Coin.Private;
+using CCXT.NET.Shared.Coin.Types;
+using CCXT.NET.Shared.Configuration;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -12,7 +12,7 @@ namespace CCXT.NET.OKEx.Private
     /// <summary>
     ///
     /// </summary>
-    public class PrivateApi : OdinSdk.BaseLib.Coin.Private.PrivateApi, IPrivateApi
+    public class PrivateApi : CCXT.NET.Shared.Coin.Private.PrivateApi, IPrivateApi
     {
         private readonly string __connect_key;
         private readonly string __secret_key;
@@ -47,7 +47,7 @@ namespace CCXT.NET.OKEx.Private
         /// <summary>
         ///
         /// </summary>
-        public override OdinSdk.BaseLib.Coin.Public.PublicApi publicApi
+        public override CCXT.NET.Shared.Coin.Public.PublicApi publicApi
         {
             get
             {
@@ -67,11 +67,11 @@ namespace CCXT.NET.OKEx.Private
         /// <param name="quantity">amount of coin</param>
         /// <param name="args">Add additional attributes for each exchange: [chargefee]</param>
         /// <returns></returns>
-        public override async ValueTask<Transfer> CoinWithdraw(string currency_name, string address, string tag, decimal quantity, Dictionary<string, object> args = null)
+        public override async ValueTask<Transfer> CoinWithdrawAsync(string currency_name, string address, string tag, decimal quantity, Dictionary<string, object> args = null)
         {
             var _result = new Transfer();
 
-            var _market = await publicApi.LoadMarket(_result.MakeMarketId(currency_name, "USDT"));
+            var _market = await publicApi.LoadMarketAsync(_result.MakeMarketId(currency_name, "USDT"));
             if (_market.success == true)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
@@ -141,11 +141,11 @@ namespace CCXT.NET.OKEx.Private
         /// <param name="transferId">The unique id of the withdrawal request specified</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async ValueTask<Transfer> CancelCoinWithdraw(string currency_name, string transferId, Dictionary<string, object> args = null)
+        public override async ValueTask<Transfer> CancelCoinWithdrawAsync(string currency_name, string transferId, Dictionary<string, object> args = null)
         {
             var _result = new Transfer();
 
-            var _market = await publicApi.LoadMarket(_result.MakeMarketId(currency_name, "USDT"));
+            var _market = await publicApi.LoadMarketAsync(_result.MakeMarketId(currency_name, "USDT"));
             if (_market.success == true)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
@@ -210,11 +210,11 @@ namespace CCXT.NET.OKEx.Private
         /// <param name="limits">You can set the maximum number of transactions you want to get with this parameter</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async ValueTask<Transfers> FetchTransfers(string currency_name, string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
+        public override async ValueTask<Transfers> FetchTransfersAsync(string currency_name, string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
         {
             var _result = new Transfers();
 
-            var _market = await publicApi.LoadMarket(_result.MakeMarketId(currency_name, "USD"));
+            var _market = await publicApi.LoadMarketAsync(_result.MakeMarketId(currency_name, "USD"));
             if (_market.success == true)
             {
                 var _timestamp = privateClient.ExchangeInfo.GetTimestamp(timeframe);
@@ -311,11 +311,11 @@ namespace CCXT.NET.OKEx.Private
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async ValueTask<Balance> FetchBalance(string base_name, string quote_name, Dictionary<string, object> args = null)
+        public override async ValueTask<Balance> FetchBalanceAsync(string base_name, string quote_name, Dictionary<string, object> args = null)
         {
             var _result = new Balance();
 
-            var _currency_id = await publicApi.LoadCurrencyId(base_name);
+            var _currency_id = await publicApi.LoadCurrencyIdAsync(base_name);
             if (_currency_id.success == true)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
@@ -367,11 +367,11 @@ namespace CCXT.NET.OKEx.Private
         /// </summary>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async ValueTask<Balances> FetchBalances(Dictionary<string, object> args = null)
+        public override async ValueTask<Balances> FetchBalancesAsync(Dictionary<string, object> args = null)
         {
             var _result = new Balances();
 
-            var _markets = await publicApi.LoadMarkets();
+            var _markets = await publicApi.LoadMarketsAsync();
             if (_markets.success == true)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);

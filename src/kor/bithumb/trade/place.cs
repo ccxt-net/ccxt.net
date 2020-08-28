@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin;
-using OdinSdk.BaseLib.Coin.Trade;
+using CCXT.NET.Shared.Coin;
+using CCXT.NET.Shared.Coin.Trade;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Bithumb.Trade
@@ -8,7 +8,7 @@ namespace CCXT.NET.Bithumb.Trade
     /// <summary>
     ///
     /// </summary>
-    public class BPlaceOrder : OdinSdk.BaseLib.Coin.Trade.MyOrder, IMyOrder
+    public class BPlaceOrder : CCXT.NET.Shared.Coin.Trade.MyOrder, IMyOrder
     {
         /// <summary>
         /// 결과 상태 코드 (정상 : 0000, 정상이외 코드는 에러 코드 참조)
@@ -34,7 +34,7 @@ namespace CCXT.NET.Bithumb.Trade
     /// <summary>
     ///
     /// </summary>
-    public class BPlaceOrders : OdinSdk.BaseLib.Coin.Trade.MyOrders, IMyOrders
+    public class BPlaceOrders : CCXT.NET.Shared.Coin.Trade.MyOrders, IMyOrders
     {
         /// <summary>
         ///
@@ -97,7 +97,7 @@ namespace CCXT.NET.Bithumb.Trade
     /// <summary>
     ///
     /// </summary>
-    public class BPlaceOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
+    public class BPlaceOrderItem : CCXT.NET.Shared.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
         /// 체결 수량

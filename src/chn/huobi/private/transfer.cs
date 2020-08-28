@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Private;
-using OdinSdk.BaseLib.Coin.Types;
-using OdinSdk.BaseLib.Configuration;
+using CCXT.NET.Shared.Coin.Private;
+using CCXT.NET.Shared.Coin.Types;
+using CCXT.NET.Shared.Configuration;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Huobi.Private
@@ -9,7 +9,7 @@ namespace CCXT.NET.Huobi.Private
     /// <summary>
     ///
     /// </summary>
-    public class HWithdraw : OdinSdk.BaseLib.Coin.Private.Transfer, ITransfer
+    public class HWithdraw : CCXT.NET.Shared.Coin.Private.Transfer, ITransfer
     {
         /// <summary>
         ///
@@ -56,7 +56,7 @@ namespace CCXT.NET.Huobi.Private
     /// <summary>
     ///
     /// </summary>
-    public class HWithdrawItem : OdinSdk.BaseLib.Coin.Private.TransferItem, ITransferItem
+    public class HWithdrawItem : CCXT.NET.Shared.Coin.Private.TransferItem, ITransferItem
     {
         /// <summary>
         ///
@@ -199,7 +199,7 @@ namespace CCXT.NET.Huobi.Private
     /// <summary>
     ///
     /// </summary>
-    public class HTransfers : OdinSdk.BaseLib.Coin.Private.Transfers, ITransfers
+    public class HTransfers : CCXT.NET.Shared.Coin.Private.Transfers, ITransfers
     {
         /// <summary>
         ///
@@ -235,7 +235,7 @@ namespace CCXT.NET.Huobi.Private
     /// <summary>
     ///
     /// </summary>
-    public class HTransferItem : OdinSdk.BaseLib.Coin.Private.TransferItem, ITransferItem
+    public class HTransferItem : CCXT.NET.Shared.Coin.Private.TransferItem, ITransferItem
     {
         /// <summary>
         ///

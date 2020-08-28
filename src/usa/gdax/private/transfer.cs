@@ -1,19 +1,19 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Private;
+using CCXT.NET.Shared.Coin.Private;
 
 namespace CCXT.NET.GDAX.Private
 {
     /// <summary>
     ///
     /// </summary>
-    public class GTransfer : OdinSdk.BaseLib.Coin.Private.Transfer, ITransfer
+    public class GTransfer : CCXT.NET.Shared.Coin.Private.Transfer, ITransfer
     {
     }
 
     /// <summary>
     ///
     /// </summary>
-    public class GTransferItem : OdinSdk.BaseLib.Coin.Private.TransferItem, ITransferItem
+    public class GTransferItem : CCXT.NET.Shared.Coin.Private.TransferItem, ITransferItem
     {
         /// <summary>
         ///

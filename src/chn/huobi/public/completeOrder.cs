@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin.Public;
-using OdinSdk.BaseLib.Coin.Types;
+using CCXT.NET.Shared.Coin.Public;
+using CCXT.NET.Shared.Coin.Types;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Huobi.Public
@@ -9,7 +9,7 @@ namespace CCXT.NET.Huobi.Public
     /// <summary>
     ///
     /// </summary>
-    public class HCompleteOrders : OdinSdk.BaseLib.Coin.Public.CompleteOrders, ICompleteOrders
+    public class HCompleteOrders : CCXT.NET.Shared.Coin.Public.CompleteOrders, ICompleteOrders
     {
         /// <summary>
         ///
@@ -64,7 +64,7 @@ namespace CCXT.NET.Huobi.Public
     /// <summary>
     ///
     /// </summary>
-    public class HCompleteOrderItem : OdinSdk.BaseLib.Coin.Public.CompleteOrderItem, ICompleteOrderItem
+    public class HCompleteOrderItem : CCXT.NET.Shared.Coin.Public.CompleteOrderItem, ICompleteOrderItem
     {
         /// <summary>
         ///

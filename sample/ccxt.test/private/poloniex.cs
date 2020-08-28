@@ -1,5 +1,5 @@
-using OdinSdk.BaseLib.Coin;
-using OdinSdk.BaseLib.Converter;
+using CCXT.NET.Shared.Coin;
+using CCXT.NET.Shared.Converter;
 using System;
 using System.Collections.Generic;
 using Xunit;
@@ -24,10 +24,10 @@ namespace XUnit
 
 #if DEBUG
                 if (XApiClient.TestXUnitMode != XUnitMode.UseExchangeServer)
-                    await _private_api.publicApi.LoadMarkets(false, GetJsonContent(_private_api.privateClient, tRootFolder.Replace(@"\private", @"\public"), "fetchMarkets", _args));
+                    await _private_api.publicApi.LoadMarketsAsync(false, GetJsonContent(_private_api.privateClient, tRootFolder.Replace(@"\private", @"\public"), "fetchMarkets", _args));
 #endif
 
-                var _new_address = await _private_api.CreateAddress("XRP", GetJsonContent(_private_api.privateClient, "createAddress", _args));
+                var _new_address = await _private_api.CreateAddressAsync("XRP", GetJsonContent(_private_api.privateClient, "createAddress", _args));
                 if ((_new_address.supported == true || TestConfig.SupportedCheck == true) && _new_address.message.IndexOf("You may only") < 0)
                 {
                     this.WriteJson(_private_api.privateClient, _new_address);
@@ -39,7 +39,7 @@ namespace XUnit
                     Assert.False(String.IsNullOrEmpty(_new_address.result.address));
                 }
 
-                var _address = await _private_api.FetchAddress("BTC", GetJsonContent(_private_api.privateClient, "fetchAddress", _args));
+                var _address = await _private_api.FetchAddressAsync("BTC", GetJsonContent(_private_api.privateClient, "fetchAddress", _args));
                 if (_address.supported == true || TestConfig.SupportedCheck == true)
                 {
                     this.WriteJson(_private_api.privateClient, _address);
@@ -52,7 +52,7 @@ namespace XUnit
                     Assert.False(String.IsNullOrEmpty(_address.result.address));
                 }
 
-                var _addresses = await _private_api.FetchAddresses(GetJsonContent(_private_api.privateClient, "fetchAddresses", _args));
+                var _addresses = await _private_api.FetchAddressesAsync(GetJsonContent(_private_api.privateClient, "fetchAddresses", _args));
                 if (_addresses.supported == true || TestConfig.SupportedCheck == true)
                 {
                     this.WriteJson(_private_api.privateClient, _addresses);
@@ -71,7 +71,7 @@ namespace XUnit
 #if DEBUG
                 if (XApiClient.TestXUnitMode != XUnitMode.UseExchangeServer)
                 {
-                    var _withdraw = await _private_api.CoinWithdraw("ETH", "0xad8f564dcf5cc7e7e60db938b01283a4da208602", "", 0.1m, GetJsonContent(_private_api.privateClient, "coinWithdraw", _args));
+                    var _withdraw = await _private_api.CoinWithdrawAsync("ETH", "0xad8f564dcf5cc7e7e60db938b01283a4da208602", "", 0.1m, GetJsonContent(_private_api.privateClient, "coinWithdraw", _args));
                     if ((_withdraw.supported == true || TestConfig.SupportedCheck == true) && _withdraw.message.IndexOf("Not enough") < 0)
                     {
                         this.WriteJson(_private_api.privateClient, _withdraw);
@@ -85,7 +85,7 @@ namespace XUnit
                     if (String.IsNullOrEmpty(_withdraw.result.transferId) == true)
                         _withdraw.result.transferId = _private_api.privateClient.GenerateNonceString(13);
 
-                    var _cancel_withdraw = await _private_api.CancelCoinWithdraw("BTC", _withdraw.result.transferId, GetJsonContent(_private_api.privateClient, "cancelCoinWithdraw", _args));
+                    var _cancel_withdraw = await _private_api.CancelCoinWithdrawAsync("BTC", _withdraw.result.transferId, GetJsonContent(_private_api.privateClient, "cancelCoinWithdraw", _args));
                     if (_cancel_withdraw.supported == true || TestConfig.SupportedCheck == true)
                     {
                         this.WriteJson(_private_api.privateClient, _cancel_withdraw);
@@ -97,7 +97,7 @@ namespace XUnit
                     }
                 }
 #endif
-                var _fetch_transfers = await _private_api.FetchTransfers("BTC", _timeframe, _since, _limit, GetJsonContent(_private_api.privateClient, "fetchTransfers", _args));
+                var _fetch_transfers = await _private_api.FetchTransfersAsync("BTC", _timeframe, _since, _limit, GetJsonContent(_private_api.privateClient, "fetchTransfers", _args));
                 if (_fetch_transfers.supported == true || TestConfig.SupportedCheck == true)
                 {
                     this.WriteJson(_private_api.privateClient, _fetch_transfers);
@@ -121,7 +121,7 @@ namespace XUnit
                 else
                     _transfer_id = Guid.NewGuid().ToString();
 
-                var _fetch_transfer = await _private_api.FetchTransfer("XRP", _transfer_id, GetJsonContent(_private_api.privateClient, "fetchTransfer", _args));
+                var _fetch_transfer = await _private_api.FetchTransferAsync("XRP", _transfer_id, GetJsonContent(_private_api.privateClient, "fetchTransfer", _args));
                 if (_fetch_transfer.supported == true || TestConfig.SupportedCheck == true)
                 {
                     this.WriteJson(_private_api.privateClient, _fetch_transfer);
@@ -136,7 +136,7 @@ namespace XUnit
                     Assert.True(_fetch_transfer.result.timestamp >= 1000000000000 && _fetch_transfer.result.timestamp <= 9999999999999);
                 }
 
-                var _fetch_all_transfers = await _private_api.FetchAllTransfers(_timeframe, _since, _limit, GetJsonContent(_private_api.privateClient, "fetchAllTransfers", _args));
+                var _fetch_all_transfers = await _private_api.FetchAllTransfersAsync(_timeframe, _since, _limit, GetJsonContent(_private_api.privateClient, "fetchAllTransfers", _args));
                 if (_fetch_all_transfers.supported == true || TestConfig.SupportedCheck == true)
                 {
                     this.WriteJson(_private_api.privateClient, _fetch_all_transfers);
@@ -154,7 +154,7 @@ namespace XUnit
                     }
                 }
 
-                var _balance = await _private_api.FetchBalance("BTC", "USDT", GetJsonContent(_private_api.privateClient, "fetchBalance", _args));
+                var _balance = await _private_api.FetchBalanceAsync("BTC", "USDT", GetJsonContent(_private_api.privateClient, "fetchBalance", _args));
                 if (_balance.supported == true || TestConfig.SupportedCheck == true)
                 {
                     this.WriteJson(_private_api.privateClient, _balance);
@@ -167,7 +167,7 @@ namespace XUnit
                     Assert.True(Numerical.CompareDecimal(_balance.result.total, _balance.result.free + _balance.result.used));
                 }
 
-                var _balances = await _private_api.FetchBalances(GetJsonContent(_private_api.privateClient, "fetchBalances", _args));
+                var _balances = await _private_api.FetchBalancesAsync(GetJsonContent(_private_api.privateClient, "fetchBalances", _args));
                 if (_balances.supported == true || TestConfig.SupportedCheck == true)
                 {
                     this.WriteJson(_private_api.privateClient, _balances);
@@ -183,7 +183,7 @@ namespace XUnit
                     }
                 }
 
-                var _wallet = await _private_api.FetchWallet("XRP", "USD", GetJsonContent(_private_api.privateClient, "fetchWallet", _args));
+                var _wallet = await _private_api.FetchWalletAsync("XRP", "USD", GetJsonContent(_private_api.privateClient, "fetchWallet", _args));
                 if (_wallet.supported == true || TestConfig.SupportedCheck == true)
                 {
                     this.WriteJson(_private_api.privateClient, _wallet);
@@ -196,7 +196,7 @@ namespace XUnit
                     Assert.True(Numerical.CompareDecimal(_wallet.result.balance.total, _wallet.result.balance.free + _wallet.result.balance.used));
                 }
 
-                var _wallets = await _private_api.FetchWallets(_api_key.user_id, GetJsonContent(_private_api.privateClient, "fetchWallets", _args));
+                var _wallets = await _private_api.FetchWalletsAsync(_api_key.user_id, GetJsonContent(_private_api.privateClient, "fetchWallets", _args));
                 if (_wallets.supported == true || TestConfig.SupportedCheck == true)
                 {
                     this.WriteJson(_private_api.privateClient, _wallets);

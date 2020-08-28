@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Trade;
-using OdinSdk.BaseLib.Coin.Types;
-using OdinSdk.BaseLib.Configuration;
+using CCXT.NET.Shared.Coin.Trade;
+using CCXT.NET.Shared.Coin.Types;
+using CCXT.NET.Shared.Configuration;
 using System;
 using System.Collections.Generic;
 
@@ -10,7 +10,7 @@ namespace CCXT.NET.Poloniex.Trade
     /// <summary>
     ///
     /// </summary>
-    public class PPlaceOrders : OdinSdk.BaseLib.Coin.Trade.MyOrders, IMyOrders
+    public class PPlaceOrders : CCXT.NET.Shared.Coin.Trade.MyOrders, IMyOrders
     {
         /// <summary>
         /// 접수된 주문 ID
@@ -36,7 +36,7 @@ namespace CCXT.NET.Poloniex.Trade
     /// <summary>
     ///
     /// </summary>
-    public class PPlaceOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
+    public class PPlaceOrderItem : CCXT.NET.Shared.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
         ///

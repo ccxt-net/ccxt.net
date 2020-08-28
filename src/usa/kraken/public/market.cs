@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin.Public;
+using CCXT.NET.Shared.Coin.Public;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Kraken.Public
@@ -8,7 +8,7 @@ namespace CCXT.NET.Kraken.Public
     /// <summary>
     ///
     /// </summary>
-    public class KMarketItem : OdinSdk.BaseLib.Coin.Public.MarketItem, IMarketItem
+    public class KMarketItem : CCXT.NET.Shared.Coin.Public.MarketItem, IMarketItem
     {
         /// <summary>
         ///

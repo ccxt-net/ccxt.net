@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin;
-using OdinSdk.BaseLib.Coin.Public;
+using CCXT.NET.Shared.Coin;
+using CCXT.NET.Shared.Coin.Public;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Bithumb.Public
@@ -9,7 +9,7 @@ namespace CCXT.NET.Bithumb.Public
     /// <summary>
     ///
     /// </summary>
-    public class BOrderBooks : OdinSdk.BaseLib.Coin.Public.OrderBooks, IOrderBooks
+    public class BOrderBooks : CCXT.NET.Shared.Coin.Public.OrderBooks, IOrderBooks
     {
         /// <summary>
         ///
@@ -53,7 +53,7 @@ namespace CCXT.NET.Bithumb.Public
     /// <summary>
     ///
     /// </summary>
-    public class BOrderBook : OdinSdk.BaseLib.Coin.Public.OrderBook, IOrderBook
+    public class BOrderBook : CCXT.NET.Shared.Coin.Public.OrderBook, IOrderBook
     {
         /// <summary>
         /// 결제 화폐단위

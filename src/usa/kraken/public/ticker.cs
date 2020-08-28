@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Public;
+using CCXT.NET.Shared.Coin.Public;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Kraken.Public
@@ -7,7 +7,7 @@ namespace CCXT.NET.Kraken.Public
     /// <summary>
     ///
     /// </summary>
-    public class KTickerItem : OdinSdk.BaseLib.Coin.Public.TickerItem, ITickerItem
+    public class KTickerItem : CCXT.NET.Shared.Coin.Public.TickerItem, ITickerItem
     {
         /// <summary>
         /// string symbol of the market ('BTCUSD', 'ETHBTC', ...)

@@ -1,11 +1,11 @@
-﻿using OdinSdk.BaseLib.Coin.Public;
+﻿using CCXT.NET.Shared.Coin.Public;
 
 namespace CCXT.NET.Bitfinex.Public
 {
     /// <summary>
     ///
     /// </summary>
-    public class BCompleteOrderItem : OdinSdk.BaseLib.Coin.Public.CompleteOrderItem, ICompleteOrderItem
+    public class BCompleteOrderItem : CCXT.NET.Shared.Coin.Public.CompleteOrderItem, ICompleteOrderItem
     {
     }
 }

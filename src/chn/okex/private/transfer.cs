@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Private;
-using OdinSdk.BaseLib.Coin.Types;
+using CCXT.NET.Shared.Coin.Private;
+using CCXT.NET.Shared.Coin.Types;
 using System.Collections.Generic;
 
 namespace CCXT.NET.OKEx.Private
@@ -8,7 +8,7 @@ namespace CCXT.NET.OKEx.Private
     /// <summary>
     ///
     /// </summary>
-    public class OTransfer : OdinSdk.BaseLib.Coin.Private.Transfer, ITransfer
+    public class OTransfer : CCXT.NET.Shared.Coin.Private.Transfer, ITransfer
     {
         /// <summary>
         ///
@@ -42,14 +42,14 @@ namespace CCXT.NET.OKEx.Private
     /// <summary>
     ///
     /// </summary>
-    public class OTransferItem : OdinSdk.BaseLib.Coin.Private.TransferItem, ITransferItem
+    public class OTransferItem : CCXT.NET.Shared.Coin.Private.TransferItem, ITransferItem
     {
     }
 
     /// <summary>
     ///
     /// </summary>
-    public class ODeposits : OdinSdk.BaseLib.Coin.Private.Transfers, ITransfers
+    public class ODeposits : CCXT.NET.Shared.Coin.Private.Transfers, ITransfers
     {
         /// <summary>
         ///
@@ -83,7 +83,7 @@ namespace CCXT.NET.OKEx.Private
     /// <summary>
     ///
     /// </summary>
-    public class BDepositItem : OdinSdk.BaseLib.Coin.Private.TransferItem, ITransferItem
+    public class BDepositItem : CCXT.NET.Shared.Coin.Private.TransferItem, ITransferItem
     {
         /// <summary>
         /// address
@@ -189,7 +189,7 @@ namespace CCXT.NET.OKEx.Private
     /// <summary>
     ///
     /// </summary>
-    public class OWithdraws : OdinSdk.BaseLib.Coin.Private.Transfers, ITransfers
+    public class OWithdraws : CCXT.NET.Shared.Coin.Private.Transfers, ITransfers
     {
         /// <summary>
         ///
@@ -223,7 +223,7 @@ namespace CCXT.NET.OKEx.Private
     /// <summary>
     ///
     /// </summary>
-    public class OWithdrawItem : OdinSdk.BaseLib.Coin.Private.TransferItem, ITransferItem
+    public class OWithdrawItem : CCXT.NET.Shared.Coin.Private.TransferItem, ITransferItem
     {
         /// <summary>
         /// address

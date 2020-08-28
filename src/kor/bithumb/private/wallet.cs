@@ -1,13 +1,13 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin;
-using OdinSdk.BaseLib.Coin.Private;
+using CCXT.NET.Shared.Coin;
+using CCXT.NET.Shared.Coin.Private;
 
 namespace CCXT.NET.Bithumb.Private
 {
     /// <summary>
     ///
     /// </summary>
-    public class BWallet : OdinSdk.BaseLib.Coin.Private.Wallet, IWallet
+    public class BWallet : CCXT.NET.Shared.Coin.Private.Wallet, IWallet
     {
         /// <summary>
         ///
@@ -51,7 +51,7 @@ namespace CCXT.NET.Bithumb.Private
     /// <summary>
     /// 거래소 회원 지갑 정보
     /// </summary>
-    public class BWalletItem : OdinSdk.BaseLib.Coin.Private.WalletItem, IWalletItem
+    public class BWalletItem : CCXT.NET.Shared.Coin.Private.WalletItem, IWalletItem
     {
         /// <summary>
         ///

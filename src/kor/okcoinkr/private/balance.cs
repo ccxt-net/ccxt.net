@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Private;
+using CCXT.NET.Shared.Coin.Private;
 using System.Collections.Generic;
 
 namespace CCXT.NET.OkCoinKr.Private
@@ -7,7 +7,7 @@ namespace CCXT.NET.OkCoinKr.Private
     /// <summary>
     ///
     /// </summary>
-    public class OBalances : OdinSdk.BaseLib.Coin.Private.Balances, IBalances
+    public class OBalances : CCXT.NET.Shared.Coin.Private.Balances, IBalances
     {
         /// <summary>
         ///
@@ -92,7 +92,7 @@ namespace CCXT.NET.OkCoinKr.Private
     /// <summary>
     ///
     /// </summary>
-    public class OBalanceItem : OdinSdk.BaseLib.Coin.Private.BalanceItem, IBalanceItem
+    public class OBalanceItem : CCXT.NET.Shared.Coin.Private.BalanceItem, IBalanceItem
     {
     }
 }

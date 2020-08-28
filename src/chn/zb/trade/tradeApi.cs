@@ -1,7 +1,7 @@
-﻿using OdinSdk.BaseLib.Coin;
-using OdinSdk.BaseLib.Coin.Trade;
-using OdinSdk.BaseLib.Coin.Types;
-using OdinSdk.BaseLib.Configuration;
+﻿using CCXT.NET.Shared.Coin;
+using CCXT.NET.Shared.Coin.Trade;
+using CCXT.NET.Shared.Coin.Types;
+using CCXT.NET.Shared.Configuration;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -11,7 +11,7 @@ namespace CCXT.NET.Zb.Trade
     /// <summary>
     ///
     /// </summary>
-    public class TradeApi : OdinSdk.BaseLib.Coin.Trade.TradeApi, ITradeApi
+    public class TradeApi : CCXT.NET.Shared.Coin.Trade.TradeApi, ITradeApi
     {
         private readonly string __connect_key;
         private readonly string __secret_key;
@@ -42,7 +42,7 @@ namespace CCXT.NET.Zb.Trade
         /// <summary>
         ///
         /// </summary>
-        public override OdinSdk.BaseLib.Coin.Public.PublicApi publicApi
+        public override CCXT.NET.Shared.Coin.Public.PublicApi publicApi
         {
             get
             {
@@ -61,11 +61,11 @@ namespace CCXT.NET.Zb.Trade
         /// <param name="order_id">Order number registered for sale or purchase</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async ValueTask<MyOrder> FetchMyOrder(string base_name, string quote_name, string order_id, Dictionary<string, object> args = null)
+        public override async ValueTask<MyOrder> FetchMyOrderAsync(string base_name, string quote_name, string order_id, Dictionary<string, object> args = null)
         {
             var _result = new MyOrder(base_name, quote_name);
 
-            var _market = await publicApi.LoadMarket(_result.marketId);
+            var _market = await publicApi.LoadMarketAsync(_result.marketId);
             if (_market.success == true)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
@@ -115,11 +115,11 @@ namespace CCXT.NET.Zb.Trade
         /// <param name="limits">maximum number of items (optional): default 20</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async ValueTask<MyOrders> FetchMyOrders(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
+        public override async ValueTask<MyOrders> FetchMyOrdersAsync(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
         {
             var _result = new MyOrders(base_name, quote_name);
 
-            var _market = await publicApi.LoadMarket(_result.marketId);
+            var _market = await publicApi.LoadMarketAsync(_result.marketId);
             if (_market.success == true)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
@@ -176,11 +176,11 @@ namespace CCXT.NET.Zb.Trade
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async ValueTask<MyOrders> FetchOpenOrders(string base_name, string quote_name, Dictionary<string, object> args = null)
+        public override async ValueTask<MyOrders> FetchOpenOrdersAsync(string base_name, string quote_name, Dictionary<string, object> args = null)
         {
             var _result = new MyOrders(base_name, quote_name);
 
-            var _market = await publicApi.LoadMarket(_result.marketId);
+            var _market = await publicApi.LoadMarketAsync(_result.marketId);
             if (_market.success == true)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
@@ -233,11 +233,11 @@ namespace CCXT.NET.Zb.Trade
         /// <param name="sideType">type of buy(bid) or sell(ask)</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async ValueTask<MyOrder> CreateLimitOrder(string base_name, string quote_name, decimal quantity, decimal price, SideType sideType, Dictionary<string, object> args = null)
+        public override async ValueTask<MyOrder> CreateLimitOrderAsync(string base_name, string quote_name, decimal quantity, decimal price, SideType sideType, Dictionary<string, object> args = null)
         {
             var _result = new MyOrder(base_name, quote_name);
 
-            var _market = await publicApi.LoadMarket(_result.marketId);
+            var _market = await publicApi.LoadMarketAsync(_result.marketId);
             if (_market.success == true)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
@@ -302,11 +302,11 @@ namespace CCXT.NET.Zb.Trade
         /// <param name="sideType">type of buy(bid) or sell(ask)</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async ValueTask<MyOrder> CancelOrder(string base_name, string quote_name, string order_id, decimal quantity, decimal price, SideType sideType, Dictionary<string, object> args = null)
+        public override async ValueTask<MyOrder> CancelOrderAsync(string base_name, string quote_name, string order_id, decimal quantity, decimal price, SideType sideType, Dictionary<string, object> args = null)
         {
             var _result = new MyOrder(base_name, quote_name);
 
-            var _market = await publicApi.LoadMarket(_result.marketId);
+            var _market = await publicApi.LoadMarketAsync(_result.marketId);
             if (_market.success == true)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);

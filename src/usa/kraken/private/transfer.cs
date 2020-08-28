@@ -1,12 +1,12 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Private;
+using CCXT.NET.Shared.Coin.Private;
 
 namespace CCXT.NET.Kraken.Private
 {
     /// <summary>
     ///
     /// </summary>
-    public class KTransferItem : OdinSdk.BaseLib.Coin.Private.TransferItem, ITransferItem
+    public class KTransferItem : CCXT.NET.Shared.Coin.Private.TransferItem, ITransferItem
     {
         /// <summary>
         ///
@@ -94,7 +94,7 @@ namespace CCXT.NET.Kraken.Private
     /// <summary>
     ///
     /// </summary>
-    public class KWithdrawCancel : OdinSdk.BaseLib.Coin.Private.TransferItem, ITransferItem
+    public class KWithdrawCancel : CCXT.NET.Shared.Coin.Private.TransferItem, ITransferItem
     {
         /// <summary>
         ///

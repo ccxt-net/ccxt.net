@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin;
+using CCXT.NET.Shared.Coin;
 using RestSharp;
 using System.Collections.Generic;
 using System.Security.Cryptography;
@@ -12,7 +12,7 @@ namespace CCXT.NET.GDAX
     /// <summary>
     ///
     /// </summary>
-    public sealed class GdaxClient : OdinSdk.BaseLib.Coin.XApiClient, IXApiClient
+    public sealed class GdaxClient : CCXT.NET.Shared.Coin.XApiClient, IXApiClient
     {
         /// <summary>
         ///
@@ -144,9 +144,9 @@ namespace CCXT.NET.GDAX
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async ValueTask<IRestRequest> CreatePostRequest(string endpoint, Dictionary<string, object> args = null)
+        public override async ValueTask<IRestRequest> CreatePostRequestAsync(string endpoint, Dictionary<string, object> args = null)
         {
-            var _request = await base.CreatePostRequest(endpoint, args);
+            var _request = await base.CreatePostRequestAsync(endpoint, args);
 
             if (IsAuthentication == true)
             {
@@ -160,9 +160,9 @@ namespace CCXT.NET.GDAX
 
                 var _nonce = GenerateOnlyNonce(16).ToString();
 
-                var _post_data = this.SerializeObject(_params, Formatting.None);
+                var _json_body = this.SerializeObject(_params, Formatting.None);
                 {
-                    var _sign_data = $"{_nonce}{_request.Method}{endpoint}{_post_data}";
+                    var _sign_data = $"{_nonce}{_request.Method}{endpoint}{_json_body}";
                     var _signature = this.ConvertHexString(Encryptor.ComputeHash(Encoding.UTF8.GetBytes(_sign_data)));
 
                     _request.AddHeader("CB-ACCESS-KEY", ConnectKey);
@@ -171,13 +171,7 @@ namespace CCXT.NET.GDAX
                     _request.AddHeader("CB-ACCESS-PASSPHRASE", base.UserPassword);
                 }
 
-                _request.AddParameter(new Parameter
-                {
-                    ContentType = "",
-                    Name = "application/json",
-                    Type = ParameterType.RequestBody,
-                    Value = _post_data
-                });
+                _request.AddParameter(new Parameter("application/json", _json_body, ParameterType.RequestBody));
             }
 
             return await Task.FromResult(_request);

@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Trade;
+using CCXT.NET.Shared.Coin.Trade;
 using System.Collections.Generic;
 
 namespace CCXT.NET.OkCoinKr.Trade
@@ -7,7 +7,7 @@ namespace CCXT.NET.OkCoinKr.Trade
     /// <summary>
     ///
     /// </summary>
-    public class OCancelOrders : OdinSdk.BaseLib.Coin.Trade.MyOrders, IMyOrders
+    public class OCancelOrders : CCXT.NET.Shared.Coin.Trade.MyOrders, IMyOrders
     {
         /// <summary>
         ///
@@ -69,7 +69,7 @@ namespace CCXT.NET.OkCoinKr.Trade
     /// <summary>
     ///
     /// </summary>
-    public class OPlaceOrder : OdinSdk.BaseLib.Coin.Trade.MyOrder, IMyOrder
+    public class OPlaceOrder : CCXT.NET.Shared.Coin.Trade.MyOrder, IMyOrder
     {
         /// <summary>
         ///
@@ -119,7 +119,7 @@ namespace CCXT.NET.OkCoinKr.Trade
     /// <summary>
     ///
     /// </summary>
-    public class OPlaceOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
+    public class OPlaceOrderItem : CCXT.NET.Shared.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
         ///

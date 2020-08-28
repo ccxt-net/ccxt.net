@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Trade;
-using OdinSdk.BaseLib.Coin.Types;
-using OdinSdk.BaseLib.Configuration;
+using CCXT.NET.Shared.Coin.Trade;
+using CCXT.NET.Shared.Coin.Types;
+using CCXT.NET.Shared.Configuration;
 using System;
 using System.Collections.Generic;
 
@@ -10,7 +10,7 @@ namespace CCXT.NET.CEXIO.Trade
     /// <summary>
     ///
     /// </summary>
-    public class CCancelOrders : OdinSdk.BaseLib.Coin.Trade.MyOrders, IMyOrders
+    public class CCancelOrders : CCXT.NET.Shared.Coin.Trade.MyOrders, IMyOrders
     {
         /// <summary>
         ///
@@ -66,7 +66,7 @@ namespace CCXT.NET.CEXIO.Trade
     /// <summary>
     ///
     /// </summary>
-    public class CCancelOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
+    public class CCancelOrderItem : CCXT.NET.Shared.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         ///// <summary>
         /////
@@ -90,7 +90,7 @@ namespace CCXT.NET.CEXIO.Trade
     /// <summary>
     ///
     /// </summary>
-    public class CCancelAllOrders : OdinSdk.BaseLib.Coin.Trade.MyOrders, IMyOrders
+    public class CCancelAllOrders : CCXT.NET.Shared.Coin.Trade.MyOrders, IMyOrders
     {
         ///// <summary>
         /////
@@ -105,7 +105,7 @@ namespace CCXT.NET.CEXIO.Trade
     /// <summary>
     ///
     /// </summary>
-    public class CMyOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
+    public class CMyOrderItem : CCXT.NET.Shared.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
         /// order id
@@ -337,7 +337,7 @@ namespace CCXT.NET.CEXIO.Trade
     /// <summary>
     ///
     /// </summary>
-    public class CMyOrderItems : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
+    public class CMyOrderItems : CCXT.NET.Shared.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
         /// order id
@@ -571,7 +571,7 @@ namespace CCXT.NET.CEXIO.Trade
     /// <summary>
     ///
     /// </summary>
-    public class COpenOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
+    public class COpenOrderItem : CCXT.NET.Shared.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
         ///

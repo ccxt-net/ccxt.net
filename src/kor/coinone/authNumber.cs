@@ -1,12 +1,12 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin;
+using CCXT.NET.Shared.Coin;
 
 namespace CCXT.NET.Coinone
 {
     /// <summary>
     ///
     /// </summary>
-    public class CAuthNumber : OdinSdk.BaseLib.Coin.NameResult, INameResult
+    public class CAuthNumber : CCXT.NET.Shared.Coin.NameResult, INameResult
     {
         /// <summary>
         ///

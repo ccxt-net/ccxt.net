@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Trade;
-using OdinSdk.BaseLib.Coin.Types;
+using CCXT.NET.Shared.Coin.Trade;
+using CCXT.NET.Shared.Coin.Types;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Coinone.Trade
@@ -8,7 +8,7 @@ namespace CCXT.NET.Coinone.Trade
     /// <summary>
     ///
     /// </summary>
-    public class CMyOpenOrders : OdinSdk.BaseLib.Coin.Trade.MyOrders, IMyOrders
+    public class CMyOpenOrders : CCXT.NET.Shared.Coin.Trade.MyOrders, IMyOrders
     {
         /// <summary>
         /// 성공이면 “success”, 실패할 경우 에러 심블이 세팅된다.
@@ -56,7 +56,7 @@ namespace CCXT.NET.Coinone.Trade
     /// <summary>
     ///
     /// </summary>
-    public class CMyOpenOrderItem : OdinSdk.BaseLib.Coin.Trade.MyOrderItem, IMyOrderItem
+    public class CMyOpenOrderItem : CCXT.NET.Shared.Coin.Trade.MyOrderItem, IMyOrderItem
     {
         /// <summary>
         ///

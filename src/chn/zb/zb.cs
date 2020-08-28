@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin;
+using CCXT.NET.Shared.Coin;
 using RestSharp;
 using System;
 using System.Collections.Generic;
@@ -13,7 +13,7 @@ namespace CCXT.NET.Zb
     /// <summary>
     ///
     /// </summary>
-    public sealed class ZbClient : OdinSdk.BaseLib.Coin.XApiClient, IXApiClient
+    public sealed class ZbClient : CCXT.NET.Shared.Coin.XApiClient, IXApiClient
     {
         /// <summary>
         ///
@@ -228,9 +228,9 @@ namespace CCXT.NET.Zb
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async ValueTask<IRestRequest> CreateGetRequest(string endpoint, Dictionary<string, object> args = null)
+        public override async ValueTask<IRestRequest> CreateGetRequestAsync(string endpoint, Dictionary<string, object> args = null)
         {
-            var _request = await base.CreateGetRequest(endpoint, args);
+            var _request = await base.CreateGetRequestAsync(endpoint, args);
 
             if (IsAuthentication == true)
             {

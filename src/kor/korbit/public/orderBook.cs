@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin.Public;
+using CCXT.NET.Shared.Coin.Public;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Korbit.Public
@@ -8,7 +8,7 @@ namespace CCXT.NET.Korbit.Public
     /// <summary>
     ///
     /// </summary>
-    public class KOrderBook : OdinSdk.BaseLib.Coin.Public.OrderBook, IOrderBook
+    public class KOrderBook : CCXT.NET.Shared.Coin.Public.OrderBook, IOrderBook
     {
         /// <summary>
         /// An array containing a list of ask prices.

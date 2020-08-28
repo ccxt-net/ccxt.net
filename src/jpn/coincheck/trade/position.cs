@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Trade;
-using OdinSdk.BaseLib.Coin.Types;
-using OdinSdk.BaseLib.Configuration;
+using CCXT.NET.Shared.Coin.Trade;
+using CCXT.NET.Shared.Coin.Types;
+using CCXT.NET.Shared.Configuration;
 using System;
 using System.Collections.Generic;
 
@@ -10,7 +10,7 @@ namespace CCXT.NET.CoinCheck.Trade
     /// <summary>
     ///
     /// </summary>
-    public class CMyPositions : OdinSdk.BaseLib.Coin.Trade.MyPositions, IMyPositions
+    public class CMyPositions : CCXT.NET.Shared.Coin.Trade.MyPositions, IMyPositions
     {
         /// <summary>
         ///
@@ -44,7 +44,7 @@ namespace CCXT.NET.CoinCheck.Trade
     /// <summary>
     ///
     /// </summary>
-    public class CMyPositionItem : OdinSdk.BaseLib.Coin.Trade.MyPositionItem, IMyPositionItem
+    public class CMyPositionItem : CCXT.NET.Shared.Coin.Trade.MyPositionItem, IMyPositionItem
     {
         /// <summary>
         /// ID

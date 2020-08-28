@@ -1,72 +1,72 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFrameworks>net472;netstandard2.1</TargetFrameworks>
-    <Title>CryptoCurrency eXchange Trading Library for .NET</Title>
-    <Product>CCXT</Product>
-    <Company>ODINSOFT</Company>
-    <Description>CCXT.NET – CryptoCurrency eXchange Trading Library for .NET</Description>
-    <Copyright>Copyright OdinSoftware Co., Ltd. 2020</Copyright>
-    <AssemblyTitle>CCXT.NET</AssemblyTitle>
-    <Authors>SEONGAHN LEE</Authors>
-    <AssemblyName>CCXT.NET</AssemblyName>
-    <PackageId>CCXT.NET</PackageId>
-    <PackageTags>bitcoin;cryptocurrency;exchange;trading;market-data;ccxt;exchange-markets;altcoin;api;arbitrage;bot;crypto;e-commerce;invest;library;strategy;trade;merchant;cryptocoin</PackageTags>
-    <PackageProjectUrl>https://github.com/lisa3907/ccxt.net</PackageProjectUrl>
-    <PackageIcon>ccxt.net.api.png</PackageIcon>
-    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
-    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
-    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
-    <RootNamespace>CCXT.NET</RootNamespace>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.3.7</Version>
-    <PackageReleaseNotes></PackageReleaseNotes>
-    <AssemblyVersion>1.3.7.0</AssemblyVersion>
-    <FileVersion>1.3.7.0</FileVersion>
-    <LangVersion>latest</LangVersion>
-    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
-  </PropertyGroup>
+    <PropertyGroup>
+        <TargetFrameworks>net472;netstandard2.1</TargetFrameworks>
+        <Title>CryptoCurrency eXchange Trading Library for .NET</Title>
+        <Product>CCXT</Product>
+        <Company>ODINSOFT</Company>
+        <Description>CCXT.NET – CryptoCurrency eXchange Trading Library for .NET</Description>
+        <Copyright>Copyright OdinSoftware Co., Ltd. 2020</Copyright>
+        <AssemblyTitle>CCXT.NET</AssemblyTitle>
+        <Authors>SEONGAHN LEE</Authors>
+        <AssemblyName>CCXT.NET</AssemblyName>
+        <PackageId>CCXT.NET</PackageId>
+        <PackageTags>bitcoin;cryptocurrency;exchange;trading;market-data;ccxt;exchange-markets;altcoin;api;arbitrage;bot;crypto;e-commerce;invest;library;strategy;trade;merchant;cryptocoin</PackageTags>
+        <PackageProjectUrl>https://github.com/lisa3907/ccxt.net</PackageProjectUrl>
+        <PackageIcon>ccxt.net.api.png</PackageIcon>
+        <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+        <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+        <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+        <RootNamespace>CCXT.NET</RootNamespace>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Version>1.3.7</Version>
+        <PackageReleaseNotes>FetchOHLCVs errors since update #13</PackageReleaseNotes>
+        <AssemblyVersion>1.3.7.0</AssemblyVersion>
+        <FileVersion>1.3.7.0</FileVersion>
+        <LangVersion>latest</LangVersion>
+        <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+        <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net472|AnyCPU'">
-    <DocumentationFile>bin\Debug\net472\CCXT.NET.xml</DocumentationFile>
-    <DefineConstants>TRACE;DEBUG;NETFRAMEWORK;NET472</DefineConstants>
-  </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net472|AnyCPU'">
+        <DocumentationFile>bin\Debug\net472\CCXT.NET.xml</DocumentationFile>
+        <DefineConstants>TRACE;DEBUG;NETFRAMEWORK;NET472</DefineConstants>
+    </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net472|AnyCPU'">
-    <DefineConstants>TRACE;RELEASE;NETFRAMEWORK;NET472</DefineConstants>
-    <DocumentationFile>bin\Release\net472\CCXT.NET.xml</DocumentationFile>
-  </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net472|AnyCPU'">
+        <DefineConstants>TRACE;RELEASE;NETFRAMEWORK;NET472</DefineConstants>
+        <DocumentationFile>bin\Release\net472\CCXT.NET.xml</DocumentationFile>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <None Include="..\LICENSE.txt">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-  </ItemGroup>
-  
-  <ItemGroup>
-    <None Include="..\logo-files\ccxt.net.api.png">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-  </ItemGroup>
+    <ItemGroup>
+        <None Include="..\LICENSE.txt">
+            <Pack>True</Pack>
+            <PackagePath></PackagePath>
+        </None>
+    </ItemGroup>
 
-  <ItemGroup>
-    <Content Include="..\LICENSE.txt" Link="LICENSE.txt" />
-  </ItemGroup>
-  
-  <ItemGroup>
-    <PackageReference Include="CellWars.Threading.AsyncLock" Version="1.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.1.0" />
-    <PackageReference Include="Microsoft.Win32.Registry" Version="4.7.0" />
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
-    <PackageReference Include="OdinSdk.BaseLib" Version="2.2.6" />
-    <PackageReference Include="RestSharp" Version="106.6.10" />
-    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.6.0" />
-    <PackageReference Include="System.ServiceModel.Primitives" Version="4.7.0" />
-    <PackageReference Include="System.ValueTuple" Version="4.5.0" />
-    <PackageReference Include="Telegram.Bot" Version="15.1.0" />
-  </ItemGroup>
+    <ItemGroup>
+        <None Include="..\logo-files\ccxt.net.api.png">
+            <Pack>True</Pack>
+            <PackagePath></PackagePath>
+        </None>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Content Include="..\LICENSE.txt" Link="LICENSE.txt" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="CellWars.Threading.AsyncLock" Version="1.0.0" />
+        <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.1.7" />
+        <PackageReference Include="Microsoft.Win32.Registry" Version="4.7.0" />
+        <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+        <PackageReference Include="RestSharp" Version="106.11.4" />
+        <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.7.1" />
+        <PackageReference Include="System.ServiceModel.Primitives" Version="4.7.0" />
+        <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.5.4" />
+        <PackageReference Include="System.ValueTuple" Version="4.5.0" />
+        <PackageReference Include="Telegram.Bot" Version="15.7.1" />
+    </ItemGroup>
 
 </Project>

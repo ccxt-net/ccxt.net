@@ -1,14 +1,14 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin;
-using OdinSdk.BaseLib.Coin.Private;
+using CCXT.NET.Shared.Coin;
+using CCXT.NET.Shared.Coin.Private;
 
 namespace CCXT.NET.Bithumb.Private
 {
     /// <summary>
     ///
     /// </summary>
-    public class BBalance : OdinSdk.BaseLib.Coin.Private.Balance, IBalance
+    public class BBalance : CCXT.NET.Shared.Coin.Private.Balance, IBalance
     {
         /// <summary>
         ///
@@ -61,7 +61,7 @@ namespace CCXT.NET.Bithumb.Private
     /// <summary>
     /// bithumb 거래소 회원 지갑 정보
     /// </summary>
-    public class BBalanceItem : OdinSdk.BaseLib.Coin.Private.BalanceItem, IBalanceItem
+    public class BBalanceItem : CCXT.NET.Shared.Coin.Private.BalanceItem, IBalanceItem
     {
         /// <summary>
         ///

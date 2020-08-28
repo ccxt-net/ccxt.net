@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin;
-using OdinSdk.BaseLib.Configuration;
+using CCXT.NET.Shared.Coin;
+using CCXT.NET.Shared.Configuration;
 
 namespace CCXT.NET.Korbit
 {

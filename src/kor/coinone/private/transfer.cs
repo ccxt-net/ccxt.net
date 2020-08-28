@@ -1,13 +1,13 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Private;
-using OdinSdk.BaseLib.Coin.Types;
+using CCXT.NET.Shared.Coin.Private;
+using CCXT.NET.Shared.Coin.Types;
 
 namespace CCXT.NET.Coinone.Private
 {
     /// <summary>
     ///
     /// </summary>
-    public class CTransfer : OdinSdk.BaseLib.Coin.Private.Transfer, ITransfer
+    public class CTransfer : CCXT.NET.Shared.Coin.Private.Transfer, ITransfer
     {
         /// <summary>
         ///
@@ -36,7 +36,7 @@ namespace CCXT.NET.Coinone.Private
     /// <summary>
     ///
     /// </summary>
-    public class CTransferItem : OdinSdk.BaseLib.Coin.Private.TransferItem, ITransferItem
+    public class CTransferItem : CCXT.NET.Shared.Coin.Private.TransferItem, ITransferItem
     {
         /// <summary>
         ///

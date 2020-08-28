@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json;
-using OdinSdk.BaseLib.Coin.Public;
+using CCXT.NET.Shared.Coin.Public;
 using System.Globalization;
 
 namespace CCXT.NET.Quoinex.Public
@@ -7,7 +7,7 @@ namespace CCXT.NET.Quoinex.Public
     /// <summary>
     ///
     /// </summary>
-    public class QTickerItem : OdinSdk.BaseLib.Coin.Public.TickerItem, ITickerItem
+    public class QTickerItem : CCXT.NET.Shared.Coin.Public.TickerItem, ITickerItem
     {
         /// <summary>
         /// string symbol of the market ('BTCUSD', 'ETHBTC', ...)

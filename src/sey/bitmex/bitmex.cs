@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using OdinSdk.BaseLib.Coin;
+using CCXT.NET.Shared.Coin;
 using RestSharp;
 using System;
 using System.Collections.Generic;
@@ -14,7 +14,7 @@ namespace CCXT.NET.BitMEX
     /// <summary>
     ///
     /// </summary>
-    public sealed class BitmexClient : OdinSdk.BaseLib.Coin.XApiClient, IXApiClient
+    public sealed class BitmexClient : CCXT.NET.Shared.Coin.XApiClient, IXApiClient
     {
         /// <summary>
         ///
@@ -150,9 +150,9 @@ namespace CCXT.NET.BitMEX
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async ValueTask<IRestRequest> CreatePostRequest(string endpoint, Dictionary<string, object> args = null)
+        public override async ValueTask<IRestRequest> CreatePostRequestAsync(string endpoint, Dictionary<string, object> args = null)
         {
-            var _request = await base.CreatePostRequest(endpoint);
+            var _request = await base.CreatePostRequestAsync(endpoint);
 
             if (IsAuthentication == true)
             {
@@ -167,16 +167,7 @@ namespace CCXT.NET.BitMEX
                 if (args != null && args.Count > 0)
                 {
                     _json_body = Regex.Unescape(this.SerializeObject(args, Formatting.None));
-
-                    _request.AddParameter(new Parameter
-                    {
-                        ContentType = "",
-                        Name = "application/json",
-                        Type = ParameterType.RequestBody,
-                        Value = _json_body
-                    });
-
-                    //_request.Resource += $"?{_post_data}";
+                    _request.AddParameter(new Parameter("application/json", _json_body, ParameterType.RequestBody));
                 }
 
                 var _signature = await CreateSignature(_request.Method, endpoint, _nonce, _json_body);
@@ -196,9 +187,9 @@ namespace CCXT.NET.BitMEX
         /// <param name="endpoint"></param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async ValueTask<IRestRequest> CreatePutRequest(string endpoint, Dictionary<string, object> args = null)
+        public override async ValueTask<IRestRequest> CreatePutRequestAsync(string endpoint, Dictionary<string, object> args = null)
         {
-            var _request = await base.CreatePutRequest(endpoint);
+            var _request = await base.CreatePutRequestAsync(endpoint);
 
             if (IsAuthentication == true)
             {
@@ -208,14 +199,7 @@ namespace CCXT.NET.BitMEX
                 if (args != null && args.Count > 0)
                 {
                     _json_body = Regex.Unescape(this.SerializeObject(args, Formatting.None));
-
-                    _request.AddParameter(new Parameter
-                    {
-                        ContentType = "",
-                        Name = "application/json",
-                        Type = ParameterType.RequestBody,
-                        Value = _json_body
-                    });
+                    _request.AddParameter(new Parameter("application/json", _json_body, ParameterType.RequestBody));
                 }
 
                 var _signature = await CreateSignature(_request.Method, endpoint, _nonce, _json_body);
@@ -235,9 +219,9 @@ namespace CCXT.NET.BitMEX
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async ValueTask<IRestRequest> CreateGetRequest(string endpoint, Dictionary<string, object> args = null)
+        public override async ValueTask<IRestRequest> CreateGetRequestAsync(string endpoint, Dictionary<string, object> args = null)
         {
-            var _request = await base.CreateGetRequest(endpoint, args);
+            var _request = await base.CreateGetRequestAsync(endpoint, args);
 
             if (IsAuthentication == true)
             {
@@ -265,9 +249,9 @@ namespace CCXT.NET.BitMEX
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async ValueTask<IRestRequest> CreateDeleteRequest(string endpoint, Dictionary<string, object> args = null)
+        public override async ValueTask<IRestRequest> CreateDeleteRequestAsync(string endpoint, Dictionary<string, object> args = null)
         {
-            var _request = await base.CreateDeleteRequest(endpoint);
+            var _request = await base.CreateDeleteRequestAsync(endpoint);
 
             if (IsAuthentication == true)
             {
@@ -282,16 +266,7 @@ namespace CCXT.NET.BitMEX
                 if (args != null && args.Count > 0)
                 {
                     _json_body = Regex.Unescape(this.SerializeObject(args, Formatting.None));
-
-                    _request.AddParameter(new Parameter
-                    {
-                        ContentType = "",
-                        Name = "application/json",
-                        Type = ParameterType.RequestBody,
-                        Value = _json_body
-                    });
-
-                    //_request.Resource += $"?{_post_data}";
+                    _request.AddParameter(new Parameter("application/json", _json_body, ParameterType.RequestBody));
                 }
 
                 var _signature = await CreateSignature(_request.Method, endpoint, _nonce, _json_body);
