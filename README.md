@@ -1,8 +1,8 @@
 # CCXT.NET - CryptoCurrency eXchange Trading Library for .NET
 
-[![Build status](https://ci.appveyor.com/api/projects/status/dnp9i3t6sexv9tpa?svg=true)](https://ci.appveyor.com/project/lisa3907/ccxt-net)
+[![Build status](https://ci.appveyor.com/api/projects/status/dnp9i3t6sexv9tpa?svg=true)](https://ci.appveyor.com/project/ccxt-net/ccxt-net)
 [![NuGet Downloads](https://img.shields.io/nuget/dt/ccxt.net.svg)](https://www.nuget.org/packages/CCXT.NET)
-[![License](https://img.shields.io/github/license/lisa3907/ccxt.net.svg)](https://github.com/lisa3907/ccxt.net/blob/master/LICENSE.txt)
+[![License](https://img.shields.io/github/license/ccx-net/ccxt.net.svg)](https://github.com/ccx-net/ccxt.net/blob/master/LICENSE.txt)
 
 This project is an extension of [ccxt](https://github.com/ccxt/ccxt). If you are a .Net C# programmer, ccxt.net might be useful.
 
@@ -29,7 +29,7 @@ The ccxt.net library currently supports the following cryptocurrency exchange ma
 |[![quoinex](https://user-images.githubusercontent.com/1294454/45798859-1a872600-bcb4-11e8-8746-69291ce87b04.jpg)](https://www.liquid.com?affiliate=SbzC62lt30976)                            | quoinex            | [QUOINEX](https://www.liquid.com?affiliate=SbzC62lt30976)                            | 2     | [API](https://developers.quoine.com)                                                             |                                  | Japan, China, Taiwan																	  |
 |[![bithumb](https://user-images.githubusercontent.com/1294454/30597177-ea800172-9d5e-11e7-804c-b9d4fa9b56b0.jpg)](https://www.bithumb.com)                                                   | bithumb            | [Bithumb](https://www.bithumb.com)                                                   | *     | [API](https://apidocs.bithumb.com)                                                               |                                  | South Korea																			  |
 |[![coinone](https://user-images.githubusercontent.com/1294454/38003300-adc12fba-323f-11e8-8525-725f53c4a659.jpg)](https://coinone.co.kr)                                                     | coinone            | [CoinOne](https://coinone.co.kr)                                                     | 2     | [API](https://doc.coinone.co.kr)                                                                 |                                  | South Korea																			  |
-|[![korbit](https://github.com/lisa3907/ccxt.net/blob/master/logo-files/favicon-korbit-16x16.png?raw=true)](https://www.korbit.com)															  | korbit             | [Korbit](https://www.korbit.co.kr/)												  | 1     | [API](https://apidocs.korbit.co.kr/)															 |									| South Korea																			  |
+|[![korbit](https://github.com/ccx-net/ccxt.net/blob/master/logo-files/favicon-korbit-16x16.png?raw=true)](https://www.korbit.com)															  | korbit             | [Korbit](https://www.korbit.co.kr/)												  | 1     | [API](https://apidocs.korbit.co.kr/)															 |									| South Korea																			  |
 |[![upbit](https://user-images.githubusercontent.com/1294454/49245610-eeaabe00-f423-11e8-9cba-4b0aed794799.jpg)](https://upbit.com)                                                           | upbit              | [Upbit](https://upbit.com)                                                           | 1     | [API](https://docs.upbit.com/docs/%EC%9A%94%EC%B2%AD-%EC%88%98-%EC%A0%9C%ED%95%9C)               |									| South Korea																			  |
 |[![bitmex](https://user-images.githubusercontent.com/1294454/27766319-f653c6e6-5ed4-11e7-933d-f0bc3699ae8f.jpg)](https://www.bitmex.com/register/5eEkGA)                                     | bitmex             | [BitMEX](https://www.bitmex.com/register/5eEkGA)                                     | 1     | [API](https://www.bitmex.com/app/apiOverview)                                                    |                                  | Seychelles																			  |
 |[![bittrex](https://user-images.githubusercontent.com/1294454/27766352-cf0b3c26-5ed5-11e7-82b7-f3826b7a97d8.jpg)](https://bittrex.com)														  | bittrex			   | [Bittrex](https://bittrex.com)														  | 1.1   | [API](https://bittrex.github.io/api/)															 | 									| US																					  |
@@ -44,31 +44,31 @@ The ccxt.net library currently supports the following cryptocurrency exchange ma
 The list above is updated frequently, new crypto markets, altcoin exchanges, bug fixes, API endpoints are introduced and added on a regular basis. 
 If you don't find a cryptocurrency exchange market in the list above and/or want another exchange to be added, post or send us a link to it by opening an issue here on GitHub or via email.
 
-The library is under [MIT license](https://github.com/lisa3907/ccxt.net/blob/master/LICENSE.txt), that means it's absolutely free for any developer to build commercial and opensource software on top of it, but use it at your own risk with no warranties, as is.
+The library is under [MIT license](https://github.com/ccx-net/ccxt.net/blob/master/LICENSE.txt), that means it's absolutely free for any developer to build commercial and opensource software on top of it, but use it at your own risk with no warranties, as is.
 
 
 ## Install
 
-You can also clone it into your project directory from [ccxt.net GitHub repository](https://github.com/lisa3907/ccxt.net):
+You can also clone it into your project directory from [ccxt.net GitHub repository](https://github.com/ccx-net/ccxt.net):
 
 ```shell
-git clone https://github.com/lisa3907/ccxt.net.git
+git clone https://github.com/ccx-net/ccxt.net.git
 ```
 
 
 ## Documentation
 
-Read the [Manual](https://github.com/lisa3907/ccxt.net/wiki) for more details.
+Read the [Manual](https://github.com/ccx-net/ccxt.net/wiki) for more details.
 
 
 ## Relase
 
- - [CCXT.NET](https://github.com/lisa3907/ccxt.net/releases)
+ - [CCXT.NET](https://github.com/ccx-net/ccxt.net/releases)
 
 
 ## Contributing
 
-Please read the [CONTRIBUTING](https://github.com/lisa3907/ccxt.net/blob/master/CONTRIBUTING.md) document before making changes that you would like adopted in the code. Also, read the [Manual](https://github.com/lisa3907/ccxt.net/wiki) for more details.
+Please read the [CONTRIBUTING](https://github.com/ccx-net/ccxt.net/blob/master/CONTRIBUTING.md) document before making changes that you would like adopted in the code. Also, read the [Manual](https://github.com/ccx-net/ccxt.net/wiki) for more details.
 
 
 ## Support Developer Team
