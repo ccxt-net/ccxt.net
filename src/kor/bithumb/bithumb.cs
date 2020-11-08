@@ -170,7 +170,7 @@ namespace CCXT.NET.Bithumb
                         _request.AddHeader("Api-Nonce", _nonce);
                     }
 
-                    _request.AddParameter(new Parameter("application/x-www-form-urlencoded", _post_data, ParameterType.RequestBody));
+                    _request.AddParameter("application/x-www-form-urlencoded", _post_data, ParameterType.RequestBody);
                 }
             }
 

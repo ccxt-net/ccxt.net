@@ -92,7 +92,9 @@ namespace CCXT.NET.Shared.Serialize
                 }
                 else if (_token.Type == JTokenType.String)
                 {
-                    _result = Decimal.Parse(_token.ToString(), NumberStyles.Number | NumberStyles.AllowExponent);
+                    // Binance sample error Issue#15
+                    // _result = Decimal.Parse(_token.ToString(), NumberStyles.Number | NumberStyles.AllowExponent);
+                    Decimal.TryParse(_token.ToString(), out _result);
                 }
             }
 

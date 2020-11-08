@@ -235,7 +235,7 @@ namespace CCXT.NET.ItBit
                         _request.AddHeader("X-Auth-Nonce", _nonce);
                     }
 
-                    _request.AddParameter(new Parameter("application/json", _post_data, ParameterType.RequestBody));
+                    _request.AddParameter("application/json", _post_data, ParameterType.RequestBody);
                 }
             }
 
@@ -289,7 +289,7 @@ namespace CCXT.NET.ItBit
                         _request.AddHeader("X-Auth-Nonce", _nonce);
                     }
 
-                    _request.AddParameter(new Parameter("application/json", _delete_data, ParameterType.RequestBody));
+                    _request.AddParameter("application/json", _delete_data, ParameterType.RequestBody);
                 }
             }
 

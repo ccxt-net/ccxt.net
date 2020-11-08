@@ -171,7 +171,7 @@ namespace CCXT.NET.OkCoinKr
                     _post_data += $"&sign={_signature.ToUpper()}";
                 }
 
-                _request.AddParameter(new Parameter("application/x-www-form-urlencoded", _post_data, ParameterType.RequestBody));
+                _request.AddParameter("application/x-www-form-urlencoded", _post_data, ParameterType.RequestBody);
             }
 
             return await Task.FromResult(_request);

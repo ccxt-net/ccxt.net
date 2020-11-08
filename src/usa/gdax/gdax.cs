@@ -171,7 +171,7 @@ namespace CCXT.NET.GDAX
                     _request.AddHeader("CB-ACCESS-PASSPHRASE", base.UserPassword);
                 }
 
-                _request.AddParameter(new Parameter("application/json", _json_body, ParameterType.RequestBody));
+                _request.AddParameter("application/json", _json_body, ParameterType.RequestBody);
             }
 
             return await Task.FromResult(_request);
