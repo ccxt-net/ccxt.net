@@ -69,7 +69,7 @@ namespace CCXT.NET.Bitflyer.Private
                 var _params = privateClient.MergeParamsAndArgs(args);
 
                 var _json_value = await privateClient.CallApiGet1Async("/v1/me/getaddresses", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -136,7 +136,7 @@ namespace CCXT.NET.Bitflyer.Private
                     privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
                     var _json_value = await privateClient.CallApiGet1Async("/v1/me/getcoinins", _params);
-#if RAWJSON
+#if DEBUG
                     _result.rawJson += _json_value.Content;
 #endif
                     var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -165,7 +165,7 @@ namespace CCXT.NET.Bitflyer.Private
                     privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
                     var _json_value = await privateClient.CallApiGet1Async("/v1/me/getcoinouts", _params);
-#if RAWJSON
+#if DEBUG
                     _result.rawJson += _json_value.Content;
 #endif
                     var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -215,7 +215,7 @@ namespace CCXT.NET.Bitflyer.Private
                 var _params = privateClient.MergeParamsAndArgs(args);
 
                 var _json_value = await privateClient.CallApiGet1Async("/v1/me/getbalance", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -264,7 +264,7 @@ namespace CCXT.NET.Bitflyer.Private
                 var _params = privateClient.MergeParamsAndArgs(args);
 
                 var _json_value = await privateClient.CallApiGet1Async("/v1/me/getbalance", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);

@@ -55,7 +55,7 @@ namespace CCXT.NET.Poloniex.Public
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async("", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -149,7 +149,7 @@ namespace CCXT.NET.Poloniex.Public
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async("", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -198,7 +198,7 @@ namespace CCXT.NET.Poloniex.Public
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async("", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -256,7 +256,7 @@ namespace CCXT.NET.Poloniex.Public
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async("", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -321,7 +321,7 @@ namespace CCXT.NET.Poloniex.Public
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async("", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -400,7 +400,7 @@ namespace CCXT.NET.Poloniex.Public
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async("", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);

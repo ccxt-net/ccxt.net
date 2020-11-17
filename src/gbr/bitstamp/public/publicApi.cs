@@ -49,7 +49,7 @@ namespace CCXT.NET.Bitstamp.Public
                 var _params = publicClient.MergeParamsAndArgs(args);
 
                 var _json_value = await publicClient.CallApiGet1Async("/v2/trading-pairs-info/", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -146,7 +146,7 @@ namespace CCXT.NET.Bitstamp.Public
                 var _params = publicClient.MergeParamsAndArgs(args);
 
                 var _json_value = await publicClient.CallApiGet1Async($"/v2/ticker/{_market.result.symbol}", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -189,7 +189,7 @@ namespace CCXT.NET.Bitstamp.Public
                 var _params = publicClient.MergeParamsAndArgs(args);
 
                 var _json_value = await publicClient.CallApiGet1Async($"/v2/order_book/{_market.result.symbol}", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -241,7 +241,7 @@ namespace CCXT.NET.Bitstamp.Public
                 var _params = publicClient.MergeParamsAndArgs(args);
 
                 var _json_value = await publicClient.CallApiGet1Async($"/v2/transactions/{_market.result.symbol}", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);

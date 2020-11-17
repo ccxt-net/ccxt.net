@@ -223,7 +223,7 @@ namespace CCXT.NET.Shared.Coin.Public
             set;
         }
 
-#if RAWJSON
+#if DEBUG
 
         /// <summary>
         ///
@@ -270,7 +270,7 @@ namespace CCXT.NET.Shared.Coin.Public
             set;
         }
 
-#if RAWJSON
+#if DEBUG
 
         /// <summary>
         ///

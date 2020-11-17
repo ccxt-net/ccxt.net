@@ -1,4 +1,5 @@
 ﻿using CCXT.NET.Shared.Configuration;
+using Newtonsoft.Json;
 using System.Collections.Generic;
 
 namespace CCXT.NET.Shared.Coin.Public
@@ -369,7 +370,7 @@ namespace CCXT.NET.Shared.Coin.Public
             get;
             set;
         }
-#if RAWJSON
+#if DEBUG
         /// <summary>
         ///
         /// </summary>
@@ -413,7 +414,7 @@ namespace CCXT.NET.Shared.Coin.Public
             get;
             set;
         }
-#if RAWJSON
+#if DEBUG
         /// <summary>
         ///
         /// </summary>
@@ -452,7 +453,7 @@ namespace CCXT.NET.Shared.Coin.Public
     /// </summary>
     public interface ITickers : IApiResult<List<ITickerItem>>
     {
-#if RAWJSON
+#if DEBUG
 
         /// <summary>
         ///
@@ -479,7 +480,7 @@ namespace CCXT.NET.Shared.Coin.Public
             this.result = new List<ITickerItem>();
         }
 
-#if RAWJSON
+#if DEBUG
         /// <summary>
         ///
         /// </summary>

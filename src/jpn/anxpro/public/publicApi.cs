@@ -109,7 +109,7 @@ namespace CCXT.NET.Anxpro.Public
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async("money/ticker", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -163,7 +163,7 @@ namespace CCXT.NET.Anxpro.Public
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async("money/ticker", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -211,7 +211,7 @@ namespace CCXT.NET.Anxpro.Public
                 var _params = publicClient.MergeParamsAndArgs(args);
 
                 var _json_value = await publicClient.CallApiGet1Async($"{_market.result.symbol}/money/depth/full", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);

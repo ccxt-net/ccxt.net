@@ -78,7 +78,7 @@ namespace CCXT.NET.Bitfinex.Private
                 }
 
                 var _json_value = await privateClient.CallApiPost1Async("/v1/deposit/new", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -135,7 +135,7 @@ namespace CCXT.NET.Bitfinex.Private
                 }
 
                 var _json_value = await privateClient.CallApiPost1Async("/v1/deposit/new", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -194,7 +194,7 @@ namespace CCXT.NET.Bitfinex.Private
                 }
 
                 var _json_value = await privateClient.CallApiPost1Async("/v1/withdraw", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -271,7 +271,7 @@ namespace CCXT.NET.Bitfinex.Private
                 }
 
                 var _json_value = await privateClient.CallApiPost1Async("/v1/history/movements", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -332,7 +332,7 @@ namespace CCXT.NET.Bitfinex.Private
                 var _params = privateClient.MergeParamsAndArgs(args);
 
                 var _json_value = await privateClient.CallApiPost1Async("/v1/balances", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -381,7 +381,7 @@ namespace CCXT.NET.Bitfinex.Private
                 var _params = privateClient.MergeParamsAndArgs(args);
 
                 var _json_value = await privateClient.CallApiPost1Async("/v1/balances", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);

@@ -30,7 +30,7 @@
 
     <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net472|AnyCPU'">
         <DocumentationFile>bin\Debug\net472\CCXT.NET.xml</DocumentationFile>
-        <DefineConstants>TRACE;DEBUG;NETFRAMEWORK;NET472</DefineConstants>
+        <DefineConstants>TRACE;DEBUG;NETFRAMEWORK;NET472;RAWJSON</DefineConstants>
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net472|AnyCPU'">

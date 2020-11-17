@@ -78,7 +78,7 @@ namespace CCXT.NET.Zb.Private
                 }
 
                 var _json_value = await privateClient.CallApiGet1Async($"/getUserAddress", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -134,7 +134,7 @@ namespace CCXT.NET.Zb.Private
                 }
 
                 var _json_value = await privateClient.CallApiGet1Async("/withdraw", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -210,7 +210,7 @@ namespace CCXT.NET.Zb.Private
                     privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
                     var _json_value = await privateClient.CallApiGet1Async("/getChargeRecord", _params);
-#if RAWJSON
+#if DEBUG
                     _result.rawJson += _json_value.Content;
 #endif
                     var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -225,7 +225,7 @@ namespace CCXT.NET.Zb.Private
 
                             foreach (var _d in _deposits)
                             {
-#if RAWJSON
+#if DEBUG
                                 if (String.IsNullOrEmpty(_d.transactionId) == true)
                                     continue;
 #endif
@@ -249,7 +249,7 @@ namespace CCXT.NET.Zb.Private
                     privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
                     var _json_value = await privateClient.CallApiGet1Async("/getWithdrawRecord", _params);
-#if RAWJSON
+#if DEBUG
                     _result.rawJson += _json_value.Content;
 #endif
                     var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -306,7 +306,7 @@ namespace CCXT.NET.Zb.Private
                 }
 
                 var _json_value = await privateClient.CallApiGet1Async($"/getAccountInfo", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);

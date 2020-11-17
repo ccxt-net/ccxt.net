@@ -80,7 +80,7 @@ namespace CCXT.NET.Zb.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiGet1Async("/getOrder", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -138,7 +138,7 @@ namespace CCXT.NET.Zb.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiGet1Async("/getOrdersIgnoreTradeType", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -196,7 +196,7 @@ namespace CCXT.NET.Zb.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiGet1Async("/getUnfinishedOrdersIgnoreTradeType", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -256,7 +256,7 @@ namespace CCXT.NET.Zb.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiGet1Async($"/order", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -321,7 +321,7 @@ namespace CCXT.NET.Zb.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiGet1Async($"/cancelOrder", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);

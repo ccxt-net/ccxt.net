@@ -80,7 +80,7 @@ namespace CCXT.NET.Kraken.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async("/0/private/QueryOrders", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -142,7 +142,7 @@ namespace CCXT.NET.Kraken.Trade
                 // open orders
                 {
                     var _json_value = await tradeClient.CallApiPost1Async("/0/private/OpenOrders", _params);
-#if RAWJSON
+#if DEBUG
                     _result.rawJson += _json_value.Content;
 #endif
                     var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -174,7 +174,7 @@ namespace CCXT.NET.Kraken.Trade
                 if (_result.success == true)
                 {
                     var _json_value = await tradeClient.CallApiPost1Async("/0/private/ClosedOrders", _params);
-#if RAWJSON
+#if DEBUG
                     _result.rawJson += _json_value.Content;
 #endif
                     var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -231,7 +231,7 @@ namespace CCXT.NET.Kraken.Trade
                 var _params = tradeClient.MergeParamsAndArgs(args);
 
                 var _json_value = await tradeClient.CallApiPost1Async("/0/private/OpenOrders", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -282,7 +282,7 @@ namespace CCXT.NET.Kraken.Trade
                 var _params = tradeClient.MergeParamsAndArgs(args);
 
                 var _json_value = await tradeClient.CallApiPost1Async("/0/private/OpenOrders", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -336,7 +336,7 @@ namespace CCXT.NET.Kraken.Trade
                 var _params = tradeClient.MergeParamsAndArgs(args);
 
                 var _json_value = await tradeClient.CallApiPost1Async("/0/private/OpenPositions", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -392,7 +392,7 @@ namespace CCXT.NET.Kraken.Trade
                 var _params = tradeClient.MergeParamsAndArgs(args);
 
                 var _json_value = await tradeClient.CallApiPost1Async("/0/private/TradesHistory", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -457,7 +457,7 @@ namespace CCXT.NET.Kraken.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async($"/0/private/AddOrder", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -541,7 +541,7 @@ namespace CCXT.NET.Kraken.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async($"/0/private/AddOrder", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -609,7 +609,7 @@ namespace CCXT.NET.Kraken.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async($"/0/private/CancelOrder", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);

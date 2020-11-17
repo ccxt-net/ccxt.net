@@ -230,7 +230,7 @@ namespace CCXT.NET.Shared.Coin.Trade
             set;
         }
 
-#if RAWJSON
+#if DEBUG
 
         /// <summary>
         ///
@@ -277,7 +277,7 @@ namespace CCXT.NET.Shared.Coin.Trade
             set;
         }
 
-#if RAWJSON
+#if DEBUG
 
         /// <summary>
         ///

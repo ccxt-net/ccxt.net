@@ -78,7 +78,7 @@ namespace CCXT.NET.Bittrex.Private
                 }
 
                 var _json_value = await privateClient.CallApiGet1Async("/v1.1/account/getdepositaddress", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -131,7 +131,7 @@ namespace CCXT.NET.Bittrex.Private
                 }
 
                 var _json_value = await privateClient.CallApiPost1Async("/v1.1/account/withdraw", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -209,7 +209,7 @@ namespace CCXT.NET.Bittrex.Private
                     privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
                     var _json_value = await privateClient.CallApiGet1Async("/v1.1/account/getdeposithistory", _params);
-#if RAWJSON
+#if DEBUG
                     _result.rawJson += _json_value.Content;
 #endif
                     var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -252,7 +252,7 @@ namespace CCXT.NET.Bittrex.Private
                     privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
                     var _json_value = await privateClient.CallApiGet1Async("/v1.1/account/getwithdrawalhistory", _params);
-#if RAWJSON
+#if DEBUG
                     _result.rawJson += _json_value.Content;
 #endif
                     var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -323,7 +323,7 @@ namespace CCXT.NET.Bittrex.Private
                     privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
                     var _json_value = await privateClient.CallApiGet1Async("/v1.1/account/getdeposithistory", _params);
-#if RAWJSON
+#if DEBUG
                     _result.rawJson += _json_value.Content;
 #endif
                     var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -364,7 +364,7 @@ namespace CCXT.NET.Bittrex.Private
                     privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
                     var _json_value = await privateClient.CallApiGet1Async("/v1.1/account/getwithdrawalhistory", _params);
-#if RAWJSON
+#if DEBUG
                     _result.rawJson += _json_value.Content;
 #endif
                     var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -431,7 +431,7 @@ namespace CCXT.NET.Bittrex.Private
                 }
 
                 var _json_value = await privateClient.CallApiGet1Async("/v1.1/account/getbalance", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -478,7 +478,7 @@ namespace CCXT.NET.Bittrex.Private
                 var _params = privateClient.MergeParamsAndArgs(args);
 
                 var _json_value = await privateClient.CallApiGet1Async("/v1.1/account/getbalances", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);

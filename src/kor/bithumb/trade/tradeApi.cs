@@ -81,7 +81,7 @@ namespace CCXT.NET.Bithumb.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async("/info/order_detail", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -179,7 +179,7 @@ namespace CCXT.NET.Bithumb.Trade
                 }
 
                 var _json_value_detail = await tradeClient.CallApiPost1Async("/info/order_detail", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson += _json_value_detail.Content;
 #endif
                 var _json_result_detail = tradeClient.GetResponseMessage(_json_value_detail.Response);
@@ -212,7 +212,7 @@ namespace CCXT.NET.Bithumb.Trade
                 }
 
                 var _json_value_orders = await tradeClient.CallApiPost1Async("/info/orders", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson += _json_value_orders.Content;
 #endif
                 var _json_result_orders = tradeClient.GetResponseMessage(_json_value_orders.Response);
@@ -223,7 +223,7 @@ namespace CCXT.NET.Bithumb.Trade
                     {
                         foreach (var _o in _json_data_orders.result)
                         {
-#if RAWJSON
+#if DEBUG
                             if (String.IsNullOrEmpty(_o.orderId) == true)
                                 continue;
 #endif
@@ -289,7 +289,7 @@ namespace CCXT.NET.Bithumb.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async("/info/orders", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -363,7 +363,7 @@ namespace CCXT.NET.Bithumb.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async("/info/user_transactions", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -437,7 +437,7 @@ namespace CCXT.NET.Bithumb.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async("/trade/place", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -517,7 +517,7 @@ namespace CCXT.NET.Bithumb.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async($"/trade/market_{_buy_sell}", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -599,7 +599,7 @@ namespace CCXT.NET.Bithumb.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async("/trade/cancel", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);

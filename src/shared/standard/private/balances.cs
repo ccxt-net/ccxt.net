@@ -92,7 +92,7 @@ namespace CCXT.NET.Shared.Coin.Private
     /// </summary>
     public interface IBalance : IApiResult<IBalanceItem>
     {
-#if RAWJSON
+#if DEBUG
         /// <summary>
         ///
         /// </summary>
@@ -116,7 +116,7 @@ namespace CCXT.NET.Shared.Coin.Private
         {
             this.result = new BalanceItem();
         }
-#if RAWJSON
+#if DEBUG
         /// <summary>
         ///
         /// </summary>
@@ -134,7 +134,7 @@ namespace CCXT.NET.Shared.Coin.Private
     /// </summary>
     public interface IBalances : IApiResult<List<IBalanceItem>>
     {
-#if RAWJSON
+#if DEBUG
 
         /// <summary>
         ///
@@ -161,7 +161,7 @@ namespace CCXT.NET.Shared.Coin.Private
             this.result = new List<IBalanceItem>();
         }
 
-#if RAWJSON
+#if DEBUG
 
         /// <summary>
         ///

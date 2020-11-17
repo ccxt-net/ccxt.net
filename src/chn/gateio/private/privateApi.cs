@@ -77,7 +77,7 @@ namespace CCXT.NET.GateIO.Private
                 }
 
                 var _json_value = await privateClient.CallApiPost1Async("/1/private/newAddress", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -124,7 +124,7 @@ namespace CCXT.NET.GateIO.Private
                 }
 
                 var _json_value = await privateClient.CallApiPost1Async("/1/private/depositAddress", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -176,7 +176,7 @@ namespace CCXT.NET.GateIO.Private
                 }
 
                 var _json_value = await privateClient.CallApiPost1Async("/1/private/withdraw", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -247,7 +247,7 @@ namespace CCXT.NET.GateIO.Private
                 }
 
                 var _json_value = await privateClient.CallApiPost1Async("/1/private/depositsWithdrawals", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -332,7 +332,7 @@ namespace CCXT.NET.GateIO.Private
                 var _params = privateClient.MergeParamsAndArgs(args);
 
                 var _json_value = await privateClient.CallApiPost1Async("/1/private/balances", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);

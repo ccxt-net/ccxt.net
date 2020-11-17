@@ -293,7 +293,7 @@ namespace CCXT.NET.Shared.Coin.Private
     /// </summary>
     public interface ITransfer : IApiResult<ITransferItem>
     {
-#if RAWJSON
+#if DEBUG
         /// <summary>
         ///
         /// </summary>
@@ -317,7 +317,7 @@ namespace CCXT.NET.Shared.Coin.Private
         {
             this.result = new TransferItem();
         }
-#if RAWJSON
+#if DEBUG
         /// <summary>
         ///
         /// </summary>
@@ -335,7 +335,7 @@ namespace CCXT.NET.Shared.Coin.Private
     /// </summary>
     public interface ITransfers : IApiResult<List<ITransferItem>>
     {
-#if RAWJSON
+#if DEBUG
 
         /// <summary>
         ///
@@ -362,7 +362,7 @@ namespace CCXT.NET.Shared.Coin.Private
             this.result = new List<ITransferItem>();
         }
 
-#if RAWJSON
+#if DEBUG
         /// <summary>
         ///
         /// </summary>

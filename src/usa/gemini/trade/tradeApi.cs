@@ -79,7 +79,7 @@ namespace CCXT.NET.Gemini.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async("/v1/order/status", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -119,7 +119,7 @@ namespace CCXT.NET.Gemini.Trade
                 var _params = tradeClient.MergeParamsAndArgs(args);
 
                 var _json_value = await tradeClient.CallApiPost1Async("/v1/orders", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -177,7 +177,7 @@ namespace CCXT.NET.Gemini.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async("/v1/mytrades", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -241,7 +241,7 @@ namespace CCXT.NET.Gemini.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async($"/v1/order/new", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -308,7 +308,7 @@ namespace CCXT.NET.Gemini.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async($"/v1/order/new", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -366,7 +366,7 @@ namespace CCXT.NET.Gemini.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async($"/v1/order/cancel", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -415,7 +415,7 @@ namespace CCXT.NET.Gemini.Trade
                 var _params = tradeClient.MergeParamsAndArgs(args);
 
                 var _json_value = await tradeClient.CallApiPost1Async($"/v1/order/cancel/all", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);

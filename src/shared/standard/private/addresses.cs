@@ -100,7 +100,7 @@ namespace CCXT.NET.Shared.Coin.Private
     /// </summary>
     public interface IAddress : IApiResult<IAddressItem>
     {
-#if RAWJSON
+#if DEBUG
         /// <summary>
         ///
         /// </summary>
@@ -124,7 +124,7 @@ namespace CCXT.NET.Shared.Coin.Private
         {
             this.result = new AddressItem();
         }
-#if RAWJSON
+#if DEBUG
         /// <summary>
         ///
         /// </summary>
@@ -142,7 +142,7 @@ namespace CCXT.NET.Shared.Coin.Private
     /// </summary>
     public interface IAddresses : IApiResult<List<IAddressItem>>
     {
-#if RAWJSON
+#if DEBUG
 
         /// <summary>
         ///
@@ -169,7 +169,7 @@ namespace CCXT.NET.Shared.Coin.Private
             this.result = new List<IAddressItem>();
         }
 
-#if RAWJSON
+#if DEBUG
 
         /// <summary>
         ///

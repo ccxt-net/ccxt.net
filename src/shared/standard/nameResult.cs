@@ -7,7 +7,7 @@ namespace CCXT.NET.Shared.Coin
     /// </summary>
     public interface INameResult
     {
-#if RAWJSON
+#if DEBUG
 
         /// <summary>
         ///
@@ -37,7 +37,7 @@ namespace CCXT.NET.Shared.Coin
                 this.SetFailure();
         }
 
-#if RAWJSON
+#if DEBUG
 
         /// <summary>
         ///

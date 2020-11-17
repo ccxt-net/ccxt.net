@@ -189,7 +189,7 @@ namespace CCXT.NET.Korbit
 
             if (IsAuthentication == true)
             {
-#if RAWJSON
+#if DEBUG
                 if (TestXUnitMode == XUnitMode.UseExchangeServer)
                 {
 #endif
@@ -200,7 +200,7 @@ namespace CCXT.NET.Korbit
                         _request.AddHeader("Authorization", $"{_access_token.tokenType} {_access_token.accessToken}");
 
                     _request.AddParameter("nonce", _nonce);
-#if RAWJSON
+#if DEBUG
                 }
 #endif
             }
@@ -220,14 +220,14 @@ namespace CCXT.NET.Korbit
 
             if (IsAuthentication == true)
             {
-#if RAWJSON
+#if DEBUG
                 if (TestXUnitMode == XUnitMode.UseExchangeServer)
                 {
 #endif
                     var _access_token = await GetAccessToken();
                     if (_access_token != null)
                         _request.AddHeader("Authorization", $"{_access_token.tokenType} {_access_token.accessToken}");
-#if RAWJSON
+#if DEBUG
                 }
 #endif
             }

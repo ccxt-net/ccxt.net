@@ -97,7 +97,7 @@ namespace CCXT.NET.OKEx.Trade
                 var _end_point = okexClient.CheckFuturesUrl(_market.result, "/order_info.do", "/future_order_info.do", _params);
 
                 var _json_value = await okexClient.CallApiPost1Async(_end_point.endPoint, _end_point.args);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = okexClient.GetResponseMessage(_json_value.Response);
@@ -163,7 +163,7 @@ namespace CCXT.NET.OKEx.Trade
                 var _end_point = okexClient.CheckFuturesUrl(_market.result, "/order_info.do", "/future_order_info.do", _params);
 
                 var _json_value = await okexClient.CallApiPost1Async(_end_point.endPoint, _end_point.args);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = okexClient.GetResponseMessage(_json_value.Response);
@@ -233,7 +233,7 @@ namespace CCXT.NET.OKEx.Trade
                 var _end_point = okexClient.CheckFuturesUrl(_market.result, "/order_history.do", "/future_order_history.do", _params);
 
                 var _json_value = await okexClient.CallApiPost1Async(_end_point.endPoint, _end_point.args);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = okexClient.GetResponseMessage(_json_value.Response);
@@ -305,7 +305,7 @@ namespace CCXT.NET.OKEx.Trade
                 var _end_point = okexClient.CheckFuturesUrl(_market.result, "/trade.do", "/future_trade.do", _params);
 
                 var _json_value = await okexClient.CallApiPost1Async(_end_point.endPoint, _end_point.args);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = okexClient.GetResponseMessage(_json_value.Response);
@@ -379,7 +379,7 @@ namespace CCXT.NET.OKEx.Trade
                 var _end_point = okexClient.CheckFuturesUrl(_market.result, "/trade.do", "/future_trade.do", _params);
 
                 var _json_value = await okexClient.CallApiPost1Async(_end_point.endPoint, _end_point.args);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = okexClient.GetResponseMessage(_json_value.Response);
@@ -451,7 +451,7 @@ namespace CCXT.NET.OKEx.Trade
                 var _end_point = okexClient.CheckFuturesUrl(_market.result, "/cancel_order.do", "/future_cancel.do", _params);
 
                 var _json_value = await okexClient.CallApiPost1Async(_end_point.endPoint, _end_point.args);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = okexClient.GetResponseMessage(_json_value.Response);
@@ -538,7 +538,7 @@ namespace CCXT.NET.OKEx.Trade
                 var _end_point = okexClient.CheckFuturesUrl(_market.result, "/cancel_order.do", "/future_cancel.do", _params);
 
                 var _json_value = await okexClient.CallApiPost1Async(_end_point.endPoint, _end_point.args);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = okexClient.GetResponseMessage(_json_value.Response);

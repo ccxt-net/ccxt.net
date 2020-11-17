@@ -396,7 +396,7 @@ namespace CCXT.NET.Shared.Coin.Public
     /// </summary>
     public interface IMarkets : IApiResult<Dictionary<string, IMarketItem>>
     {
-#if RAWJSON
+#if DEBUG
 
         /// <summary>
         ///
@@ -424,7 +424,7 @@ namespace CCXT.NET.Shared.Coin.Public
             this.result = new Dictionary<string, IMarketItem>();
         }
 
-#if RAWJSON
+#if DEBUG
 
         /// <summary>
         ///

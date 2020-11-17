@@ -83,7 +83,7 @@ namespace CCXT.NET.Upbit.Private
                 }
 
                 var _json_value = await privateClient.CallApiPost1Async("/withdraws/coin", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -153,7 +153,7 @@ namespace CCXT.NET.Upbit.Private
                 }
 
                 var _json_value = await privateClient.CallApiPost1Async("/withdraws/krw", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -221,7 +221,7 @@ namespace CCXT.NET.Upbit.Private
                 }
 
                 var _json_value = await privateClient.CallApiGet1Async("/withdraw", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -273,7 +273,7 @@ namespace CCXT.NET.Upbit.Private
                 }
 
                 var _json_value = await privateClient.CallApiGet1Async("/withdraws", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -331,7 +331,7 @@ namespace CCXT.NET.Upbit.Private
                 }
 
                 var _json_value = await privateClient.CallApiGet1Async("/withdraws", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -380,7 +380,7 @@ namespace CCXT.NET.Upbit.Private
                 var _params = privateClient.MergeParamsAndArgs(args);
 
                 var _json_value = await privateClient.CallApiGet1Async("/accounts", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -429,7 +429,7 @@ namespace CCXT.NET.Upbit.Private
                 var _params = privateClient.MergeParamsAndArgs(args);
 
                 var _json_value = await privateClient.CallApiGet1Async("/accounts", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);

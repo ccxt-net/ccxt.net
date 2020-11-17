@@ -78,7 +78,7 @@ namespace CCXT.NET.Bittrex.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async("/v1.1/account/getorder", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -127,7 +127,7 @@ namespace CCXT.NET.Bittrex.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiGet1Async("/v1.1/market/getopenorders", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -173,7 +173,7 @@ namespace CCXT.NET.Bittrex.Trade
                 var _params = tradeClient.MergeParamsAndArgs(args);
 
                 var _json_value = await tradeClient.CallApiPost1Async("/v1.1/market/getopenorders", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -227,7 +227,7 @@ namespace CCXT.NET.Bittrex.Trade
                 var _params = tradeClient.MergeParamsAndArgs(args);
 
                 var _json_value = await tradeClient.CallApiPost1Async("/v1.1/account/getorderhistory", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -289,7 +289,7 @@ namespace CCXT.NET.Bittrex.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async($"/v1.1/market/{_buy_sell}limit", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -353,7 +353,7 @@ namespace CCXT.NET.Bittrex.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async($"/v1.1/market/cancel", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);

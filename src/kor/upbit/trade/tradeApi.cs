@@ -77,7 +77,7 @@ namespace CCXT.NET.Upbit.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiGet1Async("/order", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -127,7 +127,7 @@ namespace CCXT.NET.Upbit.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiGet1Async("/orders", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -177,7 +177,7 @@ namespace CCXT.NET.Upbit.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiGet1Async("/orders", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -236,7 +236,7 @@ namespace CCXT.NET.Upbit.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiGet1Async("/orders", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -300,7 +300,7 @@ namespace CCXT.NET.Upbit.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async($"/orders", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -351,7 +351,7 @@ namespace CCXT.NET.Upbit.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiDelete1Async($"/order", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);

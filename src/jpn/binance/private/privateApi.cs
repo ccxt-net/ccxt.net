@@ -94,7 +94,7 @@ namespace CCXT.NET.Binance.Private
                 }
 
                 var _json_value = await priwapiClient.CallApiGet1Async("/depositAddress.html", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = priwapiClient.GetResponseMessage(_json_value.Response);
@@ -150,7 +150,7 @@ namespace CCXT.NET.Binance.Private
                 }
 
                 var _json_value = await priwapiClient.CallApiPost1Async($"/withdraw.html", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = priwapiClient.GetResponseMessage(_json_value.Response);
@@ -229,7 +229,7 @@ namespace CCXT.NET.Binance.Private
                     privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
                     var _json_value = await priwapiClient.CallApiGet1Async("/depositHistory.html", _params);
-#if RAWJSON
+#if DEBUG
                     _result.rawJson += _json_value.Content;
 #endif
                     var _json_result = priwapiClient.GetResponseMessage(_json_value.Response);
@@ -265,7 +265,7 @@ namespace CCXT.NET.Binance.Private
                     privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
                     var _json_value = await priwapiClient.CallApiGet1Async("/withdrawHistory.html", _params);
-#if RAWJSON
+#if DEBUG
                     _result.rawJson += _json_value.Content;
 #endif
                     var _json_result = priwapiClient.GetResponseMessage(_json_value.Response);
@@ -336,7 +336,7 @@ namespace CCXT.NET.Binance.Private
                     privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
                     var _json_value = await priwapiClient.CallApiGet1Async("/depositHistory.html", _params);
-#if RAWJSON
+#if DEBUG
                     _result.rawJson += _json_value.Content;
 #endif
                     var _json_result = priwapiClient.GetResponseMessage(_json_value.Response);
@@ -370,7 +370,7 @@ namespace CCXT.NET.Binance.Private
                     privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
                     var _json_value = await priwapiClient.CallApiGet1Async("/withdrawHistory.html", _params);
-#if RAWJSON
+#if DEBUG
                     _result.rawJson += _json_value.Content;
 #endif
                     var _json_result = priwapiClient.GetResponseMessage(_json_value.Response);
@@ -425,7 +425,7 @@ namespace CCXT.NET.Binance.Private
                 var _params = privateClient.MergeParamsAndArgs(args);
 
                 var _json_value = await privateClient.CallApiGet1Async("/account", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -475,7 +475,7 @@ namespace CCXT.NET.Binance.Private
                 var _params = privateClient.MergeParamsAndArgs(args);
 
                 var _json_value = await privateClient.CallApiGet1Async("/account", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);

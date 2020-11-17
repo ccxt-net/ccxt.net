@@ -80,7 +80,7 @@ namespace CCXT.NET.GDAX.Trade
                 var _params = tradeClient.MergeParamsAndArgs(args);
 
                 var _json_value = await tradeClient.CallApiGet1Async($"/orders/{order_id}", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -134,7 +134,7 @@ namespace CCXT.NET.GDAX.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiGet1Async("/orders", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -190,7 +190,7 @@ namespace CCXT.NET.GDAX.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiGet1Async("/orders", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -238,7 +238,7 @@ namespace CCXT.NET.GDAX.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiGet1Async("/orders", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -294,7 +294,7 @@ namespace CCXT.NET.GDAX.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiGet1Async("/fills", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -362,7 +362,7 @@ namespace CCXT.NET.GDAX.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async($"/orders", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -423,7 +423,7 @@ namespace CCXT.NET.GDAX.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async($"/orders", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -471,7 +471,7 @@ namespace CCXT.NET.GDAX.Trade
                 var _params = tradeClient.MergeParamsAndArgs(args);
 
                 var _json_value = await tradeClient.CallApiDelete1Async($"/orders/{order_id}", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -539,7 +539,7 @@ namespace CCXT.NET.GDAX.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiDelete1Async($"/orders", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -592,7 +592,7 @@ namespace CCXT.NET.GDAX.Trade
 
                 // symbol이 required 인지 아닌지 document에 안나와있음. required면 cancelAllOrders 제공안함.
                 var _json_value = await tradeClient.CallApiDelete1Async($"/orders", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);

@@ -6,6 +6,10 @@
     <Platforms>AnyCPU;x64;x86</Platforms>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>TRACE;RAWJSON</DefineConstants>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="OdinSdk.BaseLib" Version="2.2.9" />
   </ItemGroup>

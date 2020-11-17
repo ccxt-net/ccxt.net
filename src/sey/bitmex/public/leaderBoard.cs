@@ -50,7 +50,7 @@ namespace CCXT.NET.BitMEX.Public
             set;
         }
 
-#if RAWJSON
+#if DEBUG
 
         /// <summary>
         ///
@@ -96,7 +96,7 @@ namespace CCXT.NET.BitMEX.Public
             set;
         }
 
-#if RAWJSON
+#if DEBUG
 
         /// <summary>
         ///
@@ -115,7 +115,7 @@ namespace CCXT.NET.BitMEX.Public
     /// </summary>
     public interface ILeaderBoards : IApiResult<List<ILeaderBoardItem>>
     {
-#if RAWJSON
+#if DEBUG
 
         /// <summary>
         ///
@@ -142,7 +142,7 @@ namespace CCXT.NET.BitMEX.Public
             this.result = new List<ILeaderBoardItem>();
         }
 
-#if RAWJSON
+#if DEBUG
 
         /// <summary>
         ///

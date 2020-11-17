@@ -66,7 +66,7 @@ namespace CCXT.NET.Bithumb.Public
                 var _params = publicClient.MergeParamsAndArgs(args);
 
                 var _json_value = await publicClient.CallApiGet1Async("/ticker/ALL", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -161,7 +161,7 @@ namespace CCXT.NET.Bithumb.Public
                 var _params = publicClient.MergeParamsAndArgs(args);
 
                 var _json_value = await publicClient.CallApiGet1Async($"/ticker/{_market.result.symbol}", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -214,7 +214,7 @@ namespace CCXT.NET.Bithumb.Public
                 var _params = publicClient.MergeParamsAndArgs(args);
 
                 var _json_value = await publicClient.CallApiGet1Async("/ticker/ALL", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -289,7 +289,7 @@ namespace CCXT.NET.Bithumb.Public
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async($"/orderbook/{_market.result.symbol}", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -364,7 +364,7 @@ namespace CCXT.NET.Bithumb.Public
                 }
 
                 var _json_value = await publicWeb.CallApiGet1Async($"/resources/chart/{_market.result.symbol}_xcoinTrade_{_timeframe}.json", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -435,7 +435,7 @@ namespace CCXT.NET.Bithumb.Public
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async($"/transaction_history/{_market.result.symbol}", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);

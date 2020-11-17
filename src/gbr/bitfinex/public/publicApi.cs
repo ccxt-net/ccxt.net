@@ -50,7 +50,7 @@ namespace CCXT.NET.Bitfinex.Public
                 var _params = publicClient.MergeParamsAndArgs(args);
 
                 var _json_value = await publicClient.CallApiGet1Async("/v1/symbols_details", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -145,7 +145,7 @@ namespace CCXT.NET.Bitfinex.Public
                 var _params = publicClient.MergeParamsAndArgs(args);
 
                 var _json_value = await publicClient.CallApiGet1Async($"/v1/pubticker/{_market.result.symbol}", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -185,7 +185,7 @@ namespace CCXT.NET.Bitfinex.Public
                 var _params = publicClient.MergeParamsAndArgs(args);
 
                 var _json_value = await publicClient.CallApiGet1Async("/v1/tickers", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -242,7 +242,7 @@ namespace CCXT.NET.Bitfinex.Public
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async($"/v1/book/{_market.result.symbol}", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -310,7 +310,7 @@ namespace CCXT.NET.Bitfinex.Public
                 var _section = "hist"; // Section(string) REQUIRED Available values: "last", "hist"
 
                 var _json_value = await publicClient.CallApiGet1Async($"/v2/candles/trade:{_timeframe}:t{_market.result.symbol.ToUpper()}/{_section}", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -384,7 +384,7 @@ namespace CCXT.NET.Bitfinex.Public
                 var _section = "hist"; // Section(string) REQUIRED Available values: "last", "hist"
 
                 var _json_value = await publicClient.CallApiGet1Async($"/v2/trades/t{_market.result.symbol.ToUpper()}/{_section}", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);

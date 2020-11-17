@@ -82,7 +82,7 @@ namespace CCXT.NET.Bitflyer.Trade
 
                 // 실제 넘어오는 데이터 확인해야함. sample에는 list로 넘어옴.
                 var _json_value = await tradeClient.CallApiGet1Async("/v1/me/getchildorders", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -136,7 +136,7 @@ namespace CCXT.NET.Bitflyer.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiGet1Async("/v1/me/getchildorders", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -192,7 +192,7 @@ namespace CCXT.NET.Bitflyer.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiGet1Async("/v1/me/getchildorders", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -240,7 +240,7 @@ namespace CCXT.NET.Bitflyer.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiGet1Async("/v1/me/getchildorders", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -283,7 +283,7 @@ namespace CCXT.NET.Bitflyer.Trade
                 var _params = tradeClient.MergeParamsAndArgs(args);
 
                 var _json_value = await tradeClient.CallApiGet1Async("/v1/me/getpositions", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -350,7 +350,7 @@ namespace CCXT.NET.Bitflyer.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiGet1Async("/v1/me/getexecutions", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -415,7 +415,7 @@ namespace CCXT.NET.Bitflyer.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async($"/v1/me/sendchildorder", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -478,7 +478,7 @@ namespace CCXT.NET.Bitflyer.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async($"/v1/me/sendchildorder", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -539,7 +539,7 @@ namespace CCXT.NET.Bitflyer.Trade
 
                 // If the parameters are correct, the status code will show 200 OK.
                 var _json_value = await tradeClient.CallApiDelete1Async($"/v1/me/cancelchildorder", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);

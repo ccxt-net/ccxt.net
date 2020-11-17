@@ -50,7 +50,7 @@ namespace CCXT.NET.GOPAX.Public
                 var _params = publicClient.MergeParamsAndArgs(args);
 
                 var _json_value = await publicClient.CallApiGet1Async("/trading-pairs", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -141,7 +141,7 @@ namespace CCXT.NET.GOPAX.Public
                 var _params = publicClient.MergeParamsAndArgs(args);
 
                 var _json_value = await publicClient.CallApiGet1Async($"/trading-pairs/{_market.result.symbol}/stats", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -181,7 +181,7 @@ namespace CCXT.NET.GOPAX.Public
                 var _params = publicClient.MergeParamsAndArgs(args);
 
                 var _json_value = await publicClient.CallApiGet1Async("/trading-pairs/stats", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -234,7 +234,7 @@ namespace CCXT.NET.GOPAX.Public
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async($"/trading-pairs/{_market.result.symbol}/book", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -297,7 +297,7 @@ namespace CCXT.NET.GOPAX.Public
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async($"/trading-pairs/{_market.result.symbol}/candles", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -364,7 +364,7 @@ namespace CCXT.NET.GOPAX.Public
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async($"/trading-pairs/{_market.result.symbol}/trades", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);

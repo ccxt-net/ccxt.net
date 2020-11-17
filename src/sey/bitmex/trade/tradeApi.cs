@@ -99,7 +99,7 @@ namespace CCXT.NET.BitMEX.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiGet1Async("/api/v1/order", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -163,7 +163,7 @@ namespace CCXT.NET.BitMEX.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiGet1Async("/api/v1/order", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -224,7 +224,7 @@ namespace CCXT.NET.BitMEX.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiGet1Async("/api/v1/order", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -286,7 +286,7 @@ namespace CCXT.NET.BitMEX.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiGet1Async("/api/v1/position", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -339,7 +339,7 @@ namespace CCXT.NET.BitMEX.Trade
                 var _params = tradeClient.MergeParamsAndArgs(args);
 
                 var _json_value = await tradeClient.CallApiGet1Async("/api/v1/position", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -410,7 +410,7 @@ namespace CCXT.NET.BitMEX.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiGet1Async("/api/v1/execution/tradeHistory", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -475,7 +475,7 @@ namespace CCXT.NET.BitMEX.Trade
                 );
 
                 var _json_value = await tradeClient.CallApiPost1Async("/api/v1/order", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -538,7 +538,7 @@ namespace CCXT.NET.BitMEX.Trade
                 );
 
                 var _json_value = await tradeClient.CallApiPost1Async("/api/v1/order", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -586,7 +586,7 @@ namespace CCXT.NET.BitMEX.Trade
                 );
 
                 var _json_value = await tradeClient.CallApiPost1Async("/api/v1/order/bulk", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -634,7 +634,7 @@ namespace CCXT.NET.BitMEX.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async("/api/v1/order", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -683,7 +683,7 @@ namespace CCXT.NET.BitMEX.Trade
                 );
 
                 var _json_value = await tradeClient.CallApiPost1Async("/api/v1/position/leverage", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -736,7 +736,7 @@ namespace CCXT.NET.BitMEX.Trade
                 );
 
                 var _json_value = await tradeClient.CallApiPut1Async("/api/v1/order", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -785,7 +785,7 @@ namespace CCXT.NET.BitMEX.Trade
                 );
 
                 var _json_value = await tradeClient.CallApiDelete1Async("/api/v1/order", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -840,7 +840,7 @@ namespace CCXT.NET.BitMEX.Trade
                 );
 
                 var _json_value = await tradeClient.CallApiDelete1Async("/api/v1/order", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -879,7 +879,7 @@ namespace CCXT.NET.BitMEX.Trade
                 var _params = tradeClient.MergeParamsAndArgs(args);
 
                 var _json_value = await tradeClient.CallApiDelete1Async("/api/v1/order/all", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);

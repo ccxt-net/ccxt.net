@@ -605,7 +605,7 @@ namespace CCXT.NET.BitMEX.Private
     /// </summary>
     public interface IUserInfo : IApiResult<IUserInfoItem>
     {
-#if RAWJSON
+#if DEBUG
 
         /// <summary>
         ///
@@ -632,7 +632,7 @@ namespace CCXT.NET.BitMEX.Private
             this.result = new BUserInfoItem();
         }
 
-#if RAWJSON
+#if DEBUG
 
         /// <summary>
         ///

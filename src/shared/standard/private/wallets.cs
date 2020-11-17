@@ -128,7 +128,7 @@ namespace CCXT.NET.Shared.Coin.Private
     /// </summary>
     public interface IWallet : IApiResult<IWalletItem>
     {
-#if RAWJSON
+#if DEBUG
         /// <summary>
         ///
         /// </summary>
@@ -152,7 +152,7 @@ namespace CCXT.NET.Shared.Coin.Private
         {
             this.result = new WalletItem();
         }
-#if RAWJSON
+#if DEBUG
         /// <summary>
         ///
         /// </summary>
@@ -170,7 +170,7 @@ namespace CCXT.NET.Shared.Coin.Private
     /// </summary>
     public interface IWallets : IApiResult<List<IWalletItem>>
     {
-#if RAWJSON
+#if DEBUG
         /// <summary>
         ///
         /// </summary>
@@ -194,7 +194,7 @@ namespace CCXT.NET.Shared.Coin.Private
         {
             this.result = new List<IWalletItem>();
         }
-#if RAWJSON
+#if DEBUG
         /// <summary>
         ///
         /// </summary>

@@ -76,7 +76,7 @@ namespace CCXT.NET.Bitforex.Private
                 }
 
                 var _json_value = await privateClient.CallApiPost1Async("/api/v1/fund/mainAccount", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
@@ -122,7 +122,7 @@ namespace CCXT.NET.Bitforex.Private
                 var _params = privateClient.MergeParamsAndArgs(args);
 
                 var _json_value = await privateClient.CallApiPost1Async("/api/v1/fund/allAccount", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);

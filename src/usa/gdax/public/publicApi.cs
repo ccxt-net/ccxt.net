@@ -51,7 +51,7 @@ namespace CCXT.NET.GDAX.Public
                 var _params = publicClient.MergeParamsAndArgs(args);
 
                 var _json_value = await publicClient.CallApiGet1Async("/products", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -145,7 +145,7 @@ namespace CCXT.NET.GDAX.Public
                 var _params = publicClient.MergeParamsAndArgs(args);
 
                 var _json_value = await publicClient.CallApiGet1Async($"/products/{_market.result.symbol}/ticker", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -196,7 +196,7 @@ namespace CCXT.NET.GDAX.Public
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async($"/products/{_market.result.symbol}/book", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -259,7 +259,7 @@ namespace CCXT.NET.GDAX.Public
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async($"/products/{_market.result.symbol}/candles", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -319,7 +319,7 @@ namespace CCXT.NET.GDAX.Public
                 var _params = publicClient.MergeParamsAndArgs(args);
 
                 var _json_value = await publicClient.CallApiGet1Async($"/products/{_market.result.symbol}/trades", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);

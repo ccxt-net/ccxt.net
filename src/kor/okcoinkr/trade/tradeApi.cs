@@ -80,7 +80,7 @@ namespace CCXT.NET.OkCoinKr.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async("/v1/order_info.do", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -144,7 +144,7 @@ namespace CCXT.NET.OkCoinKr.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async("/v1/order_history.do", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -208,7 +208,7 @@ namespace CCXT.NET.OkCoinKr.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async("/v1/trade_history.do", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -271,7 +271,7 @@ namespace CCXT.NET.OkCoinKr.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async("/v1/trade.do", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -341,7 +341,7 @@ namespace CCXT.NET.OkCoinKr.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async("/v1/trade.do", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -406,7 +406,7 @@ namespace CCXT.NET.OkCoinKr.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async("/v1/cancel_order.do", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -476,7 +476,7 @@ namespace CCXT.NET.OkCoinKr.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async("/v1/cancel_order.do", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);

@@ -79,7 +79,7 @@ namespace CCXT.NET.Coinone.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async("/v2/order/order_info", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -130,7 +130,7 @@ namespace CCXT.NET.Coinone.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async("/v2/order/limit_orders", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -193,7 +193,7 @@ namespace CCXT.NET.Coinone.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async("/v2/order/complete_orders", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -256,7 +256,7 @@ namespace CCXT.NET.Coinone.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async($"/v2/order/limit_{_buy_sell}", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -333,7 +333,7 @@ namespace CCXT.NET.Coinone.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async("/v2/order/cancel", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);

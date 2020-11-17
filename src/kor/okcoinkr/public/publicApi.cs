@@ -66,7 +66,7 @@ namespace CCXT.NET.OkCoinKr.Public
                 var _params = publicClient.MergeParamsAndArgs(args);
 
                 var _json_value = await webpubClient.CallApiGet1Async("/spot/markets/products", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -155,7 +155,7 @@ namespace CCXT.NET.OkCoinKr.Public
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async("/v1/ticker.do", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -211,7 +211,7 @@ namespace CCXT.NET.OkCoinKr.Public
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async("/v1/depth.do", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -274,7 +274,7 @@ namespace CCXT.NET.OkCoinKr.Public
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async("/v1/kline.do", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
@@ -341,7 +341,7 @@ namespace CCXT.NET.OkCoinKr.Public
                 }
 
                 var _json_value = await publicClient.CallApiGet1Async($"/v1/trades.do", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);

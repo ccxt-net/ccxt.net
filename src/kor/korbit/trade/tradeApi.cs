@@ -85,7 +85,7 @@ namespace CCXT.NET.Korbit.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiGet1Async("/user/orders", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -143,7 +143,7 @@ namespace CCXT.NET.Korbit.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiGet1Async("/user/orders", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -203,7 +203,7 @@ namespace CCXT.NET.Korbit.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiGet1Async("/user/orders/open", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -271,7 +271,7 @@ namespace CCXT.NET.Korbit.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiGet1Async("/user/orders", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -337,7 +337,7 @@ namespace CCXT.NET.Korbit.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async($"/user/orders/{_buy_sell}", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -418,7 +418,7 @@ namespace CCXT.NET.Korbit.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async($"/user/orders/{_buy_sell}", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -493,7 +493,7 @@ namespace CCXT.NET.Korbit.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async("/user/orders/cancel", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
@@ -568,7 +568,7 @@ namespace CCXT.NET.Korbit.Trade
                 }
 
                 var _json_value = await tradeClient.CallApiPost1Async("/user/orders/cancel", _params);
-#if RAWJSON
+#if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
