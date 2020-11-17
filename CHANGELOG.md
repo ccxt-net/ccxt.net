@@ -1,5 +1,9 @@
 # ¬³hangelog
 
+## Version 1.3.8 2020-11-17
+
+ - zech Culture Decimal Parse Error Fix update #16
+
 ## Version 1.3.4 2019-06-26
 
  - add exchanges gopax, okcoinkr
