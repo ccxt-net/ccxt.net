@@ -34,8 +34,8 @@
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net472|AnyCPU'">
-        <DefineConstants>TRACE;RELEASE;NETFRAMEWORK;NET472</DefineConstants>
         <DocumentationFile>bin\Release\net472\CCXT.NET.xml</DocumentationFile>
+        <DefineConstants>TRACE;RELEASE</DefineConstants>
     </PropertyGroup>
 
     <ItemGroup>
