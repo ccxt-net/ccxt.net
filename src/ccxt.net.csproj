@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFrameworks>net472;netstandard2.1</TargetFrameworks>
+        <TargetFrameworks>net472;netstandard2.1;net5.0</TargetFrameworks>
         <Title>CryptoCurrency eXchange Trading Library for .NET</Title>
         <Product>CCXT</Product>
         <Company>ODINSOFT</Company>
@@ -11,18 +11,18 @@
         <Authors>SEONGAHN LEE</Authors>
         <AssemblyName>CCXT.NET</AssemblyName>
         <PackageId>CCXT.NET</PackageId>
-        <PackageTags>bitcoin;cryptocurrency;exchange;trading;market-data;ccxt;exchange-markets;altcoin;api;arbitrage;bot;crypto;e-commerce;invest;library;strategy;trade;merchant;cryptocoin</PackageTags>
-        <PackageProjectUrl>https://github.com/lisa3907/ccxt.net</PackageProjectUrl>
+        <PackageTags>bitcoin;cryptocurrency;exchange;trading;market-data;ccxt;exchange-markets;altcoin;api;arbitrage;bot;crypto;e-commerce;invest;library;strategy;trade;merchant;cryptocoin;korean</PackageTags>
+        <PackageProjectUrl>https://github.com/ccxt.net/ccxt.net</PackageProjectUrl>
         <PackageIcon>ccxt.net.api.png</PackageIcon>
         <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
         <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
         <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
         <RootNamespace>CCXT.NET</RootNamespace>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <Version>1.3.7</Version>
-        <PackageReleaseNotes>FetchOHLCVs errors since update #13</PackageReleaseNotes>
-        <AssemblyVersion>1.3.7.0</AssemblyVersion>
-        <FileVersion>1.3.7.0</FileVersion>
+        <Version>1.3.8</Version>
+        <PackageReleaseNotes>Czech Culture Decimal Parse Error Fix update #16</PackageReleaseNotes>
+        <AssemblyVersion>1.3.8.0</AssemblyVersion>
+        <FileVersion>1.3.8.0</FileVersion>
         <LangVersion>latest</LangVersion>
         <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
         <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
@@ -30,7 +30,7 @@
 
     <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net472|AnyCPU'">
         <DocumentationFile>bin\Debug\net472\CCXT.NET.xml</DocumentationFile>
-        <DefineConstants>TRACE;DEBUG;NETFRAMEWORK;NET472;RAWJSON</DefineConstants>
+        <DefineConstants>TRACE;DEBUG</DefineConstants>
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net472|AnyCPU'">
