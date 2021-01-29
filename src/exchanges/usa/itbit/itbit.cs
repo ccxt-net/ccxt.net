@@ -154,7 +154,9 @@ namespace CCXT.NET.ItBit
 
             if (IsAuthentication == true)
             {
-                var _post_data = ToQueryString(_request.Parameters);
+                var _post_params = _request.Parameters.ToDictionary(p => p.Name, p => p.Value);
+
+                var _post_data = ToQueryString(_post_params);
                 {
                     var _query = _post_data.Length > 0 ? "?" + _post_data : "";
 

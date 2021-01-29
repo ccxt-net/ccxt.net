@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace CCXT.NET.Bittrex
 {
@@ -160,7 +161,9 @@ namespace CCXT.NET.Bittrex
                 _request.AddParameter("nonce", _nonce);
                 _request.AddParameter("apikey", ConnectKey);
 
-                var _post_data = ToQueryString(_request.Parameters);
+                var _post_params = _request.Parameters.ToDictionary(p => p.Name, p => p.Value);
+                
+                var _post_data = ToQueryString(_post_params);
                 {
                     _request.Resource += "?" + _post_data;
                     var _sign_data = ApiUrl + _request.Resource;
@@ -190,7 +193,9 @@ namespace CCXT.NET.Bittrex
                 _request.AddParameter("nonce", _nonce);
                 _request.AddParameter("apikey", ConnectKey);
 
-                var _post_data = ToQueryString(_request.Parameters);
+                var _post_params = _request.Parameters.ToDictionary(p => p.Name, p => p.Value);
+
+                var _post_data = ToQueryString(_post_params);
                 {
                     var _sign_data = ApiUrl + endpoint + "?" + _post_data;
                     var _signature = this.ConvertHexString(Encryptor.ComputeHash(Encoding.UTF8.GetBytes(_sign_data)));

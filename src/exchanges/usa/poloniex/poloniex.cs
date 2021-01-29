@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace CCXT.NET.Poloniex
 {
@@ -157,7 +158,9 @@ namespace CCXT.NET.Poloniex
 
                 _request.AddParameter("nonce", _nonce);
 
-                var _post_data = ToQueryString(_request.Parameters);
+                var _post_params = _request.Parameters.ToDictionary(p => p.Name, p => p.Value);
+
+                var _post_data = ToQueryString(_post_params);
                 {
                     var _signature = this.ConvertHexString(Encryptor.ComputeHash(Encoding.UTF8.GetBytes(_post_data)));
 

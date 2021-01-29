@@ -177,7 +177,9 @@ namespace CCXT.NET.Kraken
                 Debug.WriteLine($"{this.DealerName}: nonce => '{_nonce}'");
 #endif
 
-                var _post_data = ToQueryString(_request.Parameters);
+                var _post_params = _request.Parameters.ToDictionary(p => p.Name, p => p.Value);
+
+                var _post_data = ToQueryString(_post_params);
                 {
                     var _sign_nonce = Sha256Managed.ComputeHash(Encoding.UTF8.GetBytes($"{_nonce}{_post_data}"));
                     var _sign_data = Encoding.UTF8.GetBytes(endpoint).Concat(_sign_nonce).ToArray();

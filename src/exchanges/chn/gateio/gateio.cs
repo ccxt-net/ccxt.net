@@ -8,6 +8,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace CCXT.NET.GateIO
 {
@@ -161,7 +162,9 @@ namespace CCXT.NET.GateIO
 
             if (IsAuthentication == true)
             {
-                var _post_data = ToQueryString(_request.Parameters);
+                var _post_params = _request.Parameters.ToDictionary(p => p.Name, p => p.Value);
+
+                var _post_data = ToQueryString(_post_params);
                 {
                     var _signature = this.ConvertHexString(Encryptor.ComputeHash(Encoding.UTF8.GetBytes(_post_data))).Replace("-", "").ToLower();
 

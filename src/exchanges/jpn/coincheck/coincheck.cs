@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace CCXT.NET.CoinCheck
 {
@@ -134,7 +135,9 @@ namespace CCXT.NET.CoinCheck
             {
                 var _nonce = GenerateOnlyNonce(10).ToString();
 
-                var _post_data = ToQueryString(_request.Parameters);
+                var _post_params = _request.Parameters.ToDictionary(p => p.Name, p => p.Value);
+
+                var _post_data = ToQueryString(_post_params);
                 if (_post_data.Length > 0)
                     _post_data = "?" + _post_data;
 
@@ -165,7 +168,9 @@ namespace CCXT.NET.CoinCheck
             {
                 var _nonce = GenerateOnlyNonce(10).ToString();
 
-                var _post_data = ToQueryString(_request.Parameters);
+                var _post_params = _request.Parameters.ToDictionary(p => p.Name, p => p.Value);
+                
+                var _post_data = ToQueryString(_post_params);
                 if (_post_data.Length > 0)
                     _post_data = "?" + _post_data;
 

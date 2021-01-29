@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Text;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace CCXT.NET.Quoinex
 {
@@ -165,7 +166,9 @@ namespace CCXT.NET.Quoinex
             {
                 var _nonce = GenerateOnlyNonce(13);
 
-                var _post_data = ToQueryString(_request.Parameters);
+                var _post_params = _request.Parameters.ToDictionary(p => p.Name, p => p.Value);
+
+                var _post_data = ToQueryString(_post_params);
                 {
                     var _url = endpoint + (String.IsNullOrEmpty(_post_data) ? "" : "?" + _post_data);
 
@@ -202,7 +205,9 @@ namespace CCXT.NET.Quoinex
             {
                 var _nonce = GenerateOnlyNonce(13);
 
-                var _post_data = ToQueryString(_request.Parameters);
+                var _post_params = _request.Parameters.ToDictionary(p => p.Name, p => p.Value);
+
+                var _post_data = ToQueryString(_post_params);
                 {
                     var _url = endpoint + (String.IsNullOrEmpty(_post_data) ? "" : "?" + _post_data);
 

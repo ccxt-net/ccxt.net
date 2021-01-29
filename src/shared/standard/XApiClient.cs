@@ -425,22 +425,6 @@ namespace CCXT.NET.Shared.Coin
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <param name="json"></param>
         /// <returns></returns>
-        public string ToQueryString(List<Parameter> args, bool json = false)
-        {
-            var _args = new Dictionary<string, object>();
-
-            foreach (var _entry in args)
-                _args.Add(_entry.Name, _entry.Value);
-
-            return ToQueryString(_args, json);
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        /// <param name="args">Add additional attributes for each exchange</param>
-        /// <param name="json"></param>
-        /// <returns></returns>
         public string ToQueryString(Dictionary<string, object> args, bool json = false)
         {
             var _result = "";

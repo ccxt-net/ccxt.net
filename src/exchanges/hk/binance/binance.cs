@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace CCXT.NET.Binance
 {
@@ -211,7 +212,9 @@ namespace CCXT.NET.Binance
                 _request.AddParameter("recvWindow", 60 * 1000);
                 _request.AddParameter("timestamp", CUnixTime.NowMilli);
 
-                var _post_data = ToQueryString(_request.Parameters);
+                var _post_params = _request.Parameters.ToDictionary(p => p.Name, p => p.Value);
+
+                var _post_data = ToQueryString(_post_params);
                 {
                     var _signature = this.ConvertHexString(Encryptor.ComputeHash(Encoding.UTF8.GetBytes(_post_data)));
                     _request.AddParameter("signature", _signature);

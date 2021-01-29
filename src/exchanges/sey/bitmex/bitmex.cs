@@ -8,6 +8,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace CCXT.NET.BitMEX
 {
@@ -225,7 +226,9 @@ namespace CCXT.NET.BitMEX
 
             if (IsAuthentication == true)
             {
-                var _post_data = ToQueryString(_request.Parameters);
+                var _post_params = _request.Parameters.ToDictionary(p => p.Name, p => p.Value);
+
+                var _post_data = ToQueryString(_post_params);
                 //_request.Parameters.Clear();
 
                 var _nonce = (GenerateOnlyNonce(10) + 3600).ToString();
