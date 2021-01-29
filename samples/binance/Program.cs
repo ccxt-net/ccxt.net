@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Binance
+namespace binance
 {
     class Program
     {
