@@ -77,7 +77,7 @@ namespace CCXT.NET.Bittrex.Trade
                     tradeClient.MergeParamsAndArgs(_params, args);
                 }
 
-                var _json_value = await tradeClient.CallApiPost1Async("/v1.1/account/getorder", _params);
+                var _json_value = await tradeClient.CallApiGet1Async("/v1.1/account/getorder", _params);
 #if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
@@ -172,7 +172,7 @@ namespace CCXT.NET.Bittrex.Trade
 
                 var _params = tradeClient.MergeParamsAndArgs(args);
 
-                var _json_value = await tradeClient.CallApiPost1Async("/v1.1/market/getopenorders", _params);
+                var _json_value = await tradeClient.CallApiGet1Async("/v1.1/market/getopenorders", _params);
 #if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
@@ -226,7 +226,7 @@ namespace CCXT.NET.Bittrex.Trade
 
                 var _params = tradeClient.MergeParamsAndArgs(args);
 
-                var _json_value = await tradeClient.CallApiPost1Async("/v1.1/account/getorderhistory", _params);
+                var _json_value = await tradeClient.CallApiGet1Async("/v1.1/account/getorderhistory", _params);
 #if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
@@ -288,7 +288,7 @@ namespace CCXT.NET.Bittrex.Trade
                     tradeClient.MergeParamsAndArgs(_params, args);
                 }
 
-                var _json_value = await tradeClient.CallApiPost1Async($"/v1.1/market/{_buy_sell}limit", _params);
+                var _json_value = await tradeClient.CallApiGet1Async($"/v1.1/market/{_buy_sell}limit", _params);
 #if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
@@ -352,7 +352,7 @@ namespace CCXT.NET.Bittrex.Trade
                     tradeClient.MergeParamsAndArgs(_params, args);
                 }
 
-                var _json_value = await tradeClient.CallApiPost1Async($"/v1.1/market/cancel", _params);
+                var _json_value = await tradeClient.CallApiGet1Async($"/v1.1/market/cancel", _params);
 #if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif

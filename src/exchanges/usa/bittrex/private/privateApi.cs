@@ -130,7 +130,7 @@ namespace CCXT.NET.Bittrex.Private
                     privateClient.MergeParamsAndArgs(_params, args);
                 }
 
-                var _json_value = await privateClient.CallApiPost1Async("/v1.1/account/withdraw", _params);
+                var _json_value = await privateClient.CallApiGet1Async("/v1.1/account/withdraw", _params);
 #if DEBUG
                 _result.rawJson = _json_value.Content;
 #endif
