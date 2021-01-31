@@ -1,13 +1,13 @@
-﻿using Newtonsoft.Json.Linq;
-using CCXT.NET.Shared.Coin;
+﻿using CCXT.NET.Shared.Coin;
 using CCXT.NET.Shared.Configuration;
+using Newtonsoft.Json.Linq;
 using RestSharp;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
-using System.Linq;
 
 namespace CCXT.NET.Binance
 {
