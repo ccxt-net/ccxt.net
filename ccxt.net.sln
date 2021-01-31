@@ -18,19 +18,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "logo-files", "logo-files", 
 		logo-files\ccxt.net.ico = logo-files\ccxt.net.ico
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sample", "sample", "{F5F13CB7-91AE-498C-AD71-9EC31AA49A5B}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{F5F13CB7-91AE-498C-AD71-9EC31AA49A5B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9E137A9C-8E9F-4484-B4A2-D190573B082C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ccxt.net", "src\ccxt.net.csproj", "{1AF35DB8-580D-4D5B-A50F-B2C63CF5856D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ccxt.test", "sample\ccxt.test\ccxt.test.csproj", "{E972A495-D622-4D66-9564-E8EB170E740A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ccxt.test", "tests\ccxt.test\ccxt.test.csproj", "{E972A495-D622-4D66-9564-E8EB170E740A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "binance", "sample\binance\binance.csproj", "{07C1BDD2-6A52-4E6F-845B-ADAE37016395}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "binance", "samples\binance\binance.csproj", "{07C1BDD2-6A52-4E6F-845B-ADAE37016395}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kraken", "sample\kraken\kraken.csproj", "{175C73B8-341C-471A-B9F6-559E3D0D41C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "kraken", "samples\kraken\kraken.csproj", "{175C73B8-341C-471A-B9F6-559E3D0D41C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bitmex", "sample\bitmex\bitmex.csproj", "{F0F88963-FF57-4587-A08A-A819A10C3A88}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bitmex", "samples\bitmex\bitmex.csproj", "{F0F88963-FF57-4587-A08A-A819A10C3A88}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{BC661016-696B-4C21-BC35-CB49FBED7AA1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bittrex", "samples\bittrex\bittrex.csproj", "{5E21C096-B158-4474-AF54-0646855284E4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -102,16 +106,29 @@ Global
 		{F0F88963-FF57-4587-A08A-A819A10C3A88}.Release|x64.Build.0 = Release|Any CPU
 		{F0F88963-FF57-4587-A08A-A819A10C3A88}.Release|x86.ActiveCfg = Release|Any CPU
 		{F0F88963-FF57-4587-A08A-A819A10C3A88}.Release|x86.Build.0 = Release|Any CPU
+		{5E21C096-B158-4474-AF54-0646855284E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E21C096-B158-4474-AF54-0646855284E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E21C096-B158-4474-AF54-0646855284E4}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{5E21C096-B158-4474-AF54-0646855284E4}.Debug|x64.Build.0 = Debug|Any CPU
+		{5E21C096-B158-4474-AF54-0646855284E4}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5E21C096-B158-4474-AF54-0646855284E4}.Debug|x86.Build.0 = Debug|Any CPU
+		{5E21C096-B158-4474-AF54-0646855284E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E21C096-B158-4474-AF54-0646855284E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E21C096-B158-4474-AF54-0646855284E4}.Release|x64.ActiveCfg = Release|Any CPU
+		{5E21C096-B158-4474-AF54-0646855284E4}.Release|x64.Build.0 = Release|Any CPU
+		{5E21C096-B158-4474-AF54-0646855284E4}.Release|x86.ActiveCfg = Release|Any CPU
+		{5E21C096-B158-4474-AF54-0646855284E4}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{1AF35DB8-580D-4D5B-A50F-B2C63CF5856D} = {9E137A9C-8E9F-4484-B4A2-D190573B082C}
-		{E972A495-D622-4D66-9564-E8EB170E740A} = {F5F13CB7-91AE-498C-AD71-9EC31AA49A5B}
+		{E972A495-D622-4D66-9564-E8EB170E740A} = {BC661016-696B-4C21-BC35-CB49FBED7AA1}
 		{07C1BDD2-6A52-4E6F-845B-ADAE37016395} = {F5F13CB7-91AE-498C-AD71-9EC31AA49A5B}
 		{175C73B8-341C-471A-B9F6-559E3D0D41C6} = {F5F13CB7-91AE-498C-AD71-9EC31AA49A5B}
 		{F0F88963-FF57-4587-A08A-A819A10C3A88} = {F5F13CB7-91AE-498C-AD71-9EC31AA49A5B}
+		{5E21C096-B158-4474-AF54-0646855284E4} = {F5F13CB7-91AE-498C-AD71-9EC31AA49A5B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {10D0D5D6-447B-4484-A230-BBDBAA48885C}
