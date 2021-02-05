@@ -61,7 +61,7 @@ namespace CCXT.NET.Binance
                             logo = "https://user-images.githubusercontent.com/1294454/29604020-d5483cdc-87ee-11e7-94c7-d1a8d9169293.jpg",
                             api = new Dictionary<string, string>
                             {
-                                { "public", "https://api.binance.com/api/v1" },
+                                { "public", "https://api.binance.com/api/v3" },
                                 { "private", "https://api.binance.com/api/v3" },
                                 { "trade", "https://api.binance.com/api/v3" },
                                 { "web", "https://www.binance.com" },
