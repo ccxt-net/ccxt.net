@@ -54,7 +54,7 @@ namespace CCXT.NET.Binance
                     {
                         Countries = new List<string>
                         {
-                            "JP"
+                            "HK"
                         },
                         Urls = new ExchangeUrls
                         {
