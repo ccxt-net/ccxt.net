@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
+using CCXT.NET.BitMEX.Trade;
 using CCXT.NET.Shared.Coin.Types;
 
 namespace bitmex
@@ -45,6 +48,37 @@ namespace bitmex
                 if (_limit_order.result.orderStatus == OrderStatus.Canceled)
                 {
                     Console.Out.WriteLine("Order successfully cancelled.");
+                }
+            }
+            if (__step_no == 2)
+            {
+                var _order1 = new BBulkOrderItem { symbol = "XBTUSD", side = SideType.Ask.ToString(), ordType = OrderType.Limit.ToString(), orderQty = order_quantity, price = initial_sell_limit };
+                var _order2 = new BBulkOrderItem { symbol = "XBTUSD", side = SideType.Ask.ToString(), ordType = OrderType.Limit.ToString(), orderQty = order_quantity * 2, price = initial_sell_limit };
+                var _orders = new List<BBulkOrderItem> { _order1, _order2 };
+                Console.Out.WriteLine($"Placing sell limit bulk order at {initial_sell_limit}...");
+                var _limit_orders = await _trade_api.CreateBulkOrder(_orders);
+
+                if (_limit_orders.result.All(x => x.orderStatus == OrderStatus.Open))
+                //if (_limit_order.result.orderStatus == OrderStatus.Open)
+                {
+                    var _order_updates = _limit_orders.result.Select(x => new BBulkUpdateOrderItem
+                    {
+                        orderID = x.orderId,
+                        orderQty = x.quantity,
+                        price = amended_sell_limit
+                    });
+                    Console.Out.WriteLine($"Changing limit of the sells order to {amended_sell_limit} in bulk...");
+                    _limit_orders = await _trade_api.UpdateOrders(_order_updates.ToList());
+                }
+
+                if (_limit_orders.result.All(x => x.orderStatus == OrderStatus.Open))
+                {
+                    Console.Out.WriteLine("Cancelling order...");
+                    _limit_orders = await _trade_api.CancelOrdersAsync("BTC", "USD", _limit_orders.result.Select(x => x.orderId).ToArray());
+                }
+                if (_limit_orders.result.All(x => x.orderStatus == OrderStatus.Canceled))
+                {
+                    Console.Out.WriteLine("Orders successfully bulk cancelled.");
                 }
             }
 
