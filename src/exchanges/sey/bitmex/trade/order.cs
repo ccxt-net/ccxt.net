@@ -241,4 +241,37 @@ namespace CCXT.NET.BitMEX.Trade
             set;
         }
     }
+    
+    /// <summary>
+    /// Items for TradeApi.UpdateOrders call
+    /// </summary>
+    public class BBulkUpdateOrderItem
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        public string orderID
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public decimal orderQty
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public decimal price
+        {
+            get;
+            set;
+        }
+    }
 }
