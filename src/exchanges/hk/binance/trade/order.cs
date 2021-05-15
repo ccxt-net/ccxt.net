@@ -1,6 +1,6 @@
-﻿using Newtonsoft.Json;
-using CCXT.NET.Shared.Coin.Trade;
+﻿using CCXT.NET.Shared.Coin.Trade;
 using CCXT.NET.Shared.Coin.Types;
+using Newtonsoft.Json;
 
 namespace CCXT.NET.Binance.Trade
 {
@@ -12,7 +12,6 @@ namespace CCXT.NET.Binance.Trade
         /// <summary>
         ///
         /// </summary>
-        [JsonProperty(PropertyName = "symbol")]
         public override string symbol
         {
             get;
@@ -22,8 +21,16 @@ namespace CCXT.NET.Binance.Trade
         /// <summary>
         ///
         /// </summary>
-        [JsonProperty(PropertyName = "orderId")]
-        public override string orderId
+        public new long orderId
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public long orderListId
         {
             get;
             set;
@@ -32,7 +39,6 @@ namespace CCXT.NET.Binance.Trade
         /// <summary>
         ///
         /// </summary>
-        [JsonProperty(PropertyName = "clientOrderId")]
         public string clientOrderId
         {
             get;
@@ -42,7 +48,6 @@ namespace CCXT.NET.Binance.Trade
         /// <summary>
         ///
         /// </summary>
-        [JsonProperty(PropertyName = "price")]
         public override decimal price
         {
             get;
@@ -72,7 +77,16 @@ namespace CCXT.NET.Binance.Trade
         /// <summary>
         ///
         /// </summary>
-        [JsonProperty(PropertyName = "timeInForce")]
+        [JsonProperty(PropertyName = "cummulativeQuoteQty")]
+        public override decimal amount
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
         public string timeInForce
         {
             get;
@@ -84,6 +98,51 @@ namespace CCXT.NET.Binance.Trade
         /// </summary>
         [JsonProperty(PropertyName = "time")]
         public override long timestamp
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public decimal stopPrice
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public decimal icebergQty
+        {
+            get;
+            set;
+        }
+        
+        /// <summary>
+        ///
+        /// </summary>
+        public long updateTime
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool isWorking
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public decimal origQuoteOrderQty
         {
             get;
             set;
