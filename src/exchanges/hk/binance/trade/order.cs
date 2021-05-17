@@ -21,7 +21,18 @@ namespace CCXT.NET.Binance.Trade
         /// <summary>
         ///
         /// </summary>
-        public new long orderId
+        [JsonProperty(PropertyName = "orderId")]
+        public long orderNumber
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [JsonProperty(PropertyName = "clientOrderId")]
+        public override string orderId
         {
             get;
             set;
@@ -31,15 +42,6 @@ namespace CCXT.NET.Binance.Trade
         /// 
         /// </summary>
         public long orderListId
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public string clientOrderId
         {
             get;
             set;

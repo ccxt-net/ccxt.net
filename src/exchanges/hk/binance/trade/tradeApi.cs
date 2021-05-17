@@ -149,13 +149,13 @@ namespace CCXT.NET.Binance.Trade
                                             .OrderByDescending(o => o.timestamp)
                                             .Take(limits);
 
-                        _result.result.AddRange(_orders);
+                        foreach (var _o in _orders)
+                        {
+                            //_o.amount = _o.price * _o.quantity;
+                            //_o.fee = _o.amount * tradeClient.ExchangeInfo.Fees.trading.maker;
 
-                        //foreach (var _o in _orders)
-                        //{
-                        //    _o.amount = _o.price * _o.quantity;
-                        //    _result.result.Add(_o);
-                        //}
+                            _result.result.Add(_o);
+                        }
                     }
                 }
 
@@ -483,7 +483,7 @@ namespace CCXT.NET.Binance.Trade
                             var _order = new BMyOrderItem
                             {
                                 symbol = _market.result.symbol,
-                                orderId = _order_token.Value<long>(),
+                                orderId = _order_token.Value<string>(),
                                 orderType = OrderType.Limit,
                                 orderStatus = OrderStatus.Canceled,
                                 sideType = sideType,
