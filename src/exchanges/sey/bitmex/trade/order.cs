@@ -330,6 +330,7 @@ namespace CCXT.NET.BitMEX.Trade
             }
         }
     }
+
     /// <summary>
     /// Items for TradeApi.UpdateOrders call
     /// </summary>
@@ -362,9 +363,11 @@ namespace CCXT.NET.BitMEX.Trade
             set;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public BBulkUpdateOrderItem()
         {
-
         }
     }
 }
