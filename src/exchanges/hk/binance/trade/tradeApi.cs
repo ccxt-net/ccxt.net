@@ -112,7 +112,7 @@ namespace CCXT.NET.Binance.Trade
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
         /// <param name="timeframe">time frame interval (optional): default "1d"</param>
         /// <param name="since">return committed data since given time (milli-seconds) (optional): default 0</param>
-        /// <param name="limits">maximum number of items (optional): default 20</param>
+        /// <param name="limits">maximum number of items (optional): default 500; max 1000</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
         public override async ValueTask<MyOrders> FetchMyOrdersAsync(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
@@ -130,6 +130,7 @@ namespace CCXT.NET.Binance.Trade
                 var _params = new Dictionary<string, object>();
                 {
                     _params.Add("symbol", _market.result.symbol);
+                    _params.Add("limit", limits < 1000 ? limits : 1000);
 
                     tradeClient.MergeParamsAndArgs(_params, args);
                 }
@@ -150,7 +151,9 @@ namespace CCXT.NET.Binance.Trade
 
                         foreach (var _o in _orders)
                         {
-                            _o.amount = _o.price * _o.quantity;
+                            //_o.amount = _o.price * _o.quantity;
+                            //_o.fee = _o.amount * tradeClient.ExchangeInfo.Fees.trading.maker;
+
                             _result.result.Add(_o);
                         }
                     }

@@ -757,6 +757,45 @@ namespace CCXT.NET.BitMEX.Trade
         }
 
         /// <summary>
+        /// Update orders in bulk.
+        /// </summary>
+        /// <param name="orders"></param>
+        /// <param name="args">Add additional attributes for each exchange</param>
+        /// <returns></returns>
+        public async Task<MyOrders> UpdateOrders(List<BBulkUpdateOrderItem> orders, Dictionary<string, object> args = null)
+        {
+            var _result = new MyOrders();
+
+            tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
+            {
+                var _params = tradeClient.MergeParamsAndArgs(
+                    new Dictionary<string, object>
+                    {
+                        { "orders", orders }
+                    },
+                    args
+                );
+
+                var _json_value = await tradeClient.CallApiPut1Async("/api/v1/order/bulk", _params);
+#if DEBUG
+                _result.rawJson = _json_value.Content;
+#endif
+                var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
+                if (_json_result.success == true)
+                {
+                    var _orders = tradeClient.DeserializeObject<List<BMyOrderItem>>(_json_value.Content);
+                    {
+                        _result.result = _orders.ToList<IMyOrderItem>();
+                    }
+                }
+
+                _result.SetResult(_json_result);
+            }
+
+            return _result;
+        }
+
+        /// <summary>
         /// Cancel an order.
         /// </summary>
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>

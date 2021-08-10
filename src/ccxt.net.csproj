@@ -39,6 +39,12 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <Compile Remove="exchanges\unknown\**" />
+      <EmbeddedResource Remove="exchanges\unknown\**" />
+      <None Remove="exchanges\unknown\**" />
+    </ItemGroup>
+
+    <ItemGroup>
         <None Include="..\LICENSE.txt">
             <Pack>True</Pack>
             <PackagePath></PackagePath>
@@ -59,7 +65,7 @@
     <ItemGroup>
         <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
         <PackageReference Include="RestSharp" Version="106.11.7" />
-        <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.10.2" />
+        <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.11.1" />
         <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.5.4" />
         <PackageReference Include="CellWars.Threading.AsyncLock" Version="1.0.0" />
     </ItemGroup>
