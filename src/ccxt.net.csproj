@@ -64,8 +64,8 @@
 
     <ItemGroup>
         <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-        <PackageReference Include="RestSharp" Version="106.11.7" />
-        <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.11.1" />
+        <PackageReference Include="RestSharp" Version="106.12.0" />
+        <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.12.0" />
         <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.5.4" />
         <PackageReference Include="CellWars.Threading.AsyncLock" Version="1.0.0" />
     </ItemGroup>
