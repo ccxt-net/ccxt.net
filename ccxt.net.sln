@@ -38,6 +38,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{BC661016
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bittrex", "samples\bittrex\bittrex.csproj", "{5E21C096-B158-4474-AF54-0646855284E4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{E2E85496-48BA-4D95-A291-C68CA733D20F}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\codeql-analysis.yml = .github\workflows\codeql-analysis.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -131,6 +136,7 @@ Global
 		{175C73B8-341C-471A-B9F6-559E3D0D41C6} = {F5F13CB7-91AE-498C-AD71-9EC31AA49A5B}
 		{F0F88963-FF57-4587-A08A-A819A10C3A88} = {F5F13CB7-91AE-498C-AD71-9EC31AA49A5B}
 		{5E21C096-B158-4474-AF54-0646855284E4} = {F5F13CB7-91AE-498C-AD71-9EC31AA49A5B}
+		{E2E85496-48BA-4D95-A291-C68CA733D20F} = {EE36102D-AC13-4DED-802B-F265CB1DEE53}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {10D0D5D6-447B-4484-A230-BBDBAA48885C}
