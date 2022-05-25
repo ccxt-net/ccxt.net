@@ -92,6 +92,6 @@ We appreciate all contributions!
 
 ### Contact
 
-home-page: http://www.odinsoftware.co.kr
+home-page: http://www.odinsoft.co.kr
 
-e-mail: help@odinsoftware.co.kr
+e-mail: help@odinsoft.co.kr
