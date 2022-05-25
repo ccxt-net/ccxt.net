@@ -84,6 +84,8 @@ namespace CCXT.NET.OkCoinKr.Public
                         _m.quoteName = publicClient.ExchangeInfo.GetCommonCurrencyName(_m.quoteId);
 
                         _m.marketId = _m.baseName + "/" + _m.quoteName;
+                        if (_result.result.ContainsKey(_m.marketId))
+                            continue;
 
                         _m.precision = new MarketPrecision
                         {

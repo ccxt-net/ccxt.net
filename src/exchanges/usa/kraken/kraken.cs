@@ -126,17 +126,17 @@ namespace CCXT.NET.Kraken
             }
         }
 
-        private SHA256Managed __sha256 = null;
+        private SHA256 __sha256 = null;
 
         /// <summary>
         ///
         /// </summary>
-        public SHA256Managed Sha256Managed
+        public SHA256 Sha256Managed
         {
             get
             {
                 if (__sha256 == null)
-                    __sha256 = new SHA256Managed();
+                    __sha256 = SHA256.Create();
 
                 return __sha256;
             }
@@ -164,7 +164,7 @@ namespace CCXT.NET.Kraken
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async ValueTask<IRestRequest> CreatePostRequestAsync(string endpoint, Dictionary<string, object> args = null)
+        public override async ValueTask<RestRequest> CreatePostRequestAsync(string endpoint, Dictionary<string, object> args = null)
         {
             var _request = await base.CreatePostRequestAsync(endpoint, args);
 
@@ -217,7 +217,7 @@ namespace CCXT.NET.Kraken
         /// </summary>
         /// <param name="response">response value arrive from exchange's server</param>
         /// <returns></returns>
-        public override BoolResult GetResponseMessage(IRestResponse response = null)
+        public override BoolResult GetResponseMessage(RestResponse response = null)
         {
             var _result = new BoolResult();
 

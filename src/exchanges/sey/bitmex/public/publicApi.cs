@@ -79,6 +79,8 @@ namespace CCXT.NET.BitMEX.Public
                         var _quote_name = publicClient.ExchangeInfo.GetCommonCurrencyName(_quote_id);
 
                         var _market_id = _base_name + "/" + _quote_name;
+                        if (_result.result.ContainsKey(_market_id))
+                            continue;
 
                         var _order_base = _base_name;
                         var _order_quote = _quote_name;
@@ -120,6 +122,8 @@ namespace CCXT.NET.BitMEX.Public
                         }
 
                         _m.marketId = _market_id;
+                        if (_result.result.ContainsKey(_m.marketId))
+                            continue;
 
                         _m.baseId = (_base_name != "BTC") ? _base_id : _m.settlCurrency;
                         _m.quoteId = (_quote_name != "BTC") ? _quote_id : _m.settlCurrency;

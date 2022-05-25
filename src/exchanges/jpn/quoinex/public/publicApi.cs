@@ -68,6 +68,8 @@ namespace CCXT.NET.Quoinex.Public
                         var _quote_name = publicClient.ExchangeInfo.GetCommonCurrencyName(_quote_id);
 
                         var _market_id = _base_name + "/" + _quote_name;
+                        if (_result.result.ContainsKey(_market_id))
+                            continue;
 
                         var _makerFee = _market["maker_fee"].Value<decimal>();
                         var _takerFee = _market["taker_fee"].Value<decimal>();

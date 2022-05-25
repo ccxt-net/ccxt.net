@@ -73,7 +73,10 @@ namespace CCXT.NET.Kraken.Public
 
                         _market.baseName = publicClient.ExchangeInfo.GetCommonCurrencyName(_market.baseId);
                         _market.quoteName = publicClient.ExchangeInfo.GetCommonCurrencyName(_market.quoteId);
+                        
                         var _market_id = _market.baseName + "/" + _market.quoteName;
+                        if (_result.result.ContainsKey(_market_id))
+                            continue;
 
                         _market.dark_pool = _m.Key.Contains(".d");
                         _market.marketId = _market.dark_pool ? _market.altname : _market_id;

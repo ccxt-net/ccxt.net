@@ -9,7 +9,7 @@ namespace bitmex
 {
     class Program
     {
-        private static int __step_no = 2;
+        private static int __step_no = 0;
 
         private static readonly string API_KEY = "N5lkLW2eUsVF3CxaxpaM5ry7";    // Put your API key
         private static readonly string API_SECRET = "ORKlDys1wouXV84H_G_H5zxN_VrF8IsUf_MNYux1B4GFfHJd"; // Put your API secret;

@@ -71,7 +71,10 @@ namespace CCXT.NET.Coinone.Public
                         var _quote_id = "krw";
                         var _base_name = publicClient.ExchangeInfo.GetCommonCurrencyName(_base_id);
                         var _quote_name = publicClient.ExchangeInfo.GetCommonCurrencyName(_quote_id);
+                        
                         var _market_id = _base_name + "/" + _quote_name;
+                        if (_result.result.ContainsKey(_market_id))
+                            continue;
 
                         var _precision = new MarketPrecision
                         {

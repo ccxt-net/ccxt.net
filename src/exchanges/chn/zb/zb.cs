@@ -7,6 +7,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using CCXT.NET.Shared.Extension;
 
 namespace CCXT.NET.Zb
 {
@@ -194,7 +195,7 @@ namespace CCXT.NET.Zb
 
         private byte[] MakeMD5(byte[] original)
         {
-            var hashmd5 = new MD5CryptoServiceProvider();
+            var hashmd5 = MD5.Create();
             return hashmd5.ComputeHash(original);
         }
 
@@ -228,7 +229,7 @@ namespace CCXT.NET.Zb
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async ValueTask<IRestRequest> CreateGetRequestAsync(string endpoint, Dictionary<string, object> args = null)
+        public override async ValueTask<RestRequest> CreateGetRequestAsync(string endpoint, Dictionary<string, object> args = null)
         {
             var _request = await base.CreateGetRequestAsync(endpoint, args);
 
@@ -241,7 +242,7 @@ namespace CCXT.NET.Zb
                     foreach (var _param in _request.Parameters)
                         _params.Add(_param.Name, _param.Value);
 
-                    _request.Parameters.Clear();
+                    _request.RemoveParameters();
                 }
 
                 var _nonce = GenerateOnlyNonce(13).ToString();
@@ -312,7 +313,7 @@ namespace CCXT.NET.Zb
         /// </summary>
         /// <param name="response">response value arrive from exchange's server</param>
         /// <returns></returns>
-        public override BoolResult GetResponseMessage(IRestResponse response = null)
+        public override BoolResult GetResponseMessage(RestResponse response = null)
         {
             var _result = new BoolResult();
 

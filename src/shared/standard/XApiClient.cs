@@ -1,7 +1,7 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using CCXT.NET.Shared.Configuration;
+﻿using CCXT.NET.Shared.Configuration;
 using CCXT.NET.Shared.Serialize;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using RestSharp;
 using System;
 using System.Collections.Concurrent;
@@ -110,7 +110,7 @@ namespace CCXT.NET.Shared.Coin
         /// </summary>
         /// <param name="response">response value arrive from exchange's server</param>
         /// <returns></returns>
-        BoolResult GetResponseMessage(IRestResponse response = null);
+        BoolResult GetResponseMessage(RestResponse response = null);
 
         /// <summary>
         /// 
@@ -119,7 +119,7 @@ namespace CCXT.NET.Shared.Coin
         /// <param name="max_retry"></param>
         /// <param name="delay_milliseconds"></param>
         /// <returns></returns>
-        ValueTask<IRestResponse> RestExecuteAsync(IRestRequest request, int max_retry, int delay_milliseconds);
+        ValueTask<RestResponse> RestExecuteAsync(RestRequest request, int max_retry, int delay_milliseconds);
 
         #endregion method common lib
 
@@ -131,7 +131,7 @@ namespace CCXT.NET.Shared.Coin
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        ValueTask<IRestRequest> CreatePostRequestAsync(string endpoint, Dictionary<string, object> args = null);
+        ValueTask<RestRequest> CreatePostRequestAsync(string endpoint, Dictionary<string, object> args = null);
 
         /// <summary>
         ///
@@ -156,7 +156,7 @@ namespace CCXT.NET.Shared.Coin
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        ValueTask<(string Content, IRestResponse Response)> CallApiPost1Async(string endpoint, Dictionary<string, object> args = null);
+        ValueTask<(string Content, RestResponse Response)> CallApiPost1Async(string endpoint, Dictionary<string, object> args = null);
 
         /// <summary>
         ///
@@ -164,7 +164,7 @@ namespace CCXT.NET.Shared.Coin
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        ValueTask<IRestResponse> CallApiPost2Async(string endpoint, Dictionary<string, object> args = null);
+        ValueTask<RestResponse> CallApiPost2Async(string endpoint, Dictionary<string, object> args = null);
 
         #endregion method post
 
@@ -176,7 +176,7 @@ namespace CCXT.NET.Shared.Coin
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        ValueTask<IRestRequest> CreateGetRequestAsync(string endpoint, Dictionary<string, object> args = null);
+        ValueTask<RestRequest> CreateGetRequestAsync(string endpoint, Dictionary<string, object> args = null);
 
         /// <summary>
         ///
@@ -201,7 +201,7 @@ namespace CCXT.NET.Shared.Coin
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        ValueTask<(string Content, IRestResponse Response)> CallApiGet1Async(string endpoint, Dictionary<string, object> args = null);
+        ValueTask<(string Content, RestResponse Response)> CallApiGet1Async(string endpoint, Dictionary<string, object> args = null);
 
         /// <summary>
         ///
@@ -209,7 +209,7 @@ namespace CCXT.NET.Shared.Coin
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        ValueTask<IRestResponse> CallApiGet2Async(string endpoint, Dictionary<string, object> args = null);
+        ValueTask<RestResponse> CallApiGet2Async(string endpoint, Dictionary<string, object> args = null);
 
         #endregion method get
 
@@ -221,7 +221,7 @@ namespace CCXT.NET.Shared.Coin
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        ValueTask<IRestRequest> CreateDeleteRequestAsync(string endpoint, Dictionary<string, object> args = null);
+        ValueTask<RestRequest> CreateDeleteRequestAsync(string endpoint, Dictionary<string, object> args = null);
 
         /// <summary>
         ///
@@ -246,7 +246,7 @@ namespace CCXT.NET.Shared.Coin
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        ValueTask<(string Content, IRestResponse Response)> CallApiDelete1Async(string endpoint, Dictionary<string, object> args = null);
+        ValueTask<(string Content, RestResponse Response)> CallApiDelete1Async(string endpoint, Dictionary<string, object> args = null);
 
         /// <summary>
         ///
@@ -254,7 +254,7 @@ namespace CCXT.NET.Shared.Coin
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        ValueTask<IRestResponse> CallApiDelete2Async(string endpoint, Dictionary<string, object> args = null);
+        ValueTask<RestResponse> CallApiDelete2Async(string endpoint, Dictionary<string, object> args = null);
 
         #endregion method delete
     }
@@ -505,21 +505,15 @@ namespace CCXT.NET.Shared.Coin
         /// </summary>
         /// <param name="baseurl"></param>
         /// <returns></returns>
-        public virtual IRestClient CreateJsonClient(string baseurl)
+        public virtual RestClient CreateJsonClient(string baseurl)
         {
-            var _client = new RestClient(baseurl)
+            return new RestClient(new RestClientOptions
             {
+                BaseUrl = new Uri(baseurl),
                 Timeout = 5 * 1000,
-                ReadWriteTimeout = 32 * 1000,
                 UserAgent = UserAgent,
                 Encoding = Encoding.GetEncoding(65001)
-            };
-
-            _client.RemoveHandler(ContentType);
-            //_client.AddHandler(ContentType, new RestSharpJsonNetDeserializer());
-            _client.AddHandler(ContentType, () => new RestSharpJsonNetDeserializer());
-
-            return _client;
+            });
         }
 
         /// <summary>
@@ -529,12 +523,11 @@ namespace CCXT.NET.Shared.Coin
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <param name="method"></param>
         /// <returns></returns>
-        public IRestRequest CreateJsonRequest(string resource, Dictionary<string, object> args = null, Method method = Method.GET)
+        public RestRequest CreateJsonRequest(string resource, Dictionary<string, object> args = null, Method method = Method.Get)
         {
             var _request = new RestRequest(resource, method)
             {
-                RequestFormat = DataFormat.Json,
-                JsonSerializer = new RestSharpJsonNetSerializer()
+                RequestFormat = DataFormat.Json
             };
 
             if (args != null)
@@ -553,7 +546,7 @@ namespace CCXT.NET.Shared.Coin
                             if (_margs.isArray == true)
                             {
                                 foreach (var _marg in (_margs.value as Array) ?? new Array[0])
-                                    _request.AddParameter(_arg.Key, _marg);
+                                    _request.AddParameter(_arg.Key, _marg, ParameterType.GetOrPost);
                             }
                             else if (_margs.isJson == true)
                             {
@@ -561,13 +554,13 @@ namespace CCXT.NET.Shared.Coin
                             }
                             else
                             {
-                                _request.AddParameter(_arg.Key, _margs.value);
+                                _request.AddParameter(_arg.Key, _margs.value, ParameterType.GetOrPost);
                             }
                         }
                     }
                     else
                     {
-                        _request.AddParameter(_arg.Key, _arg.Value);
+                        _request.AddParameter(_arg.Key, _arg.Value, ParameterType.GetOrPost);
                     }
                 }
             }
@@ -601,7 +594,7 @@ namespace CCXT.NET.Shared.Coin
         /// </summary>
         /// <param name="response">response value arrive from exchange's server</param>
         /// <returns></returns>
-        public virtual BoolResult GetResponseMessage(IRestResponse response = null)
+        public virtual BoolResult GetResponseMessage(RestResponse response = null)
         {
             var _result = new BoolResult();
 
@@ -640,15 +633,15 @@ namespace CCXT.NET.Shared.Coin
         /// <param name="max_retry"></param>
         /// <param name="delay_milliseconds"></param>
         /// <returns></returns>
-        public virtual async ValueTask<IRestResponse> RestExecuteAsync(IRestRequest request, int max_retry = 3, int delay_milliseconds = 1000)
+        public virtual async ValueTask<RestResponse> RestExecuteAsync(RestRequest request, int max_retry = 3, int delay_milliseconds = 1000)
         {
-            var _result = (IRestResponse)null;
+            var _result = (RestResponse)null;
 
             var _client = CreateJsonClient(ApiUrl);
 
             for (var _retry_count = 0; _retry_count < max_retry; _retry_count++)
             {
-                var _tcs = new TaskCompletionSource<IRestResponse>();
+                var _tcs = new TaskCompletionSource<RestResponse>();
                 {
                     //var _handle = _client.ExecuteAsync(request, response =>
                     //{
@@ -717,9 +710,9 @@ namespace CCXT.NET.Shared.Coin
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public virtual async ValueTask<IRestRequest> CreatePostRequestAsync(string endpoint, Dictionary<string, object> args = null)
+        public virtual async ValueTask<RestRequest> CreatePostRequestAsync(string endpoint, Dictionary<string, object> args = null)
         {
-            var _request = CreateJsonRequest(endpoint, args, Method.POST);
+            var _request = CreateJsonRequest(endpoint, args, Method.Post);
             return await Task.FromResult(_request);
         }
 
@@ -754,7 +747,7 @@ namespace CCXT.NET.Shared.Coin
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public virtual async ValueTask<(string Content, IRestResponse Response)> CallApiPost1Async(string endpoint, Dictionary<string, object> args = null)
+        public virtual async ValueTask<(string Content, RestResponse Response)> CallApiPost1Async(string endpoint, Dictionary<string, object> args = null)
         {
             var _response = await CallApiPost2Async(endpoint, args);
             return (_response.Content, _response);
@@ -766,7 +759,7 @@ namespace CCXT.NET.Shared.Coin
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public virtual async ValueTask<IRestResponse> CallApiPost2Async(string endpoint, Dictionary<string, object> args = null)
+        public virtual async ValueTask<RestResponse> CallApiPost2Async(string endpoint, Dictionary<string, object> args = null)
         {
             var _request = await CreatePostRequestAsync(endpoint, args);
 #if DEBUG
@@ -803,9 +796,9 @@ namespace CCXT.NET.Shared.Coin
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public virtual async ValueTask<IRestRequest> CreateGetRequestAsync(string endpoint, Dictionary<string, object> args = null)
+        public virtual async ValueTask<RestRequest> CreateGetRequestAsync(string endpoint, Dictionary<string, object> args = null)
         {
-            var _request = CreateJsonRequest(endpoint, args, Method.GET);
+            var _request = CreateJsonRequest(endpoint, args, Method.Get);
             return await Task.FromResult(_request);
         }
 
@@ -842,7 +835,7 @@ namespace CCXT.NET.Shared.Coin
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public virtual async ValueTask<(string Content, IRestResponse Response)> CallApiGet1Async(string endpoint, Dictionary<string, object> args = null)
+        public virtual async ValueTask<(string Content, RestResponse Response)> CallApiGet1Async(string endpoint, Dictionary<string, object> args = null)
         {
             var _response = await CallApiGet2Async(endpoint, args);
             return (_response.Content, _response);
@@ -854,7 +847,7 @@ namespace CCXT.NET.Shared.Coin
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public virtual async ValueTask<IRestResponse> CallApiGet2Async(string endpoint, Dictionary<string, object> args = null)
+        public virtual async ValueTask<RestResponse> CallApiGet2Async(string endpoint, Dictionary<string, object> args = null)
         {
             var _request = await CreateGetRequestAsync(endpoint, args);
 #if DEBUG
@@ -887,9 +880,9 @@ namespace CCXT.NET.Shared.Coin
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public virtual async ValueTask<IRestRequest> CreateDeleteRequestAsync(string endpoint, Dictionary<string, object> args = null)
+        public virtual async ValueTask<RestRequest> CreateDeleteRequestAsync(string endpoint, Dictionary<string, object> args = null)
         {
-            var _request = CreateJsonRequest(endpoint, args, Method.DELETE);
+            var _request = CreateJsonRequest(endpoint, args, Method.Delete);
             return await Task.FromResult(_request);
         }
 
@@ -926,7 +919,7 @@ namespace CCXT.NET.Shared.Coin
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public virtual async ValueTask<(string Content, IRestResponse Response)> CallApiDelete1Async(string endpoint, Dictionary<string, object> args = null)
+        public virtual async ValueTask<(string Content, RestResponse Response)> CallApiDelete1Async(string endpoint, Dictionary<string, object> args = null)
         {
             var _response = await CallApiDelete2Async(endpoint, args);
             return (_response.Content, _response);
@@ -938,7 +931,7 @@ namespace CCXT.NET.Shared.Coin
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public virtual async ValueTask<IRestResponse> CallApiDelete2Async(string endpoint, Dictionary<string, object> args = null)
+        public virtual async ValueTask<RestResponse> CallApiDelete2Async(string endpoint, Dictionary<string, object> args = null)
         {
             var _request = await CreateDeleteRequestAsync(endpoint, args);
 #if DEBUG
@@ -971,9 +964,9 @@ namespace CCXT.NET.Shared.Coin
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public virtual async ValueTask<IRestRequest> CreatePutRequestAsync(string endpoint, Dictionary<string, object> args = null)
+        public virtual async ValueTask<RestRequest> CreatePutRequestAsync(string endpoint, Dictionary<string, object> args = null)
         {
-            var _request = CreateJsonRequest(endpoint, args, Method.PUT);
+            var _request = CreateJsonRequest(endpoint, args, Method.Put);
             return await Task.FromResult(_request);
         }
 
@@ -1010,7 +1003,7 @@ namespace CCXT.NET.Shared.Coin
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public virtual async ValueTask<(string Content, IRestResponse Response)> CallApiPut1Async(string endpoint, Dictionary<string, object> args = null)
+        public virtual async ValueTask<(string Content, RestResponse Response)> CallApiPut1Async(string endpoint, Dictionary<string, object> args = null)
         {
             var _response = await CallApiPut2Async(endpoint, args);
             return (_response.Content, _response);
@@ -1022,7 +1015,7 @@ namespace CCXT.NET.Shared.Coin
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public virtual async ValueTask<IRestResponse> CallApiPut2Async(string endpoint, Dictionary<string, object> args = null)
+        public virtual async ValueTask<RestResponse> CallApiPut2Async(string endpoint, Dictionary<string, object> args = null)
         {
             var _request = await CreatePutRequestAsync(endpoint, args);
 #if DEBUG

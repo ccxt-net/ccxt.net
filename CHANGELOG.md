@@ -1,4 +1,8 @@
-# ¬³hangelog
+ï»¿# Ð¡hangelog
+
+## Version 1.4.13 2022-05-25
+
+ - RestSharp update and upgrade to .net core 6.
 
 ## Version 1.3.8 2020-11-17
 

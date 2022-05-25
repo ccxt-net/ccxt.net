@@ -68,6 +68,8 @@ namespace CCXT.NET.GateIO.Public
                         _market.quoteName = publicClient.ExchangeInfo.GetCommonCurrencyName(_market.quoteId);
 
                         _market.marketId = _market.baseName + "/" + _market.quoteName;
+                        if (_result.result.ContainsKey(_market.marketId))
+                            continue;
 
                         _market.precision = new MarketPrecision
                         {

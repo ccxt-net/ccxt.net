@@ -1,6 +1,8 @@
 ﻿using CCXT.NET.Shared.Configuration;
+using RestSharp;
 using System;
 using System.Globalization;
+using System.Linq;
 
 namespace CCXT.NET.Shared.Extension
 {
@@ -9,6 +11,13 @@ namespace CCXT.NET.Shared.Extension
     /// </summary>
     public static partial class CExtension
     {
+        public static void RemoveParameters(this RestRequest request)
+        {
+            var _params = request.Parameters.ToArray();
+            foreach (var _param in _params)
+                request.RemoveParameter(_param);
+        }
+
         /// <summary>
         ///
         /// </summary>

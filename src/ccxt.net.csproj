@@ -1,12 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFrameworks>net472;netstandard2.1;net5.0</TargetFrameworks>
+        <TargetFramework>net6.0</TargetFramework>
         <Title>CryptoCurrency eXchange Trading Library for .NET</Title>
         <Product>CCXT</Product>
         <Company>ODINSOFT</Company>
         <Description>CCXT.NET – CryptoCurrency eXchange Trading Library for .NET</Description>
-        <Copyright>Copyright OdinSoft Co., Ltd. 2015~2021</Copyright>
+        <Copyright>Copyright OdinSoft Co., Ltd. 2015~2022</Copyright>
         <AssemblyTitle>CCXT.NET</AssemblyTitle>
         <Authors>SEONGAHN LEE</Authors>
         <AssemblyName>CCXT.NET</AssemblyName>
@@ -19,13 +19,16 @@
         <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
         <RootNamespace>CCXT.NET</RootNamespace>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <Version>1.3.9</Version>
-        <PackageReleaseNotes>Issue #21 Bittrex 1.1 Api past end of life.</PackageReleaseNotes>
-        <AssemblyVersion>1.3.9.0</AssemblyVersion>
-        <FileVersion>1.3.9.0</FileVersion>
+        <Version>1.4.13</Version>
+        <PackageReleaseNotes>RestSharp update and upgrade to .net core 6.</PackageReleaseNotes>
+        <AssemblyVersion>1.4.13.1</AssemblyVersion>
+        <FileVersion>1.4.13.1</FileVersion>
         <LangVersion>latest</LangVersion>
         <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
         <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <RepositoryUrl>https://github.com/ccxt.net/ccxt.net</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net472|AnyCPU'">
@@ -45,6 +48,14 @@
     </ItemGroup>
 
     <ItemGroup>
+        <None Include="..\README.md">
+          <Pack>True</Pack>
+          <PackagePath>\</PackagePath>
+        </None>
+        <None Include="D:\github.com\lisa3907\ccxt.net\CHANGELOG.md" Link="CHANGELOG.md">
+          <Pack>True</Pack>
+          <PackagePath>\</PackagePath>
+        </None>
         <None Include="..\LICENSE.txt">
             <Pack>True</Pack>
             <PackagePath></PackagePath>
@@ -64,8 +75,8 @@
 
     <ItemGroup>
         <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-        <PackageReference Include="RestSharp" Version="106.12.0" />
-        <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.12.2" />
+        <PackageReference Include="RestSharp" Version="107.3.0" />
+        <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.18.0" />
         <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.5.4" />
         <PackageReference Include="CellWars.Threading.AsyncLock" Version="1.0.0" />
     </ItemGroup>

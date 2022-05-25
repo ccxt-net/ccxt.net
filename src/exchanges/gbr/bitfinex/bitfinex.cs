@@ -1,6 +1,7 @@
-﻿using Newtonsoft.Json;
+﻿using CCXT.NET.Shared.Coin;
+using CCXT.NET.Shared.Extension;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using CCXT.NET.Shared.Coin;
 using RestSharp;
 using System;
 using System.Collections.Generic;
@@ -229,7 +230,7 @@ namespace CCXT.NET.Bitfinex
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async ValueTask<IRestRequest> CreatePostRequestAsync(string endpoint, Dictionary<string, object> args = null)
+        public override async ValueTask<RestRequest> CreatePostRequestAsync(string endpoint, Dictionary<string, object> args = null)
         {
             var _request = await base.CreatePostRequestAsync(endpoint, args);
 
@@ -240,7 +241,7 @@ namespace CCXT.NET.Bitfinex
                     foreach (var _param in _request.Parameters)
                         _params.Add(_param.Name, _param.Value);
 
-                    _request.Parameters.Clear();
+                    _request.RemoveParameters();
                 }
 
                 var _nonce = GenerateOnlyNonce(13).ToString();
@@ -290,7 +291,7 @@ namespace CCXT.NET.Bitfinex
         /// </summary>
         /// <param name="response">response value arrive from exchange's server</param>
         /// <returns></returns>
-        public override BoolResult GetResponseMessage(IRestResponse response = null)
+        public override BoolResult GetResponseMessage(RestResponse response = null)
         {
             var _result = new BoolResult();
 

@@ -1,6 +1,7 @@
-﻿using Newtonsoft.Json;
+﻿using CCXT.NET.Shared.Coin;
+using CCXT.NET.Shared.Extension;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using CCXT.NET.Shared.Coin;
 using RestSharp;
 using System;
 using System.Collections.Generic;
@@ -110,17 +111,17 @@ namespace CCXT.NET.ItBit
             }
         }
 
-        private SHA256Managed __sha256 = null;
+        private SHA256 __sha256 = null;
 
         /// <summary>
         ///
         /// </summary>
-        public SHA256Managed Sha256Managed
+        public SHA256 Sha256Managed
         {
             get
             {
                 if (__sha256 == null)
-                    __sha256 = new SHA256Managed();
+                    __sha256 = SHA256.Create();
 
                 return __sha256;
             }
@@ -148,7 +149,7 @@ namespace CCXT.NET.ItBit
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async ValueTask<IRestRequest> CreateGetRequestAsync(string endpoint, Dictionary<string, object> args = null)
+        public override async ValueTask<RestRequest> CreateGetRequestAsync(string endpoint, Dictionary<string, object> args = null)
         {
             var _request = await base.CreateGetRequestAsync(endpoint, args);
 
@@ -196,7 +197,7 @@ namespace CCXT.NET.ItBit
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async ValueTask<IRestRequest> CreatePostRequestAsync(string endpoint, Dictionary<string, object> args = null)
+        public override async ValueTask<RestRequest> CreatePostRequestAsync(string endpoint, Dictionary<string, object> args = null)
         {
             var _request = await base.CreatePostRequestAsync(endpoint, args);
 
@@ -207,7 +208,7 @@ namespace CCXT.NET.ItBit
                     foreach (var _param in _request.Parameters)
                         _params.Add(_param.Name, _param.Value);
 
-                    _request.Parameters.Clear();
+                    _request.RemoveParameters();
                 }
 
                 var _post_data = this.SerializeObject(_params, Formatting.None);
@@ -250,7 +251,7 @@ namespace CCXT.NET.ItBit
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async ValueTask<IRestRequest> CreateDeleteRequestAsync(string endpoint, Dictionary<string, object> args = null)
+        public override async ValueTask<RestRequest> CreateDeleteRequestAsync(string endpoint, Dictionary<string, object> args = null)
         {
             var _request = await base.CreateDeleteRequestAsync(endpoint, args);
 
@@ -261,7 +262,7 @@ namespace CCXT.NET.ItBit
                     foreach (var _param in _request.Parameters)
                         _params.Add(_param.Name, _param.Value);
 
-                    _request.Parameters.Clear();
+                    _request.RemoveParameters();
                 }
 
                 var _delete_data = _params.Count > 0 ? this.SerializeObject(_params, Formatting.None) : "";
@@ -303,7 +304,7 @@ namespace CCXT.NET.ItBit
         /// </summary>
         /// <param name="response">response value arrive from exchange's server</param>
         /// <returns></returns>
-        public override BoolResult GetResponseMessage(IRestResponse response = null)
+        public override BoolResult GetResponseMessage(RestResponse response = null)
         {
             var _result = new BoolResult();
 

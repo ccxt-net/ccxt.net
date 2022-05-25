@@ -63,7 +63,10 @@ namespace CCXT.NET.Huobi.Public
 
                         _m.baseName = publicClient.ExchangeInfo.GetCommonCurrencyName(_m.baseId);
                         _m.quoteName = publicClient.ExchangeInfo.GetCommonCurrencyName(_m.quoteId);
+                        
                         _m.marketId = _m.baseName + "/" + _m.quoteName;
+                        if (_result.result.ContainsKey(_m.marketId))
+                            continue;
 
                         _m.lot = (decimal)Math.Pow(10.0, -(double)_m.precision.quantity);
                         _m.active = true;

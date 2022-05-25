@@ -92,6 +92,8 @@ namespace CCXT.NET.OKEx.Public
                         _m.quoteName = okexapiClient.ExchangeInfo.GetCommonCurrencyName(_m.quoteId);
 
                         _m.marketId = _m.baseName + "/" + _m.quoteName;
+                        if (_result.result.ContainsKey(_m.marketId))
+                            continue;
 
                         _m.precision = new MarketPrecision
                         {
@@ -140,7 +142,7 @@ namespace CCXT.NET.OKEx.Public
                                 var _market = _m.CreateCopy();
 
                                 _market.marketId = _m.baseName + "/" + _f;
-                                if (_result.result.ContainsKey(_market.marketId) == true)
+                                if (_result.result.ContainsKey(_market.marketId))
                                     continue;
 
                                 _market.symbol = _m.baseId + "_" + _f.ToLower();
