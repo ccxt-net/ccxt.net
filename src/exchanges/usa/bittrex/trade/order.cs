@@ -116,7 +116,7 @@ namespace CCXT.NET.Bittrex.Trade
         {
             set
             {
-                orderStatus = value == true ? OrderStatus.Open : OrderStatus.Closed;
+                orderStatus = value ? OrderStatus.Open : OrderStatus.Closed;
             }
         }
 

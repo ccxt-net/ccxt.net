@@ -134,7 +134,7 @@ namespace CCXT.NET.Bitstamp
         {
             var _request = await base.CreatePostRequestAsync(endpoint, args);
 
-            if (IsAuthentication == true)
+            if (IsAuthentication)
             {
                 var _nonce = GenerateOnlyNonce(13);
                 var _sign_data = $"{_nonce}{UserName}{ConnectKey}";
@@ -183,7 +183,7 @@ namespace CCXT.NET.Bitstamp
                         var _error = _json_error.Value<string>();
                         if (String.IsNullOrEmpty(_error) == false)
                         {
-                            if (ErrorMessages.ContainsKey(_error) == true)
+                            if (ErrorMessages.ContainsKey(_error))
                                 _error_code = ErrorMessages[_error];
 
                             _error_msg = _error;
@@ -192,7 +192,7 @@ namespace CCXT.NET.Bitstamp
                         _result.SetFailure(_error_msg, _error_code);
                     }
 
-                    if (_result.success == true)
+                    if (_result.success)
                     {
                         var _json_status = _json_result.SelectToken("status");
                         if (_json_status != null)
@@ -217,7 +217,7 @@ namespace CCXT.NET.Bitstamp
                     }
                 }
 
-                if (_result.success == true && response.IsSuccessful == false)
+                if (_result.success && response.IsSuccessful == false)
                 {
                     _result.SetFailure(
                             response.ErrorMessage ?? response.StatusDescription,

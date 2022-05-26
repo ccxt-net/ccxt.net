@@ -26,7 +26,7 @@ namespace CCXT.NET.OkCoinKr.Private
             set
             {
                 success = value;
-                message = success == true ? "success" : "failure";
+                message = success ? "success" : "failure";
             }
         }
 

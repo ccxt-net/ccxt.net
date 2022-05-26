@@ -97,7 +97,7 @@ namespace CCXT.NET.Anxpro.Public
             var _result = new Ticker(base_name, quote_name);
 
             var _market = await this.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
 
@@ -113,7 +113,7 @@ namespace CCXT.NET.Anxpro.Public
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = publicClient.DeserializeObject<ATickers>(_json_value.Content);
                     {
@@ -144,7 +144,7 @@ namespace CCXT.NET.Anxpro.Public
             var _result = new Tickers();
 
             var _markets = await this.LoadMarketsAsync();
-            if (_markets.success == true)
+            if (_markets.success)
             {
                 publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
 
@@ -167,7 +167,7 @@ namespace CCXT.NET.Anxpro.Public
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = publicClient.DeserializeObject<ATickers>(_json_value.Content);
                     {
@@ -204,7 +204,7 @@ namespace CCXT.NET.Anxpro.Public
             var _result = new OrderBooks(base_name, quote_name);
 
             var _market = await this.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
 
@@ -215,7 +215,7 @@ namespace CCXT.NET.Anxpro.Public
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _orderbook = publicClient.DeserializeObject<AOrderBooks>(_json_value.Content);
                     {

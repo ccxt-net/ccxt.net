@@ -3,6 +3,7 @@ using CCXT.NET.Shared.Coin.Types;
 using CCXT.NET.Shared.Converter;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Xunit;
 
 namespace XUnit
@@ -10,7 +11,7 @@ namespace XUnit
     public partial class TradeApi
     {
         [Fact]
-        public async void Bithumb()
+        public async Task Bithumb()
         {
             var _api_key = TestConfig.GetConnectionKey("Bithumb");
             var _args = new Dictionary<string, object>();
@@ -33,7 +34,7 @@ namespace XUnit
                 }
 
                 var _fetch_my_orders = await _trade_api.FetchMyOrdersAsync("BTC", "KRW", _timeframe, _since, _limit, GetJsonContent(_trade_api.tradeClient, "fetchMyOrders", _args));
-                if ((_fetch_my_orders.supported == true || TestConfig.SupportedCheck == true) && _fetch_my_orders.statusCode != 5600)
+                if ((_fetch_my_orders.supported || TestConfig.SupportedCheck) && _fetch_my_orders.statusCode != 5600)
                 {
                     this.WriteJson(_trade_api.tradeClient, _fetch_my_orders);
 
@@ -65,7 +66,7 @@ namespace XUnit
                 }
 
                 var _fetch_my_order = await _trade_api.FetchMyOrderAsync("BTC", "KRW", _my_order_id, GetJsonContent(_trade_api.tradeClient, "fetchMyOrder", _args));
-                if ((_fetch_my_order.supported == true || TestConfig.SupportedCheck == true) && _fetch_my_order.statusCode != 5600)
+                if ((_fetch_my_order.supported || TestConfig.SupportedCheck) && _fetch_my_order.statusCode != 5600)
                 {
                     this.WriteJson(_trade_api.tradeClient, _fetch_my_order);
 
@@ -87,7 +88,7 @@ namespace XUnit
                 };
 
                 var _fetch_open_orders = await _trade_api.FetchOpenOrdersAsync("BTC", "KRW", GetJsonContent(_trade_api.tradeClient, "fetchOpenOrders", _args));
-                if ((_fetch_open_orders.supported == true || TestConfig.SupportedCheck == true) && _fetch_open_orders.statusCode != 5600)
+                if ((_fetch_open_orders.supported || TestConfig.SupportedCheck) && _fetch_open_orders.statusCode != 5600)
                 {
                     this.WriteJson(_trade_api.tradeClient, _fetch_open_orders);
 
@@ -107,7 +108,7 @@ namespace XUnit
                 }
 
                 var _all_open_orders = await _trade_api.FetchAllOpenOrdersAsync(GetJsonContent(_trade_api.tradeClient, "fetchAllOpenOrders", _args));
-                if (_all_open_orders.supported == true || TestConfig.SupportedCheck == true)
+                if (_all_open_orders.supported || TestConfig.SupportedCheck)
                 {
                     this.WriteJson(_trade_api.tradeClient, _all_open_orders);
 
@@ -126,7 +127,7 @@ namespace XUnit
                 }
 
                 var _open_positions = await _trade_api.FetchAllOpenPositionsAsync(GetJsonContent(_trade_api.tradeClient, "fetchAllOpenPositions", _args));
-                if (_open_positions.supported == true || TestConfig.SupportedCheck == true)
+                if (_open_positions.supported || TestConfig.SupportedCheck)
                 {
                     this.WriteJson(_trade_api.tradeClient, _open_positions);
 
@@ -147,7 +148,7 @@ namespace XUnit
                 }
 
                 var _fetch_my_trades = await _trade_api.FetchMyTradesAsync("BTC", "KRW", _timeframe, _since, _limit, GetJsonContent(_trade_api.tradeClient, "fetchMyTrades", _args));
-                if (_fetch_my_trades.supported == true || TestConfig.SupportedCheck == true)
+                if (_fetch_my_trades.supported || TestConfig.SupportedCheck)
                 {
                     this.WriteJson(_trade_api.tradeClient, _fetch_my_trades);
 
@@ -171,7 +172,7 @@ namespace XUnit
                 if (XApiClient.TestXUnitMode != XUnitMode.UseExchangeServer)
                 {
                     var _limit_order = await _trade_api.CreateLimitOrderAsync("BTC", "KRW", 1.0m, 2000m, SideType.Ask, GetJsonContent(_trade_api.tradeClient, "createLimitOrder", _args));
-                    if ((_limit_order.supported == true || TestConfig.SupportedCheck == true) && _limit_order.statusCode != 5600)
+                    if ((_limit_order.supported || TestConfig.SupportedCheck) && _limit_order.statusCode != 5600)
                     {
                         this.WriteJson(_trade_api.tradeClient, _limit_order);
 
@@ -185,7 +186,7 @@ namespace XUnit
                     }
 
                     var _market_order = await _trade_api.CreateMarketOrderAsync("BTC", "KRW", 1.0m, 2000m, SideType.Ask, GetJsonContent(_trade_api.tradeClient, "createMarketOrder", _args));
-                    if ((_market_order.supported == true || TestConfig.SupportedCheck == true) && _market_order.statusCode != 5600)
+                    if ((_market_order.supported || TestConfig.SupportedCheck) && _market_order.statusCode != 5600)
                     {
                         this.WriteJson(_trade_api.tradeClient, _market_order);
 
@@ -211,7 +212,7 @@ namespace XUnit
                 }
 
                 var _cancel_order = await _trade_api.CancelOrderAsync("BTC", "KRW", _open_order_id, 0.1m, 20000000m, SideType.Ask, GetJsonContent(_trade_api.tradeClient, "cancelOrder", _args));
-                if ((_cancel_order.supported == true || TestConfig.SupportedCheck == true) && _cancel_order.statusCode != 5600)
+                if ((_cancel_order.supported || TestConfig.SupportedCheck) && _cancel_order.statusCode != 5600)
                 {
                     this.WriteJson(_trade_api.tradeClient, _cancel_order);
 
@@ -226,7 +227,7 @@ namespace XUnit
                 var _oder_ids = new string[] { _open_order_id };
 
                 var _cancel_orders = await _trade_api.CancelOrdersAsync("BTC", "KRW", _oder_ids, GetJsonContent(_trade_api.tradeClient, "cancelOrders", _args));
-                if ((_cancel_orders.supported == true || TestConfig.SupportedCheck == true) && _cancel_orders.errorCode != ErrorCode.AuthenticationError)
+                if ((_cancel_orders.supported || TestConfig.SupportedCheck) && _cancel_orders.errorCode != ErrorCode.AuthenticationError)
                 {
                     this.WriteJson(_trade_api.tradeClient, _cancel_orders);
 
@@ -236,7 +237,7 @@ namespace XUnit
                 }
 
                 var _cancel_all_orders = await _trade_api.CancelAllOrdersAsync(GetJsonContent(_trade_api.tradeClient, "cancelAllOrders", _args));
-                if ((_cancel_all_orders.supported == true || TestConfig.SupportedCheck == true) && _cancel_all_orders.errorCode != ErrorCode.AuthenticationError)
+                if ((_cancel_all_orders.supported || TestConfig.SupportedCheck) && _cancel_all_orders.errorCode != ErrorCode.AuthenticationError)
                 {
                     this.WriteJson(_trade_api.tradeClient, _cancel_all_orders);
 

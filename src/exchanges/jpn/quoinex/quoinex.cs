@@ -162,7 +162,7 @@ namespace CCXT.NET.Quoinex
         {
             var _request = await base.CreateGetRequestAsync(endpoint, args);
 
-            if (IsAuthentication == true)
+            if (IsAuthentication)
             {
                 var _nonce = GenerateOnlyNonce(13);
 
@@ -201,7 +201,7 @@ namespace CCXT.NET.Quoinex
         {
             var _request = await base.CreatePutRequestAsync(endpoint, args);
 
-            if (IsAuthentication == true)
+            if (IsAuthentication)
             {
                 var _nonce = GenerateOnlyNonce(13);
 
@@ -269,7 +269,7 @@ namespace CCXT.NET.Quoinex
 
                         if (String.IsNullOrEmpty(_error_msg) == false)
                         {
-                            if (ErrorMessages.ContainsKey(_error_msg) == true)
+                            if (ErrorMessages.ContainsKey(_error_msg))
                                 _error_code = ErrorMessages[_error_msg];
 
                             _result.SetFailure(_error_msg, _error_code);
@@ -277,7 +277,7 @@ namespace CCXT.NET.Quoinex
                     }
                 }
 
-                if (_result.success == true && response.IsSuccessful == false)
+                if (_result.success && response.IsSuccessful == false)
                 {
                     _result.SetFailure(
                             response.ErrorMessage ?? response.StatusDescription,

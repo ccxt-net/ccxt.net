@@ -155,7 +155,7 @@ namespace CCXT.NET.BitMEX
         {
             var _request = await base.CreatePostRequestAsync(endpoint);
 
-            if (IsAuthentication == true)
+            if (IsAuthentication)
             {
                 //var _post_data = ToQueryString(_request.Parameters);
                 //_request.RemoveParameters();
@@ -192,7 +192,7 @@ namespace CCXT.NET.BitMEX
         {
             var _request = await base.CreatePutRequestAsync(endpoint);
 
-            if (IsAuthentication == true)
+            if (IsAuthentication)
             {
                 var _nonce = (GenerateOnlyNonce(10) + 3600).ToString();
 
@@ -224,7 +224,7 @@ namespace CCXT.NET.BitMEX
         {
             var _request = await base.CreateGetRequestAsync(endpoint, args);
 
-            if (IsAuthentication == true)
+            if (IsAuthentication)
             {
                 var _post_params = _request.Parameters.ToDictionary(p => p.Name, p => p.Value);
 
@@ -256,7 +256,7 @@ namespace CCXT.NET.BitMEX
         {
             var _request = await base.CreateDeleteRequestAsync(endpoint);
 
-            if (IsAuthentication == true)
+            if (IsAuthentication)
             {
                 //var _post_data = ToQueryString(_request.Parameters);
                 //_request.RemoveParameters();
@@ -342,7 +342,7 @@ namespace CCXT.NET.BitMEX
                                     var _error_msg = _json_message.Value<string>();
                                     if (String.IsNullOrEmpty(_error_msg) == false)
                                     {
-                                        if (ErrorMessages.ContainsKey(_error_msg) == true)
+                                        if (ErrorMessages.ContainsKey(_error_msg))
                                             _error_code = ErrorMessages[_error_msg];
                                     }
                                     else
@@ -366,7 +366,7 @@ namespace CCXT.NET.BitMEX
                     }
                 }
 
-                if (_result.success == true && response.IsSuccessful == false)
+                if (_result.success && response.IsSuccessful == false)
                 {
                     _result.SetFailure(
                             response.ErrorMessage ?? response.StatusDescription,

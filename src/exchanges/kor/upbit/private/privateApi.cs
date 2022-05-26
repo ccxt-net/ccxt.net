@@ -67,7 +67,7 @@ namespace CCXT.NET.Upbit.Private
             var _result = new Transfer();
 
             var _currency_id = await publicApi.LoadCurrencyIdAsync(currency_name);
-            if (_currency_id.success == true)
+            if (_currency_id.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -87,7 +87,7 @@ namespace CCXT.NET.Upbit.Private
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = privateClient.DeserializeObject<UTransferItem>(_json_value.Content);
                     {
@@ -131,23 +131,23 @@ namespace CCXT.NET.Upbit.Private
         /// 화폐 출금
         /// </summary>
         /// <param name="currency_name">base coin or quote coin name</param>
-        /// <param name="address">coin address for send</param>
-        /// <param name="tag">Secondary address identifier for coins like XRP,XMR etc.</param>
-        /// <param name="quantity">amount of coin</param>
+        /// <param name="bank_name">coin address for send</param>
+        /// <param name="account">Secondary address identifier for coins like XRP,XMR etc.</param>
+        /// <param name="amount">amount of coin</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
-        public override async ValueTask<Transfer> FiatWithdrawAsync(string currency_name, string address, string tag, decimal quantity, Dictionary<string, object> args = null)
+        public override async ValueTask<Transfer> FiatWithdrawAsync(string currency_name, string bank_name, string account, decimal amount, Dictionary<string, object> args = null)
         {
             var _result = new Transfer();
 
             var _currency_id = await publicApi.LoadCurrencyIdAsync(currency_name);
-            if (_currency_id.success == true)
+            if (_currency_id.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
                 var _params = new Dictionary<string, object>();
                 {
-                    _params.Add("amount", quantity);
+                    _params.Add("amount", amount);
 
                     privateClient.MergeParamsAndArgs(_params, args);
                 }
@@ -157,7 +157,7 @@ namespace CCXT.NET.Upbit.Private
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = privateClient.DeserializeObject<UTransferItem>(_json_value.Content);
                     {
@@ -170,8 +170,8 @@ namespace CCXT.NET.Upbit.Private
                             transactionType = _json_data.transactionType,
 
                             currency = _json_data.currency,
-                            toAddress = address,
-                            toTag = tag,
+                            toAddress = bank_name,
+                            toTag = account,
 
                             amount = _json_data.amount,
                             fee = _json_data.fee,
@@ -209,7 +209,7 @@ namespace CCXT.NET.Upbit.Private
             var _result = new Transfer();
 
             var _currency_id = await publicApi.LoadCurrencyIdAsync(currency_name);
-            if (_currency_id.success == true)
+            if (_currency_id.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -225,7 +225,7 @@ namespace CCXT.NET.Upbit.Private
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = privateClient.DeserializeObject<UTransferItem>(_json_value.Content);
                     {
@@ -257,7 +257,7 @@ namespace CCXT.NET.Upbit.Private
             var _result = new Transfers();
 
             var _currency_id = await publicApi.LoadCurrencyIdAsync(currency_name);
-            if (_currency_id.success == true)
+            if (_currency_id.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -277,7 +277,7 @@ namespace CCXT.NET.Upbit.Private
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = privateClient.DeserializeObject<List<UTransferItem>>(_json_value.Content);
                     {
@@ -316,7 +316,7 @@ namespace CCXT.NET.Upbit.Private
             var _result = new Transfers();
 
             var _markets = await publicApi.LoadMarketsAsync();
-            if (_markets.success == true)
+            if (_markets.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -335,7 +335,7 @@ namespace CCXT.NET.Upbit.Private
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = privateClient.DeserializeObject<List<UTransferItem>>(_json_value.Content);
                     {
@@ -373,7 +373,7 @@ namespace CCXT.NET.Upbit.Private
             var _result = new Balance();
 
             var _currency_id = await publicApi.LoadCurrencyIdAsync(base_name);
-            if (_currency_id.success == true)
+            if (_currency_id.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -384,7 +384,7 @@ namespace CCXT.NET.Upbit.Private
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = privateClient.DeserializeObject<List<UBalanceItem>>(_json_value.Content);
                     {
@@ -422,7 +422,7 @@ namespace CCXT.NET.Upbit.Private
             var _result = new Balances();
 
             var _markets = await publicApi.LoadMarketsAsync();
-            if (_markets.success == true)
+            if (_markets.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -433,7 +433,7 @@ namespace CCXT.NET.Upbit.Private
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = privateClient.DeserializeObject<List<UBalanceItem>>(_json_value.Content);
                     {

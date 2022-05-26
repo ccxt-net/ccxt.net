@@ -78,8 +78,8 @@ namespace CCXT.NET.Bitfinex.Trade
         {
             get
             {
-                base.orderStatus = statusLive == true ? OrderStatus.Open
-                                 : statusCanceled == true ? OrderStatus.Canceled
+                base.orderStatus = statusLive ? OrderStatus.Open
+                                 : statusCanceled ? OrderStatus.Canceled
                                  : OrderStatus.Closed;
 
                 return base.orderStatus;

@@ -64,7 +64,7 @@ namespace CCXT.NET.Bitfinex.Private
             var _result = new Address();
 
             var _currency_nick = await publicApi.LoadCurrencyNickAsync(currency_name);
-            if (_currency_nick.success == true)
+            if (_currency_nick.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -82,7 +82,7 @@ namespace CCXT.NET.Bitfinex.Private
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _address = privateClient.DeserializeObject<BAddressItem>(_json_value.Content);
                     {
@@ -121,7 +121,7 @@ namespace CCXT.NET.Bitfinex.Private
             var _result = new Address();
 
             var _currency_nick = await publicApi.LoadCurrencyNickAsync(currency_name);
-            if (_currency_nick.success == true)
+            if (_currency_nick.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -139,7 +139,7 @@ namespace CCXT.NET.Bitfinex.Private
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _address = privateClient.DeserializeObject<BAddressItem>(_json_value.Content);
                     {
@@ -179,7 +179,7 @@ namespace CCXT.NET.Bitfinex.Private
             var _result = new Transfer();
 
             var _currency_nick = await publicApi.LoadCurrencyNickAsync(currency_name);
-            if (_currency_nick.success == true)
+            if (_currency_nick.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -198,10 +198,10 @@ namespace CCXT.NET.Bitfinex.Private
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = privateClient.DeserializeObject<BTransfer>(_json_value.Content);
-                    if (_json_data.success == true)
+                    if (_json_data.success)
                     {
                         var _withdraw = new BTransferItem
                         {
@@ -254,7 +254,7 @@ namespace CCXT.NET.Bitfinex.Private
             var _result = new Transfers();
 
             var _currency_id = await publicApi.LoadCurrencyIdAsync(currency_name);
-            if (_currency_id.success == true)
+            if (_currency_id.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -275,7 +275,7 @@ namespace CCXT.NET.Bitfinex.Private
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = privateClient.DeserializeObject<List<BTransferItem>>(_json_value.Content);
                     {
@@ -325,7 +325,7 @@ namespace CCXT.NET.Bitfinex.Private
             var _result = new Balance();
 
             var _currency_id = await publicApi.LoadCurrencyIdAsync(base_name);
-            if (_currency_id.success == true)
+            if (_currency_id.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -336,7 +336,7 @@ namespace CCXT.NET.Bitfinex.Private
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _balances = privateClient.DeserializeObject<List<BBalanceItem>>(_json_value.Content);
                     {
@@ -374,7 +374,7 @@ namespace CCXT.NET.Bitfinex.Private
             var _result = new Balances();
 
             var _markets = await publicApi.LoadMarketsAsync();
-            if (_markets.success == true)
+            if (_markets.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -385,7 +385,7 @@ namespace CCXT.NET.Bitfinex.Private
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = privateClient.DeserializeObject<List<BBalanceItem>>(_json_value.Content);
                     {

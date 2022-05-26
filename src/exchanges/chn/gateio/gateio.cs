@@ -160,7 +160,7 @@ namespace CCXT.NET.GateIO
         {
             var _request = await base.CreatePostRequestAsync(endpoint, args);
 
-            if (IsAuthentication == true)
+            if (IsAuthentication)
             {
                 var _post_params = _request.Parameters.ToDictionary(p => p.Name, p => p.Value);
 
@@ -208,7 +208,7 @@ namespace CCXT.NET.GateIO
                     }
                 }
 
-                if (_result.success == true && response.IsSuccessful == false)
+                if (_result.success && response.IsSuccessful == false)
                 {
                     _result.SetFailure(
                             response.ErrorMessage ?? response.StatusDescription,

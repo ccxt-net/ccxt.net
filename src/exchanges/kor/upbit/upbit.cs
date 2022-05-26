@@ -175,7 +175,7 @@ namespace CCXT.NET.Upbit
         {
             var _request = await base.CreatePostRequestAsync(endpoint, args);
 
-            if (IsAuthentication == true)
+            if (IsAuthentication)
             {
                 var _nonce = GenerateOnlyNonce(13);
 
@@ -210,7 +210,7 @@ namespace CCXT.NET.Upbit
         {
             var _request = await base.CreateGetRequestAsync(endpoint, args);
 
-            if (IsAuthentication == true)
+            if (IsAuthentication)
             {
                 var _nonce = GenerateOnlyNonce(13);
 
@@ -245,12 +245,12 @@ namespace CCXT.NET.Upbit
         {
             var _request = await base.CreateDeleteRequestAsync(endpoint, args);
 
-            if (IsAuthentication == true)
+            if (IsAuthentication)
             {
                 var _nonce = GenerateOnlyNonce(13);
 
                 var _post_params = _request.Parameters.ToDictionary(p => p.Name, p => p.Value);
-                
+
                 var _post_data = ToQueryString(_post_params);
                 {
                     var _payload = new JwtPayload
@@ -308,7 +308,7 @@ namespace CCXT.NET.Upbit
                     }
                 }
 
-                if (_result.success == true && response.IsSuccessful == false)
+                if (_result.success && response.IsSuccessful == false)
                 {
                     _result.SetFailure(
                             response.ErrorMessage ?? response.StatusDescription,

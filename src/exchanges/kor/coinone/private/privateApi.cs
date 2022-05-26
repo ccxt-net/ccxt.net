@@ -69,7 +69,7 @@ namespace CCXT.NET.Coinone.Private
             var _result = new Transfers();
 
             var _currency_id = await publicApi.LoadCurrencyIdAsync(currency_name);
-            if (_currency_id.success == true)
+            if (_currency_id.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -88,7 +88,7 @@ namespace CCXT.NET.Coinone.Private
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = privateClient.DeserializeObject<JObject>(_json_value.Content);
 
@@ -134,7 +134,7 @@ namespace CCXT.NET.Coinone.Private
             var _result = new Addresses();
 
             var _markets = await publicApi.LoadMarketsAsync();
-            if (_markets.success == true)
+            if (_markets.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -145,7 +145,7 @@ namespace CCXT.NET.Coinone.Private
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = privateClient.DeserializeObject<JObject>(_json_value.Content);
                     {
@@ -153,7 +153,7 @@ namespace CCXT.NET.Coinone.Private
 
                         foreach (var _address in _addresses)
                         {
-                            if (String.IsNullOrEmpty(_address.Value) == true)
+                            if (String.IsNullOrEmpty(_address.Value))
                                 continue;
 
                             var _market = _markets.GetMarketByBaseId(_address.Key);
@@ -198,7 +198,7 @@ namespace CCXT.NET.Coinone.Private
             var _result = new Transfer();
 
             var _currency_id = await publicApi.LoadCurrencyIdAsync(currency_name);
-            if (_currency_id.success == true)
+            if (_currency_id.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -219,10 +219,10 @@ namespace CCXT.NET.Coinone.Private
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = privateClient.DeserializeObject<CTransfer>(_json_value.Content);
-                    if (_json_data.success == true)
+                    if (_json_data.success)
                     {
                         var _withdraw = new CTransferItem
                         {
@@ -273,7 +273,7 @@ namespace CCXT.NET.Coinone.Private
             var _result = new Balance();
 
             var _currency_id = await publicApi.LoadCurrencyIdAsync(base_name);
-            if (_currency_id.success == true)
+            if (_currency_id.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -284,7 +284,7 @@ namespace CCXT.NET.Coinone.Private
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _balances = privateClient.DeserializeObject<Dictionary<string, JToken>>(_json_value.Content);
                     {
@@ -328,7 +328,7 @@ namespace CCXT.NET.Coinone.Private
             var _result = new Balances();
 
             var _markets = await publicApi.LoadMarketsAsync();
-            if (_markets.success == true)
+            if (_markets.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -339,7 +339,7 @@ namespace CCXT.NET.Coinone.Private
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _balances = privateClient.DeserializeObject<Dictionary<string, JToken>>(_json_value.Content);
                     {
@@ -381,7 +381,7 @@ namespace CCXT.NET.Coinone.Private
             var _result = new CAuthNumber();
 
             var _currency_id = await publicApi.LoadCurrencyIdAsync(currency_name);
-            if (_currency_id.success == true)
+            if (_currency_id.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -395,7 +395,7 @@ namespace CCXT.NET.Coinone.Private
                 var _json_value = await privateClient.CallApiPost1Async("/v2/transaction/auth_number/", _params);
 
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                //if (_json_result.success == true)
+                //if (_json_result.success)
                 {
                     // auth number를 넘겨 받아야 하지만 현재는 핸폰 SMS로 전달 되고 있음
                     var _auth_number = privateClient.GenerateNonceString(16, 6);

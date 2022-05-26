@@ -15,7 +15,7 @@ namespace binance
             if (__step_no == 0 || __step_no == 1)
             {
                 var _tickers = await _public_api.FetchTickersAsync();
-                if (_tickers.success == true)
+                if (_tickers.success)
                 {
                     var _btcusd_tickers = _tickers.result.Where(t => t.symbol.ToUpper().Contains("BTCUSD"));
 

@@ -140,7 +140,7 @@ namespace CCXT.NET.Gemini
         {
             var _request = await base.CreatePostRequestAsync(endpoint, args);
 
-            if (IsAuthentication == true)
+            if (IsAuthentication)
             {
                 var _params = new Dictionary<string, object>();
                 {
@@ -231,7 +231,7 @@ namespace CCXT.NET.Gemini
                             var _error_msg = _json_message.Value<string>();
 
                             var _reason = _json_reason.Value<string>();
-                            if (ErrorMessages.ContainsKey(_reason) == true)
+                            if (ErrorMessages.ContainsKey(_reason))
                             {
                                 _error_msg = ErrorMessages[_reason];
 
@@ -245,7 +245,7 @@ namespace CCXT.NET.Gemini
                     }
                 }
 
-                if (_result.success == true && response.IsSuccessful == false)
+                if (_result.success && response.IsSuccessful == false)
                 {
                     _result.SetFailure(
                             response.ErrorMessage ?? response.StatusDescription,

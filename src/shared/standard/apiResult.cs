@@ -61,7 +61,7 @@
         /// </summary>
         public ApiResult(bool success = false)
         {
-            if (success == true)
+            if (success)
                 this.SetSuccess();
             else
                 this.SetFailure();

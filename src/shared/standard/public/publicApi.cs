@@ -163,11 +163,11 @@ namespace CCXT.NET.Shared.Coin.Public
             {
                 if (publicClient.ExchangeInfo.Markets == null)
                 {
-                    if (marketPool.ContainsKey(publicClient.DealerName) == true)
+                    if (marketPool.ContainsKey(publicClient.DealerName))
                         publicClient.ExchangeInfo.Markets = marketPool[publicClient.DealerName] as Markets ?? new Markets();
                 }
 
-                if (publicClient.ExchangeInfo.Markets == null || reload == true)
+                if (publicClient.ExchangeInfo.Markets == null || reload)
                 {
                     var _markets = await FetchMarketsAsync(args);
                     if (_markets.success == false)
@@ -196,9 +196,9 @@ namespace CCXT.NET.Shared.Coin.Public
             var _result = new Market(marketId);
 
             var _markets = await this.LoadMarketsAsync();
-            if (_markets.success == true)
+            if (_markets.success)
             {
-                if (_markets.result.ContainsKey(marketId) == true)
+                if (_markets.result.ContainsKey(marketId))
                 {
                     _result.result = _markets.result[marketId];
 
@@ -231,9 +231,9 @@ namespace CCXT.NET.Shared.Coin.Public
             var _result = new NameResult();
 
             var _markets = await this.LoadMarketsAsync();
-            if (_markets.success == true)
+            if (_markets.success)
             {
-                if (_markets.CurrencyNames.ContainsValue(currency_name) == true)
+                if (_markets.CurrencyNames.ContainsValue(currency_name))
                 {
                     _result.result = _markets.GetCurrencyId(currency_name);
 
@@ -266,9 +266,9 @@ namespace CCXT.NET.Shared.Coin.Public
             var _result = new NameResult();
 
             var _markets = await this.LoadMarketsAsync();
-            if (_markets.success == true)
+            if (_markets.success)
             {
-                if (publicClient.ExchangeInfo.CurrencyNicks.ContainsKey(currency_name) == true)
+                if (publicClient.ExchangeInfo.CurrencyNicks.ContainsKey(currency_name))
                 {
                     _result.result = publicClient.ExchangeInfo.CurrencyNicks[currency_name];
                     _result.SetResult(_markets);
@@ -319,7 +319,7 @@ namespace CCXT.NET.Shared.Coin.Public
             var _result = new Ticker(base_name, quote_name);
 
             var _market = await this.LoadMarketAsync(_result.marketId ?? "");
-            if (_market.success == true)
+            if (_market.success)
             {
                 publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
 
@@ -346,7 +346,7 @@ namespace CCXT.NET.Shared.Coin.Public
             var _result = new Tickers();
 
             var _markets = await this.LoadMarketsAsync();
-            if (_markets.success == true)
+            if (_markets.success)
             {
                 publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
 
@@ -378,7 +378,7 @@ namespace CCXT.NET.Shared.Coin.Public
             if (_result.marketId != null)
             {
                 var _market = await this.LoadMarketAsync(_result.marketId ?? "");
-                if (_market.success == true)
+                if (_market.success)
                 {
                     publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
 
@@ -411,7 +411,7 @@ namespace CCXT.NET.Shared.Coin.Public
             var _result = new OHLCVs(base_name, quote_name);
 
             var _market = await this.LoadMarketAsync(_result.marketId ?? "");
-            if (_market.success == true)
+            if (_market.success)
             {
                 publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
 
@@ -446,7 +446,7 @@ namespace CCXT.NET.Shared.Coin.Public
             var _result = new CompleteOrders(base_name, quote_name);
 
             var _market = await this.LoadMarketAsync(_result.marketId ?? "");
-            if (_market.success == true)
+            if (_market.success)
             {
                 publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
 

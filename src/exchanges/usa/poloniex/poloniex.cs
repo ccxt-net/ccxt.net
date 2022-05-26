@@ -152,7 +152,7 @@ namespace CCXT.NET.Poloniex
         {
             var _request = await base.CreatePostRequestAsync(endpoint, args);
 
-            if (IsAuthentication == true)
+            if (IsAuthentication)
             {
                 var _nonce = GenerateOnlyNonce(16).ToString();
 
@@ -212,7 +212,7 @@ namespace CCXT.NET.Poloniex
                     _result.SetFailure(errorCode: ErrorCode.NotFoundData);
                 }
 
-                if (_result.success == true && response.IsSuccessful == false)
+                if (_result.success && response.IsSuccessful == false)
                 {
                     _result.SetFailure(
                             response.ErrorMessage ?? response.StatusDescription,

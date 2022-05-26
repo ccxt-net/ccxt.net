@@ -63,7 +63,7 @@ namespace CCXT.NET.BitMEX.Public
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _markets = publicClient.DeserializeObject<List<BMarketItem>>(_json_value.Content);
                     foreach (var _m in _markets)
@@ -199,7 +199,7 @@ namespace CCXT.NET.BitMEX.Public
                     var _json_leader = await publicClient.CallApiGet1Async("/api/v1/leaderboard", _params);
 
                     var _leaderboard_result = publicClient.GetResponseMessage(_json_leader.Response);
-                    if (_leaderboard_result.success == true)
+                    if (_leaderboard_result.success)
                     {
 #if DEBUG
                         _result.rawJson = _json_leader.Content;
@@ -231,11 +231,11 @@ namespace CCXT.NET.BitMEX.Public
             var _result = new Ticker(base_name, quote_name);
 
             var _market = await this.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
 
-                var _timevalue = (args != null && args.ContainsKey("timeframe") == true) ? args["timeframe"].ToString() : "1d";
+                var _timevalue = (args != null && args.ContainsKey("timeframe")) ? args["timeframe"].ToString() : "1d";
                 var _timeframe = publicClient.ExchangeInfo.GetTimeframe(_timevalue);
                 var _timestamp = publicClient.ExchangeInfo.GetTimestamp(_timevalue);
 
@@ -255,7 +255,7 @@ namespace CCXT.NET.BitMEX.Public
                 var _json_trade = await publicClient.CallApiGet1Async("/api/v1/trade/bucketed", _params);
 
                 var _trade_result = publicClient.GetResponseMessage(_json_trade.Response);
-                if (_trade_result.success == true)
+                if (_trade_result.success)
                 {
 #if DEBUG
                     _result.rawJson = _json_trade.Content;
@@ -265,7 +265,7 @@ namespace CCXT.NET.BitMEX.Public
                     var _json_quote = await publicClient.CallApiGet1Async("/api/v1/quote/bucketed", _params);
 
                     var _quote_result = publicClient.GetResponseMessage(_json_quote.Response);
-                    if (_quote_result.success == true)
+                    if (_quote_result.success)
                     {
 #if DEBUG
                         _result.rawJson += _json_quote.Content;
@@ -311,7 +311,7 @@ namespace CCXT.NET.BitMEX.Public
             var _result = new OrderBooks(base_name, quote_name);
 
             var _market = await this.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
 
@@ -328,7 +328,7 @@ namespace CCXT.NET.BitMEX.Public
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _orderbooks = publicClient.DeserializeObject<List<BOrderBookItem>>(_json_value.Content);
                     {
@@ -380,7 +380,7 @@ namespace CCXT.NET.BitMEX.Public
             var _result = new OHLCVs(base_name, quote_name);
 
             var _market = await this.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
 
@@ -407,7 +407,7 @@ namespace CCXT.NET.BitMEX.Public
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = publicClient.DeserializeObject<List<BTickerItem>>(_json_value.Content);
 
@@ -454,7 +454,7 @@ namespace CCXT.NET.BitMEX.Public
             var _result = new OHLCVs(base_name, quote_name);
 
             var _market = await this.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
 
@@ -473,7 +473,7 @@ namespace CCXT.NET.BitMEX.Public
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = publicClient.DeserializeObject<BUdfHistory>(_json_value.Content);
                     if (_json_data.s == "ok")
@@ -523,7 +523,7 @@ namespace CCXT.NET.BitMEX.Public
             var _result = new CompleteOrders(base_name, quote_name);
 
             var _market = await this.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
 
@@ -548,7 +548,7 @@ namespace CCXT.NET.BitMEX.Public
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = publicClient.DeserializeObject<List<BCompleteOrderItem>>(_json_value.Content);
                     {

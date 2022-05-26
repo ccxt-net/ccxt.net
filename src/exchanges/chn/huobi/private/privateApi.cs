@@ -67,7 +67,7 @@ namespace CCXT.NET.Huobi.Private
             var _result = new Transfer();
 
             var _currency_id = await publicApi.LoadCurrencyIdAsync(currency_name);
-            if (_currency_id.success == true)
+            if (_currency_id.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -87,7 +87,7 @@ namespace CCXT.NET.Huobi.Private
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = privateClient.DeserializeObject<HWithdraw>(_json_value.Content);
                     {
@@ -136,7 +136,7 @@ namespace CCXT.NET.Huobi.Private
             var _result = new Transfer();
 
             var _currency_id = await publicApi.LoadCurrencyIdAsync(currency_name);
-            if (_currency_id.success == true)
+            if (_currency_id.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -147,10 +147,10 @@ namespace CCXT.NET.Huobi.Private
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = privateClient.DeserializeObject<HWithdraw>(_json_value.Content);
-                    if (_json_data.success == true)
+                    if (_json_data.success)
                     {
                         var _transfer = new HTransferItem
                         {
@@ -200,7 +200,7 @@ namespace CCXT.NET.Huobi.Private
             var _result = new Transfers();
 
             var _currency_id = await publicApi.LoadCurrencyIdAsync(currency_name);
-            if (_currency_id.success == true)
+            if (_currency_id.success)
             {
                 var _params = new Dictionary<string, object>();
                 {
@@ -224,7 +224,7 @@ namespace CCXT.NET.Huobi.Private
                     _result.rawJson += _json_value.Content;
 #endif
                     var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                    if (_json_result.success == true)
+                    if (_json_result.success)
                     {
                         var _json_data = privateClient.DeserializeObject<HTransfers>(_json_value.Content);
                         {
@@ -250,7 +250,7 @@ namespace CCXT.NET.Huobi.Private
                 _params.Add("type", "withdraw");
 
                 // TransactionType.Withdrawal
-                if (_result.success == true)
+                if (_result.success)
                 {
                     privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -259,7 +259,7 @@ namespace CCXT.NET.Huobi.Private
                     _result.rawJson += _json_value.Content;
 #endif
                     var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                    if (_json_result.success == true)
+                    if (_json_result.success)
                     {
                         var _json_data = privateClient.DeserializeObject<HTransfers>(_json_value.Content);
                         {
@@ -299,7 +299,7 @@ namespace CCXT.NET.Huobi.Private
             var _result = new Balances();
 
             var _markets = await publicApi.LoadMarketsAsync();
-            if (_markets.success == true)
+            if (_markets.success)
             {
                 if (args.ContainsKey("account-id") && args["account-id"].ToString() != "")
                 {
@@ -312,7 +312,7 @@ namespace CCXT.NET.Huobi.Private
                     _result.rawJson = _json_value.Content;
 #endif
                     var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                    if (_json_result.success == true)
+                    if (_json_result.success)
                     {
                         var _json_data = privateClient.DeserializeObject<HBalances>(_json_value.Content);
                         {
@@ -355,7 +355,7 @@ namespace CCXT.NET.Huobi.Private
             var _result = new HAccounts();
 
             var _markets = await publicApi.LoadMarketsAsync();
-            if (_markets.success == true)
+            if (_markets.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -366,11 +366,11 @@ namespace CCXT.NET.Huobi.Private
                 //                _result.rawJson = _json_value.Content;
                 //#endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _accounts = privateClient.DeserializeObject<HAccounts>(_json_value.Content);
 
-                    if (_accounts.success == true)
+                    if (_accounts.success)
                         _result = _accounts;
                 }
 

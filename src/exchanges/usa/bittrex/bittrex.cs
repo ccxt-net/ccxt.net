@@ -154,7 +154,7 @@ namespace CCXT.NET.Bittrex
         {
             var _request = await base.CreatePostRequestAsync(endpoint, args);
 
-            if (IsAuthentication == true)
+            if (IsAuthentication)
             {
                 var _nonce = GenerateOnlyNonce(16).ToString();
 
@@ -162,7 +162,7 @@ namespace CCXT.NET.Bittrex
                 _request.AddParameter("apikey", ConnectKey);
 
                 var _post_params = _request.Parameters.ToDictionary(p => p.Name, p => p.Value);
-                
+
                 var _post_data = ToQueryString(_post_params);
                 {
                     _request.Resource += "?" + _post_data;
@@ -186,7 +186,7 @@ namespace CCXT.NET.Bittrex
         {
             var _request = await base.CreateGetRequestAsync(endpoint, args);
 
-            if (IsAuthentication == true)
+            if (IsAuthentication)
             {
                 var _nonce = GenerateOnlyNonce(16).ToString();
 
@@ -294,7 +294,7 @@ namespace CCXT.NET.Bittrex
                                     }
                                 }
                             }
-                            else if (ErrorMessages.ContainsKey(_error_msg) == true)
+                            else if (ErrorMessages.ContainsKey(_error_msg))
                             {
                                 _error_code = ErrorMessages[_error_msg];
                                 _error_msg = response.Content;
@@ -323,7 +323,7 @@ namespace CCXT.NET.Bittrex
                     }
                 }
 
-                if (_result.success == true && response.IsSuccessful == false)
+                if (_result.success && response.IsSuccessful == false)
                 {
                     _result.SetFailure(
                             response.ErrorMessage ?? response.StatusDescription,

@@ -65,7 +65,7 @@ namespace CCXT.NET.Bithumb.Private
             var _result = new Address();
 
             var _currency_id = await publicApi.LoadCurrencyIdAsync(currency_name);
-            if (_currency_id.success == true)
+            if (_currency_id.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -81,10 +81,10 @@ namespace CCXT.NET.Bithumb.Private
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = privateClient.DeserializeObject<BAddress>(_json_value.Content);
-                    if (_json_data.success == true)
+                    if (_json_data.success)
                         _result.result = _json_data.result;
                     else
                         _json_result.SetResult(_json_data);
@@ -114,7 +114,7 @@ namespace CCXT.NET.Bithumb.Private
             var _result = new Transfer();
 
             var _currency_id = await publicApi.LoadCurrencyIdAsync(currency_name);
-            if (_currency_id.success == true)
+            if (_currency_id.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -132,10 +132,10 @@ namespace CCXT.NET.Bithumb.Private
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = privateClient.DeserializeObject<BTransfer>(_json_value.Content);
-                    if (_json_data.success == true)
+                    if (_json_data.success)
                     {
                         var _withdraw = new BTransferItem
                         {
@@ -188,7 +188,7 @@ namespace CCXT.NET.Bithumb.Private
             var _result = new Transfer();
 
             var _currency_id = await publicApi.LoadCurrencyIdAsync(currency_name);
-            if (_currency_id.success == true)
+            if (_currency_id.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -206,10 +206,10 @@ namespace CCXT.NET.Bithumb.Private
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = privateClient.DeserializeObject<BTransfer>(_json_value.Content);
-                    if (_json_data.success == true)
+                    if (_json_data.success)
                     {
                         var _withdraw = new BTransferItem
                         {
@@ -262,7 +262,7 @@ namespace CCXT.NET.Bithumb.Private
             var _result = new Transfers();
 
             var _currency_id = await publicApi.LoadCurrencyIdAsync(currency_name);
-            if (_currency_id.success == true)
+            if (_currency_id.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -284,10 +284,10 @@ namespace CCXT.NET.Bithumb.Private
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = privateClient.DeserializeObject<BTransfers>(_json_value.Content);
-                    if (_json_data.success == true)
+                    if (_json_data.success)
                     {
                         var _transfers = _json_data.result
                                                     .Where(t => t.timestamp >= since && (t.transactionType == TransactionType.Deposit || t.transactionType == TransactionType.Withdraw))
@@ -338,7 +338,7 @@ namespace CCXT.NET.Bithumb.Private
             var _result = new Wallet();
 
             var _currency_id = await publicApi.LoadCurrencyIdAsync(base_name);
-            if (_currency_id.success == true)
+            if (_currency_id.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -354,10 +354,10 @@ namespace CCXT.NET.Bithumb.Private
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = privateClient.DeserializeObject<BWallet>(_json_value.Content);
-                    if (_json_data.success == true)
+                    if (_json_data.success)
                     {
                         var _balance = _json_data.result.balance;
                         {
@@ -395,7 +395,7 @@ namespace CCXT.NET.Bithumb.Private
             var _result = new Balance();
 
             var _currency_id = await publicApi.LoadCurrencyIdAsync(base_name);
-            if (_currency_id.success == true)
+            if (_currency_id.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -411,10 +411,10 @@ namespace CCXT.NET.Bithumb.Private
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = privateClient.DeserializeObject<BBalance>(_json_value.Content);
-                    if (_json_data.success == true)
+                    if (_json_data.success)
                     {
                         var _base_id = _currency_id.result;
 
@@ -461,7 +461,7 @@ namespace CCXT.NET.Bithumb.Private
             var _result = new Balances();
 
             var _markets = await publicApi.LoadMarketsAsync();
-            if (_markets.success == true)
+            if (_markets.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -477,10 +477,10 @@ namespace CCXT.NET.Bithumb.Private
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = privateClient.DeserializeObject<BBalance>(_json_value.Content);
-                    if (_json_data.success == true)
+                    if (_json_data.success)
                     {
                         foreach (var _coin_id in _markets.CurrencyNames)
                         {

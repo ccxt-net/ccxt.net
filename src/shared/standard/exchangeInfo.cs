@@ -289,7 +289,7 @@ namespace CCXT.NET.Shared.Coin
                 var _key = _currency_id.Key.ToUpper();
                 var _value = _currency_id.Value.ToUpper();
 
-                if (this.CurrencyIds.ContainsKey(_key) == true)
+                if (this.CurrencyIds.ContainsKey(_key))
                     this.CurrencyIds[_key] = _value;
                 else
                     this.CurrencyIds.Add(_key, _value);
@@ -349,7 +349,7 @@ namespace CCXT.NET.Shared.Coin
         {
             foreach (var _timeframe in timeframes)
             {
-                if (this.Timeframes.ContainsKey(_timeframe.Key) == true)
+                if (this.Timeframes.ContainsKey(_timeframe.Key))
                     this.Timeframes[_timeframe.Key] = _timeframe.Value;
                 else
                     this.Timeframes.Add(_timeframe.Key, _timeframe.Value);
@@ -365,7 +365,7 @@ namespace CCXT.NET.Shared.Coin
         /// <returns></returns>
         public string GetTimeframe(string timeframe)
         {
-            return (Timeframes.ContainsKey(timeframe) == true)
+            return (Timeframes.ContainsKey(timeframe))
                                 ? ((String.IsNullOrEmpty(Timeframes[timeframe]) == false) ? Timeframes[timeframe] : timeframe)
                                 : timeframe;
         }
@@ -379,7 +379,7 @@ namespace CCXT.NET.Shared.Coin
         {
             var _result = this.Urls.api.FirstOrDefault().Value;
 
-            if (this.Urls.api.ContainsKey(division) == true)
+            if (this.Urls.api.ContainsKey(division))
                 _result = this.Urls.api[division];
 
             return _result;
@@ -395,7 +395,7 @@ namespace CCXT.NET.Shared.Coin
         {
             var _result = value;
 
-            if (this.AmountMultiplier.ContainsKey(currency_name) == true)
+            if (this.AmountMultiplier.ContainsKey(currency_name))
                 _result = this.AmountMultiplier[currency_name];
 
             return _result;

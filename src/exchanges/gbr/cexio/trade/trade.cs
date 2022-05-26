@@ -77,7 +77,7 @@ namespace CCXT.NET.CEXIO.Trade
         {
             set
             {
-                sideType = (value == true) ? SideType.Bid : SideType.Ask;
+                sideType = (value) ? SideType.Bid : SideType.Ask;
             }
         }
     }

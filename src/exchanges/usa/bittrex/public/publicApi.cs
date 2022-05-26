@@ -53,7 +53,7 @@ namespace CCXT.NET.Bittrex.Public
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_markets = publicClient.DeserializeObject<BMarkets>(_json_value.Content);
 
@@ -63,7 +63,7 @@ namespace CCXT.NET.Bittrex.Public
 
                         _m.baseName = publicClient.ExchangeInfo.GetCommonCurrencyName(_m.baseId);
                         _m.quoteName = publicClient.ExchangeInfo.GetCommonCurrencyName(_m.quoteId);
-                   
+
                         _m.marketId = _m.baseName + "/" + _m.quoteName;
                         if (_result.result.ContainsKey(_m.marketId))
                             continue;
@@ -120,7 +120,7 @@ namespace CCXT.NET.Bittrex.Public
             var _result = new Ticker(base_name, quote_name);
 
             var _market = await this.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
 
@@ -136,7 +136,7 @@ namespace CCXT.NET.Bittrex.Public
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_tickers = publicClient.DeserializeObject<BTickerItems>(_json_value.Content);
                     {
@@ -167,7 +167,7 @@ namespace CCXT.NET.Bittrex.Public
             var _result = new Tickers();
 
             var _markets = await this.LoadMarketsAsync();
-            if (_markets.success == true)
+            if (_markets.success)
             {
                 publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
 
@@ -178,7 +178,7 @@ namespace CCXT.NET.Bittrex.Public
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _tickers = publicClient.DeserializeObject<BTickerItems>(_json_value.Content);
                     {
@@ -212,7 +212,7 @@ namespace CCXT.NET.Bittrex.Public
             var _result = new OrderBooks(base_name, quote_name);
 
             var _market = await this.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
 
@@ -229,10 +229,10 @@ namespace CCXT.NET.Bittrex.Public
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _orderbook = publicClient.DeserializeObject<BOrderBooks>(_json_value.Content);
-                    if (_orderbook.success == true)
+                    if (_orderbook.success)
                     {
                         _result.result.asks = _orderbook.result.asks.OrderBy(o => o.price).Take(limits).ToList();
                         _result.result.bids = _orderbook.result.bids.OrderByDescending(o => o.price).Take(limits).ToList();
@@ -272,7 +272,7 @@ namespace CCXT.NET.Bittrex.Public
             var _result = new OHLCVs(base_name, quote_name);
 
             var _market = await this.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
 
@@ -294,10 +294,10 @@ namespace CCXT.NET.Bittrex.Public
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _ohlcvs = publicClient.DeserializeObject<BOHLCVs>(_json_value.Content);
-                    if (_ohlcvs.success == true)
+                    if (_ohlcvs.success)
                     {
                         _result.result.AddRange(
                                     _ohlcvs.result
@@ -337,7 +337,7 @@ namespace CCXT.NET.Bittrex.Public
             var _result = new CompleteOrders(base_name, quote_name);
 
             var _market = await this.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
 
@@ -356,7 +356,7 @@ namespace CCXT.NET.Bittrex.Public
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = publicClient.DeserializeObject<BCompleteOrders>(_json_value.Content);
                     {

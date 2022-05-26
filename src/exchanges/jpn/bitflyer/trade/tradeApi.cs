@@ -68,7 +68,7 @@ namespace CCXT.NET.Bitflyer.Trade
             var _result = new MyOrder(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -86,7 +86,7 @@ namespace CCXT.NET.Bitflyer.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _orders = tradeClient.DeserializeObject<List<BMyOrderItem>>(_json_value.Content);
                     var _order = _orders.Where(o => o.orderId == order_id).SingleOrDefault();
@@ -121,7 +121,7 @@ namespace CCXT.NET.Bitflyer.Trade
             var _result = new MyOrders(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -140,7 +140,7 @@ namespace CCXT.NET.Bitflyer.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = tradeClient.DeserializeObject<List<BMyOrderItem>>(_json_value.Content);
                     {
@@ -179,7 +179,7 @@ namespace CCXT.NET.Bitflyer.Trade
             var _result = new MyOrders(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -196,7 +196,7 @@ namespace CCXT.NET.Bitflyer.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _orders = tradeClient.DeserializeObject<List<BMyOrderItem>>(_json_value.Content);
                     {
@@ -228,7 +228,7 @@ namespace CCXT.NET.Bitflyer.Trade
             var _result = new MyOrders();
 
             var _markets = await publicApi.LoadMarketsAsync();
-            if (_markets.success == true)
+            if (_markets.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -244,7 +244,7 @@ namespace CCXT.NET.Bitflyer.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _orders = tradeClient.DeserializeObject<List<BMyOrderItem>>(_json_value.Content);
                     {
@@ -276,7 +276,7 @@ namespace CCXT.NET.Bitflyer.Trade
             var _result = new MyPositions();
 
             var _markets = await publicApi.LoadMarketsAsync();
-            if (_markets.success == true)
+            if (_markets.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -287,7 +287,7 @@ namespace CCXT.NET.Bitflyer.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = tradeClient.DeserializeObject<List<BMyPositionItem>>(_json_value.Content);
                     {
@@ -335,7 +335,7 @@ namespace CCXT.NET.Bitflyer.Trade
             var _result = new MyTrades(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -354,7 +354,7 @@ namespace CCXT.NET.Bitflyer.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = tradeClient.DeserializeObject<List<BMyTradeItem>>(_json_value.Content);
                     {
@@ -396,7 +396,7 @@ namespace CCXT.NET.Bitflyer.Trade
             var _result = new MyOrder(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -419,7 +419,7 @@ namespace CCXT.NET.Bitflyer.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _order = tradeClient.DeserializeObject<BPlaceOrderItem>(_json_value.Content);
                     {
@@ -461,7 +461,7 @@ namespace CCXT.NET.Bitflyer.Trade
             var _result = new MyOrder(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -482,7 +482,7 @@ namespace CCXT.NET.Bitflyer.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _order = tradeClient.DeserializeObject<BPlaceOrderItem>(_json_value.Content);
                     {
@@ -525,7 +525,7 @@ namespace CCXT.NET.Bitflyer.Trade
             var _result = new MyOrder(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -543,7 +543,7 @@ namespace CCXT.NET.Bitflyer.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _order = new BMyOrderItem
                     {

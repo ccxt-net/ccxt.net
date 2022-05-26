@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Xunit;
 
 namespace XUnit
@@ -8,7 +9,7 @@ namespace XUnit
     public partial class PublicApi
     {
         [Fact]
-        public async void Coinone()
+        public async Task Coinone()
         {
             var _public_api = new CCXT.NET.Coinone.Public.PublicApi();
 
@@ -18,7 +19,7 @@ namespace XUnit
             var _limit = 100;
 
             var _markets = await _public_api.LoadMarketsAsync(false, GetJsonContent(_public_api.publicClient, "fetchMarkets", _args));
-            if (_markets.supported == true || TestConfig.SupportedCheck == true)
+            if (_markets.supported || TestConfig.SupportedCheck)
             {
                 this.WriteJson(_public_api.publicClient, _markets);
 
@@ -38,7 +39,7 @@ namespace XUnit
             }
 
             var _ticker = await _public_api.FetchTickerAsync("XRP", "KRW", GetJsonContent(_public_api.publicClient, "fetchTicker", _args));
-            if (_ticker.supported == true || TestConfig.SupportedCheck == true)
+            if (_ticker.supported || TestConfig.SupportedCheck)
             {
                 this.WriteJson(_public_api.publicClient, _ticker);
 
@@ -59,7 +60,7 @@ namespace XUnit
             }
 
             var _tickers = await _public_api.FetchTickersAsync(GetJsonContent(_public_api.publicClient, "fetchTickers", _args));
-            if (_tickers.supported == true || TestConfig.SupportedCheck == true)
+            if (_tickers.supported || TestConfig.SupportedCheck)
             {
                 this.WriteJson(_public_api.publicClient, _tickers);
 
@@ -82,7 +83,7 @@ namespace XUnit
             }
 
             var _orderbook = await _public_api.FetchOrderBooksAsync("XRP", "KRW", _limit, GetJsonContent(_public_api.publicClient, "fetchOrderBooks", _args));
-            if (_orderbook.supported == true || TestConfig.SupportedCheck == true)
+            if (_orderbook.supported || TestConfig.SupportedCheck)
             {
                 this.WriteJson(_public_api.publicClient, _orderbook);
 
@@ -122,7 +123,7 @@ namespace XUnit
             }
 
             var _ohlcvs = await _public_api.FetchOHLCVsAsync("XRP", "KRW", _timeframe, _since, _limit, GetJsonContent(_public_api.publicClient, "fetchOHLCVs", _args));
-            if (_ohlcvs.supported == true || TestConfig.SupportedCheck == true)
+            if (_ohlcvs.supported || TestConfig.SupportedCheck)
             {
                 this.WriteJson(_public_api.publicClient, _ohlcvs);
 
@@ -142,7 +143,7 @@ namespace XUnit
             }
 
             var _trades = await _public_api.FetchCompleteOrdersAsync("XRP", "KRW", _timeframe, _since, _limit, GetJsonContent(_public_api.publicClient, "fetchCompleteOrders", _args));
-            if (_trades.supported == true || TestConfig.SupportedCheck == true)
+            if (_trades.supported || TestConfig.SupportedCheck)
             {
                 this.WriteJson(_public_api.publicClient, _trades);
 

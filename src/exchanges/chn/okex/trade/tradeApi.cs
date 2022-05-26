@@ -82,7 +82,7 @@ namespace CCXT.NET.OKEx.Trade
             var _result = new MyOrder(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 okexClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -101,10 +101,10 @@ namespace CCXT.NET.OKEx.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = okexClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = okexClient.DeserializeObject<OMyOrders>(_json_value.Content);
-                    if (_json_data.success == true)
+                    if (_json_data.success)
                     {
                         var _orders = _json_data.result.Where(o => o.orderId == order_id);
                         if (_orders.Count() > 0)
@@ -148,7 +148,7 @@ namespace CCXT.NET.OKEx.Trade
             var _result = new MyOrders(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 okexClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -167,10 +167,10 @@ namespace CCXT.NET.OKEx.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = okexClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = okexClient.DeserializeObject<OMyOrders>(_json_value.Content);
-                    if (_json_data.success == true)
+                    if (_json_data.success)
                     {
                         var _orders = _json_data.result
                                             .Where(o => o.symbol == _market.result.symbol)
@@ -213,7 +213,7 @@ namespace CCXT.NET.OKEx.Trade
             var _result = new MyTrades(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 okexClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -237,10 +237,10 @@ namespace CCXT.NET.OKEx.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = okexClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = okexClient.DeserializeObject<OMyTrades>(_json_value.Content);
-                    if (_json_data.success == true)
+                    if (_json_data.success)
                     {
                         var _trades = _json_data.result
                                             .Where(t => t.timestamp >= since)
@@ -286,7 +286,7 @@ namespace CCXT.NET.OKEx.Trade
             var _result = new MyOrder(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 okexClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -309,11 +309,11 @@ namespace CCXT.NET.OKEx.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = okexClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = okexClient.DeserializeObject<OPlaceOrderItem>(_json_value.Content);
 
-                    if (_json_data.result == true)
+                    if (_json_data.result)
                     {
                         var _order = new OPlaceOrderItem
                         {
@@ -361,7 +361,7 @@ namespace CCXT.NET.OKEx.Trade
             var _result = new MyOrder(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 okexClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -383,11 +383,11 @@ namespace CCXT.NET.OKEx.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = okexClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = okexClient.DeserializeObject<OPlaceOrderItem>(_json_value.Content);
 
-                    if (_json_data.result == true)
+                    if (_json_data.result)
                     {
                         var _order = new OPlaceOrderItem
                         {
@@ -436,7 +436,7 @@ namespace CCXT.NET.OKEx.Trade
             var _result = new MyOrder(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 okexClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -455,7 +455,7 @@ namespace CCXT.NET.OKEx.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = okexClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = okexClient.DeserializeObject<OCancelOrderItem>(_json_value.Content);
                     {
@@ -523,7 +523,7 @@ namespace CCXT.NET.OKEx.Trade
             var _result = new MyOrders(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 okexClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -542,7 +542,7 @@ namespace CCXT.NET.OKEx.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = okexClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = okexClient.DeserializeObject<OCancelOrderItem>(_json_value.Content);
                     {

@@ -3,6 +3,7 @@ using CCXT.NET.Shared.Coin.Types;
 using CCXT.NET.Shared.Converter;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Xunit;
 
 namespace XUnit
@@ -10,7 +11,7 @@ namespace XUnit
     public partial class TradeApi
     {
         [Fact]
-        public async void Korbit()
+        public async Task Korbit()
         {
             var _api_key = TestConfig.GetConnectionKey("Korbit");
             var _args = new Dictionary<string, object>();
@@ -28,7 +29,7 @@ namespace XUnit
 #endif
 
                 var _fetch_my_orders = await _trade_api.FetchMyOrdersAsync("XRP", "KRW", _timeframe, _since, _limit, GetJsonContent(_trade_api.tradeClient, "fetchMyOrders", _args));
-                if ((_fetch_my_orders.supported == true || TestConfig.SupportedCheck == true) && _fetch_my_orders.errorCode != ErrorCode.NotFoundData)
+                if ((_fetch_my_orders.supported || TestConfig.SupportedCheck) && _fetch_my_orders.errorCode != ErrorCode.NotFoundData)
                 {
                     this.WriteJson(_trade_api.tradeClient, _fetch_my_orders);
 
@@ -54,7 +55,7 @@ namespace XUnit
                     _my_order_id = _fetch_my_orders.result[0].orderId;
 
                 var _fetch_my_order = await _trade_api.FetchMyOrderAsync("XRP", "KRW", _my_order_id, GetJsonContent(_trade_api.tradeClient, "fetchMyOrder", _args));
-                if ((_fetch_my_order.supported == true || TestConfig.SupportedCheck == true) && _fetch_my_order.errorCode != ErrorCode.NotFoundData)
+                if ((_fetch_my_order.supported || TestConfig.SupportedCheck) && _fetch_my_order.errorCode != ErrorCode.NotFoundData)
                 {
                     this.WriteJson(_trade_api.tradeClient, _fetch_my_order);
 
@@ -70,7 +71,7 @@ namespace XUnit
                 }
 
                 var _fetch_open_orders = await _trade_api.FetchOpenOrdersAsync("XRP", "KRW", GetJsonContent(_trade_api.tradeClient, "fetchOpenOrders", _args));
-                if ((_fetch_open_orders.supported == true || TestConfig.SupportedCheck == true) && _fetch_open_orders.errorCode != ErrorCode.NotFoundData)
+                if ((_fetch_open_orders.supported || TestConfig.SupportedCheck) && _fetch_open_orders.errorCode != ErrorCode.NotFoundData)
                 {
                     this.WriteJson(_trade_api.tradeClient, _fetch_open_orders);
 
@@ -90,7 +91,7 @@ namespace XUnit
                 }
 
                 var _all_open_orders = await _trade_api.FetchAllOpenOrdersAsync(GetJsonContent(_trade_api.tradeClient, "fetchAllOpenOrders", _args));
-                if ((_all_open_orders.supported == true || TestConfig.SupportedCheck == true) && _all_open_orders.errorCode != ErrorCode.NotFoundData)
+                if ((_all_open_orders.supported || TestConfig.SupportedCheck) && _all_open_orders.errorCode != ErrorCode.NotFoundData)
                 {
                     this.WriteJson(_trade_api.tradeClient, _all_open_orders);
 
@@ -109,7 +110,7 @@ namespace XUnit
                 }
 
                 var _open_positions = await _trade_api.FetchAllOpenPositionsAsync(GetJsonContent(_trade_api.tradeClient, "fetchAllOpenPositions", _args));
-                if (_open_positions.supported == true || TestConfig.SupportedCheck == true)
+                if (_open_positions.supported || TestConfig.SupportedCheck)
                 {
                     this.WriteJson(_trade_api.tradeClient, _open_positions);
 
@@ -130,7 +131,7 @@ namespace XUnit
                 }
 
                 var _fetch_my_trades = await _trade_api.FetchMyTradesAsync("XRP", "KRW", _timeframe, _since, _limit, GetJsonContent(_trade_api.tradeClient, "fetchMyTrades", _args));
-                if ((_fetch_my_trades.supported == true || TestConfig.SupportedCheck == true) && _fetch_my_trades.errorCode != ErrorCode.NotFoundData)
+                if ((_fetch_my_trades.supported || TestConfig.SupportedCheck) && _fetch_my_trades.errorCode != ErrorCode.NotFoundData)
                 {
                     this.WriteJson(_trade_api.tradeClient, _fetch_my_trades);
 
@@ -154,7 +155,7 @@ namespace XUnit
                 if (XApiClient.TestXUnitMode != XUnitMode.UseExchangeServer)
                 {
                     var _limit_order = await _trade_api.CreateLimitOrderAsync("XRP", "KRW", 1.0m, 2000m, SideType.Ask, GetJsonContent(_trade_api.tradeClient, "createLimitOrder", _args));
-                    if ((_limit_order.supported == true || TestConfig.SupportedCheck == true) && _limit_order.message.IndexOf("not_enough") < 0)
+                    if ((_limit_order.supported || TestConfig.SupportedCheck) && _limit_order.message.IndexOf("not_enough") < 0)
                     {
                         this.WriteJson(_trade_api.tradeClient, _limit_order);
 
@@ -168,7 +169,7 @@ namespace XUnit
                     }
 
                     var _market_order = await _trade_api.CreateMarketOrderAsync("XRP", "KRW", 1.0m, 2000m, SideType.Ask, GetJsonContent(_trade_api.tradeClient, "createMarketOrder", _args));
-                    if ((_market_order.supported == true || TestConfig.SupportedCheck == true) && _market_order.message.IndexOf("not_enough") < 0)
+                    if ((_market_order.supported || TestConfig.SupportedCheck) && _market_order.message.IndexOf("not_enough") < 0)
                     {
                         this.WriteJson(_trade_api.tradeClient, _market_order);
 
@@ -185,7 +186,7 @@ namespace XUnit
                 var _order_id = _trade_api.tradeClient.GenerateNonceString(13, 6);
 
                 var _cancel_order = await _trade_api.CancelOrderAsync("XRP", "KRW", _order_id, 1.0m, 20000m, SideType.Ask, GetJsonContent(_trade_api.tradeClient, "cancelOrder", _args));
-                if ((_cancel_order.supported == true || TestConfig.SupportedCheck == true) && _cancel_order.message.IndexOf("not_authorized") < 0)
+                if ((_cancel_order.supported || TestConfig.SupportedCheck) && _cancel_order.message.IndexOf("not_authorized") < 0)
                 {
                     this.WriteJson(_trade_api.tradeClient, _cancel_order);
 
@@ -200,7 +201,7 @@ namespace XUnit
                 var _oder_ids = new string[] { _order_id };
 
                 var _cancel_orders = await _trade_api.CancelOrdersAsync("XRP", "KRW", _oder_ids, GetJsonContent(_trade_api.tradeClient, "cancelOrders", _args));
-                if ((_cancel_orders.supported == true || TestConfig.SupportedCheck == true) && _cancel_orders.errorCode != ErrorCode.AuthenticationError)
+                if ((_cancel_orders.supported || TestConfig.SupportedCheck) && _cancel_orders.errorCode != ErrorCode.AuthenticationError)
                 {
                     this.WriteJson(_trade_api.tradeClient, _cancel_orders);
 
@@ -210,7 +211,7 @@ namespace XUnit
                 }
 
                 var _cancel_all_orders = await _trade_api.CancelAllOrdersAsync(GetJsonContent(_trade_api.tradeClient, "cancelAllOrders", _args));
-                if ((_cancel_all_orders.supported == true || TestConfig.SupportedCheck == true) && _cancel_all_orders.errorCode != ErrorCode.AuthenticationError)
+                if ((_cancel_all_orders.supported || TestConfig.SupportedCheck) && _cancel_all_orders.errorCode != ErrorCode.AuthenticationError)
                 {
                     this.WriteJson(_trade_api.tradeClient, _cancel_all_orders);
 

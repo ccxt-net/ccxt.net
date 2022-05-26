@@ -149,7 +149,7 @@ namespace CCXT.NET.GDAX
         {
             var _request = await base.CreatePostRequestAsync(endpoint, args);
 
-            if (IsAuthentication == true)
+            if (IsAuthentication)
             {
                 var _params = new Dictionary<string, object>();
                 {
@@ -189,7 +189,7 @@ namespace CCXT.NET.GDAX
 
             if (response != null)
             {
-                if (response.IsSuccessful == true)
+                if (response.IsSuccessful)
                 {
                     var _json_result = this.DeserializeObject<JToken>(response.Content);
 
@@ -203,7 +203,7 @@ namespace CCXT.NET.GDAX
                     }
                 }
 
-                if (_result.success == true && response.IsSuccessful == false)
+                if (_result.success && response.IsSuccessful == false)
                 {
                     _result.SetFailure(
                             response.ErrorMessage ?? response.StatusDescription,

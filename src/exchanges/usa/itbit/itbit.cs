@@ -153,7 +153,7 @@ namespace CCXT.NET.ItBit
         {
             var _request = await base.CreateGetRequestAsync(endpoint, args);
 
-            if (IsAuthentication == true)
+            if (IsAuthentication)
             {
                 var _post_params = _request.Parameters.ToDictionary(p => p.Name, p => p.Value);
 
@@ -201,7 +201,7 @@ namespace CCXT.NET.ItBit
         {
             var _request = await base.CreatePostRequestAsync(endpoint, args);
 
-            if (IsAuthentication == true)
+            if (IsAuthentication)
             {
                 var _params = new Dictionary<string, object>();
                 {
@@ -255,7 +255,7 @@ namespace CCXT.NET.ItBit
         {
             var _request = await base.CreateDeleteRequestAsync(endpoint, args);
 
-            if (IsAuthentication == true)
+            if (IsAuthentication)
             {
                 var _params = new Dictionary<string, object>();
                 {
@@ -330,7 +330,7 @@ namespace CCXT.NET.ItBit
                     }
                 }
 
-                if (_result.success == true && response.IsSuccessful == false)
+                if (_result.success && response.IsSuccessful == false)
                 {
                     _result.SetFailure(
                             response.ErrorMessage ?? response.StatusDescription,

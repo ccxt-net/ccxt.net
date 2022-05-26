@@ -108,7 +108,7 @@ namespace CCXT.NET.CoinCheck.Public
             var _result = new Ticker(base_name, quote_name);
 
             var _market = await this.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
 
@@ -119,7 +119,7 @@ namespace CCXT.NET.CoinCheck.Public
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _ticker = publicClient.DeserializeObject<CTickerItem>(_json_value.Content);
                     {
@@ -152,7 +152,7 @@ namespace CCXT.NET.CoinCheck.Public
             var _result = new OrderBooks(base_name, quote_name);
 
             var _market = await this.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
 
@@ -163,7 +163,7 @@ namespace CCXT.NET.CoinCheck.Public
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = publicClient.DeserializeObject<COrderBook>(_json_value.Content);
                     {
@@ -218,7 +218,7 @@ namespace CCXT.NET.CoinCheck.Public
             var _result = new CompleteOrders(base_name, quote_name);
 
             var _market = await this.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
 
@@ -238,7 +238,7 @@ namespace CCXT.NET.CoinCheck.Public
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = publicClient.DeserializeObject<CCompleteOrders>(_json_value.Content);
                     {

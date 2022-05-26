@@ -72,7 +72,7 @@ namespace CCXT.NET.OKEx.Private
             var _result = new Transfer();
 
             var _market = await publicApi.LoadMarketAsync(_result.MakeMarketId(currency_name, "USDT"));
-            if (_market.success == true)
+            if (_market.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -92,10 +92,10 @@ namespace CCXT.NET.OKEx.Private
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = privateClient.DeserializeObject<OTransfer>(_json_value.Content);
-                    if (_json_data.success == true)
+                    if (_json_data.success)
                     {
                         var _withdraw = new OTransferItem
                         {
@@ -146,7 +146,7 @@ namespace CCXT.NET.OKEx.Private
             var _result = new Transfer();
 
             var _market = await publicApi.LoadMarketAsync(_result.MakeMarketId(currency_name, "USDT"));
-            if (_market.success == true)
+            if (_market.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -163,10 +163,10 @@ namespace CCXT.NET.OKEx.Private
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = privateClient.DeserializeObject<OTransfer>(_json_value.Content);
-                    if (_json_data.success == true)
+                    if (_json_data.success)
                     {
                         var _transfer = new OTransferItem
                         {
@@ -215,7 +215,7 @@ namespace CCXT.NET.OKEx.Private
             var _result = new Transfers();
 
             var _market = await publicApi.LoadMarketAsync(_result.MakeMarketId(currency_name, "USD"));
-            if (_market.success == true)
+            if (_market.success)
             {
                 var _timestamp = privateClient.ExchangeInfo.GetTimestamp(timeframe);
                 var _timeframe = privateClient.ExchangeInfo.GetTimeframe(timeframe);
@@ -239,7 +239,7 @@ namespace CCXT.NET.OKEx.Private
                     _result.rawJson += _json_value.Content;
 #endif
                     var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                    if (_json_result.success == true)
+                    if (_json_result.success)
                     {
                         var _json_deposits = privateClient.DeserializeObject<ODeposits>(_json_value.Content);
                         {
@@ -265,7 +265,7 @@ namespace CCXT.NET.OKEx.Private
                 _params.Add("type", 1); // 0：deposits 1 ：withdraw
 
                 // TransactionType.Withdrawal
-                if (_result.success == true)
+                if (_result.success)
                 {
                     privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -274,7 +274,7 @@ namespace CCXT.NET.OKEx.Private
                     _result.rawJson += _json_value.Content;
 #endif
                     var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                    if (_json_result.success == true)
+                    if (_json_result.success)
                     {
                         var _json_withdraws = privateClient.DeserializeObject<OWithdraws>(_json_value.Content);
                         {
@@ -316,7 +316,7 @@ namespace CCXT.NET.OKEx.Private
             var _result = new Balance();
 
             var _currency_id = await publicApi.LoadCurrencyIdAsync(base_name);
-            if (_currency_id.success == true)
+            if (_currency_id.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -327,12 +327,12 @@ namespace CCXT.NET.OKEx.Private
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = privateClient.DeserializeObject<JObject>(_json_value.Content);
                     {
                         var _balances = privateClient.DeserializeObject<Dictionary<string, JObject>>(_json_data["info"]["funds"].ToString());
-                        if (_balances["free"].ContainsKey(_currency_id.result) == true)
+                        if (_balances["free"].ContainsKey(_currency_id.result))
                         {
                             var _balance = new OBalanceItem()
                             {
@@ -372,7 +372,7 @@ namespace CCXT.NET.OKEx.Private
             var _result = new Balances();
 
             var _markets = await publicApi.LoadMarketsAsync();
-            if (_markets.success == true)
+            if (_markets.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -383,7 +383,7 @@ namespace CCXT.NET.OKEx.Private
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = privateClient.DeserializeObject<JObject>(_json_value.Content);
                     {

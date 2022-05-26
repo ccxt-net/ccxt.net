@@ -118,9 +118,9 @@ namespace CCXT.NET.Korbit
         /// <returns></returns>
         public async Task<AccessToken> GetAccessToken()
         {
-            if (__access_token.success == true)
+            if (__access_token.success)
             {
-                if (__access_token.CheckExpired() == true)
+                if (__access_token.CheckExpired())
                     __access_token = await GetAccessToken("refresh_token", __access_token.refreshToken);
             }
 
@@ -161,7 +161,7 @@ namespace CCXT.NET.Korbit
             var _request = await base.CreatePostRequestAsync("/oauth2/access_token", _params);
             {
                 var _access_token = await base.RestExecuteAsync(_request);
-                if (_access_token.IsSuccessful == true)
+                if (_access_token.IsSuccessful)
                 {
                     _result = this.DeserializeObject<AccessToken>(_access_token.Content);
                     _result.SetSuccess();
@@ -187,7 +187,7 @@ namespace CCXT.NET.Korbit
         {
             var _request = await base.CreatePostRequestAsync(endpoint, args);
 
-            if (IsAuthentication == true)
+            if (IsAuthentication)
             {
 #if DEBUG
                 if (TestXUnitMode == XUnitMode.UseExchangeServer)
@@ -218,7 +218,7 @@ namespace CCXT.NET.Korbit
         {
             var _request = await base.CreateGetRequestAsync(endpoint, args);
 
-            if (IsAuthentication == true)
+            if (IsAuthentication)
             {
 #if DEBUG
                 if (TestXUnitMode == XUnitMode.UseExchangeServer)
@@ -246,7 +246,7 @@ namespace CCXT.NET.Korbit
 
             if (response != null)
             {
-                if (response.IsSuccessful == true)
+                if (response.IsSuccessful)
                 {
                     if (String.IsNullOrEmpty(response.Content) == false && response.Content != "[]")
                     {
@@ -271,7 +271,7 @@ namespace CCXT.NET.Korbit
                     }
                 }
 
-                if (_result.success == true && response.IsSuccessful == false)
+                if (_result.success && response.IsSuccessful == false)
                 {
                     var _message = response.ErrorMessage ?? response.StatusDescription;
 

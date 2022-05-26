@@ -77,7 +77,7 @@ namespace CCXT.NET.Binance.Trade
         {
             set
             {
-                sideType = (value == true) ? SideType.Bid : SideType.Ask;
+                sideType = (value) ? SideType.Bid : SideType.Ask;
             }
         }
     }

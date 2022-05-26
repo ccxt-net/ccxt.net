@@ -67,7 +67,7 @@ namespace CCXT.NET.OkCoinKr.Trade
             var _result = new MyOrder(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -84,10 +84,10 @@ namespace CCXT.NET.OkCoinKr.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = tradeClient.DeserializeObject<OMyOrders>(_json_value.Content);
-                    if (_json_data.success == true)
+                    if (_json_data.success)
                     {
                         var _order = _json_data.result.FirstOrDefault();
 
@@ -129,7 +129,7 @@ namespace CCXT.NET.OkCoinKr.Trade
             var _result = new MyOrders(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -148,10 +148,10 @@ namespace CCXT.NET.OkCoinKr.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = tradeClient.DeserializeObject<OMyOrders>(_json_value.Content);
-                    if (_json_data.success == true)
+                    if (_json_data.success)
                     {
                         foreach (var _o in _json_data.result)
                         {
@@ -190,7 +190,7 @@ namespace CCXT.NET.OkCoinKr.Trade
             var _result = new MyTrades(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -212,7 +212,7 @@ namespace CCXT.NET.OkCoinKr.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = tradeClient.DeserializeObject<List<OMyTradeItem>>(_json_value.Content);
                     {
@@ -254,7 +254,7 @@ namespace CCXT.NET.OkCoinKr.Trade
             var _result = new MyOrder(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -275,7 +275,7 @@ namespace CCXT.NET.OkCoinKr.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = tradeClient.DeserializeObject<OPlaceOrder>(_json_value.Content);
                     {
@@ -322,7 +322,7 @@ namespace CCXT.NET.OkCoinKr.Trade
             var _result = new MyOrder(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -345,7 +345,7 @@ namespace CCXT.NET.OkCoinKr.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = tradeClient.DeserializeObject<OPlaceOrder>(_json_value.Content);
                     {
@@ -393,7 +393,7 @@ namespace CCXT.NET.OkCoinKr.Trade
             var _result = new MyOrder(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -410,12 +410,12 @@ namespace CCXT.NET.OkCoinKr.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = tradeClient.DeserializeObject<OCancelOrders>(_json_value.Content);
 
                     var _cancel = _json_data.result.FirstOrDefault();
-                    if (_cancel != null && _cancel.success == true)
+                    if (_cancel != null && _cancel.success)
                     {
                         var _order = new OPlaceOrderItem
                         {
@@ -463,7 +463,7 @@ namespace CCXT.NET.OkCoinKr.Trade
             var _result = new MyOrders(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -480,7 +480,7 @@ namespace CCXT.NET.OkCoinKr.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = tradeClient.DeserializeObject<OCancelOrders>(_json_value.Content);
                     foreach (var _o in _json_data.result)

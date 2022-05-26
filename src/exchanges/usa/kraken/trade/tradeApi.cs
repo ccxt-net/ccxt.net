@@ -68,7 +68,7 @@ namespace CCXT.NET.Kraken.Trade
             var _result = new MyOrder(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -84,7 +84,7 @@ namespace CCXT.NET.Kraken.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = tradeClient.DeserializeObject<KResponse<Dictionary<string, KMyOrderItem>>>(_json_value.Content);
                     {
@@ -131,7 +131,7 @@ namespace CCXT.NET.Kraken.Trade
             var _result = new MyOrders(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -146,7 +146,7 @@ namespace CCXT.NET.Kraken.Trade
                     _result.rawJson += _json_value.Content;
 #endif
                     var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                    if (_json_result.success == true)
+                    if (_json_result.success)
                     {
                         var _json_data = tradeClient.DeserializeObject<KResponse<KMyOpenOrders>>(_json_value.Content);
                         {
@@ -171,14 +171,14 @@ namespace CCXT.NET.Kraken.Trade
                 }
 
                 // closed orders
-                if (_result.success == true)
+                if (_result.success)
                 {
                     var _json_value = await tradeClient.CallApiPost1Async("/0/private/ClosedOrders", _params);
 #if DEBUG
                     _result.rawJson += _json_value.Content;
 #endif
                     var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                    if (_json_result.success == true)
+                    if (_json_result.success)
                     {
                         var _json_data = tradeClient.DeserializeObject<KResponse<KMyClosedOrders>>(_json_value.Content);
                         {
@@ -222,7 +222,7 @@ namespace CCXT.NET.Kraken.Trade
             var _result = new MyOrders(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -235,7 +235,7 @@ namespace CCXT.NET.Kraken.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = tradeClient.DeserializeObject<KResponse<KMyOpenOrders>>(_json_value.Content);
                     {
@@ -275,7 +275,7 @@ namespace CCXT.NET.Kraken.Trade
             var _result = new MyOrders();
 
             var _markets = await publicApi.LoadMarketsAsync();
-            if (_markets.success == true)
+            if (_markets.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -286,7 +286,7 @@ namespace CCXT.NET.Kraken.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = tradeClient.DeserializeObject<KResponse<KMyOpenOrders>>(_json_value.Content);
                     {
@@ -329,7 +329,7 @@ namespace CCXT.NET.Kraken.Trade
             var _result = new MyPositions();
 
             var _markets = await publicApi.LoadMarketsAsync();
-            if (_markets.success == true)
+            if (_markets.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -340,7 +340,7 @@ namespace CCXT.NET.Kraken.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = tradeClient.DeserializeObject<KResponse<Dictionary<string, KMyPositionItem>>>(_json_value.Content);
                     {
@@ -385,7 +385,7 @@ namespace CCXT.NET.Kraken.Trade
             var _result = new MyTrades(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -396,7 +396,7 @@ namespace CCXT.NET.Kraken.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = tradeClient.DeserializeObject<KResponse<KMyTrades>>(_json_value.Content);
                     {
@@ -438,7 +438,7 @@ namespace CCXT.NET.Kraken.Trade
             var _result = new MyOrder(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -461,7 +461,7 @@ namespace CCXT.NET.Kraken.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = tradeClient.DeserializeObject<KResponse<KMyPlaceOrder>>(_json_value.Content);
                     if (_json_data.result.transactionIds != null)
@@ -522,7 +522,7 @@ namespace CCXT.NET.Kraken.Trade
             var _result = new MyOrder(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -545,7 +545,7 @@ namespace CCXT.NET.Kraken.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = tradeClient.DeserializeObject<KResponse<KMyPlaceOrder>>(_json_value.Content);
                     {
@@ -597,7 +597,7 @@ namespace CCXT.NET.Kraken.Trade
             var _result = new MyOrder(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -613,7 +613,7 @@ namespace CCXT.NET.Kraken.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = tradeClient.DeserializeObject<KResponse<KMyCancelOrder>>(_json_value.Content);
                     if (_json_data.result.count > 0)

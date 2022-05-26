@@ -54,7 +54,7 @@ namespace CCXT.NET.Kraken.Public
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _markets = publicClient.DeserializeObject<KResponse<Dictionary<string, KMarketItem>>>(_json_value.Content);
 
@@ -73,7 +73,7 @@ namespace CCXT.NET.Kraken.Public
 
                         _market.baseName = publicClient.ExchangeInfo.GetCommonCurrencyName(_market.baseId);
                         _market.quoteName = publicClient.ExchangeInfo.GetCommonCurrencyName(_market.quoteId);
-                        
+
                         var _market_id = _market.baseName + "/" + _market.quoteName;
                         if (_result.result.ContainsKey(_market_id))
                             continue;
@@ -135,7 +135,7 @@ namespace CCXT.NET.Kraken.Public
             var _result = new Tickers();
 
             var _markets = await this.LoadMarketsAsync();
-            if (_markets.success == true)
+            if (_markets.success)
             {
                 publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
 
@@ -158,7 +158,7 @@ namespace CCXT.NET.Kraken.Public
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = publicClient.DeserializeObject<JObject>(_json_value.Content);
                     {
@@ -199,7 +199,7 @@ namespace CCXT.NET.Kraken.Public
             var _result = new OrderBooks(base_name, quote_name);
 
             var _market = await this.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
 
@@ -216,7 +216,7 @@ namespace CCXT.NET.Kraken.Public
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = publicClient.DeserializeObject<JObject>(_json_value.Content);
                     {
@@ -257,7 +257,7 @@ namespace CCXT.NET.Kraken.Public
             var _result = new OHLCVs(base_name, quote_name);
 
             var _market = await this.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
 
@@ -280,7 +280,7 @@ namespace CCXT.NET.Kraken.Public
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = publicClient.DeserializeObject<JObject>(_json_value.Content);
                     var _json_ohlcvs = JArray.FromObject((_json_data["result"] as JObject)[_market.result.symbol]);
@@ -327,7 +327,7 @@ namespace CCXT.NET.Kraken.Public
             var _result = new CompleteOrders(base_name, quote_name);
 
             var _market = await this.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
 
@@ -349,7 +349,7 @@ namespace CCXT.NET.Kraken.Public
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = publicClient.DeserializeObject<JObject>(_json_value.Content);
                     {

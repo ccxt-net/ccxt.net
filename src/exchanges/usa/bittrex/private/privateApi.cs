@@ -66,7 +66,7 @@ namespace CCXT.NET.Bittrex.Private
             var _result = new Address();
 
             var _currency_id = await publicApi.LoadCurrencyIdAsync(currency_name);
-            if (_currency_id.success == true)
+            if (_currency_id.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -82,7 +82,7 @@ namespace CCXT.NET.Bittrex.Private
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = privateClient.DeserializeObject<JObject>(_json_value.Content);
                     {
@@ -117,7 +117,7 @@ namespace CCXT.NET.Bittrex.Private
             var _result = new Transfer();
 
             var _currency_id = await publicApi.LoadCurrencyIdAsync(currency_name);
-            if (_currency_id.success == true)
+            if (_currency_id.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -135,10 +135,10 @@ namespace CCXT.NET.Bittrex.Private
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = privateClient.DeserializeObject<BWithdraw>(_json_value.Content);
-                    if (_json_data.success == true)
+                    if (_json_data.success)
                     {
                         var _transfer = new BWithdrawItem
                         {
@@ -192,7 +192,7 @@ namespace CCXT.NET.Bittrex.Private
             var _result = new Transfers();
 
             var _currency_id = await publicApi.LoadCurrencyIdAsync(currency_name);
-            if (_currency_id.success == true)
+            if (_currency_id.success)
             {
                 var _timestamp = privateClient.ExchangeInfo.GetTimestamp(timeframe);
                 var _timeframe = privateClient.ExchangeInfo.GetTimeframe(timeframe);
@@ -213,10 +213,10 @@ namespace CCXT.NET.Bittrex.Private
                     _result.rawJson += _json_value.Content;
 #endif
                     var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                    if (_json_result.success == true)
+                    if (_json_result.success)
                     {
                         var _json_data = privateClient.DeserializeObject<BTransfers>(_json_value.Content);
-                        if (_json_data.success == true)
+                        if (_json_data.success)
                         {
                             var _deposits = _json_data.result
                                                         .Where(d => d.timestamp >= since)
@@ -225,10 +225,10 @@ namespace CCXT.NET.Bittrex.Private
 
                             foreach (var _d in _deposits)
                             {
-                                if (String.IsNullOrEmpty(_d.transactionId) == true)
+                                if (String.IsNullOrEmpty(_d.transactionId))
                                     continue;
 
-                                _d.transactionType = _d.pendingPayment == true
+                                _d.transactionType = _d.pendingPayment
                                                    ? TransactionType.Depositing
                                                    : TransactionType.Deposit;
 
@@ -247,7 +247,7 @@ namespace CCXT.NET.Bittrex.Private
                 }
 
                 // TransactionType.Withdrawal
-                if (_result.success == true)
+                if (_result.success)
                 {
                     privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -256,10 +256,10 @@ namespace CCXT.NET.Bittrex.Private
                     _result.rawJson += _json_value.Content;
 #endif
                     var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                    if (_json_result.success == true)
+                    if (_json_result.success)
                     {
                         var _json_data = privateClient.DeserializeObject<BTransfers>(_json_value.Content);
-                        if (_json_data.success == true)
+                        if (_json_data.success)
                         {
                             var _withdraws = _json_data.result
                                                         .Where(w => w.timestamp >= since)
@@ -268,10 +268,10 @@ namespace CCXT.NET.Bittrex.Private
 
                             foreach (var _w in _withdraws)
                             {
-                                if (String.IsNullOrEmpty(_w.transactionId) == true)
+                                if (String.IsNullOrEmpty(_w.transactionId))
                                     continue;
 
-                                _w.transactionType = _w.pendingPayment == true
+                                _w.transactionType = _w.pendingPayment
                                                    ? TransactionType.Withdrawing
                                                    : TransactionType.Withdraw;
 
@@ -311,7 +311,7 @@ namespace CCXT.NET.Bittrex.Private
             var _result = new Transfers();
 
             var _markets = await publicApi.LoadMarketsAsync();
-            if (_markets.success == true)
+            if (_markets.success)
             {
                 var _timestamp = privateClient.ExchangeInfo.GetTimestamp(timeframe);
                 var _timeframe = privateClient.ExchangeInfo.GetTimeframe(timeframe);
@@ -327,10 +327,10 @@ namespace CCXT.NET.Bittrex.Private
                     _result.rawJson += _json_value.Content;
 #endif
                     var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                    if (_json_result.success == true)
+                    if (_json_result.success)
                     {
                         var _json_data = privateClient.DeserializeObject<BTransfers>(_json_value.Content);
-                        if (_json_data.success == true)
+                        if (_json_data.success)
                         {
                             var _deposits = _json_data.result
                                                         .Where(d => d.timestamp >= since)
@@ -339,10 +339,10 @@ namespace CCXT.NET.Bittrex.Private
 
                             foreach (var _d in _deposits)
                             {
-                                if (String.IsNullOrEmpty(_d.transactionId) == true)
+                                if (String.IsNullOrEmpty(_d.transactionId))
                                     continue;
 
-                                _d.transactionType = _d.pendingPayment == true
+                                _d.transactionType = _d.pendingPayment
                                                    ? TransactionType.Depositing
                                                    : TransactionType.Deposit;
 
@@ -359,7 +359,7 @@ namespace CCXT.NET.Bittrex.Private
                 }
 
                 // TransactionType.Withdrawal
-                if (_result.success == true)
+                if (_result.success)
                 {
                     privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -368,10 +368,10 @@ namespace CCXT.NET.Bittrex.Private
                     _result.rawJson += _json_value.Content;
 #endif
                     var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                    if (_json_result.success == true)
+                    if (_json_result.success)
                     {
                         var _json_data = privateClient.DeserializeObject<BTransfers>(_json_value.Content);
-                        if (_json_data.success == true)
+                        if (_json_data.success)
                         {
                             var _withdraws = _json_data.result
                                                         .Where(w => w.timestamp >= since)
@@ -380,10 +380,10 @@ namespace CCXT.NET.Bittrex.Private
 
                             foreach (var _w in _withdraws)
                             {
-                                if (String.IsNullOrEmpty(_w.transactionId) == true)
+                                if (String.IsNullOrEmpty(_w.transactionId))
                                     continue;
 
-                                _w.transactionType = _w.pendingPayment == true
+                                _w.transactionType = _w.pendingPayment
                                                    ? TransactionType.Withdrawing
                                                    : TransactionType.Withdraw;
 
@@ -419,7 +419,7 @@ namespace CCXT.NET.Bittrex.Private
             var _result = new Balance();
 
             var _currency_id = await publicApi.LoadCurrencyIdAsync(base_name);
-            if (_currency_id.success == true)
+            if (_currency_id.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -435,10 +435,10 @@ namespace CCXT.NET.Bittrex.Private
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _balance = privateClient.DeserializeObject<BBalance>(_json_value.Content);
-                    if (_balance.success == true)
+                    if (_balance.success)
                     {
                         //_balance.total = _balance.free + _balance.used;
                         _balance.result.currency = base_name;
@@ -471,7 +471,7 @@ namespace CCXT.NET.Bittrex.Private
             var _result = new Balances();
 
             var _markets = await publicApi.LoadMarketsAsync();
-            if (_markets.success == true)
+            if (_markets.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -482,7 +482,7 @@ namespace CCXT.NET.Bittrex.Private
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _balances = privateClient.DeserializeObject<BBalances>(_json_value.Content);
                     {

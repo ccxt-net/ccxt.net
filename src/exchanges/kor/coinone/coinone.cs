@@ -138,7 +138,7 @@ namespace CCXT.NET.Coinone
         {
             var _request = await base.CreatePostRequestAsync(endpoint, args);
 
-            if (IsAuthentication == true)
+            if (IsAuthentication)
             {
                 var _params = new Dictionary<string, object>();
                 {
@@ -235,7 +235,7 @@ namespace CCXT.NET.Coinone
         /// <returns></returns>
         public override string GetErrorMessage(int error_code)
         {
-            return ErrorMessages.ContainsKey(error_code) == true
+            return ErrorMessages.ContainsKey(error_code)
                                   ? ErrorMessages[error_code]
                                   : "failure";
         }
@@ -251,7 +251,7 @@ namespace CCXT.NET.Coinone
 
             if (response != null)
             {
-                if (response.IsSuccessful == true)
+                if (response.IsSuccessful)
                 {
                     if (response.Content.Length > 0 && response.Content[0] == '{')
                     {
@@ -277,7 +277,7 @@ namespace CCXT.NET.Coinone
                     }
                 }
 
-                if (_result.success == true && response.IsSuccessful == false)
+                if (_result.success && response.IsSuccessful == false)
                 {
                     _result.SetFailure(
                             response.ErrorMessage ?? response.StatusDescription,

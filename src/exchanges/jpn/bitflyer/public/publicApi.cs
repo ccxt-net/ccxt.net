@@ -51,7 +51,7 @@ namespace CCXT.NET.Bitflyer.Public
                 var _json_value_jp = await publicClient.CallApiGet1Async("/v1/getmarkets", _params);
 
                 var _json_result_jp = publicClient.GetResponseMessage(_json_value_jp.Response);
-                if (_json_result_jp.success == true)
+                if (_json_result_jp.success)
                 {
                     var _json_data_jp = publicClient.DeserializeObject<List<JObject>>(_json_value_jp.Content);
 
@@ -63,7 +63,7 @@ namespace CCXT.NET.Bitflyer.Public
                         var _json_value_us = await publicClient.CallApiGet1Async("/v1/getmarkets/usa", _params);
 
                         var _json_result_us = publicClient.GetResponseMessage(_json_value_us.Response);
-                        if (_json_result_us.success == true)
+                        if (_json_result_us.success)
                         {
                             var _json_data_us = publicClient.DeserializeObject<List<JObject>>(_json_value_us.Content);
                             _json_data_jp = _json_data_jp.Concat(_json_data_us).ToList();
@@ -73,7 +73,7 @@ namespace CCXT.NET.Bitflyer.Public
                         var _json_value_eu = await publicClient.CallApiGet1Async("/v1/getmarkets/eu", _params);
 
                         var _json_result_eu = publicClient.GetResponseMessage(_json_value_eu.Response);
-                        if (_json_result_eu.success == true)
+                        if (_json_result_eu.success)
                         {
                             var _json_data_eu = publicClient.DeserializeObject<List<JObject>>(_json_value_eu.Content);
                             _json_data_jp = _json_data_jp.Concat(_json_data_eu).ToList();
@@ -166,7 +166,7 @@ namespace CCXT.NET.Bitflyer.Public
             var _result = new Ticker(base_name, quote_name);
 
             var _market = await this.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
 
@@ -182,7 +182,7 @@ namespace CCXT.NET.Bitflyer.Public
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _ticker = publicClient.DeserializeObject<BTickerItem>(_json_value.Content);
                     {
@@ -215,7 +215,7 @@ namespace CCXT.NET.Bitflyer.Public
             var _result = new OrderBooks(base_name, quote_name);
 
             var _market = await this.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
 
@@ -231,7 +231,7 @@ namespace CCXT.NET.Bitflyer.Public
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _orderbook = publicClient.DeserializeObject<BOrderBook>(_json_value.Content);
                     {
@@ -269,7 +269,7 @@ namespace CCXT.NET.Bitflyer.Public
             var _result = new CompleteOrders(base_name, quote_name);
 
             var _market = await this.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
 
@@ -289,7 +289,7 @@ namespace CCXT.NET.Bitflyer.Public
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = publicClient.DeserializeObject<List<BCompleteOrderItem>>(_json_value.Content);
                     {

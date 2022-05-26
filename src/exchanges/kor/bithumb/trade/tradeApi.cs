@@ -67,7 +67,7 @@ namespace CCXT.NET.Bithumb.Trade
             var _result = new MyOrder(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -85,12 +85,12 @@ namespace CCXT.NET.Bithumb.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = tradeClient.DeserializeObject<BMyOrders>(_json_value.Content);
-                    if (_json_data.success == true)
+                    if (_json_data.success)
                     {
-                        var _type = (_params.ContainsKey("type") == true) ? _params["type"].ToString() : "";
+                        var _type = (_params.ContainsKey("type")) ? _params["type"].ToString() : "";
 
                         var _order = new BMyOrderItem
                         {
@@ -109,7 +109,7 @@ namespace CCXT.NET.Bithumb.Trade
 
                         foreach (var _o in _json_data.result)
                         {
-                            //if (String.IsNullOrEmpty(_order.contract_id) == true)
+                            //if (String.IsNullOrEmpty(_order.contract_id))
                             //    _order.contract_id = _o.contract_id;
 
                             if (_order.sideType != _o.sideType)
@@ -160,7 +160,7 @@ namespace CCXT.NET.Bithumb.Trade
             var _result = new MyOrders(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -183,12 +183,12 @@ namespace CCXT.NET.Bithumb.Trade
                 _result.rawJson += _json_value_detail.Content;
 #endif
                 var _json_result_detail = tradeClient.GetResponseMessage(_json_value_detail.Response);
-                if (_json_result_detail.success == true)
+                if (_json_result_detail.success)
                 {
                     var _json_data_detail = tradeClient.DeserializeObject<BMyOrders>(_json_value_detail.Content);
-                    if (_json_data_detail.success == true)
+                    if (_json_data_detail.success)
                     {
-                        //var _order_id = (_params.ContainsKey("order_id") == true) ? _params["order_id"].ToString() : "";
+                        //var _order_id = (_params.ContainsKey("order_id")) ? _params["order_id"].ToString() : "";
 
                         foreach (var _o in _json_data_detail.result)
                         {
@@ -216,15 +216,15 @@ namespace CCXT.NET.Bithumb.Trade
                 _result.rawJson += _json_value_orders.Content;
 #endif
                 var _json_result_orders = tradeClient.GetResponseMessage(_json_value_orders.Response);
-                if (_json_result_orders.success == true)
+                if (_json_result_orders.success)
                 {
                     var _json_data_orders = tradeClient.DeserializeObject<BMyOpenOrders>(_json_value_orders.Content);
-                    if (_json_data_orders.success == true)
+                    if (_json_data_orders.success)
                     {
                         foreach (var _o in _json_data_orders.result)
                         {
 #if DEBUG
-                            if (String.IsNullOrEmpty(_o.orderId) == true)
+                            if (String.IsNullOrEmpty(_o.orderId))
                                 continue;
 #endif
 
@@ -272,7 +272,7 @@ namespace CCXT.NET.Bithumb.Trade
             var _result = new MyOrders(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -293,10 +293,10 @@ namespace CCXT.NET.Bithumb.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = tradeClient.DeserializeObject<BMyOpenOrders>(_json_value.Content);
-                    if (_json_data.success == true)
+                    if (_json_data.success)
                     {
                         foreach (var _o in _json_data.result)
                         {
@@ -345,7 +345,7 @@ namespace CCXT.NET.Bithumb.Trade
             var _result = new MyTrades(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -367,10 +367,10 @@ namespace CCXT.NET.Bithumb.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = tradeClient.DeserializeObject<BMyTrades>(_json_value.Content);
-                    if (_json_data.success == true)
+                    if (_json_data.success)
                     {
                         var _orders = _json_data.result
                                                 .Where(o => o.timestamp >= since && (o.sideType == SideType.Ask || o.sideType == SideType.Bid))
@@ -419,7 +419,7 @@ namespace CCXT.NET.Bithumb.Trade
             var _result = new MyOrder(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -441,10 +441,10 @@ namespace CCXT.NET.Bithumb.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = tradeClient.DeserializeObject<BPlaceOrders>(_json_value.Content);
-                    if (_json_data.success == true)
+                    if (_json_data.success)
                     {
                         var _limit_order = new BPlaceOrderItem
                         {
@@ -502,7 +502,7 @@ namespace CCXT.NET.Bithumb.Trade
             var _result = new MyOrder(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -521,10 +521,10 @@ namespace CCXT.NET.Bithumb.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = tradeClient.DeserializeObject<BPlaceOrders>(_json_value.Content);
-                    if (_json_data.success == true)
+                    if (_json_data.success)
                     {
                         var _market_order = new BPlaceOrderItem
                         {
@@ -583,7 +583,7 @@ namespace CCXT.NET.Bithumb.Trade
             var _result = new MyOrder(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -603,10 +603,10 @@ namespace CCXT.NET.Bithumb.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = tradeClient.DeserializeObject<BPlaceOrder>(_json_value.Content);
-                    if (_json_data.success == true)
+                    if (_json_data.success)
                     {
                         var _cancel_order = new BPlaceOrderItem
                         {

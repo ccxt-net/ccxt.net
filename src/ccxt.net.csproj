@@ -1,7 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net6.0</TargetFramework>
         <Title>CryptoCurrency eXchange Trading Library for .NET</Title>
         <Product>CCXT</Product>
         <Company>ODINSOFT</Company>
@@ -18,27 +17,16 @@
         <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
         <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
         <RootNamespace>CCXT.NET</RootNamespace>
-        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
         <Version>1.4.13</Version>
         <PackageReleaseNotes>RestSharp update and upgrade to .net core 6.</PackageReleaseNotes>
         <AssemblyVersion>1.4.13.1</AssemblyVersion>
         <FileVersion>1.4.13.1</FileVersion>
-        <LangVersion>latest</LangVersion>
         <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
         <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <RepositoryUrl>https://github.com/ccxt.net/ccxt.net</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
-    </PropertyGroup>
-
-    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net472|AnyCPU'">
-        <DocumentationFile>bin\Debug\net472\CCXT.NET.xml</DocumentationFile>
-        <DefineConstants>TRACE;DEBUG</DefineConstants>
-    </PropertyGroup>
-
-    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net472|AnyCPU'">
-        <DocumentationFile>bin\Release\net472\CCXT.NET.xml</DocumentationFile>
-        <DefineConstants>TRACE;RELEASE</DefineConstants>
     </PropertyGroup>
 
     <ItemGroup>

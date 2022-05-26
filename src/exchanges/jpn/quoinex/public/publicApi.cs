@@ -54,7 +54,7 @@ namespace CCXT.NET.Quoinex.Public
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _products = publicClient.DeserializeObject<List<JObject>>(_json_value.Content);
                     foreach (var _market in _products)
@@ -164,7 +164,7 @@ namespace CCXT.NET.Quoinex.Public
             var _result = new Ticker(base_name, quote_name);
 
             var _market = await this.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
 
@@ -175,7 +175,7 @@ namespace CCXT.NET.Quoinex.Public
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _ticker = publicClient.DeserializeObject<QTickerItem>(_json_value.Content);
                     {
@@ -206,7 +206,7 @@ namespace CCXT.NET.Quoinex.Public
             var _result = new Tickers();
 
             var _markets = await this.LoadMarketsAsync();
-            if (_markets.success == true)
+            if (_markets.success)
             {
                 publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
 
@@ -217,7 +217,7 @@ namespace CCXT.NET.Quoinex.Public
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _tickers = publicClient.DeserializeObject<List<QTickerItem>>(_json_value.Content);
                     {
@@ -254,7 +254,7 @@ namespace CCXT.NET.Quoinex.Public
             var _result = new OrderBooks(base_name, quote_name);
 
             var _market = await this.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
 
@@ -271,7 +271,7 @@ namespace CCXT.NET.Quoinex.Public
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _orderbook = publicClient.DeserializeObject<QOrderBook>(_json_value.Content);
                     {
@@ -309,7 +309,7 @@ namespace CCXT.NET.Quoinex.Public
             var _result = new CompleteOrders(base_name, quote_name);
 
             var _market = await this.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
 
@@ -333,7 +333,7 @@ namespace CCXT.NET.Quoinex.Public
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = publicClient.DeserializeObject<QCompleteOrders>(_json_value.Content);
                     {

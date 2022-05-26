@@ -403,7 +403,7 @@ namespace CCXT.NET.Shared.Coin
         {
             var _nonce = (long)GenerateNonceValue(digit_count);
 
-            if (marketLastNonce.ContainsKey(this.DealerName) == true)
+            if (marketLastNonce.ContainsKey(this.DealerName))
             {
                 var _last_nonce = marketLastNonce[this.DealerName];
 #if DEBUG
@@ -431,7 +431,7 @@ namespace CCXT.NET.Shared.Coin
 
             if (args != null)
             {
-                if (json == true)
+                if (json)
                 {
                     var _params = new List<string>();
                     foreach (var _entry in args)
@@ -490,7 +490,7 @@ namespace CCXT.NET.Shared.Coin
             {
                 foreach (var _arg in args)
                 {
-                    if (@params.ContainsKey(_arg.Key) == true)
+                    if (@params.ContainsKey(_arg.Key))
                         @params.Remove(_arg.Key);
 
                     @params.Add(_arg.Key, _arg.Value);
@@ -543,12 +543,12 @@ namespace CCXT.NET.Shared.Coin
                         var _margs = _arg.Value as CArgument;
                         if (_margs != null)
                         {
-                            if (_margs.isArray == true)
+                            if (_margs.isArray)
                             {
                                 foreach (var _marg in (_margs.value as Array) ?? new Array[0])
                                     _request.AddParameter(_arg.Key, _marg, ParameterType.GetOrPost);
                             }
-                            else if (_margs.isJson == true)
+                            else if (_margs.isJson)
                             {
                                 _request.AddParameter(_arg.Key, JsonConvert.SerializeObject(_margs.value));
                             }
@@ -584,7 +584,7 @@ namespace CCXT.NET.Shared.Coin
         /// <returns></returns>
         public virtual string GetErrorMessage(int error_code)
         {
-            return ErrorMessages.ContainsKey(error_code) == true
+            return ErrorMessages.ContainsKey(error_code)
                                   ? ErrorMessages[error_code].ToString()
                                   : "failure";
         }
@@ -600,7 +600,7 @@ namespace CCXT.NET.Shared.Coin
 
             if (response != null)
             {
-                if (response.IsSuccessful == true)
+                if (response.IsSuccessful)
                 {
                     var _json_result = this.DeserializeObject<JToken>(response.Content);
                     if (_json_result.SelectToken("message") != null)
@@ -612,7 +612,7 @@ namespace CCXT.NET.Shared.Coin
                     }
                 }
 
-                if (_result.success == true && response.IsSuccessful == false)
+                if (_result.success && response.IsSuccessful == false)
                 {
                     _result.SetFailure(
                             response.ErrorMessage ?? response.StatusDescription,
@@ -812,7 +812,7 @@ namespace CCXT.NET.Shared.Coin
         public virtual async ValueTask<T> CallApiGetAsync<T>(string endpoint, Dictionary<string, object> args = null) where T : new()
         {
             var _response = await CallApiGet2Async(endpoint, args);
-            return _response != null 
+            return _response != null
                         ? this.DeserializeObject<T>(_response.Content)
                         : new T();
         }
@@ -980,7 +980,7 @@ namespace CCXT.NET.Shared.Coin
         public virtual async ValueTask<T> CallApiPutAsync<T>(string endpoint, Dictionary<string, object> args = null) where T : new()
         {
             var _response = await CallApiPut2Async(endpoint, args);
-            return _response != null 
+            return _response != null
                         ? this.DeserializeObject<T>(_response.Content)
                         : new T();
         }

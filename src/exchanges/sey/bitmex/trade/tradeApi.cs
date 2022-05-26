@@ -80,7 +80,7 @@ namespace CCXT.NET.BitMEX.Trade
             var _result = new MyOrders(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -103,7 +103,7 @@ namespace CCXT.NET.BitMEX.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = tradeClient.DeserializeObject<List<BMyOrderItem>>(_json_value.Content);
                     {
@@ -142,7 +142,7 @@ namespace CCXT.NET.BitMEX.Trade
             var _result = new MyOrders(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -167,7 +167,7 @@ namespace CCXT.NET.BitMEX.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     //var _multiplier = publicApi.publicClient.ExchangeInfo.GetAmountMultiplier(_market.result.symbol, 1.0m);
 
@@ -204,7 +204,7 @@ namespace CCXT.NET.BitMEX.Trade
             var _result = new MyOrders();
 
             var _markets = await publicApi.LoadMarketsAsync();
-            if (_markets.success == true)
+            if (_markets.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -228,10 +228,10 @@ namespace CCXT.NET.BitMEX.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _orders = tradeClient.DeserializeObject<List<BMyOrderItem>>(_json_value.Content);
-                    foreach (var _o in _orders.Where(o => OrderStatusConverter.IsAlive(o.orderStatus) == true))
+                    foreach (var _o in _orders.Where(o => OrderStatusConverter.IsAlive(o.orderStatus)))
                     {
                         //var _multiplier = publicApi.publicClient.ExchangeInfo.GetAmountMultiplier(_o.symbol, 1.0m);
 
@@ -267,7 +267,7 @@ namespace CCXT.NET.BitMEX.Trade
             var _result = new MyPositions(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -290,7 +290,7 @@ namespace CCXT.NET.BitMEX.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = tradeClient.DeserializeObject<List<BMyPositionItem>>(_json_value.Content);
                     {
@@ -332,7 +332,7 @@ namespace CCXT.NET.BitMEX.Trade
             var _result = new MyPositions();
 
             var _markets = await publicApi.LoadMarketsAsync();
-            if (_markets.success == true)
+            if (_markets.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -343,7 +343,7 @@ namespace CCXT.NET.BitMEX.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = tradeClient.DeserializeObject<List<BMyPositionItem>>(_json_value.Content);
                     {
@@ -390,7 +390,7 @@ namespace CCXT.NET.BitMEX.Trade
             var _result = new MyTrades(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -414,7 +414,7 @@ namespace CCXT.NET.BitMEX.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = tradeClient.DeserializeObject<List<BMyTradeItem>>(_json_value.Content);
                     {
@@ -456,7 +456,7 @@ namespace CCXT.NET.BitMEX.Trade
             var _result = new MyOrder(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -479,7 +479,7 @@ namespace CCXT.NET.BitMEX.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _order = tradeClient.DeserializeObject<BPlaceOrderItem>(_json_value.Content);
                     {
@@ -520,7 +520,7 @@ namespace CCXT.NET.BitMEX.Trade
             var _result = new MyOrder(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -542,7 +542,7 @@ namespace CCXT.NET.BitMEX.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _order = tradeClient.DeserializeObject<BPlaceOrderItem>(_json_value.Content);
                     {
@@ -590,7 +590,7 @@ namespace CCXT.NET.BitMEX.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _orders = tradeClient.DeserializeObject<List<BMyOrderItem>>(_json_value.Content);
                     {
@@ -618,7 +618,7 @@ namespace CCXT.NET.BitMEX.Trade
             var _result = new MyOrder(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -638,7 +638,7 @@ namespace CCXT.NET.BitMEX.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _order = tradeClient.DeserializeObject<BMyOrderItem>(_json_value.Content);
                     {
@@ -669,7 +669,7 @@ namespace CCXT.NET.BitMEX.Trade
             var _result = new MyPosition(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -687,7 +687,7 @@ namespace CCXT.NET.BitMEX.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _position = tradeClient.DeserializeObject<BMyPositionItem>(_json_value.Content);
                     {
@@ -721,7 +721,7 @@ namespace CCXT.NET.BitMEX.Trade
             var _result = new MyOrder(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -740,7 +740,7 @@ namespace CCXT.NET.BitMEX.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = tradeClient.DeserializeObject<BPlaceOrderItem>(_json_value.Content);
                     _result.result = _json_data;
@@ -781,7 +781,7 @@ namespace CCXT.NET.BitMEX.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _orders = tradeClient.DeserializeObject<List<BMyOrderItem>>(_json_value.Content);
                     {
@@ -811,7 +811,7 @@ namespace CCXT.NET.BitMEX.Trade
             var _result = new MyOrder(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -828,7 +828,7 @@ namespace CCXT.NET.BitMEX.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = tradeClient.DeserializeObject<List<BPlaceOrderItem>>(_json_value.Content);
 
@@ -866,7 +866,7 @@ namespace CCXT.NET.BitMEX.Trade
             var _result = new MyOrders(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -883,7 +883,7 @@ namespace CCXT.NET.BitMEX.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = tradeClient.DeserializeObject<List<BPlaceOrderItem>>(_json_value.Content);
                     {
@@ -911,7 +911,7 @@ namespace CCXT.NET.BitMEX.Trade
             var _result = new MyOrders();
 
             var _markets = await publicApi.LoadMarketsAsync();
-            if (_markets.success == true)
+            if (_markets.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -922,7 +922,7 @@ namespace CCXT.NET.BitMEX.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = tradeClient.DeserializeObject<List<BPlaceOrderItem>>(_json_value.Content);
                     {

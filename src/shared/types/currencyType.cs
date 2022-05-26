@@ -67,7 +67,7 @@ namespace CCXT.NET.Shared.Coin.Types
         {
             var _result = CurrencyType.unknown;
 
-            if (Enum.IsDefined(typeof(CurrencyType), s) == true)
+            if (Enum.IsDefined(typeof(CurrencyType), s))
                 _result = (CurrencyType)Enum.Parse(typeof(CurrencyType), s);
 
             return _result;

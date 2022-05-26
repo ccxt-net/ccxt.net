@@ -229,7 +229,7 @@ namespace CCXT.NET.Shared.Coin.Trade
             var _result = new MyOrder(base_name, quote_name);
 
             var _currency_id = await publicApi.LoadCurrencyIdAsync(base_name);
-            if (_currency_id.success == true)
+            if (_currency_id.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -261,7 +261,7 @@ namespace CCXT.NET.Shared.Coin.Trade
             var _result = new MyOrders(base_name, quote_name);
 
             var _currency_id = await publicApi.LoadCurrencyIdAsync(base_name);
-            if (_currency_id.success == true)
+            if (_currency_id.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -293,7 +293,7 @@ namespace CCXT.NET.Shared.Coin.Trade
             var _result = new MyOrders(base_name, quote_name);
 
             var _currency_id = await publicApi.LoadCurrencyIdAsync(base_name);
-            if (_currency_id.success == true)
+            if (_currency_id.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -320,7 +320,7 @@ namespace CCXT.NET.Shared.Coin.Trade
             var _result = new MyOrders();
 
             var _markets = await publicApi.LoadMarketsAsync();
-            if (_markets.success == true)
+            if (_markets.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -349,7 +349,7 @@ namespace CCXT.NET.Shared.Coin.Trade
             var _result = new MyPositions(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId ?? "");
-            if (_market.success == true)
+            if (_market.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -376,7 +376,7 @@ namespace CCXT.NET.Shared.Coin.Trade
             var _result = new MyPositions();
 
             var _markets = await publicApi.LoadMarketsAsync();
-            if (_markets.success == true)
+            if (_markets.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -408,7 +408,7 @@ namespace CCXT.NET.Shared.Coin.Trade
             var _result = new MyTrades(base_name, quote_name);
 
             var _currency_id = await publicApi.LoadCurrencyIdAsync(base_name);
-            if (_currency_id.success == true)
+            if (_currency_id.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -443,7 +443,7 @@ namespace CCXT.NET.Shared.Coin.Trade
             var _result = new MyOrder(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId ?? "");
-            if (_market.success == true)
+            if (_market.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -484,7 +484,7 @@ namespace CCXT.NET.Shared.Coin.Trade
             var _result = new MyOrder(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId ?? "");
-            if (_market.success == true)
+            if (_market.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -525,7 +525,7 @@ namespace CCXT.NET.Shared.Coin.Trade
             var _result = new MyOrder(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId ?? "");
-            if (_market.success == true)
+            if (_market.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -567,7 +567,7 @@ namespace CCXT.NET.Shared.Coin.Trade
             var _result = new MyOrder(base_name, quote_name);
 
             var _currency_id = await publicApi.LoadCurrencyIdAsync(base_name);
-            if (_currency_id.success == true)
+            if (_currency_id.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -604,7 +604,7 @@ namespace CCXT.NET.Shared.Coin.Trade
             var _result = new MyOrders(base_name, quote_name);
 
             var _currency_id = await publicApi.LoadCurrencyIdAsync(base_name);
-            if (_currency_id.success == true)
+            if (_currency_id.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -631,7 +631,7 @@ namespace CCXT.NET.Shared.Coin.Trade
             var _result = new MyOrders();
 
             var _markets = await publicApi.LoadMarketsAsync();
-            if (_markets.success == true)
+            if (_markets.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 

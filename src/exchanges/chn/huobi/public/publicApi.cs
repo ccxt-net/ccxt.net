@@ -53,7 +53,7 @@ namespace CCXT.NET.Huobi.Public
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_markets = publicClient.DeserializeObject<HMarkets>(_json_value.Content);
 
@@ -63,7 +63,7 @@ namespace CCXT.NET.Huobi.Public
 
                         _m.baseName = publicClient.ExchangeInfo.GetCommonCurrencyName(_m.baseId);
                         _m.quoteName = publicClient.ExchangeInfo.GetCommonCurrencyName(_m.quoteId);
-                        
+
                         _m.marketId = _m.baseName + "/" + _m.quoteName;
                         if (_result.result.ContainsKey(_m.marketId))
                             continue;
@@ -106,7 +106,7 @@ namespace CCXT.NET.Huobi.Public
             var _result = new Ticker(base_name, quote_name);
 
             var _market = await this.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
 
@@ -122,7 +122,7 @@ namespace CCXT.NET.Huobi.Public
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _ticker = publicClient.DeserializeObject<HTicker>(_json_value.Content);
                     {
@@ -154,7 +154,7 @@ namespace CCXT.NET.Huobi.Public
             var _result = new Tickers();
 
             var _markets = await this.LoadMarketsAsync();
-            if (_markets.success == true)
+            if (_markets.success)
             {
                 publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
 
@@ -165,7 +165,7 @@ namespace CCXT.NET.Huobi.Public
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _tickers = publicClient.DeserializeObject<HTickers>(_json_value.Content);
                     {
@@ -205,7 +205,7 @@ namespace CCXT.NET.Huobi.Public
             var _result = new OrderBooks(base_name, quote_name);
 
             var _market = await this.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
 
@@ -222,10 +222,10 @@ namespace CCXT.NET.Huobi.Public
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _orderbooks = publicClient.DeserializeObject<HOrderBooks>(_json_value.Content);
-                    if (_orderbooks.success == true)
+                    if (_orderbooks.success)
                     {
                         var _ob_asks = _orderbooks.result.asks.OrderBy(o => o.price).Take(limits).ToList();
                         var _ob_bids = _orderbooks.result.bids.OrderByDescending(o => o.price).Take(limits).ToList();
@@ -289,7 +289,7 @@ namespace CCXT.NET.Huobi.Public
             var _result = new OHLCVs(base_name, quote_name);
 
             var _market = await this.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
 
@@ -310,10 +310,10 @@ namespace CCXT.NET.Huobi.Public
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _ohlcvs = publicClient.DeserializeObject<HOHLCVs>(_json_value.Content);
-                    if (_ohlcvs.success == true)
+                    if (_ohlcvs.success)
                     {
                         _result.result.AddRange(
                                     _ohlcvs.result
@@ -353,7 +353,7 @@ namespace CCXT.NET.Huobi.Public
             var _result = new CompleteOrders(base_name, quote_name);
 
             var _market = await this.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
 
@@ -372,7 +372,7 @@ namespace CCXT.NET.Huobi.Public
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = publicClient.DeserializeObject<HCompleteOrders>(_json_value.Content);
                     {

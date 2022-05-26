@@ -69,7 +69,7 @@ namespace CCXT.NET.Zb.Public
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _markets = publicClient.DeserializeObject<Dictionary<string, ZMarketItem>>(_json_value.Content);
 
@@ -129,7 +129,7 @@ namespace CCXT.NET.Zb.Public
             var _result = new Ticker(base_name, quote_name);
 
             var _market = await this.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
 
@@ -145,7 +145,7 @@ namespace CCXT.NET.Zb.Public
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _ticker = publicClient.DeserializeObject<ZTicker>(_json_value.Content);
                     {
@@ -175,7 +175,7 @@ namespace CCXT.NET.Zb.Public
             var _result = new Tickers();
 
             var _markets = await this.LoadMarketsAsync();
-            if (_markets.success == true)
+            if (_markets.success)
             {
                 publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
 
@@ -186,7 +186,7 @@ namespace CCXT.NET.Zb.Public
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _tickers = publicClient.DeserializeObject<Dictionary<string, ZTickerItem>>(_json_value.Content);
                     {
@@ -224,7 +224,7 @@ namespace CCXT.NET.Zb.Public
             var _result = new OrderBooks(base_name, quote_name);
 
             var _market = await this.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
 
@@ -241,7 +241,7 @@ namespace CCXT.NET.Zb.Public
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _ob = publicClient.DeserializeObject<ZOrderBook>(_json_value.Content);
                     {
@@ -303,7 +303,7 @@ namespace CCXT.NET.Zb.Public
             var _result = new OHLCVs(base_name, quote_name);
 
             var _market = await this.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
 
@@ -326,10 +326,10 @@ namespace CCXT.NET.Zb.Public
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _ohlcvs = publicClient.DeserializeObject<ZOHLCVs>(_json_value.Content);
-                    if (_ohlcvs.success == true)
+                    if (_ohlcvs.success)
                     {
                         _result.result.AddRange(
                                     _ohlcvs.result
@@ -369,7 +369,7 @@ namespace CCXT.NET.Zb.Public
             var _result = new CompleteOrders(base_name, quote_name);
 
             var _market = await this.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
 
@@ -388,7 +388,7 @@ namespace CCXT.NET.Zb.Public
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = publicClient.DeserializeObject<List<ZCompleteOrderItem>>(_json_value.Content);
                     {

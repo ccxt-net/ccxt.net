@@ -72,7 +72,7 @@ namespace CCXT.NET.CEXIO.Trade
             var _result = new MyOrder(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -88,7 +88,7 @@ namespace CCXT.NET.CEXIO.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _order = tradeClient.DeserializeObject<CMyOrderItem>(_json_value.Content);
                     if (_order != null)
@@ -127,7 +127,7 @@ namespace CCXT.NET.CEXIO.Trade
             var _result = new MyOrders(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -141,7 +141,7 @@ namespace CCXT.NET.CEXIO.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = tradeClient.DeserializeObject<List<CMyOrderItems>>(_json_value.Content);
                     {
@@ -180,7 +180,7 @@ namespace CCXT.NET.CEXIO.Trade
             var _result = new MyOrders(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -191,7 +191,7 @@ namespace CCXT.NET.CEXIO.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _orders = tradeClient.DeserializeObject<List<COpenOrderItem>>(_json_value.Content);
                     {
@@ -224,7 +224,7 @@ namespace CCXT.NET.CEXIO.Trade
             var _result = new MyOrders();
 
             var _markets = await publicApi.LoadMarketsAsync();
-            if (_markets.success == true)
+            if (_markets.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -235,7 +235,7 @@ namespace CCXT.NET.CEXIO.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _orders = tradeClient.DeserializeObject<List<COpenOrderItem>>(_json_value.Content);
                     {
@@ -268,7 +268,7 @@ namespace CCXT.NET.CEXIO.Trade
             var _result = new MyPositions();
 
             var _markets = await publicApi.LoadMarketsAsync();
-            if (_markets.success == true)
+            if (_markets.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -279,7 +279,7 @@ namespace CCXT.NET.CEXIO.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = tradeClient.DeserializeObject<CMyPositions>(_json_value.Content);
                     {
@@ -321,7 +321,7 @@ namespace CCXT.NET.CEXIO.Trade
             var _result = new MyOrder(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -342,7 +342,7 @@ namespace CCXT.NET.CEXIO.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _order = tradeClient.DeserializeObject<CPlaceOrderItem>(_json_value.Content);
                     {
@@ -379,7 +379,7 @@ namespace CCXT.NET.CEXIO.Trade
             var _result = new MyOrder(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -400,7 +400,7 @@ namespace CCXT.NET.CEXIO.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _order = tradeClient.DeserializeObject<CPlaceOrderItem>(_json_value.Content); // limit order랑 넘어오는 데이터가 다름
                     {
@@ -438,7 +438,7 @@ namespace CCXT.NET.CEXIO.Trade
             var _result = new MyOrder(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -454,11 +454,11 @@ namespace CCXT.NET.CEXIO.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = tradeClient.DeserializeObject<bool>(_json_value.Content);
                     {
-                        if (_json_data == true)
+                        if (_json_data)
                         {
                             var _order = new CMyOrderItem
                             {
@@ -506,7 +506,7 @@ namespace CCXT.NET.CEXIO.Trade
             var _result = new MyOrders(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -517,7 +517,7 @@ namespace CCXT.NET.CEXIO.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = tradeClient.DeserializeObject<CCancelOrders>(_json_value.Content);
                     {

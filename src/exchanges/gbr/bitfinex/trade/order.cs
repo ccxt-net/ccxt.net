@@ -111,9 +111,9 @@ namespace CCXT.NET.Bitfinex.Trade
         {
             get
             {
-                base.orderStatus = (is_live == true && filled == 0) ? OrderStatus.Open
-                                 : (is_live == true && filled > 0) ? OrderStatus.Partially
-                                 : is_cancelled == true ? OrderStatus.Canceled
+                base.orderStatus = (is_live && filled == 0) ? OrderStatus.Open
+                                 : (is_live && filled > 0) ? OrderStatus.Partially
+                                 : is_cancelled ? OrderStatus.Canceled
                                  : OrderStatus.Closed;
 
                 return base.orderStatus;

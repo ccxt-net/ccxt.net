@@ -147,7 +147,7 @@ namespace CCXT.NET.CEXIO
         {
             var _request = await base.CreatePostRequestAsync(endpoint, args);
 
-            if (IsAuthentication == true)
+            if (IsAuthentication)
             {
                 var _nonce = GenerateOnlyNonce(10).ToString();
 
@@ -181,7 +181,7 @@ namespace CCXT.NET.CEXIO
 
             if (response != null)
             {
-                if (response.IsSuccessful == true)
+                if (response.IsSuccessful)
                 {
                     var _json_result = this.DeserializeObject<JToken>(response.Content);
 
@@ -194,7 +194,7 @@ namespace CCXT.NET.CEXIO
                         var _error = _json_error.Value<string>();
                         if (String.IsNullOrEmpty(_error) == false)
                         {
-                            if (ErrorMessages.ContainsKey(_error) == true)
+                            if (ErrorMessages.ContainsKey(_error))
                                 _error_code = ErrorMessages[_error];
 
                             _error_msg = _error;
@@ -204,7 +204,7 @@ namespace CCXT.NET.CEXIO
                     }
                 }
 
-                if (_result.success == true && response.IsSuccessful == false)
+                if (_result.success && response.IsSuccessful == false)
                 {
                     _result.SetFailure(
                             response.ErrorMessage ?? response.StatusDescription,

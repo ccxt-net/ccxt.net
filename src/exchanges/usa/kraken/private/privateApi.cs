@@ -94,7 +94,7 @@ namespace CCXT.NET.Kraken.Private
                     _result.rawJson = _json_value.Content;
 #endif
                     var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                    if (_json_result.success == true)
+                    if (_json_result.success)
                     {
                         var _json_data = privateClient.DeserializeObject<JToken>(_json_value.Content);
                         {
@@ -130,12 +130,12 @@ namespace CCXT.NET.Kraken.Private
             var _result = new Address();
 
             var _currency_id = await publicApi.LoadCurrencyIdAsync(currency_name);
-            if (_currency_id.success == true)
+            if (_currency_id.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
                 var _deposit_method = await getDepositMethod(_currency_id.result);
-                if (_deposit_method.success == true)
+                if (_deposit_method.success)
                 {
                     var _params = new Dictionary<string, object>();
                     {
@@ -151,7 +151,7 @@ namespace CCXT.NET.Kraken.Private
                     _result.rawJson = _json_value.Content;
 #endif
                     var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                    if (_json_result.success == true)
+                    if (_json_result.success)
                     {
                         var _addresses = privateClient.DeserializeObject<KResponse<List<KAddressItem>>>(_json_value.Content);
                         {
@@ -188,12 +188,12 @@ namespace CCXT.NET.Kraken.Private
             var _result = new Address();
 
             var _currency_id = await publicApi.LoadCurrencyIdAsync(currency_name);
-            if (_currency_id.success == true)
+            if (_currency_id.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
                 var _deposit_method = await getDepositMethod(_currency_id.result);
-                if (_deposit_method.success == true)
+                if (_deposit_method.success)
                 {
                     var _params = new Dictionary<string, object>();
                     {
@@ -208,7 +208,7 @@ namespace CCXT.NET.Kraken.Private
                     _result.rawJson = _json_value.Content;
 #endif
                     var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                    if (_json_result.success == true)
+                    if (_json_result.success)
                     {
                         var _addresses = privateClient.DeserializeObject<KResponse<List<KAddressItem>>>(_json_value.Content);
                         {
@@ -248,7 +248,7 @@ namespace CCXT.NET.Kraken.Private
             var _result = new Transfer();
 
             var _currency_id = await publicApi.LoadCurrencyIdAsync(currency_name);
-            if (_currency_id.success == true)
+            if (_currency_id.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -266,7 +266,7 @@ namespace CCXT.NET.Kraken.Private
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = privateClient.DeserializeObject<KResponse<KTransferItem>>(_json_value.Content);
                     {
@@ -315,7 +315,7 @@ namespace CCXT.NET.Kraken.Private
             var _result = new Transfer();
 
             var _currency_id = await publicApi.LoadCurrencyIdAsync(currency_name);
-            if (_currency_id.success == true)
+            if (_currency_id.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -332,10 +332,10 @@ namespace CCXT.NET.Kraken.Private
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = privateClient.DeserializeObject<KWithdrawCancel>(_json_value.Content);
-                    if (_json_data.result == true)
+                    if (_json_data.result)
                     {
                         var _transfer = new KTransferItem
                         {
@@ -385,10 +385,10 @@ namespace CCXT.NET.Kraken.Private
             var _result = new Transfers();
 
             var _currency_id = await publicApi.LoadCurrencyIdAsync(currency_name);
-            if (_currency_id.success == true)
+            if (_currency_id.success)
             {
                 var _deposit_method = await getDepositMethod(_currency_id.result);
-                if (_deposit_method.success == true)
+                if (_deposit_method.success)
                 {
                     var _params = new Dictionary<string, object>();
                     {
@@ -407,7 +407,7 @@ namespace CCXT.NET.Kraken.Private
                         _result.rawJson += _json_value.Content;
 #endif
                         var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                        if (_json_result.success == true)
+                        if (_json_result.success)
                         {
                             var _json_data = privateClient.DeserializeObject<KResponse<List<KTransferItem>>>(_json_value.Content);
                             {
@@ -433,7 +433,7 @@ namespace CCXT.NET.Kraken.Private
                     }
 
                     // TransactionType.Withdrawal
-                    if (_result.success == true)
+                    if (_result.success)
                     {
                         privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -442,7 +442,7 @@ namespace CCXT.NET.Kraken.Private
                         _result.rawJson += _json_value.Content;
 #endif
                         var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                        if (_json_result.success == true)
+                        if (_json_result.success)
                         {
                             var _json_data = privateClient.DeserializeObject<KResponse<List<KTransferItem>>>(_json_value.Content);
                             {
@@ -490,7 +490,7 @@ namespace CCXT.NET.Kraken.Private
             var _result = new Balances();
 
             var _markets = await publicApi.LoadMarketsAsync();
-            if (_markets.success == true)
+            if (_markets.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -501,7 +501,7 @@ namespace CCXT.NET.Kraken.Private
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _balances = privateClient.DeserializeObject<KResponse<Dictionary<string, decimal>>>(_json_value.Content);
                     {

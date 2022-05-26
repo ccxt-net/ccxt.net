@@ -52,7 +52,7 @@ namespace CCXT.NET.Upbit.Public
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _markets = publicClient.DeserializeObject<List<UMarketItem>>(_json_value.Content);
                     foreach (var _market in _markets)
@@ -123,7 +123,7 @@ namespace CCXT.NET.Upbit.Public
             var _result = new Ticker(base_name, quote_name);
 
             var _market = await this.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
 
@@ -139,7 +139,7 @@ namespace CCXT.NET.Upbit.Public
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _tickers = publicClient.DeserializeObject<List<UTickerItem>>(_json_value.Content);
                     {
@@ -184,7 +184,7 @@ namespace CCXT.NET.Upbit.Public
             var _result = new Tickers();
 
             var _markets = await this.LoadMarketsAsync();
-            if (_markets.success == true)
+            if (_markets.success)
             {
                 publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
 
@@ -209,7 +209,7 @@ namespace CCXT.NET.Upbit.Public
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _tickers = publicClient.DeserializeObject<List<UTickerItem>>(_json_value.Content);
                     {
@@ -252,7 +252,7 @@ namespace CCXT.NET.Upbit.Public
             var _result = new OrderBooks(base_name, quote_name);
 
             var _market = await this.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
 
@@ -268,7 +268,7 @@ namespace CCXT.NET.Upbit.Public
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _orderbooks = publicClient.DeserializeObject<List<UOrderBook>>(_json_value.Content);
                     {
@@ -321,7 +321,7 @@ namespace CCXT.NET.Upbit.Public
             var _result = new OHLCVs(base_name, quote_name);
 
             var _market = await this.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
 
@@ -345,7 +345,7 @@ namespace CCXT.NET.Upbit.Public
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = publicClient.DeserializeObject<List<UOHLCVItem>>(_json_value.Content);
                     {
@@ -383,7 +383,7 @@ namespace CCXT.NET.Upbit.Public
             var _result = new CompleteOrders(base_name, quote_name);
 
             var _market = await this.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
 
@@ -403,7 +403,7 @@ namespace CCXT.NET.Upbit.Public
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = publicClient.DeserializeObject<List<UCompleteOrderItem>>(_json_value.Content);
                     {

@@ -234,7 +234,7 @@ namespace CCXT.NET.Bitfinex
         {
             var _request = await base.CreatePostRequestAsync(endpoint, args);
 
-            if (IsAuthentication == true)
+            if (IsAuthentication)
             {
                 var _params = new Dictionary<string, object>();
                 {
@@ -348,7 +348,7 @@ namespace CCXT.NET.Bitfinex
                     }
                 }
 
-                if (_result.success == true && response.IsSuccessful == false)
+                if (_result.success && response.IsSuccessful == false)
                 {
                     _result.SetFailure(
                             response.ErrorMessage ?? response.StatusDescription,

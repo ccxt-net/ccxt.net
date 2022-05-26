@@ -68,7 +68,7 @@ namespace CCXT.NET.Huobi.Trade
             var _result = new MyOrder(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -79,7 +79,7 @@ namespace CCXT.NET.Huobi.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _orderItem = tradeClient.DeserializeObject<HMyOrder>(_json_value.Content);
                     {
@@ -114,7 +114,7 @@ namespace CCXT.NET.Huobi.Trade
             var _result = new MyOrders(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -134,7 +134,7 @@ namespace CCXT.NET.Huobi.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = tradeClient.DeserializeObject<HMyOrders>(_json_value.Content);
                     {
@@ -173,7 +173,7 @@ namespace CCXT.NET.Huobi.Trade
             var _result = new MyOrders(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 if (args.ContainsKey("account-id") && args["account-id"].ToString() != "")
                 {
@@ -192,7 +192,7 @@ namespace CCXT.NET.Huobi.Trade
                     _result.rawJson = _json_value.Content;
 #endif
                     var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                    if (_json_result.success == true)
+                    if (_json_result.success)
                     {
                         var _orders = tradeClient.DeserializeObject<HMyOrders>(_json_value.Content);
                         {
@@ -237,7 +237,7 @@ namespace CCXT.NET.Huobi.Trade
             var _result = new MyTrades(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -257,7 +257,7 @@ namespace CCXT.NET.Huobi.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = tradeClient.DeserializeObject<HMyTrades>(_json_value.Content);
                     {
@@ -300,7 +300,7 @@ namespace CCXT.NET.Huobi.Trade
             var _result = new MyOrder(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 if (args.ContainsKey("account-id") && args["account-id"].ToString() != "")
                 {
@@ -325,7 +325,7 @@ namespace CCXT.NET.Huobi.Trade
                     _result.rawJson = _json_value.Content;
 #endif
                     var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                    if (_json_result.success == true)
+                    if (_json_result.success)
                     {
                         var _order = tradeClient.DeserializeObject<HPlaceOrder>(_json_value.Content);
                         {
@@ -372,7 +372,7 @@ namespace CCXT.NET.Huobi.Trade
             var _result = new MyOrder(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 if (args.ContainsKey("account-id") && args["account-id"].ToString() != "")
                 {
@@ -396,7 +396,7 @@ namespace CCXT.NET.Huobi.Trade
                     _result.rawJson = _json_value.Content;
 #endif
                     var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                    if (_json_result.success == true)
+                    if (_json_result.success)
                     {
                         var _order = tradeClient.DeserializeObject<HPlaceOrder>(_json_value.Content);
                         {
@@ -444,7 +444,7 @@ namespace CCXT.NET.Huobi.Trade
             var _result = new MyOrder(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 tradeClient.ExchangeInfo.ApiCallWait(TradeType.Trade);
 
@@ -455,7 +455,7 @@ namespace CCXT.NET.Huobi.Trade
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = tradeClient.DeserializeObject<HPlaceOrder>(_json_value.Content);
                     {
@@ -500,7 +500,7 @@ namespace CCXT.NET.Huobi.Trade
             var _result = new MyOrders(base_name, quote_name);
 
             var _market = await publicApi.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 if (order_ids.Length > 0)
                 {
@@ -518,11 +518,11 @@ namespace CCXT.NET.Huobi.Trade
                     _result.rawJson = _json_value.Content;
 #endif
                     var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                    if (_json_result.success == true)
+                    if (_json_result.success)
                     {
                         var _json_data = tradeClient.DeserializeObject<HCancelOrders>(_json_value.Content);
                         {
-                            if (_json_data.success == true)
+                            if (_json_data.success)
                             {
                                 foreach (var _cancelOrder in _json_data.result)
                                 {
@@ -557,11 +557,11 @@ namespace CCXT.NET.Huobi.Trade
                         _result.rawJson = _json_value.Content;
 #endif
                         var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                        if (_json_result.success == true)
+                        if (_json_result.success)
                         {
                             var _json_data = tradeClient.DeserializeObject<HCancelAllOrders>(_json_value.Content);
                             {
-                                if (_json_data.success == true)
+                                if (_json_data.success)
                                 {
                                     _result.result.Add(_json_data.result);
                                 }
@@ -598,7 +598,7 @@ namespace CCXT.NET.Huobi.Trade
             var _result = new MyOrders();
 
             var _markets = await publicApi.LoadMarketsAsync();
-            if (_markets.success == true)
+            if (_markets.success)
             {
                 if (args.ContainsKey("account-id") && args["account-id"].ToString() != "")
                 {
@@ -611,11 +611,11 @@ namespace CCXT.NET.Huobi.Trade
                     _result.rawJson = _json_value.Content;
 #endif
                     var _json_result = tradeClient.GetResponseMessage(_json_value.Response);
-                    if (_json_result.success == true)
+                    if (_json_result.success)
                     {
                         var _json_data = tradeClient.DeserializeObject<HCancelAllOrders>(_json_value.Content);
                         {
-                            if (_json_data.success == true)
+                            if (_json_data.success)
                             {
                                 _result.result.Add(_json_data.result);
                             }

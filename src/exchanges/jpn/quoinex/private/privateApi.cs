@@ -62,7 +62,7 @@ namespace CCXT.NET.Quoinex.Private
             var _result = new Addresses();
 
             var _markets = await publicApi.LoadMarketsAsync();
-            if (_markets.success == true)
+            if (_markets.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -73,7 +73,7 @@ namespace CCXT.NET.Quoinex.Private
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _addresses = privateClient.DeserializeObject<List<QAddressItem>>(_json_value.Content);
                     {
@@ -111,7 +111,7 @@ namespace CCXT.NET.Quoinex.Private
             var _result = new Balance();
 
             var _currency_id = await publicApi.LoadCurrencyIdAsync(base_name);
-            if (_currency_id.success == true)
+            if (_currency_id.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -122,7 +122,7 @@ namespace CCXT.NET.Quoinex.Private
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _balances = privateClient.DeserializeObject<List<QBalanceItem>>(_json_value.Content);
                     {
@@ -160,7 +160,7 @@ namespace CCXT.NET.Quoinex.Private
             var _result = new Balances();
 
             var _markets = await publicApi.LoadMarketsAsync();
-            if (_markets.success == true)
+            if (_markets.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -171,7 +171,7 @@ namespace CCXT.NET.Quoinex.Private
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = privateClient.DeserializeObject<List<QBalanceItem>>(_json_value.Content);
                     {

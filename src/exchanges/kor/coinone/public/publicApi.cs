@@ -58,7 +58,7 @@ namespace CCXT.NET.Coinone.Public
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _tickers = publicClient.DeserializeObject<Dictionary<string, JToken>>(_json_value.Content);
                     foreach (var _market in _tickers)
@@ -71,7 +71,7 @@ namespace CCXT.NET.Coinone.Public
                         var _quote_id = "krw";
                         var _base_name = publicClient.ExchangeInfo.GetCommonCurrencyName(_base_id);
                         var _quote_name = publicClient.ExchangeInfo.GetCommonCurrencyName(_quote_id);
-                        
+
                         var _market_id = _base_name + "/" + _quote_name;
                         if (_result.result.ContainsKey(_market_id))
                             continue;
@@ -144,7 +144,7 @@ namespace CCXT.NET.Coinone.Public
             var _result = new Ticker(base_name, quote_name);
 
             var _market = await this.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
 
@@ -160,7 +160,7 @@ namespace CCXT.NET.Coinone.Public
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _ticker = publicClient.DeserializeObject<CTickerItem>(_json_value.Content);
                     {
@@ -190,7 +190,7 @@ namespace CCXT.NET.Coinone.Public
             var _result = new Tickers();
 
             var _markets = await this.LoadMarketsAsync();
-            if (_markets.success == true)
+            if (_markets.success)
             {
                 publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
 
@@ -206,7 +206,7 @@ namespace CCXT.NET.Coinone.Public
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _tickers = publicClient.DeserializeObject<Dictionary<string, JToken>>(_json_value.Content);
                     {
@@ -250,7 +250,7 @@ namespace CCXT.NET.Coinone.Public
             var _result = new OrderBooks(base_name, quote_name);
 
             var _market = await this.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
 
@@ -266,7 +266,7 @@ namespace CCXT.NET.Coinone.Public
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _orderbook = publicClient.DeserializeObject<COrderBook>(_json_value.Content);
                     {
@@ -304,7 +304,7 @@ namespace CCXT.NET.Coinone.Public
             var _result = new CompleteOrders(base_name, quote_name);
 
             var _market = await this.LoadMarketAsync(_result.marketId);
-            if (_market.success == true)
+            if (_market.success)
             {
                 publicClient.ExchangeInfo.ApiCallWait(TradeType.Public);
 
@@ -324,10 +324,10 @@ namespace CCXT.NET.Coinone.Public
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = publicClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = publicClient.DeserializeObject<CCompleteOrders>(_json_value.Content);
-                    if (_json_data.success == true)
+                    if (_json_data.success)
                     {
                         var _orders = _json_data.result
                                                 .Where(t => t.timestamp >= since)

@@ -144,7 +144,7 @@ namespace CCXT.NET.GOPAX
         {
             var _request = await base.CreateGetRequestAsync(endpoint, args);
 
-            if (IsAuthentication == true)
+            if (IsAuthentication)
             {
                 var _nonce = GenerateOnlyNonce(13).ToString();
 
@@ -172,7 +172,7 @@ namespace CCXT.NET.GOPAX
         {
             var _request = await base.CreatePostRequestAsync(endpoint, args);
 
-            if (IsAuthentication == true)
+            if (IsAuthentication)
             {
                 var _nonce = GenerateOnlyNonce(13).ToString();
 
@@ -200,7 +200,7 @@ namespace CCXT.NET.GOPAX
         {
             var _request = await base.CreateDeleteRequestAsync(endpoint, args);
 
-            if (IsAuthentication == true)
+            if (IsAuthentication)
             {
                 var _nonce = GenerateOnlyNonce(13).ToString();
 
@@ -243,7 +243,7 @@ namespace CCXT.NET.GOPAX
                     }
                 }
 
-                if (_result.success == true && response.IsSuccessful == false)
+                if (_result.success && response.IsSuccessful == false)
                 {
                     _result.SetFailure(
                             response.ErrorMessage ?? response.StatusDescription,

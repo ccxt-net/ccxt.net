@@ -65,7 +65,7 @@ namespace CCXT.NET.Zb.Private
             var _result = new Address();
 
             var _currency_id = await publicApi.LoadCurrencyIdAsync(currency_name);
-            if (_currency_id.success == true)
+            if (_currency_id.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -82,7 +82,7 @@ namespace CCXT.NET.Zb.Private
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = privateClient.DeserializeObject<ZAddress>(_json_value.Content);
                     {
@@ -117,7 +117,7 @@ namespace CCXT.NET.Zb.Private
             var _result = new Transfer();
 
             var _currency_id = await publicApi.LoadCurrencyIdAsync(currency_name);
-            if (_currency_id.success == true)
+            if (_currency_id.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -138,7 +138,7 @@ namespace CCXT.NET.Zb.Private
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = privateClient.DeserializeObject<ZWithdraw>(_json_value.Content);
                     {
@@ -193,7 +193,7 @@ namespace CCXT.NET.Zb.Private
             var _result = new Transfers();
 
             var _currency_id = await publicApi.LoadCurrencyIdAsync(currency_name);
-            if (_currency_id.success == true)
+            if (_currency_id.success)
             {
                 var _params = new Dictionary<string, object>();
                 {
@@ -214,7 +214,7 @@ namespace CCXT.NET.Zb.Private
                     _result.rawJson += _json_value.Content;
 #endif
                     var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                    if (_json_result.success == true)
+                    if (_json_result.success)
                     {
                         var _json_data = privateClient.DeserializeObject<ZDeposits>(_json_value.Content);
                         {
@@ -226,7 +226,7 @@ namespace CCXT.NET.Zb.Private
                             foreach (var _d in _deposits)
                             {
 #if DEBUG
-                                if (String.IsNullOrEmpty(_d.transactionId) == true)
+                                if (String.IsNullOrEmpty(_d.transactionId))
                                     continue;
 #endif
                                 _d.transactionType = TransactionType.Deposit;
@@ -244,7 +244,7 @@ namespace CCXT.NET.Zb.Private
                 _params.Add("method", "getWithdrawRecord");
 
                 // TransactionType.Withdrawal
-                if (_result.success == true)
+                if (_result.success)
                 {
                     privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -253,7 +253,7 @@ namespace CCXT.NET.Zb.Private
                     _result.rawJson += _json_value.Content;
 #endif
                     var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                    if (_json_result.success == true)
+                    if (_json_result.success)
                     {
                         var _json_data = privateClient.DeserializeObject<ZWithdraws>(_json_value.Content);
                         {
@@ -294,7 +294,7 @@ namespace CCXT.NET.Zb.Private
             var _result = new Balances();
 
             var _markets = await publicApi.LoadMarketsAsync();
-            if (_markets.success == true)
+            if (_markets.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -310,7 +310,7 @@ namespace CCXT.NET.Zb.Private
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = privateClient.DeserializeObject<ZBalances>(_json_value.Content);
                     {

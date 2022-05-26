@@ -65,7 +65,7 @@ namespace CCXT.NET.GateIO.Private
             var _result = new Address();
 
             var _currency_id = await publicApi.LoadCurrencyIdAsync(currency_name);
-            if (_currency_id.success == true)
+            if (_currency_id.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -81,7 +81,7 @@ namespace CCXT.NET.GateIO.Private
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _address = privateClient.DeserializeObject<GAddressItem>(_json_value.Content);
                     {
@@ -112,7 +112,7 @@ namespace CCXT.NET.GateIO.Private
             var _result = new Address();
 
             var _currency_id = await publicApi.LoadCurrencyIdAsync(currency_name);
-            if (_currency_id.success == true)
+            if (_currency_id.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -128,7 +128,7 @@ namespace CCXT.NET.GateIO.Private
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _address = privateClient.DeserializeObject<GAddressItem>(_json_value.Content);
                     {
@@ -162,7 +162,7 @@ namespace CCXT.NET.GateIO.Private
             var _result = new Transfer();
 
             var _currency_id = await publicApi.LoadCurrencyIdAsync(currency_name);
-            if (_currency_id.success == true)
+            if (_currency_id.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -180,12 +180,12 @@ namespace CCXT.NET.GateIO.Private
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = privateClient.DeserializeObject<JObject>(_json_value.Content);
                     {
                         var _withdraw = new GTransferItem();
-                        if (_json_data["result"].Value<bool>() == true)
+                        if (_json_data["result"].Value<bool>())
                         {
                             _withdraw.timestamp = CUnixTime.NowMilli;
                             _withdraw.transferId = _withdraw.timestamp.ToString();                    // transferId 없음
@@ -231,7 +231,7 @@ namespace CCXT.NET.GateIO.Private
             var _result = new Transfers();
 
             var _markets = await publicApi.LoadMarketsAsync();
-            if (_markets.success == true)
+            if (_markets.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -251,11 +251,11 @@ namespace CCXT.NET.GateIO.Private
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = privateClient.DeserializeObject<GTransfers>(_json_value.Content);
                     {
-                        if (_json_data.success == true)
+                        if (_json_data.success)
                         {
                             foreach (var _d in _json_data.deposits)
                             {
@@ -325,7 +325,7 @@ namespace CCXT.NET.GateIO.Private
             var _result = new Balances();
 
             var _markets = await publicApi.LoadMarketsAsync();
-            if (_markets.success == true)
+            if (_markets.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -336,7 +336,7 @@ namespace CCXT.NET.GateIO.Private
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = privateClient.DeserializeObject<GBalances>(_json_value.Content);
                     {
@@ -345,7 +345,7 @@ namespace CCXT.NET.GateIO.Private
                             var _balance = new GBalanceItem();
                             _balance.currency = _currency_id.Value;
 
-                            if (_json_data.success == true)
+                            if (_json_data.success)
                             {
                                 if (_json_data.available.ContainsKey(_currency_id.Value))
                                     _balance.free = _json_data.available[_currency_id.Value].Value<decimal>();

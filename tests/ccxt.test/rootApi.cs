@@ -84,14 +84,14 @@ namespace XUnit
             if (XApiClient.TestXUnitMode != XUnitMode.UseExchangeServer)
             {
                 var _file_name = Path.Combine(root_folder, api_client.DealerName, $"{caller_name}.json");
-                if (File.Exists(_file_name) == true)
+                if (File.Exists(_file_name))
                 {
                     var _json_string = File.ReadAllText(_file_name);
                     this.WriteLine(_file_name);
 
                     this.WriteLine(_json_string);
 
-                    if (args.ContainsKey("jsonContent") == true)
+                    if (args.ContainsKey("jsonContent"))
                         args.Remove("jsonContent");
                     args.Add("jsonContent", _json_string);
                 }

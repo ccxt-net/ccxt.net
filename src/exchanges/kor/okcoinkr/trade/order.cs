@@ -27,7 +27,7 @@ namespace CCXT.NET.OkCoinKr.Trade
             set
             {
                 success = value;
-                message = success == true ? "success" : "failure";
+                message = success ? "success" : "failure";
             }
         }
 

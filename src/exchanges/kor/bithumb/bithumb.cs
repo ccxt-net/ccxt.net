@@ -145,7 +145,7 @@ namespace CCXT.NET.Bithumb
         {
             var _request = await base.CreatePostRequestAsync(endpoint, args);
 
-            if (IsAuthentication == true)
+            if (IsAuthentication)
             {
                 var _params = new Dictionary<string, object>();
                 {
@@ -201,7 +201,7 @@ namespace CCXT.NET.Bithumb
         /// <returns></returns>
         public override string GetErrorMessage(int error_code)
         {
-            return ErrorMessages.ContainsKey(error_code) == true
+            return ErrorMessages.ContainsKey(error_code)
                                   ? ErrorMessages[error_code]
                                   : "failure";
         }
@@ -242,7 +242,7 @@ namespace CCXT.NET.Bithumb
                     }
                 }
 
-                if (_result.success == true && response.IsSuccessful == false)
+                if (_result.success && response.IsSuccessful == false)
                 {
                     _result.SetFailure(
                             response.ErrorMessage ?? response.StatusDescription,

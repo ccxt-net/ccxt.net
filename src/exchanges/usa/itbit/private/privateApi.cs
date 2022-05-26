@@ -70,7 +70,7 @@ namespace CCXT.NET.ItBit.Private
             var _result = new Transfers();
 
             var _markets = await publicApi.LoadMarketsAsync();
-            if (_markets.success == true)
+            if (_markets.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -81,7 +81,7 @@ namespace CCXT.NET.ItBit.Private
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = privateClient.DeserializeObject<JObject>(_json_value.Content);
                     {
@@ -146,7 +146,7 @@ namespace CCXT.NET.ItBit.Private
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = privateClient.DeserializeObject<List<TWalletItem>>(_json_value.Content);
                     {
@@ -197,7 +197,7 @@ namespace CCXT.NET.ItBit.Private
             var _result = new Balance();
 
             var _currency_id = await publicApi.LoadCurrencyIdAsync(base_name);
-            if (_currency_id.success == true)
+            if (_currency_id.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -207,7 +207,7 @@ namespace CCXT.NET.ItBit.Private
                 {
                     privateClient.MergeParamsAndArgs(_params, args);
 
-                    if (_params.ContainsKey("walletId") == true)
+                    if (_params.ContainsKey("walletId"))
                     {
                         _wallet_id = _params["walletId"].ToString();
                         _params.Remove("walletId");
@@ -219,7 +219,7 @@ namespace CCXT.NET.ItBit.Private
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _balance = privateClient.DeserializeObject<TBalanceItem>(_json_value.Content);
                     {
@@ -250,7 +250,7 @@ namespace CCXT.NET.ItBit.Private
             var _result = new Balances();
 
             var _markets = await publicApi.LoadMarketsAsync();
-            if (_markets.success == true)
+            if (_markets.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -260,7 +260,7 @@ namespace CCXT.NET.ItBit.Private
                 {
                     privateClient.MergeParamsAndArgs(_params, args);
 
-                    if (_params.ContainsKey("walletId") == true)
+                    if (_params.ContainsKey("walletId"))
                     {
                         _wallet_id = _params["walletId"].ToString();
                         _params.Remove("walletId");
@@ -272,7 +272,7 @@ namespace CCXT.NET.ItBit.Private
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = privateClient.DeserializeObject<TWalletItem>(_json_value.Content);
                     {

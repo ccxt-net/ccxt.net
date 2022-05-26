@@ -50,7 +50,7 @@ namespace CCXT.NET.Shared.Converter
                 var _r_value = _r_values.Length > 1 ? _r_values[1] : "0";
 
                 var _length = _l_value.Length > _r_value.Length ? _r_value.Length : _l_value.Length;
-                if (round == true)
+                if (round)
                 {
                     _l_decimal = Decimal.Round(_l_decimal, _length);
                     _r_decimal = Decimal.Round(_r_decimal, _length);

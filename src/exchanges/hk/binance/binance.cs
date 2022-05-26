@@ -171,7 +171,7 @@ namespace CCXT.NET.Binance
         {
             var _request = await base.CreatePostRequestAsync(endpoint, args);
 
-            if (IsAuthentication == true)
+            if (IsAuthentication)
             {
                 var _params = new Dictionary<string, object>();
                 {
@@ -208,7 +208,7 @@ namespace CCXT.NET.Binance
         {
             var _request = await base.CreateGetRequestAsync(endpoint, args);
 
-            if (IsAuthentication == true)
+            if (IsAuthentication)
             {
                 _request.AddParameter("recvWindow", 60 * 1000);
                 _request.AddParameter("timestamp", CUnixTime.NowMilli);
@@ -237,7 +237,7 @@ namespace CCXT.NET.Binance
         {
             var _request = await base.CreateDeleteRequestAsync(endpoint, args);
 
-            if (IsAuthentication == true)
+            if (IsAuthentication)
             {
                 var _params = new Dictionary<string, object>();
                 {
@@ -347,13 +347,13 @@ namespace CCXT.NET.Binance
                         {
                             _result.statusCode = _json_error.Value<int>();
 
-                            if (ErrorMessages.ContainsKey(_result.statusCode) == true)
+                            if (ErrorMessages.ContainsKey(_result.statusCode))
                             {
                                 // a workaround for {"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}
                                 // despite that their message is very confusing, it is raised by Binance
                                 // on a temporary ban (the API key is valid, but disabled for a while)
 
-                                if (_result.statusCode == -2015 && this.ExchangeInfo.Options.hasAlreadyAuthenticatedSuccessfully == true)
+                                if (_result.statusCode == -2015 && this.ExchangeInfo.Options.hasAlreadyAuthenticatedSuccessfully)
                                 {
                                     _error_code = ErrorCode.DDoSProtection;
                                     _error_msg = "temporary banned: " + response.Content;
@@ -406,7 +406,7 @@ namespace CCXT.NET.Binance
                 if (_error_code != ErrorCode.Success)
                     _result.SetFailure(_error_msg, _error_code);
 
-                if (_result.success == true && response.IsSuccessful == false)
+                if (_result.success && response.IsSuccessful == false)
                 {
                     _result.SetFailure(
                             response.ErrorMessage ?? response.StatusDescription,

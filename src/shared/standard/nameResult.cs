@@ -31,7 +31,7 @@ namespace CCXT.NET.Shared.Coin
         /// </summary>
         public NameResult(bool success = true)
         {
-            if (success == true)
+            if (success)
                 this.SetSuccess();
             else
                 this.SetFailure();
@@ -69,7 +69,7 @@ namespace CCXT.NET.Shared.Coin
         /// </summary>
         public BoolResult(bool success = true)
         {
-            if (success == true)
+            if (success)
             {
                 this.SetSuccess();
                 this.result = true;

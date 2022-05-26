@@ -185,7 +185,7 @@ namespace CCXT.NET.OKEx
             var _result = (endPoint: spot_url, args);
 
             var _omarket = market as OMarketItem;
-            if (_omarket.future == true)
+            if (_omarket.future)
             {
                 _result.endPoint = futures_url;
 
@@ -206,7 +206,7 @@ namespace CCXT.NET.OKEx
         {
             var _request = await base.CreatePostRequestAsync(endpoint, args);
 
-            if (IsAuthentication == true)
+            if (IsAuthentication)
             {
                 var _params = new Dictionary<string, object>();
                 {
@@ -229,7 +229,7 @@ namespace CCXT.NET.OKEx
                     _post_data += $"&sign={_signature.ToUpper()}";
                 }
 
-                _request.AddParameter("application/x-www-form-urlencoded", _post_data, ParameterType.RequestBody);                
+                _request.AddParameter("application/x-www-form-urlencoded", _post_data, ParameterType.RequestBody);
             }
 
             return await Task.FromResult(_request);
@@ -268,7 +268,7 @@ namespace CCXT.NET.OKEx
         /// <returns></returns>
         public new ErrorCode GetErrorMessage(int error_code)
         {
-            return ErrorMessages.ContainsKey(error_code) == true
+            return ErrorMessages.ContainsKey(error_code)
                                   ? ErrorMessages[error_code]
                                   : ErrorCode.ExchangeError;
         }
@@ -295,7 +295,7 @@ namespace CCXT.NET.OKEx
                     if (_json_error != null)
                     {
                         var _error_number = _json_error.Value<int>();
-                        if (ErrorMessages.ContainsKey(_error_number) == true)
+                        if (ErrorMessages.ContainsKey(_error_number))
                             _error_code = GetErrorMessage(_error_number);
 
                         _result.SetFailure(_error_msg, _error_code, _error_number);
@@ -311,7 +311,7 @@ namespace CCXT.NET.OKEx
                     }
                 }
 
-                if (_result.success == true && response.IsSuccessful == false)
+                if (_result.success && response.IsSuccessful == false)
                 {
                     _result.SetFailure(
                             response.ErrorMessage ?? response.StatusDescription,

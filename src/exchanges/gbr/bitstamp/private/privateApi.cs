@@ -69,7 +69,7 @@ namespace CCXT.NET.Bitstamp.Private
             var _result = new Address();
 
             var _currency_id = await publicApi.LoadCurrencyIdAsync(currency_name);
-            if (_currency_id.success == true)
+            if (_currency_id.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -86,7 +86,7 @@ namespace CCXT.NET.Bitstamp.Private
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _address = _json_value.Content;
                     {
@@ -119,7 +119,7 @@ namespace CCXT.NET.Bitstamp.Private
             var _result = new Transfer();
 
             var _currency_id = await publicApi.LoadCurrencyIdAsync(currency_name);
-            if (_currency_id.success == true)
+            if (_currency_id.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -139,7 +139,7 @@ namespace CCXT.NET.Bitstamp.Private
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = privateClient.DeserializeObject<BWithdrawItem>(_json_value.Content);
                     if (String.IsNullOrEmpty(_json_data.transferId) == false)
@@ -194,7 +194,7 @@ namespace CCXT.NET.Bitstamp.Private
             var _result = new Transfers();
 
             var _markets = await publicApi.LoadMarketsAsync();
-            if (_markets.success == true)
+            if (_markets.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -212,7 +212,7 @@ namespace CCXT.NET.Bitstamp.Private
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _json_data = privateClient.DeserializeObject<List<JObject>>(_json_value.Content);
                     foreach (var _t in _json_data)
@@ -238,7 +238,7 @@ namespace CCXT.NET.Bitstamp.Private
                             }
                         }
 
-                        if (String.IsNullOrEmpty(_currency) == true)
+                        if (String.IsNullOrEmpty(_currency))
                             continue;
 
                         var _transaction_id = _t["id"].Value<string>();
@@ -305,7 +305,7 @@ namespace CCXT.NET.Bitstamp.Private
             var _result = new Balance();
 
             var _market = await publicApi.LoadMarketAsync(_result.MakeMarketId(base_name, quote_name));
-            if (_market.success == true)
+            if (_market.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -316,7 +316,7 @@ namespace CCXT.NET.Bitstamp.Private
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _balances = privateClient.DeserializeObject<JToken>(_json_value.Content);
                     {
@@ -357,7 +357,7 @@ namespace CCXT.NET.Bitstamp.Private
             var _result = new Balances();
 
             var _markets = await publicApi.LoadMarketsAsync();
-            if (_markets.success == true)
+            if (_markets.success)
             {
                 privateClient.ExchangeInfo.ApiCallWait(TradeType.Private);
 
@@ -368,7 +368,7 @@ namespace CCXT.NET.Bitstamp.Private
                 _result.rawJson = _json_value.Content;
 #endif
                 var _json_result = privateClient.GetResponseMessage(_json_value.Response);
-                if (_json_result.success == true)
+                if (_json_result.success)
                 {
                     var _balances = privateClient.DeserializeObject<JToken>(_json_value.Content);
                     {

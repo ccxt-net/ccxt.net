@@ -101,7 +101,7 @@ namespace CCXT.NET.OkCoinKr.Trade
             {
                 success = value;
                 result.success = success;
-                message = success == true ? "success" : "failure";
+                message = success ? "success" : "failure";
             }
         }
 
