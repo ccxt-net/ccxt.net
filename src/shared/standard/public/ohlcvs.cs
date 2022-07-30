@@ -203,6 +203,25 @@ namespace CCXT.NET.Shared.Coin.Public
             get;
             set;
         }
+
+        public override bool Equals(object obj)
+        {
+            // Check for null and compare run-time types.
+            if ((obj == null) || !this.GetType().Equals(obj.GetType()))
+            {
+                return false;
+            }
+            else
+            {
+                var objItem = (OHLCVItem)obj;
+                return (timestamp == objItem.timestamp) 
+                    && (highPrice == objItem.highPrice)
+                    && (lowPrice == objItem.lowPrice)
+                    && (closePrice == objItem.closePrice)
+                    && (openPrice == objItem.openPrice)
+                    && (volume == objItem.volume); 
+            }
+        }
     }
 
     /// <summary>
