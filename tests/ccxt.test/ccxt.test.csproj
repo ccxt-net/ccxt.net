@@ -4,6 +4,7 @@
     <IsPackable>false</IsPackable>
     <AssemblyName>ccxt.test</AssemblyName>
     <RootNamespace>CCXT.TEST</RootNamespace>
+	<TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
