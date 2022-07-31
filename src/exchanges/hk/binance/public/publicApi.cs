@@ -315,8 +315,8 @@ namespace CCXT.NET.Binance.Public
         /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
         /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
         /// <param name="timeframe">time frame interval (optional): default "1d"</param>
-        /// <param name="since">return committed data since given time (milli-seconds) (optional): default 0</param>
-        /// <param name="limits">maximum number of items (optional): default 20</param>
+        /// <param name="since">return committed data since given time (milli-seconds) (optional): default 0, since = UnixTimeStamps * (long)1000 </param>
+        /// <param name="limits">maximum number of items (optional): default 20, uplimit:1000</param>
         /// <param name="args">Add additional attributes for each exchange</param>
         /// <returns></returns>
         public override async ValueTask<OHLCVs> FetchOHLCVsAsync(string base_name, string quote_name, string timeframe = "1d", long since = 0, int limits = 20, Dictionary<string, object> args = null)
