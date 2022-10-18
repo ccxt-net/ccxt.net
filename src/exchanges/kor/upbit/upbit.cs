@@ -1,13 +1,13 @@
-﻿using Microsoft.IdentityModel.Tokens;
+﻿using CCXT.NET.Shared.Coin;
+using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json.Linq;
-using CCXT.NET.Shared.Coin;
 using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Linq;
 
 namespace CCXT.NET.Upbit
 {

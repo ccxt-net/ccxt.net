@@ -1,8 +1,8 @@
-﻿using Newtonsoft.Json.Linq;
-using CCXT.NET.Shared.Coin;
+﻿using CCXT.NET.Shared.Coin;
 using CCXT.NET.Shared.Coin.Private;
 using CCXT.NET.Shared.Coin.Types;
 using CCXT.NET.Shared.Configuration;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;

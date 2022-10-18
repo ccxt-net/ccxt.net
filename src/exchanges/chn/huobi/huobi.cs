@@ -1,6 +1,7 @@
-﻿using Newtonsoft.Json.Linq;
-using CCXT.NET.Shared.Coin;
+﻿using CCXT.NET.Shared.Coin;
 using CCXT.NET.Shared.Configuration;
+using CCXT.NET.Shared.Extension;
+using Newtonsoft.Json.Linq;
 using RestSharp;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,6 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
-using CCXT.NET.Shared.Extension;
 
 namespace CCXT.NET.Huobi
 {
@@ -143,19 +143,21 @@ namespace CCXT.NET.Huobi
         /// <returns></returns>
         public string UrlEncode(string str)
         {
-            StringBuilder builder = new StringBuilder();
+            var _builder = new StringBuilder();
+
             foreach (char c in str)
             {
                 if (HttpUtility.UrlEncode(c.ToString(), Encoding.UTF8).Length > 1)
                 {
-                    builder.Append(HttpUtility.UrlEncode(c.ToString(), Encoding.UTF8).ToUpper());
+                    _builder.Append(HttpUtility.UrlEncode(c.ToString(), Encoding.UTF8).ToUpper());
                 }
                 else
                 {
-                    builder.Append(c);
+                    _builder.Append(c);
                 }
             }
-            return builder.ToString();
+
+            return _builder.ToString();
         }
 
         /// <summary>
@@ -168,14 +170,15 @@ namespace CCXT.NET.Huobi
         /// <returns></returns>
         private string GetSignatureStr(Method method, string host, string resourcePath, string parameters)
         {
-            var sign = string.Empty;
-            StringBuilder sb = new StringBuilder();
+            var sign = "";
+
+            var sb = new StringBuilder();
             sb.Append(method.ToString().ToUpper()).Append("\n")
                 .Append(host).Append("\n")
                 .Append(resourcePath).Append("\n");
 
             var paraArray = parameters.Split('&');
-            List<string> parametersList = new List<string>();
+            var parametersList = new List<string>();
             foreach (var item in paraArray)
             {
                 parametersList.Add(item);

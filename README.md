@@ -87,8 +87,8 @@ We appreciate all contributions!
 
 ### Donations gratefully accepted.
 
-* [![Donate with Bitcoin](https://en.cryptobadges.io/badge/small/15DAoUfaCanpBpTs7VQBK8dRmbQqEnF9WG)](https://en.cryptobadges.io/donate/15DAoUfaCanpBpTs7VQBK8dRmbQqEnF9WG)
-* [![Donate with Ethereum](https://en.cryptobadges.io/badge/small/0x556E7EdbcCd669a42f00c1Df53D550C00814B0e3)](https://en.cryptobadges.io/donate/0x556E7EdbcCd669a42f00c1Df53D550C00814B0e3)
+* Donate with Bitcoin => [15DAoUfaCanpBpTs7VQBK8dRmbQqEnF9WG]
+* Donate with Ethereum => [0x556E7EdbcCd669a42f00c1Df53D550C00814B0e3]
 
 ### Contact
 

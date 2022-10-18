@@ -1,6 +1,6 @@
-﻿using Newtonsoft.Json;
-using CCXT.NET.Shared.Coin;
+﻿using CCXT.NET.Shared.Coin;
 using CCXT.NET.Shared.Configuration;
+using Newtonsoft.Json;
 
 namespace CCXT.NET.Korbit
 {
