@@ -17,7 +17,7 @@
         <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
         <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
         <RootNamespace>CCXT.NET</RootNamespace>
-        <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+        <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
         <Version>1.4.13</Version>
         <PackageReleaseNotes>RestSharp update and upgrade to .net core 6.</PackageReleaseNotes>
         <AssemblyVersion>1.4.13.2</AssemblyVersion>
