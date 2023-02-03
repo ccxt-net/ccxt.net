@@ -40,10 +40,6 @@
           <Pack>True</Pack>
           <PackagePath>\</PackagePath>
         </None>
-        <None Include="D:\github.com\lisa3907\ccxt.net\CHANGELOG.md" Link="CHANGELOG.md">
-          <Pack>True</Pack>
-          <PackagePath>\</PackagePath>
-        </None>
         <None Include="..\LICENSE.txt">
             <Pack>True</Pack>
             <PackagePath></PackagePath>
