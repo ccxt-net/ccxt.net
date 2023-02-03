@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using CCXT.NET.Shared.Configuration;
 using System.Collections.Generic;
+using System;
 
 namespace CCXT.NET.Shared.Coin.Public
 {
@@ -202,6 +203,30 @@ namespace CCXT.NET.Shared.Coin.Public
         {
             get;
             set;
+        }
+
+        public override bool Equals(object obj)
+        {
+            // Check for null and compare run-time types.
+            if ((obj == null) || !this.GetType().Equals(obj.GetType()))
+            {
+                return false;
+            }
+            else
+            {
+                var objItem = (OHLCVItem)obj;
+                return (timestamp == objItem.timestamp) 
+                    && (highPrice == objItem.highPrice)
+                    && (lowPrice == objItem.lowPrice)
+                    && (closePrice == objItem.closePrice)
+                    && (openPrice == objItem.openPrice)
+                    && (volume == objItem.volume); 
+            }
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(timestamp, highPrice, lowPrice, closePrice, openPrice, volume);
         }
     }
 

@@ -187,7 +187,7 @@ namespace CCXT.NET.Bitforex
         /// <summary>
         ///
         /// </summary>
-        public new Dictionary<int, string> ErrorMessages = new Dictionary<int, string>
+        public new Dictionary<int, string> ErrorMessages = new()
         {
             { 1000, "System Error" },
             { 1001, "No right to Access" },

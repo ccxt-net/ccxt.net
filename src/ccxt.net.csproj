@@ -17,11 +17,11 @@
         <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
         <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
         <RootNamespace>CCXT.NET</RootNamespace>
-        <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+        <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
         <Version>1.4.13</Version>
         <PackageReleaseNotes>RestSharp update and upgrade to .net core 6.</PackageReleaseNotes>
-        <AssemblyVersion>1.4.13.1</AssemblyVersion>
-        <FileVersion>1.4.13.1</FileVersion>
+        <AssemblyVersion>1.4.13.2</AssemblyVersion>
+        <FileVersion>1.4.13.2</FileVersion>
         <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
         <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
         <PackageReadmeFile>README.md</PackageReadmeFile>
@@ -62,9 +62,9 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-        <PackageReference Include="RestSharp" Version="108.0.3" />
-        <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.18.0" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+        <PackageReference Include="RestSharp" Version="108.0.2" />
+        <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.24.0" />
         <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.5.4" />
         <PackageReference Include="CellWars.Threading.AsyncLock" Version="1.0.0" />
     </ItemGroup>
