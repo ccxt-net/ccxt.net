@@ -62,7 +62,7 @@ namespace CCXT.NET.Gemini.Public
                         var _symbol = _market.ToString();
 
                         var _base_id = _symbol.Substring(0, 3);
-                        var _quote_id = _symbol.Substring(3);
+                        var _quote_id = _symbol.Substring(4);
 
                         var _base_name = publicClient.ExchangeInfo.GetCommonCurrencyName(_base_id);
                         var _quote_name = publicClient.ExchangeInfo.GetCommonCurrencyName(_quote_id);
