@@ -1,6 +1,6 @@
 <Project>
 	<PropertyGroup>
-		<TargetFramework>net6.0</TargetFramework>
+		<TargetFramework>net8.0</TargetFramework>
 		<Nullable>disable</Nullable>
 		<!--<WarningsAsErrors>CS8600;CS8602;CS8603</WarningsAsErrors>-->
 		<LangVersion>latest</LangVersion>

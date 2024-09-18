@@ -80,9 +80,9 @@ We appreciate all contributions!
 
 ### Add Reference
 
- > Install-Package CCXT.NET -Version 1.4.13
+ > Install-Package CCXT.NET -Version 1.5.1
 
- > dotnet add package CCXT.NET --version 1.4.13
+ > dotnet add package CCXT.NET --version 1.5.1
 
 
 ### Donations gratefully accepted.

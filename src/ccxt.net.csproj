@@ -1,16 +1,16 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
     <PropertyGroup>
         <Title>CryptoCurrency eXchange Trading Library for .NET</Title>
         <Product>CCXT</Product>
         <Company>ODINSOFT</Company>
         <Description>CCXT.NET – CryptoCurrency eXchange Trading Library for .NET</Description>
-        <Copyright>Copyright OdinSoft Co., Ltd. 2015~2022</Copyright>
+        <Copyright>Copyright OdinSoft Co., Ltd. 2015~2024</Copyright>
         <AssemblyTitle>CCXT.NET</AssemblyTitle>
         <Authors>SEONGAHN LEE</Authors>
         <AssemblyName>CCXT.NET</AssemblyName>
-        <PackageId>CCXT.NET</PackageId>
-        <PackageTags>bitcoin;cryptocurrency;exchange;trading;market-data;ccxt;exchange-markets;altcoin;api;arbitrage;bot;crypto;e-commerce;invest;library;strategy;trade;merchant;cryptocoin;korean</PackageTags>
+        
+		<PackageId>CCXT.NET</PackageId>
+		<PackageTags>bitcoin;cryptocurrency;exchange;trading;market-data;ccxt;exchange-markets;altcoin;api;arbitrage;bot;crypto;e-commerce;invest;library;strategy;trade;merchant;cryptocoin</PackageTags>
         <PackageProjectUrl>https://github.com/ccxt.net/ccxt.net</PackageProjectUrl>
         <PackageIcon>ccxt.net.api.png</PackageIcon>
         <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
@@ -18,22 +18,26 @@
         <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
         <RootNamespace>CCXT.NET</RootNamespace>
         <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-        <Version>1.4.13</Version>
-        <PackageReleaseNotes>RestSharp update and upgrade to .net core 6.</PackageReleaseNotes>
-        <AssemblyVersion>1.4.13.2</AssemblyVersion>
-        <FileVersion>1.4.13.2</FileVersion>
-        <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+        
+		<Version>1.5.1</Version>
+        <PackageReleaseNotes>RestSharp, System.IdentityModel.Tokens.Jwt update &amp; The substring array trading error on Gemini</PackageReleaseNotes>
+        <AssemblyVersion>1.5.1.14</AssemblyVersion>
+        <FileVersion>1.5.1.14</FileVersion>
+        
+		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
         <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
         <PackageReadmeFile>README.md</PackageReadmeFile>
-        <RepositoryUrl>https://github.com/ccxt.net/ccxt.net</RepositoryUrl>
-        <RepositoryType>git</RepositoryType>
-    </PropertyGroup>
 
-    <ItemGroup>
-      <Compile Remove="exchanges\unknown\**" />
-      <EmbeddedResource Remove="exchanges\unknown\**" />
-      <None Remove="exchanges\unknown\**" />
-    </ItemGroup>
+		<RepositoryUrl>https://github.com/ccxt.net/ccxt.net</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <TargetFrameworks>net6.0;net7.0;net8.0</TargetFrameworks>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0|AnyCPU'">
+      <WarningLevel>7</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0|AnyCPU'">
+      <WarningLevel>7</WarningLevel>
+    </PropertyGroup>
 
     <ItemGroup>
         <None Include="..\README.md">
@@ -44,25 +48,18 @@
             <Pack>True</Pack>
             <PackagePath></PackagePath>
         </None>
-    </ItemGroup>
-
-    <ItemGroup>
         <None Include="..\logo-files\ccxt.net.api.png">
             <Pack>True</Pack>
             <PackagePath></PackagePath>
         </None>
-    </ItemGroup>
-
-    <ItemGroup>
         <Content Include="..\LICENSE.txt" Link="LICENSE.txt" />
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
-        <PackageReference Include="RestSharp" Version="108.0.3" />
-        <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.34.0" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+        <PackageReference Include="RestSharp" Version="112.0.0" />
+        <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.0.2" />
         <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.5.4" />
         <PackageReference Include="CellWars.Threading.AsyncLock" Version="1.0.0" />
     </ItemGroup>
-
 </Project>

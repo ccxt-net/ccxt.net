@@ -510,7 +510,7 @@ namespace CCXT.NET.Shared.Coin
             return new RestClient(new RestClientOptions
             {
                 BaseUrl = new Uri(baseurl),
-                MaxTimeout = 5 * 1000,
+                Timeout = TimeSpan.FromSeconds(5),
                 UserAgent = UserAgent,
                 Encoding = Encoding.GetEncoding(65001)
             });

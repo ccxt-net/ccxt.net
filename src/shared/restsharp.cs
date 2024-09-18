@@ -149,7 +149,7 @@ namespace CCXT.NET.Shared.Serialize
         /// </summary>
         public RestSharpJsonNetSerializer()
         {
-            ContentType = "application/json";
+            ContentType = ContentType.Json;
         }
 
         /// <summary>
@@ -192,7 +192,7 @@ namespace CCXT.NET.Shared.Serialize
         /// <summary>
         /// Content type for serialized content
         /// </summary>
-        public string ContentType
+        public ContentType ContentType
         {
             get;
             set;
