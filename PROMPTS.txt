@@ -1,0 +1,8 @@
+/projects/Github 폴더 하위의 ccxt.net 폴더에 C# 소스코드 및 문서들이 있습니다. 작업을 진행 하기전 검토 해주세요. 특히 upbit 거래소를 최근 표준화 작업 내용이 정리 되어 있습니다.
+
+
+앞으로 이 세션에서 작업 된 내용을 MCP 메모리에 "거래소API 표준화 작업"으로 주기적으로 저장 해 주세요
+
+
+이제는 빗썸(bithumb) 거래소를 Upbit 구조를 기반으로 표준화 작업을 해 주세요. API 문서 URL은 https://apidocs.bithumb.com/reference 이곳에 있습니다.
+

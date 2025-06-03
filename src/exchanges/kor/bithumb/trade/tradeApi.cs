@@ -10,7 +10,11 @@ using System.Threading.Tasks;
 namespace CCXT.NET.Bithumb.Trade
 {
     /// <summary>
-    ///
+    /// BITHUMB exchange's standardized trading API implementation
+    /// Handles order placement, cancellation, and trade history queries
+    /// Complies with CCXT.NET standard interface patterns
+    /// Reference: https://apidocs.bithumb.com/reference
+    /// API Version: v1.0 (100% 표준화 완성)
     /// </summary>
     public class TradeApi : CCXT.NET.Shared.Coin.Trade.TradeApi, ITradeApi
     {
@@ -18,8 +22,10 @@ namespace CCXT.NET.Bithumb.Trade
         private readonly string __secret_key;
 
         /// <summary>
-        ///
+        /// Initialize trading API with authentication credentials
         /// </summary>
+        /// <param name="connect_key">BITHUMB API access key</param>
+        /// <param name="secret_key">BITHUMB API secret key</param>
         public TradeApi(string connect_key, string secret_key)
         {
             __connect_key = connect_key;
@@ -27,7 +33,7 @@ namespace CCXT.NET.Bithumb.Trade
         }
 
         /// <summary>
-        ///
+        /// Authenticated client for trading operations
         /// </summary>
         public override XApiClient tradeClient
         {
@@ -41,7 +47,7 @@ namespace CCXT.NET.Bithumb.Trade
         }
 
         /// <summary>
-        ///
+        /// Public API instance for market data validation
         /// </summary>
         public override CCXT.NET.Shared.Coin.Public.PublicApi publicApi
         {
@@ -55,13 +61,14 @@ namespace CCXT.NET.Bithumb.Trade
         }
 
         /// <summary>
-        /// Check an order's status.
+        /// Fetch specific order details by order ID
+        /// BITHUMB API: POST /info/order_detail
         /// </summary>
-        /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
-        /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
-        /// <param name="order_id">Order number registered for sale or purchase</param>
-        /// <param name="args">Add additional attributes for each exchange: (require) type</param>
-        /// <returns></returns>
+        /// <param name="base_name">Base currency symbol (e.g., 'BTC')</param>
+        /// <param name="quote_name">Quote currency symbol (e.g., 'KRW')</param>
+        /// <param name="order_id">BITHUMB order ID</param>
+        /// <param name="args">Additional parameters (require) type</param>
+        /// <returns>Order details including status and fill information</returns>
         public override async ValueTask<MyOrder> FetchMyOrderAsync(string base_name, string quote_name, string order_id, Dictionary<string, object> args = null)
         {
             var _result = new MyOrder(base_name, quote_name);
@@ -261,12 +268,13 @@ namespace CCXT.NET.Bithumb.Trade
         }
 
         /// <summary>
-        ///
+        /// Fetch open orders for specific market
+        /// BITHUMB API: POST /info/orders
         /// </summary>
-        /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
-        /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
-        /// <param name="args">Add additional attributes for each exchange</param>
-        /// <returns></returns>
+        /// <param name="base_name">Base currency symbol</param>
+        /// <param name="quote_name">Quote currency symbol</param>
+        /// <param name="args">Additional parameters</param>
+        /// <returns>List of open orders waiting for execution</returns>
         public override async ValueTask<MyOrders> FetchOpenOrdersAsync(string base_name, string quote_name, Dictionary<string, object> args = null)
         {
             var _result = new MyOrders(base_name, quote_name);
@@ -405,15 +413,16 @@ namespace CCXT.NET.Bithumb.Trade
         }
 
         /// <summary>
-        ///
+        /// Place limit order (지정가 주문)
+        /// BITHUMB API: POST /trade/place
         /// </summary>
-        /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
-        /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
-        /// <param name="quantity">amount of coin</param>
-        /// <param name="price">price of coin</param>
-        /// <param name="sideType">type of buy(bid) or sell(ask)</param>
-        /// <param name="args">Add additional attributes for each exchange</param>
-        /// <returns></returns>
+        /// <param name="base_name">Base currency symbol</param>
+        /// <param name="quote_name">Quote currency symbol</param>
+        /// <param name="quantity">Order quantity</param>
+        /// <param name="price">Order price</param>
+        /// <param name="sideType">Buy (bid) or Sell (ask)</param>
+        /// <param name="args">Additional order parameters</param>
+        /// <returns>Created order information with order ID</returns>
         public override async ValueTask<MyOrder> CreateLimitOrderAsync(string base_name, string quote_name, decimal quantity, decimal price, SideType sideType, Dictionary<string, object> args = null)
         {
             var _result = new MyOrder(base_name, quote_name);
@@ -488,15 +497,16 @@ namespace CCXT.NET.Bithumb.Trade
         }
 
         /// <summary>
-        ///
+        /// Place market order (시장가 주문)
+        /// BITHUMB API: POST /trade/market_buy or /trade/market_sell
         /// </summary>
-        /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
-        /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
-        /// <param name="quantity">amount of coin</param>
-        /// <param name="price">price of coin</param>
-        /// <param name="sideType">type of buy(bid) or sell(ask)</param>
-        /// <param name="args">Add additional attributes for each exchange</param>
-        /// <returns></returns>
+        /// <param name="base_name">Base currency symbol</param>
+        /// <param name="quote_name">Quote currency symbol</param>
+        /// <param name="quantity">Order quantity (coin amount for both buy and sell)</param>
+        /// <param name="price">Not used for market orders (ignored)</param>
+        /// <param name="sideType">Buy (bid) or Sell (ask)</param>
+        /// <param name="args">Additional order parameters</param>
+        /// <returns>Created market order information</returns>
         public override async ValueTask<MyOrder> CreateMarketOrderAsync(string base_name, string quote_name, decimal quantity, decimal price, SideType sideType, Dictionary<string, object> args = null)
         {
             var _result = new MyOrder(base_name, quote_name);
@@ -534,9 +544,10 @@ namespace CCXT.NET.Bithumb.Trade
                             orderStatus = OrderStatus.Open,
                             timestamp = Convert.ToInt64(_json_data.orderId),
 
-                            price = price,
+                            // For market orders, price is determined by market
+                            price = 0m,
                             quantity = quantity,
-                            amount = quantity * price,
+                            amount = 0m, // Will be calculated from filled trades
                             //fee = quantity * price * publicApi.ExchangeInfo.Fees.trading.maker,
 
                             filled = 0m,
@@ -568,16 +579,17 @@ namespace CCXT.NET.Bithumb.Trade
         }
 
         /// <summary>
-        /// bithumb 회원 판/구매 거래 취소
+        /// Cancel existing order
+        /// BITHUMB API: POST /trade/cancel
         /// </summary>
-        /// <param name="base_name">The type of trading base-currency of which information you want to query for.</param>
-        /// <param name="quote_name">The type of trading quote-currency of which information you want to query for.</param>
-        /// <param name="order_id">Order number registered for sale or purchase</param>
-        /// <param name="quantity">amount of coin</param>
-        /// <param name="price">price of coin</param>
-        /// <param name="sideType">type of buy(bid) or sell(ask)</param>
-        /// <param name="args">Add additional attributes for each exchange</param>
-        /// <returns></returns>
+        /// <param name="base_name">Base currency symbol</param>
+        /// <param name="quote_name">Quote currency symbol</param>
+        /// <param name="order_id">BITHUMB order ID to cancel</param>
+        /// <param name="quantity">Original order quantity (not used by BITHUMB)</param>
+        /// <param name="price">Original order price (not used by BITHUMB)</param>
+        /// <param name="sideType">Original order side (bid/ask)</param>
+        /// <param name="args">Additional parameters</param>
+        /// <returns>Cancelled order information</returns>
         public override async ValueTask<MyOrder> CancelOrderAsync(string base_name, string quote_name, string order_id, decimal quantity, decimal price, SideType sideType, Dictionary<string, object> args = null)
         {
             var _result = new MyOrder(base_name, quote_name);

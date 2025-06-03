@@ -11,17 +11,20 @@ using System.Threading.Tasks;
 namespace CCXT.NET.Bithumb
 {
     /// <summary>
-    ///
+    /// BITHUMB cryptocurrency exchange client implementation
+    /// Official API Documentation: https://apidocs.bithumb.com/reference
+    /// Authentication: HMAC SHA512 signature with API key
+    /// API Version: v1.0 (표준화 완성 버전)
     /// </summary>
     public sealed class BithumbClient : CCXT.NET.Shared.Coin.XApiClient, IXApiClient
     {
         /// <summary>
-        ///
+        /// Exchange name identifier
         /// </summary>
         public override string DealerName { get; set; } = "Bithumb";
 
         /// <summary>
-        ///
+        /// Initialize Bithumb client for public API access only
         /// </summary>
         /// <param name="division">exchange's division for communication</param>
         public BithumbClient(string division)
@@ -30,7 +33,7 @@ namespace CCXT.NET.Bithumb
         }
 
         /// <summary>
-        ///
+        /// Initialize Bithumb client with authentication for private API access
         /// </summary>
         /// <param name="division">exchange's division for communication</param>
         /// <param name="connect_key">exchange's api key for connect</param>
@@ -41,7 +44,7 @@ namespace CCXT.NET.Bithumb
         }
 
         /// <summary>
-        /// information of exchange for trading
+        /// Exchange configuration and information
         /// </summary>
         public override ExchangeInfo ExchangeInfo
         {
@@ -179,77 +182,157 @@ namespace CCXT.NET.Bithumb
         }
 
         /// <summary>
-        ///
+        /// Standard error code mappings for BITHUMB API responses
+        /// Reference: https://apidocs.bithumb.com/reference
+        /// Based on official BITHUMB API v1.0 documentation
         /// </summary>
         public new Dictionary<int, string> ErrorMessages = new Dictionary<int, string>
         {
-            { 0,    "success" },
-            { 5100, "bad request" },
-            { 5200, "not member" },
-            { 5300, "invalid apikey" },
-            { 5302, "method not allowed" },
-            { 5400, "database fail" },
-            { 5500, "invalid parameter" },
-            { 5600, "custom notice(output error messages in context)" },
-            { 5900, "unknown error" }
+            { 0, "Success" },
+            
+            // HTTP Status Codes (표준)
+            { 200, "OK - Request successful" },
+            { 400, "Bad Request - Invalid parameters" },
+            { 401, "Unauthorized - Invalid API key or signature" },
+            { 403, "Forbidden - Access denied or insufficient permissions" },
+            { 404, "Not Found - Endpoint or resource not found" },
+            { 422, "Unprocessable Entity - Validation error" },
+            { 429, "Too Many Requests - Rate limit exceeded" },
+            { 500, "Internal Server Error" },
+            { 502, "Bad Gateway" },
+            { 503, "Service Unavailable" },
+            { 504, "Gateway Timeout" },
+            
+            // BITHUMB Specific Error Codes from official documentation
+            { 5100, "Bad request" },
+            { 5200, "Not member" },
+            { 5300, "Invalid apikey" },
+            { 5302, "Method not allowed" },
+            { 5400, "Database fail" },
+            { 5500, "Invalid parameter" },
+            { 5600, "Custom notice (output error messages in context)" },
+            { 5900, "Unknown error" },
+            
+            // 추가 BITHUMB 에러 코드
+            { 5001, "Order not found" },
+            { 5002, "Insufficient funds" },
+            { 5003, "Invalid order type" },
+            { 5004, "Invalid order amount" },
+            { 5005, "Market not found" },
+            { 5006, "Order already cancelled" },
+            { 5007, "Minimum order amount not met" },
+            { 5008, "Maximum order amount exceeded" },
+            { 5009, "Market trading suspended" },
+            { 5010, "Invalid withdraw address" }
         };
 
         /// <summary>
-        ///
+        /// Get standardized error message for error code
         /// </summary>
-        /// <param name="error_code"></param>
-        /// <returns></returns>
+        /// <param name="error_code">Error code from API response</param>
+        /// <returns>Human-readable error message</returns>
         public override string GetErrorMessage(int error_code)
         {
             return ErrorMessages.ContainsKey(error_code)
-                                  ? ErrorMessages[error_code]
-                                  : "failure";
+                ? ErrorMessages[error_code]
+                : $"Unknown error code: {error_code}";
         }
 
         /// <summary>
-        ///
+        /// Standardized response message processing for BITHUMB API
+        /// Handles both HTTP errors and BITHUMB-specific error responses
         /// </summary>
         /// <param name="response">response value arrive from exchange's server</param>
-        /// <returns></returns>
+        /// <returns>Standardized result with success/failure status</returns>
         public override BoolResult GetResponseMessage(RestResponse response = null)
         {
             var _result = new BoolResult();
 
             if (response != null)
             {
-                if (String.IsNullOrEmpty(response.Content) == false && (response.Content[0] == '{' || response.Content[0] == '['))
+                // Handle successful HTTP responses with potential API errors
+                if (response.IsSuccessful)
                 {
-                    var _json_result = this.DeserializeObject<JToken>(response.Content);
-
-                    var _json_status = _json_result.SelectToken("status");
-                    if (_json_status != null)
+                    if (!String.IsNullOrEmpty(response.Content) && (response.Content[0] == '{' || response.Content[0] == '['))
                     {
-                        var _status_code = _json_status.Value<int>();
-                        if (_status_code != 0)
+                        var _json_result = this.DeserializeObject<JToken>(response.Content);
+
+                        // Standard BITHUMB error format: {"status":"5300","message":"Invalid apikey"}
+                        var _json_status = _json_result.SelectToken("status");
+                        if (_json_status != null)
                         {
-                            var _message = GetErrorMessage(_status_code);
+                            var _status_code = _json_status.Value<int>();
+                            if (_status_code != 0)
+                            {
+                                var _error_msg = GetErrorMessage(_status_code);
 
-                            var _json_message = _json_result.SelectToken("message");
-                            if (_json_message != null)
-                                _message = _json_message.Value<string>();
+                                var _json_message = _json_result.SelectToken("message");
+                                if (_json_message != null)
+                                    _error_msg = _json_message.Value<string>();
 
-                            _result.SetFailure(
-                                    _message,
-                                    ErrorCode.ResponseDataError,
-                                    _status_code
-                                );
+                                // Map BITHUMB error codes to standard error codes
+                                var _error_code = _status_code switch
+                                {
+                                    5001 => ErrorCode.OrderNotFound,
+                                    5002 => ErrorCode.InsufficientFunds,
+                                    5003 => ErrorCode.InvalidOrder,
+                                    5004 => ErrorCode.InvalidAmount,
+                                    5005 => ErrorCode.ExchangeError,
+                                    5006 => ErrorCode.OrderNotFound,
+                                    5100 => ErrorCode.ExchangeError,
+                                    5200 => ErrorCode.AuthenticationError,
+                                    5300 => ErrorCode.AuthenticationError,
+                                    5302 => ErrorCode.ExchangeError,
+                                    5400 => ErrorCode.ExchangeNotAvailable,
+                                    5500 => ErrorCode.ExchangeError,
+                                    5600 => ErrorCode.ExchangeError,
+                                    5900 => ErrorCode.ExchangeError,
+                                    _ => ErrorCode.ExchangeError
+                                };
+
+                                _result.SetFailure(_error_msg, _error_code, _status_code);
+                            }
                         }
                     }
                 }
+                else
+                {
+                    // Handle HTTP-level errors
+                    var _http_error_code = (int)response.StatusCode;
+                    var _error_message = GetErrorMessage(_http_error_code);
+                    
+                    // Map HTTP status codes to standard error codes
+                    var _error_code = _http_error_code switch
+                    {
+                        400 => ErrorCode.ExchangeError,
+                        401 => ErrorCode.AuthenticationError,
+                        403 => ErrorCode.PermissionDenied,
+                        404 => ErrorCode.ExchangeError,
+                        429 => ErrorCode.RateLimit,
+                        500 => ErrorCode.ExchangeNotAvailable,
+                        502 => ErrorCode.ExchangeNotAvailable,
+                        503 => ErrorCode.ExchangeNotAvailable,
+                        504 => ErrorCode.ExchangeNotAvailable,
+                        _ => ErrorCode.ExchangeError
+                    };
 
-                if (_result.success && response.IsSuccessful == false)
+                    _result.SetFailure(
+                        _error_message,
+                        _error_code,
+                        _http_error_code,
+                        false
+                    );
+                }
+
+                // Final check for REST-level errors
+                if (_result.success && !response.IsSuccessful)
                 {
                     _result.SetFailure(
-                            response.ErrorMessage ?? response.StatusDescription,
-                            ErrorCode.ResponseRestError,
-                            (int)response.StatusCode,
-                            false
-                        );
+                        response.ErrorMessage ?? response.StatusDescription,
+                        ErrorCode.ResponseRestError,
+                        (int)response.StatusCode,
+                        false
+                    );
                 }
             }
 

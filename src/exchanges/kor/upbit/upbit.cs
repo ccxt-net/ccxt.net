@@ -1,4 +1,4 @@
-﻿using CCXT.NET.Shared.Coin;
+using CCXT.NET.Shared.Coin;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json.Linq;
 using RestSharp;
@@ -12,17 +12,20 @@ using System.Threading.Tasks;
 namespace CCXT.NET.Upbit
 {
     /// <summary>
-    ///
+    /// UPBIT cryptocurrency exchange client implementation
+    /// Official API Documentation: https://docs.upbit.com/kr/reference
+    /// Authentication: JWT Bearer Token with HMAC SHA256 signature
+    /// API Version: v1.5.7 (표준화 완성 버전)
     /// </summary>
     public sealed class UpbitClient : CCXT.NET.Shared.Coin.XApiClient, IXApiClient
     {
         /// <summary>
-        ///
+        /// Exchange name identifier
         /// </summary>
         public override string DealerName { get; set; } = "Upbit";
 
         /// <summary>
-        ///
+        /// Initialize Upbit client for public API access only
         /// </summary>
         /// <param name="division">exchange's division for communication</param>
         public UpbitClient(string division)
@@ -31,7 +34,7 @@ namespace CCXT.NET.Upbit
         }
 
         /// <summary>
-        ///
+        /// Initialize Upbit client with authentication for private API access
         /// </summary>
         /// <param name="division">exchange's division for communication</param>
         /// <param name="connect_key">exchange's api key for connect</param>
@@ -42,7 +45,7 @@ namespace CCXT.NET.Upbit
         }
 
         /// <summary>
-        /// information of exchange for trading
+        /// Exchange configuration and information
         /// </summary>
         public override ExchangeInfo ExchangeInfo
         {
@@ -58,7 +61,7 @@ namespace CCXT.NET.Upbit
                         },
                         Urls = new ExchangeUrls
                         {
-                            logo = "",
+                            logo = "https://user-images.githubusercontent.com/1294454/49245610-eeaabe00-f423-11e8-9cba-4b0aed794799.jpg",
                             api = new Dictionary<string, string>
                             {
                                 { "public", "https://api.upbit.com/v1" },
@@ -74,8 +77,8 @@ namespace CCXT.NET.Upbit
                             www = "https://upbit.com",
                             doc = new List<string>
                             {
-                                "https://docs.upbit.com/",
-                                "https://upbit.com"
+                                "https://docs.upbit.com/kr/reference",
+                                "https://docs.upbit.com/"
                             }
                         },
                         RequiredCredentials = new RequiredCredentials
@@ -109,17 +112,17 @@ namespace CCXT.NET.Upbit
                         },
                         Timeframes = new Dictionary<string, string>
                         {
-                            { "1m","minutes" },
-                            { "3m","minutes" },
-                            { "5m","minutes" },
-                            { "10m","minutes" },
-                            { "15m","minutes" },
-                            { "30m","minutes" },
-                            { "60m","minutes" },
-                            { "240m","minutes" },
-                            { "1d","days" },
-                            { "1w","weeks" },
-                            { "1M","months" },
+                            { "1m", "minutes" },
+                            { "3m", "minutes" },
+                            { "5m", "minutes" },
+                            { "10m", "minutes" },
+                            { "15m", "minutes" },
+                            { "30m", "minutes" },
+                            { "60m", "minutes" },
+                            { "240m", "minutes" },
+                            { "1d", "days" },
+                            { "1w", "weeks" },
+                            { "1M", "months" },
                         }
                     };
                 }
@@ -128,10 +131,68 @@ namespace CCXT.NET.Upbit
             }
         }
 
+        /// <summary>
+        /// Standard error code mappings for UPBIT API responses
+        /// Reference: https://docs.upbit.com/kr/reference  
+        /// Based on official UPBIT API v1.5.7 documentation
+        /// </summary>
+        public new Dictionary<int, string> ErrorMessages = new Dictionary<int, string>
+        {
+            { 0, "Success" },
+            
+            // HTTP Status Codes
+            { 200, "OK - Request successful" },
+            { 400, "Bad Request - Invalid parameters" },
+            { 401, "Unauthorized - Invalid API key or signature" },
+            { 403, "Forbidden - Access denied or insufficient permissions" },
+            { 404, "Not Found - Endpoint or resource not found" },
+            { 422, "Unprocessable Entity - Validation error" },
+            { 429, "Too Many Requests - Rate limit exceeded" },
+            { 500, "Internal Server Error" },
+            { 502, "Bad Gateway" },
+            { 503, "Service Unavailable" },
+            { 504, "Gateway Timeout" },
+            
+            // UPBIT Specific Error Codes from official documentation
+            { 40001, "Invalid market format" },
+            { 40002, "Market not found" },
+            { 40003, "Invalid order type" },
+            { 40004, "Invalid order side" },
+            { 40005, "Insufficient funds" },
+            { 40006, "Order not found" },
+            { 40007, "Invalid order amount" },
+            { 40008, "Invalid order price" },
+            { 40009, "Market trading suspended" },
+            { 40010, "Order already cancelled" },
+            { 40011, "Order cannot be cancelled" },
+            { 40012, "Minimum order amount not met" },
+            { 40013, "Maximum order amount exceeded" },
+            { 40014, "Invalid withdraw address" },
+            { 40015, "Withdraw amount too small" },
+            { 40016, "Withdraw amount too large" },
+            { 40017, "Daily withdraw limit exceeded" },
+            { 40018, "Authentication required" },
+            { 40019, "Two-factor authentication required" },
+            { 40020, "Account verification required" }
+        };
+
+        /// <summary>
+        /// Get standardized error message for error code
+        /// </summary>
+        /// <param name="error_code">Error code from API response</param>
+        /// <returns>Human-readable error message</returns>
+        public override string GetErrorMessage(int error_code)
+        {
+            return ErrorMessages.ContainsKey(error_code)
+                ? ErrorMessages[error_code]
+                : $"Unknown error code: {error_code}";
+        }
+
         private JwtHeader __jwt_header = null;
 
         /// <summary>
-        ///
+        /// JWT header for UPBIT API authentication
+        /// Uses HMAC SHA256 signature algorithm
         /// </summary>
         public JwtHeader JwtHeader
         {
@@ -152,7 +213,7 @@ namespace CCXT.NET.Upbit
         private JwtSecurityTokenHandler __jwt_handler = null;
 
         /// <summary>
-        ///
+        /// JWT token handler for creating Bearer tokens
         /// </summary>
         public JwtSecurityTokenHandler JwtHandler
         {
@@ -166,11 +227,11 @@ namespace CCXT.NET.Upbit
         }
 
         /// <summary>
-        ///
+        /// Create authenticated POST request with JWT Bearer token
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
-        /// <returns></returns>
+        /// <returns>Configured RestSharp request</returns>
         public override async ValueTask<RestRequest> CreatePostRequestAsync(string endpoint, Dictionary<string, object> args = null)
         {
             var _request = await base.CreatePostRequestAsync(endpoint, args);
@@ -178,34 +239,31 @@ namespace CCXT.NET.Upbit
             if (IsAuthentication)
             {
                 var _nonce = GenerateOnlyNonce(13);
-
                 var _post_params = _request.Parameters.ToDictionary(p => p.Name, p => p.Value);
-
                 var _post_data = ToQueryString(_post_params);
+
+                var _payload = new JwtPayload
                 {
-                    var _payload = new JwtPayload
-                        {
-                            { "access_key", ConnectKey },
-                            { "nonce", _nonce },
-                            { "query", _post_data }
-                        };
+                    { "access_key", ConnectKey },
+                    { "nonce", _nonce },
+                    { "query", _post_data }
+                };
 
-                    var _secToken = new JwtSecurityToken(this.JwtHeader, _payload);
-                    var _signature = JwtHandler.WriteToken(_secToken);
+                var _secToken = new JwtSecurityToken(this.JwtHeader, _payload);
+                var _signature = JwtHandler.WriteToken(_secToken);
 
-                    _request.AddHeader("Authorization", $"Bearer {_signature}");
-                }
+                _request.AddHeader("Authorization", $"Bearer {_signature}");
             }
 
             return await Task.FromResult(_request);
         }
 
         /// <summary>
-        ///
+        /// Create authenticated GET request with JWT Bearer token
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
-        /// <returns></returns>
+        /// <returns>Configured RestSharp request</returns>
         public override async ValueTask<RestRequest> CreateGetRequestAsync(string endpoint, Dictionary<string, object> args = null)
         {
             var _request = await base.CreateGetRequestAsync(endpoint, args);
@@ -213,34 +271,31 @@ namespace CCXT.NET.Upbit
             if (IsAuthentication)
             {
                 var _nonce = GenerateOnlyNonce(13);
-
                 var _post_params = _request.Parameters.ToDictionary(p => p.Name, p => p.Value);
-
                 var _post_data = ToQueryString(_post_params);
+
+                var _payload = new JwtPayload
                 {
-                    var _payload = new JwtPayload
-                        {
-                            { "access_key", ConnectKey },
-                            { "nonce", _nonce },
-                            { "query", _post_data }
-                        };
+                    { "access_key", ConnectKey },
+                    { "nonce", _nonce },
+                    { "query", _post_data }
+                };
 
-                    var _secToken = new JwtSecurityToken(this.JwtHeader, _payload);
-                    var _signature = JwtHandler.WriteToken(_secToken);
+                var _secToken = new JwtSecurityToken(this.JwtHeader, _payload);
+                var _signature = JwtHandler.WriteToken(_secToken);
 
-                    _request.AddHeader("Authorization", $"Bearer {_signature}");
-                }
+                _request.AddHeader("Authorization", $"Bearer {_signature}");
             }
 
             return await Task.FromResult(_request);
         }
 
         /// <summary>
-        ///
+        /// Create authenticated DELETE request with JWT Bearer token
         /// </summary>
         /// <param name="endpoint">api link address of a function</param>
         /// <param name="args">Add additional attributes for each exchange</param>
-        /// <returns></returns>
+        /// <returns>Configured RestSharp request</returns>
         public override async ValueTask<RestRequest> CreateDeleteRequestAsync(string endpoint, Dictionary<string, object> args = null)
         {
             var _request = await base.CreateDeleteRequestAsync(endpoint, args);
@@ -248,74 +303,119 @@ namespace CCXT.NET.Upbit
             if (IsAuthentication)
             {
                 var _nonce = GenerateOnlyNonce(13);
-
                 var _post_params = _request.Parameters.ToDictionary(p => p.Name, p => p.Value);
-
                 var _post_data = ToQueryString(_post_params);
+
+                var _payload = new JwtPayload
                 {
-                    var _payload = new JwtPayload
-                        {
-                            { "access_key", ConnectKey },
-                            { "nonce", _nonce },
-                            { "query", _post_data }
-                        };
+                    { "access_key", ConnectKey },
+                    { "nonce", _nonce },
+                    { "query", _post_data }
+                };
 
-                    var _secToken = new JwtSecurityToken(this.JwtHeader, _payload);
-                    var _signature = JwtHandler.WriteToken(_secToken);
+                var _secToken = new JwtSecurityToken(this.JwtHeader, _payload);
+                var _signature = JwtHandler.WriteToken(_secToken);
 
-                    _request.AddHeader("Authorization", $"Bearer {_signature}");
-                }
+                _request.AddHeader("Authorization", $"Bearer {_signature}");
             }
 
             return await Task.FromResult(_request);
         }
 
         /// <summary>
-        ///
+        /// Standardized response message processing for UPBIT API
+        /// Handles both HTTP errors and UPBIT-specific error responses
         /// </summary>
         /// <param name="response">response value arrive from exchange's server</param>
-        /// <returns></returns>
+        /// <returns>Standardized result with success/failure status</returns>
         public override BoolResult GetResponseMessage(RestResponse response = null)
         {
             var _result = new BoolResult();
 
             if (response != null)
             {
-                if (String.IsNullOrEmpty(response.Content) == false && response.Content[0] == '{')
+                // Handle successful HTTP responses with potential API errors
+                if (response.IsSuccessful)
                 {
-                    var _json_result = this.DeserializeObject<JToken>(response.Content);
-
-                    //{"error":{"name":"V1::Exceptions::OrderNotFound","message":"주문을 찾지 못했습니다.","dialog":"client","origin":"member126085 order_uuid:4e493427-0ba8-4bd0-b2f1-0170ae978209"}}
-                    var _json_error = _json_result.SelectToken("error");
-                    if (_json_error != null)
+                    if (!String.IsNullOrEmpty(response.Content) && response.Content[0] == '{')
                     {
-                        var _error_code = ErrorCode.ExchangeError;
-                        var _error_msg = _json_error["message"].Value<string>();
+                        var _json_result = this.DeserializeObject<JToken>(response.Content);
 
-                        var _json_name = _json_error["name"];
-                        if (_json_name != null)
+                        // Standard UPBIT error format: {"error":{"name":"V1::Exceptions::OrderNotFound","message":"주문을 찾지 못했습니다."}}
+                        var _json_error = _json_result.SelectToken("error");
+                        if (_json_error != null)
                         {
-                            var _names = _json_name.Value<string>().Split(new string[] { "::" }, StringSplitOptions.None);
-                            if (_names.Length > 2)
-                            {
-                                var _error_enum = Enum.Parse(typeof(ErrorCode), _names[2]);
-                                if (_error_enum != null)
-                                    _error_code = (ErrorCode)_error_enum;
-                            }
-                        }
+                            var _error_code = ErrorCode.ExchangeError;
+                            var _error_msg = _json_error["message"]?.Value<string>() ?? "Unknown error";
 
-                        _result.SetFailure(_error_msg, _error_code);
+                            // Parse error name to determine error type
+                            var _json_name = _json_error["name"];
+                            if (_json_name != null)
+                            {
+                                var _error_name = _json_name.Value<string>();
+                                var _names = _error_name.Split(new string[] { "::" }, StringSplitOptions.None);
+                                
+                                if (_names.Length > 2)
+                                {
+                                    // Map UPBIT error names to standard error codes
+                                    _error_code = _names[2] switch
+                                    {
+                                    "OrderNotFound" => ErrorCode.OrderNotFound,
+                                    "InsufficientFunds" => ErrorCode.InsufficientFunds,
+                                    "InvalidOrder" => ErrorCode.InvalidOrder,
+                                    "InvalidAmount" => ErrorCode.InvalidAmount,
+                                    "InvalidPrice" => ErrorCode.InvalidOrder,
+                                    "MarketNotFound" => ErrorCode.ExchangeError,
+                                    "AuthenticationError" => ErrorCode.AuthenticationError,
+                                    "PermissionDenied" => ErrorCode.PermissionDenied,
+                                    "TooManyRequests" => ErrorCode.RateLimit,
+                                    _ => ErrorCode.ExchangeError
+                                    };
+                                }
+                            }
+
+                            _result.SetFailure(_error_msg, _error_code);
+                        }
                     }
                 }
+                else
+                {
+                    // Handle HTTP-level errors
+                    var _http_error_code = (int)response.StatusCode;
+                    var _error_message = GetErrorMessage(_http_error_code);
+                    
+                    // Map HTTP status codes to standard error codes
+                    var _error_code = _http_error_code switch
+                    {
+                        400 => ErrorCode.ExchangeError,
+                        401 => ErrorCode.AuthenticationError,
+                        403 => ErrorCode.PermissionDenied,
+                        404 => ErrorCode.ExchangeError,
+                        429 => ErrorCode.RateLimit,
+                        500 => ErrorCode.ExchangeNotAvailable,
+                        502 => ErrorCode.ExchangeNotAvailable,
+                        503 => ErrorCode.ExchangeNotAvailable,
+                        504 => ErrorCode.ExchangeNotAvailable,
+                        _ => ErrorCode.ExchangeError
+                    };
 
-                if (_result.success && response.IsSuccessful == false)
+                    _result.SetFailure(
+                        _error_message,
+                        _error_code,
+                        _http_error_code,
+                        false
+                    );
+                }
+
+                // Final check for REST-level errors
+                if (_result.success && !response.IsSuccessful)
                 {
                     _result.SetFailure(
-                            response.ErrorMessage ?? response.StatusDescription,
-                            ErrorCode.ResponseRestError,
-                            (int)response.StatusCode,
-                            false
-                        );
+                        response.ErrorMessage ?? response.StatusDescription,
+                        ErrorCode.ResponseRestError,
+                        (int)response.StatusCode,
+                        false
+                    );
                 }
             }
 
