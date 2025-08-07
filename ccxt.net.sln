@@ -7,20 +7,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
-		appveyor.yml = appveyor.yml
-		CHANGELOG.md = CHANGELOG.md
-		CONTRIBUTING.md = CONTRIBUTING.md
-		Directory.Build.props = Directory.Build.props
-		global.json = global.json
-		LICENSE.txt = LICENSE.txt
-		README.md = README.md
-		SECURITY.md = SECURITY.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "logo-files", "logo-files", "{5A50B081-F4DF-42AD-9C52-3FDADE6D2919}"
 	ProjectSection(SolutionItems) = preProject
-		logo-files\ccxt.net.api.png = logo-files\ccxt.net.api.png
-		logo-files\ccxt.net.ico = logo-files\ccxt.net.ico
+		docs\logo-files\ccxt.net.api.png = docs\logo-files\ccxt.net.api.png
+		docs\logo-files\ccxt.net.ico = docs\logo-files\ccxt.net.ico
+		docs\logo-files\favicon-korbit-16x16.png = docs\logo-files\favicon-korbit-16x16.png
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{F5F13CB7-91AE-498C-AD71-9EC31AA49A5B}"
@@ -41,9 +34,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{BC661016
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bittrex", "samples\bittrex\bittrex.csproj", "{5E21C096-B158-4474-AF54-0646855284E4}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{E2E85496-48BA-4D95-A291-C68CA733D20F}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{C8D5274F-AC00-46C7-1F8D-E88E81087A52}"
 	ProjectSection(SolutionItems) = preProject
-		.github\workflows\codeql-analysis.yml = .github\workflows\codeql-analysis.yml
+		docs\CHANGELOG.md = docs\CHANGELOG.md
+		docs\CONTRIBUTING.md = docs\CONTRIBUTING.md
+		docs\SECURITY.md = docs\SECURITY.md
 	EndProjectSection
 EndProject
 Global
@@ -133,13 +128,13 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{5A50B081-F4DF-42AD-9C52-3FDADE6D2919} = {C8D5274F-AC00-46C7-1F8D-E88E81087A52}
 		{1AF35DB8-580D-4D5B-A50F-B2C63CF5856D} = {9E137A9C-8E9F-4484-B4A2-D190573B082C}
 		{E972A495-D622-4D66-9564-E8EB170E740A} = {BC661016-696B-4C21-BC35-CB49FBED7AA1}
 		{07C1BDD2-6A52-4E6F-845B-ADAE37016395} = {F5F13CB7-91AE-498C-AD71-9EC31AA49A5B}
 		{175C73B8-341C-471A-B9F6-559E3D0D41C6} = {F5F13CB7-91AE-498C-AD71-9EC31AA49A5B}
 		{F0F88963-FF57-4587-A08A-A819A10C3A88} = {F5F13CB7-91AE-498C-AD71-9EC31AA49A5B}
 		{5E21C096-B158-4474-AF54-0646855284E4} = {F5F13CB7-91AE-498C-AD71-9EC31AA49A5B}
-		{E2E85496-48BA-4D95-A291-C68CA733D20F} = {EE36102D-AC13-4DED-802B-F265CB1DEE53}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {10D0D5D6-447B-4484-A230-BBDBAA48885C}

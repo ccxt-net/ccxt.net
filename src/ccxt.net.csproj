@@ -1,6 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <Title>CryptoCurrency eXchange Trading Library for .NET</Title>
+		<TargetFrameworks>netstandard2.1;net8.0;net9.0</TargetFrameworks>
+
+		<Title>CryptoCurrency eXchange Trading Library for .NET</Title>
         <Product>CCXT</Product>
         <Company>ODINSOFT</Company>
         <Description>CCXT.NET – CryptoCurrency eXchange Trading Library for .NET</Description>
@@ -19,10 +21,10 @@
         <RootNamespace>CCXT.NET</RootNamespace>
         <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
         
-		<Version>1.5.1</Version>
+		<Version>1.5.2</Version>
         <PackageReleaseNotes>RestSharp, System.IdentityModel.Tokens.Jwt update &amp; The substring array trading error on Gemini</PackageReleaseNotes>
-        <AssemblyVersion>1.5.1.14</AssemblyVersion>
-        <FileVersion>1.5.1.14</FileVersion>
+        <AssemblyVersion>1.5.2.15</AssemblyVersion>
+        <FileVersion>1.5.2.15</FileVersion>
         
 		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
         <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
@@ -30,13 +32,6 @@
 
 		<RepositoryUrl>https://github.com/ccxt.net/ccxt.net</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
-        <TargetFrameworks>net9.0</TargetFrameworks>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0|AnyCPU'">
-      <WarningLevel>7</WarningLevel>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0|AnyCPU'">
-      <WarningLevel>7</WarningLevel>
     </PropertyGroup>
 
     <ItemGroup>
@@ -48,18 +43,18 @@
             <Pack>True</Pack>
             <PackagePath></PackagePath>
         </None>
-        <None Include="..\logo-files\ccxt.net.api.png">
-            <Pack>True</Pack>
-            <PackagePath></PackagePath>
-        </None>
+		<None Include="..\docs\logo-files\ccxt.net.api.png">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>
         <Content Include="..\LICENSE.txt" Link="LICENSE.txt" />
     </ItemGroup>
 
     <ItemGroup>
         <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-        <PackageReference Include="RestSharp" Version="112.0.0" />
-        <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.0.2" />
-        <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.5.4" />
+        <PackageReference Include="RestSharp" Version="112.1.0" />
+        <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.13.0" />
+        <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.6.3" />
         <PackageReference Include="CellWars.Threading.AsyncLock" Version="1.0.0" />
     </ItemGroup>
 </Project>
