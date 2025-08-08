@@ -1,5 +1,56 @@
 ﻿# Сhangelog
 
+## Version 1.5.2 2024-12-12
+
+### Major Exchange Reorganization
+- **Country Code Standardization**: Migrated from 3-letter to 2-letter ISO codes
+  - `chn` → `cn` (China)
+  - `gbr` → `gb` (United Kingdom)  
+  - `jpn` → `jp` (Japan)
+  - `kor` → `kr` (Korea)
+  - `sey` → `sc` (Seychelles)
+  - `usa` → `us` (United States)
+
+- **New Exchange Implementations**: Added 94 new exchanges across 22 countries
+  - Total supported exchanges increased from 26 to 120
+  - All exchanges follow standardized folder structure:
+    ```
+    {country_code}/{exchange_name}/
+    ├── {exchange_name}.cs (main client class)
+    ├── private/ (authentication required endpoints)
+    ├── public/  (public API endpoints)
+    └── trade/   (trading operations)
+    ```
+
+- **New Exchanges by Region**:
+  - **AE (UAE)**: deribit
+  - **AU (Australia)**: btcmarkets, coinspot
+  - **BR (Brazil)**: foxbit, mercado, novadax
+  - **BS (Bahamas)**: fmfwio
+  - **CA (Canada)**: ndax, timex
+  - **CN (China)**: bigone, bingx, bitget, bybit, coinex, digifinex, gate, hashkey, hitbtc, htx, kucoin, kucoinfutures, lbank, mexc, okx, woo, woofipro, xt
+  - **EE (Estonia)**: latoken
+  - **EU (Europe)**: bit2c, bitopro, bitvavo, btcalpha, btcturk, coinmate, exmo, onetrading, paymium, wavesexchange, whitebit, yobit, zonda
+  - **GB (UK)**: bitteam, blockchaincom, coinmetro, luno
+  - **GLOBAL**: coincatch, defx, hollaex, myokx, oceanex, oxfun, p2b, tradeogre
+  - **ID (Indonesia)**: indodax, tokocrypto
+  - **IN (India)**: bitbns, modetrade
+  - **JP (Japan)**: bitbank, btcbox, zaif, bittrade
+  - **KR (Korea)**: probit
+  - **KY (Cayman Islands)**: bitmart, blofin
+  - **LT (Lithuania)**: cryptomus
+  - **MT (Malta)**: bequant
+  - **MX (Mexico)**: bitso
+  - **SG (Singapore)**: bitrue, coinsph, delta, derive, ellipx, hibachi, hyperliquid, independentreserve
+  - **US (United States)**: alpaca, apex, ascendex, binancecoinm, binanceus, binanceusdm, binance, coinbaseadvanced, coinbaseexchange, coinbaseinternational, coinbase, crypto, cryptocom, krakenfutures, okcoin, okxus, paradex, phemex, vertex
+
+### Technical Improvements
+- Fixed namespace conflicts and build errors
+- Updated to support .NET 8.0 and .NET 9.0
+- Standardized exchange implementation patterns
+- All exchanges inherit from `CCXT.NET.Shared.Coin.XApiClient`
+- Implement `IXApiClient` interface with proper authentication flow
+
 ## Version 1.5.1 2024-09-19
 
 	- Bump RestSharp from 108.0.3 to 112.0.0

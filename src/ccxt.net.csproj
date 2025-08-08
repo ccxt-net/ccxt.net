@@ -13,7 +13,7 @@
         
 		<PackageId>CCXT.NET</PackageId>
 		<PackageTags>bitcoin;cryptocurrency;exchange;trading;market-data;ccxt;exchange-markets;altcoin;api;arbitrage;bot;crypto;e-commerce;invest;library;strategy;trade;merchant;cryptocoin</PackageTags>
-        <PackageProjectUrl>https://github.com/ccxt.net/ccxt.net</PackageProjectUrl>
+        <PackageProjectUrl>https://github.com/ccxt-net/ccxt.net</PackageProjectUrl>
         <PackageIcon>ccxt.net.api.png</PackageIcon>
         <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
         <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
@@ -30,7 +30,7 @@
         <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
         <PackageReadmeFile>README.md</PackageReadmeFile>
 
-		<RepositoryUrl>https://github.com/ccxt.net/ccxt.net</RepositoryUrl>
+		<RepositoryUrl>https://github.com/ccxt-net/ccxt.net</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
     </PropertyGroup>
 

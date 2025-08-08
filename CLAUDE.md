@@ -33,7 +33,7 @@ dotnet pack src/ccxt.net.csproj -c Release
 dotnet test
 
 # Run tests for specific project
-dotnet test tests/ccxt.test/ccxt.test.csproj
+dotnet test tests/ccxt.tests/ccxt.tests.csproj
 
 # Run specific test by name
 dotnet test --filter "FullyQualifiedName~TestName"
@@ -44,11 +44,8 @@ dotnet test --logger "console;verbosity=detailed"
 
 ### Sample Applications
 ```bash
-# Run sample applications
-dotnet run --project samples/binance/binance.csproj
-dotnet run --project samples/bitmex/bitmex.csproj
-dotnet run --project samples/kraken/kraken.csproj
-dotnet run --project samples/bittrex/bittrex.csproj
+# Run sample application
+dotnet run --project samples/ccxt.samples.csproj
 ```
 
 ## Architecture Overview
@@ -60,8 +57,9 @@ dotnet run --project samples/bittrex/bittrex.csproj
 - **docs/**: Documentation files (CHANGELOG, CONTRIBUTING, SECURITY)
 
 ### Exchange Implementation Pattern
-Each exchange follows a consistent structure organized by country/region:
-- **exchanges/{region}/{exchange}/**: Base exchange implementation
+Each exchange follows a consistent structure organized by 2-letter ISO country codes:
+- **exchanges/{country_code}/{exchange}/**: Base exchange implementation
+  - **{exchange}.cs**: Main exchange client class
   - **public/**: Public API endpoints (ticker, orderBook, completeOrder, market, ohlcv)
   - **private/**: Private API endpoints requiring authentication (balance, address, transfer, wallet)
   - **trade/**: Trading operations (order, place, trade, position)
@@ -84,14 +82,28 @@ Each exchange follows a consistent structure organized by country/region:
 3. Each exchange implements its specific authentication mechanism (HMAC, JWT, etc.)
 4. Private endpoints automatically include authentication headers
 
-### Supported Exchanges by Region
-- **CHN (China)**: Bitforex, Gate.io, Huobi, OKEX, ZB
-- **JPN (Japan)**: ANXPro, bitFlyer, Coincheck, Quoinex
-- **KOR (Korea)**: Bithumb, CoinOne, Gopax, Korbit, OKCoin KR, Upbit
-- **HK (Hong Kong)**: Binance
-- **GBR (UK)**: Bitfinex, Bitstamp, CEX.IO
-- **USA**: Bittrex, GDAX, Gemini, itBit, Kraken, Poloniex
-- **SEY (Seychelles)**: BitMEX
+### Supported Exchanges by Region (120 Total)
+- **AE (UAE)**: deribit
+- **AU (Australia)**: btcmarkets, coinspot
+- **BR (Brazil)**: foxbit, mercado, novadax
+- **BS (Bahamas)**: fmfwio
+- **CA (Canada)**: ndax, timex
+- **CN (China)**: Bitforex, Gate.io, Huobi, OKEX, ZB, bigone, bingx, bitget, bybit, coinex, digifinex, gate, hashkey, hitbtc, htx, kucoin, kucoinfutures, lbank, mexc, okx, woo, woofipro, xt
+- **EE (Estonia)**: latoken
+- **EU (Europe)**: bit2c, bitopro, bitvavo, btcalpha, btcturk, coinmate, exmo, onetrading, paymium, wavesexchange, whitebit, yobit, zonda
+- **GB (UK)**: Bitfinex, Bitstamp, CEX.IO, bitteam, blockchaincom, coinmetro, luno
+- **GLOBAL**: coincatch, defx, hollaex, myokx, oceanex, oxfun, p2b, tradeogre
+- **ID (Indonesia)**: indodax, tokocrypto
+- **IN (India)**: bitbns, modetrade
+- **JP (Japan)**: ANXPro, bitFlyer, Coincheck, Quoinex, bitbank, btcbox, zaif, bittrade
+- **KR (Korea)**: Bithumb, CoinOne, Gopax, Korbit, OKCoin KR, Upbit, probit
+- **KY (Cayman Islands)**: bitmart, blofin
+- **LT (Lithuania)**: cryptomus
+- **MT (Malta)**: bequant
+- **MX (Mexico)**: bitso
+- **SC (Seychelles)**: BitMEX
+- **SG (Singapore)**: bitrue, coinsph, delta, derive, ellipx, hibachi, hyperliquid, independentreserve
+- **US (United States)**: Bittrex, GDAX, Gemini, itBit, Kraken, Poloniex, alpaca, apex, ascendex, binancecoinm, binanceus, binanceusdm, binance, coinbaseadvanced, coinbaseexchange, coinbaseinternational, coinbase, crypto, cryptocom, krakenfutures, okcoin, okxus, paradex, phemex, vertex
 
 ### Error Handling
 - Standardized error codes in `src/shared/standard/errorCode.cs`
@@ -104,5 +116,5 @@ Each exchange follows a consistent structure organized by country/region:
 - All public API methods should return ApiResult<T> wrapped responses
 - Private API methods require proper authentication setup
 - Exchange rate limits should be respected (implemented per exchange)
-- When adding new exchanges, follow the existing directory structure: exchanges/{region}/{exchange}/
+- When adding new exchanges, follow the existing directory structure: exchanges/{country_code}/{exchange}/
 - Test coverage should include both public and private API endpoints when API keys are available

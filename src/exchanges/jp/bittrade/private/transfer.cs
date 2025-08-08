@@ -1,0 +1,14 @@
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using CCXT.NET.Shared.Coin.Private;
+
+namespace CCXT.NET.JP.bittrade.Private
+{
+    /// <summary>
+    /// bittrade transfer implementation
+    /// </summary>
+    public class Transfer
+    {
+        // TODO: Implement transfer methods
+    }
+}
