@@ -9,7 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CCXT.NET.IN.modetrade
+namespace CCXT.NET.Modetrade
 {
     /// <summary>
     /// Modetrade exchange

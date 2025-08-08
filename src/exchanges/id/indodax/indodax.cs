@@ -9,7 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CCXT.NET.ID.indodax
+namespace CCXT.NET.Indodax
 {
     /// <summary>
     /// Indodax exchange

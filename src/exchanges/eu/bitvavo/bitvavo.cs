@@ -9,7 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CCXT.NET.EU.bitvavo
+namespace CCXT.NET.Bitvavo
 {
     /// <summary>
     /// Bitvavo exchange

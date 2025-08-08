@@ -9,7 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CCXT.NET.EU.onetrading
+namespace CCXT.NET.Onetrading
 {
     /// <summary>
     /// Onetrading exchange

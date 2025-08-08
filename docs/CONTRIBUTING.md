@@ -181,7 +181,7 @@ public class ExchangeClient
 
 ### Naming Conventions
 
-- **Namespaces**: `CCXT.NET.{COUNTRY}.{exchange}`
+- **Namespaces**: `CCXT.NET.{ExchangeName}`
 - **Classes**: `{Exchange}Client`, `{Exchange}PublicApi`
 - **Interfaces**: `I{Name}` (e.g., `IXApiClient`)
 - **Async Methods**: `{Method}Async` (e.g., `GetTickerAsync`)
@@ -306,7 +306,7 @@ using CCXT.NET.Shared.Coin;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace CCXT.NET.{COUNTRY}.{exchange_name}
+namespace CCXT.NET.{ExchangeName}
 {
     public sealed class {ExchangeName}Client : XApiClient, IXApiClient
     {

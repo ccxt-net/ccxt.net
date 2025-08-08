@@ -9,7 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CCXT.NET.SG.independentreserve
+namespace CCXT.NET.Independentreserve
 {
     /// <summary>
     /// Independentreserve exchange

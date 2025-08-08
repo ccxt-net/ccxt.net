@@ -9,7 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CCXT.NET.CN.mexc
+namespace CCXT.NET.Mexc
 {
     /// <summary>
     /// Mexc exchange

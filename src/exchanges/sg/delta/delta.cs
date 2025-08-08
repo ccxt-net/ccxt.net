@@ -9,7 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CCXT.NET.SG.delta
+namespace CCXT.NET.Delta
 {
     /// <summary>
     /// Delta exchange

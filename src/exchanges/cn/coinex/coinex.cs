@@ -9,7 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CCXT.NET.CN.coinex
+namespace CCXT.NET.Coinex
 {
     /// <summary>
     /// Coinex exchange

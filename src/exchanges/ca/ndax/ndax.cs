@@ -9,7 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CCXT.NET.CA.ndax
+namespace CCXT.NET.Ndax
 {
     /// <summary>
     /// Ndax exchange

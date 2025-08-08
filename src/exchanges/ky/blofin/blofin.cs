@@ -9,7 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CCXT.NET.KY.blofin
+namespace CCXT.NET.Blofin
 {
     /// <summary>
     /// Blofin exchange

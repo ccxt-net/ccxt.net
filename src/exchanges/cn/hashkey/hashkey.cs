@@ -9,7 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CCXT.NET.CN.hashkey
+namespace CCXT.NET.Hashkey
 {
     /// <summary>
     /// Hashkey exchange

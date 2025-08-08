@@ -9,7 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CCXT.NET.BR.mercado
+namespace CCXT.NET.Mercado
 {
     /// <summary>
     /// Mercado exchange

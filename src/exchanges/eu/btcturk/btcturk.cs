@@ -9,7 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CCXT.NET.EU.btcturk
+namespace CCXT.NET.BTCTurk
 {
     /// <summary>
     /// Btcturk exchange

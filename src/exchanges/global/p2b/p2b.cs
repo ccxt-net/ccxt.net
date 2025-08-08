@@ -9,7 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CCXT.NET.GLOBAL.p2b
+namespace CCXT.NET.P2B
 {
     /// <summary>
     /// P2b exchange

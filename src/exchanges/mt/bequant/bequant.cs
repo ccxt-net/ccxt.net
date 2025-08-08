@@ -9,7 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CCXT.NET.MT.bequant
+namespace CCXT.NET.Bequant
 {
     /// <summary>
     /// Bequant exchange

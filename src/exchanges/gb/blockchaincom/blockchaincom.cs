@@ -9,7 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CCXT.NET.GB.blockchaincom
+namespace CCXT.NET.BlockchainCom
 {
     /// <summary>
     /// Blockchaincom exchange

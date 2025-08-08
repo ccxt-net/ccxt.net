@@ -9,7 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CCXT.NET.SG.ellipx
+namespace CCXT.NET.Ellipx
 {
     /// <summary>
     /// Ellipx exchange

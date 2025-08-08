@@ -9,7 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CCXT.NET.EE.latoken
+namespace CCXT.NET.Latoken
 {
     /// <summary>
     /// Latoken exchange

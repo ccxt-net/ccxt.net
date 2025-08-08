@@ -9,7 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CCXT.NET.US.vertex
+namespace CCXT.NET.Vertex
 {
     /// <summary>
     /// Vertex exchange

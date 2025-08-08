@@ -9,7 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CCXT.NET.JP.bitbank
+namespace CCXT.NET.Bitbank
 {
     /// <summary>
     /// Bitbank exchange

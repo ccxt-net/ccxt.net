@@ -9,7 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CCXT.NET.CN.xt
+namespace CCXT.NET.XT
 {
     /// <summary>
     /// Xt exchange

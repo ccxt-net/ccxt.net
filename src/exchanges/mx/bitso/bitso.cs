@@ -9,7 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CCXT.NET.MX.bitso
+namespace CCXT.NET.Bitso
 {
     /// <summary>
     /// Bitso exchange

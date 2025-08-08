@@ -9,7 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CCXT.NET.BR.novadax
+namespace CCXT.NET.Novadax
 {
     /// <summary>
     /// Novadax exchange

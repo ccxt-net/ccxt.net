@@ -9,7 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CCXT.NET.US.coinbaseadvanced
+namespace CCXT.NET.CoinbaseAdvanced
 {
     /// <summary>
     /// Coinbaseadvanced exchange

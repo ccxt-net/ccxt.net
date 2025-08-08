@@ -9,7 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CCXT.NET.BR.foxbit
+namespace CCXT.NET.Foxbit
 {
     /// <summary>
     /// Foxbit exchange

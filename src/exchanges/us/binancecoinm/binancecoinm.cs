@@ -9,7 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CCXT.NET.US.binancecoinm
+namespace CCXT.NET.BinanceCOINM
 {
     /// <summary>
     /// Binancecoinm exchange

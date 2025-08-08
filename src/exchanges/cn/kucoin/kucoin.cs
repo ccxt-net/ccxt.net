@@ -9,7 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CCXT.NET.CN.kucoin
+namespace CCXT.NET.Kucoin
 {
     /// <summary>
     /// Kucoin exchange

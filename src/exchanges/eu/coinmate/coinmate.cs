@@ -9,7 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CCXT.NET.EU.coinmate
+namespace CCXT.NET.Coinmate
 {
     /// <summary>
     /// Coinmate exchange

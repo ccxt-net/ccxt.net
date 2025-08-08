@@ -4,9 +4,18 @@
 [![NuGet Downloads](https://img.shields.io/nuget/dt/ccxt.net.svg)](https://www.nuget.org/packages/CCXT.NET)
 [![License](https://img.shields.io/github/license/ccxt-net/ccxt.net.svg)](https://github.com/ccxt-net/ccxt.net/blob/master/LICENSE.txt)
 
-This project is an extension of [ccxt](https://github.com/ccxt/ccxt). If you are a .Net C# programmer, ccxt.net might be useful.
+This project is an extension of [ccxt](https://github.com/ccxt/ccxt), a popular cryptocurrency trading library. CCXT.NET provides a unified way to programmatically interact with cryptocurrency exchanges using .NET/C#.
 
-This project started in 2018/04. I plan to update it continuously. 
+## Features
+
+- 🌍 **Support for 120 exchanges** across 22 countries
+- 🔄 **Unified API** across all exchanges
+- 📊 **Public market data** (tickers, order books, trades, OHLCV)
+- 💰 **Private account management** (balances, orders, trades)
+- 🔐 **Secure authentication** handling for each exchange
+- ⚡ **Async/await** support for all operations
+- 🎯 **Strong typing** with full IntelliSense support
+- 📦 **NuGet package** for easy installation
 
 ## Supported Cryptocurrency Exchange Markets
 
@@ -19,7 +28,7 @@ These exchanges have complete API implementations with full testing:
 | Exchange | Country | Type | Documentation |
 |----------|---------|------|---------------|
 | ANXPro | JP | Spot | [API](https://anxv2.docs.apiary.io) |
-| Binance | HK/US | Spot | [API](https://github.com/binance-exchange/binance-official-api-docs/blob/master/rest-api.md) |
+| Binance | HK | Spot | [API](https://github.com/binance-exchange/binance-official-api-docs/blob/master/rest-api.md) |
 | Bitfinex | GB | Spot | [API](https://bitfinex.readme.io/v1/docs) |
 | bitFlyer | JP | Spot | [API](https://lightning.bitflyer.com/docs?lang=en) |
 | Bitforex | CN | Spot | [API](https://github.com/bitforexapi/API_Docs/wiki) |
@@ -61,7 +70,7 @@ These exchanges have basic structure implemented and are ready for API integrati
 - **Bitso** (MX) - Latin America leader
 - **Mercado** (BR) - Brazilian market leader
 - **Indodax** (ID) - Indonesian leader
-- **WazirX/Bitbns** (IN) - Indian market
+- **Bitbns** (IN) - Indian market
 - **Luno** (GB) - UK/Africa focused
 
 #### Priority 3 - Other Exchanges
@@ -106,51 +115,83 @@ If you need support for a specific exchange that's not currently included, pleas
 The library is under [MIT license](https://github.com/ccxt-net/ccxt.net/blob/master/LICENSE.txt), that means it's absolutely free for any developer to build commercial and opensource software on top of it, but use it at your own risk with no warranties, as is.
 
 
-## Install
+## Installation
 
-You can also clone it into your project directory from [ccxt.net GitHub repository](https://github.com/ccxt-net/ccxt.net):
+### NuGet Package
 
-```shell
-git clone https://github.com/ccxt-net/ccxt.net.git
+```bash
+# Package Manager Console
+Install-Package CCXT.NET -Version 1.5.2
+
+# .NET CLI
+dotnet add package CCXT.NET --version 1.5.2
+
+# PackageReference
+<PackageReference Include="CCXT.NET" Version="1.5.2" />
 ```
 
+### Clone Repository
+
+```bash
+git clone https://github.com/ccxt-net/ccxt.net.git
+cd ccxt.net
+dotnet build
+```
+
+## Quick Start
+
+```csharp
+using CCXT.NET.Binance;
+
+// Create client for public API
+var publicClient = new BinanceClient("public");
+
+// Get ticker
+var ticker = await publicClient.FetchTickerAsync("BTC/USDT");
+Console.WriteLine($"BTC/USDT Price: {ticker.result.close}");
+
+// Create client for private API (requires API keys)
+var privateClient = new BinanceClient("private", "YOUR_API_KEY", "YOUR_SECRET_KEY");
+
+// Get account balance
+var balance = await privateClient.FetchBalanceAsync();
+```
 
 ## Documentation
 
-Read the [Manual](https://github.com/ccxt-net/ccxt.net/wiki) for more details.
-
+- 📚 [Wiki](https://github.com/ccxt-net/ccxt.net/wiki) - Detailed documentation
+- 📝 [API Reference](https://github.com/ccxt-net/ccxt.net/wiki/API-Reference) - Complete API documentation
+- 🚀 [Examples](https://github.com/ccxt-net/ccxt.net/tree/master/samples) - Sample code
 
 ## Releases
 
- - [GitHub Releases](https://github.com/ccxt-net/ccxt.net/releases)
- - [Changelog](https://github.com/ccxt-net/ccxt.net/blob/master/docs/CHANGELOG.md)
-
+- 📦 [NuGet Package](https://www.nuget.org/packages/CCXT.NET)
+- 🏷️ [GitHub Releases](https://github.com/ccxt-net/ccxt.net/releases)
+- 📋 [Changelog](https://github.com/ccxt-net/ccxt.net/blob/master/docs/CHANGELOG.md)
 
 ## Contributing
 
-Please read the [CONTRIBUTING](https://github.com/ccxt-net/ccxt.net/blob/master/docs/CONTRIBUTING.md) document for detailed guidelines on how to contribute to this project.
-
-## Installation
-
-### Add Reference
-
- > Install-Package CCXT.NET -Version 1.5.2
-
- > dotnet add package CCXT.NET --version 1.5.2
+We welcome contributions! Please read our [Contributing Guidelines](https://github.com/ccxt-net/ccxt.net/blob/master/docs/CONTRIBUTING.md) for details on:
+- How to submit issues
+- How to contribute code
+- Coding standards
+- Testing requirements
 
 
 ## Support
 
-If you find CCXT.NET useful and want to support the project:
+### Need Help?
+- 📖 Check the [Wiki](https://github.com/ccxt-net/ccxt.net/wiki)
+- 🐛 Report issues on [GitHub](https://github.com/ccxt-net/ccxt.net/issues)
+- 📧 Contact us at help@odinsoft.co.kr
+- 🌐 Visit [ODINSOFT](https://www.odinsoft.co.kr)
 
-### **Cryptocurrency Donations**
+### Support the Project
+If you find CCXT.NET useful, consider supporting development:
+
+**Cryptocurrency Donations:**
 - **Bitcoin**: `15DAoUfaCanpBpTs7VQBK8dRmbQqEnF9WG`
 - **Ethereum**: `0x556E7EdbcCd669a42f00c1Df53D550C00814B0e3`
-
-### **Contact**
-- **Homepage**: https://www.odinsoft.co.kr
-- **Email**: help@odinsoft.co.kr
-- **Issues**: [GitHub Issues](https://github.com/ccxt-net/ccxt.net/issues)
 
 ## 👥 Team
 

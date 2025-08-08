@@ -9,7 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CCXT.NET.ID.tokocrypto
+namespace CCXT.NET.Tokocrypto
 {
     /// <summary>
     /// Tokocrypto exchange

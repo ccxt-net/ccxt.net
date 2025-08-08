@@ -9,7 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CCXT.NET.SG.derive
+namespace CCXT.NET.Derive
 {
     /// <summary>
     /// Derive exchange

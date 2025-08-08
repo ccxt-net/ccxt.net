@@ -9,7 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CCXT.NET.GLOBAL.coincatch
+namespace CCXT.NET.Coincatch
 {
     /// <summary>
     /// Coincatch exchange

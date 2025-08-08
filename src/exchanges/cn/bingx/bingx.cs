@@ -9,7 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CCXT.NET.CN.bingx
+namespace CCXT.NET.Bingx
 {
     /// <summary>
     /// Bingx exchange

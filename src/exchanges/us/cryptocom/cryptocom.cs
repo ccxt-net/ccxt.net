@@ -9,7 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CCXT.NET.US.cryptocom
+namespace CCXT.NET.CryptoCom
 {
     /// <summary>
     /// Cryptocom exchange

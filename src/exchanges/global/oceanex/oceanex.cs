@@ -9,7 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CCXT.NET.GLOBAL.oceanex
+namespace CCXT.NET.Oceanex
 {
     /// <summary>
     /// Oceanex exchange

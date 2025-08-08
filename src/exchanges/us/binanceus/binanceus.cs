@@ -9,7 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CCXT.NET.US.binanceus
+namespace CCXT.NET.BinanceUS
 {
     /// <summary>
     /// Binanceus exchange

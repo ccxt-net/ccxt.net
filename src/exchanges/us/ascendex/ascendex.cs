@@ -9,7 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CCXT.NET.US.ascendex
+namespace CCXT.NET.Ascendex
 {
     /// <summary>
     /// Ascendex exchange

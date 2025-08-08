@@ -9,7 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CCXT.NET.AU.coinspot
+namespace CCXT.NET.Coinspot
 {
     /// <summary>
     /// Coinspot exchange

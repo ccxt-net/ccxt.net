@@ -9,7 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CCXT.NET.GLOBAL.tradeogre
+namespace CCXT.NET.Tradeogre
 {
     /// <summary>
     /// Tradeogre exchange

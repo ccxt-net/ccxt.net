@@ -9,7 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CCXT.NET.IN.bitbns
+namespace CCXT.NET.Bitbns
 {
     /// <summary>
     /// Bitbns exchange

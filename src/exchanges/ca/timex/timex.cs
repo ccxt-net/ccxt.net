@@ -9,7 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CCXT.NET.CA.timex
+namespace CCXT.NET.Timex
 {
     /// <summary>
     /// Timex exchange

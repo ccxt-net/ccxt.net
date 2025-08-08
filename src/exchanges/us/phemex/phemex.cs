@@ -9,7 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CCXT.NET.US.phemex
+namespace CCXT.NET.Phemex
 {
     /// <summary>
     /// Phemex exchange

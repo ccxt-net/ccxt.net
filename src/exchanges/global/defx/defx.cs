@@ -9,7 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CCXT.NET.GLOBAL.defx
+namespace CCXT.NET.Defx
 {
     /// <summary>
     /// Defx exchange

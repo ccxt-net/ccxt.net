@@ -9,7 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CCXT.NET.BS.fmfwio
+namespace CCXT.NET.Fmfwio
 {
     /// <summary>
     /// Fmfwio exchange

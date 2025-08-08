@@ -9,7 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CCXT.NET.EU.bit2c
+namespace CCXT.NET.Bit2c
 {
     /// <summary>
     /// Bit2c exchange

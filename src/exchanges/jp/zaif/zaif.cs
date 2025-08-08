@@ -9,7 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CCXT.NET.JP.zaif
+namespace CCXT.NET.Zaif
 {
     /// <summary>
     /// Zaif exchange

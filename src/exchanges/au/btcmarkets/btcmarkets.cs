@@ -9,7 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CCXT.NET.AU.btcmarkets
+namespace CCXT.NET.BTCMarkets
 {
     /// <summary>
     /// Btcmarkets exchange
