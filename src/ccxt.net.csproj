@@ -22,7 +22,7 @@
         <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
         
 		<Version>1.5.2</Version>
-        <PackageReleaseNotes>RestSharp, System.IdentityModel.Tokens.Jwt update &amp; The substring array trading error on Gemini</PackageReleaseNotes>
+        <PackageReleaseNotes>Major release: Added 94 new exchanges (total 120), migrated to 2-letter ISO country codes, standardized namespace convention, added .NET 9.0 support, updated dependencies</PackageReleaseNotes>
         <AssemblyVersion>1.5.2.15</AssemblyVersion>
         <FileVersion>1.5.2.15</FileVersion>
         
@@ -33,6 +33,10 @@
 		<RepositoryUrl>https://github.com/ccxt-net/ccxt.net</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
     </PropertyGroup>
+	
+    <PropertyGroup>
+		<NoWarn>CS1998</NoWarn>
+	</PropertyGroup>
 
     <ItemGroup>
 		<None Include="..\README.md">
