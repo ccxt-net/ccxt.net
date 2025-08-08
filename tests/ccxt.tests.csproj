@@ -2,8 +2,8 @@
 
 	<PropertyGroup>
 		<IsPackable>false</IsPackable>
-		<AssemblyName>ccxt.test</AssemblyName>
-		<RootNamespace>CCXT.TEST</RootNamespace>
+		<AssemblyName>CCXT.TESTS</AssemblyName>
+		<RootNamespace>CCXT.TESTS</RootNamespace>
 		<TargetFramework>net9.0</TargetFramework>
 	</PropertyGroup>
 
@@ -21,7 +21,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\..\src\ccxt.net.csproj" />
+	  <ProjectReference Include="..\src\ccxt.net.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

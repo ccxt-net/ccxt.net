@@ -35,22 +35,22 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <None Include="..\README.md">
-          <Pack>True</Pack>
-          <PackagePath>\</PackagePath>
-        </None>
-        <None Include="..\LICENSE.txt">
-            <Pack>True</Pack>
-            <PackagePath></PackagePath>
-        </None>
+		<None Include="..\README.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+		<None Include="..\LICENSE.txt">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>
 		<None Include="..\docs\logo-files\ccxt.net.api.png">
 			<Pack>True</Pack>
 			<PackagePath></PackagePath>
 		</None>
-        <Content Include="..\LICENSE.txt" Link="LICENSE.txt" />
-    </ItemGroup>
+		<Content Include="..\LICENSE.txt" Link="LICENSE.txt" />
+	</ItemGroup>
 
-    <ItemGroup>
+	<ItemGroup>
         <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
         <PackageReference Include="RestSharp" Version="112.1.0" />
         <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.13.0" />

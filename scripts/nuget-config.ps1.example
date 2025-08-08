@@ -1,0 +1,11 @@
+# NuGet Configuration Example
+# Copy this file to 'nuget-config.ps1' and update with your actual API key
+# DO NOT commit 'nuget-config.ps1' to version control!
+
+# Your NuGet API key from https://www.nuget.org/account/apikeys
+$env:NUGET_API_KEY = "YOUR_NUGET_API_KEY_HERE"
+
+# Optional: Set custom NuGet source (default is nuget.org)
+# $env:NUGET_SOURCE = "https://api.nuget.org/v3/index.json"
+
+Write-Host "NuGet configuration loaded" -ForegroundColor Green
