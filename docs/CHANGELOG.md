@@ -1,6 +1,6 @@
 ﻿# Сhangelog
 
-## Version 1.5.2 2024-12-12
+## Version 1.5.2 2025-08-08
 
 ### Major Exchange Reorganization
 - **Country Code Standardization**: Migrated from 3-letter to 2-letter ISO codes
@@ -50,6 +50,26 @@
 - Standardized exchange implementation patterns
 - All exchanges inherit from `CCXT.NET.Shared.Coin.XApiClient`
 - Implement `IXApiClient` interface with proper authentication flow
+
+### Namespace Convention Standardization
+- **Namespace Pattern**: All exchanges now use `CCXT.NET.{ExchangeName}` without country codes
+- **Directory Structure**: Maintains `src/exchanges/{country_code}/{exchange_name}/` for organization
+- **Important Changes**:
+  - Removed country codes from all namespaces (e.g., `CCXT.NET.US.Binance` → `CCXT.NET.Binance`)
+  - Fixed 94 exchange files to follow the new convention
+  - Ensures no naming conflicts between exchanges
+  - Simplifies exchange references in code
+  
+- **Special Naming Cases**:
+  - All caps: `OKX`, `OKEX`, `GDAX`, `CEX`
+  - Mixed case: `BTCMarkets`, `BinanceUS`, `BinanceCOINM`, `BinanceUSDM`
+  - Special: `CryptoCom`, `BlockchainCom`
+
+- **Benefits**:
+  - No naming conflicts regardless of exchange location
+  - Easier to reference exchanges without knowing their country
+  - Aligns with how developers think about exchanges (by name, not location)
+  - Prevents issues when exchanges operate in multiple countries
 
 ## Version 1.5.1 2024-09-19
 

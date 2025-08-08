@@ -68,7 +68,7 @@ To become the most comprehensive and reliable cryptocurrency exchange library fo
 
 ## Technology Stack Evolution
 
-### Current Stack (2024)
+### Current Stack (2025)
 - .NET Standard 2.1, .NET 8.0, .NET 9.0
 - RestSharp for HTTP
 - Newtonsoft.Json for serialization
@@ -160,8 +160,8 @@ To become the most comprehensive and reliable cryptocurrency exchange library fo
 
 This roadmap represents our commitment to building the most comprehensive cryptocurrency exchange library for the .NET ecosystem. We will continuously adapt based on community feedback, market conditions, and technological advancements.
 
-**Last Updated**: December 2024  
-**Next Review**: March 2025
+**Last Updated**: January 2025  
+**Next Review**: April 2025
 
 ---
 
