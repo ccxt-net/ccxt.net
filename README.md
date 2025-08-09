@@ -4,8 +4,6 @@
 [![NuGet Downloads](https://img.shields.io/nuget/dt/ccxt.net.svg)](https://www.nuget.org/packages/CCXT.NET)
 [![License](https://img.shields.io/github/license/ccxt-net/ccxt.net.svg)](https://github.com/ccxt-net/ccxt.net/blob/master/LICENSE.txt)
 
-This project is an extension of [ccxt](https://github.com/ccxt/ccxt), a popular cryptocurrency trading library. CCXT.NET provides a unified way to programmatically interact with cryptocurrency exchanges using .NET/C#.
-
 ## Features
 
 - 🌍 **Support for 120 exchanges** across 22 countries
