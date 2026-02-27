@@ -263,7 +263,8 @@ __pycache__/
 # Project-specific
 .claude/
 .mcp.json
-./CLAUD.local.md
+CLAUDE.local.md
+CLAUDE.md
 nul
 appsettings.Development.json
 *.trx

@@ -1,9 +1,26 @@
+# Releases
+
+All release notes for CCXT.NET. Latest version is listed first.
+
+---
+
+## Version 1.5.3 2025-08-22
+
+### Fixes
+- Fixed netstandard2.0 build failure by replacing usage of `HashCode.Combine` in `OHLCVItem.GetHashCode()` with a framework-agnostic implementation.
+- No public API changes. Verified builds across all target frameworks (netstandard2.0, netstandard2.1, net8.0, net9.0, net10.0).
+
+### Housekeeping
+- Updated package release notes to reflect the fix.
+
+---
+
 ## Version 1.5.2 2025-08-08
 
 ### Major Exchange Reorganization
 - **Country Code Standardization**: Migrated from 3-letter to 2-letter ISO codes
   - `chn` → `cn` (China)
-  - `gbr` → `gb` (United Kingdom)  
+  - `gbr` → `gb` (United Kingdom)
   - `jpn` → `jp` (Japan)
   - `kor` → `kr` (Korea)
   - `sey` → `sc` (Seychelles)
@@ -57,7 +74,7 @@
   - Fixed 94 exchange files to follow the new convention
   - Ensures no naming conflicts between exchanges
   - Simplifies exchange references in code
-  
+
 - **Special Naming Cases**:
   - All caps: `OKX`, `OKEX`, `GDAX`, `CEX`
   - Mixed case: `BTCMarkets`, `BinanceUS`, `BinanceCOINM`, `BinanceUSDM`
@@ -68,3 +85,45 @@
   - Easier to reference exchanges without knowing their country
   - Aligns with how developers think about exchanges (by name, not location)
   - Prevents issues when exchanges operate in multiple countries
+
+---
+
+## Version 1.5.1 2024-09-19
+
+- Bump RestSharp from 108.0.3 to 112.0.0
+- The substring array trading error on Gemini
+- Bump System.IdentityModel.Tokens.Jwt from 6.24.0 to 6.34.0
+
+---
+
+## Version 1.4.13 2022-05-25
+
+- RestSharp update and upgrade to .net core 6.
+
+---
+
+## Version 1.3.8 2020-11-17
+
+- Czech Culture Decimal Parse Error Fix update #16
+
+---
+
+## Version 1.3.4 2019-06-26
+
+- Add exchanges gopax, okcoinkr
+- Rename namespace OdinSdk to CCXT.NET
+
+---
+
+## Version 1.3.3 2019-03-28
+
+- Merge with OdinSdk.BaseLib
+- I will change the namespace OdinSdk to CCXT.NET later.
+
+---
+
+## Version 1.3.2 2019-03-18
+
+- New Exchanges
+  - gateio, huobipro, okex, zb, bitfinex, bitstamp, cex, anxpro, binance
+  - bitflyer, coincheck, quoinex, upbit, bittrex, gdax, gemini, itbit, kraken
